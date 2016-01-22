@@ -1,0 +1,14 @@
+question,type
+"选校 GPA:3.8 TOEFL:120",assessment
+"选校 GPA:123:123 TOEFL:120 test",assessment
+"普林斯顿金融学",program
+"全美大学排名",ranking
+"计算机排名靠前的学校有哪些",ranking
+"耶鲁大学",school
+"耶鲁大学的学费",school-field
+"耶鲁大学计算机专业",faculty
+"耶鲁大学计算机专业的排名",faculty-field
+"耶鲁大学的us-news排名",faculty-field
+"耶鲁大学的实习",faculty-keyword
+"纽约气候",location-field
+"Just a test",question
