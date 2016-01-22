@@ -90,8 +90,10 @@ seg_set = set()
 #六维各维度得分计算
 def get_seg_score(result,type):
     set_dict = {'gpa':0.0,'language':0.0,'gre':0.0,'work':0.0,'research':0.0,'other':0.0}
-    set_dict['work'] = round(float(result['work']),1)
-    set_dict['research'] = round(float(result['research']),1)
+    if 'work' in result:
+        set_dict['work'] = round(float(result['work']),1)
+    if 'research' in result:
+        set_dict['research'] = round(float(result['research']),1)
 
     for each in seg_set:
         if each == 'gpa':
