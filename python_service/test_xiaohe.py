@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Elliot'
 import subprocess
-from select_school_debug import assess_applier
+from select_school import assess_applier
 import json
 
 if __name__ == "__main__":
@@ -51,6 +51,11 @@ if __name__ == "__main__":
     }
     result = assess_applier(test_dict, 'finance')  # law是目标文件的文件名
     print(u"最终返回的dict是：")
-    print(result['result'])
+    
     print(u"该学生的得分是：" + str(result['score']))
+    print(u"该学生的展示得分是：" + str(result['display_score']))
     print(u"该学生的分级结果是：" + str(result['level']))
+
+    print('\r\n')
+
+    print(result)

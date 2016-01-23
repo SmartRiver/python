@@ -57,7 +57,7 @@ toefl-speaking,range,0.5,%toefl*speaking,14,17,5,//,14-16
 toefl-speaking,range,0.5,%toefl*speaking,0,14,6,//,0-13
 toefl-speaking,range,1,%toefl*total,0,80,7,//,总分低于80时系数置为1
 ,//,TOEFL-汇总,,,,,
-toefl,multi,%toefl-base,%toefl-speaking,,,,
+toefl,multi,%toefl-base,,,,,
 ,//,雅思总分,,,,,
 ielts-base,range,1.4,%ielts*total,8.5,10,1,//,8.5-9
 ielts-base,range,1.3,%ielts*total,8,8.5,2,//,8

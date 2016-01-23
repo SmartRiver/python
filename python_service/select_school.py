@@ -21,7 +21,7 @@ def get_value(aim_dict, equation_unit):
         except:
             res = equation_unit
 	   # print equation_unit
-	return res
+        return res
 
 
 def execute_equation(origin_dict, equation):
@@ -55,16 +55,16 @@ def execute_equation(origin_dict, equation):
         origin_dict[out_prop] = min(num_list)
         return True
     elif equation_type == 'sum':
-	if out_prop == 'result':
-        global seg_set
-        seg_set = set(map(lambda x : x.strip('%'),unit_list[2:]))
-	try:
-        origin_dict[out_prop] = sum(num_list)
-	except:
-        print 'something is wrong when executing :'
-        print equation
-        print 'wrong item: ' + out_prop
-	return True
+    	if out_prop == 'result':
+            global seg_set
+            seg_set = set(map(lambda x : x.strip('%'),unit_list[2:]))
+    	try:
+            origin_dict[out_prop] = sum(num_list)
+    	except:
+            print 'something is wrong when executing :'
+            print equation
+            print 'wrong item: ' + out_prop
+    	return True
     elif equation_type == 'multi':
         temp_result = 1
         try:
@@ -109,22 +109,22 @@ def get_seg_score(result,type):
 #author:xiaohe
 #增加一个返回百分制的能力值 
 level_dict = {
-    u'accounting':'6-175',
-    u'law':'7-135',
+    u'accounting':'6-180',
+    u'law':'7-125',
     u'marketing':'7-160',
     u'mis':'6-170',
-    u'pr':'4-125',
-    u'tesol':'4-110',
+    u'pr':'4-130',
+    u'tesol':'4-120',
     u'cs':'10-150',
-    u'economics':'8-100',
-    u'finance':'8-195',
-    u'journalism':'5-125',
-    u'biology':'8-135',
-    u'ce':'8-135',
-    u'environment':'7-130',
-    u'materials':'7-135',
-    u'me':'7-135',     
-    u'general':'7-135',
+    u'economics':'8-125',
+    u'finance':'8-175',
+    u'journalism':'5-130',
+    u'biology':'8-150',
+    u'ce':'8-150',
+    u'environment':'7-145',
+    u'materials':'7-155',
+    u'me':'7-155',     
+    u'general':'7-115',
 }
 def display_value(score, level, type):
     levels = int(level_dict[type].split('-')[0])
@@ -159,8 +159,8 @@ def get_segment_level():
         u'gmat-aw-level':'GMAT-writing',
         u'research-duration-level':'research-duration',
         u'research-level-level':'research-level',
-        u'research-level':'research-factor',
         u'research-achievement-level':'research-achievement',
+        u'research-level':'research-factor',
         u'work-duration-level':'work-duration',
         u'work-level-level':'work-level',
         u'work-level':'work-factor',
@@ -169,6 +169,7 @@ def get_segment_level():
         u'internship-level':'internship-factor',
         u'activity-duration':'activity-duration',
         u'activity-type':'activity-type',
+        u'activity-level':'activity-factor',
         u'competition-level':'competition-level',
         u'scholarship-level':'scholarship-level',
         u'credential-level':'credential-level',
