@@ -243,7 +243,7 @@ scholarship-level,range,0.75,%scholarship*level,4,5,5,//,校级一等奖（top2%
 scholarship-level,range,0.65,%scholarship*level,5,6,6,//,校级二等奖（top10%）,,
 scholarship-level,range,0,%scholarship*level,6,7,7,//,无,,
 ,//,奖学金-汇总,,,,,,,
-scholarship,multi,10,%scholarship*level,,,,,,
+scholarship,multi,10,%scholarship-level,,,,,,
 ,//,专业证书或考试-级别,,,,,,,
 credential-level,range,1.5,%credential*level,0,1,1,//,ERP管理咨询师技术资格证书，企业信息管理师等证书,,
 credential-level,range,1.4,%credential*level,1,2,2,//,MCP，CNE，Oracle,,
@@ -252,7 +252,7 @@ credential-level,range,1.2,%credential*level,3,4,4,//,编程，jawa，C语言，
 credential-level,range,1,%credential*level,4,5,5,//,全国计算机等级考试，,,
 credential-level,range,0,%credential*level,5,6,6,//,无,,
 ,//,专业证书或考试-汇总,,,,,,,
-credential,multi,10,%credential*level,,,,,,
+credential,multi,10,%credential-level,,,,,,
 ,//,总结果,,,,,,,
 result,sum,%language,%gpa,%activity,%work,%research,%competition,%scholarship,%credential,%gre
 level,range,1,%result,198.62,1000,1,//,198.62+,,

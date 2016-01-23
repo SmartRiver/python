@@ -49,13 +49,10 @@ if __name__ == "__main__":
             'level':  100,#默认值
         },
     }
-    result = assess_applier(test_dict, 'finance')  # law是目标文件的文件名
-    print(u"最终返回的dict是：")
-    
-    print(u"该学生的得分是：" + str(result['score']))
-    print(u"该学生的展示得分是：" + str(result['display_score']))
-    print(u"该学生的分级结果是：" + str(result['level']))
-
-    print('\r\n')
-
-    print(result)
+    list = ['cs','ce','environment','pr','me','general','journalism','marketing','finance','accounting','economics','biology','law','mis','tesol','materials']
+    for each in list: 
+        print each      
+	result = assess_applier(test_dict, each)  
+        print(u"最终返回的dict是：")
+        print(json.dumps(result,indent=4))
+	print '\n\n\n'
