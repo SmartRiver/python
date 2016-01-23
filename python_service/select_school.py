@@ -86,6 +86,8 @@ ASSESS_RULE_DICT = {}
 FULL_SCORE_DICT = {}
 #每个专业的维度
 seg_set = set()
+#每个专业不包含的模块seg
+STOP_SEG_DICT = {}
 
 #author:xiaohe
 #六维各维度得分计算
@@ -125,7 +127,7 @@ level_dict = {
     u'environment':'7-145',
     u'materials':'7-155',
     u'me':'7-155',     
-    u'general':'7-115',
+    u'general':'7-130',
 }
 def display_value(score, level, type):
     levels = int(level_dict[type].split('-')[0])
@@ -182,6 +184,12 @@ def get_segment_level():
             return_level_dict[key] = LEVEL_SEGMENT_DICT[seg_level_dict[key]]
 
     return return_level_dict
+#去除用户请求里专业不存在的字段
+def remove_stop_seg(temp_dict,rule_type):
+    for each in STOP_SEG_DICT[rule_type]:
+        if each in temp_dict:
+            del(temp_dict[each])
+
  
 def __init__():
     list_dirs = os.walk('resource/assess_rule')
@@ -197,13 +205,19 @@ def __init__():
 	    else:
                 for each in open(rule_path).readlines():
                     each = each.strip('\r')
-                    if str(each.split(',')[0]) in FULL_SCORE_DICT:
-                        FULL_SCORE_DICT[str(each.split(',')[0])].update({str(each.split(',')[1]):int(each.split(',')[2])})
+                    if each.split(',')[1] == 'stop':
+                        STOP_SEG_DICT[each.split(',')[0]] = list()
+                        for each_stop in each.split(',')[2:]:
+                            STOP_SEG_DICT[each.split(',')[0]].append(each_stop)
                     else:
-                        FULL_SCORE_DICT.update({str(each.split(',')[0]):{str(each.split(',')[1]):int(each.split(',')[2])}})
+                        if str(each.split(',')[0]) in FULL_SCORE_DICT:
+                            FULL_SCORE_DICT[str(each.split(',')[0])].update({str(each.split(',')[1]):int(each.split(',')[2])})
+                        else:
+                            FULL_SCORE_DICT.update({str(each.split(',')[0]):{str(each.split(',')[1]):int(each.split(',')[2])}})
 
 def assess_applier(applier_dict, rule_type):
     temp_dict = applier_dict.copy()
+    remove_stop_seg(temp_dict,rule_type)
     if rule_type not in ASSESS_RULE_DICT:
         rule_type = 'general'
     for equation in ASSESS_RULE_DICT[rule_type]:
@@ -213,7 +227,6 @@ def assess_applier(applier_dict, rule_type):
         display_score = display_value(temp_dict['result'],int(temp_dict['level']),rule_type)
     except:
         base_score = int(level_dict[rule_type].split('-')[1])
-	print json.dumps(temp_dict,indent=4)
         display_score = temp_dict['result']/base_score *100
 	display_score = 99.0 if display_score > 99.0 else display_score
     

@@ -58,6 +58,24 @@ ielts,multi,%ielts-base,1,,,
 ,//,语言成绩-汇总,,,,,
 language-factor,max,%toefl,%ielts,//,在TOEFL和IELTS间取较大值,,
 language,multi,%language-factor,35
+,//,GRE总分,,,,,,
+gre-base,range,1.3,%gre*total,330,341,1,//,
+gre-base,range,1.2,%gre*total,325,330,2,//,
+gre-base,range,1.1,%gre*total,320,325,3,//,
+gre-base,range,0.95,%gre*total,316,320,4,//,
+gre-base,range,0.8,%gre*total,310,316,5,//,
+gre-base,range,0.65,%gre*total,305,310,6,//,
+gre-base,range,0.5,%gre*total,300,305,7,//,
+gre-base,range,0.25,%gre*total,0,300,8,//,
+,//,GRE Verbal,,,,,,
+gre-verbal,range,1.2,%gre*v,160,171,1,//,
+gre-verbal,range,1.1,%gre*v,155,160,2,//,
+gre-verbal,range,1,%gre*v,150,155,3,//,
+gre-verbal,range,0.9,%gre*v,145,150,4,//,
+gre-verbal,range,0.85,%gre*v,0,145,5,//,
+,//,GRE,,,,,,
+gre-factor,multi,%gre-base,%gre-verbal,,,,,
+gre,multi,15,%gre-factor,,,,,
 ,//,科研-时长,,,,,
 research-duration,range,4.3,%research*duration,0,1,1,//,420-600
 research-duration,range,4,%research*duration,1,2,2,//,340-419
@@ -205,7 +223,7 @@ scholarship-level,range,0,%scholarship*level,6,7,7,//,无
 ,//,奖学金-汇总,,,,,
 scholarship,multi,5,%scholarship-level,,,,
 ,//,总结果,,,,,
-result,sum,%language,%gpa,%activity,%work,%research,%scholarship
+result,sum,%language,%gpa,%gre,%activity,%work,%research,%scholarship
 level,range,1,%result,133.5,1000,1,//,133.49+
 level,range,2,%result,114.6,133.5,2,//,114.6-133.49
 level,range,3,%result,102,114.6,3,//,102-114.6
