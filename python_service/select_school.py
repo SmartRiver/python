@@ -103,7 +103,7 @@ def get_seg_score(result, type):
         'other': 0.0,
     }
     #六维中的其它，由以下六个部分组成
-    other_seg = ('activity', 'scholarship', 'credential', 'competition', 'research')
+    other_seg = ('activity', 'scholarship', 'credential', 'competition')
 
     if 'work' in result:
         set_dict['work'] = round(float(result['work']), 1)
