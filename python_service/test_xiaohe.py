@@ -48,14 +48,14 @@ if __name__ == "__main__":
         'competition': {
             'level':  100,#默认值
         },
-	'credential': {
-	    'level' : 100,#默认值
-	}
-    }
-    list = ['cs','ce','environment','pr','me','general','journalism','marketing','finance','accounting','economics','biology','law','mis','tesol','materials']
-    for each in list[:12]: 
-        print each      
-	result = assess_applier(test_dict, each)  
-        print(u"最终返回的dict是：")
-        print(json.dumps(result,indent=4))
-	print '\n\n\n'
+        'credential': {
+            'level': 100,#默认值
+        },
+     }
+    list = ['cs', 'ce', 'environment', 'pr', 'me', 'general', 'journalism', 'marketing', 'finance', 'accounting', 'economics', 'biology', 'law', 'mis', 'tesol', 'materials']
+    for each in list:
+        print each
+        result = assess_applier(test_dict, each)
+        print u"最终返回的dict是："
+        print json.dumps(result, indent=4)
+        print '\n\n\n'
