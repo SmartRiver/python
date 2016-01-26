@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf:-8 -*-
 __author__ = 'Elliot'
 import os
 import re
@@ -37,6 +37,9 @@ def execute_equation(origin_dict, equation):
     if len(unit_list) <= 2:
         return False
     out_prop, equation_type = unit_list[0], unit_list[1]
+    if out_prop == 'reletter':
+	print equation
+	return False
     num_list = map(
         lambda x: get_value(origin_dict, x),
         unit_list[2:]
@@ -188,7 +191,7 @@ def get_segment_level():
 def remove_stop_seg(temp_dict,rule_type):
     for each in STOP_SEG_DICT[rule_type]:
         if each in temp_dict:
-            del(temp_dict[each])
+	    del temp_dict[each]
 
  
 def __init__():
@@ -204,7 +207,7 @@ def __init__():
             )
 	    else:
                 for each in open(rule_path).readlines():
-                    each = each.strip('\r')
+                    each = each.strip('\r').strip('\n')
                     if each.split(',')[1] == 'stop':
                         STOP_SEG_DICT[each.split(',')[0]] = list()
                         for each_stop in each.split(',')[2:]:
@@ -217,7 +220,9 @@ def __init__():
 
 def assess_applier(applier_dict, rule_type):
     temp_dict = applier_dict.copy()
+    #print json.dumps(temp_dict,indent=4)
     remove_stop_seg(temp_dict,rule_type)
+   #print json.dumps(temp_dict,indent=4)
     if rule_type not in ASSESS_RULE_DICT:
         rule_type = 'general'
     for equation in ASSESS_RULE_DICT[rule_type]:

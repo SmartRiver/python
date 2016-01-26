@@ -32,7 +32,7 @@ tesol,gre,26
 tesol,work,33
 tesol,research,0
 tesol,other,6
-tesol,stop,GMAT,activity,credential,reletter,competition
+tesol,stop,GMAT,activity,credential,reletter,research,competition
 journalism,gpa,43
 journalism,language,70
 journalism,gre,20
@@ -109,4 +109,4 @@ me,gre,39
 me,work,30
 me,research,26
 me,other,27
-me,,stop,GMAT,activity,credential
+me,stop,GMAT,activity,credential
