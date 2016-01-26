@@ -213,7 +213,7 @@ def __init__():
                 lambda x: x.replace('\n', ''),
                 file(rule_path).readlines()
             )
-        else:
+            else:
                 for each in open(rule_path).readlines():
                     each = each.strip('\r').strip('\n')
                     if each.split(',')[1] == 'stop':

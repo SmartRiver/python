@@ -31,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="economics.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="economics.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resource/assess_rule/economics.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2089552">
+            <state vertical-scroll-proportion="0.0">
               <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
               <folding />
             </state>
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="select_school.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="select_school.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/select_school.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="18.290323">
-              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.47058824">
+              <caret line="223" column="37" selection-start-line="223" selection-start-column="37" selection-end-line="223" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -92,8 +92,8 @@
         <option value="$PROJECT_DIR$/service.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/quest_process.py" />
-        <option value="$PROJECT_DIR$/select_school.py" />
         <option value="$PROJECT_DIR$/test_xiaohe.py" />
+        <option value="$PROJECT_DIR$/select_school.py" />
       </list>
     </option>
   </component>
@@ -691,18 +691,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/select_school.py">
+    <entry file="file://$PROJECT_DIR$/resource/assess_rule/economics.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="18.290323">
-          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/assess_rule/economics.csv">
+    <entry file="file://$PROJECT_DIR$/select_school.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2089552">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.47058824">
+          <caret line="223" column="37" selection-start-line="223" selection-start-column="37" selection-end-line="223" selection-end-column="37" />
           <folding />
         </state>
       </provider>
