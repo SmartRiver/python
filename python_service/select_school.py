@@ -7,22 +7,25 @@ import json
 
 def get_value(aim_dict, equation_unit):
     if equation_unit[0] == '%':
-        temp_value = aim_dict
-        for aim_prop in equation_unit[1:].split('*'):
-            try:
-                temp_value = temp_value[aim_prop]
-            except:
-                temp_value = 1.0
-        #print 'get_value:'
-        #print aim_dict
-        return temp_value
+	if equation_unit[1:].split('*')[0] not in aim_dict:
+	    return False
+	else:
+            temp_value = aim_dict
+            for aim_prop in equation_unit[1:].split('*'):
+                try:
+                    temp_value = temp_value[aim_prop]
+                except:
+                    return False
+            #print 'get_value:'
+            #print aim_dict
+            return temp_value
     else:
         try:
             res = float(equation_unit)
+	    return res
         except:
-            res = equation_unit
+            return False
         # print equation_unit
-        return res
 
 
 def execute_equation(origin_dict, equation):
@@ -43,6 +46,9 @@ def execute_equation(origin_dict, equation):
         lambda x: get_value(origin_dict, x),
         unit_list[2:]
     )
+    #如果没有输入某个维度的分数，则返回
+    if False in num_list:
+	return False
     if equation_type == 'range':
         if num_list[3] > num_list[1] >= num_list[2]:
             origin_dict[out_prop] = num_list[0]
@@ -144,8 +150,7 @@ level_dict = {
 def display_value(score, level, type):
     levels = int(level_dict[type].split('-')[0])
     base_score = int(level_dict[type].split('-')[1])
-    extra = score/base_score * 3
-    extra = str(extra).split('.')[0]+'.'+str(extra).split('.')[1][:1]
+    extra = round(score/base_score * 3, 1)
     base = 80
     if 3 < levels <= 5:
         baseline = 70 - (levels-5)*5
