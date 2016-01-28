@@ -73,7 +73,7 @@ class MainHandler(tornado.web.RequestHandler):
                 major_type = self.request.query_arguments['major_type'][0]
             else:
                 major_type = 'general'
-	    self.set_header('Access-Control-Allow-Origin','*')
+            self.set_header('Access-Control-Allow-Origin','*')
             self.write(json.dumps(assess_applier(to_assess, major_type)))
         else:
             raise MissingArgumentError('Invalid command!')
