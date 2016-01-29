@@ -71,7 +71,7 @@ GMAT-writing,range,1.1,%GMAT*writing,4,5,2,//,4分-5分,,
 GMAT-writing,range,1,%GMAT*writing,3,4,3,//,3分-4分,,
 GMAT-writing,range,0.5,%GMAT*writing,0,3,4,//,3分以下,,
 ,//,GMAT-汇总,,,,,,,
-GMAT-factor,multi,,%GMAT-base,%GMAT-writing,,,,,
+GMAT-factor,multi,%GMAT-base,%GMAT-writing,,,,,
 ,//,GRE总分,,,,,,,
 gre-base,range,1.3,%gre*total,330,341,1,//
 gre-base,range,1.2,%gre*total,325,330,2,//

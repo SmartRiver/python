@@ -15,22 +15,42 @@ def get_value(aim_dict, equation_unit):
             child_key = equation_unit.split('*')[1]
             if father_key in aim_dict:
                 if child_key in aim_dict[father_key]:
+		    print '11-- in aim_dict'
+	 	    print equation_unit
                     return float(aim_dict[father_key][child_key])
                 elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
+		    print '11-- default'
+		    print equation_unit
                     return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
                 else:
+		    print '11-- false'
+		    print equation_unit
                     return False
+	    elif father_key+'-'+child_key in aim_dict:
+		return float(aim_dict[father_key+'-'+child_key])
             elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
+		print 'use default 12'
+		print equation_unit + '-' + father_key+'-'+child_key
                 return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
             else:
+		print '12 -- false'
                 return False
         else:
-            if equation_unit in aim_dict:
-                return float(aim_dict[equation_unit])
-            elif equation_unit in DEFAULT_SEG_DICT:
-                return float(DEFAULT_SEG_DICT[equation_unit])
-            else:
-                return False
+	    try:
+                if equation_unit in aim_dict:
+		    print '22-in aim_dict'
+		    print equation_unit
+                    return float(aim_dict[equation_unit])
+                elif equation_unit in DEFAULT_SEG_DICT:
+		    print 'use default2'
+		    print equation_unit
+                    return float(DEFAULT_SEG_DICT[equation_unit])
+                else:
+		    print '22 -- false'
+		    print equation_unit
+                    return False
+	    except:
+		print 'wrong : ' + equation_unit
     else:
         try:
             res = float(equation_unit)
@@ -58,10 +78,15 @@ def execute_equation(origin_dict, equation):
     )
     # 如果没有输入某个维度的分数，则返回
     if False in num_list:
+	print '----False in get_value'
+	print equation
         return False
     if equation_type == 'range':
         if num_list[3] > num_list[1] >= num_list[2]:
+	    print '匹配成功'+equation
             origin_dict[out_prop] = num_list[0]
+	    if 'gpa-score' in origin_dict:
+		print 'success'
             global LEVEL_SEGMENT_DICT
             LEVEL_SEGMENT_DICT[out_prop] = int(unit_list[6])
             return True
