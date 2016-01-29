@@ -203,6 +203,7 @@ activity-type,range,1.2,%activity*type,0,1,1,//,海外相关志愿者活动
 activity-type,range,0.9,%activity*type,1,2,2,//,国内相关志愿者活动
 activity-type,range,0.8,%activity*type,2,3,3,//,校园相关活动
 activity-type,range,0.7,%activity*type,3,4,4,//,其它活动
+activity-type,range,0.5,%activity*type,4,5,5,//,无,,
 ,//活动经历-系数
 activity-base,multi,%activity-duration,%activity-type,,,,
 activity-factor,range,1.3,%activity-base,1.35,100,1,//,>1.35
