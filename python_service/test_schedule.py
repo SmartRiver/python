@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
-__author__ = 'Elliot'
-import subprocess
-from select_school import assess_applier
-import json
+__author__ = 'xiaohe'
+
+from schedule_debug import schedule
 
 if __name__ == "__main__":
-
     test_dict = {
         'gpa': 3.7,
         'current-school':8,
@@ -50,10 +47,12 @@ if __name__ == "__main__":
             'level':  3,  # 默认值
         },
      }
-    list = ['accounting', 'ce', 'environment', 'pr', 'me', 'general', 'journalism', 'marketing', 'finance', 'cs', 'economics', 'biology', 'law', 'mis', 'tesol', 'materials']
-    for each in ['law']:
-        print each
-        result = assess_applier(test_dict, each)
-        print u"最终返回的dict是："
-        print json.dumps(result, indent=4)
-        print '\n\n\n'
+    condition = {
+        u'grade': 2,
+        u'target': 2,
+        u'conditon': test_dict,
+    }
+
+    result = schedule(condition)
+
+    #输出结果

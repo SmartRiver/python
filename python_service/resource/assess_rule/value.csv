@@ -7,7 +7,7 @@ general,other,20
 general,stop,GMAT,credential,reletter,competition
 cs,gpa,77
 cs,language,45
-cs,gre,39
+cs,gre,32
 cs,work,34
 cs,research,33
 cs,other,20
@@ -111,7 +111,7 @@ me,research,26
 me,other,27
 me,stop,GMAT,activity,credential
 general,default,gpa,3
-general,default,gpa-trend-num,2
+general,default,gpa-trend-enum,2
 general,default,current-school,10
 general,default,toefl-total,90
 general,default,toefl-speaking,20

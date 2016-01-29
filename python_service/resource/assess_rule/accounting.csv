@@ -259,7 +259,7 @@ scholarship-level,range,0.75,%scholarship*level,4,5,5,//,校级一等奖（top2%
 scholarship-level,range,0.65,%scholarship*level,5,6,6,//,校级二等奖（top10%）,,
 scholarship-level,range,0,%scholarship*level,6,7,7,//,无,,
 ,//,奖学金-汇总,,,,,,,
-scholarship,multi,10,%scholarship*level,,,,,,
+scholarship,multi,10,%scholarship-level,,,,,,
 ,//,专业证书/考试,,,,,,,
 credential-level,range,1.5,%credential*level,0,1,1,//,CFA level 1,,
 credential-level,range,1.3,%credential*level,1,2,2,//,CFA level 2,,

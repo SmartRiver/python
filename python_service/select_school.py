@@ -15,48 +15,50 @@ def get_value(aim_dict, equation_unit):
             child_key = equation_unit.split('*')[1]
             if father_key in aim_dict:
                 if child_key in aim_dict[father_key]:
-		    print '11-- in aim_dict'
-	 	    print equation_unit
+                    print '11-- in aim_dict'
+                    print equation_unit
                     return float(aim_dict[father_key][child_key])
                 elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
-		    print '11-- default'
-		    print equation_unit
+                    print '11-- default'
+                    print equation_unit
                     return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
                 else:
-		    print '11-- false'
-		    print equation_unit
-                    return False
-	    elif father_key+'-'+child_key in aim_dict:
-		return float(aim_dict[father_key+'-'+child_key])
+                    print '11-- false'
+                    print equation_unit
+                    return 'false'
+            elif father_key+'-'+child_key in aim_dict:
+                return float(aim_dict[father_key+'-'+child_key])
             elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
-		print 'use default 12'
-		print equation_unit + '-' + father_key+'-'+child_key
+                print 'use default 12'
+                print equation_unit + '-' + father_key+'-'+child_key
                 return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
             else:
-		print '12 -- false'
-                return False
+                print '12 -- false'
+                return 'false'
         else:
-	    try:
+            try:
                 if equation_unit in aim_dict:
-		    print '22-in aim_dict'
-		    print equation_unit
+                    print '22-in aim_dict'
+                    print equation_unit
                     return float(aim_dict[equation_unit])
                 elif equation_unit in DEFAULT_SEG_DICT:
-		    print 'use default2'
-		    print equation_unit
+                    print 'use default2'
+                    print equation_unit
                     return float(DEFAULT_SEG_DICT[equation_unit])
+                elif equation_unit == 'reletter':
+                    return 0.0
                 else:
-		    print '22 -- false'
-		    print equation_unit
-                    return False
-	    except:
-		print 'wrong : ' + equation_unit
+                    print '22 -- false'
+                    print equation_unit
+                    return 'false'
+            except:
+                print 'wrong : ' + equation_unit
     else:
         try:
             res = float(equation_unit)
             return res
         except:
-            return False
+            return 'false'
 
 def execute_equation(origin_dict, equation):
     equation = equation.split('//')[0]
@@ -76,17 +78,18 @@ def execute_equation(origin_dict, equation):
         lambda x: get_value(origin_dict, x),
         unit_list[2:]
     )
+    print num_list
     # 如果没有输入某个维度的分数，则返回
-    if False in num_list:
-	print '----False in get_value'
-	print equation
+    if 'false' in num_list:
+        print '----False in get_value'
+        print equation
         return False
     if equation_type == 'range':
         if num_list[3] > num_list[1] >= num_list[2]:
-	    print '匹配成功'+equation
+            print '匹配成功'+equation
             origin_dict[out_prop] = num_list[0]
-	    if 'gpa-score' in origin_dict:
-		print 'success'
+            if 'gpa-score' in origin_dict:
+                print 'success'
             global LEVEL_SEGMENT_DICT
             LEVEL_SEGMENT_DICT[out_prop] = int(unit_list[6])
             return True
@@ -161,6 +164,7 @@ def get_seg_score(result, type):
         elif each == 'gre':
             set_dict['gre'] = round(float(result['gre']), 1)
         elif each in other_seg:
+            print 'other:' + each + '\t' + str(result[each])
             set_dict['other'] = round(float(result[each])+set_dict['other'], 1)
     return set_dict
 
@@ -233,7 +237,7 @@ def get_segment_level():
         u'result-level': 'level',
     }
     return_level_dict = dict()
-    for key in seg_level_dict.keys():
+    for key in seg_level_dict:
         if seg_level_dict[key] in LEVEL_SEGMENT_DICT:
             return_level_dict[key] = LEVEL_SEGMENT_DICT[seg_level_dict[key]]
 
@@ -272,6 +276,9 @@ def __init__():
                             FULL_SCORE_DICT.update({str(each_list[0]): {str(each_list[1]): int(each_list[2])}})
 
 def assess_applier(applier_dict, rule_type):
+    # display default dict
+    for each in DEFAULT_SEG_DICT:
+        print each + str(DEFAULT_SEG_DICT[each])
     temp_dict = applier_dict.copy()
     # print json.dumps(temp_dict,indent=4)
     remove_stop_seg(temp_dict, rule_type)
@@ -294,6 +301,7 @@ def assess_applier(applier_dict, rule_type):
     return {
         'level': get_segment_level(),
         'score': score,
+        'result_level': LEVEL_SEGMENT_DICT['level'],
         'display_score': display_score,
         'seg_full_score': FULL_SCORE_DICT[rule_type],
         'seg_score': seg_score,
