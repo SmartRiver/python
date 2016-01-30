@@ -5,6 +5,7 @@ __doc__ = '''this py is used to schedule the timetable for those who want to stu
                 the output is the schedule describing what they should prepare in different term'''
 import json
 import time
+from translator import *
 
 # 每个部分目标值
 SEG_TARGET_DICT = {}
@@ -57,7 +58,8 @@ def node_filter(condition, nodestr, target_level=2):
             node_list.remove(2)
     return node_list
 
-def schedule(condition, grade='大一', target_level=2):
+def schedule(origin_condition, grade='大一', target_level=2):
+    condition = translateFromFrontToBack(origin_condition)
     grade = get_start_term(grade)
     return_dict = {}
     print 'grade %d ' % grade
