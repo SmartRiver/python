@@ -60,13 +60,75 @@ def node_filter(condition, nodestr, target_level=2):
 
 def schedule(origin_condition, grade='大一', target_level=2):
     condition = translateFromFrontToBack(origin_condition)
+    print grade
+    grade = grade.strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
+    print grade
     grade = get_start_term(grade)
     return_dict = {}
     print 'grade %d ' % grade
     print TERM_NODE_DICT[grade]
     if 1 <= grade <= 7:
         node_temp_dict = eval(TERM_NODE_DICT[grade])
-        for each in node_temp_dict:
+    elif grade == 8:
+        if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
+            node_temp_dict = eval(TERM_NODE_DICT[9])
+        else:
+            node_temp_dict = eval(TERM_NODE_DICT[8])
+    elif grade == 9:
+        if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
+            node_temp_dict = eval(TERM_NODE_DICT[11])
+        else:
+            node_temp_dict = eval(TERM_NODE_DICT[10])
+    elif grade == 10:
+        if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[15])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[14])
+        else:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[13])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[12])
+    elif grade == 11:
+        if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[19])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[18])
+        else:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[17])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[16])
+    elif grade == 12:
+        if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[23])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[22])
+        else:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[21])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[20])
+    elif grade == 12:
+        if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[27])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[26])
+        else:
+            if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
+                node_temp_dict = eval(TERM_NODE_DICT[25])
+            else:
+                node_temp_dict = eval(TERM_NODE_DICT[24])
+    elif grade == 14:
+        node_temp_dict = eval(TERM_NODE_DICT[28])
+    else:
+        node_temp_dict = eval(TERM_NODE_DICT[28])
+
+    for each in node_temp_dict:
             node_temp_dict[each] = node_filter(condition, node_temp_dict[each], target_level)
 
     return_dict['grade'] = grade

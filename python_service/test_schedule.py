@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     condition = translateFromFrontToBack(ori_condition)
 
-    grade = '大二'
+    grade = '大三'
     target_level = 1
 
     print condition
