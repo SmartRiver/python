@@ -11,6 +11,7 @@ from match import find_nearest_offer, find_program, fill_score
 import quest_process
 import match
 import select_school
+import schedule
 import os
 from select_school import assess_applier
 from django.utils.encoding import smart_str, smart_unicode
@@ -37,6 +38,7 @@ class MainHandler(tornado.web.RequestHandler):
                 quest_process.__init__()
                 match.__init__()
                 select_school.__init__()
+                schedule.__init__()
                 self.write('reloaded.')
             except:
                 self.write('failed.')
@@ -74,6 +76,12 @@ class MainHandler(tornado.web.RequestHandler):
             else:
                 major_type = 'general'
             self.write(json.dumps(assess_applier(to_assess, major_type)))
+        elif request_type == 'study_schedule':
+            condition = json.loads(self.request.query_arguments['condition'][0])
+            grade = self.request.query_arguments['grade'][0]
+            target_level = self.request.query_arguments['level'][0]
+
+            self.write(json.dumps(schedule(condition, grade.strip(), int(target_level))))
         else:
             raise MissingArgumentError('Invalid command!')
 
