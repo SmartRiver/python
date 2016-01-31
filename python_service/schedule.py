@@ -16,6 +16,24 @@ TERM_NODE_DICT = {}
 # 初始化目标内容集合
 NODE_LIST = list()
 
+# 大一到大四申请后各阶段名称
+TERM_NAME_DICT = {
+    1: u'大一上学期',
+    2: u'大一寒假',
+    3: u'大一下学期',
+    4: u'大一暑假',
+    5: u'大二上学期',
+    6: u'大二寒假',
+    7: u'大二下学期',
+    8: u'大二暑假',
+    9: u'大三上学期',
+    10: u'大三寒假',
+    11: u'大三下学期',
+    12: u'大三暑假',
+    13: u'大四上学期',
+    14: u'申请后',
+}
+
 # 获取当前时间段
 def get_start_term(grade='大二'):
     # 获取当前的月份
@@ -132,8 +150,16 @@ def schedule(origin_condition, grade='大一', target_level=2):
     for each in node_temp_dict:
             node_temp_dict[each] = node_filter(condition, node_temp_dict[each], target_level)
 
+    _schedule = {}
+    _schedule_name = {}
+    for each in range(grade, 15):
+        _schedule[each] = node_temp_dict[str(each)]
+        _schedule_name[TERM_NAME_DICT[each]] = node_temp_dict[str(each)]
     return_dict['grade'] = grade
-    return_dict['schedule'] = node_temp_dict
+    return_dict['grade_name'] = TERM_NAME_DICT[grade]
+    return_dict['schedule'] = _schedule
+    return_dict['schedule_name'] = _schedule_name
+
     return return_dict
 
 def __init__():
@@ -152,5 +178,6 @@ def __init__():
             continue
         each = each.strip('\r').strip('\n')
         TERM_NODE_DICT[int(each[:2])] = each[3:]
+
 
 __init__()
