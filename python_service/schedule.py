@@ -60,73 +60,74 @@ def node_filter(condition, nodestr, target_level=2):
 
 def schedule(origin_condition, grade='大一', target_level=2):
     condition = translateFromFrontToBack(origin_condition)
-    print grade
+    # print grade
     grade = grade.strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
-    print grade
+    # print grade
     grade = get_start_term(grade)
     return_dict = {}
-    print 'grade %d ' % grade
-    print TERM_NODE_DICT[grade]
+    # print 'grade %d ' % grade
+    # print TERM_NODE_DICT[grade]
     if 1 <= grade <= 7:
-        node_temp_dict = eval(TERM_NODE_DICT[grade])
+        num = grade
     elif grade == 8:
         if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
-            node_temp_dict = eval(TERM_NODE_DICT[9])
+            num = 9
         else:
-            node_temp_dict = eval(TERM_NODE_DICT[8])
+            num = 8
     elif grade == 9:
         if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
-            node_temp_dict = eval(TERM_NODE_DICT[11])
+            num = 11
         else:
-            node_temp_dict = eval(TERM_NODE_DICT[10])
+            num = 10
     elif grade == 10:
         if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[15])
+                num = 15
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[14])
+                num = 14
         else:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[13])
+                num = 13
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[12])
+                num = 12
     elif grade == 11:
         if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[19])
+                num = 19
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[18])
+                num = 18
         else:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[17])
+                num = 17
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[16])
+                num = 16
     elif grade == 12:
         if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[23])
+                num = 23
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[22])
+                num = 22
         else:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[21])
+                num = 21
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[20])
+                num = 20
     elif grade == 12:
         if float(condition['toefl']['total']) >= SEG_TARGET_DICT['toefl'][str(target_level)]:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[27])
+                num = 27
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[26])
+                num = 26
         else:
             if float(condition['gre']['total']) >= SEG_TARGET_DICT['gre'][str(target_level)]:
-                node_temp_dict = eval(TERM_NODE_DICT[25])
+                num = 25
             else:
-                node_temp_dict = eval(TERM_NODE_DICT[24])
+                num = 24
     elif grade == 14:
-        node_temp_dict = eval(TERM_NODE_DICT[28])
+        num = 28
     else:
-        node_temp_dict = eval(TERM_NODE_DICT[28])
+        num = 28
+    node_temp_dict = eval(TERM_NODE_DICT[num])
 
     for each in node_temp_dict:
             node_temp_dict[each] = node_filter(condition, node_temp_dict[each], target_level)
@@ -146,7 +147,7 @@ def __init__():
             SEG_TARGET_DICT[target_name].update({target_level: target_score})
         else:
             SEG_TARGET_DICT.update({target_name: {target_level: target_score}})
-    for each in open('resource/schedule/schedule.csv', 'r').readlines():
+    for each in open('resource/schedule/schedule.csv', 'r', encoding='utf-8').readlines():
         if each[0] == '#':
             continue
         each = each.strip('\r').strip('\n')

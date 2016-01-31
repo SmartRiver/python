@@ -21,10 +21,10 @@ if __name__ == "__main__":
     grade = '大三'
     target_level = 1
 
-    print condition
+    print(condition)
 
     result = schedule(condition, grade, target_level)
 
     #输出结果
 
-    print json.dumps(result, indent=4)
+    print(json.dumps(result, indent=4))

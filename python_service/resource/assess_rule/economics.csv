@@ -18,19 +18,19 @@ gpa-trend,range,1.1,%gpa-trend-enum,1,2,2,//,0.2＞大三减前两年≥0.1
 gpa-trend,range,1,%gpa-trend-enum,2,3,3,//,0.1＞大三减前两年＞-0.1
 gpa-trend,range,0.9,%gpa-trend-enum,3,4,4,//,0.2＞前两年建大三≥0.1
 gpa-trend,range,0.8,%gpa-trend-enum,4,5,5,//,前两年减大三≥0.2
-,//,本科学校,,,,,
-gpa-school,range,1.3,%current-school,0,1,1,//,海本综排top20
-gpa-school,range,1.25,%current-school,1,2,2,//,海本综排top21-top35
-gpa-school,range,1.2,%current-school,2,3,3,//,海本综排top36-50
-gpa-school,range,1.15,%current-school,3,4,4,//,海本综排top51-top80
-gpa-school,range,1,%current-school,4,5,5,//,海本综排top81-120
-gpa-school,range,1.2,%current-school,5,6,6,//,清北
-gpa-school,range,1.15,%current-school,6,7,7,//,综合前十
-gpa-school,range,1.15,%current-school,7,8,8,//,专业优势学校
-gpa-school,range,1.15,%current-school,8,9,9,//,985&211
-gpa-school,range,1,%current-school,9,10,10,//,211
-gpa-school,range,0.9,%current-school,10,11,11,//,双非一本
-gpa-school,range,0.8,%current-school,11,12,12,//,双非二本
+,//,本科学校,,,,,,
+gpa-school,range,1.3,%current-school,0,1,1,//,海本综排top20,
+gpa-school,range,1.25,%current-school,1,2,2,//,海本综排top21-top35,
+gpa-school,range,1.15,%current-school,2,3,3,//,海本综排top36-50,
+gpa-school,range,1.1,%current-school,3,4,4,//,海本综排top51-top80,
+gpa-school,range,1,%current-school,4,5,5,//,海本综排top81-120,
+gpa-school,range,1.2,%current-school,5,6,2,//,清北,
+gpa-school,range,1.15,%current-school,6,7,4,//,综合前十,
+gpa-school,range,1.1,%current-school,7,8,5,//,专业优势学校,
+gpa-school,range,1,%current-school,8,9,5,//,985&211,
+gpa-school,range,0.9,%current-school,9,10,6,//,211,
+gpa-school,range,0.8,%current-school,10,11,7,//,双非一本,
+gpa-school,range,0.7,%current-school,11,12,8,//,双非二本,
 ,//,GPA-汇总,,,,,
 gpa-factor,multi,%gpa-score,%gpa-school,%gpa-trend,,,
 gpa,multi,25,%gpa-factor,,,,
@@ -92,25 +92,29 @@ research-duration,range,2.7,%research*duration,4,5,5,//,160-199
 research-duration,range,2.5,%research*duration,5,6,6,//,100-159
 research-duration,range,1,%research*duration,6,7,7,//,0-99
 research-duration,range,0,%research*duration,7,8,8,//,无
-,//,科研-项目级别,,,,,
-research-level,range,1.2,%research*level,0,1,1,//,国家级实验室 or 国家重点项目
-research-level,range,1.1,%research*level,1,2,2,//,省级重点实验室 or 省级重点项目
-research-level,range,1,%research*level,2,3,3,//,校级重点项目
-research-level,range,0.95,%research*level,3,4,4,//,校级SRT项目
-research-level,range,0.9,%research*level,4,5,5,//,系级导师自己项目
-research-level,range,0.7,%research*level,5,6,6,//,课程设计
-,//,科研-成果,,,,,
-research-achievement,range,1.5,%research*achievement,0,1,1,//,SCI一作
-research-achievement,range,1.3,%research*achievement,1,2,2,//,SCI二作
-research-achievement,range,1.2,%research*achievement,2,3,3,//,SCI三作or EI一作
-research-achievement,range,1.1,%research*achievement,3,4,4,//,SCI四作or EI二作三作
-research-achievement,range,1,%research*achievement,4,5,5,//,国内核心一作
-research-achievement,range,0.9,%research*achievement,5,6,6,//,国内核心二作三作
-research-achievement,range,0.85,%research*achievement,6,7,7,//,非核心期刊一作二作
-research-achievement,range,0.8,%research*achievement,7,8,8,//,优秀毕业论文
-research-achievement,range,0.75,%research*achievement,8,9,9,//,非核心三作四作
-research-achievement,range,0.7,%research*achievement,9,10,10,//,基本实现目标，顺利结题
-research-achievement,range,0.65,%research*achievement,10,11,11,//,未有阶段性结果，草草结尾
+,//,科研-项目级别,,,,,,
+research-level,range,1.2,%research*level,0,1,2,//,国家级实验室 or 国家重点项目,
+research-level,range,1.1,%research*level,1,2,3,//,省级重点实验室 or 省级重点项目,
+research-level,range,1,%research*level,2,3,4,//,校级重点项目,
+research-level,range,0.95,%research*level,3,4,5,//,校级SRT项目,
+research-level,range,0.9,%research*level,4,5,6,//,系级导师自己项目,
+research-level,range,0.7,%research*level,5,6,7,//,课程设计,
+research-level,range,1.4,%research*level,6,7,1,//,发达国家国家级重点实验室or项目,
+research-level,range,1.3,%research*level,7,8,2,//,发达国家州级重点实验室or项目,
+research-level,range,1.2,%research*level,8,9,3,//,发达国家校级项目,
+research-level,range,1.1,%research*level,9,10,4,//,发达国家系级导师自己项目,
+,//,科研-成果,,,,,,
+research-achievement,range,1.5,%research*achievement,0,1,1,//,SCI一作,,
+research-achievement,range,1.3,%research*achievement,1,2,2,//,SCI二作,,
+research-achievement,range,1.2,%research*achievement,2,3,3,//,SCI三作or EI一作,,
+research-achievement,range,1.1,%research*achievement,3,4,4,//,SCI四作or EI二作三作,,
+research-achievement,range,1,%research*achievement,4,5,2,//,国内核心一作,,
+research-achievement,range,0.9,%research*achievement,5,6,4,//,国内核心二作三作,,
+research-achievement,range,0.85,%research*achievement,6,7,5,//,非核心期刊一作二作,,
+research-achievement,range,0.8,%research*achievement,7,8,6,//,优秀毕业论文,,
+research-achievement,range,0.75,%research*achievement,8,9,7,//,非核心三作四作,,
+research-achievement,range,0.7,%research*achievement,9,10,8,//,基本实现目标，顺利结题,,
+research-achievement,range,0.65,%research*achievement,10,11,9,//,未有阶段性结果，草草结尾,,
 ,//,科研-是否通过此经历提交推荐信,,,,,
 research-recommendation,range,1,%research*recommendation,0,1,1,//,是，教授级别的推荐信
 research-recommendation,range,0.95,%research*recommendation,1,2,2,//,是，讲师级别的推荐信

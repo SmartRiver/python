@@ -1,7 +1,7 @@
 # -*- coding: utf:-8 -*-
 import json
 def translateFromFrontToBack(translateDict):
-    file = open('translator.txt', 'r')
+    file = open('translator.txt', 'r', encoding='utf-8')
     originDict = {}
     title = ""
     subTitle = ""
@@ -47,7 +47,14 @@ def replace(originDict, translateDict):
     if 'major' in translateDict.keys():
         if translateDict['major'] == "法学":
             if 'current-school' in translateDict.keys():
-                originDict['current-school'] = {'清华北大':'0', '985院校':'1', '211院校':'3', '专业优势学校':'2', '海外本科':'1', '非211非985':'5'}
+                originDict['current-school'] = {
+                    '清华北大':'0',
+                    '985院校':'1',
+                    '211院校':'3',
+                    '专业优势学校':'2',
+                    '海外本科':'1',
+                    '非211非985':'5'
+                }
     #遍历带翻译的字典，获取键
     for translateDictKey in translateDict:
         #根据键判断该键所映射值是否为字典
@@ -69,15 +76,15 @@ def replace(originDict, translateDict):
                             #如果有键，则去参考字典第三层寻找有没有对应该键值的键
                             if translateDict[key][sub_key] in originDict[key][sub_key].keys():
                                #如果有，则将待翻译的值翻译成参考字典中相应的值
-                               value = originDict[key][sub_key][translateDict[key][sub_key]]
+                                value = originDict[key][sub_key][translateDict[key][sub_key]]
                                #如果值可以转化为浮点数,则转化为浮点数
-                               if value.replace(".","").isdigit() and value.count(".") == 1:
-                                   value = float(value)
-                               elif value.isdigit():
-                               	   value = int(value)
-                               else:
-                               	   pass
-                               translateDict[key][sub_key] = value
+                                if value.replace(".","").isdigit() and value.count(".") == 1:
+                                    value = float(value)
+                                elif value.isdigit():
+                                    value = int(value)
+                                else:
+                                    pass
+                                translateDict[key][sub_key] = value
                 
         else:
             #第一次遍历时该键所对应的就是基础值

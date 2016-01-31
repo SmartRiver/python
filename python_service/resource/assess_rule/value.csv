@@ -139,4 +139,4 @@ general,default,activity-type,3
 general,default,activity-factor,0.5
 general,default,competition-level,7
 general,default,scholarship-level,5
-general,default,credential-level,0.5
+general,default,credential-level,2
