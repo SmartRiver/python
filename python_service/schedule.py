@@ -88,7 +88,10 @@ def schedule(origin_condition):
     return_dict = {}
     condition = translateFromFrontToBack(origin_condition)
     # print grade
-
+    if len(condition['toefl']['total']) < 2:
+        condition['toefl']['total'] = -1
+    if len(condition['gre']['total']) < 2:
+        condition['gre']['total'] = -1
     if type(condition['target_level']) == int:
         target_level = condition['target_level']
     elif type(condition['target_level']) != int:

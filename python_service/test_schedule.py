@@ -21,35 +21,69 @@ if __name__ == "__main__":
             'v': 157,
         },
         'research': {
-            'duration': 3,  # 0-99h
-            'level': 0,  # 国家级实验室 or 国家重点项目
-            'achievement': 0,  # SCI一作
-            'recommendation': 1,  # 是，讲师级别的推荐信
+            'duration': 3,
+            'level': 0,
+            'achievement': 0,
+            'recommendation': 1,
         },
         'work': {
-            'duration': 4,  # 无
-            'level': 0,  # 默认
-            'recommendation': 0,  # 默认
+            'duration': 4,
+            'level': 0,
+            'recommendation': 0,
         },
         'internship': {
-            'duration': 7,  # 无
-            'level': 0,  # 默认
-            'recommendation': 0,  # 默认
+            'duration': 7,
+            'level': 0,
+            'recommendation': 0,
         },
         'scholarship': {
-            'level': 2,  # 校级一等奖
+            'level': 2,
         },
         'activity': {
             'duration': 2,
-            'type': 2,  #
+            'type': 2,
         },
         'credential': {
-            'level': 1,  # 默认值
+            'level': 1,
         },
         'competition': {
-            'level':  3,  # 默认值
+            'level':  3,
         },
      }
+
+
+    ttt = {
+        'gpa': '3.8-3.9/90-93',
+        'current-school': '海外本科',
+        'toefl': {
+            'total': '109+/8或Waiver',
+            'speaking': '26+/8+或 海本',
+        },
+        'gre': {
+            'total': '330+/740+',
+            'aw': '4.5-5',
+        },
+        'research': {
+            'duration': '1年-2年',
+            'level': '海外实验室or重点项目',
+            'achievement': '国内期刊',
+        },
+        'internship': {
+            'duration': '3-6个月',
+            'level': '国内知名企业',
+            'recommendation': '直属领导推荐',
+        },
+        'scholarship': {
+            'level': '校一等奖学金',
+        },
+        'activity': {
+            'duration': '3-6个月',
+            'type': '国内志愿者',
+        },
+        'competition': {
+            'level':  '国家级奖项',
+        },
+    }
     orig_condition = {
         'major': '法学',
         'grade': '大三',  # 【'大一','大二','大三','大四'】

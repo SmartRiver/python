@@ -16,7 +16,7 @@ major:
     土木工程,civil
     环境工程,environment
     数学,math
-    物理,physical
+    物理,physics
     材料,materials
 current-school:
     清华北大,5
