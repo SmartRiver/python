@@ -9,6 +9,15 @@ major:
     新闻传媒,journalism
     法学,law
     对外英语教学,tesol
+    化学工程,ce
+    机械工程,me
+    电子电机工程,ee
+    生物,biology
+    土木工程,civil
+    环境工程,environment
+    数学,math
+    物理,physical
+    材料,materials
 current-school:
     清华北大,5
     985院校,8

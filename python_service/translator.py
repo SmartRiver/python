@@ -1,7 +1,7 @@
 # -*- coding: utf:-8 -*-
 import json
 def translateFromFrontToBack(translateDict):
-    file = open('translator.txt', 'r', encoding='utf-8')
+    file = open('translator.txt', 'r',)
     originDict = {}
     title = ""
     subTitle = ""
