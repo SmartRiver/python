@@ -11,13 +11,18 @@ major:
     对外英语教学,tesol
     化学工程,ce
     机械工程,me
+    机械,me
     电子电机工程,ee
     生物,biology
+    生物工程,biology
     土木工程,civil
+    土木,civil
     环境工程,environment
+    环境,environment
     数学,math
     物理,physics
     材料,materials
+    材料工程,materials
 current-school:
     清华北大,5
     985院校,8

@@ -8,6 +8,7 @@ def translateFromFrontToBack(translateDict):
     content = {}
     tempDict = {}
     type = 0
+    mismatch_list = []
     while 1:
         line = file.readline().strip().strip('\n').strip('\t')
         if not line:
@@ -37,13 +38,17 @@ def translateFromFrontToBack(translateDict):
             else:
                 tempDict[line.split(',')[0]] = line.split(',')[1]
                 content[subTitle] = tempDict;
-    replace(originDict, translateDict)
-    return translateDict
+    replace(originDict, translateDict, mismatch_list)
+    return {
+        'result': translateDict,
+        'mismatch': mismatch_list,
+    }
 
-def replace(originDict, translateDict):
+def replace(originDict, translateDict, mismatch_list):
     exception = ""
     key = ""
     sub_key = ""
+
     if 'major' in translateDict.keys():
         if translateDict['major'] == "法学":
             if 'current-school' in translateDict.keys():
@@ -52,7 +57,7 @@ def replace(originDict, translateDict):
                     '985院校':'1',
                     '211院校':'3',
                     '专业优势学校':'2',
-                    '海外本科':'1',
+                    '海外本科': '1',
                     '非211非985':'5'
                 }
     #遍历带翻译的字典，获取键
@@ -85,7 +90,10 @@ def replace(originDict, translateDict):
                                 else:
                                     pass
                                 translateDict[key][sub_key] = value
-                
+                            else:
+                                if len(translateDict[key][sub_key].strip()) != 0:
+                                    mismatch_list.append(key+':'+sub_key)
+
         else:
             #第一次遍历时该键所对应的就是基础值
             #根据该键去对照参考字典
@@ -104,5 +112,6 @@ def replace(originDict, translateDict):
                     else:
                         pass
                     translateDict[translateDictKey] = value
-                
-    return translateDict
+                else:
+                    if len(translateDict[translateDictKey].strip()) != 0:
+                        mismatch_list.append(translateDictKey)

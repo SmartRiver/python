@@ -49,6 +49,42 @@ if __name__ == "__main__":
             'level':  100,#默认值
         },
     }
+
+    orig_condition = {
+        'major': '法学',
+        'grade': '大三',  # 【'大一','大二','大三','大四'】
+        'target_level': 1,  # 表示目标院校档次，1-4分别表示TOP10,TOP20-30,TOP30-50,TOP50-100
+        'gpa': '3.8-3.9/90-93',
+        'current-school': '海外本科',
+        'toefl': {
+            'total': '109+/8或Waiver',
+            'speaking': '26+/8+或 海本',
+        },
+        'gre': {
+            'total': '330+/740+',
+            'aw': '4.5-5',
+        },
+        'research': {
+            'duration': '1年-2年',  # 0-99h
+            'level': '海外实验室or重点项目',  # 国家级实验室 or 国家重点项目
+            'achievement': '国内期刊',  # SCI一作
+        },
+        'internship': {
+            'duration': '3-6个月',  # 无
+            'level': '国内知名企业',  # 默认
+            'recommendation': '直属领导推荐',  # 默认
+        },
+        'scholarship': {
+            'level': '校一等奖学金',  # 校级一等奖
+        },
+        'activity': {
+            'duration': '3-6个月',
+            'type': '国内志愿者',  #
+        },
+        'competition': {
+            'level':  '国家级奖项',  # 默认值
+        },
+    }
     result = assess_applier(test_dict, 'finance')  # law是目标文件的文件名
     print(u"最终返回的dict是：")
     print(result['result'])

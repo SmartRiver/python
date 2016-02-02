@@ -4,6 +4,7 @@ import os
 import re
 import copy
 import json
+from translator import *
 
 def get_value(aim_dict, equation_unit):
     # 如果是用户输入的成绩，则取出来
@@ -274,12 +275,44 @@ def __init__():
                             FULL_SCORE_DICT[str(each_list[0])].update({str(each_list[1]): int(each_list[2])})
                         else:
                             FULL_SCORE_DICT.update({str(each_list[0]): {str(each_list[1]): int(each_list[2])}})
-
+RULE_TYPE_DICT = {
+    '市场营销': 'marketing',
+    '金融学': 'finance',
+    '会计学': 'accounting',
+    '信息管理系统': 'mis',
+    '计算机科学与技术': 'cs',
+    '公共关系': 'pr',
+    '新闻媒体': 'journalism',
+    '经济学': 'economics',
+    '对外英语教学': 'tesol',
+    '化学工程': 'ce',
+    '电子电机工程': 'ee',
+    '机械工程': 'me',
+    '环境工程': 'environment',
+    '土木工程': 'civil',
+    '材料': 'materials',
+    '生物': 'biology',
+    '法学': 'law',
+    '数学': 'math',
+    '物理': 'physics',
+}
 def assess_applier(applier_dict, rule_type):
-    # display default dict
-    for each in DEFAULT_SEG_DICT:
-        print each + str(DEFAULT_SEG_DICT[each])
-    temp_dict = applier_dict.copy()
+    print 'before . . . '
+    print 'current-school: '+ str(applier_dict['current-school'])
+    print json.dumps(applier_dict, indent=4)
+    rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
+
+    if len(str(applier_dict['gpa'])) > 5:
+        if rule_type == '法学' or rule_type == 'law':
+            applier_dict['major'] = '法学'
+        temp_dict = translateFromFrontToBack(applier_dict)
+    else:
+        temp_dict = applier_dict.copy()
+    print 'after . . . '
+    print json.dumps(temp_dict, indent=4)
+    print 'current-school: '+ str(temp_dict['current-school'])
+    if rule_type in RULE_TYPE_DICT:
+        rule_type = RULE_TYPE_DICT[rule_type]
     # print json.dumps(temp_dict,indent=4)
     remove_stop_seg(temp_dict, rule_type)
     # print json.dumps(temp_dict,indent=4)
@@ -301,7 +334,7 @@ def assess_applier(applier_dict, rule_type):
     return {
         'level': get_segment_level(),
         'score': score,
-        'result_level': LEVEL_SEGMENT_DICT['level'],
+        #'result_level': LEVEL_SEGMENT_DICT['level'],
         'display_score': display_score,
         'seg_full_score': FULL_SCORE_DICT[rule_type],
         'seg_score': seg_score,

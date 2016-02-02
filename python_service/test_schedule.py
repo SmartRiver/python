@@ -86,16 +86,16 @@ if __name__ == "__main__":
     }
     orig_condition = {
         'major': '法学',
-        'grade': '大三',  # 【'大一','大二','大三','大四'】
-        'target_level': 1,  # 表示目标院校档次，1-4分别表示TOP10,TOP20-30,TOP30-50,TOP50-100
-        'gpa': '3.8-3.9/90-93',
+        'grade': '大二',  # 【'大一','大二','大三','大四'】
+        'target_level': '4',  # 表示目标院校档次，1-4分别表示TOP10,TOP20-30,TOP30-50,TOP50-100
+        'gpa': '',
         'current-school': '海外本科',
         'toefl': {
             'total': '109+/8或Waiver',
             'speaking': '26+/8+或 海本',
         },
         'gre': {
-            'total': '330+/740+',
+            'total': '',
             'aw': '4.5-5',
         },
         'research': {
@@ -116,18 +116,19 @@ if __name__ == "__main__":
             'type': '国内志愿者',  #
         },
         'competition': {
-            'level':  '国家级奖项',  # 默认值
+            'level':  '',  # 默认值
         },
     }
+    condition = {}
+    #condition = translateFromFrontToBack(orig_condition)
 
-    condition = translateFromFrontToBack(orig_condition)
 
     grade = '‘大二’'
     target_level = 1
 
-    print condition
+    #print condition
     print '_______'
 
-    result = schedule(condition)
+    result = schedule(orig_condition)
     #输出结果
     print json.dumps(result, indent=4)

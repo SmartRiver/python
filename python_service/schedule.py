@@ -5,6 +5,8 @@ __doc__ = '''this py is used to schedule the timetable for those who want to stu
                 the output is the schedule describing what they should prepare in different term'''
 import json
 import time
+import sys
+import logging
 from translator import *
 
 # 每个部分目标值
@@ -19,17 +21,17 @@ NODE_LIST = list()
 # 大一到大四申请后各阶段名称
 TERM_NAME_DICT = {
     1: u'大一上',
-    2: u'大一寒假',
+    2: u'寒假',
     3: u'大一下',
-    4: u'大一暑假',
+    4: u'暑假',
     5: u'大二上',
-    6: u'大二寒假',
+    6: u'寒假',
     7: u'大二下',
-    8: u'大二暑假',
+    8: u'暑假',
     9: u'大三上',
-    10: u'大三寒假',
+    10: u'寒假',
     11: u'大三下',
-    12: u'大三暑假',
+    12: u'暑假',
     13: u'大四上',
     14: u'申请后',
 }
@@ -58,7 +60,7 @@ def get_start_term(grade=5):
     elif grade == 4:
         grade = 13 + increase
     else:
-        grade = 1
+        grade = '格式错误'
     return grade
 
 def node_filter(condition, nodestr, target_level=2):
@@ -84,31 +86,58 @@ def node_filter(condition, nodestr, target_level=2):
             node_list.remove(5)
     return node_list
 
+# 转换后对参数字典进行校验
+def pre_check(condition):
+    if len(str(condition['gpa']).strip()) == 0 :
+        condition['gpa'] = -1
+    if len(str(condition['toefl']['total'])) < 2:
+        condition['toefl']['total'] = -1
+    if len(str(condition['gre']['total'])) < 2:
+        condition['gre']['total'] = -1
+
+    if type(condition['target_level']) != int:
+        target_level = str(condition['target_level']).strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
+        try:
+            condition['target_level'] = int(target_level)
+        except:
+            return exit_error('target_level:'+str(condition['target_level']), 1)
+    if condition['target_level'] > 4 or condition['target_level'] < 1:
+        return exit_error('target_level:'+str(condition['target_level']), 2)
+
+    if type(condition['grade']) != int:
+        grade = str(condition['grade']).strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
+        try:
+            tmp_grade = get_start_term(int(grade))
+            if type(tmp_grade) ==int:
+                condition['grade'] = get_start_term(int(grade))
+            else:
+                return exit_error('grade:'+str(condition['grade']), 1)
+        except:
+            return exit_error('grade:'+str(condition['grade']), 1)
+    if condition['grade'] > 14 or condition['grade'] < 1:
+        return exit_error('grade:'+str(condition['grade']), 2)
+
+    return condition
+# translateFromFrontToBack白名单
+WHITE_PARAM = ['gre', 'gpa', 'toefl', 'ielts', 'gmat']
 def schedule(origin_condition):
     return_dict = {}
-    condition = translateFromFrontToBack(origin_condition)
-    # print grade
-    if len(condition['toefl']['total']) < 2:
-        condition['toefl']['total'] = -1
-    if len(condition['gre']['total']) < 2:
-        condition['gre']['total'] = -1
-    if type(condition['target_level']) == int:
-        target_level = condition['target_level']
-    elif type(condition['target_level']) != int:
-        target_level = str(condition['target_level']).strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
-    else:
-        exit_error(1)
-    # print grade
-    if type(condition['grade']) == int:
-        grade = get_start_term(condition['grade'])
-    elif type(condition['grade']) != int:
-        grade = str(condition['grade']).strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
-        grade = get_start_term(int(grade))
-    else:
-        exit_error(1)
+    try:
+        condition = translateFromFrontToBack(origin_condition)
+        if len(condition['mismatch']) == 0:
+            condition = condition['result']
+        else:
+            return exit_error('转换出错参数列表:'+str(condition['mismatch']), 1)
+    except Exception, e:
+        return exit_error('转换出错:'+str(origin_condition), 1)
 
-    print 'grade %d ' % grade
-    # print TERM_NODE_DICT[grade]
+    condition = pre_check(condition)
+
+    if 'msg' in condition:
+        return condition
+
+    grade = condition['grade']
+    target_level = condition['target_level']
     if 1 <= grade <= 7:
         num = grade
     elif grade == 8:
@@ -174,20 +203,24 @@ def schedule(origin_condition):
     for each in node_temp_dict:
             node_temp_dict[each] = node_filter(condition, node_temp_dict[each], target_level)
 
-    node_term_list= list()
+    node_term_list = list()
     for each in range(grade, 15):
         node_term_list.append({'grade': each, 'term': TERM_NAME_DICT[each], 'labels': node_temp_dict[str(each)]})
+    for each in SEG_TARGET_DICT:
+        return_dict['target_'+each] = u'目标'+str(SEG_TARGET_DICT[each][target_level])+'+'
     return_dict['result'] = node_term_list
     return_dict['status'] = 'success'
 
     return return_dict
-def exit_error(error_code):
+def exit_error(error_param, error_code):
     error_dict = {
         1: '参数格式错误',
+        2: '参数范围错误',
     }
-    error_return = {}
-    error_return['status'] = error_dict[error_code]
-    return error_return
+    return {
+        'status': error_dict[error_code],
+        'msg': error_param,
+    }
 
 
 def __init__():
