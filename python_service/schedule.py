@@ -94,6 +94,8 @@ def pre_check(condition):
         condition['toefl']['total'] = -1
     if len(str(condition['gre']['total'])) < 2:
         condition['gre']['total'] = -1
+    if len(str(condition['current-school']).strip()) == 0 :
+        condition['current-school'] = 10
 
     if type(condition['target_level']) != int:
         target_level = str(condition['target_level']).strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
@@ -239,6 +241,5 @@ def __init__():
             continue
         each = each.strip('\r').strip('\n')
         TERM_NODE_DICT[int(each[:2])] = each[3:]
-
 
 __init__()

@@ -89,9 +89,9 @@ if __name__ == "__main__":
         'grade': '大二',  # 【'大一','大二','大三','大四'】
         'target_level': '4',  # 表示目标院校档次，1-4分别表示TOP10,TOP20-30,TOP30-50,TOP50-100
         'gpa': '',
-        'current-school': '海外本科',
+        'current-school': '',
         'toefl': {
-            'total': '109+/8或Waiver',
+            'total': '',
             'speaking': '26+/8+或 海本',
         },
         'gre': {
