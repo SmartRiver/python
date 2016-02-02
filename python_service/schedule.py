@@ -8,6 +8,7 @@ import time
 import sys
 import logging
 from translator import *
+from common_func import exit_error_func
 
 # 每个部分目标值
 SEG_TARGET_DICT = {}
@@ -60,7 +61,7 @@ def get_start_term(grade=5):
     elif grade == 4:
         grade = 13 + increase
     else:
-        grade = '格式错误'
+        grade = u'格式错误'
     return grade
 
 def node_filter(condition, nodestr, target_level=2):
@@ -102,9 +103,9 @@ def pre_check(condition):
         try:
             condition['target_level'] = int(target_level)
         except:
-            return exit_error('target_level:'+str(condition['target_level']), 1)
+            return exit_error_func('target_level:'+str(condition['target_level']), 1)
     if condition['target_level'] > 4 or condition['target_level'] < 1:
-        return exit_error('target_level:'+str(condition['target_level']), 2)
+        return exit_error_func('target_level:'+str(condition['target_level']), 2)
 
     if type(condition['grade']) != int:
         grade = str(condition['grade']).strip('\n').strip('\r').replace(r'"', '').replace('\'', '')
@@ -113,15 +114,17 @@ def pre_check(condition):
             if type(tmp_grade) ==int:
                 condition['grade'] = get_start_term(int(grade))
             else:
-                return exit_error('grade:'+str(condition['grade']), 1)
+                return exit_error_func('grade:'+str(condition['grade']), 1)
         except:
-            return exit_error('grade:'+str(condition['grade']), 1)
+            return exit_error_func('grade:'+str(condition['grade']), 1)
     if condition['grade'] > 14 or condition['grade'] < 1:
-        return exit_error('grade:'+str(condition['grade']), 2)
+        return exit_error_func('grade:'+str(condition['grade']), 2)
 
     return condition
+
 # translateFromFrontToBack白名单
 WHITE_PARAM = ['gre', 'gpa', 'toefl', 'ielts', 'gmat']
+
 def schedule(origin_condition):
     return_dict = {}
     try:
@@ -129,9 +132,9 @@ def schedule(origin_condition):
         if len(condition['mismatch']) == 0:
             condition = condition['result']
         else:
-            return exit_error('转换出错参数列表:'+str(condition['mismatch']), 1)
+            return exit_error_func(u'转换出错参数列表:'+str(condition['mismatch']), 1)
     except Exception, e:
-        return exit_error('转换出错:'+str(origin_condition), 1)
+        return exit_error_func(u'转换参数出错:'+str(origin_condition), 1)
 
     condition = pre_check(condition)
 
@@ -209,20 +212,11 @@ def schedule(origin_condition):
     for each in range(grade, 15):
         node_term_list.append({'grade': each, 'term': TERM_NAME_DICT[each], 'labels': node_temp_dict[str(each)]})
     for each in SEG_TARGET_DICT:
-        return_dict['target_'+each] = u'目标'+str(SEG_TARGET_DICT[each][target_level])+'+'
+        return_dict['target_'+each] = u'目标'+str(SEG_TARGET_DICT[each][target_level]).replace('.0', '')+'+'
     return_dict['result'] = node_term_list
     return_dict['status'] = 'success'
 
     return return_dict
-def exit_error(error_param, error_code):
-    error_dict = {
-        1: '参数格式错误',
-        2: '参数范围错误',
-    }
-    return {
-        'status': error_dict[error_code],
-        'msg': error_param,
-    }
 
 
 def __init__():

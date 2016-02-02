@@ -56,7 +56,7 @@ if __name__ == "__main__":
         'gpa': '3.8-3.9/90-93',
         'current-school': '海外本科',
         'toefl': {
-            'total': '109+/8或Waiver',
+            'total': '109+/8或Waive',
             'speaking': '26+/8+或 海本',
         },
         'gre': {
@@ -131,4 +131,4 @@ if __name__ == "__main__":
 
     result = schedule(orig_condition)
     #输出结果
-    print json.dumps(result, indent=4)
+    print json.dumps(result, ensure_ascii=False, indent=4)
