@@ -301,15 +301,17 @@ def assess_applier(applier_dict):
     rule_type = applier_dict['major']
     rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
     print 'before . . . '
+    print 'major  ' +rule_type
     print 'current-school: '+ str(applier_dict['current-school'])
-    print json.dumps(applier_dict, indent=4)
+    print json.dumps(applier_dict, ensure_ascii=False, indent=4)
 
     temp_dict = {}
     if len(str(applier_dict['gpa'])) > 5:
         if rule_type == '法学' or rule_type == 'law':
             applier_dict['major'] = '法学'
-        temp_dict = translateFromFrontToBack(applier_dict)
         try:
+	    print 'afrer convert . . . '
+	    print json.dumps(temp_dict, ensure_ascii=False, indent=4)
             temp_dict = translateFromFrontToBack(applier_dict)
             if len(temp_dict['mismatch']) == 0:
                 temp_dict = temp_dict['result']
@@ -321,13 +323,14 @@ def assess_applier(applier_dict):
     else:
         temp_dict = applier_dict.copy()
     print 'after . . . '
-    print json.dumps(temp_dict, indent=4)
+    print json.dumps(temp_dict, ensure_ascii=False, indent=4)
     print 'current-school: '+ str(temp_dict['current-school'])
     if rule_type in RULE_TYPE_DICT:
         rule_type = RULE_TYPE_DICT[rule_type]
 
     if rule_type not in ASSESS_RULE_DICT:
         rule_type = 'general'
+    remove_stop_seg(temp_dict, rule_type)
     for equation in ASSESS_RULE_DICT[rule_type]:
         is_successful = execute_equation(temp_dict, equation)
 

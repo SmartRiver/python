@@ -129,6 +129,7 @@ def schedule(origin_condition):
     return_dict = {}
     try:
         condition = translateFromFrontToBack(origin_condition)
+	print json.dumps(condition, ensure_ascii=False, indent=4)
         if len(condition['mismatch']) == 0:
             condition = condition['result']
         else:
