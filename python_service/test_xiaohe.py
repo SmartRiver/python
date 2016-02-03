@@ -75,9 +75,9 @@ if __name__ == "__main__":
     }
 
     listt = ['accounting', 'ce', 'environment', 'pr', 'me', 'general', 'journalism', 'marketing', 'finance', 'cs', 'economics', 'biology', 'law', 'mis', 'tesol', 'materials']
-    for each in ['law']:
+    for each in ['ce']:
         print each
-        result = assess_applier(test_dict, each)
+        result = assess_applier(orig_condition, each)
         print u"最终返回的dict是："
         print json.dumps(result, indent=4)
         print '\n\n\n'

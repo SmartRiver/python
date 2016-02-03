@@ -296,7 +296,8 @@ RULE_TYPE_DICT = {
     '数学': 'math',
     '物理': 'physics',
 }
-def assess_applier(applier_dict, rule_type):
+def assess_applier(applier_dict):
+    rule_type = applier_dict['major']
     print 'before . . . '
     print 'current-school: '+ str(applier_dict['current-school'])
     print json.dumps(applier_dict, indent=4)
@@ -305,7 +306,7 @@ def assess_applier(applier_dict, rule_type):
     if len(str(applier_dict['gpa'])) > 5:
         if rule_type == '法学' or rule_type == 'law':
             applier_dict['major'] = '法学'
-        temp_dict = translateFromFrontToBack(applier_dict)
+        temp_dict = translateFromFrontToBack(applier_dict)['result']
     else:
         temp_dict = applier_dict.copy()
     print 'after . . . '
