@@ -67,7 +67,6 @@ def execute_equation(origin_dict, equation):
         lambda x: get_value(origin_dict, x),
         unit_list[2:]
     )
-    print num_list
     # 如果没有输入某个维度的分数，则返回
     if 'false' in num_list:
         return False
@@ -148,7 +147,6 @@ def get_seg_score(result, type):
         elif each == 'gre':
             set_dict['gre'] = round(float(result['gre']), 1)
         elif each in other_seg:
-            print 'other:' + each + '\t' + str(result[each])
             set_dict['other'] = round(float(result[each])+set_dict['other'], 1)
     return set_dict
 
@@ -194,31 +192,31 @@ def display_value(score, level, major_type):
 def get_segment_level():
     global LEVEL_SEGMENT_DICT
     seg_level_dict = {
-        u'gpa-score-level': 'gpa-score',
-        u'gpa-school-level': 'gpa-school',
-        u'toefl-level': 'toefl-base',
-        u'ielts-level': 'ielts-base',
-        u'gre-base-level': 'gre-base',
-        u'gre-aw-level': 'gre-aw',
-        u'gmat-base-level': 'GMAT-base',
-        u'gmat-aw-level': 'GMAT-writing',
-        u'research-duration-level': 'research-duration',
-        u'research-level-level': 'research-level',
-        u'research-achievement-level': 'research-achievement',
-        u'research-level': 'research-factor',
-        u'work-duration-level': 'work-duration',
-        u'work-level-level': 'work-level',
-        u'work-level': 'work-factor',
-        u'internship-duration-level': 'internship-duration',
-        u'internship-level-level': 'internship-level',
-        u'internship-level': 'internship-factor',
-        u'activity-duration': 'activity-duration',
-        u'activity-type': 'activity-type',
-        u'activity-level': 'activity-factor',
-        u'competition-level': 'competition-level',
-        u'scholarship-level': 'scholarship-level',
-        u'credential-level': 'credential-level',
-        u'result-level': 'level',
+        'gpa-score-level': 'gpa-score',
+        'gpa-school-level': 'gpa-school',
+        'toefl-level': 'toefl-base',
+        'ielts-level': 'ielts-base',
+        'gre-base-level': 'gre-base',
+        'gre-aw-level': 'gre-aw',
+        'gmat-base-level': 'GMAT-base',
+        'gmat-aw-level': 'GMAT-writing',
+        'research-duration-level': 'research-duration',
+        'research-level-level': 'research-level',
+        'research-achievement-level': 'research-achievement',
+        'research-level': 'research-factor',
+        'work-duration-level': 'work-duration',
+        'work-level-level': 'work-level',
+        'work-level': 'work-factor',
+        'internship-duration-level': 'internship-duration',
+        'internship-level-level': 'internship-level',
+        'internship-level': 'internship-factor',
+        'activity-duration': 'activity-duration',
+        'activity-type': 'activity-type',
+        'activity-level': 'activity-factor',
+        'competition-level': 'competition-level',
+        'scholarship-level': 'scholarship-level',
+        'credential-level': 'credential-level',
+        'result-level': 'level',
     }
     return_level_dict = dict()
     for key in seg_level_dict:
