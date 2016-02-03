@@ -12,6 +12,7 @@ import quest_process
 import match
 import select_school
 import schedule
+from schedule import schedule
 import os
 from select_school import assess_applier
 from django.utils.encoding import smart_str, smart_unicode
@@ -48,7 +49,7 @@ class MainHandler(tornado.web.RequestHandler):
                 result = quest2quest_dict(quest)
             except:
                 raise MissingArgumentError('Invalid comment!')
-            self.write(json.dumps(result))
+            self.write(json.dumps(result, ensure_ascii=False, indent=4))
         elif request_type == 'find_nearest_offer':
             to_cmp = json.loads(self.request.query_arguments['condition'][0])
             fill_score(to_cmp)
@@ -60,7 +61,7 @@ class MainHandler(tornado.web.RequestHandler):
                 lambda x: int(x[1]['id']['$numberLong']),
                 find_nearest_offer(to_cmp, num)
             )
-            self.write(json.dumps(offer_id_list))
+            self.write(json.dumps(offer_id_list, ensure_ascii=False, indent=4))
         elif request_type == 'find_school':
             to_cmp = json.loads(self.request.query_arguments['condition'][0])
             fill_score(to_cmp)
@@ -68,20 +69,19 @@ class MainHandler(tornado.web.RequestHandler):
                 num = int(self.request.query_arguments['num'][0])
             else:
                 num = 5
-            self.write(json.dumps(find_program(to_cmp, num)))
+            self.write(json.dumps(find_program(to_cmp, num), ensure_ascii=False, indent=4))
         elif request_type == 'assess_applier':
             to_assess = json.loads(self.request.query_arguments['condition'][0])
-            if 'major_type' in self.request.query_arguments:
-                major_type = self.request.query_arguments['major_type'][0]
-            else:
-                major_type = 'general'
-            self.write(json.dumps(assess_applier(to_assess, major_type)))
-        elif request_type == 'study_schedule':
-            condition = json.loads(self.request.query_arguments['condition'][0])
-            grade = self.request.query_arguments['grade'][0]
-            target_level = self.request.query_arguments['level'][0]
 
-            self.write(json.dumps(schedule(condition, grade.strip(), int(target_level))))
+            self.set_header('Access-Control-Allow-Origin','*')
+            self.write(json.dumps(assess_applier(to_assess), ensure_ascii=False, indent=4))
+
+        elif request_type == 'study_schedule':
+            to_schedule = json.loads(self.request.query_arguments['condition'][0])
+
+            self.set_header('Access-Control-Allow-Origin','*')
+            self.write(json.dumps(schedule(to_schedule), ensure_ascii=False, indent=4))
+
         else:
             raise MissingArgumentError('Invalid command!')
 

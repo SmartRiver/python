@@ -129,11 +129,13 @@ def schedule(origin_condition):
     return_dict = {}
     try:
         condition = translateFromFrontToBack(origin_condition)
-	print json.dumps(condition, ensure_ascii=False, indent=4)
         if len(condition['mismatch']) == 0:
             condition = condition['result']
         else:
-            return exit_error_func(u'转换出错参数列表:'+str(condition['mismatch']), 1)
+            for each in WHITE_PARAM:
+                if each in condition['mismatch']:
+                    return exit_error_func(u'转换出错参数列表:'+str(condition['mismatch']), 1)
+
     except Exception, e:
         return exit_error_func(u'转换参数出错:'+str(origin_condition), 1)
 

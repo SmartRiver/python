@@ -307,11 +307,9 @@ def assess_applier(applier_dict):
 
     temp_dict = {}
     if len(str(applier_dict['gpa'])) > 5:
-        if rule_type == '法学' or rule_type == 'law':
-            applier_dict['major'] = '法学'
         try:
-	    print 'afrer convert . . . '
-	    print json.dumps(temp_dict, ensure_ascii=False, indent=4)
+            print 'afrer convert . . . '
+            print json.dumps(temp_dict, ensure_ascii=False, indent=4)
             temp_dict = translateFromFrontToBack(applier_dict)
             if len(temp_dict['mismatch']) == 0:
                 temp_dict = temp_dict['result']

@@ -4,8 +4,10 @@ import os
 import re
 import copy
 import json
+import logging
 from translator import *
 from common_func import exit_error_func
+
 
 def get_value(aim_dict, equation_unit):
     # 如果是用户输入的成绩，则取出来
@@ -17,44 +19,29 @@ def get_value(aim_dict, equation_unit):
             child_key = equation_unit.split('*')[1]
             if father_key in aim_dict:
                 if child_key in aim_dict[father_key]:
-                    print '11-- in aim_dict'
-                    print equation_unit
                     return float(aim_dict[father_key][child_key])
                 elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
-                    print '11-- default'
-                    print equation_unit
                     return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
                 else:
-                    print '11-- false'
-                    print equation_unit
                     return 'false'
             elif father_key+'-'+child_key in aim_dict:
                 return float(aim_dict[father_key+'-'+child_key])
             elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
-                print 'use default 12'
-                print equation_unit + '-' + father_key+'-'+child_key
                 return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
             else:
-                print '12 -- false'
                 return 'false'
         else:
             try:
                 if equation_unit in aim_dict:
-                    print '22-in aim_dict'
-                    print equation_unit
                     return float(aim_dict[equation_unit])
                 elif equation_unit in DEFAULT_SEG_DICT:
-                    print 'use default2'
-                    print equation_unit
                     return float(DEFAULT_SEG_DICT[equation_unit])
                 elif equation_unit == 'reletter':
                     return 0.0
                 else:
-                    print '22 -- false'
-                    print equation_unit
                     return 'false'
             except:
-                print 'wrong : ' + equation_unit
+                logging.error('wrong : ' + equation_unit)
     else:
         try:
             res = float(equation_unit)
@@ -83,15 +70,11 @@ def execute_equation(origin_dict, equation):
     print num_list
     # 如果没有输入某个维度的分数，则返回
     if 'false' in num_list:
-        print '----False in get_value'
-        print equation
         return False
     if equation_type == 'range':
         if num_list[3] > num_list[1] >= num_list[2]:
-            print '匹配成功'+equation
+            logging.warn('[match] - success : '+equation)
             origin_dict[out_prop] = num_list[0]
-            if 'gpa-score' in origin_dict:
-                print 'success'
             global LEVEL_SEGMENT_DICT
             LEVEL_SEGMENT_DICT[out_prop] = int(unit_list[6])
             return True
@@ -110,9 +93,8 @@ def execute_equation(origin_dict, equation):
         try:
             origin_dict[out_prop] = sum(num_list)
         except:
-            print 'something is wrong when executing :'
-            print equation
-            print 'wrong item: ' + out_prop
+            logging.error('something is wrong when executing :'+out_prop)
+            logging.error(equation)
         return True
     elif equation_type == 'multi':
         temp_result = 1
@@ -120,8 +102,8 @@ def execute_equation(origin_dict, equation):
             for num in num_list:
                 temp_result *= num
         except:
-            print 'something is wrong when executiing :'
-            print equation
+            logging.error('something is wrong when executing :'+out_prop)
+            logging.error(equation)
         origin_dict[out_prop] = temp_result
         return True
     else:
@@ -143,12 +125,12 @@ DEFAULT_SEG_DICT = {}
 # 六维各维度得分计算
 def get_seg_score(result, type):
     set_dict = {
-        u'gpa': 0.0,
-        u'language': 0.0,
-        u'gre': 0.0,
-        u'work': 0.0,
-        u'research': 0.0,
-        u'other': 0.0,
+        'gpa': 0.0,
+        'language': 0.0,
+        'gre': 0.0,
+        'work': 0.0,
+        'research': 0.0,
+        'other': 0.0,
     }
     # 六维中的其它，由以下六个部分组成
     other_seg = ('activity', 'scholarship', 'credential', 'competition')
@@ -173,22 +155,22 @@ def get_seg_score(result, type):
 # author:xiaohe
 # 增加一个返回百分制的能力值
 level_dict = {
-    u'accounting': '6-180',
-    u'law': '7-125',
-    u'marketing': '7-160',
-    u'mis': '6-170',
-    u'pr': '4-130',
-    u'tesol': '4-120',
-    u'cs': '10-150',
-    u'economics': '8-125',
-    u'finance': '8-175',
-    u'journalism': '5-130',
-    u'biology': '8-150',
-    u'ce': '8-150',
-    u'environment': '7-145',
-    u'materials': '7-155',
-    u'me': '7-155',
-    u'general': '7-130',
+    'accounting': '6-180',
+    'law': '7-125',
+    'marketing': '7-160',
+    'mis': '6-170',
+    'pr': '4-130',
+    'tesol': '4-120',
+    'cs': '10-150',
+    'economics': '8-125',
+    'finance': '8-175',
+    'journalism': '5-130',
+    'biology': '8-150',
+    'ce': '8-150',
+    'environment': '7-145',
+    'materials': '7-155',
+    'me': '7-155',
+    'general': '7-130',
 }
 def display_value(score, level, major_type):
     levels = int(level_dict[major_type].split('-')[0])
@@ -297,58 +279,59 @@ RULE_TYPE_DICT = {
     u'数学': 'math',
     u'物理': 'physics',
 }
+
 def assess_applier(applier_dict):
     rule_type = applier_dict['major']
     rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
-    print 'before . . . '
-    print 'current-school: '+ str(applier_dict['current-school'])
-    print json.dumps(applier_dict, indent=4)
 
-    temp_dict = {}
     if len(str(applier_dict['gpa'])) > 5:
-        if rule_type == '法学' or rule_type == 'law':
-            applier_dict['major'] = '法学'
-        temp_dict = translateFromFrontToBack(applier_dict)
         try:
             temp_dict = translateFromFrontToBack(applier_dict)
             if len(temp_dict['mismatch']) == 0:
                 temp_dict = temp_dict['result']
             else:
                 return exit_error_func(u'转换出错参数列表:'+str(temp_dict['mismatch']), 1)
-        except Exception, e:
+        except:
             return exit_error_func(u'转换参数出错:'+str(applier_dict), 1)
 
     else:
         temp_dict = applier_dict.copy()
-    print 'after . . . '
-    print json.dumps(temp_dict, indent=4)
-    print 'current-school: '+ str(temp_dict['current-school'])
     if rule_type in RULE_TYPE_DICT:
         rule_type = RULE_TYPE_DICT[rule_type]
 
     if rule_type not in ASSESS_RULE_DICT:
         rule_type = 'general'
+    remove_stop_seg(temp_dict, rule_type)
     for equation in ASSESS_RULE_DICT[rule_type]:
         is_successful = execute_equation(temp_dict, equation)
-    
+
     try:
         display_score = display_value(temp_dict['result'], int(temp_dict['level']), rule_type)
     except:
-        base_score = int(level_dict[rule_type].split('-')[1])
-        display_score = temp_dict['result']/base_score * 100
+        try:
+            base_score = int(level_dict[rule_type].split('-')[1])
+            display_score = temp_dict['result']/base_score * 100
+        except:
+            return exit_error_func(applier_dict, 3)
     display_score = 99.0 if display_score > 99.0 else display_score
-    
+
     score = round(float(temp_dict['result']), 1)
     seg_score = get_seg_score(temp_dict.copy(), rule_type)
 
-    return {
+    return_dict = {}
+    return_dict = {
         'level': get_segment_level(),
         'score': score,
-        #'result_level': LEVEL_SEGMENT_DICT['level'],
+        'result_level': LEVEL_SEGMENT_DICT['level'],
         'display_score': display_score,
         'seg_full_score': FULL_SCORE_DICT[rule_type],
         'seg_score': seg_score,
     }
+
+    try:
+        return return_dict
+    except:
+        return exit_error_func(applier_dict, 3)
 
 __init__()
 

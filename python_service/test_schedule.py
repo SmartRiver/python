@@ -53,39 +53,39 @@ if __name__ == "__main__":
 
 
     ttt = {
-        'major': '法学',
-        'grade': '大二',
-        'target_level': '4',
-        'gpa': '3.8-3.9/90-93',
-        'current-school': '海外本科',
-        'toefl': {
-            'total': '109+/8或Waive',
-            'speaking': '26+/8+或 海本',
+        "major":"法学",
+        "grade":"大二",
+        "target_level":"4",
+        "gpa":"3.8-3.9/90-93",
+        "current-school":"海外本科",
+        "toefl":{
+            "total":"109+/8或Waiver",
+            "speaking":"26+/8+或 海本"
         },
-        'gre': {
-            'total': '330+/740+',
-            'aw': '4.5-5',
+        "gre":{
+            "total":"330+/740+",
+            "aw":"4.5-5"
         },
-        'research': {
-            'duration': '1年-2年',
-            'level': '海外实验室or重点项目',
-            'achievement': '国内期刊',
+        "research":{
+            "duration":"1年-2年",
+            "level":"海外实验室or重点项目",
+            "achievement":"国内期刊"
         },
-        'internship': {
-            'duration': '3-6个月',
-            'level': '国内知名企业',
-            'recommendation': '直属领导推荐',
+        "internship":{
+            "duration":"3-6个月",
+            "level":"国内知名企业",
+            "recommendation":"直属领导推荐"
         },
-        'scholarship': {
-            'level': '校一等奖学金',
+        "scholarship":{
+            "level":"校一等奖学金"
         },
-        'activity': {
-            'duration': '3-6个月',
-            'type': '国内志愿者',
+        "activity":{
+            "duration":"3-6个月",
+            "type":"国内志愿者"
         },
-        'competition': {
-            'level':  '国家级奖项',
-        },
+        "competition":{
+            "level":"国家级奖项"
+        }
     }
     orig_condition = {
         'major': '法学',
@@ -128,10 +128,10 @@ if __name__ == "__main__":
 
     grade = '‘大二’'
     target_level = 1
+    print str(ttt).decode('utf-8')
+    if ttt['major'] == '法学':
+        print ttt['current-school']
 
-    #print condition
-    print '_______'
-
-    result = schedule(orig_condition)
+    result = schedule(ttt)
     #输出结果
-    print json.dumps(result, ensure_ascii=False, indent=4)
+    #print json.dumps(result, ensure_ascii=False, indent=4)

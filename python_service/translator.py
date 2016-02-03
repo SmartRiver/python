@@ -4,7 +4,8 @@ import codecs
 import sys
  
 reload(sys)   
-sys.setdefaultencoding('utf8') 
+sys.setdefaultencoding('utf8')
+
 def translateFromFrontToBack(translateDict):
     file = codecs.open('translator.txt', 'r', 'utf-8')
     originDict = {}
@@ -16,7 +17,7 @@ def translateFromFrontToBack(translateDict):
     mismatch_list = []
     while 1:
         line = file.readline().strip().strip('\n').strip('\t')
-	if not line:
+        if not line:
             break
         if len(line.strip()) == 0:
             continue
