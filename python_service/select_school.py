@@ -301,7 +301,9 @@ def assess_applier(applier_dict):
 
     if rule_type not in ASSESS_RULE_DICT:
         rule_type = 'general'
+
     remove_stop_seg(temp_dict, rule_type)
+
     for equation in ASSESS_RULE_DICT[rule_type]:
         is_successful = execute_equation(temp_dict, equation)
 

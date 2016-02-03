@@ -146,8 +146,9 @@ def schedule(origin_condition):
     if 'msg' in condition:
         return condition
 
-    grade = condition['grade']
+    grade = get_start_term(condition['grade'])
     target_level = condition['target_level']
+
     if 1 <= grade <= 7:
         num = grade
     elif grade == 8:
@@ -211,7 +212,7 @@ def schedule(origin_condition):
     node_temp_dict = eval(TERM_NODE_DICT[num])
 
     for each in node_temp_dict:
-            node_temp_dict[each] = node_filter(condition, node_temp_dict[each], target_level)
+        node_temp_dict[each] = node_filter(condition, node_temp_dict[each], target_level)
 
     node_term_list = list()
     for each in range(grade, 15):
