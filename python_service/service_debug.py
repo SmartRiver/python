@@ -10,10 +10,11 @@ from quest_process import quest2quest_dict
 from match import find_nearest_offer, find_program, fill_score
 import quest_process
 import match
-import select_school
+import select_school_debug
 import schedule
+from schedule import schedule
 import os
-from select_school import assess_applier
+from select_school_debug import assess_applier
 from django.utils.encoding import smart_str, smart_unicode
 
 
@@ -38,6 +39,7 @@ class MainHandler(tornado.web.RequestHandler):
                 quest_process.__init__()
                 match.__init__()
                 select_school.__init__()
+                schedule.__init__()
                 self.write('reloaded.')
             except:
                 self.write('failed.')
