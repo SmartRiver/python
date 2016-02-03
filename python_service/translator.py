@@ -50,7 +50,7 @@ def replace(originDict, translateDict, mismatch_list):
     sub_key = ""
 
     if 'major' in translateDict.keys():
-        if translateDict['major'] == "法学":
+        if translateDict['major'] == "法学" or translateDict['major'] == 'law':
             if 'current-school' in translateDict.keys():
                 originDict['current-school'] = {
                     '清华北大':'0',

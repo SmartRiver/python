@@ -4,6 +4,7 @@ import os
 import re
 import copy
 from translator import *
+from common_func import exit_error_func
 
 def get_value(aim_dict, equation_unit):
     if equation_unit[0] == '%':
@@ -202,16 +203,26 @@ RULE_TYPE_DICT = {
     u'物理': 'physics',
 }
 def assess_applier(applier_dict):
-    rule_type = applier_dict['major_type']
+    rule_type = applier_dict['major']
+    rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
     print 'before . . . '
     print 'current-school: '+ applier_dict['current-school']
     print json.dumps(applier_dict, indent=4)
-    rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
+
     temp_dict = {}
     if len(str(applier_dict['gpa'])) > 5:
         if rule_type == '法学' or rule_type == 'law':
-            applier_dict['major_type'] = '法学'
+            applier_dict['major'] = '法学'
         temp_dict = translateFromFrontToBack(applier_dict)
+        try:
+            temp_dict = translateFromFrontToBack(applier_dict)
+            if len(temp_dict['mismatch']) == 0:
+                temp_dict = temp_dict['result']
+            else:
+                return exit_error_func(u'转换出错参数列表:'+str(temp_dict['mismatch']), 1)
+        except Exception, e:
+            return exit_error_func(u'转换参数出错:'+str(applier_dict), 1)
+
     else:
         temp_dict = applier_dict.copy()
     print 'after . . . '

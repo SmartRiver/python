@@ -74,12 +74,14 @@ class MainHandler(tornado.web.RequestHandler):
             to_assess = json.loads(self.request.query_arguments['condition'][0])
 
             self.set_header('Access-Control-Allow-Origin','*')
-            self.write(json.dumps(assess_applier(to_assess), ensure_ascii=False, indent=4))
+            #self.write(json.dumps(assess_applier(to_assess), ensure_ascii=False, indent=4))
+            self.write(json.dumps(assess_applier(to_assess)))
         elif request_type == 'study_schedule':
             to_schedule = json.loads(self.request.query_arguments['condition'][0])
 
             self.set_header('Access-Control-Allow-Origin','*')
-            self.write(json.dumps(schedule(to_schedule), ensure_ascii=False, indent=4))
+            #self.write(json.dumps(schedule(to_schedule), ensure_ascii=False, indent=4))
+            self.write(json.dumps(schedule(to_schedule)))
         else:
             raise MissingArgumentError('Invalid command!')
 
