@@ -53,6 +53,9 @@ if __name__ == "__main__":
 
 
     ttt = {
+        'major': '法学',
+        'grade': '大二',
+        'target_level': '4',
         'gpa': '3.8-3.9/90-93',
         'current-school': '海外本科',
         'toefl': {

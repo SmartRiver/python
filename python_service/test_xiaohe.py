@@ -40,7 +40,7 @@ if __name__ == "__main__":
         },
      }
     orig_condition = {
-        'major': '市场营销',
+        'major_type': '市场营销',
         'grade': '大三',  # 【'大一','大二','大三','大四'】
         'gpa': '3.8-3.9/90-93',
         'current-school': '海外本科',
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     listt = ['accounting', 'ce', 'environment', 'pr', 'me', 'general', 'journalism', 'marketing', 'finance', 'cs', 'economics', 'biology', 'law', 'mis', 'tesol', 'materials']
     for each in ['ce']:
         print each
-        result = assess_applier(orig_condition, each)
+        result = assess_applier(orig_condition)
         print u"最终返回的dict是："
         print json.dumps(result, indent=4)
         print '\n\n\n'
