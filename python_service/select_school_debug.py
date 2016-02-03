@@ -1,45 +1,99 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf:-8 -*-
 __author__ = 'Elliot'
 import os
 import re
 import copy
+import json
 from translator import *
 from common_func import exit_error_func
 
 def get_value(aim_dict, equation_unit):
+    # 如果是用户输入的成绩，则取出来
     if equation_unit[0] == '%':
-        temp_value = aim_dict
-        for aim_prop in equation_unit[1:].split('*'):
+        equation_unit = equation_unit[1:]
+        # 如果包含子字段
+        if equation_unit.find('*') > -1:
+            father_key = equation_unit.split('*')[0]
+            child_key = equation_unit.split('*')[1]
+            if father_key in aim_dict:
+                if child_key in aim_dict[father_key]:
+                    print '11-- in aim_dict'
+                    print equation_unit
+                    return float(aim_dict[father_key][child_key])
+                elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
+                    print '11-- default'
+                    print equation_unit
+                    return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
+                else:
+                    print '11-- false'
+                    print equation_unit
+                    return 'false'
+            elif father_key+'-'+child_key in aim_dict:
+                return float(aim_dict[father_key+'-'+child_key])
+            elif father_key+'-'+child_key in DEFAULT_SEG_DICT:
+                print 'use default 12'
+                print equation_unit + '-' + father_key+'-'+child_key
+                return float(DEFAULT_SEG_DICT[father_key+'-'+child_key])
+            else:
+                print '12 -- false'
+                return 'false'
+        else:
             try:
-                temp_value = temp_value[aim_prop]
+                if equation_unit in aim_dict:
+                    print '22-in aim_dict'
+                    print equation_unit
+                    return float(aim_dict[equation_unit])
+                elif equation_unit in DEFAULT_SEG_DICT:
+                    print 'use default2'
+                    print equation_unit
+                    return float(DEFAULT_SEG_DICT[equation_unit])
+                elif equation_unit == 'reletter':
+                    return 0.0
+                else:
+                    print '22 -- false'
+                    print equation_unit
+                    return 'false'
             except:
-                temp_value = 1.0
-        #print 'get_value:'
-        #print aim_dict
-        return temp_value
+                print 'wrong : ' + equation_unit
     else:
         try:
             res = float(equation_unit)
+            return res
         except:
-            res = equation_unit
-    return res
+            return 'false'
 
 def execute_equation(origin_dict, equation):
     equation = equation.split('//')[0]
     # 去除末尾的\r
     if equation[-1] == '\r':
         equation = equation[:-1]
-    unit_list = filter(lambda x: x != '', re.split(r'[,\t]', equation))
+    unit_list = filter(
+        lambda x: x != '',
+        re.split(r'[,\t]', equation)
+    )
     if len(unit_list) <= 2:
         return False
     out_prop, equation_type = unit_list[0], unit_list[1]
+    if out_prop == 'reletter':
+        return False
     num_list = map(
         lambda x: get_value(origin_dict, x),
         unit_list[2:]
     )
+    print num_list
+    # 如果没有输入某个维度的分数，则返回
+    if 'false' in num_list:
+        print '----False in get_value'
+        print equation
+        return False
     if equation_type == 'range':
         if num_list[3] > num_list[1] >= num_list[2]:
+            print '匹配成功'+equation
             origin_dict[out_prop] = num_list[0]
+            if 'gpa-score' in origin_dict:
+                print 'success'
+            global LEVEL_SEGMENT_DICT
+            LEVEL_SEGMENT_DICT[out_prop] = int(unit_list[6])
             return True
         else:
             return False
@@ -52,14 +106,14 @@ def execute_equation(origin_dict, equation):
     elif equation_type == 'sum':
         if out_prop == 'result':
             global seg_set
-            seg_set = set(map(lambda x : x.strip('%'),unit_list[2:]))
-            try:
-                origin_dict[out_prop] = sum(num_list)
-            except:
-                print 'something is wrong when executing :'
-                print equation
-                print 'wrong item: ' + out_prop
-                return True
+            seg_set = set(map(lambda x: x.strip('%'), unit_list[2:]))
+        try:
+            origin_dict[out_prop] = sum(num_list)
+        except:
+            print 'something is wrong when executing :'
+            print equation
+            print 'wrong item: ' + out_prop
+        return True
     elif equation_type == 'multi':
         temp_result = 1
         try:
@@ -68,11 +122,10 @@ def execute_equation(origin_dict, equation):
         except:
             print 'something is wrong when executiing :'
             print equation
-            origin_dict[out_prop] = temp_result
-            return True
+        origin_dict[out_prop] = temp_result
+        return True
     else:
         return False
-
 # 用户每个部分分数等级，从1开始
 LEVEL_SEGMENT_DICT = {}
 # 每个专业的评估规则
@@ -88,62 +141,64 @@ DEFAULT_SEG_DICT = {}
 
 # author:xiaohe
 # 六维各维度得分计算
-def get_seg_score(result,type):
-    set_dict = {'gpa':0.0,'language':0.0,'gre':0.0,'work':0.0,'research':0.0,'other':0.0}
+def get_seg_score(result, type):
+    set_dict = {
+        u'gpa': 0.0,
+        u'language': 0.0,
+        u'gre': 0.0,
+        u'work': 0.0,
+        u'research': 0.0,
+        u'other': 0.0,
+    }
+    # 六维中的其它，由以下六个部分组成
+    other_seg = ('activity', 'scholarship', 'credential', 'competition')
+
     if 'work' in result:
-        try:
-            set_dict['work'] = round(float(result['work']),1)
-        except:
-            print 'something is wrong when calculate the work vaule of ' + type
-            print result['work']
+        set_dict['work'] = round(float(result['work']), 1)
     if 'research' in result:
-        try:
-            set_dict['research'] = round(float(result['research']),1)
-        except:
-            print 'something is wrong when calculate the research value of  ' + type
-            print result['research']
+        set_dict['research'] = round(float(result['research']), 1)
 
     for each in seg_set:
         if each == 'gpa':
-            set_dict['gpa'] = round(float(result['gpa']),1)
+            set_dict['gpa'] = round(float(result['gpa']), 1)
         elif each == 'language':
-            set_dict['language'] = round(float(result['language']),1)
+            set_dict['language'] = round(float(result['language']), 1)
         elif each == 'gre':
-            set_dict['gre'] = round(float(result['gre']),1)
-        elif each != 'work-research':
-            set_dict['other'] = round(float(result[each])+set_dict['other'],1)
+            set_dict['gre'] = round(float(result['gre']), 1)
+        elif each in other_seg:
+            print 'other:' + each + '\t' + str(result[each])
+            set_dict['other'] = round(float(result[each])+set_dict['other'], 1)
     return set_dict
 
 # author:xiaohe
 # 增加一个返回百分制的能力值
 level_dict = {
-    u'accounting':'6-175',
-    u'law':'7-135',
-    u'marketing':'7-160',
-    u'mis':'6-170',
-    u'pr':'4-125',
-    u'tesol':'4-110',
-    u'cs':'10-150',
-    u'economics':'8-100',
-    u'finance':'8-195',
-    u'journalism':'5-125',
-    u'biology':'8-135',
-    u'ce':'8-135',
-    u'environment':'7-130',
-    u'materials':'7-135',
-    u'me':'7-135',     
-    u'general':'7-135',
+    u'accounting': '6-180',
+    u'law': '7-125',
+    u'marketing': '7-160',
+    u'mis': '6-170',
+    u'pr': '4-130',
+    u'tesol': '4-120',
+    u'cs': '10-150',
+    u'economics': '8-125',
+    u'finance': '8-175',
+    u'journalism': '5-130',
+    u'biology': '8-150',
+    u'ce': '8-150',
+    u'environment': '7-145',
+    u'materials': '7-155',
+    u'me': '7-155',
+    u'general': '7-130',
 }
-def display_value(score, level, type):
-    levels = int(level_dict[type].split('-')[0])
-    base_score = int(level_dict[type].split('-')[1])
-    extra = score/base_score * 3
-    extra = str(extra).split('.')[0]+'.'+str(extra).split('.')[1][:1]
+def display_value(score, level, major_type):
+    levels = int(level_dict[major_type].split('-')[0])
+    base_score = int(level_dict[major_type].split('-')[1])
+    extra = round(score/base_score * 3, 1)
     base = 80
     if 3 < levels <= 5:
         baseline = 70 - (levels-5)*5
         base = baseline + (levels-level)*4
-    elif 5 < levels <=8:
+    elif 5 < levels <= 8:
         baseline = 65 - (levels-6)*4
         base = baseline + (levels-level)*5
     elif 8 < levels:
@@ -154,11 +209,52 @@ def display_value(score, level, type):
     value = 99.0 if value > 99.0 else value
     return value
 
+def get_segment_level():
+    global LEVEL_SEGMENT_DICT
+    seg_level_dict = {
+        u'gpa-score-level': 'gpa-score',
+        u'gpa-school-level': 'gpa-school',
+        u'toefl-level': 'toefl-base',
+        u'ielts-level': 'ielts-base',
+        u'gre-base-level': 'gre-base',
+        u'gre-aw-level': 'gre-aw',
+        u'gmat-base-level': 'GMAT-base',
+        u'gmat-aw-level': 'GMAT-writing',
+        u'research-duration-level': 'research-duration',
+        u'research-level-level': 'research-level',
+        u'research-achievement-level': 'research-achievement',
+        u'research-level': 'research-factor',
+        u'work-duration-level': 'work-duration',
+        u'work-level-level': 'work-level',
+        u'work-level': 'work-factor',
+        u'internship-duration-level': 'internship-duration',
+        u'internship-level-level': 'internship-level',
+        u'internship-level': 'internship-factor',
+        u'activity-duration': 'activity-duration',
+        u'activity-type': 'activity-type',
+        u'activity-level': 'activity-factor',
+        u'competition-level': 'competition-level',
+        u'scholarship-level': 'scholarship-level',
+        u'credential-level': 'credential-level',
+        u'result-level': 'level',
+    }
+    return_level_dict = dict()
+    for key in seg_level_dict:
+        if seg_level_dict[key] in LEVEL_SEGMENT_DICT:
+            return_level_dict[key] = LEVEL_SEGMENT_DICT[seg_level_dict[key]]
+
+    return return_level_dict
+# 去除用户请求里专业不存在的字段
+def remove_stop_seg(temp_dict, rule_type):
+    for each in STOP_SEG_DICT[rule_type]:
+        if each in temp_dict:
+            del temp_dict[each]
+
 def __init__():
     list_dirs = os.walk('resource/assess_rule')
     for root, dirs, files in list_dirs:
         for f in files:
-            rule_path = os.path.join(root,f)
+            rule_path = os.path.join(root, f)
             if f[0:f.rfind('.')] != 'value':
                 rule_type = f[0:f.rfind('.')]
                 ASSESS_RULE_DICT[rule_type] = map(
@@ -180,7 +276,6 @@ def __init__():
                             FULL_SCORE_DICT[str(each_list[0])].update({str(each_list[1]): int(each_list[2])})
                         else:
                             FULL_SCORE_DICT.update({str(each_list[0]): {str(each_list[1]): int(each_list[2])}})
-
 RULE_TYPE_DICT = {
     u'市场营销': 'marketing',
     u'金融学': 'finance',
@@ -206,7 +301,7 @@ def assess_applier(applier_dict):
     rule_type = applier_dict['major']
     rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
     print 'before . . . '
-    print 'current-school: '+ applier_dict['current-school']
+    print 'current-school: '+ str(applier_dict['current-school'])
     print json.dumps(applier_dict, indent=4)
 
     temp_dict = {}
@@ -230,29 +325,29 @@ def assess_applier(applier_dict):
     print 'current-school: '+ str(temp_dict['current-school'])
     if rule_type in RULE_TYPE_DICT:
         rule_type = RULE_TYPE_DICT[rule_type]
-    
+
     if rule_type not in ASSESS_RULE_DICT:
         rule_type = 'general'
     for equation in ASSESS_RULE_DICT[rule_type]:
         is_successful = execute_equation(temp_dict, equation)
-    
+
     try:
-        display_score = display_value(temp_dict['result'],int(temp_dict['level']),rule_type)
+        display_score = display_value(temp_dict['result'], int(temp_dict['level']), rule_type)
     except:
         base_score = int(level_dict[rule_type].split('-')[1])
-        display_score = temp_dict['result']/base_score *100
-        display_score = 99.0 if display_score > 99.0 else display_score
+        display_score = temp_dict['result']/base_score * 100
+    display_score = 99.0 if display_score > 99.0 else display_score
 
     score = round(float(temp_dict['result']), 1)
     seg_score = get_seg_score(temp_dict.copy(), rule_type)
 
     return {
-        'display_score':display_score,
-        'score': float(score),
-        'level': int(temp_dict['level']),
-        #'result': temp_dict,
+        'level': get_segment_level(),
+        'score': score,
+        #'result_level': LEVEL_SEGMENT_DICT['level'],
+        'display_score': display_score,
         'seg_full_score': FULL_SCORE_DICT[rule_type],
-        'seg_score':seg_score,
+        'seg_score': seg_score,
     }
 
 __init__()

@@ -5,6 +5,7 @@ import re
 import copy
 import json
 from translator import *
+from common_func import exit_error_func
 
 def get_value(aim_dict, equation_unit):
     # 如果是用户输入的成绩，则取出来
@@ -276,37 +277,47 @@ def __init__():
                         else:
                             FULL_SCORE_DICT.update({str(each_list[0]): {str(each_list[1]): int(each_list[2])}})
 RULE_TYPE_DICT = {
-    '市场营销': 'marketing',
-    '金融学': 'finance',
-    '会计学': 'accounting',
-    '信息管理系统': 'mis',
-    '计算机科学与技术': 'cs',
-    '公共关系': 'pr',
-    '新闻媒体': 'journalism',
-    '经济学': 'economics',
-    '对外英语教学': 'tesol',
-    '化学工程': 'ce',
-    '电子电机工程': 'ee',
-    '机械工程': 'me',
-    '环境工程': 'environment',
-    '土木工程': 'civil',
-    '材料': 'materials',
-    '生物': 'biology',
-    '法学': 'law',
-    '数学': 'math',
-    '物理': 'physics',
+    u'市场营销': 'marketing',
+    u'金融学': 'finance',
+    u'会计学': 'accounting',
+    u'信息管理系统': 'mis',
+    u'计算机科学与技术': 'cs',
+    u'公共关系': 'pr',
+    u'新闻媒体': 'journalism',
+    u'经济学': 'economics',
+    u'对外英语教学': 'tesol',
+    u'化学工程': 'ce',
+    u'电子电机工程': 'ee',
+    u'机械工程': 'me',
+    u'环境工程': 'environment',
+    u'土木工程': 'civil',
+    u'材料': 'materials',
+    u'生物': 'biology',
+    u'法学': 'law',
+    u'数学': 'math',
+    u'物理': 'physics',
 }
 def assess_applier(applier_dict):
-    rule_type = applier_dict['major_type']
+    rule_type = applier_dict['major']
+    rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
     print 'before . . . '
     print 'current-school: '+ str(applier_dict['current-school'])
     print json.dumps(applier_dict, indent=4)
-    rule_type = rule_type.strip('\r').strip('\n').replace(r'"', '').replace('\'', '')
 
+    temp_dict = {}
     if len(str(applier_dict['gpa'])) > 5:
         if rule_type == '法学' or rule_type == 'law':
-            applier_dict['major_type'] = '法学'
-        temp_dict = translateFromFrontToBack(applier_dict)['result']
+            applier_dict['major'] = '法学'
+        temp_dict = translateFromFrontToBack(applier_dict)
+        try:
+            temp_dict = translateFromFrontToBack(applier_dict)
+            if len(temp_dict['mismatch']) == 0:
+                temp_dict = temp_dict['result']
+            else:
+                return exit_error_func(u'转换出错参数列表:'+str(temp_dict['mismatch']), 1)
+        except Exception, e:
+            return exit_error_func(u'转换参数出错:'+str(applier_dict), 1)
+
     else:
         temp_dict = applier_dict.copy()
     print 'after . . . '
@@ -314,9 +325,7 @@ def assess_applier(applier_dict):
     print 'current-school: '+ str(temp_dict['current-school'])
     if rule_type in RULE_TYPE_DICT:
         rule_type = RULE_TYPE_DICT[rule_type]
-    # print json.dumps(temp_dict,indent=4)
-    remove_stop_seg(temp_dict, rule_type)
-    # print json.dumps(temp_dict,indent=4)
+
     if rule_type not in ASSESS_RULE_DICT:
         rule_type = 'general'
     for equation in ASSESS_RULE_DICT[rule_type]:

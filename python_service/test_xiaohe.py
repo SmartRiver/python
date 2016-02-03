@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Elliot'
 import subprocess
-from select_school import assess_applier
+from select_school_debug import assess_applier
 import json
 
 if __name__ == "__main__":
@@ -74,10 +74,53 @@ if __name__ == "__main__":
         },
     }
 
+    gg = {
+        "current-school": 4,
+
+        "gpa-trend-enum": 2,
+        "internship": {
+            "duration": 0,
+            "recommendation": 2,
+            "level": 1
+        },
+        "work": {
+            "recommendation": 2
+        },
+        "gpa": 3.2,
+        "competition": {
+            "level": 4
+        },
+        "research": {
+            "duration": 4,
+            "recommendation": 2,
+            "achievement": 3,
+            "level": 3
+        },
+        "gre": {
+            "total": 290,
+            "aw": 2.5
+        },
+        "ielts": {
+            "total": 0
+        },
+        "activity": {
+            "duration": 2,
+            "type": 3
+        },
+        "major": "law",
+        "toefl": {
+            "total": 0,
+            "speaking": 17
+        },
+        "scholarship": {
+            "level": 4
+        }
+    }
+
     listt = ['accounting', 'ce', 'environment', 'pr', 'me', 'general', 'journalism', 'marketing', 'finance', 'cs', 'economics', 'biology', 'law', 'mis', 'tesol', 'materials']
     for each in ['ce']:
         print each
-        result = assess_applier(orig_condition)
+        result = assess_applier(gg)
         print u"最终返回的dict是："
         print json.dumps(result, indent=4)
         print '\n\n\n'

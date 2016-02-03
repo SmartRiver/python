@@ -38,7 +38,7 @@ class MainHandler(tornado.web.RequestHandler):
             try:
                 quest_process.__init__()
                 match.__init__()
-                select_school.__init__()
+                select_school_debug.__init__()
                 schedule.__init__()
                 self.write('reloaded.')
             except:

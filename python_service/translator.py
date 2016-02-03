@@ -49,9 +49,9 @@ def replace(originDict, translateDict, mismatch_list):
     key = ""
     sub_key = ""
 
-    if 'major' in translateDict.keys():
+    if 'major' in translateDict:
         if translateDict['major'] == "法学" or translateDict['major'] == 'law':
-            if 'current-school' in translateDict.keys():
+            if 'current-school' in translateDict:
                 originDict['current-school'] = {
                     '清华北大':'0',
                     '985院校':'1',
@@ -72,14 +72,14 @@ def replace(originDict, translateDict, mismatch_list):
                 sub_key = translateDictSubKey#sub_key 如 total
                 #开始检查参考字典是否具有相应结构
                 #第一层
-                if key in originDict.keys():
+                if key in originDict:
                     #第二层
                     #首先检查是否为字典
                     if isinstance(originDict[key], dict):
                         #然后检查是否有相应的键
-                        if sub_key in originDict[key].keys():
+                        if sub_key in originDict[key]:
                             #如果有键，则去参考字典第三层寻找有没有对应该键值的键
-                            if translateDict[key][sub_key] in originDict[key][sub_key].keys():
+                            if translateDict[key][sub_key] in originDict[key][sub_key]:
                                #如果有，则将待翻译的值翻译成参考字典中相应的值
                                 value = originDict[key][sub_key][translateDict[key][sub_key]]
                                #如果值可以转化为浮点数,则转化为浮点数
@@ -98,10 +98,10 @@ def replace(originDict, translateDict, mismatch_list):
             #第一次遍历时该键所对应的就是基础值
             #根据该键去对照参考字典
             #首先判断参考字典是否有该键
-            if translateDictKey in originDict.keys():
+            if translateDictKey in originDict:
                 #如果有键，则去参考字典寻找有没有对应该键值的键
                 #值由字典组成
-                if translateDict[translateDictKey] in originDict[translateDictKey].keys():
+                if translateDict[translateDictKey] in originDict[translateDictKey]:
                     #如果有，则将待翻译的值翻译成参考字典中相应的值
                     value = originDict[translateDictKey][translateDict[translateDictKey]]
                     #如果值可以转化为浮点数,则转化为浮点数
