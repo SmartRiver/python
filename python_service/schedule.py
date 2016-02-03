@@ -127,14 +127,16 @@ WHITE_PARAM = ['gre', 'gpa', 'toefl', 'ielts', 'gmat']
 
 def schedule(origin_condition):
     return_dict = {}
+
     try:
-        condition = translateFromFrontToBack(origin_condition)
-        if len(condition['mismatch']) == 0:
-            condition = condition['result']
+        ccondition = translateFromFrontToBack(origin_condition)
+        if len(ccondition['mismatch']) == 0:
+            condition = ccondition['result']
         else:
             for each in WHITE_PARAM:
-                if each in condition['mismatch']:
-                    return exit_error_func(u'转换出错参数列表:'+str(condition['mismatch']), 1)
+                if each in ccondition['mismatch']:
+                    return exit_error_func(u'转换出错参数列表:'+str(ccondition['mismatch']), 1)
+            condition = condition = ccondition['result']
 
     except Exception, e:
         return exit_error_func(u'转换参数出错:'+str(origin_condition), 1)
