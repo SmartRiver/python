@@ -49,33 +49,40 @@ class Trie(object):
     def setWords(self, words):
         for word in words:
             self.add(word)
+
     def search(self, node, word):
-        result = []
+        search_result = []
         _len = len(word)
-        print('_len:' + str(_len))
+        temp_root = None
+        global TREE_DEEP
+        for level in range(1, TREE_DEEP):
+            #print('deep: %d ' % level)
 
-        for each_node in node.childs:
-            print('time:'+str(time.time()))
-            print('each:'+each_node.c)
+            if level > 5:
+                return search_result
+            for each_node in node.childs:
+                if each_node.c == word[0]:
+                    if _len == 1:
+                        return self.preOrder(each_node)
+                    else:
+                        search_result.extend(self.search(each_node, word[1:]))
+            if len(search_result) > 0:
+                return search_result
+            else:
 
-            if each_node.c == word[0]:
-                if _len == 1:
-                    global LLL
-                    LLL = self.preOrder(each_node)
-                    print(LLL)
-                    return LLL
-                else:
-                    result.extend(self.search(each_node, word[1:]))
-        return result
+                # for xxoo in node.childs:
+                #     search_result.extend(self.search(xxoo, word))
+
 
 
 class Node(object):
     def __init__(self, c=None, word=None):
-        self.c          = c    # 节点存储的单个字符
-        self.word       = word # 节点存储的词
-        self.childs     = []   # 此节点的子节点
+        self.c = c    # 节点存储的单个字符
+        self.word = word  # 节点存储的词
+        self.childs = []   # 此节点的子节点
 LLL = []
 flag = 1
+TREE_DEEP = 1
 
 UNIVERSITY_SET = set()
 
@@ -83,25 +90,26 @@ def __init__():
     for each in open('university_dict.txt', 'r', encoding='utf-8').readlines():
         each = each.strip('\r').strip('\n')
         UNIVERSITY_SET.add(each)
+        global TREE_DEEP
+        if len(each) > TREE_DEEP:
+            TREE_DEEP = len(each)
 
 if __name__ == '__main__':
+    start_time = time.time()
     #imp.reload(sys)
-    #ssys.setdefaultencoding("utf-8")
+    #sys.setdefaultencoding("utf-8")
     print(sys.getdefaultencoding())
     __init__()
     print()
     trie = Trie()
 
     trie.setWords(UNIVERSITY_SET)
-    print(type(trie))
-    print(type(trie.root))
     #print(trie.preOrder(trie.root))
     # print('原始字符串数组:     %s' % words)
-    ori = '华中'
-    print(ori)
-    print(type(ori))
-    print(type(ori.encode('utf-8')))
-    print(ori.encode('gbk').decode('gbk'))
-    result = trie.search(trie.root, ori)
+    test_set = ('北京工', '上海交', '外国语')
+    for each in test_set:
+        result = trie.search(trie.root, each)
    # print('len : %d' % len(result))
-    print(result)
+        print(result)
+    end_time = time.time()
+    print('use time : %d' % (end_time-start_time))
