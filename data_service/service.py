@@ -28,8 +28,12 @@ class MainHandler(tornado.web.RequestHandler):
         elif request_type == 'school_search':
             keyword = self.request.query_arguments['condition'][0]
             self.set_header('Access-Control-Allow-Origin','*')
-
-            self.write(json.dumps(search_school(keyword), ensure_ascii=False, indent=4))
+            if 'province' in self.request.query_arguments:
+                province = self.request.query_arguments['province'][0]
+                print('province type : %s' % type(province))
+                self.write(json.dumps(search_school(keyword, province), ensure_ascii=False, indent=4))
+            else:
+                self.write(json.dumps(search_school(keyword), ensure_ascii=False, indent=4))
         else:
             raise MissingArgumentError('Invalid command!')
 
@@ -39,5 +43,5 @@ class MainHandler(tornado.web.RequestHandler):
 application = tornado.web.Application([(r"/(.*)", MainHandler)])
 
 if __name__ == "__main__":
-    application.listen(8806)
+    application.listen(8816)
     tornado.ioloop.IOLoop.instance().start()

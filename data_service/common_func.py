@@ -3,9 +3,9 @@
 __author__ = 'xiaohe'
 __doc__ = '''this py file is the collection of those functions or methods used in many other modules'''
 
-def exit_error_func(self, error_code, error_param=''):
+def exit_error_func(error_code, error_param=''):
     error_dict = {
-	    1: '参数格式错误',
+		1: '参数格式错误',
 	    2: '参数内容错误',
 	    3: '程序内部错误',
     }
@@ -14,3 +14,6 @@ def exit_error_func(self, error_code, error_param=''):
 	    'error': error_dict[error_code],
 	    'msg': error_param,
 	}
+def convert_to_str(str):
+	if str(type(str)).find('bytes') > 0:
+		return str.decode('utf-8')

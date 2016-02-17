@@ -96,8 +96,7 @@ def __init__():
 
 if __name__ == '__main__':
     start_time = time.time()
-    #imp.reload(sys)
-    #sys.setdefaultencoding("utf-8")
+
     print(sys.getdefaultencoding())
     __init__()
     print()
