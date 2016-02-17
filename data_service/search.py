@@ -77,12 +77,18 @@ UNIVERSITY_ALIAS_DICT = {}
 
 trie = Trie()
 
-def search_school(self, keyword, province='null'):
+def search_school(keyword):
     print('enter func . . . ')
+    print('type before: %s' % type(keyword))
+    keyword = keyword.decode('utf-8')
+    print('type after: %s' % type(keyword))
+    print('keyword : %s ' % keyword)
     global trie
     print('func: '+str(id(trie)))
     result = trie.search(trie.root, keyword)
-    print('result:%s',result)
+    print('result:%s' % result)
+    if len(result) > 10:
+        result = result[:10]
     return{
         'status': 'success',
         'result': result,
@@ -111,12 +117,12 @@ def _logging_conf():
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(filename)s [func:%(funcName)s] [line:%(lineno)d] %(levelname)s:\n%(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S',
-                        filename='search_school.log',
-                        filemode='w')
+                        filename='log/search_school.log',
+                        filemode='a')
     logging.info('***********************************************')
 
 if __name__ == '__main__':
     _logging_conf()
     __init__()
     keyword = 'har'
-    search_school(keyword, keyword)
+    search_school(keyword)
