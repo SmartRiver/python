@@ -85,27 +85,26 @@ def search_school(self, keyword, province='null'):
     }
 
 def __init__():
-	try:
-		for each in open('resource/university_dict.txt', 'r', encoding='utf-8').readlines():
-			try:
-				each = each.strip('\r').strip('\n')
-				UNIVERSITY_TYPE_DICT[each.split('|')[0]] = each.split('|')[3]
-				UNIVERSITY_ALIAS_DICT[each.split('|')[0]] = each.split('|')[1]
-			except:
-				logging.error('some line is wrong when convent to dict .')
-				logging.info('wrong line : %s ', each)
-				return
-	except FileNotFoundError:
+    try:
+        for each in open('resource/university_dict.txt', 'r', encoding='utf-8').readlines():
+            try:
+                each = each.strip('\r').strip('\n')
+                UNIVERSITY_TYPE_DICT[each.split('|')[0]] = each.split('|')[3]
+                UNIVERSITY_ALIAS_DICT[each.split('|')[0]] = each.split('|')[1]
+            except:
+                logging.error('some line is wrong when convent to dict .')
+                logging.info('wrong line : %s ', each)
+                return
+    except FileNotFoundError:
         logging.error('File resource/university_dict.txt not found . . . ')
 
     trie = Trie()
     trie.setWords(UNIVERSITY_TYPE_DICT.keys())
 
 def logging_conf():
-
-	logging.basicConfig(level=logging.DEBUG,
+    logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(filename)s [func:%(funcName)s] [line:%(lineno)d] %(levelname)s:\n%(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S',
                         filename='log/search_school.log',
                         filemode='a')
-	logging.info('***********************************************')
+    logging.info('***********************************************')
