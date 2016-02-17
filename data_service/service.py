@@ -33,8 +33,8 @@ class MainHandler(tornado.web.RequestHandler):
                 self.write(json.dumps(search_school(keyword, province), ensure_ascii=False, indent=4))
             else:
                 self.write(json.dumps(search_school(keyword), ensure_ascii=False, indent=4))
-	else:
-	    raise MissingArgumentError('Invalid command!')
+        else:
+            raise MissingArgumentError('Invalid command!')
 
 
 
