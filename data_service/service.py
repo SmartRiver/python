@@ -33,11 +33,13 @@ class MainHandler(tornado.web.RequestHandler):
                 self.write(json.dumps(search_school(keyword, province), ensure_ascii=False, indent=4))
             else:
                 self.write(json.dumps(search_school(keyword), ensure_ascii=False, indent=4))
+	else:
+	    raise MissingArgumentError('Invalid command!')
 
 
 
 
-application = tornado.web.Application([(r"/.*)", MainHandler),])
+application = tornado.web.Application([(r"/(.*)", MainHandler)])
 
 if __name__ == "__main__":
     application.listen(8806)

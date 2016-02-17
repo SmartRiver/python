@@ -75,10 +75,13 @@ class Node(object):
 UNIVERSITY_TYPE_DICT = {}
 UNIVERSITY_ALIAS_DICT = {}
 
+trie = Trie()
+
 def search_school(self, keyword, province='null'):
+    print('enter func . . . ')
     global trie
     result = trie.search(keyword)
-
+    print('result:'+result)
     return{
         'status': 'success',
         'result': result,
@@ -98,7 +101,7 @@ def __init__():
     except FileNotFoundError:
         logging.error('File resource/university_dict.txt not found . . . ')
 
-    trie = Trie()
+    global trie
     trie.setWords(UNIVERSITY_TYPE_DICT.keys())
 
 def logging_conf():
