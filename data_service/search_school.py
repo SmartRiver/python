@@ -80,8 +80,9 @@ trie = Trie()
 def search_school(self, keyword, province='null'):
     print('enter func . . . ')
     global trie
-    result = trie.search(keyword)
-    print('result:'+result)
+    print('func: '+str(id(trie)))
+    result = trie.search(trie.root, keyword)
+    print('result:%s',result)
     return{
         'status': 'success',
         'result': result,
@@ -102,12 +103,19 @@ def __init__():
         logging.error('File resource/university_dict.txt not found . . . ')
 
     global trie
+    print('init: '+str(id(trie)))
     trie.setWords(UNIVERSITY_TYPE_DICT.keys())
 
 def logging_conf():
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(filename)s [func:%(funcName)s] [line:%(lineno)d] %(levelname)s:\n%(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S',
-                        filename='log/search_school.log',
-                        filemode='a')
+                        filename='search_school.log',
+                        filemode='w')
     logging.info('***********************************************')
+
+if __name__ == '__main__':
+    logging_conf()
+    __init__()
+    keyword = 'har'
+    search_school(keyword, keyword)

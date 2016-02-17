@@ -2618,8 +2618,7 @@ tokyo institute of technology|Tokyo Institute of Technology|Japan|海外本科10
 osaka university|Osaka University|Japan|海外本科100
 伊利诺伊大学香槟分校|伊利诺伊大学香槟分校|USA|海外本科100
 university of illinois-​urbana-champaign|University of Illinois-​Urbana-Champaign|USA|海外本科100
-慕尼黑理工大学|慕尼黑理工大学
-|Germany|海外本科100
+慕尼黑理工大学|慕尼黑理工大学|Germany|海外本科100
 technical university munich|Technical University Munich|Germany|海外本科100
 杜伦大学|杜伦大学|UK|海外本科100
 durham university|Durham University|UK|海外本科100
@@ -2677,8 +2676,7 @@ university of geneva|University of Geneva|Suisse|海外本科100
 purdue university–​west lafayette|Purdue University–​West Lafayette|USA|海外本科100
 波士顿大学|波士顿大学|USA|海外本科100
 boston university|Boston University|USA|海外本科100
-瑞典皇家理工学院|瑞典皇家理工学院
-|Sweden|海外本科100
+瑞典皇家理工学院|瑞典皇家理工学院|Sweden|海外本科100
 kth royal institute of technology|KTH Royal Institute of Technology|Sweden|海外本科100
 乌得勒支大学|乌得勒支大学|Netherlands|海外本科100
 utrecht university|Utrecht University|Netherlands|海外本科100
@@ -2808,8 +2806,7 @@ queen’s university belfast|Queen’s University Belfast|UK|海外本科-1
 university of colorado–​boulder|University of Colorado–​Boulder|USA|海外本科-1
 萨塞克斯大学|萨塞克斯大学|UK|海外本科-1
 university of sussex|University of Sussex|UK|海外本科-1
-米兰理工大学|米兰理工大学
-|Italy|海外本科-1
+米兰理工大学|米兰理工大学|Italy|海外本科-1
 politecnico di milano|Politecnico di Milano|Italy|海外本科-1
 罗切斯特大学|罗切斯特大学|USA|海外本科-1
 university of rochester|University of Rochester|USA|海外本科-1
@@ -2829,8 +2826,7 @@ case western reserve university|Case Western Reserve University|USA|海外本科
 vanderbilt university|Vanderbilt University|USA|海外本科-1
 巴黎第四大学——巴黎-索邦大学|巴黎第四大学——巴黎-索邦大学|France|海外本科-1
 université paris-sorbonne (paris iv)|Université Paris-Sorbonne (Paris IV)|France|海外本科-1
-巴黎政治学院|巴黎政治学院
-|France|海外本科-1
+巴黎政治学院|巴黎政治学院|France|海外本科-1
 sciences po paris|Sciences Po Paris|France|海外本科-1
 西蒙菲沙大学|西蒙菲沙大学|Canada|海外本科-1
 simon fraser university|Simon Fraser University|Canada|海外本科-1
@@ -2858,11 +2854,9 @@ university of dundee|University of Dundee|UK|海外本科-1
 indiana university–​bloomington|Indiana University–​Bloomington|USA|海外本科-1
 罗格斯,新泽西州立大学新布伦瑞克分校|罗格斯,新泽西州立大学新布伦瑞克分校|USA|海外本科-1
 rutgers, the state university of new jersey–​new brunswick|Rutgers, the State University of New Jersey–​New Brunswick|USA|海外本科-1
-墨尔本皇家理工大学|墨尔本皇家理工大学
-|Australia|海外本科-1
+墨尔本皇家理工大学|墨尔本皇家理工大学|Australia|海外本科-1
 rmit university|RMIT University|Australia|海外本科-1
-伦敦大学亚非学院|伦敦大学亚非学院
-|UK|海外本科-1
+伦敦大学亚非学院|伦敦大学亚非学院|UK|海外本科-1
 soas, university of london|SOAS, University of London |UK|海外本科-1
 达尔豪斯大学|达尔豪斯大学|Canada|海外本科-1
 dalhousie university|Dalhousie University|Canada|海外本科-1
@@ -2920,689 +2914,689 @@ university of connecticut|University of Connecticut|USA|海外本科-1
 university of kansas|University of Kansas|USA|海外本科-1
 斯旺西大学|斯旺西大学|UK|海外本科-1
 swansea university|Swansea University|UK|海外本科-1
-皇后大学|皇后大学Canada|海外本科-1
-queen's university|Queen's UniversityCanada|海外本科-1
-德州农机大学|德州农机大学USA|海外本科-1
-texas a&amp;m university|Texas A&amp;M UniversityUSA|海外本科-1
-贝勒大学|贝勒大学USA|海外本科-1
-baylor university|Baylor UniversityUSA|海外本科-1
-克拉克大学|克拉克大学USA|海外本科-1
-clark university|Clark UniversityUSA|海外本科-1
-克莱姆森大学|克莱姆森大学USA|海外本科-1
-clemson university|Clemson UniversityUSA|海外本科-1
-福特汉姆大学|福特汉姆大学USA|海外本科-1
-fordham university|Fordham UniversityUSA|海外本科-1
-佛罗里达州立大学|佛罗里达州立大学USA|海外本科-1
-florida state university|Florida State UniversityUSA|海外本科-1
-理海大学|理海大学USA|海外本科-1
-lehigh university|Lehigh universityUSA|海外本科-1
-密苏里大学|密苏里大学USA|海外本科-1
-university of missouri|University of MissouriUSA|海外本科-1
-迈阿密大学牛津分校|迈阿密大学牛津分校USA|海外本科-1
-miami university–​oxford|Miami University–​OxfordUSA|海外本科-1
-佩珀代因大学|佩珀代因大学USA|海外本科-1
-pepperdine university|Pepperdine UniversityUSA|海外本科-1
-纽约州立大学石溪分校|纽约州立大学石溪分校USA|海外本科-1
-stony brook university–​suny|Stony Brook University–​SUNYUSA|海外本科-1
-雪城大学|雪城大学USA|海外本科-1
-syracuse university|Syracuse UniversityUSA|海外本科-1
-杜兰大学|杜兰大学USA|海外本科-1
-tulane university|Tulane UniversityUSA|海外本科-1
-阿拉巴马大学|阿拉巴马大学USA|海外本科-1
-university of alabama|University of AlabamaUSA|海外本科-1
-特拉华大学|特拉华大学USA|海外本科-1
-university of delaware|University of DelawareUSA|海外本科-1
-佐治亚大学|佐治亚大学USA|海外本科-1
-university of georgia|University of GeorgiaUSA|海外本科-1
-新罕布什尔大学|新罕布什尔大学USA|海外本科-1
-university of new hampshire|University of New HampshireUSA|海外本科-1
-弗吉尼亚理工|弗吉尼亚理工USA|海外本科-1
-virginia tech|Virginia TechUSA|海外本科-1
-维克森林大学|维克森林大学USA|海外本科-1
-wake forest university|Wake Forest UniversityUSA|海外本科-1
-威廉玛丽学院|威廉玛丽学院USA|海外本科-1
-college of william and mary|College of William and MaryUSA|海外本科-1
-南卫理公会大学|南卫理公会大学USA|海外本科-1
-southern methodist university|Southern Methodist UniversityUSA|海外本科-1
-杨百翰大学普罗沃分校|杨百翰大学普罗沃分校USA|海外本科-1
-brigham young university-​provo|Brigham Young University-​ProvoUSA|海外本科-1
-伍斯特理工学院|伍斯特理工学院USA|海外本科-1
-worcester polytechnic institute|Worcester Polytechnic InstituteUSA|海外本科-1
-马凯特大学|马凯特大学USA|海外本科-1
-marquette university|Marquette UniversityUSA|海外本科-1
-史蒂文斯理工学院|史蒂文斯理工学院USA|海外本科-1
-stevens institute of technology|Stevens Institute of TechnologyUSA|海外本科-1
-纽约州立大学环境与森林学院|纽约州立大学环境与森林学院USA|海外本科-1
-suny college of environmental science and forestry|SUNY College of Environmental Science and ForestryUSA|海外本科-1
-德克萨斯基督教大学|德克萨斯基督教大学USA|海外本科-1
-texas christian university|Texas Christian UniversityUSA|海外本科-1
-科罗拉多矿业学院|科罗拉多矿业学院USA|海外本科-1
-colorado school of mines|Colorado School of MinesUSA|海外本科-1
-丹佛大学|丹佛大学USA|海外本科-1
-university of denver|University of DenverUSA|海外本科-1
-塔尔萨大学|塔尔萨大学USA|海外本科-1
-university of tulsa|University of TulsaUSA|海外本科-1
-卓克索大学|卓克索大学USA|海外本科-1
-drexel university|Drexel UniversityUSA|海外本科-1
-圣地亚哥大学|圣地亚哥大学USA|海外本科-1
-university of san diego|University of San DiegoUSA|海外本科-1
-圣路易斯大学|圣路易斯大学USA|海外本科-1
-saint louis university|Saint Louis UniversityUSA|海外本科-1
-内布拉斯加大学林肯分校|内布拉斯加大学林肯分校USA|海外本科-1
-university of nebraska-lincoln|University of Nebraska-LincolnUSA|海外本科-1
-卡尔顿大学|卡尔顿大学Canada|海外本科-1
-carleton university|Carleton UniversityCanada|海外本科-1
-康考迪亚大学|康考迪亚大学Canada|海外本科-1
-concordia university|Concordia UniversityCanada|海外本科-1
-纽芬兰纪念大学|纽芬兰纪念大学Canada|海外本科-1
-memorial university of newfoundland|Memorial University of NewfoundlandCanada|海外本科-1
-瑞尔森大学|瑞尔森大学Canada|海外本科-1
-ryerson university|Ryerson UniversityCanada|海外本科-1
-温尼伯大学|温尼伯大学Canada|海外本科-1
-the university of winnipeg|The University of WinnipegCanada|海外本科-1
-圭尔夫大学|圭尔夫大学Canada|海外本科-1
-university of guelph|University of GuelphCanada|海外本科-1
-曼尼托巴大学|曼尼托巴大学Canada|海外本科-1
-university of manitoba|University of ManitobaCanada|海外本科-1
-蒙特利尔大学|蒙特利尔大学Canada|海外本科-1
-university of montreal|University of MontrealCanada|海外本科-1
-安省理工大学|安省理工大学Canada|海外本科-1
-university of ontario institute of technology|University of Ontario Institute of TechnologyCanada|海外本科-1
-北英属哥伦比亚大学|北英属哥伦比亚大学Canada|海外本科-1
-university of northern british columbia|University of Northern British ColumbiaCanada|海外本科-1
-爱德华王子岛大学|爱德华王子岛大学Canada|海外本科-1
-university of prince edward island|University of Prince Edward IslandCanada|海外本科-1
-魁北克大学蒙特利尔分校|魁北克大学蒙特利尔分校Canada|海外本科-1
-university of quebec at montreal|University of Quebec at MontrealCanada|海外本科-1
-里贾纳大学|里贾纳大学Canada|海外本科-1
-university of regina|University of ReginaCanada|海外本科-1
-萨斯卡彻温大学|萨斯卡彻温大学Canada|海外本科-1
-university of saskatchewan|University of SaskatchewanCanada|海外本科-1
-谢布克大学|谢布克大学Canada|海外本科-1
-university of sherbrooke|University of SherbrookeCanada|海外本科-1
-温莎大学|温莎大学Canada|海外本科-1
-university of winsor|University of WinsorCanada|海外本科-1
-劳瑞尔大学|劳瑞尔大学Canada|海外本科-1
-wilfrid laurier university|Wilfrid Laurier UniversityCanada|海外本科-1
-莱斯布里奇大学|莱斯布里奇大学Canada|海外本科-1
-university of lethbridge|University of LethbridgeCanada|海外本科-1
-昆特兰理工大学|昆特兰理工大学Canada|海外本科-1
-kwantlen polytechnic university|Kwantlen Polytechnic UniversityCanada|海外本科-1
-汤普森河大学|汤普森河大学Canada|海外本科-1
-thompson rivers university|Thompson Rivers UniversityCanada|海外本科-1
-圣玛丽大学|圣玛丽大学Canada|海外本科-1
-saint mary's university|Saint Mary's UniversityCanada|海外本科-1
-布鲁克大学|布鲁克大学Canada|海外本科-1
-brock university|Brock UniversityCanada|海外本科-1
-普利茅斯大学|普利茅斯大学UK|海外本科-1
-plymouth university|Plymouth UniversityUK|海外本科-1
-瑞文斯博学院|瑞文斯博学院UK|海外本科-1
-ravensbourne college|Ravensbourne CollegeUK|海外本科-1
-曼彻斯特城市大学|曼彻斯特城市大学UK|海外本科-1
-manchester metropolitan university|Manchester Metropolitan UniversityUK|海外本科-1
-考文垂大学|考文垂大学UK|海外本科-1
-coventry university|Coventry UniversityUK|海外本科-1
-金斯顿大学|金斯顿大学UK|海外本科-1
-kingston university|Kingston UniversityUK|海外本科-1
-班戈大学|班戈大学UK|海外本科-1
-bangor university|Bangor UniversityUK|海外本科-1
-伦敦大学教育学院|伦敦大学教育学院UK|海外本科-1
-institute of education|Institute of EducationUK|海外本科-1
-法尔茅斯大学学院|法尔茅斯大学学院UK|海外本科-1
-falmouth university|Falmouth UniversityUK|海外本科-1
-圣乔治医学院|圣乔治医学院UK|海外本科-1
-st george’s, university of london|St George’s, University of LondonUK|海外本科-1
-龙比亚大学|龙比亚大学UK|海外本科-1
-edinburgh napier university|Edinburgh Napier UniversityUK|海外本科-1
-伦敦皇家音乐学院|伦敦皇家音乐学院UK|海外本科-1
-royal college of music|Royal College of MusicUK|海外本科-1
-东英格利亚大学|东英格利亚大学UK|海外本科-1
-university of east anglia|University of East AngliaUK|海外本科-1
-苏格兰皇家音乐学院|苏格兰皇家音乐学院UK|海外本科-1
-royal conservatoire of scotland|Royal Conservatoire of ScotlandUK|海外本科-1
-创意艺术大学|创意艺术大学UK|海外本科-1
-university for the creative arts|University for the Creative ArtsUK|海外本科-1
-哈珀亚当斯大学学院|哈珀亚当斯大学学院UK|海外本科-1
-harper adams university|Harper Adams UniversityUK|海外本科-1
-伯明翰城市大学|伯明翰城市大学UK|海外本科-1
-birmingham city university|Birmingham City UniversityUK|海外本科-1
-格拉斯哥艺术学院|格拉斯哥艺术学院UK|海外本科-1
-glasgow school of art|Glasgow School of ArtUK|海外本科-1
-高地和群岛大学|高地和群岛大学UK|海外本科-1
-university of the highlands and islands|University of the Highlands and IslandsUK|海外本科-1
-卡迪夫都市大学|卡迪夫都市大学UK|海外本科-1
-cardiff metropolitan university|Cardiff Metropolitan UniversityUK|海外本科-1
-伦敦艺术大学|伦敦艺术大学UK|海外本科-1
-university of the arts london|University of the Arts LondonUK|海外本科-1
-朴茨茅斯大学|朴茨茅斯大学UK|海外本科-1
-university of portsmouth|University of PortsmouthUK|海外本科-1
-阿尔斯特大学|阿尔斯特大学UK|海外本科-1
-university of ulster|University of UlsterUK|海外本科-1
-赫尔大学|赫尔大学UK|海外本科-1
-the university of hull|The University of HullUK|海外本科-1
-利物浦霍普大学|利物浦霍普大学UK|海外本科-1
-liverpool hope university|Liverpool Hope UniversityUK|海外本科-1
-阿伯泰大学|阿伯泰大学UK|海外本科-1
-abertay university|Abertay UniversityUK|海外本科-1
-圣玛丽大学学院|圣玛丽大学学院UK|海外本科-1
-st mary's university, twickenham|St Mary's University, TwickenhamUK|海外本科-1
-伍斯特大学|伍斯特大学UK|海外本科-1
-university of worcester|University of WorcesterUK|海外本科-1
-伯恩茅斯艺术学院|伯恩茅斯艺术学院UK|海外本科-1
-arts university bournemouth|Arts University BournemouthUK|海外本科-1
-桑德兰大学|桑德兰大学UK|海外本科-1
-university of sunderland|University of SunderlandUK|海外本科-1
-索尔福德大学|索尔福德大学UK|海外本科-1
-university of salford|University of SalfordUK|海外本科-1
-格拉斯哥喀里多尼亚大学|格拉斯哥喀里多尼亚大学UK|海外本科-1
-glasgow caledonian university|Glasgow Caledonian UniversityUK|海外本科-1
-史塔福郡大学|史塔福郡大学UK|海外本科-1
-staffordshire university|Staffordshire UniversityUK|海外本科-1
-巴特莱特建筑学院|巴特莱特建筑学院UK|海外本科-1
-ucl bartlett school of architecture|UCL Bartlett School of ArchitectureUK|海外本科-1
-基尔大学|基尔大学UK|海外本科-1
-keele university|Keele UniversityUK|海外本科-1
-布莱顿及苏塞克斯医学院|布莱顿及苏塞克斯医学院UK|海外本科-1
-brighton &amp; sussex medical school|Brighton &amp; Sussex Medical SchoolUK|海外本科-1
-波恩茅斯大学|波恩茅斯大学UK|海外本科-1
-bournemouth university|Bournemouth UniversityUK|海外本科-1
-南威尔士大学|南威尔士大学UK|海外本科-1
-university of south wales|University of South WalesUK|海外本科-1
-安格利亚鲁斯金大学|安格利亚鲁斯金大学UK|海外本科-1
-anglia ruskin university|Anglia Ruskin UniversityUK|海外本科-1
-西伦敦大学|西伦敦大学UK|海外本科-1
-university of west london|University of West LondonUK|海外本科-1
-考陶德艺术学院|考陶德艺术学院UK|海外本科-1
-the courtauld institute of art|The Courtauld Institute of ArtUK|海外本科-1
-圣大卫三一学院|圣大卫三一学院UK|海外本科-1
-trinity st davids|Trinity St DavidsUK|海外本科-1
-赫尔约克医学院|赫尔约克医学院UK|海外本科-1
-hull york medical school|Hull York Medical SchoolUK|海外本科-1
-伍尔弗汉普顿大学|伍尔弗汉普顿大学UK|海外本科-1
-university of wolverhampton|University of WolverhamptonUK|海外本科-1
-贝德福特大学|贝德福特大学UK|海外本科-1
-university of bedfordshire|University of BedfordshireUK|海外本科-1
-英博夏尔大学|英博夏尔大学UK|海外本科-1
-bpp university|BPP UniversityUK|海外本科-1
-皇家艺术学院|皇家艺术学院UK|海外本科-1
-royal college of art|Royal College of ArtUK|海外本科-1
-南安普顿索伦特大学|南安普顿索伦特大学UK|海外本科-1
-southampton solent university|Southampton Solent UniversityUK|海外本科-1
-约克圣约翰大学|约克圣约翰大学UK|海外本科-1
-york st john university|York St John UniversityUK|海外本科-1
-伯贝克学院|伯贝克学院UK|海外本科-1
-birkbeck college|Birkbeck CollegeUK|海外本科-1
-诺丁汉特伦特大学|诺丁汉特伦特大学UK|海外本科-1
-nottingham trent university|Nottingham Trent UniversityUK|海外本科-1
-切斯特大学|切斯特大学UK|海外本科-1
-university of chester|University of ChesterUK|海外本科-1
-剑桥视觉及表演艺术学校|剑桥视觉及表演艺术学校UK|海外本科-1
-cambridge school of visual &amp; performing arts|Cambridge School of Visual &amp; performing ArtsUK|海外本科-1
-切尔西艺术与设计学院|切尔西艺术与设计学院UK|海外本科-1
-chelsea college of art and design|Chelsea College of Art and DesignUK|海外本科-1
-英国皇家兽医学院|英国皇家兽医学院UK|海外本科-1
-royal veterinary college|Royal Veterinary CollegeUK|海外本科-1
-伦敦南岸大学|伦敦南岸大学UK|海外本科-1
-london south bank university|London South Bank UniversityUK|海外本科-1
-诺森比亚大学|诺森比亚大学UK|海外本科-1
-northumbria university|Northumbria UniversityUK|海外本科-1
-威斯敏斯特大学|威斯敏斯特大学UK|海外本科-1
-university of westminster|University of WestminsterUK|海外本科-1
-纽曼大学|纽曼大学UK|海外本科-1
-newman university, birmingham|Newman University, BirminghamUK|海外本科-1
-白金汉大学|白金汉大学UK|海外本科-1
-university of buckingham|University of BuckinghamUK|海外本科-1
-利物浦约翰摩尔大学|利物浦约翰摩尔大学UK|海外本科-1
-liverpool john moores university|Liverpool John Moores UniversityUK|海外本科-1
-西英格兰大学|西英格兰大学UK|海外本科-1
-university of the west of england|University of the West of EnglandUK|海外本科-1
-西苏格兰大学|西苏格兰大学UK|海外本科-1
-university of the west of scotland|University of the West of ScotlandUK|海外本科-1
-温切斯特大学|温切斯特大学UK|海外本科-1
-the university of winchester|The University of WinchesterUK|海外本科-1
-坎特伯里基督大学|坎特伯里基督大学UK|海外本科-1
-canterbury christ church university|Canterbury Christ Church UniversityUK|海外本科-1
-中央兰开夏大学|中央兰开夏大学UK|海外本科-1
-university of central lancashire|University of Central LancashireUK|海外本科-1
-罗汉普顿大学|罗汉普顿大学UK|海外本科-1
-roehampton university|Roehampton UniversityUK|海外本科-1
-哥比亚大学|哥比亚大学UK|海外本科-1
-university of cumbria|University of CumbriaUK|海外本科-1
-利兹三一大学学院|利兹三一大学学院UK|海外本科-1
-leeds trinity university|Leeds Trinity UniversityUK|海外本科-1
-皇家威尔士音乐戏剧学院|皇家威尔士音乐戏剧学院UK|海外本科-1
-royal welsh college of music &amp; drama|Royal Welsh College of Music &amp; DramaUK|海外本科-1
-格鲁斯特大学|格鲁斯特大学UK|海外本科-1
-university of gloucestershire|University of GloucestershireUK|海外本科-1
-金史密斯学院|金史密斯学院UK|海外本科-1
-goldsmiths, university of london|Goldsmiths, University of LondonUK|海外本科-1
-皇家音乐学院|皇家音乐学院UK|海外本科-1
-royal academy of music|Royal Academy of MusicUK|海外本科-1
-谢菲尔德哈勒姆大学|谢菲尔德哈勒姆大学UK|海外本科-1
-sheffield hallam university|Sheffield Hallam UniversityUK|海外本科-1
-北安普顿大学|北安普顿大学UK|海外本科-1
-the university of northampton|The University of NorthamptonUK|海外本科-1
-布拉德福德大学|布拉德福德大学UK|海外本科-1
-university of bradford|University of BradfordUK|海外本科-1
-德比大学|德比大学UK|海外本科-1
-university of derby|University of DerbyUK|海外本科-1
-波尔顿大学|波尔顿大学UK|海外本科-1
-university of bolton|University of BoltonUK|海外本科-1
-格罗斯泰斯特主教大学|格罗斯泰斯特主教大学UK|海外本科-1
-bishop grosseteste university|Bishop Grosseteste UniversityUK|海外本科-1
-德蒙福特大学|德蒙福特大学UK|海外本科-1
-de montfort university|De Montfort UniversityUK|海外本科-1
-爱丁堡艺术学院|爱丁堡艺术学院UK|海外本科-1
-edinburgh college of art|Edinburgh College of ArtUK|海外本科-1
-罗伯特戈登大学|罗伯特戈登大学UK|海外本科-1
-the robert gordon university|The Robert Gordon UniversityUK|海外本科-1
-布鲁内尔大学|布鲁内尔大学UK|海外本科-1
-brunel university|Brunel UniversityUK|海外本科-1
-格拉摩根大学|格拉摩根大学UK|海外本科-1
-university of glamorgan|University of GlamorganUK|海外本科-1
-格林威治大学|格林威治大学UK|海外本科-1
-university of greenwich|University of GreenwichUK|海外本科-1
-布莱顿大学|布莱顿大学UK|海外本科-1
-university of brighton|University of BrightonUK|海外本科-1
-伦敦电影学院|伦敦电影学院UK|海外本科-1
-the london film school|The London Film SchoolUK|海外本科-1
-克兰菲尔德大学|克兰菲尔德大学UK|海外本科-1
-cranfield university|Cranfield UniversityUK|海外本科-1
-爱丁堡玛格丽特皇后学院|爱丁堡玛格丽特皇后学院UK|海外本科-1
-queen margaret university edinburgh|Queen Margaret University EdinburghUK|海外本科-1
-温彻斯特艺术学院|温彻斯特艺术学院UK|海外本科-1
-winchester school of art|Winchester School of ArtUK|海外本科-1
-伦敦现代舞蹈学院|伦敦现代舞蹈学院UK|海外本科-1
-london contemporary dance school|London Contemporary Dance SchoolUK|海外本科-1
-伦敦都市大学|伦敦都市大学UK|海外本科-1
-london metropolitan university|London Metropolitan UniversityUK|海外本科-1
-中央圣马丁艺术与设计学院|中央圣马丁艺术与设计学院UK|海外本科-1
-central saint martins college of art and design|Central Saint Martins College of Art and DesignUK|海外本科-1
-密德萨斯大学|密德萨斯大学UK|海外本科-1
-middlesex university|Middlesex UniversityUK|海外本科-1
-边山大学|边山大学UK|海外本科-1
-edge hill university|Edge Hill UniversityUK|海外本科-1
-威尔士新港大学|威尔士新港大学UK|海外本科-1
-university of wales, newport|University Of Wales, NewportUK|海外本科-1
-建筑联盟学院|建筑联盟学院UK|海外本科-1
-architectural association school of architecture|Architectural Association School of ArchitectureUK|海外本科-1
-英国皇家北方音乐学院|英国皇家北方音乐学院UK|海外本科-1
-royal northern college of music|Royal Northern College of MusicUK|海外本科-1
-新白金汉大学|新白金汉大学UK|海外本科-1
-buckinghamshire new university|Buckinghamshire New UniversityUK|海外本科-1
-海斯洛普学院|海斯洛普学院UK|海外本科-1
-heythrop college|Heythrop CollegeUK|海外本科-1
-奇切斯特大学|奇切斯特大学UK|海外本科-1
-university of chichester|University of ChichesterUK|海外本科-1
-中央演讲与戏剧学院|中央演讲与戏剧学院UK|海外本科-1
-royal central school of speech and drama|Royal Central School of Speech and DramaUK|海外本科-1
-蓝带学院|蓝带学院UK|海外本科-1
-le cordon bleu london|Le Cordon Bleu LondonUK|海外本科-1
-东伦敦大学|东伦敦大学UK|海外本科-1
-university of east london|University of East LondonUK|海外本科-1
-伦敦大学亚非学院|伦敦大学亚非学院UK|海外本科-1
-school of oriental and african studies|School of Oriental and African StudiesUK|海外本科-1
-亚伯大学|亚伯大学UK|海外本科-1
-aberystwyth university|Aberystwyth UniversityUK|海外本科-1
-格林多大学|格林多大学UK|海外本科-1
-glyndwr university|Glyndwr UniversityUK|海外本科-1
-提兹塞德大学|提兹塞德大学UK|海外本科-1
-university of teesside|University of TeessideUK|海外本科-1
-圣马克与圣约翰大学学院|圣马克与圣约翰大学学院UK|海外本科-1
-university of st mark &amp; st john|University of St Mark &amp; St JohnUK|海外本科-1
-哈德斯菲尔德大学|哈德斯菲尔德大学UK|海外本科-1
-university of huddersfield|University of HuddersfieldUK|海外本科-1
-彼得伯勒地区学院|彼得伯勒地区学院UK|海外本科-1
-peterborough regional college|Peterborough Regional CollegeUK|海外本科-1
-赫特福德郡大学|赫特福德郡大学UK|海外本科-1
-university of hertfordshire|University of HertfordshireUK|海外本科-1
-曼彻斯特建筑学院|曼彻斯特建筑学院UK|海外本科-1
-manchester school of architecture|Manchester School of ArchitectureUK|海外本科-1
-巴斯泉大学|巴斯泉大学UK|海外本科-1
-bath spa university|Bath Spa UniversityUK|海外本科-1
-利兹贝克特大学|利兹贝克特大学UK|海外本科-1
-leeds beckett university|Leeds Beckett UniversityUK|海外本科-1
-约克大学|约克大学UK|海外本科-1
-the university of york|The University of YorkUK|海外本科-1
-加州艺术学院|加州艺术学院USA|海外本科-1
-california institute of the arts|California Institute of the ArtsUSA|海外本科-1
-俄勒冈州立大学|俄勒冈州立大学USA|海外本科-1
-oregon state university|Oregon State UniversityUSA|海外本科-1
-瑞典农业科学大学|瑞典农业科学大学Sweden|海外本科-1
-swedish university of agricultural sciences|Swedish University of Agricultural SciencesSweden|海外本科-1
-巴黎hec管理学院|巴黎HEC管理学院France|海外本科-1
-hec paris school of management|HEC Paris School of ManagementFrance|海外本科-1
-美国普拉特学院|美国普拉特学院USA|海外本科-1
-pratt institute|Pratt InstituteUSA|海外本科-1
-芝加哥艺术学院|芝加哥艺术学院USA|海外本科-1
-school of the art institute of chicago (saic)|School of the Art Institute of Chicago (SAIC)USA|海外本科-1
-伦敦商学院|伦敦商学院UK|海外本科-1
-london business school|London Business SchoolUK|海外本科-1
-埃因霍恩设计学院|埃因霍恩设计学院Netherlands|海外本科-1
-design academy eindhoven|Design Academy EindhovenNetherlands|海外本科-1
-科罗拉多州立大学|科罗拉多州立大学USA|海外本科-1
-colorado state university|Colorado State UniversityUSA|海外本科-1
-哥本哈根商学院|哥本哈根商学院Danmark|海外本科-1
-copenhagen business school|Copenhagen Business SchoolDanmark|海外本科-1
-卡罗林斯卡学院|卡罗林斯卡学院Sweden|海外本科-1
-karolinska institutet|Karolinska InstitutetSweden|海外本科-1
-博科尼大学|博科尼大学Italy|海外本科-1
-università commerciale luigi bocconi|Università Commerciale Luigi BocconiItaly|海外本科-1
-加州大学旧金山分校|加州大学旧金山分校USA|海外本科-1
-university of california, san francisco|University of California, San FranciscoUSA|海外本科-1
-美国帕森设计学院|美国帕森设计学院USA|海外本科-1
-parsons / the new school|Parsons / The New SchoolUSA|海外本科-1
-艺术中心设计学院|艺术中心设计学院USA|海外本科-1
-art center college of design|Art Center College of DesignUSA|海外本科-1
-英士国际商学院|英士国际商学院Europe|海外本科-1
-insead|INSEADEurope|海外本科-1
-德里大学|德里大学India|海外本科-1
-university of delhi|University of DelhiIndia|海外本科-1
-巴黎高科农业大学校|巴黎高科农业大学校France|海外本科-1
-paris institute of technology|Paris Institute of TechnologyFrance|海外本科-1
-罗德岛设计学院（美国）|罗德岛设计学院（美国）USA|海外本科-1
-rhodes island of design|Rhodes Island of DesignUSA|海外本科-1
-亚利桑那州立大学|亚利桑那州立大学USA|海外本科-1
-arizona state university|Arizona State UniversityUSA|海外本科-1
-罗德岛大学|罗德岛大学USA|海外本科-1
-university of rhode island|University of Rhode IslandUSA|海外本科-1
-巴黎第一大学|巴黎第一大学France|海外本科-1
-université de paris 1 panthéon-sorbonne|Université de Paris 1 Panthéon-SorbonneFrance|海外本科-1
-东京医科齿科大学|东京医科齿科大学Japan|海外本科-1
-tokyo medical and dental university|Tokyo Medical and Dental UniversityJapan|海外本科-1
-拉玛尔大学|拉玛尔大学USA|海外本科-1
-lamar university|Lamar UniversityUSA|海外本科-1
-查普曼大学|查普曼大学USA|海外本科-1
-chapman university|Chapman UniversityUSA|海外本科-1
-天普大学|天普大学USA|海外本科-1
-temple university|Temple UniversityUSA|海外本科-1
-海德堡大学|海德堡大学Germany|海外本科-1
-ruprecht-karls—universitaet heidelberg|Ruprecht-Karls—Universitaet HeidelbergGermany|海外本科-1
-卡尔斯鲁厄理工学院|卡尔斯鲁厄理工学院Germany|海外本科-1
-karlsruhe institute of technology|Karlsruhe Institute of TechnologyGermany|海外本科-1
-奥胡斯大学|奥胡斯大学Denmark|海外本科-1
-aarhus university|Aarhus UniversityDenmark|海外本科-1
-根特大学|根特大学Belgium|海外本科-1
-ghent university|Ghent UniversityBelgium|海外本科-1
-布宜诺斯艾利斯大学|布宜诺斯艾利斯大学Argentina|海外本科-1
-universidad de buenos aires|Universidad de Buenos AiresArgentina|海外本科-1
-查尔姆斯理工大学|查尔姆斯理工大学Sweden|海外本科-1
-chalmers university of technology|Chalmers University of TechnologySweden|海外本科-1
-弗赖堡大学|弗赖堡大学Germany|海外本科-1
-university of freiburg|University of FreiburgGermany|海外本科-1
-巴黎第六大学|巴黎第六大学France|海外本科-1
-pierre and marie curie university|Pierre and Marie Curie UniversityFrance|海外本科-1
-马来亚大学|马来亚大学Malaysia|海外本科-1
-university of malaya|University of MalayaMalaysia|海外本科-1
-印度科技学院|印度科技学院Indian|海外本科-1
-indian  institude  of  science|Indian  Institude  of  ScienceIndian|海外本科-1
-俄亥俄大学|俄亥俄大学USA|海外本科-1
-ohio university|Ohio UniversityUSA|海外本科-1
-亚利桑那大学|亚利桑那大学USA|海外本科-1
-the university of arizona|The University of ArizonaUSA|海外本科-1
-华盛顿与李大学|华盛顿与李大学USA|海外本科-1
-washington and lee university|Washington and Lee UniversityUSA|海外本科-1
-乔治梅森大学|乔治梅森大学USA|海外本科-1
-george mason university|George Mason UniversityUSA|海外本科-1
-爱默生学院|爱默生学院USA|海外本科-1
-emerson college|Emerson CollegeUSA|海外本科-1
-奥本大学|奥本大学USA|海外本科-1
-auburn university|Auburn UniversityUSA|海外本科-1
-休斯敦大学|休斯敦大学USA|海外本科-1
-university of houston|University of HoustonUSA|海外本科-1
-纽约州立大学宾汉姆顿分校|纽约州立大学宾汉姆顿分校USA|海外本科-1
-state university of new york at binghamton|State University of New York at BinghamtonUSA|海外本科-1
-纽约州立大学水牛城分校|纽约州立大学水牛城分校USA|海外本科-1
-university at buffalo--suny|University at Buffalo--SUNYUSA|海外本科-1
-纽约州立大学阿尔巴尼分校|纽约州立大学阿尔巴尼分校USA|海外本科-1
-university at albany--suny|University at Albany--SUNYUSA|海外本科-1
-佛蒙特大学|佛蒙特大学USA|海外本科-1
-university of vermont|University of VermontUSA|海外本科-1
-芝加哥洛约拉大学|芝加哥洛约拉大学USA|海外本科-1
-loyola university chicago|Loyola University ChicagoUSA|海外本科-1
-加州大学圣克鲁兹分校|加州大学圣克鲁兹分校USA|海外本科-1
-university of california-santa cruz|University of California-Santa CruzUSA|海外本科-1
-加州大学河滨分校|加州大学河滨分校USA|海外本科-1
-university of california--riverside|University of California--RiversideUSA|海外本科-1
-田纳西大学|田纳西大学USA|海外本科-1
-university of tennessee—​knoxville|University of Tennessee—​KnoxvilleUSA|海外本科-1
-辛辛那提大学|辛辛那提大学USA|海外本科-1
-university of cincinnati|University of CincinnatiUSA|海外本科-1
-俄克拉荷马州立大学|俄克拉荷马州立大学USA|海外本科-1
-oklahoma state university|Oklahoma State UniversityUSA|海外本科-1
-密苏里科学技术大学|密苏里科学技术大学USA|海外本科-1
-missouri university of science &amp; technology|Missouri University of Science &amp; TechnologyUSA|海外本科-1
-新泽西理工学院|新泽西理工学院USA|海外本科-1
-new jersey institute of technology|New Jersey Institute of TechnologyUSA|海外本科-1
-堪萨斯州立大学|堪萨斯州立大学USA|海外本科-1
-kansas state university|Kansas State UniversityUSA|海外本科-1
-克拉克森大学|克拉克森大学USA|海外本科-1
-clarkson university|Clarkson UniversityUSA|海外本科-1
-得克萨斯理工大学|得克萨斯理工大学USA|海外本科-1
-texas tech university (whitacre)|Texas Tech University (Whitacre)USA|海外本科-1
-伊利诺伊理工大学|伊利诺伊理工大学USA|海外本科-1
-illinois institute of technology (armour)|Illinois Institute of Technology (Armour)USA|海外本科-1
-密歇根理工大学|密歇根理工大学USA|海外本科-1
-michigan technological university|Michigan Technological UniversityUSA|海外本科-1
-俄克拉荷马大学|俄克拉荷马大学USA|海外本科-1
-university of oklahoma|University of OklahomaUSA|海外本科-1
-路易斯安那州立大学|路易斯安那州立大学USA|海外本科-1
-louisiana state university—​baton rouge|Louisiana State University—​Baton RougeUSA|海外本科-1
-南卡罗来纳大学|南卡罗来纳大学USA|海外本科-1
-university of south carolina|University of South CarolinaUSA|海外本科-1
-纽约市立学院|纽约市立学院USA|海外本科-1
-the city college of new york|The City College of New YorkUSA|海外本科-1
-马里兰大学巴尔的摩郡分校|马里兰大学巴尔的摩郡分校USA|海外本科-1
-university of maryland, baltimore county|University of Maryland, Baltimore CountyUSA|海外本科-1
-西弗吉尼亚大学|西弗吉尼亚大学USA|海外本科-1
-west virginia university|West Virginia UniversityUSA|海外本科-1
-内华达大学拉斯维加斯分校|内华达大学拉斯维加斯分校USA|海外本科-1
-university of nevada, las vegas|University of Nevada, Las VegasUSA|海外本科-1
-缅因大学|缅因大学USA|海外本科-1
-university of maine|University of MaineUSA|海外本科-1
-阿拉斯加大学费尔班克斯分校|阿拉斯加大学费尔班克斯分校USA|海外本科-1
-university of alaska fairbanks|University of Alaska FairbanksUSA|海外本科-1
-新墨西哥州立大学|新墨西哥州立大学USA|海外本科-1
-new mexico state university|New Mexico State UniversityUSA|海外本科-1
-密西西比州立大学|密西西比州立大学USA|海外本科-1
-mississippi state university|Mississippi State UniversityUSA|海外本科-1
-韦恩州立大学|韦恩州立大学USA|海外本科-1
-wayne state university|Wayne State UniversityUSA|海外本科-1
-夏威夷马诺大学|夏威夷马诺大学USA|海外本科-1
-university of hawaii-manoa|University of Hawaii-ManoaUSA|海外本科-1
-新墨西哥大学|新墨西哥大学USA|海外本科-1
-university of new mexico|University of New MexicoUSA|海外本科-1
-怀俄明大学|怀俄明大学USA|海外本科-1
-university of wyoming|University of WyomingUSA|海外本科-1
-科罗拉多大学丹佛分校|科罗拉多大学丹佛分校USA|海外本科-1
-university of colorado-denver|University of Colorado-DenverUSA|海外本科-1
-阿肯色大学费耶特维尔分校|阿肯色大学费耶特维尔分校USA|海外本科-1
-university of arkansas-fayetteville|University of Arkansas-FayettevilleUSA|海外本科-1
-阿肯色大学小石城分校|阿肯色大学小石城分校USA|海外本科-1
-university of arkansas-little rock|University of Arkansas-Little RockUSA|海外本科-1
-阿肯色大学蒙塞蒂洛分校|阿肯色大学蒙塞蒂洛分校USA|海外本科-1
-university of arkansas-monticello|University of Arkansas-MonticelloUSA|海外本科-1
-阿肯色大学松崖分校|阿肯色大学松崖分校USA|海外本科-1
-university of arkansas-pine bluff|University of Arkansas-Pine BluffUSA|海外本科-1
-阿肯色大学史密斯堡分校|阿肯色大学史密斯堡分校USA|海外本科-1
-university of arkansas-fort smith|University of Arkansas-Fort SmithUSA|海外本科-1
-犹他州立大学|犹他州立大学USA|海外本科-1
-utah state university|Utah State UniversityUSA|海外本科-1
-内华达大学雷诺分校|内华达大学雷诺分校USA|海外本科-1
-university of nevada--reno|University of Nevada--RenoUSA|海外本科-1
-伊利诺伊大学芝加哥分校|伊利诺伊大学芝加哥分校USA|海外本科-1
-university of illinois--chicago|University of Illinois--ChicagoUSA|海外本科-1
-中弗罗里达大学|中弗罗里达大学USA|海外本科-1
-university of central florida|University of Central FloridaUSA|海外本科-1
-北卡罗来纳大学夏洛特分校|北卡罗来纳大学夏洛特分校USA|海外本科-1
-university of north carolina--charlotte|University of North Carolina--CharlotteUSA|海外本科-1
-纽约市立大学亨特学院|纽约市立大学亨特学院USA|海外本科-1
-cuny--hunter college|CUNY--Hunter CollegeUSA|海外本科-1
-俄勒冈大学|俄勒冈大学USA|海外本科-1
-university of oregon|University of OregonUSA|海外本科-1
-罗切斯特理工学院|罗切斯特理工学院USA|海外本科-1
-rochester institute of technology|Rochester Institute of TechnologyUSA|海外本科-1
-纽约城市大学研究生院和大学中心|纽约城市大学研究生院和大学中心USA|海外本科-1
-cuny-graduate school and university center|CUNY-Graduate School and University CenterUSA|海外本科-1
-华盛顿州立大学|华盛顿州立大学USA|海外本科-1
-washington state university|Washington State UniversityUSA|海外本科-1
-威斯康辛密尔沃基分校|威斯康辛密尔沃基分校USA|海外本科-1
-university of wisconsin, milwaukee|University of Wisconsin, MilwaukeeUSA|海外本科-1
-罗格斯大学纽华克分校|罗格斯大学纽华克分校USA|海外本科-1
-rutgers,the state university of new jersey-newark|Rutgers,the State University of New jersey-NewarkUSA|海外本科-1
-肯塔基大学|肯塔基大学USA|海外本科-1
-university of kentucky|University of KentuckyUSA|海外本科-1
-肯特州立大学|肯特州立大学USA|海外本科-1
-kent state university|Kent State UniversityUSA|海外本科-1
-阿拉巴马大学伯明翰分校|阿拉巴马大学伯明翰分校USA|海外本科-1
-university of alabama at birmingham|University of Alabama at BirminghamUSA|海外本科-1
-卫斯理大学|卫斯理大学USA|海外本科-1
-wesleyan university|Wesleyan UniversityUSA|海外本科-1
-孟菲斯大学|孟菲斯大学USA|海外本科-1
-university of memphis|University of MemphisUSA|海外本科-1
-德克萨斯大学阿灵顿分校|德克萨斯大学阿灵顿分校USA|海外本科-1
-university of texas,arlington|University of Texas,ArlingtonUSA|海外本科-1
-圣克拉拉大学|圣克拉拉大学USA|海外本科-1
-santa clara university|Santa Clara UniversityUSA|海外本科-1
-格罗夫城市学院|格罗夫城市学院USA|海外本科-1
-grove city college|Grove City CollegeUSA|海外本科-1
-空军技术学院|空军技术学院USA|海外本科-1
-air force institute of technolog|Air Force Institute of TechnologUSA|海外本科-1
-海军研究院|海军研究院USA|海外本科-1
-naval postgraduate school|Naval Postgraduate SchoolUSA|海外本科-1
-克莱蒙研究大学|克莱蒙研究大学USA|海外本科-1
-claremont graduate university|Claremont Graduate UniversityUSA|海外本科-1
-德克萨斯大学达拉斯分校|德克萨斯大学达拉斯分校USA|海外本科-1
-university of texas at dallas|University of Texas at DallasUSA|海外本科-1
-俄勒冈健康与科学大学|俄勒冈健康与科学大学USA|海外本科-1
-oregon health and science university|Oregon Health and Science UniversityUSA|海外本科-1
-南佛罗里达大学|南佛罗里达大学USA|海外本科-1
-university of south florida|University of South FloridaUSA|海外本科-1
-马萨诸塞大学洛厄尔分校|马萨诸塞大学洛厄尔分校USA|海外本科-1
-university of massachusetts lowell|University of Massachusetts LowellUSA|海外本科-1
-本特利大学|本特利大学USA|海外本科-1
-bentley university|Bentley UniversityUSA|海外本科-1
-德州理工大学|德州理工大学USA|海外本科-1
-texas tech university|Texas Tech UniversityUSA|海外本科-1
-爱达荷大学|爱达荷大学USA|海外本科-1
-university of idaho|University of IdahoUSA|海外本科-1
-代顿大学|代顿大学USA|海外本科-1
-university of dayton|University of DaytonUSA|海外本科-1
-佛罗里达农工大学|佛罗里达农工大学USA|海外本科-1
-florida agricultural and mechanical university|Florida Agricultural and Mechanical UniversityUSA|海外本科-1
-欧道明大学|欧道明大学USA|海外本科-1
-old dominion university|Old Dominion UniversityUSA|海外本科-1
-阿拉巴马大学汉茨维尔分校|阿拉巴马大学汉茨维尔分校USA|海外本科-1
-university of alabama in huntsville|University of alabama in huntsvilleUSA|海外本科-1
-弗吉尼亚联邦大学|弗吉尼亚联邦大学USA|海外本科-1
-virginia commonwealth university|Virginia Commonwealth UniversityUSA|海外本科-1
-普渡大学印第安纳波利斯分校|普渡大学印第安纳波利斯分校USA|海外本科-1
-indiana university-purdue university,indianapolis|Indiana University-Purdue University,IndianapolisUSA|海外本科-1
-圣地亚哥州立大学|圣地亚哥州立大学USA|海外本科-1
-san diego state university|San Diego State UniversityUSA|海外本科-1
-密西西比大学|密西西比大学USA|海外本科-1
-university of mississippi|University of MississippiUSA|海外本科-1
-怀特州立大学|怀特州立大学USA|海外本科-1
-wright state university|Wright State UniversityUSA|海外本科-1
-霍华德大学|霍华德大学USA|海外本科-1
-howard university|Howard UniversityUSA|海外本科-1
-蒙大拿州立大学|蒙大拿州立大学USA|海外本科-1
-montana state university|Montana State UniversityUSA|海外本科-1
-北卡罗来纳州立农业技术大学|北卡罗来纳州立农业技术大学USA|海外本科-1
-north carolina a &amp; t state university|North Carolina A &amp; T State UniversityUSA|海外本科-1
-田纳西理工大学|田纳西理工大学USA|海外本科-1
-tennessee technological university|Tennessee Technological UniversityUSA|海外本科-1
-阿克伦大学|阿克伦大学USA|海外本科-1
-university of akron|University of AkronUSA|海外本科-1
-科罗拉多大学科罗拉多斯普林斯分校|科罗拉多大学科罗拉多斯普林斯分校USA|海外本科-1
-university of colorado, colorado springs|University of Colorado, Colorado SpringsUSA|海外本科-1
-路易斯维尔大学|路易斯维尔大学USA|海外本科-1
-university of louisville|University of LouisvilleUSA|海外本科-1
-马萨诸塞大学洛厄尔分校|马萨诸塞大学洛厄尔分校USA|海外本科-1
-university of massachusetts,lowell|University of Massachusetts,LowellUSA|海外本科-1
-托莱多大学|托莱多大学USA|海外本科-1
-university of toledo|University of ToledoUSA|海外本科-1
-卫奇塔州立大学|卫奇塔州立大学USA|海外本科-1
-wichita state university|Wichita State UniversityUSA|海外本科-1
-克利夫兰州立大学|克利夫兰州立大学USA|海外本科-1
-cleveland state university|Cleveland State UniversityUSA|海外本科-1
-佛罗里达大西洋大学|佛罗里达大西洋大学USA|海外本科-1
-florida atlantic university|Florida Atlantic UniversityUSA|海外本科-1
-佛罗里达理工学院|佛罗里达理工学院USA|海外本科-1
-florida institute of technology|Florida Institute of TechnologyUSA|海外本科-1
-佛罗里达国际大学|佛罗里达国际大学USA|海外本科-1
-florida international university|Florida International UniversityUSA|海外本科-1
-路易斯安那理工大学|路易斯安那理工大学USA|海外本科-1
-louisiana tech university|Louisiana Tech UniversityUSA|海外本科-1
-北达科他州立大学|北达科他州立大学USA|海外本科-1
-north dakota state university|North Dakota State UniversityUSA|海外本科-1
-波特兰州立大学|波特兰州立大学USA|海外本科-1
-portland state university|Portland State UniversityUSA|海外本科-1
-南达科他矿业技术学院|南达科他矿业技术学院USA|海外本科-1
-south dakota school of mines and technology|South Dakota School of Mines and TechnologyUSA|海外本科-1
-南达科塔州立大学|南达科塔州立大学USA|海外本科-1
-south dakota state university|South Dakota State UniversityUSA|海外本科-1
-南伊利诺斯大学卡本代尔分校|南伊利诺斯大学卡本代尔分校USA|海外本科-1
-southern illinois university, carbondale|Southern Illinois University, CarbondaleUSA|海外本科-1
-田纳西州立大学|田纳西州立大学USA|海外本科-1
-tennessee state university|Tennessee State UniversityUSA|海外本科-1
-德克萨斯农工大学金斯维尔分校|德克萨斯农工大学金斯维尔分校USA|海外本科-1
-texas a&amp;m university, kingsville|Texas A&amp;M University, KingsvilleUSA|海外本科-1
-美国天主教大学|美国天主教大学USA|海外本科-1
-the catholic university of america|The Catholic University of AmericaUSA|海外本科-1
-桥港大学|桥港大学USA|海外本科-1
-university of bridgeport|University of BridgeportUSA|海外本科-1
-底特律大学|底特律大学USA|海外本科-1
-university of detroit mercy|University of Detroit MercyUSA|海外本科-1
-密苏里州大学堪萨斯城分校|密苏里州大学堪萨斯城分校USA|海外本科-1
-university of missouri,kansas city|University of Missouri,Kansas CityUSA|海外本科-1
-新奥尔良大学|新奥尔良大学USA|海外本科-1
-university of new orleans|University of New OrleansUSA|海外本科-1
-北达科他大学|北达科他大学USA|海外本科-1
-university of north dakota|University of North DakotaUSA|海外本科-1
-德克萨斯大学埃尔帕索分校|德克萨斯大学埃尔帕索分校USA|海外本科-1
-university of texas at el paso|University of Texas at El PasoUSA|海外本科-1
-西密歇根大学|西密歇根大学USA|海外本科-1
-western michigan university|Western Michigan UniversityUSA|海外本科-1
-纽约州立大学阿尔弗雷德分校|纽约州立大学阿尔弗雷德分校USA|海外本科-1
-alfred state suny college of technology|Alfred State SUNY College of TechnologyUSA|海外本科-1
-新墨西哥矿业与科技学院|新墨西哥矿业与科技学院USA|海外本科-1
-new mexico institute of mining and technology |New Mexico Institute of Mining and Technology USA|海外本科-1
-北德克萨斯大学|北德克萨斯大学USA|海外本科-1
-university of north texas|University of North TexasUSA|海外本科-1
-德克萨斯安东尼奥分校|德克萨斯安东尼奥分校USA|海外本科-1
-university of texas, san antonio|University of Texas, San AntonioUSA|海外本科-1
-德克萨斯大学西南医学中心|德克萨斯大学西南医学中心USA|海外本科-1
-university of texas southwestern medical center|University of Texas Southwestern Medical CenterUSA|海外本科-1
-德克萨斯大学休斯敦医学中心|德克萨斯大学休斯敦医学中心USA|海外本科-1
-university of texas health science center—​houston|University of Texas Health Science Center—​HoustonUSA|海外本科-1
-德克萨斯大学圣安东尼奥医学中心|德克萨斯大学圣安东尼奥医学中心USA|海外本科-1
-university of texas health science center—​san antonio|University of Texas Health Science Center—​San AntonioUSA|海外本科-1
-德克萨斯大学加尔维斯顿医学分部|德克萨斯大学加尔维斯顿医学分部USA|海外本科-1
-university of texas medical branch—​galveston|University of Texas Medical Branch—​GalvestonUSA|海外本科-1
-美国斯克利普斯研究所|美国斯克利普斯研究所USA|海外本科-1
-the scripps research institute|The Scripps Research InstituteUSA|海外本科-1
-洛克菲勒大学|洛克菲勒大学USA|海外本科-1
-rockefeller university|Rockefeller UniversityUSA|海外本科-1
-梅奥医学院|梅奥医学院USA|海外本科-1
-mayo medical school|Mayo Medical SchoolUSA|海外本科-1
-西奈山伊坎医学院|西奈山伊坎医学院USA|海外本科-1
-icahn school of medicine at mount sinai|Icahn School of Medicine at Mount SinaiUSA|海外本科-1
-马萨诸塞大学伍斯特分校|马萨诸塞大学伍斯特分校USA|海外本科-1
-university of massachusetts medical center—​worcester|University of Massachusetts Medical Center—​WorcesterUSA|海外本科-1
-内布拉斯加大学医学中心|内布拉斯加大学医学中心USA|海外本科-1
-university of nebraska medical center|University of Nebraska Medical CenterUSA|海外本科-1
-威斯康星医学院|威斯康星医学院USA|海外本科-1
-medical college of wisconsin|Medical College of WisconsinUSA|海外本科-1
-托马斯杰斐逊大学|托马斯杰斐逊大学USA|海外本科-1
-thomas jefferson university|Thomas Jefferson UniversityUSA|海外本科-1
-贝勒医学院|贝勒医学院USA|海外本科-1
-baylor college of medicine|Baylor College of MedicineUSA|海外本科-1
-德州农工大学的健康科学中心—贝勒牙医学院|德州农工大学的健康科学中心—贝勒牙医学院USA|海外本科-1
-texas a&amp;m health science center—​baylor college of dentistry|Texas A&amp;M Health Science Center—​Baylor College of DentistryUSA|海外本科-1
-罗格斯大学生物医学和健康科学部|罗格斯大学生物医学和健康科学部USA|海外本科-1
-rutgers biomedical and health sciences|Rutgers Biomedical and Health SciencesUSA|海外本科-1
-爱达荷州立大学|爱达荷州立大学USA|海外本科-1
-idaho state university|Idaho State UniversityUSA|海外本科-1
-康奈尔医学研究学院|康奈尔医学研究学院USA|海外本科-1
-weill cornell graduate school of medical sciences|Weill Cornell Graduate School of Medical SciencesUSA|海外本科-1
+皇后大学|皇后大学|Canada|海外本科-1
+queen's university|Queen's University|Canada|海外本科-1
+德州农机大学|德州农机大学|USA|海外本科-1
+texas a&amp;m university|Texas A&amp;M University|USA|海外本科-1
+贝勒大学|贝勒大学|USA|海外本科-1
+baylor university|Baylor University|USA|海外本科-1
+克拉克大学|克拉克大学|USA|海外本科-1
+clark university|Clark University|USA|海外本科-1
+克莱姆森大学|克莱姆森大学|USA|海外本科-1
+clemson university|Clemson University|USA|海外本科-1
+福特汉姆大学|福特汉姆大学|USA|海外本科-1
+fordham university|Fordham University|USA|海外本科-1
+佛罗里达州立大学|佛罗里达州立大学|USA|海外本科-1
+florida state university|Florida State University|USA|海外本科-1
+理海大学|理海大学|USA|海外本科-1
+lehigh university|Lehigh university|USA|海外本科-1
+密苏里大学|密苏里大学|USA|海外本科-1
+university of missouri|University of Missouri|USA|海外本科-1
+迈阿密大学牛津分校|迈阿密大学牛津分校|USA|海外本科-1
+miami university–​oxford|Miami University–​Oxford|USA|海外本科-1
+佩珀代因大学|佩珀代因大学|USA|海外本科-1
+pepperdine university|Pepperdine University|USA|海外本科-1
+纽约州立大学石溪分校|纽约州立大学石溪分校|USA|海外本科-1
+stony brook university–​suny|Stony Brook University–​SUNY|USA|海外本科-1
+雪城大学|雪城大学|USA|海外本科-1
+syracuse university|Syracuse University|USA|海外本科-1
+杜兰大学|杜兰大学|USA|海外本科-1
+tulane university|Tulane University|USA|海外本科-1
+阿拉巴马大学|阿拉巴马大学|USA|海外本科-1
+university of alabama|University of Alabama|USA|海外本科-1
+特拉华大学|特拉华大学|USA|海外本科-1
+university of delaware|University of Delaware|USA|海外本科-1
+佐治亚大学|佐治亚大学|USA|海外本科-1
+university of georgia|University of Georgia|USA|海外本科-1
+新罕布什尔大学|新罕布什尔大学|USA|海外本科-1
+university of new hampshire|University of New Hampshire|USA|海外本科-1
+弗吉尼亚理工|弗吉尼亚理工|USA|海外本科-1
+virginia tech|Virginia Tech|USA|海外本科-1
+维克森林大学|维克森林大学|USA|海外本科-1
+wake forest university|Wake Forest University|USA|海外本科-1
+威廉玛丽学院|威廉玛丽学院|USA|海外本科-1
+college of william and mary|College of William and Mary|USA|海外本科-1
+南卫理公会大学|南卫理公会大学|USA|海外本科-1
+southern methodist university|Southern Methodist University|USA|海外本科-1
+杨百翰大学普罗沃分校|杨百翰大学普罗沃分校|USA|海外本科-1
+brigham young university-​provo|Brigham Young University-​Provo|USA|海外本科-1
+伍斯特理工学院|伍斯特理工学院|USA|海外本科-1
+worcester polytechnic institute|Worcester Polytechnic Institute|USA|海外本科-1
+马凯特大学|马凯特大学|USA|海外本科-1
+marquette university|Marquette University|USA|海外本科-1
+史蒂文斯理工学院|史蒂文斯理工学院|USA|海外本科-1
+stevens institute of technology|Stevens Institute of Technology|USA|海外本科-1
+纽约州立大学环境与森林学院|纽约州立大学环境与森林学院|USA|海外本科-1
+suny college of environmental science and forestry|SUNY College of Environmental Science and Forestry|USA|海外本科-1
+德克萨斯基督教大学|德克萨斯基督教大学|USA|海外本科-1
+texas christian university|Texas Christian University|USA|海外本科-1
+科罗拉多矿业学院|科罗拉多矿业学院|USA|海外本科-1
+colorado school of mines|Colorado School of Mines|USA|海外本科-1
+丹佛大学|丹佛大学|USA|海外本科-1
+university of denver|University of Denver|USA|海外本科-1
+塔尔萨大学|塔尔萨大学|USA|海外本科-1
+university of tulsa|University of Tulsa|USA|海外本科-1
+卓克索大学|卓克索大学|USA|海外本科-1
+drexel university|Drexel University|USA|海外本科-1
+圣地亚哥大学|圣地亚哥大学|USA|海外本科-1
+university of san diego|University of San Diego|USA|海外本科-1
+圣路易斯大学|圣路易斯大学|USA|海外本科-1
+saint louis university|Saint Louis University|USA|海外本科-1
+内布拉斯加大学林肯分校|内布拉斯加大学林肯分校|USA|海外本科-1
+university of nebraska-lincoln|University of Nebraska-Lincoln|USA|海外本科-1
+卡尔顿大学|卡尔顿大学|Canada|海外本科-1
+carleton university|Carleton University|Canada|海外本科-1
+康考迪亚大学|康考迪亚大学|Canada|海外本科-1
+concordia university|Concordia University|Canada|海外本科-1
+纽芬兰纪念大学|纽芬兰纪念大学|Canada|海外本科-1
+memorial university of newfoundland|Memorial University of Newfoundland|Canada|海外本科-1
+瑞尔森大学|瑞尔森大学|Canada|海外本科-1
+ryerson university|Ryerson University|Canada|海外本科-1
+温尼伯大学|温尼伯大学|Canada|海外本科-1
+the university of winnipeg|The University of Winnipeg|Canada|海外本科-1
+圭尔夫大学|圭尔夫大学|Canada|海外本科-1
+university of guelph|University of Guelph|Canada|海外本科-1
+曼尼托巴大学|曼尼托巴大学|Canada|海外本科-1
+university of manitoba|University of Manitoba|Canada|海外本科-1
+蒙特利尔大学|蒙特利尔大学|Canada|海外本科-1
+university of montreal|University of Montreal|Canada|海外本科-1
+安省理工大学|安省理工大学|Canada|海外本科-1
+university of ontario institute of technology|University of Ontario Institute of Technology|Canada|海外本科-1
+北英属哥伦比亚大学|北英属哥伦比亚大学|Canada|海外本科-1
+university of northern british columbia|University of Northern British Columbia|Canada|海外本科-1
+爱德华王子岛大学|爱德华王子岛大学|Canada|海外本科-1
+university of prince edward island|University of Prince Edward Island|Canada|海外本科-1
+魁北克大学蒙特利尔分校|魁北克大学蒙特利尔分校|Canada|海外本科-1
+university of quebec at montreal|University of Quebec at Montreal|Canada|海外本科-1
+里贾纳大学|里贾纳大学|Canada|海外本科-1
+university of regina|University of Regina|Canada|海外本科-1
+萨斯卡彻温大学|萨斯卡彻温大学|Canada|海外本科-1
+university of saskatchewan|University of Saskatchewan|Canada|海外本科-1
+谢布克大学|谢布克大学|Canada|海外本科-1
+university of sherbrooke|University of Sherbrooke|Canada|海外本科-1
+温莎大学|温莎大学|Canada|海外本科-1
+university of winsor|University of Winsor|Canada|海外本科-1
+劳瑞尔大学|劳瑞尔大学|Canada|海外本科-1
+wilfrid laurier university|Wilfrid Laurier University|Canada|海外本科-1
+莱斯布里奇大学|莱斯布里奇大学|Canada|海外本科-1
+university of lethbridge|University of Lethbridge|Canada|海外本科-1
+昆特兰理工大学|昆特兰理工大学|Canada|海外本科-1
+kwantlen polytechnic university|Kwantlen Polytechnic University|Canada|海外本科-1
+汤普森河大学|汤普森河大学|Canada|海外本科-1
+thompson rivers university|Thompson Rivers University|Canada|海外本科-1
+圣玛丽大学|圣玛丽大学|Canada|海外本科-1
+saint mary's university|Saint Mary's University|Canada|海外本科-1
+布鲁克大学|布鲁克大学|Canada|海外本科-1
+brock university|Brock University|Canada|海外本科-1
+普利茅斯大学|普利茅斯大学|UK|海外本科-1
+plymouth university|Plymouth University|UK|海外本科-1
+瑞文斯博学院|瑞文斯博学院|UK|海外本科-1
+ravensbourne college|Ravensbourne College|UK|海外本科-1
+曼彻斯特城市大学|曼彻斯特城市大学|UK|海外本科-1
+manchester metropolitan university|Manchester Metropolitan University|UK|海外本科-1
+考文垂大学|考文垂大学|UK|海外本科-1
+coventry university|Coventry University|UK|海外本科-1
+金斯顿大学|金斯顿大学|UK|海外本科-1
+kingston university|Kingston University|UK|海外本科-1
+班戈大学|班戈大学|UK|海外本科-1
+bangor university|Bangor University|UK|海外本科-1
+伦敦大学教育学院|伦敦大学教育学院|UK|海外本科-1
+institute of education|Institute of Education|UK|海外本科-1
+法尔茅斯大学学院|法尔茅斯大学学院|UK|海外本科-1
+falmouth university|Falmouth University|UK|海外本科-1
+圣乔治医学院|圣乔治医学院|UK|海外本科-1
+st george’s, university of london|St George’s, University of London|UK|海外本科-1
+龙比亚大学|龙比亚大学|UK|海外本科-1
+edinburgh napier university|Edinburgh Napier University|UK|海外本科-1
+伦敦皇家音乐学院|伦敦皇家音乐学院|UK|海外本科-1
+royal college of music|Royal College of Music|UK|海外本科-1
+东英格利亚大学|东英格利亚大学|UK|海外本科-1
+university of east anglia|University of East Anglia|UK|海外本科-1
+苏格兰皇家音乐学院|苏格兰皇家音乐学院|UK|海外本科-1
+royal conservatoire of scotland|Royal Conservatoire of Scotland|UK|海外本科-1
+创意艺术大学|创意艺术大学|UK|海外本科-1
+university for the creative arts|University for the Creative Arts|UK|海外本科-1
+哈珀亚当斯大学学院|哈珀亚当斯大学学院|UK|海外本科-1
+harper adams university|Harper Adams University|UK|海外本科-1
+伯明翰城市大学|伯明翰城市大学|UK|海外本科-1
+birmingham city university|Birmingham City University|UK|海外本科-1
+格拉斯哥艺术学院|格拉斯哥艺术学院|UK|海外本科-1
+glasgow school of art|Glasgow School of Art|UK|海外本科-1
+高地和群岛大学|高地和群岛大学|UK|海外本科-1
+university of the highlands and islands|University of the Highlands and Islands|UK|海外本科-1
+卡迪夫都市大学|卡迪夫都市大学|UK|海外本科-1
+cardiff metropolitan university|Cardiff Metropolitan University|UK|海外本科-1
+伦敦艺术大学|伦敦艺术大学|UK|海外本科-1
+university of the arts london|University of the Arts London|UK|海外本科-1
+朴茨茅斯大学|朴茨茅斯大学|UK|海外本科-1
+university of portsmouth|University of Portsmouth|UK|海外本科-1
+阿尔斯特大学|阿尔斯特大学|UK|海外本科-1
+university of ulster|University of Ulster|UK|海外本科-1
+赫尔大学|赫尔大学|UK|海外本科-1
+the university of hull|The University of Hull|UK|海外本科-1
+利物浦霍普大学|利物浦霍普大学|UK|海外本科-1
+liverpool hope university|Liverpool Hope University|UK|海外本科-1
+阿伯泰大学|阿伯泰大学|UK|海外本科-1
+abertay university|Abertay University|UK|海外本科-1
+圣玛丽大学学院|圣玛丽大学学院|UK|海外本科-1
+st mary's university, twickenham|St Mary's University, Twickenham|UK|海外本科-1
+伍斯特大学|伍斯特大学|UK|海外本科-1
+university of worcester|University of Worcester|UK|海外本科-1
+伯恩茅斯艺术学院|伯恩茅斯艺术学院|UK|海外本科-1
+arts university bournemouth|Arts University Bournemouth|UK|海外本科-1
+桑德兰大学|桑德兰大学|UK|海外本科-1
+university of sunderland|University of Sunderland|UK|海外本科-1
+索尔福德大学|索尔福德大学|UK|海外本科-1
+university of salford|University of Salford|UK|海外本科-1
+格拉斯哥喀里多尼亚大学|格拉斯哥喀里多尼亚大学|UK|海外本科-1
+glasgow caledonian university|Glasgow Caledonian University|UK|海外本科-1
+史塔福郡大学|史塔福郡大学|UK|海外本科-1
+staffordshire university|Staffordshire University|UK|海外本科-1
+巴特莱特建筑学院|巴特莱特建筑学院|UK|海外本科-1
+ucl bartlett school of architecture|UCL Bartlett School of Architecture|UK|海外本科-1
+基尔大学|基尔大学|UK|海外本科-1
+keele university|Keele University|UK|海外本科-1
+布莱顿及苏塞克斯医学院|布莱顿及苏塞克斯医学院|UK|海外本科-1
+brighton &amp; sussex medical school|Brighton &amp; Sussex Medical School|UK|海外本科-1
+波恩茅斯大学|波恩茅斯大学|UK|海外本科-1
+bournemouth university|Bournemouth University|UK|海外本科-1
+南威尔士大学|南威尔士大学|UK|海外本科-1
+university of south wales|University of South Wales|UK|海外本科-1
+安格利亚鲁斯金大学|安格利亚鲁斯金大学|UK|海外本科-1
+anglia ruskin university|Anglia Ruskin University|UK|海外本科-1
+西伦敦大学|西伦敦大学|UK|海外本科-1
+university of west london|University of West London|UK|海外本科-1
+考陶德艺术学院|考陶德艺术学院|UK|海外本科-1
+the courtauld institute of art|The Courtauld Institute of Art|UK|海外本科-1
+圣大卫三一学院|圣大卫三一学院|UK|海外本科-1
+trinity st davids|Trinity St Davids|UK|海外本科-1
+赫尔约克医学院|赫尔约克医学院|UK|海外本科-1
+hull york medical school|Hull York Medical School|UK|海外本科-1
+伍尔弗汉普顿大学|伍尔弗汉普顿大学|UK|海外本科-1
+university of wolverhampton|University of Wolverhampton|UK|海外本科-1
+贝德福特大学|贝德福特大学|UK|海外本科-1
+university of bedfordshire|University of Bedfordshire|UK|海外本科-1
+英博夏尔大学|英博夏尔大学|UK|海外本科-1
+bpp university|BPP University|UK|海外本科-1
+皇家艺术学院|皇家艺术学院|UK|海外本科-1
+royal college of art|Royal College of Art|UK|海外本科-1
+南安普顿索伦特大学|南安普顿索伦特大学|UK|海外本科-1
+southampton solent university|Southampton Solent University|UK|海外本科-1
+约克圣约翰大学|约克圣约翰大学|UK|海外本科-1
+york st john university|York St John University|UK|海外本科-1
+伯贝克学院|伯贝克学院|UK|海外本科-1
+birkbeck college|Birkbeck College|UK|海外本科-1
+诺丁汉特伦特大学|诺丁汉特伦特大学|UK|海外本科-1
+nottingham trent university|Nottingham Trent University|UK|海外本科-1
+切斯特大学|切斯特大学|UK|海外本科-1
+university of chester|University of Chester|UK|海外本科-1
+剑桥视觉及表演艺术学校|剑桥视觉及表演艺术学校|UK|海外本科-1
+cambridge school of visual &amp; performing arts|Cambridge School of Visual &amp; performing Arts|UK|海外本科-1
+切尔西艺术与设计学院|切尔西艺术与设计学院|UK|海外本科-1
+chelsea college of art and design|Chelsea College of Art and Design|UK|海外本科-1
+英国皇家兽医学院|英国皇家兽医学院|UK|海外本科-1
+royal veterinary college|Royal Veterinary College|UK|海外本科-1
+伦敦南岸大学|伦敦南岸大学|UK|海外本科-1
+london south bank university|London South Bank University|UK|海外本科-1
+诺森比亚大学|诺森比亚大学|UK|海外本科-1
+northumbria university|Northumbria University|UK|海外本科-1
+威斯敏斯特大学|威斯敏斯特大学|UK|海外本科-1
+university of westminster|University of Westminster|UK|海外本科-1
+纽曼大学|纽曼大学|UK|海外本科-1
+newman university, birmingham|Newman University, Birmingham|UK|海外本科-1
+白金汉大学|白金汉大学|UK|海外本科-1
+university of buckingham|University of Buckingham|UK|海外本科-1
+利物浦约翰摩尔大学|利物浦约翰摩尔大学|UK|海外本科-1
+liverpool john moores university|Liverpool John Moores University|UK|海外本科-1
+西英格兰大学|西英格兰大学|UK|海外本科-1
+university of the west of england|University of the West of England|UK|海外本科-1
+西苏格兰大学|西苏格兰大学|UK|海外本科-1
+university of the west of scotland|University of the West of Scotland|UK|海外本科-1
+温切斯特大学|温切斯特大学|UK|海外本科-1
+the university of winchester|The University of Winchester|UK|海外本科-1
+坎特伯里基督大学|坎特伯里基督大学|UK|海外本科-1
+canterbury christ church university|Canterbury Christ Church University|UK|海外本科-1
+中央兰开夏大学|中央兰开夏大学|UK|海外本科-1
+university of central lancashire|University of Central Lancashire|UK|海外本科-1
+罗汉普顿大学|罗汉普顿大学|UK|海外本科-1
+roehampton university|Roehampton University|UK|海外本科-1
+哥比亚大学|哥比亚大学|UK|海外本科-1
+university of cumbria|University of Cumbria|UK|海外本科-1
+利兹三一大学学院|利兹三一大学学院|UK|海外本科-1
+leeds trinity university|Leeds Trinity University|UK|海外本科-1
+皇家威尔士音乐戏剧学院|皇家威尔士音乐戏剧学院|UK|海外本科-1
+royal welsh college of music &amp; drama|Royal Welsh College of Music &amp; Drama|UK|海外本科-1
+格鲁斯特大学|格鲁斯特大学|UK|海外本科-1
+university of gloucestershire|University of Gloucestershire|UK|海外本科-1
+金史密斯学院|金史密斯学院|UK|海外本科-1
+goldsmiths, university of london|Goldsmiths, University of London|UK|海外本科-1
+皇家音乐学院|皇家音乐学院|UK|海外本科-1
+royal academy of music|Royal Academy of Music|UK|海外本科-1
+谢菲尔德哈勒姆大学|谢菲尔德哈勒姆大学|UK|海外本科-1
+sheffield hallam university|Sheffield Hallam University|UK|海外本科-1
+北安普顿大学|北安普顿大学|UK|海外本科-1
+the university of northampton|The University of Northampton|UK|海外本科-1
+布拉德福德大学|布拉德福德大学|UK|海外本科-1
+university of bradford|University of Bradford|UK|海外本科-1
+德比大学|德比大学|UK|海外本科-1
+university of derby|University of Derby|UK|海外本科-1
+波尔顿大学|波尔顿大学|UK|海外本科-1
+university of bolton|University of Bolton|UK|海外本科-1
+格罗斯泰斯特主教大学|格罗斯泰斯特主教大学|UK|海外本科-1
+bishop grosseteste university|Bishop Grosseteste University|UK|海外本科-1
+德蒙福特大学|德蒙福特大学|UK|海外本科-1
+de montfort university|De Montfort University|UK|海外本科-1
+爱丁堡艺术学院|爱丁堡艺术学院|UK|海外本科-1
+edinburgh college of art|Edinburgh College of Art|UK|海外本科-1
+罗伯特戈登大学|罗伯特戈登大学|UK|海外本科-1
+the robert gordon university|The Robert Gordon University|UK|海外本科-1
+布鲁内尔大学|布鲁内尔大学|UK|海外本科-1
+brunel university|Brunel University|UK|海外本科-1
+格拉摩根大学|格拉摩根大学|UK|海外本科-1
+university of glamorgan|University of Glamorgan|UK|海外本科-1
+格林威治大学|格林威治大学|UK|海外本科-1
+university of greenwich|University of Greenwich|UK|海外本科-1
+布莱顿大学|布莱顿大学|UK|海外本科-1
+university of brighton|University of Brighton|UK|海外本科-1
+伦敦电影学院|伦敦电影学院|UK|海外本科-1
+the london film school|The London Film School|UK|海外本科-1
+克兰菲尔德大学|克兰菲尔德大学|UK|海外本科-1
+cranfield university|Cranfield University|UK|海外本科-1
+爱丁堡玛格丽特皇后学院|爱丁堡玛格丽特皇后学院|UK|海外本科-1
+queen margaret university edinburgh|Queen Margaret University Edinburgh|UK|海外本科-1
+温彻斯特艺术学院|温彻斯特艺术学院|UK|海外本科-1
+winchester school of art|Winchester School of Art|UK|海外本科-1
+伦敦现代舞蹈学院|伦敦现代舞蹈学院|UK|海外本科-1
+london contemporary dance school|London Contemporary Dance School|UK|海外本科-1
+伦敦都市大学|伦敦都市大学|UK|海外本科-1
+london metropolitan university|London Metropolitan University|UK|海外本科-1
+中央圣马丁艺术与设计学院|中央圣马丁艺术与设计学院|UK|海外本科-1
+central saint martins college of art and design|Central Saint Martins College of Art and Design|UK|海外本科-1
+密德萨斯大学|密德萨斯大学|UK|海外本科-1
+middlesex university|Middlesex University|UK|海外本科-1
+边山大学|边山大学|UK|海外本科-1
+edge hill university|Edge Hill University|UK|海外本科-1
+威尔士新港大学|威尔士新港大学|UK|海外本科-1
+university of wales, newport|University Of Wales, Newport|UK|海外本科-1
+建筑联盟学院|建筑联盟学院|UK|海外本科-1
+architectural association school of architecture|Architectural Association School of Architecture|UK|海外本科-1
+英国皇家北方音乐学院|英国皇家北方音乐学院|UK|海外本科-1
+royal northern college of music|Royal Northern College of Music|UK|海外本科-1
+新白金汉大学|新白金汉大学|UK|海外本科-1
+buckinghamshire new university|Buckinghamshire New University|UK|海外本科-1
+海斯洛普学院|海斯洛普学院|UK|海外本科-1
+heythrop college|Heythrop College|UK|海外本科-1
+奇切斯特大学|奇切斯特大学|UK|海外本科-1
+university of chichester|University of Chichester|UK|海外本科-1
+中央演讲与戏剧学院|中央演讲与戏剧学院|UK|海外本科-1
+royal central school of speech and drama|Royal Central School of Speech and Drama|UK|海外本科-1
+蓝带学院|蓝带学院|UK|海外本科-1
+le cordon bleu london|Le Cordon Bleu London|UK|海外本科-1
+东伦敦大学|东伦敦大学|UK|海外本科-1
+university of east london|University of East London|UK|海外本科-1
+伦敦大学亚非学院|伦敦大学亚非学院|UK|海外本科-1
+school of oriental and african studies|School of Oriental and African Studies|UK|海外本科-1
+亚伯大学|亚伯大学|UK|海外本科-1
+aberystwyth university|Aberystwyth University|UK|海外本科-1
+格林多大学|格林多大学|UK|海外本科-1
+glyndwr university|Glyndwr University|UK|海外本科-1
+提兹塞德大学|提兹塞德大学|UK|海外本科-1
+university of teesside|University of Teesside|UK|海外本科-1
+圣马克与圣约翰大学学院|圣马克与圣约翰大学学院|UK|海外本科-1
+university of st mark &amp; st john|University of St Mark &amp; St John|UK|海外本科-1
+哈德斯菲尔德大学|哈德斯菲尔德大学|UK|海外本科-1
+university of huddersfield|University of Huddersfield|UK|海外本科-1
+彼得伯勒地区学院|彼得伯勒地区学院|UK|海外本科-1
+peterborough regional college|Peterborough Regional College|UK|海外本科-1
+赫特福德郡大学|赫特福德郡大学|UK|海外本科-1
+university of hertfordshire|University of Hertfordshire|UK|海外本科-1
+曼彻斯特建筑学院|曼彻斯特建筑学院|UK|海外本科-1
+manchester school of architecture|Manchester School of Architecture|UK|海外本科-1
+巴斯泉大学|巴斯泉大学|UK|海外本科-1
+bath spa university|Bath Spa University|UK|海外本科-1
+利兹贝克特大学|利兹贝克特大学|UK|海外本科-1
+leeds beckett university|Leeds Beckett University|UK|海外本科-1
+约克大学|约克大学|UK|海外本科-1
+the university of york|The University of York|UK|海外本科-1
+加州艺术学院|加州艺术学院|USA|海外本科-1
+california institute of the arts|California Institute of the Arts|USA|海外本科-1
+俄勒冈州立大学|俄勒冈州立大学|USA|海外本科-1
+oregon state university|Oregon State University|USA|海外本科-1
+瑞典农业科学大学|瑞典农业科学大学|Sweden|海外本科-1
+swedish university of agricultural sciences|Swedish University of Agricultural Sciences|Sweden|海外本科-1
+巴黎hec管理学院|巴黎HEC管理学院|France|海外本科-1
+hec paris school of management|HEC Paris School of Management|France|海外本科-1
+美国普拉特学院|美国普拉特学院|USA|海外本科-1
+pratt institute|Pratt Institute|USA|海外本科-1
+芝加哥艺术学院|芝加哥艺术学院|USA|海外本科-1
+school of the art institute of chicago (saic)|School of the Art Institute of Chicago (SAIC)|USA|海外本科-1
+伦敦商学院|伦敦商学院|UK|海外本科-1
+london business school|London Business School|UK|海外本科-1
+埃因霍恩设计学院|埃因霍恩设计学院|Netherlands|海外本科-1
+design academy eindhoven|Design Academy Eindhoven|Netherlands|海外本科-1
+科罗拉多州立大学|科罗拉多州立大学|USA|海外本科-1
+colorado state university|Colorado State University|USA|海外本科-1
+哥本哈根商学院|哥本哈根商学院|Danmark|海外本科-1
+copenhagen business school|Copenhagen Business School|Danmark|海外本科-1
+卡罗林斯卡学院|卡罗林斯卡学院|Sweden|海外本科-1
+karolinska institutet|Karolinska Institutet|Sweden|海外本科-1
+博科尼大学|博科尼大学|Italy|海外本科-1
+università commerciale luigi bocconi|Università Commerciale Luigi Bocconi|Italy|海外本科-1
+加州大学旧金山分校|加州大学旧金山分校|USA|海外本科-1
+university of california, san francisco|University of California, San Francisco|USA|海外本科-1
+美国帕森设计学院|美国帕森设计学院|USA|海外本科-1
+parsons / the new school|Parsons / The New School|USA|海外本科-1
+艺术中心设计学院|艺术中心设计学院|USA|海外本科-1
+art center college of design|Art Center College of Design|USA|海外本科-1
+英士国际商学院|英士国际商学院|Europe|海外本科-1
+insead|INSEAD|Europe|海外本科-1
+德里大学|德里大学|India|海外本科-1
+university of delhi|University of Delhi|India|海外本科-1
+巴黎高科农业大学校|巴黎高科农业大学校|France|海外本科-1
+paris institute of technology|Paris Institute of Technology|France|海外本科-1
+罗德岛设计学院（美国）|罗德岛设计学院（美国）|USA|海外本科-1
+rhodes island of design|Rhodes Island of Design|USA|海外本科-1
+亚利桑那州立大学|亚利桑那州立大学|USA|海外本科-1
+arizona state university|Arizona State University|USA|海外本科-1
+罗德岛大学|罗德岛大学|USA|海外本科-1
+university of rhode island|University of Rhode Island|USA|海外本科-1
+巴黎第一大学|巴黎第一大学|France|海外本科-1
+université de paris 1 panthéon-sorbonne|Université de Paris 1 Panthéon-Sorbonne|France|海外本科-1
+东京医科齿科大学|东京医科齿科大学|Japan|海外本科-1
+tokyo medical and dental university|Tokyo Medical and Dental University|Japan|海外本科-1
+拉玛尔大学|拉玛尔大学|USA|海外本科-1
+lamar university|Lamar University|USA|海外本科-1
+查普曼大学|查普曼大学|USA|海外本科-1
+chapman university|Chapman University|USA|海外本科-1
+天普大学|天普大学|USA|海外本科-1
+temple university|Temple University|USA|海外本科-1
+海德堡大学|海德堡大学|Germany|海外本科-1
+ruprecht-karls—universitaet heidelberg|Ruprecht-Karls—Universitaet Heidelberg|Germany|海外本科-1
+卡尔斯鲁厄理工学院|卡尔斯鲁厄理工学院|Germany|海外本科-1
+karlsruhe institute of technology|Karlsruhe Institute of Technology|Germany|海外本科-1
+奥胡斯大学|奥胡斯大学|Denmark|海外本科-1
+aarhus university|Aarhus University|Denmark|海外本科-1
+根特大学|根特大学|Belgium|海外本科-1
+ghent university|Ghent University|Belgium|海外本科-1
+布宜诺斯艾利斯大学|布宜诺斯艾利斯大学|Argentina|海外本科-1
+universidad de buenos aires|Universidad de Buenos Aires|Argentina|海外本科-1
+查尔姆斯理工大学|查尔姆斯理工大学|Sweden|海外本科-1
+chalmers university of technology|Chalmers University of Technology|Sweden|海外本科-1
+弗赖堡大学|弗赖堡大学|Germany|海外本科-1
+university of freiburg|University of Freiburg|Germany|海外本科-1
+巴黎第六大学|巴黎第六大学|France|海外本科-1
+pierre and marie curie university|Pierre and Marie Curie University|France|海外本科-1
+马来亚大学|马来亚大学|Malaysia|海外本科-1
+university of malaya|University of Malaya|Malaysia|海外本科-1
+印度科技学院|印度科技学院|Indian|海外本科-1
+indian  institude  of  science|Indian  Institude  of  Science|Indian|海外本科-1
+俄亥俄大学|俄亥俄大学|USA|海外本科-1
+ohio university|Ohio University|USA|海外本科-1
+亚利桑那大学|亚利桑那大学|USA|海外本科-1
+the university of arizona|The University of Arizona|USA|海外本科-1
+华盛顿与李大学|华盛顿与李大学|USA|海外本科-1
+washington and lee university|Washington and Lee University|USA|海外本科-1
+乔治梅森大学|乔治梅森大学|USA|海外本科-1
+george mason university|George Mason University|USA|海外本科-1
+爱默生学院|爱默生学院|USA|海外本科-1
+emerson college|Emerson College|USA|海外本科-1
+奥本大学|奥本大学|USA|海外本科-1
+auburn university|Auburn University|USA|海外本科-1
+休斯敦大学|休斯敦大学|USA|海外本科-1
+university of houston|University of Houston|USA|海外本科-1
+纽约州立大学宾汉姆顿分校|纽约州立大学宾汉姆顿分校|USA|海外本科-1
+state university of new york at binghamton|State University of New York at Binghamton|USA|海外本科-1
+纽约州立大学水牛城分校|纽约州立大学水牛城分校|USA|海外本科-1
+university at buffalo--suny|University at Buffalo--SUNY|USA|海外本科-1
+纽约州立大学阿尔巴尼分校|纽约州立大学阿尔巴尼分校|USA|海外本科-1
+university at albany--suny|University at Albany--SUNY|USA|海外本科-1
+佛蒙特大学|佛蒙特大学|USA|海外本科-1
+university of vermont|University of Vermont|USA|海外本科-1
+芝加哥洛约拉大学|芝加哥洛约拉大学|USA|海外本科-1
+loyola university chicago|Loyola University Chicago|USA|海外本科-1
+加州大学圣克鲁兹分校|加州大学圣克鲁兹分校|USA|海外本科-1
+university of california-santa cruz|University of California-Santa Cruz|USA|海外本科-1
+加州大学河滨分校|加州大学河滨分校|USA|海外本科-1
+university of california--riverside|University of California--Riverside|USA|海外本科-1
+田纳西大学|田纳西大学|USA|海外本科-1
+university of tennessee—​knoxville|University of Tennessee—​Knoxville|USA|海外本科-1
+辛辛那提大学|辛辛那提大学|USA|海外本科-1
+university of cincinnati|University of Cincinnati|USA|海外本科-1
+俄克拉荷马州立大学|俄克拉荷马州立大学|USA|海外本科-1
+oklahoma state university|Oklahoma State University|USA|海外本科-1
+密苏里科学技术大学|密苏里科学技术大学|USA|海外本科-1
+missouri university of science &amp; technology|Missouri University of Science &amp; Technology|USA|海外本科-1
+新泽西理工学院|新泽西理工学院|USA|海外本科-1
+new jersey institute of technology|New Jersey Institute of Technology|USA|海外本科-1
+堪萨斯州立大学|堪萨斯州立大学|USA|海外本科-1
+kansas state university|Kansas State University|USA|海外本科-1
+克拉克森大学|克拉克森大学|USA|海外本科-1
+clarkson university|Clarkson University|USA|海外本科-1
+得克萨斯理工大学|得克萨斯理工大学|USA|海外本科-1
+texas tech university (whitacre)|Texas Tech University (Whitacre)|USA|海外本科-1
+伊利诺伊理工大学|伊利诺伊理工大学|USA|海外本科-1
+illinois institute of technology (armour)|Illinois Institute of Technology (Armour)|USA|海外本科-1
+密歇根理工大学|密歇根理工大学|USA|海外本科-1
+michigan technological university|Michigan Technological University|USA|海外本科-1
+俄克拉荷马大学|俄克拉荷马大学|USA|海外本科-1
+university of oklahoma|University of Oklahoma|USA|海外本科-1
+路易斯安那州立大学|路易斯安那州立大学|USA|海外本科-1
+louisiana state university—​baton rouge|Louisiana State University—​Baton Rouge|USA|海外本科-1
+南卡罗来纳大学|南卡罗来纳大学|USA|海外本科-1
+university of south carolina|University of South Carolina|USA|海外本科-1
+纽约市立学院|纽约市立学院|USA|海外本科-1
+the city college of new york|The City College of New York|USA|海外本科-1
+马里兰大学巴尔的摩郡分校|马里兰大学巴尔的摩郡分校|USA|海外本科-1
+university of maryland, baltimore county|University of Maryland, Baltimore County|USA|海外本科-1
+西弗吉尼亚大学|西弗吉尼亚大学|USA|海外本科-1
+west virginia university|West Virginia University|USA|海外本科-1
+内华达大学拉斯维加斯分校|内华达大学拉斯维加斯分校|USA|海外本科-1
+university of nevada, las vegas|University of Nevada, Las Vegas|USA|海外本科-1
+缅因大学|缅因大学|USA|海外本科-1
+university of maine|University of Maine|USA|海外本科-1
+阿拉斯加大学费尔班克斯分校|阿拉斯加大学费尔班克斯分校|USA|海外本科-1
+university of alaska fairbanks|University of Alaska Fairbanks|USA|海外本科-1
+新墨西哥州立大学|新墨西哥州立大学|USA|海外本科-1
+new mexico state university|New Mexico State University|USA|海外本科-1
+密西西比州立大学|密西西比州立大学|USA|海外本科-1
+mississippi state university|Mississippi State University|USA|海外本科-1
+韦恩州立大学|韦恩州立大学|USA|海外本科-1
+wayne state university|Wayne State University|USA|海外本科-1
+夏威夷马诺大学|夏威夷马诺大学|USA|海外本科-1
+university of hawaii-manoa|University of Hawaii-Manoa|USA|海外本科-1
+新墨西哥大学|新墨西哥大学|USA|海外本科-1
+university of new mexico|University of New Mexico|USA|海外本科-1
+怀俄明大学|怀俄明大学|USA|海外本科-1
+university of wyoming|University of Wyoming|USA|海外本科-1
+科罗拉多大学丹佛分校|科罗拉多大学丹佛分校|USA|海外本科-1
+university of colorado-denver|University of Colorado-Denver|USA|海外本科-1
+阿肯色大学费耶特维尔分校|阿肯色大学费耶特维尔分校|USA|海外本科-1
+university of arkansas-fayetteville|University of Arkansas-Fayetteville|USA|海外本科-1
+阿肯色大学小石城分校|阿肯色大学小石城分校|USA|海外本科-1
+university of arkansas-little rock|University of Arkansas-Little Rock|USA|海外本科-1
+阿肯色大学蒙塞蒂洛分校|阿肯色大学蒙塞蒂洛分校|USA|海外本科-1
+university of arkansas-monticello|University of Arkansas-Monticello|USA|海外本科-1
+阿肯色大学松崖分校|阿肯色大学松崖分校|USA|海外本科-1
+university of arkansas-pine bluff|University of Arkansas-Pine Bluff|USA|海外本科-1
+阿肯色大学史密斯堡分校|阿肯色大学史密斯堡分校|USA|海外本科-1
+university of arkansas-fort smith|University of Arkansas-Fort Smith|USA|海外本科-1
+犹他州立大学|犹他州立大学|USA|海外本科-1
+utah state university|Utah State University|USA|海外本科-1
+内华达大学雷诺分校|内华达大学雷诺分校|USA|海外本科-1
+university of nevada--reno|University of Nevada--Reno|USA|海外本科-1
+伊利诺伊大学芝加哥分校|伊利诺伊大学芝加哥分校|USA|海外本科-1
+university of illinois--chicago|University of Illinois--Chicago|USA|海外本科-1
+中弗罗里达大学|中弗罗里达大学|USA|海外本科-1
+university of central florida|University of Central Florida|USA|海外本科-1
+北卡罗来纳大学夏洛特分校|北卡罗来纳大学夏洛特分校|USA|海外本科-1
+university of north carolina--charlotte|University of North Carolina--Charlotte|USA|海外本科-1
+纽约市立大学亨特学院|纽约市立大学亨特学院|USA|海外本科-1
+cuny--hunter college|CUNY--Hunter College|USA|海外本科-1
+俄勒冈大学|俄勒冈大学|USA|海外本科-1
+university of oregon|University of Oregon|USA|海外本科-1
+罗切斯特理工学院|罗切斯特理工学院|USA|海外本科-1
+rochester institute of technology|Rochester Institute of Technology|USA|海外本科-1
+纽约城市大学研究生院和大学中心|纽约城市大学研究生院和大学中心|USA|海外本科-1
+cuny-graduate school and university center|CUNY-Graduate School and University Center|USA|海外本科-1
+华盛顿州立大学|华盛顿州立大学|USA|海外本科-1
+washington state university|Washington State University|USA|海外本科-1
+威斯康辛密尔沃基分校|威斯康辛密尔沃基分校|USA|海外本科-1
+university of wisconsin, milwaukee|University of Wisconsin, Milwaukee|USA|海外本科-1
+罗格斯大学纽华克分校|罗格斯大学纽华克分校|USA|海外本科-1
+rutgers,the state university of new jersey-newark|Rutgers,the State University of New jersey-Newark|USA|海外本科-1
+肯塔基大学|肯塔基大学|USA|海外本科-1
+university of kentucky|University of Kentucky|USA|海外本科-1
+肯特州立大学|肯特州立大学|USA|海外本科-1
+kent state university|Kent State University|USA|海外本科-1
+阿拉巴马大学伯明翰分校|阿拉巴马大学伯明翰分校|USA|海外本科-1
+university of alabama at birmingham|University of Alabama at Birmingham|USA|海外本科-1
+卫斯理大学|卫斯理大学|USA|海外本科-1
+wesleyan university|Wesleyan University|USA|海外本科-1
+孟菲斯大学|孟菲斯大学|USA|海外本科-1
+university of memphis|University of Memphis|USA|海外本科-1
+德克萨斯大学阿灵顿分校|德克萨斯大学阿灵顿分校|USA|海外本科-1
+university of texas,arlington|University of Texas,Arlington|USA|海外本科-1
+圣克拉拉大学|圣克拉拉大学|USA|海外本科-1
+santa clara university|Santa Clara University|USA|海外本科-1
+格罗夫城市学院|格罗夫城市学院|USA|海外本科-1
+grove city college|Grove City College|USA|海外本科-1
+空军技术学院|空军技术学院|USA|海外本科-1
+air force institute of technolog|Air Force Institute of Technolog|USA|海外本科-1
+海军研究院|海军研究院|USA|海外本科-1
+naval postgraduate school|Naval Postgraduate School|USA|海外本科-1
+克莱蒙研究大学|克莱蒙研究大学|USA|海外本科-1
+claremont graduate university|Claremont Graduate University|USA|海外本科-1
+德克萨斯大学达拉斯分校|德克萨斯大学达拉斯分校|USA|海外本科-1
+university of texas at dallas|University of Texas at Dallas|USA|海外本科-1
+俄勒冈健康与科学大学|俄勒冈健康与科学大学|USA|海外本科-1
+oregon health and science university|Oregon Health and Science University|USA|海外本科-1
+南佛罗里达大学|南佛罗里达大学|USA|海外本科-1
+university of south florida|University of South Florida|USA|海外本科-1
+马萨诸塞大学洛厄尔分校|马萨诸塞大学洛厄尔分校|USA|海外本科-1
+university of massachusetts lowell|University of Massachusetts Lowell|USA|海外本科-1
+本特利大学|本特利大学|USA|海外本科-1
+bentley university|Bentley University|USA|海外本科-1
+德州理工大学|德州理工大学|USA|海外本科-1
+texas tech university|Texas Tech University|USA|海外本科-1
+爱达荷大学|爱达荷大学|USA|海外本科-1
+university of idaho|University of Idaho|USA|海外本科-1
+代顿大学|代顿大学|USA|海外本科-1
+university of dayton|University of Dayton|USA|海外本科-1
+佛罗里达农工大学|佛罗里达农工大学|USA|海外本科-1
+florida agricultural and mechanical university|Florida Agricultural and Mechanical University|USA|海外本科-1
+欧道明大学|欧道明大学|USA|海外本科-1
+old dominion university|Old Dominion University|USA|海外本科-1
+阿拉巴马大学汉茨维尔分校|阿拉巴马大学汉茨维尔分校|USA|海外本科-1
+university of alabama in huntsville|University of alabama in huntsville|USA|海外本科-1
+弗吉尼亚联邦大学|弗吉尼亚联邦大学|USA|海外本科-1
+virginia commonwealth university|Virginia Commonwealth University|USA|海外本科-1
+普渡大学印第安纳波利斯分校|普渡大学印第安纳波利斯分校|USA|海外本科-1
+indiana university-purdue university,indianapolis|Indiana University-Purdue University,Indianapolis|USA|海外本科-1
+圣地亚哥州立大学|圣地亚哥州立大学|USA|海外本科-1
+san diego state university|San Diego State University|USA|海外本科-1
+密西西比大学|密西西比大学|USA|海外本科-1
+university of mississippi|University of Mississippi|USA|海外本科-1
+怀特州立大学|怀特州立大学|USA|海外本科-1
+wright state university|Wright State University|USA|海外本科-1
+霍华德大学|霍华德大学|USA|海外本科-1
+howard university|Howard University|USA|海外本科-1
+蒙大拿州立大学|蒙大拿州立大学|USA|海外本科-1
+montana state university|Montana State University|USA|海外本科-1
+北卡罗来纳州立农业技术大学|北卡罗来纳州立农业技术大学|USA|海外本科-1
+north carolina a &amp; t state university|North Carolina A &amp; T State University|USA|海外本科-1
+田纳西理工大学|田纳西理工大学|USA|海外本科-1
+tennessee technological university|Tennessee Technological University|USA|海外本科-1
+阿克伦大学|阿克伦大学|USA|海外本科-1
+university of akron|University of Akron|USA|海外本科-1
+科罗拉多大学科罗拉多斯普林斯分校|科罗拉多大学科罗拉多斯普林斯分校|USA|海外本科-1
+university of colorado, colorado springs|University of Colorado, Colorado Springs|USA|海外本科-1
+路易斯维尔大学|路易斯维尔大学|USA|海外本科-1
+university of louisville|University of Louisville|USA|海外本科-1
+马萨诸塞大学洛厄尔分校|马萨诸塞大学洛厄尔分校|USA|海外本科-1
+university of massachusetts,lowell|University of Massachusetts,Lowell|USA|海外本科-1
+托莱多大学|托莱多大学|USA|海外本科-1
+university of toledo|University of Toledo|USA|海外本科-1
+卫奇塔州立大学|卫奇塔州立大学|USA|海外本科-1
+wichita state university|Wichita State University|USA|海外本科-1
+克利夫兰州立大学|克利夫兰州立大学|USA|海外本科-1
+cleveland state university|Cleveland State University|USA|海外本科-1
+佛罗里达大西洋大学|佛罗里达大西洋大学|USA|海外本科-1
+florida atlantic university|Florida Atlantic University|USA|海外本科-1
+佛罗里达理工学院|佛罗里达理工学院|USA|海外本科-1
+florida institute of technology|Florida Institute of Technology|USA|海外本科-1
+佛罗里达国际大学|佛罗里达国际大学|USA|海外本科-1
+florida international university|Florida International University|USA|海外本科-1
+路易斯安那理工大学|路易斯安那理工大学|USA|海外本科-1
+louisiana tech university|Louisiana Tech University|USA|海外本科-1
+北达科他州立大学|北达科他州立大学|USA|海外本科-1
+north dakota state university|North Dakota State University|USA|海外本科-1
+波特兰州立大学|波特兰州立大学|USA|海外本科-1
+portland state university|Portland State University|USA|海外本科-1
+南达科他矿业技术学院|南达科他矿业技术学院|USA|海外本科-1
+south dakota school of mines and technology|South Dakota School of Mines and Technology|USA|海外本科-1
+南达科塔州立大学|南达科塔州立大学|USA|海外本科-1
+south dakota state university|South Dakota State University|USA|海外本科-1
+南伊利诺斯大学卡本代尔分校|南伊利诺斯大学卡本代尔分校|USA|海外本科-1
+southern illinois university, carbondale|Southern Illinois University, Carbondale|USA|海外本科-1
+田纳西州立大学|田纳西州立大学|USA|海外本科-1
+tennessee state university|Tennessee State University|USA|海外本科-1
+德克萨斯农工大学金斯维尔分校|德克萨斯农工大学金斯维尔分校|USA|海外本科-1
+texas a&amp;m university, kingsville|Texas A&amp;M University, Kingsville|USA|海外本科-1
+美国天主教大学|美国天主教大学|USA|海外本科-1
+the catholic university of america|The Catholic University of America|USA|海外本科-1
+桥港大学|桥港大学|USA|海外本科-1
+university of bridgeport|University of Bridgeport|USA|海外本科-1
+底特律大学|底特律大学|USA|海外本科-1
+university of detroit mercy|University of Detroit Mercy|USA|海外本科-1
+密苏里州大学堪萨斯城分校|密苏里州大学堪萨斯城分校|USA|海外本科-1
+university of missouri,kansas city|University of Missouri,Kansas City|USA|海外本科-1
+新奥尔良大学|新奥尔良大学|USA|海外本科-1
+university of new orleans|University of New Orleans|USA|海外本科-1
+北达科他大学|北达科他大学|USA|海外本科-1
+university of north dakota|University of North Dakota|USA|海外本科-1
+德克萨斯大学埃尔帕索分校|德克萨斯大学埃尔帕索分校|USA|海外本科-1
+university of texas at el paso|University of Texas at El Paso|USA|海外本科-1
+西密歇根大学|西密歇根大学|USA|海外本科-1
+western michigan university|Western Michigan University|USA|海外本科-1
+纽约州立大学阿尔弗雷德分校|纽约州立大学阿尔弗雷德分校|USA|海外本科-1
+alfred state suny college of technology|Alfred State SUNY College of Technology|USA|海外本科-1
+新墨西哥矿业与科技学院|新墨西哥矿业与科技学院|USA|海外本科-1
+new mexico institute of mining and technology |New Mexico Institute of Mining and Technology |USA|海外本科-1
+北德克萨斯大学|北德克萨斯大学|USA|海外本科-1
+university of north texas|University of North Texas|USA|海外本科-1
+德克萨斯安东尼奥分校|德克萨斯安东尼奥分校|USA|海外本科-1
+university of texas, san antonio|University of Texas, San Antonio|USA|海外本科-1
+德克萨斯大学西南医学中心|德克萨斯大学西南医学中心|USA|海外本科-1
+university of texas southwestern medical center|University of Texas Southwestern Medical Center|USA|海外本科-1
+德克萨斯大学休斯敦医学中心|德克萨斯大学休斯敦医学中心|USA|海外本科-1
+university of texas health science center—​houston|University of Texas Health Science Center—​Houston|USA|海外本科-1
+德克萨斯大学圣安东尼奥医学中心|德克萨斯大学圣安东尼奥医学中心|USA|海外本科-1
+university of texas health science center—​san antonio|University of Texas Health Science Center—​San Antonio|USA|海外本科-1
+德克萨斯大学加尔维斯顿医学分部|德克萨斯大学加尔维斯顿医学分部|USA|海外本科-1
+university of texas medical branch—​galveston|University of Texas Medical Branch—​Galveston|USA|海外本科-1
+美国斯克利普斯研究所|美国斯克利普斯研究所|USA|海外本科-1
+the scripps research institute|The Scripps Research Institute|USA|海外本科-1
+洛克菲勒大学|洛克菲勒大学|USA|海外本科-1
+rockefeller university|Rockefeller University|USA|海外本科-1
+梅奥医学院|梅奥医学院|USA|海外本科-1
+mayo medical school|Mayo Medical School|USA|海外本科-1
+西奈山伊坎医学院|西奈山伊坎医学院|USA|海外本科-1
+icahn school of medicine at mount sinai|Icahn School of Medicine at Mount Sinai|USA|海外本科-1
+马萨诸塞大学伍斯特分校|马萨诸塞大学伍斯特分校|USA|海外本科-1
+university of massachusetts medical center—​worcester|University of Massachusetts Medical Center—​Worcester|USA|海外本科-1
+内布拉斯加大学医学中心|内布拉斯加大学医学中心|USA|海外本科-1
+university of nebraska medical center|University of Nebraska Medical Center|USA|海外本科-1
+威斯康星医学院|威斯康星医学院|USA|海外本科-1
+medical college of wisconsin|Medical College of Wisconsin|USA|海外本科-1
+托马斯杰斐逊大学|托马斯杰斐逊大学|USA|海外本科-1
+thomas jefferson university|Thomas Jefferson University|USA|海外本科-1
+贝勒医学院|贝勒医学院|USA|海外本科-1
+baylor college of medicine|Baylor College of Medicine|USA|海外本科-1
+德州农工大学的健康科学中心—贝勒牙医学院|德州农工大学的健康科学中心—贝勒牙医学院|USA|海外本科-1
+texas a&amp;m health science center—​baylor college of dentistry|Texas A&amp;M Health Science Center—​Baylor College of Dentistry|USA|海外本科-1
+罗格斯大学生物医学和健康科学部|罗格斯大学生物医学和健康科学部|USA|海外本科-1
+rutgers biomedical and health sciences|Rutgers Biomedical and Health Sciences|USA|海外本科-1
+爱达荷州立大学|爱达荷州立大学|USA|海外本科-1
+idaho state university|Idaho State University|USA|海外本科-1
+康奈尔医学研究学院|康奈尔医学研究学院|USA|海外本科-1
+weill cornell graduate school of medical sciences|Weill Cornell Graduate School of Medical Sciences|USA|海外本科-1
