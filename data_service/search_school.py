@@ -89,6 +89,7 @@ def search_school(self, keyword, province='null'):
     }
 
 def __init__():
+    _logging_conf()
     try:
         for each in open('resource/university_dict.txt', 'r', encoding='utf-8').readlines():
             try:
@@ -106,7 +107,7 @@ def __init__():
     print('init: '+str(id(trie)))
     trie.setWords(UNIVERSITY_TYPE_DICT.keys())
 
-def logging_conf():
+def _logging_conf():
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(filename)s [func:%(funcName)s] [line:%(lineno)d] %(levelname)s:\n%(message)s',
                         datefmt='%a, %d %b %Y %H:%M:%S',
@@ -115,7 +116,7 @@ def logging_conf():
     logging.info('***********************************************')
 
 if __name__ == '__main__':
-    logging_conf()
+    _logging_conf()
     __init__()
     keyword = 'har'
     search_school(keyword, keyword)
