@@ -102,10 +102,11 @@ def search_school(keyword, major=None, province=None):
 
     #如果keyword是bytes, 则转化为str
     keyword = convert_to_str(keyword)
-    province = convert_to_str(province)
+    if province != None:
+        province = convert_to_str(province)
     print('type after: %s' % type(province))
-    print('keyword : %s ' % keyword)
-    print('province : %s ' % province)
+    print('keyword after: %s ' % keyword)
+    print('province after: %s ' % province)
     global SCHOOL_TRIE
     print('func: '+str(id(SCHOOL_TRIE)))
     try:
@@ -117,7 +118,6 @@ def search_school(keyword, major=None, province=None):
     result = []
     if len(search_result) > 0:
         status = 'success' #返回状态
-
         for each in search_result:
             if each['area'] == province:
                 result.insert(0, each['result'])
@@ -188,10 +188,6 @@ def __init__(dict_from=None):
     dict_tree_time = time.time()
     logging.info('院校库前缀树构建完毕，用时 %s 秒.' % str(dict_tree_time-start_time))
 
-    writerr = open('gg.txt', 'w', encoding='utf-8')
-    for each in SCHOOL_TRIE.preOrder(SCHOOL_TRIE.root):
-        writerr.write(str(each))
-
 def _logging_conf():
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(filename)s [func:%(funcName)s] [line:%(lineno)d] %(levelname)s:\n%(message)s',
@@ -201,7 +197,6 @@ def _logging_conf():
     logging.info('***********************************************')
 
 if __name__ == '__main__':
-    _logging_conf()
     __init__(dict_from='conf')
     keyword = 'zhongkeda'
     province = '北京'
