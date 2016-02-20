@@ -14,6 +14,10 @@ def exit_error_func(error_code, error_param=''):
 	    'error': error_dict[error_code],
 	    'msg': error_param,
 	}
-def convert_to_str(str):
-	if str(type(str)).find('bytes') > 0:
-		return str.decode('utf-8')
+def convert_to_str(input_str):
+    if str(type(input_str)).find('bytes') > 0:
+        return input_str.decode('utf-8')
+    else:
+        return input_str
+def token_check(token_string):
+	pass

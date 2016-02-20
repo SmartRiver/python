@@ -102,3 +102,263 @@ Wed, 17 Feb 2016 18:10:03 search.py [func:_logging_conf] [line:148] INFO:
 ***********************************************
 Wed, 17 Feb 2016 18:10:03 search.py [func:_logging_conf] [line:148] INFO:
 ***********************************************
+Thu, 18 Feb 2016 14:20:16 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:20:16 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:21:31 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:21:31 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:23:49 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:23:49 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:24:23 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:24:23 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:24:38 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:24:38 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:24:50 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:24:50 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:30:49 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:30:49 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:31:26 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:31:26 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:32:34 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:32:34 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:32:34 search.py [func:search_school] [line:102] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 14:33:09 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:33:09 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:33:09 search.py [func:search_school] [line:102] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 14:33:25 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:33:25 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 14:33:25 search.py [func:search_school] [line:102] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:26:17 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:26:17 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:26:18 search.py [func:search_school] [line:102] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:36:10 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:36:10 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:36:10 search.py [func:search_school] [line:102] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:38:04 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:38:04 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:38:04 search.py [func:search_school] [line:102] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:39:20 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:39:20 search.py [func:_logging_conf] [line:148] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:39:20 search.py [func:search_school] [line:102] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:42:01 search.py [func:_logging_conf] [line:150] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:42:01 search.py [func:_logging_conf] [line:150] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:42:01 search.py [func:search_school] [line:104] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:42:50 search.py [func:_logging_conf] [line:150] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:42:50 search.py [func:_logging_conf] [line:150] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:42:50 search.py [func:search_school] [line:104] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:43:20 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:43:20 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:43:21 search.py [func:search_school] [line:105] ERROR:
+没有正常返回结果
+Thu, 18 Feb 2016 15:53:25 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:53:25 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:53:42 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:53:42 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:54:19 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:54:19 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:54:27 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:54:27 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:54:54 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 15:54:54 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 16:53:46 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Thu, 18 Feb 2016 16:53:46 search.py [func:_logging_conf] [line:151] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:52:53 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:52:53 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:52:53 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:54:51 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:54:51 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:54:51 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:54:51 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 12:55:19 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:55:19 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:55:19 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:55:19 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 12:56:29 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:56:29 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:56:29 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:56:29 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 12:57:16 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:16 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:16 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:57:16 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 12:57:28 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:28 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:28 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:57:28 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 12:57:35 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:35 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:35 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:57:35 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 12:57:45 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:45 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:57:45 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:57:45 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 12:58:31 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:58:31 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 12:58:31 search.py [func:__init__] [line:181] ERROR:
+__init__()出错，参数： None
+Sat, 20 Feb 2016 12:58:31 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 13:00:40 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:00:40 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:00:50 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:00:50 search.py [func:_logging_conf] [line:194] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:00:55 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 13:02:08 search.py [func:_logging_conf] [line:195] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:02:08 search.py [func:_logging_conf] [line:195] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:02:13 search.py [func:__init__] [line:187] INFO:
+院校库前缀树构建完毕 . . . 
+Sat, 20 Feb 2016 13:02:13 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 13:04:04 search.py [func:_logging_conf] [line:195] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:04:04 search.py [func:_logging_conf] [line:195] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:04:09 search.py [func:__init__] [line:187] INFO:
+院校库前缀树构建完毕 . . . 
+Sat, 20 Feb 2016 13:04:09 search.py [func:search_school] [line:114] ERROR:
+没有正常返回结果
+Sat, 20 Feb 2016 13:09:58 search.py [func:_logging_conf] [line:198] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:09:58 search.py [func:_logging_conf] [line:198] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:10:03 search.py [func:__init__] [line:187] INFO:
+院校库前缀树构建完毕 . . . 
+Sat, 20 Feb 2016 13:12:42 search.py [func:_logging_conf] [line:198] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:12:42 search.py [func:_logging_conf] [line:198] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:12:50 search.py [func:__init__] [line:187] INFO:
+院校库前缀树构建完毕 . . . 
+Sat, 20 Feb 2016 13:15:18 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:15:18 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:15:25 search.py [func:__init__] [line:189] INFO:
+院校库前缀树构建完毕，用时7.236940860748291
+Sat, 20 Feb 2016 13:16:00 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:16:00 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:16:08 search.py [func:__init__] [line:189] INFO:
+院校库前缀树构建完毕，用时 7.342000961303711 秒.
+Sat, 20 Feb 2016 13:17:35 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:17:35 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:17:42 search.py [func:__init__] [line:189] INFO:
+院校库前缀树构建完毕，用时 7.048516511917114 秒.
+Sat, 20 Feb 2016 13:17:54 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:17:54 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:18:01 search.py [func:__init__] [line:189] INFO:
+院校库前缀树构建完毕，用时 7.146100044250488 秒.
+Sat, 20 Feb 2016 13:18:26 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:18:26 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:18:32 search.py [func:__init__] [line:189] INFO:
+院校库前缀树构建完毕，用时 6.4840312004089355 秒.
+Sat, 20 Feb 2016 13:21:22 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:21:22 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 13:21:28 search.py [func:__init__] [line:189] INFO:
+院校库前缀树构建完毕，用时 5.820029020309448 秒.

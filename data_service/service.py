@@ -21,7 +21,10 @@ class MainHandler(tornado.web.RequestHandler):
     def get(self, request_type):
         if request_type == 'reload':
             try:
-                search.__init__()
+                if 'search_flag' in self.request.query_arguments:
+                    search.__init__(self.request.query_arguments['search_flag'])
+                else:
+                    search.__init__()
                 self.write('reloaded.')
             except:
                 self.write('failed.')

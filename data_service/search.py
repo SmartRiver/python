@@ -5,22 +5,30 @@ __doc__     = '''this py is used to search schools related to the user input.
 				Optional parameter includes area, which means the area user in.'''
 
 import time
-from common_func import exit_error_func
+import common_func
+from common_func import exit_error_func, convert_to_str
 import logging
 import sys
 import json
+import pymongo
+from pymongo import MongoClient
+from db_util import *
 
 
-class Trie(object):
+
+
+class SchoolTree(object):
     def __init__(self):
         self.root  = Node()  # Trie树root节点引用
 
     def add(self, word):
         ''' 添加字符串 '''
-        university_type = word.split('|')[3]
         word_display = word.split('|')[1]
         word_search = word.split('|')[0]
         university_area = word.split('|')[2]
+        university_type = word.split('|')[3]
+        #university_weight = word.split('|')[4]
+
         node = self.root
         for c in word_search:
             pos = self.find(node, c)
@@ -35,6 +43,7 @@ class Trie(object):
         node.word = word_display
         node.university_type = university_type
         node.area = university_area
+        #node.weight = university_weight
 
     def preOrder(self, node):
         '''先序输出'''
@@ -73,34 +82,37 @@ class Trie(object):
 
 
 class Node(object):
-    def __init__(self, c=None, word=None, university_type=None, area=None):
+    def __init__(self, c=None, word=None, university_type=None, area=None, university_weight=None):
         self.c          = c    # 节点存储的单个字符
         self.word       = word # 节点存储的用于展示的大学名
         self.university_type       = university_type # 节点存储的大学的类型
         self.area       = area # 节点存储的大学所在的地区（国内精确到省份，国外只精确国家）
-        self.childs     = []   # 此节点的子节点kk
+        self.weight     = university_weight # 节点存储的大学的权重值
+        self.childs     = []   # 此节点的子节点
 
-UNIVERSITY_LIST = []
+UNIVERSITY_LIST = [] # 学校库的字典
 
-TRIE = Trie()
+SCHOOL_TRIE = SchoolTree() # 学校库的前缀树
 
-def search_school(keyword, province=None):
+def search_school(keyword, major=None, province=None):
     print('enter func . . . ')
     print('type before: %s' % type(province))
+    print('province before: %s' % province)
+    print('keyword before: %s' % keyword)
 
-    #如果keyword是bytes。则转化为str
+    #如果keyword是bytes, 则转化为str
     keyword = convert_to_str(keyword)
     province = convert_to_str(province)
     print('type after: %s' % type(province))
     print('keyword : %s ' % keyword)
     print('province : %s ' % province)
-    global TRIE
-    print('func: '+str(id(TRIE)))
+    global SCHOOL_TRIE
+    print('func: '+str(id(SCHOOL_TRIE)))
     try:
-        search_result = TRIE.search(TRIE.root, keyword)
+        search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, keyword)
     except:
         logging.error('没有正常返回结果')
-        exit_error_func(3, u'参数:'+keyword)
+        return exit_error_func(3, u'参数:'+keyword)
 
     result = []
     if len(search_result) > 0:
@@ -114,7 +126,7 @@ def search_school(keyword, province=None):
         if len(result) > 10:
             result = result[:10]
     else:
-        status = 'fail'
+        status = 'success'
 
     print('result:%s' % result)
     return{
@@ -122,22 +134,63 @@ def search_school(keyword, province=None):
         'result': result,
     }
 
-def __init__():
+def __init__(dict_from=None):
+    start_time = time.time()
     _logging_conf()
-    try:
-        for each in open('resource/university_dict.txt', 'r', encoding='utf-8').readlines():
-            try:
-                each = each.strip('\r').strip('\n')
-                UNIVERSITY_LIST.append(each)
-            except:
-                logging.error('some line is wrong when convent to dict .')
-                logging.info('wrong line : %s ', each)
-                return
-    except FileNotFoundError:
-        logging.error('File resource/university_dict.txt not found . . . ')
+    # 学校库来自配置的文本文件
+    if dict_from == 'conf':
+        try:
+            for each in open('resource/university_dict.txt', 'r', encoding='utf-8').readlines():
+                try:
+                    each = each.strip('\r').strip('\n')
+                    UNIVERSITY_LIST.append(each)
+                except:
+                    logging.error('some line is wrong when convent to dict .')
+                    logging.info('wrong line : %s ', each)
+                    return
+        except FileNotFoundError:
+            logging.error('File resource/university_dict.txt not found . . . ')
 
-    global TRIE
-    TRIE.setWords(UNIVERSITY_LIST)
+    # 学校库来自mongodb库
+    elif dict_from == 'mongodb':
+
+        try:
+            for each in open('resource/db.conf', 'r', encoding='utf-8').readlines():
+                try:
+                    each = each.strip('\r').strip('\n')
+                    if(each.split('=')[0] == 'mongodb.url'):
+                        url = each.split('=')[1]
+                    if(each.split('=')[0] == 'mongodb.port'):
+                        port = each.split('=')[1]
+                    if(each.split('=')[0] == 'mongodb.dulishuo.username'):
+                        username = each.split('=')[1]
+                    if(each.split('=')[0] == 'mongodb.dulishuo.password'):
+                        password = each.split('=')[1]
+                except:
+                    logging.error('some line is wrong when read .')
+                    logging.info('wrong line : %s ', each)
+                    return
+        except FileNotFoundError:
+            logging.error('File resource/db.conf not found . . . ')
+            return exit_error_func(3)
+
+        mongo_client = MongoDB(url, port, username, password)
+        school_search_collection = mongo_client.get_collection('search_school', 'dulishuo')
+        for each in school_search_collection.find():
+            UNIVERSITY_LIST.append(each['display_name']+'|'+each['origin_name']+'|'+each['area']+'|'+each['type']+'|'+str(each['ref_counter']))
+    else:
+        logging.error('__init__()出错，参数： %s' % dict_from)
+        return exit_error_func(2, dict_from)
+
+    # 构建学校库的前缀树
+    global SCHOOL_TRIE
+    SCHOOL_TRIE.setWords(UNIVERSITY_LIST)
+    dict_tree_time = time.time()
+    logging.info('院校库前缀树构建完毕，用时 %s 秒.' % str(dict_tree_time-start_time))
+
+    writerr = open('gg.txt', 'w', encoding='utf-8')
+    for each in SCHOOL_TRIE.preOrder(SCHOOL_TRIE.root):
+        writerr.write(str(each))
 
 def _logging_conf():
     logging.basicConfig(level=logging.DEBUG,
@@ -149,7 +202,18 @@ def _logging_conf():
 
 if __name__ == '__main__':
     _logging_conf()
-    __init__()
-    keyword = '华'
-    province = '湖北'
-    print(json.dumps(search_school(keyword, province), ensure_ascii=False, indent=4))
+    __init__(dict_from='conf')
+    keyword = 'zhongkeda'
+    province = '北京'
+    print(json.dumps(search_school(keyword=keyword, province=province), ensure_ascii=False, indent=4))
+
+    #mon = MongoDB('123.57.250.189',27017,'dulishuo','Dulishuo123')
+    #mon = MongoDB('123.57.250.189',27017)
+
+    #dd = mon.get_collection('institute','dulishuo')
+    #for each in dd.find():
+        #print(str(type(each)))
+    #mon =   MongoDB()d.next
+    #print(mon.get_database('jianzhi'))
+    #coll = mon.get_collection('test', 'test')
+    #print(coll.find_one({'name': 'tim'}))
