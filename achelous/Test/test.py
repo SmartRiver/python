@@ -89,6 +89,14 @@ if __name__ == '__main__':
     d2 = sorted(d.items(), key=lambda dddd:dddd[1], reverse=True)
     for each in d2:
         print(each[0])
+
+    aaa = 6.0
+    print(type(str(aaa)))
+
+    ddd = None
+    print(type(ddd))
+    if isinstance(ddd, NoneType):
+        print(type(ddd))
     
 
 

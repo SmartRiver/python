@@ -318,3 +318,23 @@ Mon, 22 Feb 2016 15:17:36 search.py [func:__init__] [line:230] INFO:
 ´Ómongodb¶ÁÈ¡ÔºĞ£¿âÍê±Ï£¬ÓÃÊ± 6.508303642272949 Ãë.
 Mon, 22 Feb 2016 15:17:42 search.py [func:__init__] [line:240] INFO:
 ÔºĞ£¿âÇ°×ºÊ÷¹¹½¨Íê±Ï£¬ÓÃÊ± 12.246558904647827 Ãë.
+'Mon, 22 Feb 2016 18:08:09' search.py [func:_logging_conf] [line:179] INFO: --------æ—¥å¿—é…ç½®å®Œæ¯•------
+'Mon, 22 Feb 2016 18:08:09' search.py [func:__init__] [line:186] INFO: åˆå§‹åŒ–çš„ç±»å‹dict_from : mongodb
+'Mon, 22 Feb 2016 18:08:15' search.py [func:__init__] [line:251] INFO: ä»mongodbè¯»å–é™¢æ ¡åº“å®Œæ¯•ï¼Œç”¨æ—¶ 6.247585 ç§’.
+'Mon, 22 Feb 2016 18:08:15' search.py [func:__init__] [line:254] INFO: pymongo å…³é—­è¿æ¥æˆåŠŸ.
+'Mon, 22 Feb 2016 18:08:21' search.py [func:__init__] [line:266] INFO: é™¢æ ¡åº“å‰ç¼€æ ‘æ„å»ºå®Œæ¯•ï¼Œç”¨æ—¶ 12.015935 ç§’.
+'Mon, 22 Feb 2016 18:09:23' search.py [func:_logging_conf] [line:179] INFO: --------æ—¥å¿—é…ç½®å®Œæ¯•------
+'Mon, 22 Feb 2016 18:09:23' search.py [func:__init__] [line:186] INFO: åˆå§‹åŒ–çš„ç±»å‹dict_from : mongodb
+'Mon, 22 Feb 2016 18:09:29' search.py [func:__init__] [line:251] INFO: ä»mongodbè¯»å–é™¢æ ¡åº“å®Œæ¯•ï¼Œç”¨æ—¶ 6.366456 ç§’.
+'Mon, 22 Feb 2016 18:09:29' search.py [func:__init__] [line:254] INFO: pymongo å…³é—­è¿æ¥æˆåŠŸ.
+'Mon, 22 Feb 2016 18:09:35' search.py [func:__init__] [line:266] INFO: é™¢æ ¡åº“å‰ç¼€æ ‘æ„å»ºå®Œæ¯•ï¼Œç”¨æ—¶ 12.118723 ç§’.
+'Mon, 22 Feb 2016 18:11:00' search.py [func:_logging_conf] [line:179] INFO: --------æ—¥å¿—é…ç½®å®Œæ¯•------
+'Mon, 22 Feb 2016 18:11:00' search.py [func:__init__] [line:186] INFO: åˆå§‹åŒ–çš„ç±»å‹dict_from : mongodb
+'Mon, 22 Feb 2016 18:11:06' search.py [func:__init__] [line:251] INFO: ä»mongodbè¯»å–é™¢æ ¡åº“å®Œæ¯•ï¼Œç”¨æ—¶ 6.531113 ç§’.
+'Mon, 22 Feb 2016 18:11:06' search.py [func:__init__] [line:254] INFO: pymongo å…³é—­è¿æ¥æˆåŠŸ.
+'Mon, 22 Feb 2016 18:11:12' search.py [func:__init__] [line:266] INFO: é™¢æ ¡åº“å‰ç¼€æ ‘æ„å»ºå®Œæ¯•ï¼Œç”¨æ—¶ 12.322510 ç§’.
+'Mon, 22 Feb 2016 18:19:39' search.py [func:_logging_conf] [line:179] INFO: --------ÈÕÖ¾ÅäÖÃÍê±Ï------
+'Mon, 22 Feb 2016 18:19:39' search.py [func:__init__] [line:186] INFO: ³õÊ¼»¯µÄÀàĞÍdict_from : mongodb
+'Mon, 22 Feb 2016 18:19:45' search.py [func:__init__] [line:251] INFO: ´Ómongodb¶ÁÈ¡ÔºĞ£¿âÍê±Ï£¬ÓÃÊ± 6.351336 Ãë.
+'Mon, 22 Feb 2016 18:19:45' search.py [func:__init__] [line:254] INFO: pymongo ¹Ø±ÕÁ¬½Ó³É¹¦.
+'Mon, 22 Feb 2016 18:19:51' search.py [func:__init__] [line:266] INFO: ÔºĞ£¿âÇ°×ºÊ÷¹¹½¨Íê±Ï£¬ÓÃÊ± 12.206703 Ãë.

@@ -16,8 +16,11 @@ loggere = logging.getLogger('simple')
 f = logging.Filter('root')
 loggerc.addFilter(f)
 
-print(loggerc.__dict__)
-print(loggerc.filters)
+#print(loggerc.__dict__)
+#print(loggerc.filters)
+
+loggera.debug('root debug message')
+loggera.info('rpoot info message')
 
 print(id(loggera))
 print(id(loggerb))
@@ -30,7 +33,7 @@ print(id(loggere))
 start_time = time.time()
 # 'application' code
 
-loggerc.debug('debug message')
+loggerc.debug('debug me反反我是你加他复复sage'.decode('utf-8'))
 loggerc.info('info message')
 
 end_time = time.time()

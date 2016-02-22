@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-__author__  = 'xiaohe'
+__author__  = 'johnson'
 __doc__     = '''this py is used to search schools related to the user input.
-				Optional parameter includes area, which means the area user in.'''
+				Optional parameter includes area 、 major.'''
 
 import time
 import common_func
@@ -13,10 +13,10 @@ import json
 import pymongo
 from pymongo import MongoClient
 from db_util import *
+import logging
+import logging.config
 
-
-
-
+'''构建的字典前缀树'''
 class SchoolTree(object):
     def __init__(self):
         self.root  = Node()  # Trie树root节点引用
@@ -56,6 +56,7 @@ class SchoolTree(object):
             results.append(repr(word))
         for child in node.childs:
             results.extend(self.preOrder(child))
+
         return results
 
     def find(self, node, c):
@@ -73,6 +74,7 @@ class SchoolTree(object):
         for word in words:
             self.add(word)
 
+    # 查询指定字符在构建的前缀树里的位置，并返回把它作为前缀的所有字符串
     def search(self, node, word):
         result = []
         _len = len(word)
@@ -83,6 +85,7 @@ class SchoolTree(object):
                     return self.preOrder(each_node)
                 else:
                     result.extend(self.search(each_node, word[1:]))
+
         return result
 
 
@@ -95,66 +98,68 @@ class Node(object):
         self.weight     = university_weight # 节点存储的大学的权重值
         self.childs     = []   # 此节点的子节点
 
+global search_logger # 日志
+
 UNIVERSITY_LIST = [] # 学校库的字典
 
 SCHOOL_TRIE = SchoolTree() # 学校库的前缀树
 
 SCHOOL_SPECIAL_MAJOR = {} #综合前十或者专业优势
 
-def __sorted_school_weight(search_result):
+''' 将匹配到的院校集合按照档次权重值排序'''
+def __sorted_school_weight(result):
+    return_result = []
     result_school_dict = {}
-    for each in search_result:
+    for each in result:
         each = eval(each)
         result_school_dict[each['result']] = each['weight']
-    return sorted(result_school_dict.items(), key=lambda x:x[1], reverse=False)
+    for each in sorted(result_school_dict.items(), key=lambda x:x[1], reverse=False):
+        return_result.append(each[0])
+    return return_result
 
+''' 如果是该专业的优势学校，并且不是清华北大，则变成'综合前十或者专业优势学校' '''
 def __school_filter_by_major(result, major):
     for index,item in enumerate(result):
         if item.split('|')[0] in SCHOOL_SPECIAL_MAJOR[major]:
-            result[index] = item.split('|')[0] + '|' + item.split('|')[1] + '|综合前十或专业优势'
+            if item.split('|')[2] != '清华北大':
+                result[index] = item.split('|')[0] + '|' + item.split('|')[1] + '|综合前十或专业优势'
 
-def __school_sort_by_province(search_result, province=None):
+'''如果指定地区，则将该地区匹配到的院校优先排列'''
+def __school_sort_by_area(search_result, area=None):
     result = []
     for each in search_result:
-        if each[0].split('|')[1] == province:
-            result.insert(0, each[0])
+        each = eval(each)
+        if each['result'].split('|')[1] == area:
+            result.insert(0, repr(each))
         else:
-            result.append(each[0])
+            result.append(repr(each))
     return result
 
+''' 学校查找'''
+def search_school(condition='general', major=None, area=None):
 
-def search_school(keyword='北京', major=None, province=None):
-    # print('enter func . . . ')
-    # print('type before: %s' % type(province))
-    # print('province before: %s' % province)
-    # print('keyword before: %s' % keyword)
-
-    #如果keyword是bytes, 则转化为str
-    keyword = convert_to_str(keyword)
-    if province != None:
-        province = convert_to_str(province)
-    if major != None:
-        major = convert_to_str(major)
-    # print('type after: %s' % type(province))
-    # print('keyword after: %s ' % keyword)
-    # print('province after: %s ' % province)
+    #如果condition、area、major是bytes, 则转化为str
+    condition = convert_to_str(condition)
+    area = convert_to_str(area)
+    major = convert_to_str(major)
 
     try:
         global SCHOOL_TRIE
-        search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, keyword)
+        search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, condition)
     except:
-        logging.error('没有正常返回结果')
-        return exit_error_func(3, u'参数:'+keyword)
+        search_logger.error('没有正常返回结果')
+        return exit_error_func(3, '参数:'+keyword)
 
+    # 去重
     search_result_set = set()
     for each in search_result:
         search_result_set.add(each)
 
-    result = __sorted_school_weight(search_result_set)
+    result = __school_sort_by_area(search_result_set, area=area)
 
-    result = __school_sort_by_province(result, province=province)
+    result = __sorted_school_weight(result)
 
-    if len(result) > 10:
+    if len(result) > 10: # 如果结果院校数量大于10个，则取前10个返回
         result = result[:10]
 
     if major != None:
@@ -166,9 +171,19 @@ def search_school(keyword='北京', major=None, province=None):
         'result': result,
     }
 
+    '''日志配置'''
+def _logging_conf():
+    global search_logger
+    logging.config.fileConfig('./conf/logging.conf')
+    search_logger = logging.getLogger('general')
+    search_logger.info('--------日志配置完毕------')
+    
+    '''初始化'''
 def __init__(dict_from=None):
     start_time = time.time()
     _logging_conf()
+
+    search_logger.info('初始化的类型dict_from : %s' % dict_from)
     try:
         for each in open('resource/school/special_school.txt', 'r', encoding='utf-8').readlines():
             try:
@@ -181,11 +196,11 @@ def __init__(dict_from=None):
                     major_list.append(each)
                     SCHOOL_SPECIAL_MAJOR[major_key] = major_list
             except:
-                logging.error('some line is wrong when reading special school.')
-                logging.info('wrong line : %s ', each)
+                search_logger.error('some line is wrong when reading special school.')
+                search_logger.info('wrong line : %s ', each)
                 return
     except FileNotFoundError:
-        logging.error('File resource/school/special_school.txt not found . . . ')
+        search_logger.error('File resource/school/special_school.txt not found . . . ')
     # 学校库来自配置的文本文件
     if dict_from == 'conf':
         try:
@@ -194,14 +209,15 @@ def __init__(dict_from=None):
                     each = each.strip('\r').strip('\n').lower()
                     UNIVERSITY_LIST.append(each)
                 except:
-                    logging.error('some line is wrong when convent to dict .')
-                    logging.info('wrong line : %s ', each)
+                    search_logger.error('some line is wrong when convent to dict .')
+                    search_logger.info('wrong line : %s ', each)
                     return
         except FileNotFoundError:
-            logging.error('File resource/university_dict.txt not found . . . ')
+            search_logger.error('File resource/university_dict.txt not found . . . ')
 
     # 学校库来自mongodb库
     elif dict_from == 'mongodb':
+        print(dict_from)
         try:
             for each in open('resource/db.conf', 'r', encoding='utf-8').readlines():
                 try:
@@ -215,44 +231,46 @@ def __init__(dict_from=None):
                     if(each.split('=')[0] == 'mongodb.dulishuo.password'):
                         password = each.split('=')[1]
                 except:
-                    logging.error('some line is wrong when read .')
-                    logging.info('wrong line : %s ', each)
+                    search_logger.error('some line is wrong when read .')
+                    search_logger.info('wrong line : %s ', each)
                     return
         except FileNotFoundError:
-            logging.error('File resource/db.conf not found . . . ')
+            search_logger.error('File resource/db.conf not found . . . ')
             return exit_error_func(3)
 
         mongo_client = MongoDB(host=url, port=port, username=username, password=password)
         school_search_collection = mongo_client.get_collection('school', 'dulishuo')
         for each in school_search_collection.find():
-            UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area']+'|'+each['type']+'|'+repr(each['weight']))
+            try:
+                UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area']+'|'+repr(each['type']).strip('.0')+'|'+repr(each['weight']))
+            except TypeError as e:
+                search_logger.error(e)
+                search_logger.error('转化类型错误的行：%s' % each)
+
         school_load_time = time.time()
-        logging.info('从mongodb读取院校库完毕，用时 %s 秒.' % str(school_load_time-start_time))
-        mongo_client.close() # 关闭连接
+        search_logger.info('从mongodb读取院校库完毕，用时 %f 秒.' % (school_load_time-start_time))
+        try:
+            mongo_client.close() # 关闭连接
+            search_logger.info('pymongo 关闭连接成功.')
+        except:
+            search_logger.error('pymongo 关闭连接失败.')
+        
     else:
-        logging.error('__init__()出错，参数： %s' % dict_from)
+        search_logger.error('__init__()出错，参数： %s' % dict_from)
         return exit_error_func(2, dict_from)
 
     # 构建学校库的前缀树
     global SCHOOL_TRIE
     SCHOOL_TRIE.setWords(UNIVERSITY_LIST)
     dict_tree_time = time.time()
-    logging.info('院校库前缀树构建完毕，用时 %s 秒.' % str(dict_tree_time-start_time))
-
-def _logging_conf():
-    logging.basicConfig(level=logging.DEBUG,
-                        format='%(asctime)s %(filename)s [func:%(funcName)s] [line:%(lineno)d] %(levelname)s:\n%(message)s',
-                        datefmt='%a, %d %b %Y %H:%M:%S',
-                        filename='log/search_school.log',
-                        filemode='a')
-    logging.info('***********************************************')
+    search_logger.info('院校库前缀树构建完毕，用时 %f 秒.' % (dict_tree_time-start_time))
 
 if __name__ == '__main__':
     __init__(dict_from='mongodb')
-    keyword = '华'
-    province = 'general'
+    condition = '华'
+    area = 'general'
     major = '经济学'
-    print(json.dumps(search_school(keyword=keyword, major=major, province=province), ensure_ascii=False, indent=4))
+    print(json.dumps(search_school(condition=condition, major=major, area=area), ensure_ascii=False, indent=4))
 
     #mon = MongoDB('123.57.250.189',27017,'dulishuo','Dulishuo123')
     #mon = MongoDB('123.57.250.189',27017)

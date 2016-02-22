@@ -1,6 +1,6 @@
 # -*- coding: utf:-8 -*-
 
-__author__ = 'xiaohe'
+__author__ = 'johnson'
 __doc__ = '''this py file is the collection of those functions or methods used in many other modules'''
 
 import time
@@ -21,8 +21,18 @@ def exit_error_func(error_code, error_param=''):
 def convert_to_str(input_str):
     if isinstance(input_str, bytes):
         return input_str.decode('utf-8')
-    else:
+    elif isinstance(input_str, str):
         return input_str
+    elif isinstance(input_str, (int, float)):
+        return repr(input_str)
+    elif input_str == None:
+        return input_str
+    else:
+        try:
+            return repr(input_str)
+        except:
+            return False
+
 
 def md5_token(token_key='dulishuo0306'):
     now = time.gmtime() # 获取当前UTC统一时间，与时区无关
@@ -37,4 +47,5 @@ def md5_token(token_key='dulishuo0306'):
     m = hashlib.md5()
     m.update(token_before.encode('utf-8'))
     token = m.hexdigest()[:16]
+
     return token
