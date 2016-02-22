@@ -4642,7 +4642,6 @@ waiguoyu shanghai|上海外国语大学|上海|211院校
 quanzhou preschool education college|泉州幼儿师范高等专科学校|福建|非211非985
 yunnan gongshangxueyuan|云南工商学院|云南|非211非985
 中国科大|中国科学技术大学|安徽|985院校
-中科大|中国科学技术大学|安徽|985院校
 ligongxueyuan qilu|齐鲁理工学院|山东|非211非985
 dianji shanghai|上海电机学院|上海|非211非985
 university ningxia|宁夏大学|宁夏|211院校
@@ -21444,7 +21443,6 @@ technical dezhou vocational and college|德州职业技术学院|山东|非211�
 zhiye yunnan waishi waiyu|云南外事外语职业学院|云南|非211非985
 cambridge school of visual &amp; performing arts|Cambridge School of Visual &amp; performing Arts|UK|海本综排靠后
 zhongguokeda|中国科学技术大学|安徽|985院校
-zhongkeda|中国科学技术大学|安徽|985院校
 university guangdong baiyun|广东白云学院|广东|非211非985
 hunan shiyouhuagong zhiye jishu|湖南石油化工职业技术学院|湖南|非211非985
 zhuankexuexiao yangquan shifan gaodeng|阳泉师范高等专科学校|山西|非211非985
@@ -22690,3 +22688,1551 @@ for university the creative arts|University for the Creative Arts|UK|海本综�
 jishu changjiang gongcheng zhiye|长江工程职业技术学院|湖北|非211非985
 technical hangzhou universal vocational and college|杭州万向职业技术学院|浙江|非211非985
 university college of humanities   sciences of guizhou minzu|贵州民族大学人文科技学院|贵州|非211非985
+hn jidian gaodeng zhuankexuexiao|河南机电高等专科学校|河南|非211非985
+hb professional arts institute of|湖北艺术职业学院|湖北|非211非985
+bj university of chinese medicine dongfang college|北京中医药大学东方学院|河北|非211非985
+js gongcheng zhiye jishu|江苏工程职业技术学院|江苏|非211非985
+bj institute of graphic comminication|北京印刷学院|北京|非211非985
+zj gongshangdaxue|浙江工商大学|浙江|非211非985
+cd dongruan|成都东软学院|四川|非211非985
+hb minzu shifanxueyuan|河北民族师范学院|河北|非211非985
+sd gongye zhiye|山东工业职业学院|山东|非211非985
+hb institue of medicine and nursing university of medicine|湖北医药学院药护学院|湖北|非211非985
+hn shuilishuidian zhiye jishu|湖南水利水电职业技术学院|湖南|非211非985
+sh sibo zhiye jishu|上海思博职业技术学院|上海|非211非985
+berkeley university of|University of California–​Berkeley|USA|海本综排top21-top35
+hn university of humanities science and technology|湖南人文科技学院|湖南|非211非985
+gz communication vocational college|贵州交通职业技术学院|贵州|非211非985
+hn institute of education|河南教育学院|河南|非211非985
+hn jingcha|河南警察学院|河南|非211非985
+hn shuiliyuhuanjing zhiye|河南水利与环境职业学院|河南|非211非985
+hn tielu keji zhiye jishu|湖南铁路科技职业技术学院|湖南|非211非985
+cd university|成都学院|四川|非211非985
+gd peizheng college|广东培正学院|广东|非211非985
+gd peizheng|广东培正学院|广东|非211非985
+gd college of business and technology|广东工商职业学院|广东|非211非985
+hb qingnian zhiye|湖北青年职业学院|湖北|非211非985
+hb industry technology institute|湖北轻工职业技术学院|湖北|非211非985
+xj institute of engineering|新疆工程学院|新疆|非211非985
+jx polytechnic institute of science and technology normal university|江西科技师范大学理工学院|江西|非211非985
+ah gongye|安徽工业大学|安徽|非211非985
+hn vocational college of technology|湖南科技职业学院|湖南|非211非985
+sh lixin university of commerce|上海立信会计学院|上海|非211非985
+sh university of finance & economics|上海财经大学|上海|211院校
+jx yingyong jishu zhiye|江西应用技术职业学院|江西|非211非985
+bj medical college|毕节医学高等专科学校|贵州|非211非985
+hn jili qiche zhiye jishu|湖南吉利汽车职业技术学院|湖南|非211非985
+jl gongshangxueyuan|吉林工商学院|吉林|非211非985
+hn vocational college of railway technology|湖南铁路科技职业技术学院|湖南|非211非985
+jx manufacturing polytechnic college|江西制造职业技术学院|江西|非211非985
+gd yashi yanyi zhiye|广东亚视演艺职业学院|广东|非211非985
+jx fenglin professioinal college of foreign economy trade|江西枫林涉外经贸职业学院|江西|非211非985
+zj waiguoyu|浙江外国语学院|浙江|非211非985
+cd|成都学院|四川|非211非985
+zj yuexiu university of foreign languages|浙江越秀外国语学院|浙江|非211非985
+hn zhongyiyao gaodeng zhuankexuexiao|湖南中医药高等专科学校|湖南|非211非985
+cq  vocational insitute of safety technology|重庆安全技术职业学院|重庆|非211非985
+jx gongchengxueyuan|江西工程学院|江西|非211非985
+bj zhongguo shiyoudaxue |中国石油大学(北京)|北京|211院校
+hb university of economics and business|河北经贸大学|河北|非211非985
+zj chuanmei|浙江传媒学院|浙江|非211非985
+hn university of technology|湖南工业大学|湖南|非211非985
+hn ligongdaxue|河南理工大学|河南|非211非985
+hn keji xueyuan xinkexueyuan|河南科技学院新科学院|河南|非211非985
+ah vocational college of police officers|安徽警官职业学院|安徽|非211非985
+sh jiao tong university school of medicine|上海交通大学医学院|上海|985院校
+bj jili|北京吉利学院|北京|非211非985
+sd vocational college of science and technology|山东科技职业学院|山东|非211非985
+ah minban luyou zhiye|民办安徽旅游职业学院|安徽|非211非985
+Xinjiang Career Technical College|新疆应用职业技术学院|新疆|非211非985
+zj jingji zhiye jishu|浙江经济职业技术学院|浙江|非211非985
+sd university of art & design|山东工艺美术学院|山东|非211非985
+sh dianji|上海电机学院|上海|非211非985
+jx shuili zhiye|江西水利职业学院|江西|非211非985
+gz yikedaxue|贵州医科大学|贵州|非211非985
+ah vocational technical college of forestry|安徽林业职业技术学院|安徽|非211非985
+zj university of science and technology|浙江科技学院|浙江|非211非985
+hn zhongyiyaodaxue|湖南中医药大学|湖南|非211非985
+jx keji shifandaxue|江西科技师范大学|江西|非211非985
+zj zhijiang college of university of technology|浙江工业大学之江学院|浙江|非211非985
+hb college of chinese medicine|湖北中医药高等专科学校|湖北|非211非985
+hb qiche gongye keji|湖北汽车工业学院科技学院|湖北|非211非985
+sh university of medicine health sciences|上海健康医学院|上海|非211非985
+sd haishizhiye|山东海事职业学院|山东|非211非985
+hb university of technology engineering and technology college|湖北工业大学工程技术学院|湖北|非211非985
+hb gongchengxueyuan xin jishu|湖北工程学院新技术学院|湖北|非211非985
+cd sichuan waiguoyu|四川外国语大学成都学院|四川|非211非985
+hb keji|河北科技学院|河北|非211非985
+hn chemicial vocational technology college|湖南化工职业技术学院|湖南|非211非985
+hn agricultural university|河南农业大学|河南|非211非985
+cq telecommunication polytechnic college|重庆电讯职业学院|重庆|非211非985
+gz nongye zhiye|贵州农业职业学院|贵州|非211非985
+hn wangluogongcheng zhiye|湖南网络工程职业学院|湖南|非211非985
+hb vocational college of phycial education|湖北体育职业学院|湖北|非211非985
+bj beida fangzheng ruanjian zhiye jishu|北京北大方正软件职业技术学院|北京|非211非985
+ah university|安徽大学|安徽|211院校
+hn college of industry&information technology|河南工业和信息化职业学院|河南|非211非985
+hb gongchengjishu gaodeng zhuankexuexiao|河北工程技术高等专科学校|河北|非211非985
+jx college of&nbsp;application science and technology|江西应用科技学院|江西|非211非985
+cq yingyong jishu zhiye|重庆应用技术职业学院|重庆|非211非985
+sd yaopin shipin zhiye|山东药品食品职业学院|山东|非211非985
+hn polytechnic|河南职业技术学院|河南|非211非985
+hb college of science and technology|河北科技学院|河北|非211非985
+bj international studies university|北京第二外国语学院|北京|非211非985
+hn caijing gongye zhiye jishu|湖南财经工业职业技术学院|湖南|非211非985
+jx yingyong keji|江西应用科技学院|江西|非211非985
+sd institute of commerce and technology|山东商业职业技术学院|山东|非211非985
+jl keji zhiye jishu|吉林科技职业技术学院|吉林|非211非985
+zj guangsha college of applied construction technology|浙江广厦建设职业技术学院|浙江|非211非985
+jx hongzhou zhiye|江西洪州职业学院|江西|非211非985
+hn yixue gaodeng zhuanke|河南医学高等专科学校|河南|非211非985
+sh chuban yinshua gaodeng zhuanke|上海出版印刷高等专科学校|上海|非211非985
+hn linye zhiye|河南林业职业学院|河南|非211非985
+gd xinan vocational technical college|广东新安职业技术学院|广东|非211非985
+hn university of commerce|湖南商学院北津学院|湖南|非211非985
+jx yingyong gongcheng zhiye|江西应用工程职业学院|江西|非211非985
+zj university of water resources and electric power|浙江水利水电学院|浙江|非211非985
+gz institute of light industry|贵州轻工职业技术学院|贵州|非211非985
+ah jianzhu|安徽建筑大学|安徽|非211非985
+cq jianzhu  college|重庆建筑工程职业学院|重庆|非211非985
+ah science and technology university|安徽科技学院|安徽|非211非985
+hb academy of fine arts|湖北美术学院|湖北|非211非985
+hn shipinyaopin zhiye|湖南食品药品职业学院|湖南|非211非985
+gd shuilidianli zhiye jishu|广东水利电力职业技术学院|广东|非211非985
+sh conservatory of musi|上海音乐学院|上海|非211非985
+hn first normal university|湖南第一师范学院|湖南|非211非985
+xj police college|新疆警察学院|新疆|非211非985
+hn automotive engineering college|湖南汽车工程职业学院|湖南|非211非985
+cq hailian zhiye jishu|重庆海联职业技术学院|重庆|非211非985
+hn career technical college financial industry|湖南财经工业职业技术学院|湖南|非211非985
+sd caijingdaxue dongfang|山东财经大学东方学院|山东|非211非985
+hb beifang|河北北方学院|河北|非211非985
+gd ocean university cunjin college|广东海洋大学寸金学院|广东|非211非985
+hb university of science & technology|河北科技大学|河北|非211非985
+jx normal university|江西师范大学|江西|非211非985
+jx v&t college of communication|江西交通职业技术学院|江西|非211非985
+jl gongye zhiye jishu|吉林工业职业技术学院|吉林|非211非985
+ah finance trade vocational college|安徽财贸职业学院|安徽|非211非985
+gd police college|广东警官学院|广东|非211非985
+jx ligongdaxue|江西理工大学|江西|非211非985
+gd haiyangdaxue|广东海洋大学|广东|非211非985
+cq youth vocational & thchnical college|重庆青年职业技术学院|重庆|非211非985
+gd dance and drama college|广东舞蹈戏剧职业学院|广东|非211非985
+bj zhongguo de da |中国地质大学(北京)|北京|211院校
+hn tiyu zhiye|湖南体育职业学院|湖南|非211非985
+sd communication media college|山东传媒职业学院|山东|非211非985
+jx xinxi yingyong zhiye jishu|江西信息应用职业技术学院|江西|非211非985
+cq rongzhi college of technology and business university|重庆工商大学融智学院|重庆|非211非985
+cq luyou zhiye|重庆旅游职业学院|重庆|非211非985
+hb arts and design acadmy|河北工艺美术职业学院|河北|非211非985
+ah communications vocational technical college|安徽交通职业技术学院|安徽|非211非985
+jl police college|吉林警察学院|吉林|非211非985
+bj century college university of posts and telecommunications|北京邮电大学世纪学院|北京|非211非985
+hb north university|河北北方学院|河北|非211非985
+jl business and technology college|吉林工商学院|吉林|非211非985
+hb nengyuan zhiye jishu|河北能源职业技术学院|河北|非211非985
+jx jidian zhiye jishu|江西机电职业技术学院|江西|非211非985
+hn caijing zhengfadaxue|河南财经政法大学|河南|非211非985
+gd literary vocational college|广东文艺职业学院|广东|非211非985
+hb finace & taxation college|湖北财税职业学院|湖北|非211非985
+zj institute of mechanical & electrical engineering|浙江机电职业技术学院|浙江|非211非985
+sh international studies university|上海外国语大学|上海|211院校
+hb jiaotong vocational and technical college|河北交通职业技术学院|河北|非211非985
+ah vocational and technical college|合肥职业技术学院|安徽|非211非985
+sh donghai zhiye jishu|上海东海职业技术学院|上海|非211非985
+gd vocational institute of public administration|广东行政职业学院|广东|非211非985
+ah university of science technology|安徽理工大学|安徽|非211非985
+hn institute of engineering|湖南工程学院|湖南|非211非985
+gd women&#39;s polytechnic college|广东女子职业技术学院|广东|非211非985
+hb minzu keji|湖北民族学院科技学院|湖北|非211非985
+sy ligong university|沈阳理工大学|辽宁|非211非985
+zj youdian zhiye jishu|浙江邮电职业技术学院|浙江|非211非985
+sy university of chemical technology|沈阳化工大学|辽宁|非211非985
+gd polytechnic normal university|广东技术师范学院|广东|非211非985
+gz shifandaxue|贵州师范大学|贵州|非211非985
+sh shangxueyuan|上海商学院|上海|非211非985
+sd xinxi zhiye jishu|山东信息职业技术学院|山东|非211非985
+zj dongfang zhiye jishu|浙江东方职业技术学院|浙江|非211非985
+hn judicial police vocational college|湖南司法警官职业学院|湖南|非211非985
+sd shangwu zhiye|山东商务职业学院|山东|非211非985
+sd keji taishan keji|山东科技大学泰山科技学院|山东|非211非985
+sd career development college|山东理工职业学院|山东|非211非985
+ah medical university|安徽医科大学|安徽|非211非985
+sh zhengfaxueyuan|上海政法学院|上海|非211非985
+gd eco-engineering polytechnic|广东生态工程职业学院|广东|非211非985
+hn university of technology|河南工业大学|河南|非211非985
+gd aib polytechnic college|广东农工商职业技术学院|广东|非211非985
+gd dongruan|广东东软学院|广东|非211非985
+bj jiaotongyunshu zhiye|北京交通运输职业学院|北京|非211非985
+hb vocational college of rail transpotation|河北轨道运输职业技术学院|河北|非211非985
+jl university|吉林大学|吉林|985院校
+gd xinxigongcheng zhiye|广东信息工程职业学院|广东|非211非985
+gd university of technology|广东工业大学|广东|非211非985
+gd pharmaceutical university|广东药学院|广东|非211非985
+hn information and statistics vocational college|河南信息统计职业学院|河南|非211非985
+gd yaoxueyuan|广东药学院|广东|非211非985
+sd zhengfaxueyuan|山东政法学院|山东|非211非985
+gd vocational college of science and trade|广东科贸职业学院|广东|非211非985
+bj weisheng zhiye|北京卫生职业学院|北京|非211非985
+gz southwest vocational and technical college|黔西南民族职业技术学院|贵州|非211非985
+js university|江苏大学|江苏|非211非985
+hb agricultural university of|河北农业大学现代科技学院|河北|非211非985
+hn agricultural university|湖南农业大学|湖南|非211非985
+sd chengshi jianshe zhiye|山东城市建设职业学院|山东|非211非985
+jx teachers college|江西师范高等专科学校|江西|非211非985
+bj jianzhu|北京建筑大学|北京|非211非985
+sd college of traditional chinese medicine |山东中医药高等专科学校|山东|非211非985
+zj agriculture and business college|浙江农业商贸职业学院|浙江|非211非985
+sh customs college|上海海关学院|上海|非211非985
+bj film academy|北京电影学院|北京|非211非985
+ah gongye jingji zhiye jishu|安徽工业经济职业技术学院|安徽|非211非985
+hn shiyou huagong zhiye jishu|湖南石油化工职业技术学院|湖南|非211非985
+XINJIANG INSTITUTE OF LIGHT INDUSTRY TECHNOLOGY|新疆轻工职业技术学院|新疆|非211非985
+sh theatre academy|上海戏剧学院|上海|非211非985
+sd art and design vocational college|山东艺术设计职业学院|山东|非211非985
+bj jiaotong zhiye jishu|北京交通职业技术学院|北京|非211非985
+hn zhiliang gongcheng vocational college|河南质量工程职业学院|河南|非211非985
+zj gongshang university|浙江工商大学|浙江|非211非985
+hn science and industry polytechnic college|湖南科技工业职业技术学院|湖南|非211非985
+cq shifandaxue shewai shangmao|重庆师范大学涉外商贸学院|重庆|非211非985
+gd food and drug vocational college|广东食品药品职业学院|广东|非211非985
+bj university of agriculture|北京农学院|北京|非211非985
+ah zhiye jishu|安徽职业技术学院|安徽|非211非985
+bj nongxueyuan|北京农学院|北京|非211非985
+hn gongxueyuan|湖南工学院|湖南|非211非985
+js caikuai zhiye|江苏财会职业学院|江苏|非211非985
+hn jianzhu zhiye jishu|河南建筑职业技术学院|河南|非211非985
+hn chengjian|河南城建学院|河南|非211非985
+js second normal university|江苏第二师范学院|江苏|非211非985
+ah finance & trade vocational college|安徽财贸职业学院|安徽|非211非985
+hb meishuxueyuan|河北美术学院|河北|非211非985
+Xinjiang Agricultural University|新疆农业大学|新疆|非211非985
+sd caijingdaxue yanshan|山东财经大学燕山学院|山东|非211非985
+zj shuren university|浙江树人学院|浙江|非211非985
+hb caishui zhiye|湖北财税职业学院|湖北|非211非985
+js polytechnic college agriculture and forestry|江苏农林职业技术学院|江苏|非211非985
+sh zhongqiao zhiye jishu|上海中侨职业技术学院|上海|非211非985
+hb jingguan|湖北警官学院|湖北|非211非985
+jl gongcheng zhiye|吉林工程职业学院|吉林|非211非985
+gd teachers college of foreign language & art|广东外语艺术职业学院|广东|非211非985
+hn nongye zhiye|河南农业职业学院|河南|非211非985
+hn zhongyixueyuan|河南中医学院|河南|非211非985
+sh second polytechnic university|上海第二工业大学|上海|非211非985
+bj laodong baozhang zhiye|北京劳动保障职业学院|北京|非211非985
+hn industry polytechnic|湖南工业职业技术学院|湖南|非211非985
+sd foreign trade vocational college|山东外贸职业学院|山东|非211非985
+cq university of science technology|重庆科技学院|重庆|非211非985
+cq pass college of technology  nbsp;and business university|重庆工商大学派斯学院|重庆|非211非985
+jl yishu|吉林艺术学院|吉林|非211非985
+hb gongye|湖北工业大学|湖北|非211非985
+Xinjiang Vocational University|新疆职业大学|新疆|非211非985
+hn jingcha|湖南警察学院|湖南|非211非985
+sd management university|山东管理学院|山东|非211非985
+hn zhiliang gongcheng zhiye|河南质量工程职业学院|河南|非211非985
+hn city university|湖南城市学院|湖南|非211非985
+sh kexuejishu zhiye|上海科学技术职业学院|上海|非211非985
+jx yejin zhiye jishu|江西冶金职业技术学院|江西|非211非985
+sh jianqiao college|上海建桥学院|上海|非211非985
+hb keji|湖北科技学院|湖北|非211非985
+cq dianxun zhiye|重庆电讯职业学院|重庆|非211非985
+jl university of the arts|吉林艺术学院|吉林|非211非985
+sh zhongyiyaodaxue|上海中医药大学|上海|非211非985
+gz jingguan zhiye|贵州警官职业学院|贵州|非211非985
+bj huijia zhiye|北京汇佳职业学院|北京|非211非985
+hn traditional chinese medical college|湖南中医药高等专科学校|湖南|非211非985
+xz minzu|西藏民族大学|西藏|非211非985
+cd ligongdaxue|成都理工大学|四川|非211非985
+gz jiaotong zhiye jishu|贵州交通职业技术学院|贵州|非211非985
+zj police college|浙江警察学院|浙江|非211非985
+bj qingnian zhengzhi|北京青年政治学院|北京|非211非985
+gd youth vocational college|广东青年职业学院|广东|非211非985
+jl nongye keji|吉林农业科技学院|吉林|非211非985
+jx biotech college|江西生物科技职业学院|江西|非211非985
+jl huaqiao university of foreign languages|吉林华桥外国语学院|吉林|非211非985
+hb polytechnic university|湖北理工学院|湖北|非211非985
+jl architecture and civil engineering institute|吉林建筑大学|吉林|非211非985
+zj sci-tech university|浙江理工大学|浙江|非211非985
+gd kexuejishu zhiye|广东科学技术职业学院|广东|非211非985
+gz vocational technology college of electronics & information|贵州电子信息职业技术学院|贵州|非211非985
+jx keji zhiye|江西科技职业学院|江西|非211非985
+cq university of technology|重庆理工大学|重庆|非211非985
+ah dianzixinxi zhiye jishu|安徽电子信息职业技术学院|安徽|非211非985
+sd university of arts|山东艺术学院|山东|非211非985
+zj tongjidaxue|同济大学浙江学院|浙江|非211非985
+sd tiyu|山东体育学院|山东|非211非985
+sd university of science and tenchnology|山东科技大学泰山科技学院|山东|非211非985
+hb chemical pharmaceutical college|河北化工医药职业技术学院|河北|非211非985
+js jiankang zhiye|江苏建康职业学院|江苏|非211非985
+sd teshu jiaoyu zhiye|山东特殊教育职业学院|山东|非211非985
+bj film academy–modern creative media college|北京电影学院现代创意媒体学院|山东|非211非985
+hb communication technical college|湖北交通职业技术学院|湖北|非211非985
+sh technical institute of electronics information|上海电子信息职业技术学院|上海|非211非985
+jx health vocational college|江西卫生职业学院|江西|非211非985
+cq electric power college|重庆电力高等专科学校|重庆|非211非985
+zj international maritime college|浙江国际海运职业技术学院|浙江|非211非985
+zj university school of medicine|浙江大学医学院|浙江|非211非985
+sd xiehe|山东协和学院|山东|非211非985
+zj caijingdaxue|浙江财经大学|浙江|非211非985
+hn keji xiaoxiang|湖南科技大学潇湘学院|湖南|非211非985
+zj textile and fashion college|浙江纺织服装职业技术学院|浙江|非211非985
+cq sichuan waiguoyu nanfang fanyi|四川外国语大学重庆南方翻译学院|重庆|非211非985
+gz caijingdaxue|贵州财经大学|贵州|非211非985
+hb university of traditional chinese medicine|湖北中医药大学|湖北|非211非985
+zj university of media and communications|浙江传媒学院|浙江|非211非985
+ah wonder university of information engineering|安徽文达信息工程学院|安徽|非211非985
+gz normal university institute|贵州师范大学求是学院|贵州|非211非985
+cd medical college|成都医学院|四川|非211非985
+cq caijing zhiye|重庆财经职业学院|重庆|非211非985
+hb|湖北大学|湖北|非211非985
+zj qiche zhiye jishu|浙江汽车职业技术学院|浙江|非211非985
+js college of information technology|江苏信息职业技术学院|江苏|非211非985
+hn mechanical and electrical vocational college|河南机电职业学院|河南|非211非985
+bj youth politics college|北京青年政治学院|北京|非211非985
+zj jianshe zhiye jishu|浙江建设职业技术学院|浙江|非211非985
+cd zhongyiyaodaxue|成都中医药大学|四川|非211非985
+bj dianzikeji zhiye|北京电子科技职业学院|北京|非211非985
+js keji suzhou ligongxueyuan|江苏科技大学苏州理工学院|江苏|非211非985
+zj fangzhi fuzhuang zhiye jishu|浙江纺织服装职业技术学院|浙江|非211非985
+bj yishu chuanmei zhiye|北京艺术传媒职业学院|北京|非211非985
+hb college of infant education|湖北幼儿师范高等专科学校|湖北|非211非985
+hn gongye keji|湖南工业大学科技学院|湖南|非211非985
+hn police academy|湖南警察学院|湖南|非211非985
+zj yishu zhiye|浙江艺术职业学院|浙江|非211非985
+bj jiaotong|北京交通大学|北京|211院校
+sd vocational college of industry|山东工业职业学院|山东|非211非985
+sy huagongdaxue|沈阳化工大学|辽宁|非211非985
+sy aerospace university|沈阳航空航天大学|辽宁|非211非985
+jl university of finance and economics|吉林财经大学|吉林|非211非985
+hb shuilishuidian zhiye jishu|湖北水利水电职业技术学院|湖北|非211非985
+zj changzheng zhiye jishu|浙江长征职业技术学院|浙江|非211非985
+gd communication polytechnic|广东交通职业技术学院|广东|非211非985
+jx xianfeng ruanjian zhiye jishu|江西先锋软件职业技术学院|江西|非211非985
+sy polytechnic school of ligong university|沈阳工学院|辽宁|非211非985
+gd industry technical college|广东轻工职业技术学院|广东|非211非985
+cq college of humanities science technology|重庆人文科技学院|重庆|非211非985
+cd wenlixueyuan|成都文理学院|四川|非211非985
+hb youth vocational college|湖北青年职业学院|湖北|非211非985
+ah west university|皖西学院|安徽|非211非985
+gd kemao zhiye|广东科贸职业学院|广东|非211非985
+hn wenlixueyuan furong|湖南文理学院芙蓉学院|湖南|非211非985
+ah tiyu yundong zhiye jishu|安徽体育运动职业技术学院|安徽|非211非985
+bj polytechnic college|北京工业职业技术学院|北京|非211非985
+cq chuanmei zhiye|重庆传媒职业学院|重庆|非211非985
+gz gongye zhiye jishu|贵州工业职业技术学院|贵州|非211非985
+ah huangmeixi yishu zhiye|安徽黄梅戏艺术职业学院|安徽|非211非985
+sy yinyuexueyuan|沈阳音乐学院|辽宁|非211非985
+cq ligongdaxue|重庆理工大学|重庆|非211非985
+gd xingzheng zhiye|广东行政职业学院|广东|非211非985
+js nonglin zhiye jishu|江苏农林职业技术学院|江苏|非211非985
+gz electric power vocatinal technical college|贵州电力职业技术学院|贵州|非211非985
+cq wenlixueyuan|重庆文理学院|重庆|非211非985
+bj union university|北京联合大学|北京|非211非985
+sy institute of engineering|沈阳工程学院|辽宁|非211非985
+cq dianli gaodeng zhuankexuexiao|重庆电力高等专科学校|重庆|非211非985
+ah yangtse vocational and technical college|安徽扬子职业技术学院|安徽|非211非985
+js shifandaxue ke wenxueyuan|江苏师范大学科文学院|江苏|非211非985
+jl engineering normal university|吉林工程技术师范学院|吉林|非211非985
+sd agriculture and engineering university|山东农业工程学院|山东|非211非985
+jl jingcha|吉林警察学院|吉林|非211非985
+cq industry trade polytechnic|重庆工贸职业技术学院|重庆|非211非985
+gd shipinyaopin zhiye|广东食品药品职业学院|广东|非211非985
+gz gongmao zhiye|贵州工贸职业学院|贵州|非211非985
+gd shiyouhuagong|广东石油化工学院|广东|非211非985
+ah finance and economics university|安徽财经大学|安徽|非211非985
+gd sifa jingguan zhiye xueyuan|广东司法警官职业学院|广东|非211非985
+zj binjiang college of chinese medical university|浙江中医药大学滨江学院|浙江|非211非985
+sh university of electric power|上海电力学院|上海|非211非985
+jx jingcha|江西警察学院|江西|非211非985
+hn yishu zhiye xueyuan|河南艺术职业学院|河南|非211非985
+cq technology &business institute|重庆工商职业学院|重庆|非211非985
+gz gongcheng yingyong jishu|贵州工程应用技术学院|贵州|非211非985
+ah zhongyiyaodaxue|安徽中医药大学|安徽|非211非985
+jx shengwukeji zhiye|江西生物科技职业学院|江西|非211非985
+sy pharmaceutical university|沈阳药科大学|辽宁|非211非985
+bj jiaotong ( weihai )|北京交通大学(威海校区)|山东|211院校
+hn polytechnic institute|河南工业职业技术学院|河南|非211非985
+hn vocational college of nursing|河南护理职业学院|河南|非211非985
+gz minzu university|贵州民族大学|贵州|非211非985
+cq electromechanical vocational institute|重庆机电职业技术学院|重庆|非211非985
+hb jidian zhiye jishu|河北机电职业技术学院|河北|非211非985
+cd hangkong zhiye jishu|成都航空职业技术学院|四川|非211非985
+hb laodong guanxi zhiye|河北劳动关系职业学院|河北|非211非985
+hb wenlixueyuan ligongxueyuan|湖北文理学院理工学院|湖北|非211非985
+hb dizhi zhigongdaxue|河北地质职工大学|河北|非211非985
+hb jingji|湖北经济学院|湖北|非211非985
+ah business institue university of finance   economics|安徽财经大学商学院|安徽|非211非985
+sh haishi|上海海事大学|上海|非211非985
+zj yuying zhiye jishu|浙江育英职业技术学院|浙江|非211非985
+zj normal university|浙江师范大学|浙江|非211非985
+sd jiaotong zhiye|山东交通职业学院|山东|非211非985
+ah guangbo yingshi zhiye jishu|安徽广播影视职业技术学院|安徽|非211非985
+sh waiguoyu|上海外国语大学|上海|211院校
+ah medical university clinic medical school of medicine|安徽医科大学临床医学院|安徽|非211非985
+js normal university kewen college|江苏师范大学科文学院|江苏|非211非985
+sy hangkonghangtian|沈阳航空航天大学|辽宁|非211非985
+gd tianhe college of polytechnic normal university|广东技术师范学院天河学院|广东|非211非985
+ah vocantional and technical college|安徽职业技术学院|安徽|非211非985
+bj jiaotong weihai|北京交通大学(威海校区)|山东|211院校
+sy beiruan xinxi zhiye jishu|沈阳北软信息职业技术学院|辽宁|非211非985
+gd environmental protection engineering vocational college|广东环境保护工程职业学院|广东|非211非985
+sd luyou zhiye|山东旅游职业学院|山东|非211非985
+cq technology business institute|重庆工商职业学院|重庆|非211非985
+hn zhiye jishu|河南职业技术学院|河南|非211非985
+hn ligongxueyuan|湖南理工学院|湖南|非211非985
+jx yishu zhiye|江西艺术职业学院|江西|非211非985
+cq vocational institute of tourism|重庆旅游职业学院|重庆|非211非985
+bj institute of economic and management|北京经济管理职业学院|北京|非211非985
+hb polytechnic institute|湖北职业技术学院|湖北|非211非985
+jl justice officer academy|吉林司法警官职业学院|吉林|非211非985
+sh caijing daxue zhejiang|上海财经大学浙江学院|浙江|非211非985
+ah business vocational college|安徽工商职业学院|安徽|非211非985
+jx application engineering vocational college|江西应用工程职业学院|江西|非211非985
+jl normal university|吉林师范大学|吉林|非211非985
+gz shangxueyuan|贵州商学院|贵州|非211非985
+sd university of political science and law|山东政法学院|山东|非211非985
+sh minyuan zhiye jishu|上海民远职业技术学院|上海|非211非985
+hb keji ligongxueyuan|河北科技大学理工学院|河北|非211非985
+sh dianli|上海电力学院|上海|非211非985
+hn institute of engineering|河南工程学院|河南|非211非985
+gd biguiyuan zhiye|广东碧桂园职业学院|广东|非211非985
+hb gongye zhiye jishu|湖北工业职业技术学院|湖北|非211非985
+ah vocational college of city management|安徽城市管理职业学院|安徽|非211非985
+js animal husbandry & veterinary college|江苏农牧科技职业学院|江苏|非211非985
+sh institute of tourism|上海旅游高等专科学校|上海|非211非985
+cq jiaotong|重庆交通大学|重庆|非211非985
+sd college of information technology|山东信息职业技术学院|山东|非211非985
+bj jiaotong ( weihai xiaoqu )|北京交通大学(威海校区)|山东|211院校
+cd neusoft institute of information|成都东软学院|四川|非211非985
+js|江苏大学|江苏|非211非985
+hb tiyu zhiye|湖北体育职业学院|湖北|非211非985
+hb university of education|湖北第二师范学院|湖北|非211非985
+ah technical college of industry and economy|安徽工业经济职业技术学院|安徽|非211非985
+js maritime institute|江苏海事职业技术学院|江苏|非211非985
+hn gaosutielu zhiye jishu|湖南高速铁路职业技术学院|湖南|非211非985
+hb university of arts and science|湖北文理学院|湖北|非211非985
+sh university of medicine & health sciences|上海健康医学院|上海|非211非985
+zj tourism college of china|浙江旅游职业学院|浙江|非211非985
+cq gongcheng zhiye jishu|重庆工程职业技术学院|重庆|非211非985
+ah jingguan zhiye|安徽警官职业学院|安徽|非211非985
+hb vocational opening college|湖北开放职业学院|湖北|非211非985
+gd country garden polytechnic|广东碧桂园职业学院|广东|非211非985
+hb nuzi zhiye jishu|河北女子职业技术学院|河北|非211非985
+hn software vocational institute|湖南软件职业学院|湖南|非211非985
+hb qingnian guanli ganbu|河北青年管理干部学院|河北|非211非985
+gz commercial college|贵州商学院|贵州|非211非985
+cq vocational college of transportation|重庆交通职业学院|重庆|非211非985
+sh zhongqiao college|上海中侨职业技术学院|上海|非211非985
+ah xinhua university|安徽新华学院|安徽|非211非985
+bj police college|北京警察学院|北京|非211非985
+ah broadcasting movie and television college|安徽广播影视职业技术学院|安徽|非211非985
+cq qingnian zhiye jishu|重庆青年职业技术学院|重庆|非211非985
+hn university of science and engineering|湖南科技学院|湖南|非211非985
+gz minzu daxuerenwen keji|贵州民族大学人文科技学院|贵州|非211非985
+zj chinese medical university|浙江中医药大学|浙江|非211非985
+js jianzhu institute|江苏建筑职业技术学院|江苏|非211非985
+sy shifandaxue|沈阳师范大学|辽宁|非211非985
+bj forestry university|北京林业大学|北京|211院校
+hn nuzi|湖南女子学院|湖南|非211非985
+jx gongcheng zhiye|江西工程职业学院|江西|非211非985
+hn gongye|河南工业大学|河南|非211非985
+ah gongye gongshangxueyuan|安徽工业大学工商学院|安徽|非211非985
+sd fuzhuang zhiye|山东服装职业学院|山东|非211非985
+hn renwen keji|湖南人文科技学院|湖南|非211非985
+zj gongshangdaxue hangzhou shangxueyuan|浙江工商大学杭州商学院|浙江|非211非985
+bj huabeidianlidaxue |华北电力大学(北京)|北京|211院校
+sh xingjian college|上海行健职业学院|上海|非211非985
+hb urban construction vocational and technological college|湖北城市建设职业技术学院|湖北|非211非985
+js college of finance & accounting|江苏财会职业学院|江苏|非211非985
+sd waiguoyu zhiye|山东外国语职业学院|山东|非211非985
+ah vocational college grain enginerring|安徽粮食工程职业学院|安徽|非211非985
+jx yingtan vocational technology institute|鹰潭职业技术学院|江西|非211非985
+cq vocational college of art & engineering|重庆艺术工程职业学院|重庆|非211非985
+ah north health vocational college|皖北卫生职业学院|安徽|非211非985
+ah business college of vocational technology|安徽商贸职业技术学院|安徽|非211非985
+cq medical and pharmaceutical college|重庆医药高等专科学校|重庆|非211非985
+hn nongyedaxue|湖南农业大学|湖南|非211非985
+js jianzhu zhiye jishu|江苏建筑职业技术学院|江苏|非211非985
+gd wenyi zhiye|广东文艺职业学院|广东|非211非985
+zj shuilishuidian|浙江水利水电学院|浙江|非211非985
+sy technology and engineering college of university|沈阳城市学院|辽宁|非211非985
+jl vocational & institute of technology|吉林城市职业技术学院|吉林|非211非985
+hb university of science technology|河北科技大学|河北|非211非985
+cq aerospace polytechnic college|重庆航天职业技术学院|重庆|非211非985
+jl province economic management cadre college|吉林省经济管理干部学院|吉林|非211非985
+hb chengshi jianshe zhiye jishu|湖北城市建设职业技术学院|湖北|非211非985
+hb ligongxueyuan|湖北理工学院|湖北|非211非985
+sh minhang zhiye jishu|上海民航职业技术学院|上海|非211非985
+Xinjiang Medical University|新疆医科大学|新疆|非211非985
+jx hongzhou vocational college|江西洪州职业学院|江西|非211非985
+bj geely university|北京吉利学院|北京|非211非985
+hn gongye zhiye jishu|湖南工业职业技术学院|湖南|非211非985
+sy university of chemical technology ke ya college|沈阳化工大学科亚学院|辽宁|非211非985
+sd vocational college of light industry|山东轻工职业学院|山东|非211非985
+gd maoming jiankang zhiye|广东茂名健康职业学院|广东|非211非985
+bj university of science   technology|北京科技大学|北京|211院校
+hn jiaotong zhiye jishu|河南交通职业技术学院|河南|非211非985
+jx agricultural university|江西农业大学南昌商学院|江西|非211非985
+hn youer shifan gaodeng zhuankexuexiao|湖南幼儿师范高等专科学校|湖南|非211非985
+gd chuangxin keji zhiye|广东创新科技职业学院|广东|非211非985
+hb jingji fashangxueyuan|湖北经济学院法商学院|湖北|非211非985
+cq kechuang zhiye|重庆科创职业学院|重庆|非211非985
+gz medcial university|贵州医科大学|贵州|非211非985
+bj university of posts and telecommunications|北京邮电大学(宏福校区)|北京|211院校
+sh lida polytechnic institute|上海立达职业技术学院|上海|非211非985
+sd dianli gaodeng zhuanke|山东电力高等专科学校|山东|非211非985
+hn post and telecommunicaion college|湖南邮电职业技术学院|湖南|非211非985
+hn keji|河南科技学院|河南|非211非985
+ah electrical engineering professional technique college|安徽电气工程职业技术学院|安徽|非211非985
+ah yixue gaodeng zhuankexuexiao|安徽医学高等专科学校|安徽|非211非985
+hb yikedaxue|河北医科大学|河北|非211非985
+xj tiyu zhiye jishu|新疆体育职业技术学院|新疆|非211非985
+hn youdian zhiye jishu|湖南邮电职业技术学院|湖南|非211非985
+jl nongyedaxue|吉林农业大学|吉林|非211非985
+jx university of science and technology|江西理工大学|江西|非211非985
+hb shifanxueyuan wenlixueyuan|湖北师范学院文理学院|湖北|非211非985
+zj keji|浙江科技学院|浙江|非211非985
+cd the engineering   technical college of university of technology|成都理工大学工程技术学院|四川|非211非985
+ah nongyedaxue|安徽农业大学|安徽|非211非985
+sy nongyedaxue|沈阳农业大学|辽宁|非211非985
+hb jingmao daxue jingji guanli xueyuan|河北经贸大学经济管理学院|河北|非211非985
+cd technological university|成都工业学院|四川|非211非985
+sh university of political science and law|上海政法学院|上海|非211非985
+bj health vocational college|北京卫生职业学院|北京|非211非985
+jx gongye gongcheng zhiye jishu|江西工业工程职业技术学院|江西|非211非985
+hb engineering university|湖北工程学院|湖北|非211非985
+hb gongyimeishu zhiye|河北工艺美术职业学院|河北|非211非985
+zj university city college|浙江大学城市学院|浙江|非211非985
+hn vocational college of chemical technology|河南化工职业学院|河南|非211非985
+sh dier gongye|上海第二工业大学|上海|非211非985
+bj jingcha|北京警察学院|北京|非211非985
+jx huanjinggongcheng zhiye|江西环境工程职业学院|江西|非211非985
+sd drug and food vocational college|山东药品食品职业学院|山东|非211非985
+bj wuzi university|北京物资学院|北京|非211非985
+hn keji zhiye|湖南科技职业学院|湖南|非211非985
+bj sport univerrsity|北京体育大学|北京|211院校
+hb academy of fine arts|河北美术学院|河北|非211非985
+bj jiaotong vocational technical college|北京交通职业技术学院|北京|非211非985
+hb college of technology engineering university|湖北工程学院新技术学院|湖北|非211非985
+sh niuyuedaxue|上海纽约大学|上海|非211非985
+ah huangmei opera art vocational college|安徽黄梅戏艺术职业学院|安徽|非211非985
+sh xingwei|上海兴伟学院|上海|非211非985
+sd technology and business university|山东工商学院|山东|非211非985
+cq youdiandaxue|重庆邮电大学|重庆|非211非985
+ah keji|安徽科技学院|安徽|非211非985
+hn chengjian zhiye jishu|湖南城建职业技术学院|湖南|非211非985
+bj jiaotong haibin|北京交通大学海滨学院|河北|非211非985
+hn qiche gongcheng zhiye|湖南汽车工程职业学院|湖南|非211非985
+bj peili zhiye|北京培黎职业学院|北京|非211非985
+sh sanda university|上海杉达学院|上海|非211非985
+ah post and telecomunication college|安徽邮电职业技术学院|安徽|非211非985
+hn university of arts and science furong college|湖南文理学院芙蓉学院|湖南|非211非985
+cq youth vocational thchnical college|重庆青年职业技术学院|重庆|非211非985
+sh duiwaijingmaodaxue|上海对外经贸大学|上海|非211非985
+cq renwen keji|重庆人文科技学院|重庆|非211非985
+bj technology and business university|北京工商大学|北京|非211非985
+zj zhoushanqundao xinqu luyou yu jiankang zhiye|浙江舟山群岛新区旅游与健康职业学院|浙江|非211非985
+bj dianzikeji|北京电子科技学院|北京|非211非985
+hn keji gongye zhiye jishu|湖南科技工业职业技术学院|湖南|非211非985
+js university of technology|江苏理工学院|江苏|非211非985
+cd textile college|成都纺织高等专科学校|四川|非211非985
+bj jiaoda|北京交通大学|北京|211院校
+gz hangtian zhiye jishu|贵州航天职业技术学院|贵州|非211非985
+ah youdian zhiye jishu|安徽邮电职业技术学院|安徽|非211非985
+sd university lishan collage|山东师范大学历山学院|山东|非211非985
+zj industry trade vocational college|浙江工贸职业技术学院|浙江|非211非985
+hn university of urban construction|河南城建学院|河南|非211非985
+hn yiyao|湖南医药学院|湖南|非211非985
+hn applied technology university|湖南应用技术学院|湖南|非211非985
+sh sipo polytechnic|上海思博职业技术学院|上海|非211非985
+xj shifan|新疆师范大学|新疆|非211非985
+zj university|浙江大学|浙江|985院校
+zj industry & trade vocational college|浙江工贸职业技术学院|浙江|非211非985
+jx science and technology of university of traditional chinese medicine|江西中医药大学科技学院|江西|非211非985
+hn vocational college of commerce|湖南商务职业技术学院|湖南|非211非985
+xj jianshe zhiye jishu|新疆建设职业技术学院|新疆|非211非985
+sh jianfeng vocational college|上海建峰职业技术学院|上海|非211非985
+jl huagongxueyuan|吉林化工学院|吉林|非211非985
+sd laodong zhiye jishu|山东劳动职业技术学院|山东|非211非985
+bj shehui guanli zhiye|北京社会管理职业学院|北京|非211非985
+hn university of environment and biology|湖南环境生物职业技术学院|湖南|非211非985
+sy university of technology|沈阳工业大学|辽宁|非211非985
+bj jingmao zhiye|北京经贸职业学院|北京|非211非985
+bj institute of technology|北京理工大学|北京|985院校
+zj international studies university|浙江外国语学院|浙江|非211非985
+hn wenlixueyuan|湖南文理学院|湖南|非211非985
+hn university|河南大学|河南|非211非985
+jl jianzhu|吉林建筑大学|吉林|非211非985
+hb shangmao|湖北商贸学院|湖北|非211非985
+cq jidian zhiye jishu|重庆机电职业技术学院|重庆|非211非985
+cq city management college|重庆城市管理职业学院|重庆|非211非985
+cd institute sichuan international studies university|四川外国语大学成都学院|四川|非211非985
+gd wenli zhiye|广东文理职业学院|广东|非211非985
+bj city university|北京城市学院|北京|非211非985
+bj shiyouhuagong|北京石油化工学院|北京|非211非985
+gd innovative technical college|广东创新科技职业学院|广东|非211非985
+gz normal university|贵州师范大学|贵州|非211非985
+cq fuzhuang gongcheng zhiye|重庆服装工程职业学院|重庆|非211非985
+hn institute of technology|湖南工学院|湖南|非211非985
+hn gongchengxueyuan|湖南工程学院|湖南|非211非985
+hb public security police vocational college|河北公安警察职业学院|河北|非211非985
+hb chemical & pharmaceutical college|河北化工医药职业技术学院|河北|非211非985
+sh waiguoyu xianda jingji renwenxueyuan|上海外国语大学贤达经济人文学院|上海|非211非985
+jx college of engineering|江西工程学院|江西|非211非985
+hn normal university|湖南师范大学|湖南|211院校
+sd ligong zhiye|山东理工职业学院|山东|非211非985
+zj ligongdaxue|浙江理工大学|浙江|非211非985
+hn mechanical electrical polytechnic|湖南机电职业技术学院|湖南|非211非985
+jx fenglin shewai jingmao zhiye|江西枫林涉外经贸职业学院|江西|非211非985
+hn university of chinese medicine|湖南中医药大学|湖南|非211非985
+ah institute of career academy|安徽工业职业技术学院|安徽|非211非985
+cq jingmao zhiye|重庆经贸职业学院|重庆|非211非985
+ah caijingdaxue|安徽财经大学|安徽|非211非985
+hn college of finance and taxation|河南财政税务高等专科学校|河南|非211非985
+gz caijingdaxue shangwu|贵州财经大学商务学院|贵州|非211非985
+hn mechanical and electrical engineering college|河南机电高等专科学校|河南|非211非985
+sh institute of technology|上海应用技术学院|上海|非211非985
+bj university of chemical technology|北京化工大学|北京|211院校
+hb youth administrative cadres college|河北青年管理干部学院|河北|非211非985
+cq vocational college of media|重庆传媒职业学院|重庆|非211非985
+hn womens university|湖南女子学院|湖南|非211非985
+zj ocean university donghai science and technology college|浙江海洋学院东海科学技术学院|浙江|非211非985
+hn arts and crafts vocational college|湖南工艺美术职业学院|湖南|非211非985
+xz zhiye jishu|西藏职业技术学院|西藏|非211非985
+hb college of law   business of university of economics|湖北经济学院法商学院|湖北|非211非985
+bj nongye zhiye|北京农业职业学院|北京|非211非985
+gd institute of arts and sciences|广东文理职业学院|广东|非211非985
+hn dazhongchuanmei zhiye jishu|湖南大众传媒职业技术学院|湖南|非211非985
+xz zang yixueyuan|西藏藏医学院|西藏|非211非985
+cq business vocational college|重庆商务职业学院|重庆|非211非985
+hb gongcheng zhiye|湖北工程职业学院|湖北|非211非985
+jl donghua|吉林动画学院|吉林|非211非985
+ah kuangye zhiye jishu|安徽矿业职业技术学院|安徽|非211非985
+jx jiaotong zhiye jishu|江西交通职业技术学院|江西|非211非985
+sh jinrong|上海金融学院|上海|非211非985
+sd polytechnic university|齐鲁工业大学|山东|非211非985
+jx gongyemaoyi zhiye jishu|江西工业贸易职业技术学院|江西|非211非985
+jx vocational college of finance and economis|江西财经职业学院|江西|非211非985
+hn jidian zhiye jishu|湖南机电职业技术学院|湖南|非211非985
+gd tiyu zhiye jishu|广东体育职业技术学院|广东|非211非985
+bj shida |中国石油大学(北京)|北京|211院校
+jl chengshi zhiye jishu|吉林城市职业技术学院|吉林|非211非985
+hn minzu zhiye|湖南民族职业学院|湖南|非211非985
+gd medical college|广东医学院|广东|非211非985
+cq qinggong zhiye|重庆轻工职业学院|重庆|非211非985
+zj zhongyiyaodaxue|浙江中医药大学|浙江|非211非985
+hb zhi hang|湖北大学知行学院|湖北|非211非985
+jx hangkong zhiye jishu|江西航空职业技术学院|江西|非211非985
+hb the school of art and science of normal college|湖北师范学院文理学院|湖北|非211非985
+bj yuyan|北京语言大学|北京|非211非985
+gd huashang college university of finance   economics|广东财经大学华商学院|广东|非211非985
+jl dianzixinxi zhiye jishu|吉林电子信息职业技术学院|吉林|非211非985
+Xinjiang Arts Institute|新疆艺术学院|新疆|非211非985
+jx water resources institute|江西水利职业学院|江西|非211非985
+zj automotive vocational and technical college|浙江汽车职业技术学院|浙江|非211非985
+sd labor vocational and technical college|山东劳动职业技术学院|山东|非211非985
+gd haiyangdaxue cunjin|广东海洋大学寸金学院|广东|非211非985
+ah west health vocational college|皖西卫生职业学院|安徽|非211非985
+hn international economics university|湖南涉外经济学院|湖南|非211非985
+bj jiaotong weihai xiaoqu|北京交通大学(威海校区)|山东|211院校
+sh ocean university|上海海洋大学|上海|非211非985
+ah career academy|民办安徽旅游职业学院|安徽|非211非985
+jx taihao dongman zhiye|江西泰豪动漫职业学院|江西|非211非985
+hb shengtai gongcheng zhiye jishu|湖北生态工程职业技术学院|湖北|非211非985
+hn shangwu zhiye jishu|湖南商务职业技术学院|湖南|非211非985
+cq city college of science and technology university|重庆大学城市科技学院|重庆|非211非985
+sd zhiye|山东职业学院|山东|非211非985
+hn university of industry and commerce|湖南工商职业学院|湖南|非211非985
+sd justice police vocational college|山东司法警官职业学院|山东|非211非985
+sd shuili zhiye|山东水利职业学院|山东|非211非985
+jx zhongyiyaodaxue|江西中医药大学|江西|非211非985
+hb agricultural university of|河北农业大学|河北|非211非985
+sh normal university|上海师范大学|上海|非211非985
+ah zhongao keji zhiye|安徽中澳科技职业学院|安徽|非211非985
+gz normal college|贵州师范学院|贵州|非211非985
+sh maritime academy|上海海事职业技术学院|上海|非211非985
+xj bingtuan jingguan gaodeng zhuanke|新疆兵团警官高等专科学校|新疆|非211非985
+gz industry polytechnic college|贵州工业职业技术学院|贵州|非211非985
+ah shangmao zhiye jishu|安徽商贸职业技术学院|安徽|非211非985
+sd the oriental institute of university of finance and economics|山东财经大学东方学院|山东|非211非985
+xj tiedao zhiye jishu|新疆铁道职业技术学院|新疆|非211非985
+sd guanli|山东管理学院|山东|非211非985
+ah wen da xinxi gongchengxueyuan|安徽文达信息工程学院|安徽|非211非985
+hn jiuyi technical college|湖南九嶷职业技术学院|湖南|非211非985
+sd maritime vocation college|山东海事职业学院|山东|非211非985
+gd university of petrochemical technology|广东石油化工学院|广东|非211非985
+js xinxi zhiye jishu|江苏信息职业技术学院|江苏|非211非985
+zj college of construction|浙江建设职业技术学院|浙江|非211非985
+jx zhongyiyaodaxue keji|江西中医药大学科技学院|江西|非211非985
+cd zhiye jishu|成都职业技术学院|四川|非211非985
+ah guoji shangwu zhiye|安徽国际商务职业学院|安徽|非211非985
+hb normal university|河北师范大学汇华学院|河北|非211非985
+js shangmao zhiye|江苏商贸职业学院|江苏|非211非985
+gz university of finance and economics|贵州财经大学|贵州|非211非985
+hb sifa jingguan zhiye|河北司法警官职业学院|河北|非211非985
+hn keji|湖南科技大学|湖南|非211非985
+zj dongfang vocational technical college|浙江东方职业技术学院|浙江|非211非985
+zj wanlixueyuan|浙江万里学院|浙江|非211非985
+hb water resource technical college|湖北水利水电职业技术学院|湖北|非211非985
+hb gongan jingcha zhiye|河北公安警察职业学院|河北|非211非985
+bj chengshi|北京城市学院|北京|非211非985
+hb waiguoyu zhiye|河北外国语职业学院|河北|非211非985
+bj institute of fashion technology|北京服装学院|北京|非211非985
+ah vocational college of metallurgy and technology|安徽冶金科技职业学院|安徽|非211非985
+hn xinxi tongji zhiye|河南信息统计职业学院|河南|非211非985
+ah water conservancy technical college|安徽水利水电职业技术学院|安徽|非211非985
+hb guotuziyuan zhiye|湖北国土资源职业学院|湖北|非211非985
+sh gongan gaodeng zhuankexuexiao|上海公安高等专科学校|上海|非211非985
+js chengshi zhiye|江苏城市职业学院|江苏|非211非985
+sd waimao zhiye|山东外贸职业学院|山东|非211非985
+xj university of finance & economics|新疆财经大学|新疆|非211非985
+xj nengyuan zhiye jishu|新疆能源职业技术学院|新疆|非211非985
+gd university of foreign studies south china business college|广东外语外贸大学南国商学院|广东|非211非985
+sd transport vocational college|山东交通职业学院|山东|非211非985
+gd nuzi zhiye jishu|广东女子职业技术学院|广东|非211非985
+xj jingcha|新疆警察学院|新疆|非211非985
+sh dianzixinxi zhiye jishu|上海电子信息职业技术学院|上海|非211非985
+hn chengshi|湖南城市学院|湖南|非211非985
+cq youdiandaxue yitong|重庆邮电大学移通学院|重庆|非211非985
+ah china-australia technology and vocational college|安徽中澳科技职业学院|安徽|非211非985
+cq jiaotong zhiye|重庆交通职业学院|重庆|非211非985
+sd jiaotong university|山东交通学院|山东|非211非985
+hn gongye he xinxihua zhiye|河南工业和信息化职业学院|河南|非211非985
+jx new energy technology institute|江西新能源科技职业学院|江西|非211非985
+gd songshan polytechnic college|广东松山职业技术学院|广东|非211非985
+cq information technology college|重庆信息技术职业学院|重庆|非211非985
+zj guoji haiyun zhiye jishu|浙江国际海运职业技术学院|浙江|非211非985
+jx yixue gaodeng zhuankexuexiao|江西医学高等专科学校|江西|非211非985
+sd gongshangxueyuan|山东工商学院|山东|非211非985
+sy sport university|沈阳体育学院|辽宁|非211非985
+ah vocational institute of population|安徽人口职业学院|安徽|非211非985
+sy gongxueyuan|沈阳工学院|辽宁|非211非985
+jl institute of chemical technology|吉林化工学院|吉林|非211非985
+gd qinggong zhiye jishu|广东轻工职业技术学院|广东|非211非985
+hn shuda college normal university|湖南师范大学树达学院|湖南|非211非985
+js the city vocational college of|江苏城市职业学院|江苏|非211非985
+cd university of technology|成都理工大学|四川|非211非985
+hn yixue gaodeng zhuankexuexiao|河南医学高等专科学校|河南|非211非985
+zj post and telecommunication college|浙江邮电职业技术学院|浙江|非211非985
+jl shifandaxue|吉林师范大学|吉林|非211非985
+hn university of science and technology|湖南科技大学|湖南|非211非985
+cq energy college|重庆能源职业学院|重庆|非211非985
+cd aeronautic polytechnic|成都航空职业技术学院|四川|非211非985
+sy agricultural university|沈阳农业大学|辽宁|非211非985
+hn food and drug vocational college|湖南食品药品职业学院|湖南|非211非985
+jx medical college|江西医学高等专科学校|江西|非211非985
+bj hospitality institute|北京第二外国语学院中瑞酒店管理学院|北京|非211非985
+hb engineering institute|湖北工程职业学院|湖北|非211非985
+gd gongcheng zhiye jishu|广东工程职业技术学院|广东|非211非985
+gd ligongxueyuan|广东理工学院|广东|非211非985
+ah jianzhu university|安徽建筑大学|安徽|非211非985
+sh university of engineering science|上海工程技术大学|上海|非211非985
+cd dianzikeji|电子科技大学成都学院|四川|非211非985
+ah vocational college of press and publishing|安徽新闻出版职业技术学院|安徽|非211非985
+sd keji zhiye|山东科技职业学院|山东|非211非985
+cq technology and business university|重庆工商大学|重庆|非211非985
+cq university of posts and telecommunications|重庆邮电大学|重庆|非211非985
+sd normal university|山东师范大学|山东|非211非985
+gz minzu|贵州民族大学|贵州|非211非985
+zj shu ren|浙江树人学院|浙江|非211非985
+sd jingmao zhiye|山东经贸职业学院|山东|非211非985
+hn xinxi|湖南信息学院|湖南|非211非985
+cq jiaotong university|重庆交通大学|重庆|非211非985
+cq dier shifanxueyuan|重庆第二师范学院|重庆|非211非985
+ah audit college|安徽审计职业学院|安徽|非211非985
+cq college of electronic engineering|重庆电子工程职业学院|重庆|非211非985
+sy medical college|沈阳医学院|辽宁|非211非985
+gz institute of technology|贵州理工学院|贵州|非211非985
+xz jingguan gaodeng zhuanke|西藏警官高等专科学校|西藏|非211非985
+zj jiyang collage of a f university|浙江农林大学暨阳学院|浙江|非211非985
+zj luyou zhiye|浙江旅游职业学院|浙江|非211非985
+zj jingguan zhiye|浙江警官职业学院|浙江|非211非985
+gd songshan zhiye jishu|广东松山职业技术学院|广东|非211非985
+bj huadian |华北电力大学(北京)|北京|211院校
+hb qinggong zhiye jishu|湖北轻工职业技术学院|湖北|非211非985
+hn tuina zhiye|河南推拿职业学院|河南|非211非985
+hb yishu zhiye|湖北艺术职业学院|湖北|非211非985
+gz shenghua zhiye|贵州盛华职业学院|贵州|非211非985
+bj jiaotong university weihai campus|北京交通大学(威海校区)|山东|211院校
+hb jiancai zhiye jishu|河北建材职业技术学院|河北|非211非985
+hn vocational college of agriculture|河南农业职业学院|河南|非211非985
+hn yingyong jishu|湖南应用技术学院|湖南|非211非985
+gz university institute of technology|贵州大学科技学院|贵州|非211非985
+ah guofangkeji zhiye|安徽国防科技职业学院|安徽|非211非985
+bj professional business institute|北京经贸职业学院|北京|非211非985
+cq industry & trade polytechnic|重庆工贸职业技术学院|重庆|非211非985
+hb zhengfa zhiye|河北政法职业学院|河北|非211非985
+jx software college of ahead university|江西先锋软件职业技术学院|江西|非211非985
+ah caimao zhiye|安徽财贸职业学院|安徽|非211非985
+bj keji zhiye|北京科技职业学院|北京|非211非985
+ah international economy college|安徽涉外经济职业学院|安徽|非211非985
+zj pharmaceutical college|浙江医药高等专科学校|浙江|非211非985
+hn sports vocational college|湖南体育职业学院|湖南|非211非985
+jx science & technology normal university|江西科技师范大学|江西|非211非985
+cq keji|重庆科技学院|重庆|非211非985
+sh jiao tong university|上海交通大学|上海|985院校
+zj caijing daxue dongfang|浙江财经大学东方学院|浙江|非211非985
+sd business institute|山东商务职业学院|山东|非211非985
+sd xiandai|山东现代学院|山东|非211非985
+xj caijing|新疆财经大学|新疆|非211非985
+cq sanxiaxueyuan|重庆三峡学院|重庆|非211非985
+gd nonggongshang zhiye jishu|广东农工商职业技术学院|广东|非211非985
+hn jiaotong zhiye jishu|湖南交通职业技术学院|湖南|非211非985
+jx university of science and technology|江西科技职业学院|江西|非211非985
+cq shangwu zhiye|重庆商务职业学院|重庆|非211非985
+hb yiyao yaohu|湖北医药学院药护学院|湖北|非211非985
+sd shangyezhiye jishu|山东商业职业技术学院|山东|非211非985
+hn communication vocational technology college|河南交通职业技术学院|河南|非211非985
+js dier shifanxueyuan|江苏第二师范学院|江苏|非211非985
+bj jiaotong university|北京交通大学|北京|211院校
+cd university of information technology|成都信息工程大学|四川|非211非985
+zj changzheng vocational&amp;technical college|浙江长征职业技术学院|浙江|非211非985
+cq shuilidianli zhiye jishu|重庆水利电力职业技术学院|重庆|非211非985
+bj university of posts and telecommunications|北京邮电大学|北京|211院校
+sh dianying yishu zhiye|上海电影艺术职业学院|上海|非211非985
+gz gongshangzhiye|贵州工商职业学院|贵州|非211非985
+hb tourism vocational college|河北旅游职业学院|河北|非211非985
+ah zhongyiyao gaodeng zhuankexuexiao|安徽中医药高等专科学校|安徽|非211非985
+hn shangxueyuan|湖南商学院|湖南|非211非985
+hn procuratorial vocational college|河南检察职业学院|河南|非211非985
+hn sifa jingguan zhiye|河南司法警官职业学院|河南|非211非985
+cq gongshangdaxue paisi|重庆工商大学派斯学院|重庆|非211非985
+cq gongshangzhiye|重庆工商职业学院|重庆|非211非985
+gd lingnan vocational and technical college|广东岭南职业技术学院|广东|非211非985
+zj yixue gaodeng zhuankexuexiao|浙江医学高等专科学校|浙江|非211非985
+jx jianshe zhiye jishu|江西建设职业技术学院|江西|非211非985
+hn tiedao zhiye jishu|湖南铁道职业技术学院|湖南|非211非985
+jl shifandaxue boda|吉林师范大学博达学院|吉林|非211非985
+cd normal university|成都师范学院|四川|非211非985
+jx vocational college of mechanical electrical technology|江西机电职业技术学院|江西|非211非985
+sd yingcai university|山东英才学院|山东|非211非985
+sd university weihai|山东大学威海分校|山东|985院校
+js college of engineering and technology|江苏工程职业技术学院|江苏|非211非985
+gd jishu shifanxueyuan|广东技术师范学院|广东|非211非985
+zj gongmao zhiye jishu|浙江工贸职业技术学院|浙江|非211非985
+jx institute of fashion technology|江西服装学院|江西|非211非985
+sh xianda college of economics and humanities international studies university|上海外国语大学贤达经济人文学院|上海|非211非985
+bj jingji guanli zhiye|北京经济管理职业学院|北京|非211非985
+jx science technology normal university|江西科技师范大学|江西|非211非985
+hn communication polytechnic|湖南交通职业技术学院|湖南|非211非985
+bj information science and technology university|北京信息科技大学|北京|非211非985
+sd huayu gongxueyuan|山东华宇工学院|山东|非211非985
+sd waishi fanyi zhiye|山东外事翻译职业学院|山东|非211非985
+sd jianzhu|山东建筑大学|山东|非211非985
+sy ligongdaxue|沈阳理工大学|辽宁|非211非985
+hb gongye|河北工业大学|天津|211院校
+ah modern information engineering college|安徽现代信息工程职业学院|安徽|非211非985
+gd caijingdaxue huashang|广东财经大学华商学院|广东|非211非985
+gd lingnan zhiye jishu|广东岭南职业技术学院|广东|非211非985
+gd vocational college of post and telecom|广东邮电职业技术学院|广东|非211非985
+gd gongye huali|广东工业大学华立学院|广东|非211非985
+zj business college|浙江商业职业技术学院|浙江|非211非985
+bj college of finance and commerce|北京财贸职业学院|北京|非211非985
+hn yishu zhiye|湖南艺术职业学院|湖南|非211非985
+js shifandaxue|江苏师范大学|江苏|非211非985
+sd xiehe university|山东协和学院|山东|非211非985
+jl sifa jingguan zhiye|吉林司法警官职业学院|吉林|非211非985
+sd jiaotong|山东交通学院|山东|非211非985
+cq gongye zhiye jishu|重庆工业职业技术学院|重庆|非211非985
+hn vocational college of tuina|河南推拿职业学院|河南|非211非985
+jx vocational college of industry ＆engineering|江西工业工程职业技术学院|江西|非211非985
+cq sanxia zhiye|重庆三峡职业学院|重庆|非211非985
+js union technical institute|江苏联合职业技术学院|江苏|非211非985
+cd gongmao zhiye jishu|成都工贸职业技术学院|四川|非211非985
+hn dianqi zhiye jishu|湖南电气职业技术学院|湖南|非211非985
+zj zhongyiyaodaxue binjiang|浙江中医药大学滨江学院|浙江|非211非985
+bj tiyu zhiye|北京体育职业学院|北京|非211非985
+hb university|湖北大学|湖北|非211非985
+sh industrial and commercial polytechnic|上海工商职业技术学院|上海|非211非985
+jx fuzhuangxueyuan|江西服装学院|江西|非211非985
+ah renkou zhiye|安徽人口职业学院|安徽|非211非985
+js shipinyaopin zhiye jishu|江苏食品药品职业技术学院|江苏|非211非985
+hn polytechnic university|河南理工大学|河南|非211非985
+hn police college|河南警察学院|河南|非211非985
+hb normal university|河北师范大学|河北|非211非985
+ah gongcheng jidian|安徽工程大学机电学院|安徽|非211非985
+bj xinxi zhiye jishu|北京信息职业技术学院|北京|非211非985
+hn diyi shifanxueyuan|湖南第一师范学院|湖南|非211非985
+gd university of science and technology|广东科技学院|广东|非211非985
+js police institute|江苏警官学院|江苏|非211非985
+sh gongyimeishu zhiye|上海工艺美术职业学院|上海|非211非985
+hn gongyimeishu zhiye|湖南工艺美术职业学院|湖南|非211非985
+cq three gorges medical college|重庆三峡医药高等专科学校|重庆|非211非985
+jx industry polytechnic college|江西工业职业技术学院|江西|非211非985
+jx gongshangzhiye jishu|江西工商职业技术学院|江西|非211非985
+jx sifa jingguan zhiye|江西司法警官职业学院|江西|非211非985
+hn university of finance and economics|湖南财政经济学院|湖南|非211非985
+ah vocational & technical college of forestry|安徽林业职业技术学院|安徽|非211非985
+cq jianzhugongcheng zhiye|重庆建筑工程职业学院|重庆|非211非985
+hb zhixing college of university|湖北大学知行学院|湖北|非211非985
+bj caimao zhiye|北京财贸职业学院|北京|非211非985
+zj jinrong zhiye|浙江金融职业学院|浙江|非211非985
+cq normal university foreign trade and business college|重庆师范大学涉外商贸学院|重庆|非211非985
+xz jingguan gaodeng zhuankexuexiao|西藏警官高等专科学校|西藏|非211非985
+xj shihezi zhiye jishu|新疆石河子职业技术学院|新疆|非211非985
+hn sanyi gongye vocational and technical college|湖南三一工业职业技术学院|湖南|非211非985
+sd yanshan college of university of finance and economics|山东财经大学燕山学院|山东|非211非985
+ah electronic information career technical college|安徽电子信息职业技术学院|安徽|非211非985
+hn ligongdaxue wanfang keji|河南理工大学万方科技学院|河南|非211非985
+cq university|重庆大学|重庆|985院校
+gz college of humanities   sciences of minzu university|贵州民族大学人文科技学院|贵州|非211非985
+xj nongye|新疆农业大学|新疆|非211非985
+jx ligongdaxue yingyongkexue|江西理工大学应用科学学院|江西|非211非985
+zj shangyezhiye jishu|浙江商业职业技术学院|浙江|非211非985
+zj teshujiaoyu zhiye|浙江特殊教育职业学院|浙江|非211非985
+jx caijing zhiye|江西财经职业学院|江西|非211非985
+gd nanfang zhiye|广东南方职业学院|广东|非211非985
+hn jiaotong gongchengxueyuan|湖南交通工程学院|湖南|非211非985
+jl huaqiao waiguoyu|吉林华桥外国语学院|吉林|非211非985
+zj hengdian yingshi zhiye|浙江横店影视职业学院|浙江|非211非985
+hn laodong renshi zhiye xueyuan|湖南劳动人事职业学院|湖南|非211非985
+hb zhongyiyaodaxue|湖北中医药大学|湖北|非211非985
+jx college of traditional chinese medicine|江西中医药高等专科学校|江西|非211非985
+jl gongchengjishu shifanxueyuan|吉林工程技术师范学院|吉林|非211非985
+zj haiyangxueyuan donghai kexuejishu|浙江海洋学院东海科学技术学院|浙江|非211非985
+js lianhe zhiye jishu|江苏联合职业技术学院|江苏|非211非985
+cd shifanxueyuan|成都师范学院|四川|非211非985
+hn vocational college for nationalities|湖南民族职业学院|湖南|非211非985
+ah sanlian|安徽三联学院|安徽|非211非985
+bj modern vocational and technical college|北京现代职业技术学院|北京|非211非985
+hb gongchengjishu|河北工程技术学院|河北|非211非985
+sd keji|山东科技大学|山东|非211非985
+xj shengchan jianshe bingtuan xingxin zhiye jishu|新疆生产建设兵团兴新职业技术学院|新疆|非211非985
+sh jiaotong zhiye jishu|上海交通职业技术学院|上海|非211非985
+js animal husbandry veterinary college|江苏农牧科技职业学院|江苏|非211非985
+jl science & technology vocational technical college|吉林科技职业技术学院|吉林|非211非985
+cq three gorges polytechnic college|重庆三峡职业学院|重庆|非211非985
+ah jingji guanli ganbu|安徽经济管理干部学院|安徽|非211非985
+gz dianzixinxi zhiye jishu|贵州电子信息职业技术学院|贵州|非211非985
+bj normal university - hong kong baptist university united international college|北京师范大学-香港浸会大学联合国际学院|广东|非211非985
+hn international business vocational college|湖南外贸职业学院|湖南|非211非985
+gd waiyu yishu zhiye|广东外语艺术职业学院|广东|非211非985
+hn jidian zhiye|河南机电职业学院|河南|非211非985
+hb institute of foreign languages|河北外国语职业学院|河北|非211非985
+sd kaiwen keji zhiye|山东凯文科技职业学院|山东|非211非985
+js jingjiang|江苏大学京江学院|江苏|非211非985
+jx college of foreign studies|江西外语外贸职业学院|江西|非211非985
+zj haiyangxueyuan|浙江海洋学院|浙江|非211非985
+hn university of animal husbandry and economy|河南牧业经济学院|河南|非211非985
+hn waiguoyu zhiye|湖南外国语职业学院|湖南|非211非985
+cq institute of fashion and engineering  |重庆服装工程职业学院|重庆|非211非985
+hn caizheng jingji|湖南财政经济学院|湖南|非211非985
+cq huagong zhiye|重庆化工职业学院|重庆|非211非985
+sd kaiwen college of science & technology|山东凯文科技职业学院|山东|非211非985
+hn vocational institute technology|湖南理工职业技术学院|湖南|非211非985
+jl jiaotong zhiye jishu|吉林交通职业技术学院|吉林|非211非985
+hb science and technology college of university for nationalities|湖北民族学院科技学院|湖北|非211非985
+cd yixueyuan|成都医学院|四川|非211非985
+hn gongye zhiye jishu|河南工业职业技术学院|河南|非211非985
+hb yishu zhiye|河北艺术职业学院|河北|非211非985
+zj nongye shangmao zhiye|浙江农业商贸职业学院|浙江|非211非985
+gd university of foreign studies|广东外语外贸大学|广东|非211非985
+sh luyou gaodeng zhuankexuexiao|上海旅游高等专科学校|上海|非211非985
+jx vocational college of mechanical & electrical technology|江西机电职业技术学院|江西|非211非985
+sh industry and commerce foreign language college|上海工商外国语职业学院|上海|非211非985
+jl zhuhai college of university|吉林大学珠海学院|广东|非211非985
+hb jingmaodaxue|河北经贸大学|河北|非211非985
+sd agricultural university|山东农业大学|山东|非211非985
+hn shangxueyuan beijin|湖南商学院北津学院|湖南|非211非985
+hn yishu zhiye|河南艺术职业学院|河南|非211非985
+xj xiandai zhiye jishu|新疆现代职业技术学院|新疆|非211非985
+jl college of electronic information|吉林电子信息职业技术学院|吉林|非211非985
+bj vocatioeal college&nbsp;of agriculture|北京农业职业学院|北京|非211非985
+bj xiehe yixueyuan qinghuadaxue yixuebu|北京协和医学院(清华大学医学部)|北京|清华北大
+sd jianzhu university|山东建筑大学|山东|非211非985
+bj electronics science&technology institute|北京电子科技学院|北京|非211非985
+js college of finance accounting|江苏财会职业学院|江苏|非211非985
+gd vocational and technical college|广东职业技术学院|广东|非211非985
+gd wudao xiju zhiye|广东舞蹈戏剧职业学院|广东|非211非985
+sy huagongdaxue keya|沈阳化工大学科亚学院|辽宁|非211非985
+bj language culture university|北京语言大学|北京|非211非985
+jx university of finance and economics|江西财经大学|江西|非211非985
+hn college of information|湖南信息职业技术学院|湖南|非211非985
+hn keji xin kexueyuan|河南科技学院新科学院|河南|非211非985
+gd information engineering institute|广东信息工程职业学院|广东|非211非985
+hn electronic technology vocational college|湖南电子科技职业学院|湖南|非211非985
+xj daxue kexue jishu|新疆大学科学技术学院|新疆|非211非985
+hb waiguoyu|河北外国语学院|河北|非211非985
+sd yixue gaodeng zhuankexuexiao|山东医学高等专科学校|山东|非211非985
+sh normal university tianhua collage |上海师范大学天华学院|上海|非211非985
+bj bailie university|北京培黎职业学院|北京|非211非985
+hn waimao zhiye|湖南外贸职业学院|湖南|非211非985
+jx vocational academy of art|江西艺术职业学院|江西|非211非985
+jx zhizao zhiye jishu|江西制造职业技术学院|江西|非211非985
+cq dianzi gongcheng zhiye|重庆电子工程职业学院|重庆|非211非985
+hn institute of science and technology|河南科技学院|河南|非211非985
+bj language & culture university|北京语言大学|北京|非211非985
+hb university of architecture|河北建筑工程学院|河北|非211非985
+gd college of industry and commerce|广东工贸职业技术学院|广东|非211非985
+gd institute of science and technology|广东科学技术职业学院|广东|非211非985
+js jingmao zhiye jishu|江苏经贸职业技术学院|江苏|非211非985
+jl agricultural university|吉林农业大学|吉林|非211非985
+hb college of finance|河北金融学院|河北|非211非985
+hb university of science and technology|湖北科技学院|湖北|非211非985
+hn jingmao zhiye|河南经贸职业学院|河南|非211非985
+bj vocational college of art|北京艺术传媒职业学院|北京|非211非985
+zj medical college|浙江医学高等专科学校|浙江|非211非985
+sh gongshangzhiye jishu|上海工商职业技术学院|上海|非211非985
+ah college of traditional chinese medicine|安徽中医药高等专科学校|安徽|非211非985
+sh vocational college of trade union|上海工会管理职业学院|上海|非211非985
+ah foreign language university|安徽外国语学院|安徽|非211非985
+js ligongxueyuan|江苏理工学院|江苏|非211非985
+jx agricultural university|江西农业大学|江西|非211非985
+jx aviation vocational and technical college|江西航空职业技术学院|江西|非211非985
+hb yiyao|湖北医药学院|湖北|非211非985
+hb vocational college of geology|河北地质职工大学|河北|非211非985
+cd xinxi gongchengxueyuan yinxing jiudian guanli|成都信息工程学院银杏酒店管理学院|四川|非211非985
+hb shifanxueyuan|湖北师范学院|湖北|非211非985
+gd gongshangzhiye|广东工商职业学院|广东|非211非985
+gd gongye|广东工业大学|广东|非211非985
+gd jiaotong zhiye jishu|广东交通职业技术学院|广东|非211非985
+js nongmu keji zhiye|江苏农牧科技职业学院|江苏|非211非985
+js institute of commerce|江苏经贸职业技术学院|江苏|非211非985
+sy zhiye jishu|沈阳职业技术学院|辽宁|非211非985
+sh minyuan vocational technical college|上海民远职业技术学院|上海|非211非985
+hn jiancha zhiye|河南检察职业学院|河南|非211非985
+hn zhongyiyaodaxue xiangxing|湖南中医药大学湘杏学院|湖南|非211非985
+sh haiyangdaxue|上海海洋大学|上海|非211非985
+cq  chemical industry  vocational college|重庆化工职业学院|重庆|非211非985
+gd polytechnic institute|广东理工职业学院|广东|非211非985
+hb energy college of vocation and technology|河北能源职业技术学院|河北|非211非985
+zj institute of communications|浙江交通职业技术学院|浙江|非211非985
+xj zhiye|新疆职业大学|新疆|非211非985
+cd yishu zhiye xueyuan|成都艺术职业学院|四川|非211非985
+jx normal university science and technology college|江西师范大学科学技术学院|江西|非211非985
+zj a f university|浙江农林大学|浙江|非211非985
+ah luhai shangwu zhiye|安徽绿海商务职业学院|安徽|非211非985
+sy gongye|沈阳工业大学|辽宁|非211非985
+jx zhongyiyao gaodeng zhuankexuexiao|江西中医药高等专科学校|江西|非211非985
+cq institute of engineering|重庆工程学院|重庆|非211非985
+sd liming keji zhiye|山东力明科技职业学院|山东|非211非985
+sh gongchengjishu|上海工程技术大学|上海|非211非985
+ah normal university|安徽师范大学|安徽|非211非985
+bj vocational college of labour and social security|北京劳动保障职业学院|北京|非211非985
+gz shifandaxue qiushi|贵州师范大学求是学院|贵州|非211非985
+hb science and technology college|湖北科技职业学院|湖北|非211非985
+gd engineering vocational college|广东工程职业技术学院|广东|非211非985
+ah gongshangzhiye|安徽工商职业学院|安徽|非211非985
+js caijing zhiye jishu|江苏财经职业技术学院|江苏|非211非985
+hn university of medicine|湖南医药学院|湖南|非211非985
+sh maritime university|上海海事大学|上海|非211非985
+hb gongye zhiye jishu|河北工业职业技术学院|河北|非211非985
+jx dianli zhiye jishu|江西电力职业技术学院|江西|非211非985
+hb qiche gongye|湖北汽车工业学院|湖北|非211非985
+jx chuanmei zhiye|江西传媒职业学院|江西|非211非985
+jl vocational and technical institute communications|吉林交通职业技术学院|吉林|非211非985
+cq chengshi zhiye|重庆城市职业学院|重庆|非211非985
+cq jingcha|重庆警察学院|重庆|非211非985
+gz chengshi zhiye|贵州城市职业学院|贵州|非211非985
+ah sanlian university|安徽三联学院|安徽|非211非985
+hn institute of economics and trade|河南经贸职业学院|河南|非211非985
+hn gongshangzhiye|湖南工商职业学院|湖南|非211非985
+sd liming polytechnic&vocational college|山东力明科技职业学院|山东|非211非985
+hb university of technology|湖北工业大学|湖北|非211非985
+hn caizheng shuiwu gaodeng zhuankexuexiao|河南财政税务高等专科学校|河南|非211非985
+xj university of finance economics|新疆财经大学|新疆|非211非985
+xj keji zhiye jishu|新疆科技职业技术学院|新疆|非211非985
+cq hangtian zhiye jishu|重庆航天职业技术学院|重庆|非211非985
+sh keji|上海科技大学|上海|非211非985
+sh chuban yinshua gaodeng zhuankexuexiao|上海出版印刷高等专科学校|上海|非211非985
+sy university|沈阳大学|辽宁|非211非985
+sy gongchengxueyuan|沈阳工程学院|辽宁|非211非985
+cd agricultural college|成都农业科技职业学院|四川|非211非985
+sh university of for science and technology|上海理工大学|上海|非211非985
+hb gongchengxueyuan|湖北工程学院|湖北|非211非985
+jl tiedao zhiye jishu|吉林铁道职业技术学院|吉林|非211非985
+Xinjiang Normal University|新疆师范大学|新疆|非211非985
+jx institute of economic administrators|江西经济管理干部学院|江西|非211非985
+bj de da |中国地质大学(北京)|北京|211院校
+gz ligongxueyuan|贵州理工学院|贵州|非211非985
+gd jianshe zhiye jishu|广东建设职业技术学院|广东|非211非985
+hb university of traditional chinese medicine|河北中医学院|河北|非211非985
+xj caijing daxue shangwu|新疆财经大学商务学院|新疆|非211非985
+sd vocational institute of clothing technology|山东服装职业学院|山东|非211非985
+ah agricultural university|安徽农业大学|安徽|非211非985
+js jingguan|江苏警官学院|江苏|非211非985
+cd nongye keji zhiye|成都农业科技职业学院|四川|非211非985
+hn sanyi gongye zhiye jishu|湖南三一工业职业技术学院|湖南|非211非985
+hb university for nationalities|湖北民族学院|湖北|非211非985
+hb university of police|湖北警官学院|湖北|非211非985
+gz ctiy vocational college|贵州城市职业学院|贵州|非211非985
+gd huanjingbaohu gongcheng zhiye|广东环境保护工程职业学院|广东|非211非985
+hb institute of physical education|河北体育学院|河北|非211非985
+jl institute of physical education|吉林体育学院|吉林|非211非985
+cq shifandaxue|重庆师范大学|重庆|非211非985
+hn xiang xing college of university of tcm|湖南中医药大学湘杏学院|湖南|非211非985
+sy jianzhu|沈阳建筑大学|辽宁|非211非985
+hb shengwukeji zhiye|湖北生物科技职业学院|湖北|非211非985
+gz vocational technology institute|贵州职业技术学院|贵州|非211非985
+bj jiaotong university haibin college|北京交通大学海滨学院|河北|非211非985
+jx college of construction|江西建设职业技术学院|江西|非211非985
+jx vocational & technical college of electricity|江西电力职业技术学院|江西|非211非985
+bj polytechnic|北京电子科技职业学院|北京|非211非985
+cd tiyu|成都体育学院|四川|非211非985
+zj industry polytechnic college|浙江工业职业技术学院|浙江|非211非985
+sh jiguang zhiye jishu|上海济光职业技术学院|上海|非211非985
+sd caijingdaxue|山东财经大学|山东|非211非985
+cd sport university|成都体育学院|四川|非211非985
+hb kaifang zhiye|湖北开放职业学院|湖北|非211非985
+jx modern polytechnic college|江西现代职业技术学院|江西|非211非985
+sd aluminum vocational college|山东铝业职业学院|山东|非211非985
+cq creation vocational college|重庆科创职业学院|重庆|非211非985
+hn gongchengxueyuan yingyong jishu|湖南工程学院应用技术学院|湖南|非211非985
+sh shanda|上海杉达学院|上海|非211非985
+cd fangzhi gaodeng zhuankexuexiao|成都纺织高等专科学校|四川|非211非985
+gd university of finance|广东金融学院|广东|非211非985
+hn nonferrous metals vocational and technical college|湖南有色金属职业技术学院|湖南|非211非985
+hn xiandai wuliu zhiye jishu|湖南现代物流职业技术学院|湖南|非211非985
+cq university of science & technology|重庆科技学院|重庆|非211非985
+sh business school|上海商学院|上海|非211非985
+bj zhong shiyou |中国石油大学(北京)|北京|211院校
+hb normal university of science & technology|河北科技师范学院|河北|非211非985
+hb ecology vocational college|湖北生态工程职业技术学院|湖北|非211非985
+sh vocational college of science and technology|上海科学技术职业学院|上海|非211非985
+sd foreign languages vocational college|山东外国语职业学院|山东|非211非985
+jx waiyuwaimao zhiye|江西外语外贸职业学院|江西|非211非985
+zj caijingdaxue dongfang|浙江财经大学东方学院|浙江|非211非985
+hn laodongrenshi zhiye|湖南劳动人事职业学院|湖南|非211非985
+sd university of art design|山东工艺美术学院|山东|非211非985
+sh finance university|上海金融学院|上海|非211非985
+cd xinxigongcheng|成都信息工程大学|四川|非211非985
+cq chengshi guanli zhiye|重庆城市管理职业学院|重庆|非211非985
+js normal university|江苏师范大学|江苏|非211非985
+ah chengshi guanli zhiye|安徽城市管理职业学院|安徽|非211非985
+bj zhongguokuangyedaxue |中国矿业大学(北京)|北京|211院校
+zj nonglin jiyang|浙江农林大学暨阳学院|浙江|非211非985
+sh institute of visual art|上海视觉艺术学院|上海|非211非985
+bj xiehe yixueyuan ( qinghuadaxue yixuebu )|北京协和医学院(清华大学医学部)|北京|清华北大
+hb software institute|河北软件职业技术学院|河北|非211非985
+sd qinggong zhiye|山东轻工职业学院|山东|非211非985
+sh li da zhiye jishu|上海立达职业技术学院|上海|非211非985
+jx agricultural engineering college|江西农业工程职业学院|江西|非211非985
+sd yingcai|山东英才学院|山东|非211非985
+hf university|Harvard University|USA|海本综排top20
+jx ceramic and art institute|江西陶瓷工艺美术职业技术学院|江西|非211非985
+hn vocational institute of safety technology|湖南安全技术职业学院|湖南|非211非985
+sh jianqiao|上海建桥学院|上海|非211非985
+hb jiaotong zhiye jishu|河北交通职业技术学院|河北|非211非985
+hb university of engineering|河北工程大学|河北|非211非985
+cq gongchengxueyuan|重庆工程学院|重庆|非211非985
+zj college of sports|浙江体育职业技术学院|浙江|非211非985
+gd huali college university of technology|广东工业大学华立学院|广东|非211非985
+hn jiuyi zhiye jishu|湖南九嶷职业技术学院|湖南|非211非985
+sh vocational college of agriculture and forestry|上海农林职业技术学院|上海|非211非985
+gd dier shifanxueyuan|广东第二师范学院|广东|非211非985
+cq college of mobile telecommunications university of posts and telecom|重庆邮电大学移通学院|重庆|非211非985
+cd college of arts and sciences|成都文理学院|四川|非211非985
+hn xiaoxiang college of university of science and technology|湖南科技大学潇湘学院|湖南|非211非985
+hb land resources vocational college|湖北国土资源职业学院|湖北|非211非985
+jl vocational institute of technology|吉林城市职业技术学院|吉林|非211非985
+jx vocational and technical college of information application|江西信息应用职业技术学院|江西|非211非985
+jl boda college of normal university|吉林师范大学博达学院|吉林|非211非985
+cq vocational college of art engineering|重庆艺术工程职业学院|重庆|非211非985
+jx shifan gaodeng zhuankexuexiao|江西师范高等专科学校|江西|非211非985
+ah qiche zhiye jishu|安徽汽车职业技术学院|安徽|非211非985
+jl yiyao|吉林医药学院|吉林|非211非985
+sh institute of foreign trade|上海对外经贸大学|上海|非211非985
+gd yixueyuan|广东医学院|广东|非211非985
+cq wenhua yishu zhiye|重庆文化艺术职业学院|重庆|非211非985
+hb youer shifan gaodeng zhuankexuexiao|湖北幼儿师范高等专科学校|湖北|非211非985
+bj xiqu yishu zhiye|北京戏曲艺术职业学院|北京|非211非985
+ah university of chinese medicine|安徽中医药大学|安徽|非211非985
+bj normal university|北京师范大学|北京|985院校
+hn network engineering vocational college|湖南网络工程职业学院|湖南|非211非985
+sd sports institute|山东体育学院|山东|非211非985
+hb zhongyiyao gaodeng zhuankexuexiao|湖北中医药高等专科学校|湖北|非211非985
+sh gonghui guanli zhiye|上海工会管理职业学院|上海|非211非985
+gz vocational technology college of electronics information|贵州电子信息职业技术学院|贵州|非211非985
+sd zhongyiyao gaodeng zhuankexuexiao|山东中医药高等专科学校|山东|非211非985
+sh film art academy|上海电影艺术职业学院|上海|非211非985
+bj university of civil engineering and architecture|北京建筑大学|北京|非211非985
+ah shewaijingji zhiye|安徽涉外经济职业学院|安徽|非211非985
+sd zhongyiyaodaxue|山东中医药大学|山东|非211非985
+hn hydroelectric occupational college|湖南水利水电职业技术学院|湖南|非211非985
+hn urban construction college|湖南城建职业技术学院|湖南|非211非985
+hb vocational art college|河北艺术职业学院|河北|非211非985
+sy conservatory of music|沈阳音乐学院|辽宁|非211非985
+sh technical college of urban management|上海城市管理职业技术学院|上海|非211非985
+sh university|上海大学|上海|211院校
+hb tiyu|河北体育学院|河北|非211非985
+hb industrial polytechnic|湖北工业职业技术学院|湖北|非211非985
+zj normal university xingzhi college|浙江师范大学行知学院|浙江|非211非985
+sh gongshang waiguoyu zhiye|上海工商外国语职业学院|上海|非211非985
+sd dianzi zhiye jishu|山东电子职业技术学院|山东|非211非985
+jx university of technology|江西科技学院|江西|非211非985
+zj ocean university|浙江海洋学院|浙江|非211非985
+hb sanxia zhiye jishu|湖北三峡职业技术学院|湖北|非211非985
+hn chenggong college of university of economics and law|郑州成功财经学院|河南|非211非985
+jx fenglin professioinal college of foreign economy & trade|江西枫林涉外经贸职业学院|江西|非211非985
+hn jiaoyu|河南教育学院|河南|非211非985
+sd water polytechnic|山东水利职业学院|山东|非211非985
+cq police college|重庆警察学院|重庆|非211非985
+cq university of arts and science|重庆文理学院|重庆|非211非985
+bj zhengfa zhiye|北京政法职业学院|北京|非211非985
+cd gongye zhiye jishu|成都工业职业技术学院|四川|非211非985
+jl science technology vocational technical college|吉林科技职业技术学院|吉林|非211非985
+gd university of finance economics|广东财经大学|广东|非211非985
+hb keji|河北科技大学|河北|非211非985
+zj tongji vocational college of science and technology|浙江同济科技职业学院|浙江|非211非985
+cq vocational college of public transportation|重庆公共运输职业学院|重庆|非211非985
+bj college of social administration|北京社会管理职业学院|北京|非211非985
+xj shifan gaodeng zhuanke|新疆师范高等专科学校|新疆|非211非985
+sd foreign affairs translation institute|山东外事翻译职业学院|山东|非211非985
+sy yixueyuan|沈阳医学院|辽宁|非211非985
+sd college of electronic technology|山东电子职业技术学院|山东|非211非985
+hn technical college 0f construction|河南建筑职业技术学院|河南|非211非985
+sy normal university|沈阳师范大学|辽宁|非211非985
+bj northern vocational education institute|北京京北职业技术学院|北京|非211非985
+sd modern university|山东现代学院|山东|非211非985
+ah xinhua|安徽新华学院|安徽|非211非985
+hn ligongxueyuan nanhu|湖南理工学院南湖学院|湖南|非211非985
+gd ligong zhiye|广东理工职业学院|广东|非211非985
+xj nongye daxue kexue jishu|新疆农业大学科学技术学院|新疆|非211非985
+sd vocational college of economics and businees|山东经贸职业学院|山东|非211非985
+sd university of technology|山东理工大学|山东|非211非985
+ah shuilishuidian zhiye jishu|安徽水利水电职业技术学院|安徽|非211非985
+cq telecommunications college|重庆电信职业学院|重庆|非211非985
+bj beidafangzheng ruanjian zhiye jishu|北京北大方正软件职业技术学院|北京|非211非985
+zj jingcha|浙江警察学院|浙江|非211非985
+hb zhongyixueyuan|河北中医学院|河北|非211非985
+bj university of technology|北京工业大学|北京|211院校
+sd urban construction vocational college|山东城市建设职业学院|山东|非211非985
+gd sifa jingguan zhiye|广东司法警官职业学院|广东|非211非985
+jx nongye gongcheng zhiye|江西农业工程职业学院|江西|非211非985
+hn normal university|河南师范大学|河南|非211非985
+ah university of technology|安徽工业大学|安徽|非211非985
+cd industry and trade college|成都工贸职业技术学院|四川|非211非985
+ah nongyedaxue jingji jishu|安徽农业大学经济技术学院|安徽|非211非985
+sd chuanmei zhiye|山东传媒职业学院|山东|非211非985
+hn traffic engineering college|湖南交通工程学院|湖南|非211非985
+cq vocational college of light industry|重庆轻工职业学院|重庆|非211非985
+sd university|山东大学|山东|985院校
+ah gongmao zhiye jishu|安徽工贸职业技术学院|安徽|非211非985
+gd technical college of water resources and electric|广东水利电力职业技术学院|广东|非211非985
+cq youer shifan gaodeng zhuankexuexiao|重庆幼儿师范高等专科学校|重庆|非211非985
+sd teshujiaoyu zhiye|山东特殊教育职业学院|山东|非211非985
+zj teshu jiaoyu zhiye|浙江特殊教育职业学院|浙江|非211非985
+cq medical university|重庆医科大学|重庆|非211非985
+bj kuangda |中国矿业大学(北京)|北京|211院校
+cd yishu zhiye|成都艺术职业学院|四川|非211非985
+cd college of university of electronic science and technology of china|电子科技大学成都学院|四川|非211非985
+hn gaoerfu lvyou zhiye|湖南高尔夫旅游职业学院|湖南|非211非985
+sd police college|山东警察学院|山东|非211非985
+ah technical college of mechanical and electrical engineering|安徽机电职业技术学院|安徽|非211非985
+hn ligong zhiye jishu|湖南理工职业技术学院|湖南|非211非985
+hn instituue of information technology|湖南信息学院|湖南|非211非985
+hb vocational college for correctional police|河北司法警官职业学院|河北|非211非985
+gd construction vocational technology institute|广东建设职业技术学院|广东|非211非985
+hn university|湖南大学|湖南|985院校
+hb business college|湖北商贸学院|湖北|非211非985
+gd youdian zhiye jishu|广东邮电职业技术学院|广东|非211非985
+hb university of technology|河北工业大学|天津|211院校
+hb guidao yunshu zhiye jishu|河北轨道运输职业技术学院|河北|非211非985
+cq sanxia yiyao gaodeng zhuankexuexiao|重庆三峡医药高等专科学校|重庆|非211非985
+hb dier shifanxueyuan|湖北第二师范学院|湖北|非211非985
+bkl university of|University of California–​Berkeley|USA|海本综排top21-top35
+gd nanfang vocational college|广东南方职业学院|广东|非211非985
+cd industrial vocational technical college|成都工业职业技术学院|四川|非211非985
+jx university of science and technology|江西理工大学应用科学学院|江西|非211非985
+gz university|贵州大学|贵州|211院校
+gd jidian polytechnic|广东机电职业技术学院|广东|非211非985
+gz qinggong zhiye jishu|贵州轻工职业技术学院|贵州|非211非985
+cq gonggong yunshu zhiye|重庆公共运输职业学院|重庆|非211非985
+cq college of humanities science & technology|重庆人文科技学院|重庆|非211非985
+hb jinrong|河北金融学院|河北|非211非985
+hb yikedaxue linchuang|河北医科大学临床学院|河北|非211非985
+sh jiguang polytechnic college|上海济光职业技术学院|上海|非211非985
+hb college of industry and technology|河北工业职业技术学院|河北|非211非985
+bj jingji jishu zhiye|北京经济技术职业学院|北京|非211非985
+cq preschool education college|重庆幼儿师范高等专科学校|重庆|非211非985
+hb three gorges polytechnic|湖北三峡职业技术学院|湖北|非211非985
+ah lvhai vocational college of business|安徽绿海商务职业学院|安徽|非211非985
+sh jiankang yixueyuan|上海健康医学院|上海|非211非985
+jx justice police vocational college|江西司法警官职业学院|江西|非211非985
+hn institute of science and technology|湖南理工学院|湖南|非211非985
+bj opera and arts college|北京戏曲艺术职业学院|北京|非211非985
+hn yousejinshu zhiye jishu|湖南有色金属职业技术学院|湖南|非211非985
+cq xinxijishu zhiye|重庆信息技术职业学院|重庆|非211非985
+hb luyou zhiye|河北旅游职业学院|河北|非211非985
+bj tianjin college university of science and technology|北京科技大学天津学院|天津|非211非985
+hb jingmaodaxue jingji guanli|河北经贸大学经济管理学院|河北|非211非985
+bj college of sports|北京体育职业学院|北京|非211非985
+hb normal university for nationalities|河北民族师范学院|河北|非211非985
+sh yingyong jishu|上海应用技术学院|上海|非211非985
+hb normal university of science technology|河北科技师范学院|河北|非211非985
+zj gongshangzhiye jishu|浙江工商职业技术学院|浙江|非211非985
+sh zhendan zhiye|上海震旦职业学院|上海|非211非985
+ah waiguoyu|安徽外国语学院|安徽|非211非985
+hb keji shifanxueyuan|河北科技师范学院|河北|非211非985
+sy chengshi|沈阳城市学院|辽宁|非211非985
+hn railway professional technology college|湖南铁道职业技术学院|湖南|非211非985
+sd yishu|山东艺术学院|山东|非211非985
+sd nongyedaxue|山东农业大学|山东|非211非985
+gd polytechnic college|广东理工学院|广东|非211非985
+hn ligong xueyuan nanhu|湖南理工学院南湖学院|湖南|非211非985
+bj normal university zhuhai|北京师范大学珠海分校|广东|非211非985
+jx xiandai zhiye jishu|江西现代职业技术学院|江西|非211非985
+hb wenlixueyuan|湖北文理学院|湖北|非211非985
+sh police college|上海公安高等专科学校|上海|非211非985
+ah jianzhu chengshi jianshe|安徽建筑大学城市建设学院|安徽|非211非985
+hn ruanjian zhiye|湖南软件职业学院|湖南|非211非985
+sd university of traditional chinese medicine|山东中医药大学|山东|非211非985
+gd jinrong|广东金融学院|广东|非211非985
+zj jidian zhiye jishu|浙江机电职业技术学院|浙江|非211非985
+hn engineering polytechnic|湖南工程职业技术学院|湖南|非211非985
+bj  vocational college of transportation|北京交通运输职业学院|北京|非211非985
+jx technology business polytechnic|江西工商职业技术学院|江西|非211非985
+cq fangdichan zhiye|重庆房地产职业学院|重庆|非211非985
+cq anquan jishu zhiye|重庆安全技术职业学院|重庆|非211非985
+hn nongyedaxue|河南农业大学|河南|非211非985
+bj information technology college|北京信息职业技术学院|北京|非211非985
+gd caijingdaxue|广东财经大学|广东|非211非985
+gd baiyun university|广东白云学院|广东|非211非985
+jx vocational technical college of industy&trade|江西工业贸易职业技术学院|江西|非211非985
+jx keji|江西科技学院|江西|非211非985
+zj gongye zhiye jishu|浙江工业职业技术学院|浙江|非211非985
+sy jianzhu university|沈阳建筑大学|辽宁|非211非985
+bj gongye zhiye jishu|北京工业职业技术学院|北京|非211非985
+jx qingnian zhiye|江西青年职业学院|江西|非211非985
+hb minzu|湖北民族学院|湖北|非211非985
+gz zhiye jishu|贵州职业技术学院|贵州|非211非985
+jx gongye zhiye jishu|江西工业职业技术学院|江西|非211非985
+ah yangzi zhiye jishu|安徽扬子职业技术学院|安徽|非211非985
+zj shanghai caijing daxue|上海财经大学浙江学院|浙江|非211非985
+ah jiaotong zhiye jishu|安徽交通职业技术学院|安徽|非211非985
+bj university of chinese medicine|北京中医药大学|北京|211院校
+hn huagong zhiye|河南化工职业学院|河南|非211非985
+hb vocational college of bio-technology|湖北生物科技职业学院|湖北|非211非985
+ah yishu zhiye|安徽艺术职业学院|安徽|非211非985
+cd polytechnic|成都职业技术学院|四川|非211非985
+jx vocational technical college of electricity|江西电力职业技术学院|江西|非211非985
+sd university of finance and economics|山东财经大学|山东|非211非985
+hn biological electromechanical vocational technical college|湖南生物机电职业技术学院|湖南|非211非985
+hb vocational college of politics and law|河北政法职业学院|河北|非211非985
+sh nyu|上海纽约大学|上海|非211非985
+bj north college of university of chemical technology|燕京理工学院|河北|非211非985
+jl jianzhu chengjian|吉林建筑大学城建学院|吉林|非211非985
+hn college for preschool education|湖南幼儿师范高等专科学校|湖南|非211非985
+ah tiyuyundong zhiye jishu|安徽体育运动职业技术学院|安徽|非211非985
+xj yike|新疆医科大学|新疆|非211非985
+cq yikedaxue|重庆医科大学|重庆|非211非985
+bj foreign studies university|北京外国语大学|北京|211院校
+hb medical university|河北医科大学|河北|非211非985
+hb gongcheng da xueke xin|河北工程大学科信学院|河北|非211非985
+hn gaoerfu luyou zhiye|湖南高尔夫旅游职业学院|湖南|非211非985
+zj business technology institute|浙江工商职业技术学院|浙江|非211非985
+cq gongshangdaxue rongzhi|重庆工商大学融智学院|重庆|非211非985
+hn keji|湖南科技学院|湖南|非211非985
+zj university of finance & economics|浙江财经大学|浙江|非211非985
+ah college of mining and technology|安徽矿业职业技术学院|安徽|非211非985
+gz shifanxueyuan|贵州师范学院|贵州|非211非985
+sh fudan university medical college|复旦大学上海医学院|上海|985院校
+sd university of science and technology|山东科技大学|山东|非211非985
+zj vocational aademy of arts|浙江艺术职业学院|浙江|非211非985
+zj keyi college of sci-tech university|浙江理工大学科技与艺术学院|浙江|非211非985
+hn huagong zhiye jishu|湖南化工职业技术学院|湖南|非211非985
+hn electrical college of technology|湖南电气职业技术学院|湖南|非211非985
+hn university of commerce|湖南商学院|湖南|非211非985
+ah wanjiang college of normal university|安徽师范大学皖江学院|安徽|非211非985
+cq vocational college of applied technology|重庆应用技术职业学院|重庆|非211非985
+gd atv vocational college for the performing arts|广东亚视演艺职业学院|广东|非211非985
+cd gongye|成都工业学院|四川|非211非985
+jl animation institute|吉林动画学院|吉林|非211非985
+hn shengwu jidian zhiye jishu|湖南生物机电职业技术学院|湖南|非211非985
+bj xinxi keji|北京信息科技大学|北京|非211非985
+sh lixin kuaijixueyuan|上海立信会计学院|上海|非211非985
+zj ligongdaxue keji yu yishu|浙江理工大学科技与艺术学院|浙江|非211非985
+sh civil avation college|上海民航职业技术学院|上海|非211非985
+ah dianqigongcheng zhiye jishu|安徽电气工程职业技术学院|安徽|非211非985
+cd ligongdaxue gongchengjishu|成都理工大学工程技术学院|四川|非211非985
+ah xinwenchuban zhiye jishu|安徽新闻出版职业技术学院|安徽|非211非985
+zj tiyu zhiye jishu|浙江体育职业技术学院|浙江|非211非985
+cq gongmao zhiye jishu|重庆工贸职业技术学院|重庆|非211非985
+zj institute of mechanical electrical engineering|浙江机电职业技术学院|浙江|非211非985
+zj police academy|浙江警官职业学院|浙江|非211非985
+zj financial college|浙江金融职业学院|浙江|非211非985
+sd shenghan caimao zhiye|山东圣翰财贸职业学院|山东|非211非985
+cq university of education|重庆第二师范学院|重庆|非211非985
+sd jingcha|山东警察学院|山东|非211非985
+jl agriculture science and technology college|吉林农业科技学院|吉林|非211非985
+bj dancing academy|北京舞蹈学院|北京|非211非985
+zj a & f university|浙江农林大学|浙江|非211非985
+bj huijia vocational college|北京汇佳职业学院|北京|非211非985
+jx engineering vocational college|江西工程职业学院|江西|非211非985
+hn technical college of railway high-speed|湖南高速铁路职业技术学院|湖南|非211非985
+hb gongcheng|河北工程大学|河北|非211非985
+cq  vocational insitute of safety & technology|重庆安全技术职业学院|重庆|非211非985
+jx police college|江西警察学院|江西|非211非985
+bj zhongguodizhidaxue |中国地质大学(北京)|北京|211院校
+gz police officer vocational college|贵州警官职业学院|贵州|非211非985
+hn shiyouhuagong zhiye jishu|湖南石油化工职业技术学院|湖南|非211非985
+cq three gorges university|重庆三峡学院|重庆|非211非985
+hn muye jingji|河南牧业经济学院|河南|非211非985
+sh shijueyishu|上海视觉艺术学院|上海|非211非985
+gd keji|广东科技学院|广东|非211非985
+ah gongcheng|安徽工程大学|安徽|非211非985
+hb ruanjian zhiye jishu|河北软件职业技术学院|河北|非211非985
+hn orient science   technology college of agricultural university|湖南农业大学东方科技学院|湖南|非211非985
+hb normal university|湖北师范学院|湖北|非211非985
+ah yejin keji zhiye|安徽冶金科技职业学院|安徽|非211非985
+ah caijingdaxue shangxueyuan|安徽财经大学商学院|安徽|非211非985
+hb nvzi zhiye jishu xueyuan|河北女子职业技术学院|河北|非211非985
+hb gongye chengshi|河北工业大学城市学院|天津|非211非985
+jx luyou shangmao zhiye|江西旅游商贸职业学院|江西|非211非985
+hb jiaotong zhiye jishu|湖北交通职业技术学院|湖北|非211非985
+ah linye zhiye jishu|安徽林业职业技术学院|安徽|非211非985
+jx xinnengyuan keji zhiye|江西新能源科技职业学院|江西|非211非985
+jx jingji guanli ganbu|江西经济管理干部学院|江西|非211非985
+gz jianshe zhiye jishu|贵州建设职业技术学院|贵州|非211非985
+jx youth vocational college|江西青年职业学院|江西|非211非985
+ah xiandai xinxigongcheng zhiye|安徽现代信息工程职业学院|安徽|非211非985
+sd medical college|山东医学高等专科学校|山东|非211非985
+hn shuili yu huanjing zhiye|河南水利与环境职业学院|河南|非211非985
+ah institute of international business|安徽国际商务职业学院|安徽|非211非985
+sh university of traditional chinese medicine|上海中医药大学|上海|非211非985
+sd qingnian zhengzhi|山东青年政治学院|山东|非211非985
+zj economic & trade polytechnic|浙江经贸职业技术学院|浙江|非211非985
+cq gongshangdaxue|重庆工商大学|重庆|非211非985
+hn vocational college of modern logistics|湖南现代物流职业技术学院|湖南|非211非985
+jl caijingdaxue|吉林财经大学|吉林|非211非985
+cq vocational institute of engineering|重庆工程职业技术学院|重庆|非211非985
+gd university of finance & economics|广东财经大学|广东|非211非985
+sd youth university of political science|山东青年政治学院|山东|非211非985
+gd qingnian zhiye|广东青年职业学院|广东|非211非985
+gz university of engineering science|贵州工程应用技术学院|贵州|非211非985
+hn dushi zhiye|湖南都市职业学院|湖南|非211非985
+zj jiaotong zhiye jishu|浙江交通职业技术学院|浙江|非211非985
+sh tiyu|上海体育学院|上海|非211非985
+hb jianzhu gongchengxueyuan|河北建筑工程学院|河北|非211非985
+hn nongyedaxue dongfang keji|湖南农业大学东方科技学院|湖南|非211非985
+gd jidian zhiye jishu|广东机电职业技术学院|广东|非211非985
+sd yishusheji zhiye|山东艺术设计职业学院|山东|非211非985
+js haishizhiye jishu|江苏海事职业技术学院|江苏|非211非985
+gd jingguan|广东警官学院|广东|非211非985
+jx environmental engineering vocational college|江西环境工程职业学院|江西|非211非985
+cq nanfang translators college (cntc) of sisu|四川外国语大学重庆南方翻译学院|重庆|非211非985
+jx taoci gongyimeishu zhiye jishu|江西陶瓷工艺美术职业技术学院|江西|非211非985
+sd nuzi|山东女子学院|山东|非211非985
+gz polytechnic of construction|贵州建设职业技术学院|贵州|非211非985
+hn gongyemaoyi zhiye|河南工业贸易职业学院|河南|非211非985
+hn justice police vocational college|河南司法警官职业学院|河南|非211非985
+hb chuanmei|河北传媒学院|河北|非211非985
+js university of science and technology|江苏科技大学|江苏|非211非985
+ah communications vocational & technical college|安徽交通职业技术学院|安徽|非211非985
+ah university of science & technology|安徽理工大学|安徽|非211非985
+cq yishu gongcheng zhiye|重庆艺术工程职业学院|重庆|非211非985
+hb keji zhiye|湖北科技职业学院|湖北|非211非985
+hn gongye|湖南工业大学|湖南|非211非985
+sd nongye gongchengxueyuan|山东农业工程学院|山东|非211非985
+xj yishu|新疆艺术学院|新疆|非211非985
+cd university of tcm|成都中医药大学|四川|非211非985
+cq real estate college|重庆房地产职业学院|重庆|非211非985
+zj wanli university|浙江万里学院|浙江|非211非985
+bj gengdan institute of university of technology|北京工业大学耿丹学院|北京|非211非985
+zj university of finance economics|浙江财经大学|浙江|非211非985
+hn dianzikeji zhiye|湖南电子科技职业学院|湖南|非211非985
+xj|新疆大学|新疆|211院校
+ah polytechnic university|安徽工程大学|安徽|非211非985
+sd huayu university of technology|山东华宇工学院|山东|非211非985
+cq nengyuan zhiye|重庆能源职业学院|重庆|非211非985
+hb university of automotive technology|湖北汽车工业学院|湖北|非211非985
+sd kaiwen college of science technology|山东凯文科技职业学院|山东|非211非985
+js vocational college of business|江苏商贸职业学院|江苏|非211非985
+gz dianli zhiye jishu|贵州电力职业技术学院|贵州|非211非985
+sd polytechnic|山东职业学院|山东|非211非985
+hn mass media college|湖南大众传媒职业技术学院|湖南|非211非985
+ah ligongdaxue|安徽理工大学|安徽|非211非985
+hn university of traditional chinese medicine|河南中医学院|河南|非211非985
+hn university of arts and science|湖南文理学院|湖南|非211非985
+bj institute of business and technology|北京经济技术职业学院|北京|非211非985
+hn xinxi zhiye jishu|湖南信息职业技术学院|湖南|非211非985
+jx weisheng zhiye|江西卫生职业学院|江西|非211非985
+ah jidian zhiye jishu|安徽机电职业技术学院|安徽|非211非985
+bj institute of petrochemical technology|北京石油化工学院|北京|非211非985
+gd jishu shifanxueyuan tianhe|广东技术师范学院天河学院|广东|非211非985
+hn university of science and technology|河南科技大学|河南|非211非985
+hn industry and trade vocational college|河南工业贸易职业学院|河南|非211非985
+sh bangde zhiye jishu|上海邦德职业技术学院|上海|非211非985
+hb university|河北大学|河北|非211非985
+sh bangde college|上海邦德职业技术学院|上海|非211非985
+zj shanghaicaijingdaxue|上海财经大学浙江学院|浙江|非211非985
+ah jingji guanli ganbu college|安徽经济管理干部学院|安徽|非211非985
+hb college of engineering|河北工程技术学院|河北|非211非985
+cq industry polytechnic college|重庆工业职业技术学院|重庆|非211非985
+sd communication & media college|山东传媒职业学院|山东|非211非985
+hb science and technology college of university of arts and science|湖北文理学院理工学院|湖北|非211非985
+hn university of economics and law|河南财经政法大学|河南|非211非985
+sh dianji university|上海电机学院|上海|非211非985
+cq college of culture and arts|重庆文化艺术职业学院|重庆|非211非985
+zj technical institute of economics|浙江经济职业技术学院|浙江|非211非985
+gd vocational institute of sports|广东体育职业技术学院|广东|非211非985
+zj yuexiu waiguoyu|浙江越秀外国语学院|浙江|非211非985
+hn vocational college of art|湖南艺术职业学院|湖南|非211非985
+xj qinggong zhiye jishu|新疆轻工职业技术学院|新疆|非211非985
+cq college of finance and economics|重庆财经职业学院|重庆|非211非985
+hn keji|河南科技大学|河南|非211非985
+jl tiyu|吉林体育学院|吉林|非211非985
+sh hangjian zhiye|上海行健职业学院|上海|非211非985
+ah medical college|安徽医学高等专科学校|安徽|非211非985
+gd ocean university|广东海洋大学|广东|非211非985
+ah vocational college of defense technology|安徽国防科技职业学院|安徽|非211非985
+hn mechanical & electrical polytechnic|湖南机电职业技术学院|湖南|非211非985
+hb the science and technology college of university of automotive technology|湖北汽车工业学院科技学院|湖北|非211非985
+zj tongji keji zhiye|浙江同济科技职业学院|浙江|非211非985
+jx tourism and commerce vocational college|江西旅游商贸职业学院|江西|非211非985
+gd xinan zhiye jishu|广东新安职业技术学院|广东|非211非985
+gz business school of university of finance and economics|贵州财经大学商务学院|贵州|非211非985
+sh nonglin zhiye jishu|上海农林职业技术学院|上海|非211非985
+hn hulizhiye|河南护理职业学院|河南|非211非985
+zj ningbo institute of technology university|浙江大学宁波理工学院|浙江|非211非985
+hn anquan jishu zhiye|湖南安全技术职业学院|湖南|非211非985
+jx keji shifandaxue ligongxueyuan|江西科技师范大学理工学院|江西|非211非985
+hb finace taxation college|湖北财税职业学院|湖北|非211非985
+sh university of finance economics|上海财经大学|上海|211院校
+XinJiang HouBo College of Medical University|新疆医科大学厚博学院|新疆|非211非985
+bj xiandai zhiye jishu|北京现代职业技术学院|北京|非211非985
+hn sifa jingguan zhiye|湖南司法警官职业学院|湖南|非211非985
+gd teachers college of foreign language art|广东外语艺术职业学院|广东|非211非985
+sd xumu shouyi zhiye|山东畜牧兽医职业学院|山东|非211非985
+gd gongmao zhiye jishu|广东工贸职业技术学院|广东|非211非985
+zj jingmao zhiye jishu|浙江经贸职业技术学院|浙江|非211非985
+hb university of technology|河北工业大学城市学院|天津|非211非985
+sh university of sport|上海体育学院|上海|非211非985
+hn shewaijingji|湖南涉外经济学院|湖南|非211非985
+cq water resources and electric engineering college|重庆水利电力职业技术学院|重庆|非211非985
+jx college of applied technology|江西应用技术职业学院|江西|非211非985
+gz technology and business institute|贵州工商职业学院|贵州|非211非985
+xj shihezi vocational technical college|新疆石河子职业技术学院|新疆|非211非985
+sh haishizhiye jishu|上海海事职业技术学院|上海|非211非985
+hb university of medicine|湖北医药学院|湖北|非211非985
+js keji|江苏科技大学|江苏|非211非985
+bj institute of technologyzhuhai|北京理工大学珠海学院|广东|非211非985
+sh donghai college|上海东海职业技术学院|上海|非211非985
+zj university of technology|浙江工业大学|浙江|非211非985
+gz yikedaxue shenqi minzu yiyao|贵州医科大学神奇民族医药学院|贵州|非211非985
+sd sifa jingguan zhiye|山东司法警官职业学院|山东|非211非985
+sh jianfeng zhiye jishu|上海建峰职业技术学院|上海|非211非985
+sy chengshi jianshe|沈阳城市建设学院|辽宁|非211非985
+sh chengshi guanli zhiye jishu|上海城市管理职业技术学院|上海|非211非985
+hb gongye gongchengjishu|湖北工业大学工程技术学院|湖北|非211非985
+hn gongchengxueyuan|河南工程学院|河南|非211非985
+gd shengtai gongcheng zhiye|广东生态工程职业学院|广东|非211非985
+hn institute of engineering|湖南工程学院应用技术学院|湖南|非211非985
+hn college of foreign studies|湖南外国语职业学院|湖南|非211非985
+ah gongye zhiye jishu|安徽工业职业技术学院|安徽|非211非985
+gz forerunner college|贵州盛华职业学院|贵州|非211非985
+bj jingbei zhiye jishu|北京京北职业技术学院|北京|非211非985
+hn huanjing shengwu zhiye jishu|湖南环境生物职业技术学院|湖南|非211非985
+zj economic trade polytechnic|浙江经贸职业技术学院|浙江|非211非985
+zj nonglin|浙江农林大学|浙江|非211非985
+hn gongcheng zhiye jishu|湖南工程职业技术学院|湖南|非211非985
+ah liangshi gongcheng zhiye|安徽粮食工程职业学院|安徽|非211非985
+gd baiyun|广东白云学院|广东|非211非985
+ah shenji zhiye|安徽审计职业学院|安徽|非211非985
+hb huagong yiyao zhiye jishu|河北化工医药职业技术学院|河北|非211非985
+hn university minsheng college|河南大学民生学院|河南|非211非985
+hb polytechnic college of university of science and technology|河北科技大学理工学院|河北|非211非985
+gd zhiye jishu|广东职业技术学院|广东|非211非985
+jl engineering vocational college|吉林工程职业学院|吉林|非211非985
+hb zhiye jishu|湖北职业技术学院|湖北|非211非985
+sy jianzhu university urban construction colloge|沈阳城市建设学院|辽宁|非211非985
+hb university of economics|湖北经济学院|湖北|非211非985

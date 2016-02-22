@@ -27,7 +27,7 @@ class SchoolTree(object):
         word_search = word.split('|')[0]
         university_area = word.split('|')[2]
         university_type = word.split('|')[3]
-        #university_weight = word.split('|')[4]
+        university_weight = word.split('|')[4][:1]
 
         node = self.root
         for c in word_search:
@@ -43,13 +43,17 @@ class SchoolTree(object):
         node.word = word_display
         node.university_type = university_type
         node.area = university_area
-        #node.weight = university_weight
+        node.weight = university_weight
 
     def preOrder(self, node):
         '''先序输出'''
         results = []
         if node.word:
-            results.append({'area': node.area, 'result': node.word+'|'+node.area+'|'+node.university_type})
+            word = {
+                'result': node.word+'|'+node.area+'|'+node.university_type,
+                'weight': int(node.weight)
+            }
+            results.append(repr(word))
         for child in node.childs:
             results.extend(self.preOrder(child))
         return results
@@ -68,6 +72,7 @@ class SchoolTree(object):
     def setWords(self, words):
         for word in words:
             self.add(word)
+
     def search(self, node, word):
         result = []
         _len = len(word)
@@ -94,55 +99,99 @@ UNIVERSITY_LIST = [] # 学校库的字典
 
 SCHOOL_TRIE = SchoolTree() # 学校库的前缀树
 
-def search_school(keyword, major=None, province=None):
-    print('enter func . . . ')
-    print('type before: %s' % type(province))
-    print('province before: %s' % province)
-    print('keyword before: %s' % keyword)
+SCHOOL_SPECIAL_MAJOR = {} #综合前十或者专业优势
+
+def __sorted_school_weight(search_result):
+    result_school_dict = {}
+    for each in search_result:
+        each = eval(each)
+        result_school_dict[each['result']] = each['weight']
+    return sorted(result_school_dict.items(), key=lambda x:x[1], reverse=False)
+
+def __school_filter_by_major(result, major):
+    for index,item in enumerate(result):
+        if item.split('|')[0] in SCHOOL_SPECIAL_MAJOR[major]:
+            result[index] = item.split('|')[0] + '|' + item.split('|')[1] + '|综合前十或专业优势'
+
+def __school_sort_by_province(search_result, province=None):
+    result = []
+    for each in search_result:
+        if each[0].split('|')[1] == province:
+            result.insert(0, each[0])
+        else:
+            result.append(each[0])
+    return result
+
+
+def search_school(keyword='北京', major=None, province=None):
+    # print('enter func . . . ')
+    # print('type before: %s' % type(province))
+    # print('province before: %s' % province)
+    # print('keyword before: %s' % keyword)
 
     #如果keyword是bytes, 则转化为str
     keyword = convert_to_str(keyword)
     if province != None:
         province = convert_to_str(province)
-    print('type after: %s' % type(province))
-    print('keyword after: %s ' % keyword)
-    print('province after: %s ' % province)
-    global SCHOOL_TRIE
-    print('func: '+str(id(SCHOOL_TRIE)))
+    if major != None:
+        major = convert_to_str(major)
+    # print('type after: %s' % type(province))
+    # print('keyword after: %s ' % keyword)
+    # print('province after: %s ' % province)
+
     try:
+        global SCHOOL_TRIE
         search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, keyword)
     except:
         logging.error('没有正常返回结果')
         return exit_error_func(3, u'参数:'+keyword)
 
-    result = []
-    if len(search_result) > 0:
-        status = 'success' #返回状态
-        for each in search_result:
-            if each['area'] == province:
-                result.insert(0, each['result'])
-            else:
-                result.append(each['result'])
-        if len(result) > 10:
-            result = result[:10]
-    else:
-        status = 'success'
+    search_result_set = set()
+    for each in search_result:
+        search_result_set.add(each)
 
-    print('result:%s' % result)
+    result = __sorted_school_weight(search_result_set)
+
+    result = __school_sort_by_province(result, province=province)
+
+    if len(result) > 10:
+        result = result[:10]
+
+    if major != None:
+        __school_filter_by_major(result, major=major)
+
+    #print('result:%s' % result)
     return{
-        'status': status,
+        'status': 'success',
         'result': result,
     }
 
 def __init__(dict_from=None):
     start_time = time.time()
     _logging_conf()
+    try:
+        for each in open('resource/school/special_school.txt', 'r', encoding='utf-8').readlines():
+            try:
+                each = each.strip('\r').strip('\n').strip()
+                if each[:1] == '#':
+                    major_key = each[1:]
+                    SCHOOL_SPECIAL_MAJOR[major_key] = []
+                else:
+                    major_list = SCHOOL_SPECIAL_MAJOR[major_key]
+                    major_list.append(each)
+                    SCHOOL_SPECIAL_MAJOR[major_key] = major_list
+            except:
+                logging.error('some line is wrong when reading special school.')
+                logging.info('wrong line : %s ', each)
+                return
+    except FileNotFoundError:
+        logging.error('File resource/school/special_school.txt not found . . . ')
     # 学校库来自配置的文本文件
     if dict_from == 'conf':
         try:
             for each in open('resource/university_dict.txt', 'r', encoding='utf-8').readlines():
                 try:
-                    each = each.strip('\r').strip('\n')
+                    each = each.strip('\r').strip('\n').lower()
                     UNIVERSITY_LIST.append(each)
                 except:
                     logging.error('some line is wrong when convent to dict .')
@@ -153,7 +202,6 @@ def __init__(dict_from=None):
 
     # 学校库来自mongodb库
     elif dict_from == 'mongodb':
-
         try:
             for each in open('resource/db.conf', 'r', encoding='utf-8').readlines():
                 try:
@@ -161,7 +209,7 @@ def __init__(dict_from=None):
                     if(each.split('=')[0] == 'mongodb.url'):
                         url = each.split('=')[1]
                     if(each.split('=')[0] == 'mongodb.port'):
-                        port = each.split('=')[1]
+                        port = int(each.split('=')[1])
                     if(each.split('=')[0] == 'mongodb.dulishuo.username'):
                         username = each.split('=')[1]
                     if(each.split('=')[0] == 'mongodb.dulishuo.password'):
@@ -174,10 +222,13 @@ def __init__(dict_from=None):
             logging.error('File resource/db.conf not found . . . ')
             return exit_error_func(3)
 
-        mongo_client = MongoDB(url, port, username, password)
-        school_search_collection = mongo_client.get_collection('search_school', 'dulishuo')
+        mongo_client = MongoDB(host=url, port=port, username=username, password=password)
+        school_search_collection = mongo_client.get_collection('school', 'dulishuo')
         for each in school_search_collection.find():
-            UNIVERSITY_LIST.append(each['display_name']+'|'+each['origin_name']+'|'+each['area']+'|'+each['type']+'|'+str(each['ref_counter']))
+            UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area']+'|'+each['type']+'|'+repr(each['weight']))
+        school_load_time = time.time()
+        logging.info('从mongodb读取院校库完毕，用时 %s 秒.' % str(school_load_time-start_time))
+        mongo_client.close() # 关闭连接
     else:
         logging.error('__init__()出错，参数： %s' % dict_from)
         return exit_error_func(2, dict_from)
@@ -197,10 +248,11 @@ def _logging_conf():
     logging.info('***********************************************')
 
 if __name__ == '__main__':
-    __init__(dict_from='conf')
-    keyword = 'zhongkeda'
-    province = '北京'
-    print(json.dumps(search_school(keyword=keyword, province=province), ensure_ascii=False, indent=4))
+    __init__(dict_from='mongodb')
+    keyword = '华'
+    province = 'general'
+    major = '经济学'
+    print(json.dumps(search_school(keyword=keyword, major=major, province=province), ensure_ascii=False, indent=4))
 
     #mon = MongoDB('123.57.250.189',27017,'dulishuo','Dulishuo123')
     #mon = MongoDB('123.57.250.189',27017)

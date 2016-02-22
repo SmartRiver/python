@@ -43,6 +43,8 @@ class MongoDB():
         
     def insert_one(self, document):
         return self._collection_.insert_one(document).inserted_id
+    def close(self):
+        self._client_.close()
 
 if __name__ == '__main__':
     # _logging_conf()

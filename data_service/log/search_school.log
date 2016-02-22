@@ -1,364 +1,320 @@
-Wed, 17 Feb 2016 15:59:16 search.py [func:_logging_conf] [line:125] INFO:
-***********************************************
-Wed, 17 Feb 2016 15:59:16 search.py [func:_logging_conf] [line:125] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:00:43 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:00:43 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:01:01 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:01:01 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:01:11 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:01:11 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:02:04 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:02:04 search.py [func:_logging_conf] [line:126] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:06:58 search.py [func:_logging_conf] [line:128] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:06:58 search.py [func:_logging_conf] [line:128] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:22:46 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:22:46 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:23:01 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:23:01 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:23:23 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:23:23 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:24:24 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 16:24:24 search.py [func:_logging_conf] [line:136] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:41:08 search.py [func:_logging_conf] [line:145] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:41:08 search.py [func:_logging_conf] [line:145] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:41:54 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:41:54 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:42:09 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:42:09 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:42:43 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:42:43 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:46:54 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:46:54 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:47:39 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:47:39 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:47:59 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:47:59 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:48:24 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:48:24 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:48:50 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:48:50 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:50:19 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:50:19 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:50:38 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:50:38 search.py [func:_logging_conf] [line:147] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:53:58 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:53:58 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:55:22 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:55:22 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:57:53 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:57:53 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:58:06 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 17:58:06 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 18:10:03 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Wed, 17 Feb 2016 18:10:03 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:20:16 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:20:16 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:21:31 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:21:31 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:23:49 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:23:49 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:24:23 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:24:23 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:24:38 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:24:38 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:24:50 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:24:50 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:30:49 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:30:49 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:31:26 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:31:26 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:32:34 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:32:34 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:32:34 search.py [func:search_school] [line:102] ERROR:
+Sat, 20 Feb 2016 18:11:06 search.py [func:_logging_conf] [line:200] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:11:29 search.py [func:_logging_conf] [line:200] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:11:35 search.py [func:__init__] [line:183] INFO:
+从mongodb读取院校库完毕，用时 6.4730048179626465 秒.
+Sat, 20 Feb 2016 18:11:42 search.py [func:__init__] [line:192] INFO:
+院校库前缀树构建完毕，用时 12.888779163360596 秒.
+Sat, 20 Feb 2016 18:12:13 search.py [func:_logging_conf] [line:200] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:12:20 search.py [func:__init__] [line:183] INFO:
+从mongodb读取院校库完毕，用时 7.634645223617554 秒.
+Sat, 20 Feb 2016 18:12:26 search.py [func:__init__] [line:192] INFO:
+院校库前缀树构建完毕，用时 13.780975103378296 秒.
+Sat, 20 Feb 2016 18:12:45 search.py [func:_logging_conf] [line:200] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:12:54 search.py [func:__init__] [line:183] INFO:
+从mongodb读取院校库完毕，用时 9.097155332565308 秒.
+Sat, 20 Feb 2016 18:13:00 search.py [func:__init__] [line:192] INFO:
+院校库前缀树构建完毕，用时 15.200916290283203 秒.
+Sat, 20 Feb 2016 18:26:42 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:26:48 search.py [func:__init__] [line:183] INFO:
+从mongodb读取院校库完毕，用时 5.5958778858184814 秒.
+Sat, 20 Feb 2016 18:29:57 search.py [func:_logging_conf] [line:201] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:30:03 search.py [func:__init__] [line:183] INFO:
+从mongodb读取院校库完毕，用时 5.876583576202393 秒.
+Sat, 20 Feb 2016 18:30:09 search.py [func:__init__] [line:193] INFO:
+院校库前缀树构建完毕，用时 12.094115495681763 秒.
+Sat, 20 Feb 2016 18:30:09 search.py [func:search_school] [line:117] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 14:33:09 search.py [func:_logging_conf] [line:148] INFO:
+Sat, 20 Feb 2016 18:35:36 search.py [func:_logging_conf] [line:202] INFO:
 ***********************************************
-Thu, 18 Feb 2016 14:33:09 search.py [func:_logging_conf] [line:148] INFO:
+Sat, 20 Feb 2016 18:35:42 search.py [func:__init__] [line:184] INFO:
+从mongodb读取院校库完毕，用时 5.615933179855347 秒.
+Sat, 20 Feb 2016 18:35:49 search.py [func:__init__] [line:194] INFO:
+院校库前缀树构建完毕，用时 12.566412687301636 秒.
+Sat, 20 Feb 2016 18:46:30 search.py [func:_logging_conf] [line:202] INFO:
 ***********************************************
-Thu, 18 Feb 2016 14:33:09 search.py [func:search_school] [line:102] ERROR:
+Sat, 20 Feb 2016 18:46:36 search.py [func:__init__] [line:184] INFO:
+从mongodb读取院校库完毕，用时 5.72965407371521 秒.
+Sat, 20 Feb 2016 18:46:44 search.py [func:__init__] [line:194] INFO:
+院校库前缀树构建完毕，用时 14.036789417266846 秒.
+Sat, 20 Feb 2016 18:51:44 search.py [func:_logging_conf] [line:203] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:51:52 search.py [func:__init__] [line:185] INFO:
+从mongodb读取院校库完毕，用时 7.756620407104492 秒.
+Sat, 20 Feb 2016 18:51:59 search.py [func:__init__] [line:195] INFO:
+院校库前缀树构建完毕，用时 14.714117050170898 秒.
+Sat, 20 Feb 2016 18:52:11 search.py [func:_logging_conf] [line:204] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:52:18 search.py [func:__init__] [line:186] INFO:
+从mongodb读取院校库完毕，用时 6.740944147109985 秒.
+Sat, 20 Feb 2016 18:52:25 search.py [func:__init__] [line:196] INFO:
+院校库前缀树构建完毕，用时 14.233782768249512 秒.
+Sat, 20 Feb 2016 18:54:03 search.py [func:_logging_conf] [line:204] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:54:09 search.py [func:__init__] [line:186] INFO:
+从mongodb读取院校库完毕，用时 5.716234922409058 秒.
+Sat, 20 Feb 2016 18:54:16 search.py [func:__init__] [line:196] INFO:
+院校库前缀树构建完毕，用时 12.68673300743103 秒.
+Sat, 20 Feb 2016 18:55:09 search.py [func:_logging_conf] [line:204] INFO:
+***********************************************
+Sat, 20 Feb 2016 18:55:15 search.py [func:__init__] [line:186] INFO:
+从mongodb读取院校库完毕，用时 5.5243799686431885 秒.
+Sat, 20 Feb 2016 18:55:22 search.py [func:__init__] [line:196] INFO:
+院校库前缀树构建完毕，用时 12.489911794662476 秒.
+Mon, 22 Feb 2016 13:06:35 search.py [func:_logging_conf] [line:211] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:06:40 search.py [func:__init__] [line:193] INFO:
+从mongodb读取院校库完毕，用时 5.397382736206055 秒.
+Mon, 22 Feb 2016 13:06:46 search.py [func:__init__] [line:203] INFO:
+院校库前缀树构建完毕，用时 10.944099187850952 秒.
+Mon, 22 Feb 2016 13:06:46 search.py [func:search_school] [line:131] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 14:33:25 search.py [func:_logging_conf] [line:148] INFO:
+Mon, 22 Feb 2016 13:08:14 search.py [func:_logging_conf] [line:213] INFO:
 ***********************************************
-Thu, 18 Feb 2016 14:33:25 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 14:33:25 search.py [func:search_school] [line:102] ERROR:
+Mon, 22 Feb 2016 13:08:19 search.py [func:__init__] [line:195] INFO:
+从mongodb读取院校库完毕，用时 5.53419041633606 秒.
+Mon, 22 Feb 2016 13:08:25 search.py [func:__init__] [line:205] INFO:
+院校库前缀树构建完毕，用时 11.721600532531738 秒.
+Mon, 22 Feb 2016 13:08:25 search.py [func:search_school] [line:133] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:26:17 search.py [func:_logging_conf] [line:148] INFO:
+Mon, 22 Feb 2016 13:11:21 search.py [func:_logging_conf] [line:214] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:26:17 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:26:18 search.py [func:search_school] [line:102] ERROR:
+Mon, 22 Feb 2016 13:11:27 search.py [func:__init__] [line:196] INFO:
+从mongodb读取院校库完毕，用时 5.721658706665039 秒.
+Mon, 22 Feb 2016 13:11:33 search.py [func:__init__] [line:206] INFO:
+院校库前缀树构建完毕，用时 11.360204458236694 秒.
+Mon, 22 Feb 2016 13:11:33 search.py [func:search_school] [line:134] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:36:10 search.py [func:_logging_conf] [line:148] INFO:
+Mon, 22 Feb 2016 13:12:36 search.py [func:_logging_conf] [line:214] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:36:10 search.py [func:_logging_conf] [line:148] INFO:
+Mon, 22 Feb 2016 13:12:41 search.py [func:__init__] [line:196] INFO:
+从mongodb读取院校库完毕，用时 5.5326550006866455 秒.
+Mon, 22 Feb 2016 13:12:47 search.py [func:__init__] [line:206] INFO:
+院校库前缀树构建完毕，用时 11.330933094024658 秒.
+Mon, 22 Feb 2016 13:17:41 search.py [func:_logging_conf] [line:215] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:36:10 search.py [func:search_school] [line:102] ERROR:
+Mon, 22 Feb 2016 13:17:47 search.py [func:__init__] [line:197] INFO:
+从mongodb读取院校库完毕，用时 5.565000295639038 秒.
+Mon, 22 Feb 2016 13:17:53 search.py [func:__init__] [line:207] INFO:
+院校库前缀树构建完毕，用时 11.613286972045898 秒.
+Mon, 22 Feb 2016 13:18:39 search.py [func:_logging_conf] [line:215] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:18:44 search.py [func:__init__] [line:197] INFO:
+从mongodb读取院校库完毕，用时 5.524276256561279 秒.
+Mon, 22 Feb 2016 13:18:50 search.py [func:__init__] [line:207] INFO:
+院校库前缀树构建完毕，用时 11.119124174118042 秒.
+Mon, 22 Feb 2016 13:19:20 search.py [func:_logging_conf] [line:216] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:19:26 search.py [func:__init__] [line:198] INFO:
+从mongodb读取院校库完毕，用时 5.533843517303467 秒.
+Mon, 22 Feb 2016 13:19:31 search.py [func:__init__] [line:208] INFO:
+院校库前缀树构建完毕，用时 11.40047287940979 秒.
+Mon, 22 Feb 2016 13:21:20 search.py [func:_logging_conf] [line:217] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:21:26 search.py [func:__init__] [line:199] INFO:
+从mongodb读取院校库完毕，用时 5.832513332366943 秒.
+Mon, 22 Feb 2016 13:21:32 search.py [func:__init__] [line:209] INFO:
+院校库前缀树构建完毕，用时 11.728168964385986 秒.
+Mon, 22 Feb 2016 13:25:18 search.py [func:_logging_conf] [line:221] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:25:24 search.py [func:__init__] [line:203] INFO:
+从mongodb读取院校库完毕，用时 5.549230337142944 秒.
+Mon, 22 Feb 2016 13:25:30 search.py [func:__init__] [line:213] INFO:
+院校库前缀树构建完毕，用时 11.489989519119263 秒.
+Mon, 22 Feb 2016 13:27:05 search.py [func:_logging_conf] [line:221] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:27:11 search.py [func:__init__] [line:203] INFO:
+从mongodb读取院校库完毕，用时 5.763483762741089 秒.
+Mon, 22 Feb 2016 13:27:17 search.py [func:__init__] [line:213] INFO:
+院校库前缀树构建完毕，用时 11.895762205123901 秒.
+Mon, 22 Feb 2016 13:34:15 search.py [func:_logging_conf] [line:221] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:34:21 search.py [func:__init__] [line:203] INFO:
+从mongodb读取院校库完毕，用时 5.7232160568237305 秒.
+Mon, 22 Feb 2016 13:34:27 search.py [func:__init__] [line:213] INFO:
+院校库前缀树构建完毕，用时 11.648972511291504 秒.
+Mon, 22 Feb 2016 13:34:27 search.py [func:search_school] [line:141] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:38:04 search.py [func:_logging_conf] [line:148] INFO:
+Mon, 22 Feb 2016 13:34:58 search.py [func:_logging_conf] [line:221] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:38:04 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:38:04 search.py [func:search_school] [line:102] ERROR:
+Mon, 22 Feb 2016 13:35:03 search.py [func:__init__] [line:203] INFO:
+从mongodb读取院校库完毕，用时 5.563524007797241 秒.
+Mon, 22 Feb 2016 13:35:09 search.py [func:__init__] [line:213] INFO:
+院校库前缀树构建完毕，用时 11.492677927017212 秒.
+Mon, 22 Feb 2016 13:35:09 search.py [func:search_school] [line:141] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:39:20 search.py [func:_logging_conf] [line:148] INFO:
+Mon, 22 Feb 2016 13:35:46 search.py [func:_logging_conf] [line:221] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:39:20 search.py [func:_logging_conf] [line:148] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:39:20 search.py [func:search_school] [line:102] ERROR:
+Mon, 22 Feb 2016 13:35:52 search.py [func:__init__] [line:203] INFO:
+从mongodb读取院校库完毕，用时 5.682116508483887 秒.
+Mon, 22 Feb 2016 13:35:58 search.py [func:__init__] [line:213] INFO:
+院校库前缀树构建完毕，用时 11.712138891220093 秒.
+Mon, 22 Feb 2016 13:35:58 search.py [func:search_school] [line:141] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:42:01 search.py [func:_logging_conf] [line:150] INFO:
+Mon, 22 Feb 2016 13:37:20 search.py [func:_logging_conf] [line:222] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:42:01 search.py [func:_logging_conf] [line:150] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:42:01 search.py [func:search_school] [line:104] ERROR:
+Mon, 22 Feb 2016 13:37:26 search.py [func:__init__] [line:204] INFO:
+从mongodb读取院校库完毕，用时 5.709247589111328 秒.
+Mon, 22 Feb 2016 13:37:32 search.py [func:__init__] [line:214] INFO:
+院校库前缀树构建完毕，用时 11.709185600280762 秒.
+Mon, 22 Feb 2016 13:37:32 search.py [func:search_school] [line:142] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:42:50 search.py [func:_logging_conf] [line:150] INFO:
+Mon, 22 Feb 2016 13:37:59 search.py [func:_logging_conf] [line:221] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:42:50 search.py [func:_logging_conf] [line:150] INFO:
+Mon, 22 Feb 2016 13:38:04 search.py [func:__init__] [line:203] INFO:
+从mongodb读取院校库完毕，用时 5.7116169929504395 秒.
+Mon, 22 Feb 2016 13:38:11 search.py [func:__init__] [line:213] INFO:
+院校库前缀树构建完毕，用时 11.955448627471924 秒.
+Mon, 22 Feb 2016 13:40:31 search.py [func:_logging_conf] [line:222] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:42:50 search.py [func:search_school] [line:104] ERROR:
+Mon, 22 Feb 2016 13:40:36 search.py [func:__init__] [line:204] INFO:
+从mongodb读取院校库完毕，用时 5.574820280075073 秒.
+Mon, 22 Feb 2016 13:40:42 search.py [func:__init__] [line:214] INFO:
+院校库前缀树构建完毕，用时 11.464483499526978 秒.
+Mon, 22 Feb 2016 13:43:10 search.py [func:_logging_conf] [line:222] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:43:15 search.py [func:__init__] [line:204] INFO:
+从mongodb读取院校库完毕，用时 5.56481409072876 秒.
+Mon, 22 Feb 2016 13:43:21 search.py [func:__init__] [line:214] INFO:
+院校库前缀树构建完毕，用时 11.19977855682373 秒.
+Mon, 22 Feb 2016 13:43:59 search.py [func:_logging_conf] [line:223] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:44:05 search.py [func:__init__] [line:205] INFO:
+从mongodb读取院校库完毕，用时 5.545273065567017 秒.
+Mon, 22 Feb 2016 13:44:11 search.py [func:__init__] [line:215] INFO:
+院校库前缀树构建完毕，用时 11.41688585281372 秒.
+Mon, 22 Feb 2016 13:44:45 search.py [func:_logging_conf] [line:224] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:44:51 search.py [func:__init__] [line:206] INFO:
+从mongodb读取院校库完毕，用时 5.701190948486328 秒.
+Mon, 22 Feb 2016 13:44:57 search.py [func:__init__] [line:216] INFO:
+院校库前缀树构建完毕，用时 11.469494104385376 秒.
+Mon, 22 Feb 2016 13:45:40 search.py [func:_logging_conf] [line:223] INFO:
+***********************************************
+Mon, 22 Feb 2016 13:45:46 search.py [func:__init__] [line:205] INFO:
+从mongodb读取院校库完毕，用时 5.55379319190979 秒.
+Mon, 22 Feb 2016 13:45:51 search.py [func:__init__] [line:215] INFO:
+院校库前缀树构建完毕，用时 11.38229489326477 秒.
+Mon, 22 Feb 2016 14:00:34 search.py [func:_logging_conf] [line:239] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:00:34 search.py [func:__init__] [line:175] ERROR:
+some line is wrong when reading special school.
+Mon, 22 Feb 2016 14:00:34 search.py [func:__init__] [line:176] INFO:
+wrong line : 北京大学 
+Mon, 22 Feb 2016 14:01:34 search.py [func:_logging_conf] [line:239] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:01:34 search.py [func:__init__] [line:175] ERROR:
+some line is wrong when reading special school.
+Mon, 22 Feb 2016 14:01:34 search.py [func:__init__] [line:176] INFO:
+wrong line : 北京大学 
+Mon, 22 Feb 2016 14:03:14 search.py [func:_logging_conf] [line:240] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:03:14 search.py [func:__init__] [line:176] ERROR:
+some line is wrong when reading special school.
+Mon, 22 Feb 2016 14:03:14 search.py [func:__init__] [line:177] INFO:
+wrong line : 北京大学 
+Mon, 22 Feb 2016 14:04:16 search.py [func:_logging_conf] [line:241] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:04:22 search.py [func:__init__] [line:233] INFO:
+院校库前缀树构建完毕，用时 6.11277437210083 秒.
+Mon, 22 Feb 2016 14:05:10 search.py [func:_logging_conf] [line:241] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:05:16 search.py [func:__init__] [line:233] INFO:
+院校库前缀树构建完毕，用时 5.730289936065674 秒.
+Mon, 22 Feb 2016 14:06:16 search.py [func:_logging_conf] [line:241] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:06:21 search.py [func:__init__] [line:233] INFO:
+院校库前缀树构建完毕，用时 5.269036293029785 秒.
+Mon, 22 Feb 2016 14:06:45 search.py [func:_logging_conf] [line:241] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:06:51 search.py [func:__init__] [line:233] INFO:
+院校库前缀树构建完毕，用时 5.5297017097473145 秒.
+Mon, 22 Feb 2016 14:13:55 search.py [func:_logging_conf] [line:243] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:14:00 search.py [func:__init__] [line:235] INFO:
+院校库前缀树构建完毕，用时 5.027594327926636 秒.
+Mon, 22 Feb 2016 14:14:44 search.py [func:_logging_conf] [line:243] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:14:50 search.py [func:__init__] [line:235] INFO:
+院校库前缀树构建完毕，用时 5.366134881973267 秒.
+Mon, 22 Feb 2016 14:38:52 search.py [func:_logging_conf] [line:244] INFO:
+***********************************************
+Mon, 22 Feb 2016 14:38:59 search.py [func:__init__] [line:226] INFO:
+从mongodb读取院校库完毕，用时 6.174412965774536 秒.
+Mon, 22 Feb 2016 14:39:04 search.py [func:__init__] [line:236] INFO:
+院校库前缀树构建完毕，用时 11.521659135818481 秒.
+Mon, 22 Feb 2016 14:39:04 search.py [func:search_school] [line:141] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:43:20 search.py [func:_logging_conf] [line:151] INFO:
+Mon, 22 Feb 2016 14:41:09 search.py [func:_logging_conf] [line:244] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:43:20 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:43:21 search.py [func:search_school] [line:105] ERROR:
+Mon, 22 Feb 2016 14:41:15 search.py [func:__init__] [line:226] INFO:
+从mongodb读取院校库完毕，用时 6.106211185455322 秒.
+Mon, 22 Feb 2016 14:41:21 search.py [func:__init__] [line:236] INFO:
+院校库前缀树构建完毕，用时 11.663015842437744 秒.
+Mon, 22 Feb 2016 14:41:21 search.py [func:search_school] [line:141] ERROR:
 没有正常返回结果
-Thu, 18 Feb 2016 15:53:25 search.py [func:_logging_conf] [line:151] INFO:
+Mon, 22 Feb 2016 14:41:55 search.py [func:_logging_conf] [line:246] INFO:
 ***********************************************
-Thu, 18 Feb 2016 15:53:25 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:53:42 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:53:42 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:54:19 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:54:19 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:54:27 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:54:27 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:54:54 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 15:54:54 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 16:53:46 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Thu, 18 Feb 2016 16:53:46 search.py [func:_logging_conf] [line:151] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:52:53 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:52:53 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:52:53 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:54:51 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:54:51 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:54:51 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:54:51 search.py [func:search_school] [line:114] ERROR:
+Mon, 22 Feb 2016 14:42:01 search.py [func:__init__] [line:228] INFO:
+从mongodb读取院校库完毕，用时 6.2910449504852295 秒.
+Mon, 22 Feb 2016 14:42:07 search.py [func:__init__] [line:238] INFO:
+院校库前缀树构建完毕，用时 12.380899667739868 秒.
+Mon, 22 Feb 2016 14:42:07 search.py [func:search_school] [line:143] ERROR:
 没有正常返回结果
-Sat, 20 Feb 2016 12:55:19 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 14:45:08 search.py [func:_logging_conf] [line:245] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:55:19 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 14:45:16 search.py [func:__init__] [line:227] INFO:
+从mongodb读取院校库完毕，用时 7.455798864364624 秒.
+Mon, 22 Feb 2016 14:45:45 search.py [func:_logging_conf] [line:246] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:55:19 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:55:19 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 12:56:29 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 14:45:52 search.py [func:__init__] [line:228] INFO:
+从mongodb读取院校库完毕，用时 7.4568095207214355 秒.
+Mon, 22 Feb 2016 14:46:05 search.py [func:_logging_conf] [line:246] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:56:29 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 14:46:11 search.py [func:__init__] [line:228] INFO:
+从mongodb读取院校库完毕，用时 6.318328142166138 秒.
+Mon, 22 Feb 2016 14:46:49 search.py [func:_logging_conf] [line:246] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:56:29 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:56:29 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 12:57:16 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 14:46:55 search.py [func:__init__] [line:228] INFO:
+从mongodb读取院校库完毕，用时 6.320805311203003 秒.
+Mon, 22 Feb 2016 14:47:12 search.py [func:_logging_conf] [line:244] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:57:16 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 14:47:19 search.py [func:__init__] [line:226] INFO:
+从mongodb读取院校库完毕，用时 7.1419899463653564 秒.
+Mon, 22 Feb 2016 14:47:25 search.py [func:__init__] [line:236] INFO:
+院校库前缀树构建完毕，用时 12.57543420791626 秒.
+Mon, 22 Feb 2016 15:14:06 search.py [func:_logging_conf] [line:249] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:57:16 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:57:16 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 12:57:28 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 15:14:12 search.py [func:__init__] [line:231] INFO:
+从mongodb读取院校库完毕，用时 6.202519178390503 秒.
+Mon, 22 Feb 2016 15:14:18 search.py [func:__init__] [line:241] INFO:
+院校库前缀树构建完毕，用时 12.004950523376465 秒.
+Mon, 22 Feb 2016 15:14:40 search.py [func:_logging_conf] [line:249] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:57:28 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 15:14:46 search.py [func:__init__] [line:231] INFO:
+从mongodb读取院校库完毕，用时 6.284941911697388 秒.
+Mon, 22 Feb 2016 15:14:52 search.py [func:__init__] [line:241] INFO:
+院校库前缀树构建完毕，用时 12.337697267532349 秒.
+Mon, 22 Feb 2016 15:16:10 search.py [func:_logging_conf] [line:249] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:57:28 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:57:28 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 12:57:35 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 15:16:16 search.py [func:__init__] [line:231] INFO:
+从mongodb读取院校库完毕，用时 6.148336172103882 秒.
+Mon, 22 Feb 2016 15:16:21 search.py [func:__init__] [line:241] INFO:
+院校库前缀树构建完毕，用时 11.679083824157715 秒.
+Mon, 22 Feb 2016 15:16:46 search.py [func:_logging_conf] [line:249] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:57:35 search.py [func:_logging_conf] [line:194] INFO:
+Mon, 22 Feb 2016 15:16:52 search.py [func:__init__] [line:231] INFO:
+从mongodb读取院校库完毕，用时 6.188430547714233 秒.
+Mon, 22 Feb 2016 15:16:58 search.py [func:__init__] [line:241] INFO:
+院校库前缀树构建完毕，用时 11.790323495864868 秒.
+Mon, 22 Feb 2016 15:17:29 search.py [func:_logging_conf] [line:248] INFO:
 ***********************************************
-Sat, 20 Feb 2016 12:57:35 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:57:35 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 12:57:45 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:57:45 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:57:45 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:57:45 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 12:58:31 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:58:31 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 12:58:31 search.py [func:__init__] [line:181] ERROR:
-__init__()出错，参数： None
-Sat, 20 Feb 2016 12:58:31 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 13:00:40 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:00:40 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:00:50 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:00:50 search.py [func:_logging_conf] [line:194] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:00:55 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 13:02:08 search.py [func:_logging_conf] [line:195] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:02:08 search.py [func:_logging_conf] [line:195] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:02:13 search.py [func:__init__] [line:187] INFO:
-院校库前缀树构建完毕 . . . 
-Sat, 20 Feb 2016 13:02:13 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 13:04:04 search.py [func:_logging_conf] [line:195] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:04:04 search.py [func:_logging_conf] [line:195] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:04:09 search.py [func:__init__] [line:187] INFO:
-院校库前缀树构建完毕 . . . 
-Sat, 20 Feb 2016 13:04:09 search.py [func:search_school] [line:114] ERROR:
-没有正常返回结果
-Sat, 20 Feb 2016 13:09:58 search.py [func:_logging_conf] [line:198] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:09:58 search.py [func:_logging_conf] [line:198] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:10:03 search.py [func:__init__] [line:187] INFO:
-院校库前缀树构建完毕 . . . 
-Sat, 20 Feb 2016 13:12:42 search.py [func:_logging_conf] [line:198] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:12:42 search.py [func:_logging_conf] [line:198] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:12:50 search.py [func:__init__] [line:187] INFO:
-院校库前缀树构建完毕 . . . 
-Sat, 20 Feb 2016 13:15:18 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:15:18 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:15:25 search.py [func:__init__] [line:189] INFO:
-院校库前缀树构建完毕，用时7.236940860748291
-Sat, 20 Feb 2016 13:16:00 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:16:00 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:16:08 search.py [func:__init__] [line:189] INFO:
-院校库前缀树构建完毕，用时 7.342000961303711 秒.
-Sat, 20 Feb 2016 13:17:35 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:17:35 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:17:42 search.py [func:__init__] [line:189] INFO:
-院校库前缀树构建完毕，用时 7.048516511917114 秒.
-Sat, 20 Feb 2016 13:17:54 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:17:54 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:18:01 search.py [func:__init__] [line:189] INFO:
-院校库前缀树构建完毕，用时 7.146100044250488 秒.
-Sat, 20 Feb 2016 13:18:26 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:18:26 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:18:32 search.py [func:__init__] [line:189] INFO:
-院校库前缀树构建完毕，用时 6.4840312004089355 秒.
-Sat, 20 Feb 2016 13:21:22 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:21:22 search.py [func:_logging_conf] [line:201] INFO:
-***********************************************
-Sat, 20 Feb 2016 13:21:28 search.py [func:__init__] [line:189] INFO:
-院校库前缀树构建完毕，用时 5.820029020309448 秒.
+Mon, 22 Feb 2016 15:17:36 search.py [func:__init__] [line:230] INFO:
+从mongodb读取院校库完毕，用时 6.508303642272949 秒.
+Mon, 22 Feb 2016 15:17:42 search.py [func:__init__] [line:240] INFO:
+院校库前缀树构建完毕，用时 12.246558904647827 秒.

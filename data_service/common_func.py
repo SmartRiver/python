@@ -3,11 +3,15 @@
 __author__ = 'xiaohe'
 __doc__ = '''this py file is the collection of those functions or methods used in many other modules'''
 
+import time
+import hashlib
+
 def exit_error_func(error_code, error_param=''):
     error_dict = {
 		1: '参数格式错误',
 	    2: '参数内容错误',
 	    3: '程序内部错误',
+	    4: '验证失败',
     }
     return {
 	    'status': 'fail',
@@ -15,9 +19,22 @@ def exit_error_func(error_code, error_param=''):
 	    'msg': error_param,
 	}
 def convert_to_str(input_str):
-    if str(type(input_str)).find('bytes') > 0:
+    if isinstance(input_str, bytes):
         return input_str.decode('utf-8')
     else:
         return input_str
-def token_check(token_string):
-	pass
+
+def md5_token(token_key='dulishuo0306'):
+    now = time.gmtime() # 获取当前UTC统一时间，与时区无关
+
+    year = now.tm_year * 1
+    month = now.tm_mon * 12
+    day = now.tm_mday * 30
+    hour = now.tm_hour * 60
+
+    token_before = token_key+str(year+month+day+hour)
+
+    m = hashlib.md5()
+    m.update(token_before.encode('utf-8'))
+    token = m.hexdigest()[:16]
+    return token

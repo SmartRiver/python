@@ -1,0 +1,4 @@
+'Sun, 21 Feb 2016 23:32:42' test_logging.py [func:<module>] [line:13] INFO:\r\ninfo message
+'Sun, 21 Feb 2016 23:32:42' test_logging.py [func:<module>] [line:14] WARNING:\r\nwarn message
+'Sun, 21 Feb 2016 23:32:42' test_logging.py [func:<module>] [line:15] ERROR:\r\nerror message
+'Sun, 21 Feb 2016 23:32:42' test_logging.py [func:<module>] [line:16] CRITICAL:\r\ncritical message

@@ -1,0 +1,16 @@
+'Mon, 22 Feb 2016 01:22:32' test_logging.py [func:<module>] [line:27] DEBUG: debug message
+'Mon, 22 Feb 2016 01:22:32' test_logging.py [func:<module>] [line:28] INFO: info message
+'Mon, 22 Feb 2016 01:27:49' test_logging.py [func:<module>] [line:29] DEBUG: debug message
+'Mon, 22 Feb 2016 01:27:49' test_logging.py [func:<module>] [line:30] INFO: info message
+'Mon, 22 Feb 2016 01:28:16' test_logging.py [func:<module>] [line:30] DEBUG: debug message
+'Mon, 22 Feb 2016 01:28:16' test_logging.py [func:<module>] [line:31] INFO: info message
+'Mon, 22 Feb 2016 01:29:07' test_logging.py [func:<module>] [line:30] DEBUG: debug message
+'Mon, 22 Feb 2016 01:29:07' test_logging.py [func:<module>] [line:31] INFO: info message
+'Mon, 22 Feb 2016 01:29:36' test_logging.py [func:<module>] [line:30] DEBUG: debug message
+'Mon, 22 Feb 2016 01:29:36' test_logging.py [func:<module>] [line:31] INFO: info message
+'Mon, 22 Feb 2016 01:29:56' test_logging.py [func:<module>] [line:30] DEBUG: debug message
+'Mon, 22 Feb 2016 01:29:56' test_logging.py [func:<module>] [line:31] INFO: info message
+'Mon, 22 Feb 2016 01:31:02' test_logging.py [func:<module>] [line:33] DEBUG: debug message
+'Mon, 22 Feb 2016 01:31:02' test_logging.py [func:<module>] [line:34] INFO: info message
+'Mon, 22 Feb 2016 01:31:10' test_logging.py [func:<module>] [line:33] DEBUG: debug message
+'Mon, 22 Feb 2016 01:31:10' test_logging.py [func:<module>] [line:34] INFO: info message
