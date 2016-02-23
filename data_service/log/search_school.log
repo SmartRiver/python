@@ -13,3 +13,33 @@
 'Tue, 23 Feb 2016 11:38:28' search.py [func:__init__] [line:275] INFO: completing building trie，use time 12.115460 s.
 'Tue, 23 Feb 2016 11:38:28' search.py [func:__init__] [line:276] INFO: ----------initializing successed----------
 'Tue, 23 Feb 2016 11:38:36' service.py [func:get] [line:24] INFO: request uri: /school_search?condition=cai&area=北京&major=哲学
+'Tue, 23 Feb 2016 11:47:11' service.py [func:get] [line:24] INFO: request uri: /school_search?condition=masheng&major=哲学
+'Tue, 23 Feb 2016 11:48:31' service.py [func:__logging_conf] [line:71] INFO: --------completing confuration--------
+'Tue, 23 Feb 2016 11:48:31' service.py [func:<module>] [line:81] INFO: data_service server starting.
+'Tue, 23 Feb 2016 11:48:57' service.py [func:get] [line:24] INFO: request uri: /reload?search_flag=mongodb
+'Tue, 23 Feb 2016 11:48:57' search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+'Tue, 23 Feb 2016 11:48:57' search.py [func:__init__] [line:189] INFO: ----------initializing----------
+'Tue, 23 Feb 2016 11:48:57' search.py [func:__init__] [line:190] INFO: type of reload : mongodb
+'Tue, 23 Feb 2016 11:48:57' search.py [func:__init__] [line:225] INFO: school configuration from mongodb.
+'Tue, 23 Feb 2016 11:48:57' db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+'Tue, 23 Feb 2016 11:48:57' db_util.py [func:get_database] [line:41] INFO: authencation success.
+'Tue, 23 Feb 2016 11:48:57' db_util.py [func:get_database] [line:41] INFO: authencation success.
+'Tue, 23 Feb 2016 11:49:03' search.py [func:__init__] [line:260] INFO: ending reading data from mongodb，use time 6.225259 s.
+'Tue, 23 Feb 2016 11:49:03' search.py [func:__init__] [line:263] INFO: close pymongo connection successed.
+'Tue, 23 Feb 2016 11:49:09' search.py [func:__init__] [line:275] INFO: completing building trie，use time 11.796106 s.
+'Tue, 23 Feb 2016 11:49:09' search.py [func:__init__] [line:276] INFO: ----------initializing successed----------
+'Tue, 23 Feb 2016 11:49:16' service.py [func:get] [line:24] INFO: request uri: /school_search?condition=masheng&major=哲学
+[Tue, 23 Feb 2016 11:50:04] service.py [func:__logging_conf] [line:71] INFO: --------completing confuration--------
+[Tue, 23 Feb 2016 11:50:04] service.py [func:<module>] [line:81] INFO: data_service server starting.
+[Tue, 23 Feb 2016 11:50:07] service.py [func:get] [line:24] INFO: request uri: /reload?search_flag=mongodb
+[Tue, 23 Feb 2016 11:50:07] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 11:50:07] search.py [func:__init__] [line:189] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 11:50:07] search.py [func:__init__] [line:190] INFO: type of reload : mongodb
+[Tue, 23 Feb 2016 11:50:07] search.py [func:__init__] [line:225] INFO: school configuration from mongodb.
+[Tue, 23 Feb 2016 11:50:07] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Tue, 23 Feb 2016 11:50:07] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Tue, 23 Feb 2016 11:50:07] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Tue, 23 Feb 2016 11:50:14] search.py [func:__init__] [line:260] INFO: ending reading data from mongodb，use time 6.774007 s.
+[Tue, 23 Feb 2016 11:50:14] search.py [func:__init__] [line:263] INFO: close pymongo connection successed.
+[Tue, 23 Feb 2016 11:50:20] search.py [func:__init__] [line:275] INFO: completing building trie，use time 12.436718 s.
+[Tue, 23 Feb 2016 11:50:20] search.py [func:__init__] [line:276] INFO: ----------initializing successed----------
