@@ -2,12 +2,27 @@
 
 import pymongo
 from pymongo import MongoClient
+import logging
+import logging.config
 
 __author__ = 'xiaohe'
 __doc__ = '''this py file is the collection of those operation functions or methods used in db'''
 
+
+global db_logger # db logger
+
+'''日志配置'''
+def logging_conf():
+    try:
+        global db_logger
+        logging.config.fileConfig('./conf/logging.conf')
+        db_logger = logging.getLogger('general')
+        db_logger.info('--------completing confuration--------')
+    except Exception as e:
+        print('--------logging configurating failed--------')
+
 class MongoDB():
-    def __init__(self, host, port, username='null', password='null'):
+    def __init__(self, host, port, username=None, password=None):
         #初始化类成员变量
         self.host = host
         self.port = port
@@ -15,16 +30,18 @@ class MongoDB():
         self.password = password
         #建立连接
         self._client_ = MongoClient(self.host, self.port)
+
+        logging_conf()
         
     def get_database(self, db_name):
         self._db_name = self._client_[db_name]
 
         try:
             if self._db_name.authenticate(self.username, self.password, mechanism='SCRAM-SHA-1'):
-                print('验证成功')
+                db_logger.info('authencation success.')
                 return self._db_name
             else:
-                print('用户名/密码/验证方式错误')
+                db_logger.info('authencation failed.')
                 return False
         except:
             return False

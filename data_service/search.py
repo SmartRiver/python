@@ -53,7 +53,7 @@ class SchoolTree(object):
                 'result': node.word+'|'+node.area+'|'+node.university_type,
                 'weight': int(node.weight)
             }
-            results.append(repr(word))
+            results.append(str(word))
         for child in node.childs:
             results.extend(self.preOrder(child))
 
@@ -130,9 +130,9 @@ def __school_sort_by_area(search_result, area=None):
     for each in search_result:
         each = eval(each)
         if each['result'].split('|')[1] == area:
-            result.insert(0, repr(each))
+            result.insert(0, str(each))
         else:
-            result.append(repr(each))
+            result.append(str(each))
     return result
 
 ''' 学校查找'''
@@ -147,8 +147,8 @@ def search_school(condition='general', major=None, area=None):
         global SCHOOL_TRIE
         search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, condition)
     except:
-        search_logger.error('没有正常返回结果')
-        return exit_error_func(3, '参数:'+keyword)
+        search_logger.error('no normal result returns')
+        return exit_error_func(3, 'params:'+condition)
 
     # 去重
     search_result_set = set()
@@ -171,19 +171,23 @@ def search_school(condition='general', major=None, area=None):
         'result': result,
     }
 
-    '''日志配置'''
+'''日志配置'''
 def _logging_conf():
-    global search_logger
-    logging.config.fileConfig('./conf/logging.conf')
-    search_logger = logging.getLogger('general')
-    search_logger.info('--------日志配置完毕------')
+    try:
+        global search_logger
+        logging.config.fileConfig('./conf/logging.conf')
+        search_logger = logging.getLogger('general')
+        search_logger.info('--------logging configurating success--------')
+    except Exception as e:
+        print('--------logging configurating failed--------')
     
-    '''初始化'''
+'''初始化'''
 def __init__(dict_from=None):
+
     start_time = time.time()
     _logging_conf()
-
-    search_logger.info('初始化的类型dict_from : %s' % dict_from)
+    search_logger.info('----------initializing----------')
+    search_logger.info('type of reload : %s' % dict_from)
     try:
         for each in open('resource/school/special_school.txt', 'r', encoding='utf-8').readlines():
             try:
@@ -203,6 +207,7 @@ def __init__(dict_from=None):
         search_logger.error('File resource/school/special_school.txt not found . . . ')
     # 学校库来自配置的文本文件
     if dict_from == 'conf':
+        search_logger.info('school configuration from conf.txt.')
         try:
             for each in open('resource/university_dict.txt', 'r', encoding='utf-8').readlines():
                 try:
@@ -217,9 +222,9 @@ def __init__(dict_from=None):
 
     # 学校库来自mongodb库
     elif dict_from == 'mongodb':
-        print(dict_from)
+        search_logger.info('school configuration from mongodb.')
         try:
-            for each in open('resource/db.conf', 'r', encoding='utf-8').readlines():
+            for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
                 try:
                     each = each.strip('\r').strip('\n')
                     if(each.split('=')[0] == 'mongodb.url'):
@@ -230,40 +235,45 @@ def __init__(dict_from=None):
                         username = each.split('=')[1]
                     if(each.split('=')[0] == 'mongodb.dulishuo.password'):
                         password = each.split('=')[1]
-                except:
+                except Exception as e:
+                    search_logger.error(e)
                     search_logger.error('some line is wrong when read .')
                     search_logger.info('wrong line : %s ', each)
                     return
         except FileNotFoundError:
             search_logger.error('File resource/db.conf not found . . . ')
             return exit_error_func(3)
+        except Exception as e:
+            search_logger.error(e)
+            search_logger.error('configuration failed.')
 
         mongo_client = MongoDB(host=url, port=port, username=username, password=password)
         school_search_collection = mongo_client.get_collection('school', 'dulishuo')
         for each in school_search_collection.find():
             try:
-                UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area']+'|'+repr(each['type']).strip('.0')+'|'+repr(each['weight']))
+                UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area']+'|'+str(each['type']).strip('.0')+'|'+str(each['weight']))
             except TypeError as e:
                 search_logger.error(e)
-                search_logger.error('转化类型错误的行：%s' % each)
+                search_logger.error('wrong line when converting：%s' % each)
 
         school_load_time = time.time()
-        search_logger.info('从mongodb读取院校库完毕，用时 %f 秒.' % (school_load_time-start_time))
+        search_logger.info('ending reading data from mongodb，use time %f s.' % (school_load_time-start_time))
         try:
             mongo_client.close() # 关闭连接
-            search_logger.info('pymongo 关闭连接成功.')
-        except:
-            search_logger.error('pymongo 关闭连接失败.')
+            search_logger.info('close pymongo connection successed.')
+        except Exception as e:
+            search_logger.error('close pymongo connection failed.')
         
     else:
-        search_logger.error('__init__()出错，参数： %s' % dict_from)
+        search_logger.error('initializing failed，wrong params： %s' % dict_from)
         return exit_error_func(2, dict_from)
 
     # 构建学校库的前缀树
     global SCHOOL_TRIE
     SCHOOL_TRIE.setWords(UNIVERSITY_LIST)
     dict_tree_time = time.time()
-    search_logger.info('院校库前缀树构建完毕，用时 %f 秒.' % (dict_tree_time-start_time))
+    search_logger.info('completing building trie，use time %f s.' % (dict_tree_time-start_time))
+    search_logger.info('----------initializing successed----------')
 
 if __name__ == '__main__':
     __init__(dict_from='mongodb')

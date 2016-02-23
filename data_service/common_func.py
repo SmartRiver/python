@@ -12,6 +12,7 @@ def exit_error_func(error_code, error_param=''):
 	    2: '参数内容错误',
 	    3: '程序内部错误',
 	    4: '验证失败',
+        5: '缺失必要参数',
     }
     return {
 	    'status': 'fail',
