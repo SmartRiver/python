@@ -107,53 +107,69 @@ def assess_student(student_info):
         if 'major' in student_info.keys():
             major = student_info['major']
         else:
-            raise Exception('传入的学生信息没有键值"major"，请重新检查学生信息结构'+'\n'+json.dumps(student_info, indent=4))
+            raise Exception('传入的学生信息没有键值"major"，请重新检查学生信息结构')
         if not 'target' in student_info.keys():
-            raise Exception('传入的学生信息没有键值"target"，请重新检查学生信息结构'+'\n'+json.dumps(student_info, indent=4))
+            raise Exception('传入的学生信息没有键值"target"，请重新检查学生信息结构')
         if not 'grade' in student_info.keys():
-            raise Exception('传入的学生信息没有键值"grade"，请重新检查学生信息结构'+'\n'+json.dumps(student_info, indent=4))
+            raise Exception('传入的学生信息没有键值"grade"，请重新检查学生信息结构')
         if not 'data' in student_info.keys():
-            raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构'+'\n'+json.dumps(student_info, indent=4))   
+            raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')   
             
-        #为student_info创建一个副本，保留原始数据
-        student_info_copy = copy.deepcopy(student_info)
-        
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in WEIGHT.keys():
             major = 'general'
         
         #将学生信息中的有效项根据权值映射关系替换为为权值，剔除无效项
-        map_weight(student_info['data'], WEIGHT[major], major)
-        
+        student_weight_data = map_weight(student_info, WEIGHT[major], major)
+
         #根据学生信息的有效项和该专业的运算规则，进行结果计算，并返回结果
-        result = exec_rule(student_info['data'], RULE[major])
-        
+        result = exec_rule(student_weight_data, RULE[major])
+
         #将学生信息中的有效项根据权值映射关系替换为权值最大值
-        fill_with_full(student_info['data'], MAX[major])
-        
+        student_weight_full_data = fill_with_full(copy.deepcopy(student_info['data']), MAX[major])
+
         #获得根据各项权值最大值计算的结果
-        result_full = exec_rule(student_info['data'], RULE[major])
+        result_full = exec_rule(student_weight_full_data, RULE[major])
     except Exception as e:
         return '接口调用失败，错误信息：\n'+str(e)
 
     result['dimension_full'] = result_full['dimension']
     result['result_full'] = result_full['result']
-    result['student_info'] = student_info_copy
-    file = open('output.txt','w',encoding='utf-8')
-    file.write(json.dumps(result, indent=4))
+    result['student_info'] = student_info
     return result
     
-def map_weight(student_data, weight_dict, major):
+def map_weight(student_info, weight_dict, major):
+    student_data = student_info['data']
+    new_student_data = {}
+    new_student_weight_data = {}
+    
+    if not 'gpa' in student_data.keys():
+        raise Exception('学生信息键"data"对应的字典缺少键"gpa"')
+    if not 'school' in student_data['gpa'].keys():
+        raise Exception('学生信息键"data"对应的字典中的键"gpa"对应的字典缺少键"school"')
+    if not student_data['gpa']['school'].count('|') == 2:
+        raise Exception('学生本科学校格式错误')
+    if not student_data['gpa']['school'].split('|')[2] in TRANSLATE.keys():
+        raise Exception('学校类型格式错误，找不到对应的学校类型')
+        
     student_data['gpa']['school'] = TRANSLATE[student_data['gpa']['school'].split('|')[2]]
     for key in weight_dict:
-        if not key.count('_') == 1:
-            raise Exception('权值映射文件'+major+'/weight.csv中的'+key+'结构错误，应该包含一个下划线')
-        main_key = key.split('_')[0]
-        sub_key = key.split('_')[1]
+        main_key = key.split('_')[0] #第一层的键
+        sub_key = key.split('_')[1]  #第二层的键
+        #如果student_data有第一层相应键
         if main_key in student_data:
+            if not main_key in new_student_weight_data: 
+                new_student_weight_data[main_key] = {}
+            if not main_key in new_student_data: 
+                new_student_data[main_key] = {}
+            #如果student_data有第二层相应键
             if sub_key in student_data[main_key]:
+                new_student_data[main_key][sub_key] = student_data[main_key][sub_key]
+                #判断值是否为列表（推荐信）
+                #如果值是列表
                 if isinstance(student_data[main_key][sub_key],list):
                     value_list = student_data[main_key][sub_key]
+                    #列表长度不为零则将三个数相加
                     if not len(value_list) == 0:
                         value = 0
                         for sub_value in value_list:
@@ -164,24 +180,44 @@ def map_weight(student_data, weight_dict, major):
                                 if sub_value < max and sub_value >= min:
                                     value += float(weight_dict[key][value_range][1])
                                     break
-                        student_data[main_key][sub_key] = '%.2f'%value
+                        new_student_weight_data[main_key][sub_key] = '%.2f'%value
+                    #列表长度为零则将reletter的权值设置为0
+                    else:
+                        new_student_weight_data[mian_key][sub_key] = '0'
+                #如果值不是列表
                 else:
+                    #如果值的字符串长度为0
+                    if len(student_data[main_key][sub_key]) == 0:
+                        #设置权值为0
+                        new_student_weight_data[main_key][sub_key] = '0'
+                        break
+                    #如果值的字符串长度不为0
+                    #匹配相应的权值
+                    success = 0
                     for value_range in weight_dict[key]:
                         value = float(student_data[main_key][sub_key])
                         min = float(value_range.split('-')[0])
                         max = float(value_range.split('-')[1])
+                        #如果找到对应的权值
                         if value < max and value >= min:
-                            student_data[main_key][sub_key] = weight_dict[key][value_range][1]
+                            new_student_weight_data[main_key][sub_key] = weight_dict[key][value_range][1]
+                            success = 1
                             break
+                    #如果没有找到相应的值
+                    if success == 0:
+                        raise Exception('学生信息键"data"对应的字典中的键"'+main_key+'"对应的字典的键"'+sub_key+'"的值无法匹配到相应权值')
             else:
-                raise Exception(main_key+'：缺少键值'+sub_key)
+                raise Exception('学生信息键"data"对应的字典中的键"'+main_key+'"对应的字典缺少键"'+sub_key+'"')
         else:
-            raise Exception('缺少键值：'+main_key)
+            raise Exception('学生信息键"data"对应的字典缺少键："'+main_key+'"')
+    student_info['data'] = new_student_data
+    return new_student_weight_data
 
 def fill_with_full(student_data_copy, max):
     for key in max:
         student_data_copy[key.split('_')[0]][key.split('_')[1]] = max[key]
-    
+    return student_data_copy
+
 def exec_rule(student_data, rule_dict):
     student_data_copy = copy.deepcopy(student_data)
     cache_dict = {}  #储存各类运算结果的临时字典
