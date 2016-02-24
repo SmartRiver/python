@@ -1,13 +1,6 @@
 import json
 import assess_student
 from assess_student import assess_student
-import json
-import path_palnning
-from path_palnning import logging_conf
-import logging
-
-logging_conf()
-path_plan_logger.error('xxx')
 
 student_info = {
     "major":"tesol",
@@ -30,4 +23,4 @@ student_info = {
     }
 }
 
-#print(json.dumps(assess_student(student_info), ensure_ascii=False, indent=4))
+print(json.dumps(assess_student(student_info), ensure_ascii=False, indent=4))

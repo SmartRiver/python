@@ -965,3 +965,4 @@
 [Wed, 24 Feb 2016 17:11:33] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
 [Wed, 24 Feb 2016 17:18:20] path_palnning.py [func:_logging_conf] [line:216] INFO: --------logging configurating successed--------
 [Wed, 24 Feb 2016 17:18:55] path_palnning.py [func:logging_conf] [line:216] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 17:27:18] path_palnning.py [func:logging_conf] [line:216] INFO: --------logging configurating successed--------
