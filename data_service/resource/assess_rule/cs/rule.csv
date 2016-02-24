@@ -1,0 +1,79 @@
+#gpa_dimension
+gpa,                   multi,   %gpa_score,45,%gpa_school
+
+#language_dimension
+toefl,                 multi,   20,%toefl_total,%toefl_speaking
+ielts,                 multi,   20,%ielts_total
+language,              max,     %toefl,%ielts
+
+#exam_dimension
+gre_factor,            multi,   %gre_total,%gre_verbal
+exam,                  multi,   20,%gre_factor
+
+#research_dimension
+research_base,         multi,   %research_duration,%research_achievement,%research_level,%research_recommendation
+research_factor,       range,   1.3,     %research_base,   4,100,        1
+research_factor,       range,   1,       %research_base,   3.5,4,        2
+research_factor,       range,   0.9,     %research_base,   3.3,3.5,      3
+research_factor,       range,   0.85,    %research_base,   2.7,3.3,      4
+research_factor,       range,   0.75,    %research_base,   2.5,2.7,      5
+research_factor,       range,   0.6,     %research_base,   2,2.5,        6
+research_factor,       range,   0.5,     %research_base,   1,2,          7
+research_factor,       range,   0,       %research_base,   0,1,          8
+research,              multi,   25,%research_factor
+
+#internship_dimension
+internship_base,       multi,   %internship_duration,%internship_level,%internship_recommendation
+internship_factor,     range,   1.3,     %internship_base,  4,100,        1
+internship_factor,     range,   1,       %internship_base,  3.5,4,        2
+internship_factor,     range,   0.9,     %internship_base,  3.3,3.5,      3
+internship_factor,     range,   0.85,    %internship_base,  2.7,3.3,      4
+internship_factor,     range,   0.75,    %internship_base,  2.5,2.7,      5
+internship_factor,     range,   0.6,     %internship_base,  2,2.5,        6
+internship_factor,     range,   0.5,     %internship_base,  1,2,          7
+internship_factor,     range,   0,       %internship_base,  0,1,          8
+internship,            multi,   25,%internship_factor
+
+#activity
+activity_base,         multi,   %activity_duration,%activity_type
+activity_factor,       range,   1.3,      %activity_base,    1.35,100,    1
+activity_factor,       range,   1.15,     %activity_base,    1.2,1.35,    2
+activity_factor,       range,   1,        %activity_base,    1.0,1.2,     3
+activity_factor,       range,   0.95,     %activity_base,    1.0,0.9,     4
+activity_factor,       range,   0.8,      %activity_base,    0,0.9,       5
+activity,              multi,   20,%activity_factor
+
+#competition
+competition,           multi,   10,%competition_level
+
+#scholarship
+scholarship,           multi,   5,%scholarship_level
+
+#reletter
+reletter,              multi,   5,%reletter_level
+
+#result
+result,                sum,     %language,%gpa,%activity,%internship,%research,%competition,%scholarship,%exam,%reletter
+
+#level
+level,                 range,   1,       %result,          159.1,1000,      1
+level,                 range,   2,       %result,          146.1,159.1,     2
+level,                 range,   3,       %result,          140.1,146.1,     3
+level,                 range,   4,       %result,          120.1,140.1,     4
+level,                 range,   5,       %result,          110.1,120.1,     5
+level,                 range,   6,       %result,          102.6,110.1,     6
+level,                 range,   7,       %result,          95.1,102.6,      7
+level,                 range,   8,       %result,          90.1,95.1,       8
+level,                 range,   9,       %result,          70,90.1,         9
+level,                 range,   10,       %result,          0,70,           10
+
+#维度标识 计算规则为sum
+gpa_dimension,          dimension,        %gpa
+exam_dimension,         dimension,        %exam
+activity_dimension,     dimension,        %activity
+research_dimension,     dimension,        %research
+language_dimension,     dimension,        %language
+internship_dimension,   dimension,        %internship
+scholarship_dimension,  dimension,        %scholarship
+reletter_dimension,     dimension,        %reletter
+competition_dimension,  dimension,        %competition

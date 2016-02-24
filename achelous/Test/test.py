@@ -4,6 +4,8 @@ import sys
 import jieba
 import hashlib
 import time
+import urllib
+
 
 
 
@@ -55,48 +57,20 @@ def md5_check(token_key='dulishuo0306'):
     m.update(token_before.encode('utf-8'))
     return m.hexdigest()[:16]
 
-def fff(tt):
-    tt[0] = 'b'
-    
+def fff():
+    global aa
+    aa = 6
+    print(aa)
+    print('-----')
 
+def aaa():
+    fff()
+    print(aa)
+
+aa = None
 if __name__ == '__main__':
-    
-    aa = {'a', 'a', 'd', 'c'}
 
-    bb = {'e', 'f'}
+    aa = 3
 
-    cc = {
-        'area':'jx',
-        'id':2
-    }
-
-    dd = {
-        'area':'jx',
-        'id':3
-    }
-
-
-    bb.add(repr(cc))
-    bb.add(repr(cc))
-    bb.add(repr(dd))
-
-    
-
-
-
-    d = {'a':2, 'b':23, 'c':5, 'd':17, 'e':1}
-    print(type(d))
-    d2 = sorted(d.items(), key=lambda dddd:dddd[1], reverse=True)
-    for each in d2:
-        print(each[0])
-
-    aaa = 6.0
-    print(type(str(aaa)))
-
-    ddd = None
-    print(type(ddd))
-    if isinstance(ddd, NoneType):
-        print(type(ddd))
-    
-
-
+    if aa in []:
+        print(aa)

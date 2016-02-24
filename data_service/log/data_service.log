@@ -1,0 +1,967 @@
+[Tue, 23 Feb 2016 17:44:45] path_palnning.py [func:_logging_conf] [line:24] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 17:44:45] path_palnning.py [func:init] [line:32] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 17:46:41] path_palnning.py [func:_logging_conf] [line:25] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 17:46:41] path_palnning.py [func:init] [line:34] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 17:47:37] path_palnning.py [func:_logging_conf] [line:25] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 17:47:37] path_palnning.py [func:init] [line:34] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 17:48:22] path_palnning.py [func:_logging_conf] [line:25] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 17:48:22] path_palnning.py [func:init] [line:34] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:_logging_conf] [line:25] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:34] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大一上
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,2
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,3.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大一下
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,2
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,3.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大二上
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,3.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,2
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大二下
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,2
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,3.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大三上
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,3.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,2
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大三下
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,3.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,2
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大四上
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,3.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: #大四下
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gpa,5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: ielts/toefl,1
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: gre/gmat,0.9
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: research,4
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: internship,4.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: activity,2
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: scholarship,3
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: competition,2.5
+
+[Tue, 23 Feb 2016 17:51:09] path_palnning.py [func:init] [line:42] INFO: credential,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:_logging_conf] [line:25] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:34] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大一上
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,2
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大一下
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,2
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大二上
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,2
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大二下
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,2
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大三上
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,2
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大三下
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,2
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大四上
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,3.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: #大四下
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gpa,5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: ielts/toefl,1
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: gre/gmat,0.9
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: research,4
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: internship,4.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: activity,2
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: scholarship,3
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: competition,2.5
+[Tue, 23 Feb 2016 17:52:52] path_palnning.py [func:init] [line:43] INFO: credential,3.5
+[Tue, 23 Feb 2016 18:23:32] path_palnning.py [func:_logging_conf] [line:26] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 18:23:32] path_palnning.py [func:init] [line:35] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 18:25:08] path_palnning.py [func:_logging_conf] [line:26] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 18:25:08] path_palnning.py [func:init] [line:35] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 18:27:56] path_palnning.py [func:_logging_conf] [line:26] INFO: --------logging configurating success--------
+[Tue, 23 Feb 2016 18:27:56] path_palnning.py [func:init] [line:35] INFO: ----------initializing----------
+[Tue, 23 Feb 2016 19:22:22] path_palnning.py [func:_logging_conf] [line:60] INFO: --------logging configurating successed--------
+[Tue, 23 Feb 2016 19:22:22] path_palnning.py [func:init] [line:69] INFO: [starting] ----------initializing----------
+[Tue, 23 Feb 2016 19:22:22] path_palnning.py [func:init] [line:71] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Tue, 23 Feb 2016 19:22:22] path_palnning.py [func:init] [line:82] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Tue, 23 Feb 2016 19:22:22] path_palnning.py [func:init] [line:84] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Tue, 23 Feb 2016 19:22:22] path_palnning.py [func:init] [line:101] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Tue, 23 Feb 2016 19:22:22] path_palnning.py [func:init] [line:103] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:21:42] path_palnning.py [func:_logging_conf] [line:158] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:21:42] path_palnning.py [func:init] [line:167] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:21:42] path_palnning.py [func:init] [line:169] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:21:42] path_palnning.py [func:init] [line:180] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:21:42] path_palnning.py [func:init] [line:182] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:23:13] path_palnning.py [func:_logging_conf] [line:158] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:23:13] path_palnning.py [func:init] [line:167] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:23:13] path_palnning.py [func:init] [line:169] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:23:13] path_palnning.py [func:init] [line:180] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:23:13] path_palnning.py [func:init] [line:182] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:23:13] path_palnning.py [func:init] [line:199] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:23:13] path_palnning.py [func:init] [line:201] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:31:48] path_palnning.py [func:_logging_conf] [line:160] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:31:48] path_palnning.py [func:init] [line:169] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:31:48] path_palnning.py [func:init] [line:171] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:31:48] path_palnning.py [func:init] [line:182] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:31:48] path_palnning.py [func:init] [line:184] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:31:48] path_palnning.py [func:init] [line:201] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:31:48] path_palnning.py [func:init] [line:203] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:34:28] path_palnning.py [func:_logging_conf] [line:161] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:34:28] path_palnning.py [func:init] [line:170] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:34:28] path_palnning.py [func:init] [line:172] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:34:28] path_palnning.py [func:init] [line:183] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:34:28] path_palnning.py [func:init] [line:185] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:34:28] path_palnning.py [func:init] [line:202] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:34:28] path_palnning.py [func:init] [line:204] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:34:57] path_palnning.py [func:_logging_conf] [line:162] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:34:57] path_palnning.py [func:init] [line:171] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:34:57] path_palnning.py [func:init] [line:173] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:34:57] path_palnning.py [func:init] [line:184] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:34:57] path_palnning.py [func:init] [line:186] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:34:57] path_palnning.py [func:init] [line:203] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:34:57] path_palnning.py [func:init] [line:205] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:36:20] path_palnning.py [func:_logging_conf] [line:162] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:36:20] path_palnning.py [func:init] [line:171] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:36:20] path_palnning.py [func:init] [line:173] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:36:20] path_palnning.py [func:init] [line:184] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:36:20] path_palnning.py [func:init] [line:186] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:36:20] path_palnning.py [func:init] [line:203] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:36:20] path_palnning.py [func:init] [line:205] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:36:32] path_palnning.py [func:_logging_conf] [line:163] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:36:32] path_palnning.py [func:init] [line:172] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:36:32] path_palnning.py [func:init] [line:174] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:36:32] path_palnning.py [func:init] [line:185] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:36:32] path_palnning.py [func:init] [line:187] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:36:32] path_palnning.py [func:init] [line:204] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:36:32] path_palnning.py [func:init] [line:206] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:_logging_conf] [line:163] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:init] [line:172] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:init] [line:174] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:init] [line:185] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:init] [line:187] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:init] [line:204] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:init] [line:206] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:38:56] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:_logging_conf] [line:163] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:init] [line:172] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:init] [line:174] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:init] [line:185] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:init] [line:187] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:init] [line:204] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:init] [line:206] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:40:59] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:_logging_conf] [line:164] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:init] [line:173] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:init] [line:175] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:init] [line:186] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:init] [line:188] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:init] [line:205] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:init] [line:207] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:43:05] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:_logging_conf] [line:168] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:init] [line:177] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:init] [line:179] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:init] [line:190] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:init] [line:192] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:init] [line:209] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:init] [line:211] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:45:17] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:_logging_conf] [line:169] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:init] [line:178] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:init] [line:180] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:init] [line:191] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:init] [line:193] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:init] [line:210] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:init] [line:212] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:45:42] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:_logging_conf] [line:169] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:init] [line:178] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:init] [line:180] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:init] [line:191] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:init] [line:193] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:init] [line:210] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:init] [line:212] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:46:43] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:_logging_conf] [line:171] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:init] [line:180] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:init] [line:182] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:init] [line:193] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:init] [line:195] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:init] [line:212] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:init] [line:214] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:49:41] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:_logging_conf] [line:174] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:init] [line:183] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:init] [line:185] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:init] [line:196] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:init] [line:198] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:init] [line:215] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:init] [line:217] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:51:27] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:_logging_conf] [line:174] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:init] [line:183] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:init] [line:185] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:init] [line:196] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:init] [line:198] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:init] [line:215] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:init] [line:217] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:51:59] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:_logging_conf] [line:172] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:init] [line:181] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:init] [line:183] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:init] [line:194] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:init] [line:196] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:init] [line:213] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:init] [line:215] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:52:30] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:_logging_conf] [line:172] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:init] [line:181] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:init] [line:183] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:init] [line:194] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:init] [line:196] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:init] [line:213] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:init] [line:215] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:53:23] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:_logging_conf] [line:172] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:init] [line:181] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:init] [line:183] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:init] [line:194] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:init] [line:196] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:init] [line:213] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:init] [line:215] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:57:05] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:_logging_conf] [line:172] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:init] [line:181] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:init] [line:183] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:init] [line:194] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:init] [line:196] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:init] [line:213] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:init] [line:215] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 10:57:32] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : gre
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:_logging_conf] [line:175] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:init] [line:184] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:init] [line:186] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:init] [line:197] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:init] [line:199] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:init] [line:216] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:init] [line:218] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 11:00:58] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : none
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:_logging_conf] [line:184] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:init] [line:193] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:init] [line:195] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:init] [line:206] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:init] [line:208] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:init] [line:225] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:init] [line:227] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 11:09:10] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : none
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:_logging_conf] [line:184] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:init] [line:193] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:init] [line:195] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:init] [line:206] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:init] [line:208] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:init] [line:225] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:init] [line:227] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 11:09:35] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : none
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:_logging_conf] [line:184] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:init] [line:193] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:init] [line:195] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:init] [line:206] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:init] [line:208] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:init] [line:225] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:init] [line:227] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 11:12:21] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : none
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:_logging_conf] [line:184] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:init] [line:193] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:init] [line:195] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:init] [line:206] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:init] [line:208] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:init] [line:225] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:init] [line:227] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 11:13:37] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : none
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:_logging_conf] [line:184] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:init] [line:193] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:init] [line:195] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:init] [line:206] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:init] [line:208] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:init] [line:225] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:init] [line:227] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:path_planning] [line:56] INFO: language_type : ielts
+[Wed, 24 Feb 2016 11:16:09] path_palnning.py [func:path_planning] [line:64] INFO: exam_type : none
+[Wed, 24 Feb 2016 13:48:38] path_palnning.py [func:_logging_conf] [line:183] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 13:48:38] path_palnning.py [func:init] [line:192] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 13:48:38] path_palnning.py [func:init] [line:195] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:49:01] path_palnning.py [func:_logging_conf] [line:183] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 13:49:01] path_palnning.py [func:init] [line:192] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 13:49:01] path_palnning.py [func:init] [line:195] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:_logging_conf] [line:183] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:192] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:195] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:209] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:212] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:223] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:226] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:243] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:init] [line:245] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:path_planning] [line:54] INFO: language_type : ielts
+[Wed, 24 Feb 2016 13:49:32] path_palnning.py [func:path_planning] [line:62] INFO: exam_type : none
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:_logging_conf] [line:184] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:193] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:196] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:210] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:213] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:224] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:227] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:244] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:init] [line:246] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:path_planning] [line:54] INFO: language_type : ielts
+[Wed, 24 Feb 2016 13:51:44] path_palnning.py [func:path_planning] [line:62] INFO: exam_type : none
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:_logging_conf] [line:186] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:195] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:198] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:212] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:215] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:226] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:229] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:246] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:init] [line:248] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:path_planning] [line:54] INFO: language_type : ielts
+[Wed, 24 Feb 2016 13:54:26] path_palnning.py [func:path_planning] [line:62] INFO: exam_type : none
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:_logging_conf] [line:187] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:196] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:199] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:213] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:216] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:227] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:230] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:247] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:init] [line:249] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:path_planning] [line:54] INFO: language_type : ielts
+[Wed, 24 Feb 2016 13:56:10] path_palnning.py [func:path_planning] [line:62] INFO: exam_type : none
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:_logging_conf] [line:190] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:199] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:202] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:216] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:219] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:230] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:233] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:250] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:init] [line:252] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:path_planning] [line:54] INFO: language_type : ielts
+[Wed, 24 Feb 2016 13:57:13] path_palnning.py [func:path_planning] [line:62] INFO: exam_type : none
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:_logging_conf] [line:191] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:200] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:203] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:211] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:214] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:225] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:228] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:245] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:init] [line:247] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:path_planning] [line:55] INFO: language_type : ielts
+[Wed, 24 Feb 2016 14:36:54] path_palnning.py [func:path_planning] [line:63] INFO: exam_type : none
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:_logging_conf] [line:199] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:208] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:211] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:219] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:222] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:233] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:236] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:253] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:init] [line:255] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:path_planning] [line:55] INFO: language_type : ielts
+[Wed, 24 Feb 2016 14:50:13] path_palnning.py [func:path_planning] [line:63] INFO: exam_type : none
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:_logging_conf] [line:199] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:208] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:211] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:219] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:222] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:233] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:236] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:253] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:init] [line:255] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:path_planning] [line:55] INFO: language_type : ielts
+[Wed, 24 Feb 2016 14:51:32] path_palnning.py [func:path_planning] [line:63] INFO: exam_type : gmat
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:_logging_conf] [line:199] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:208] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:211] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:219] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:222] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:233] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:236] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:253] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:init] [line:255] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:path_planning] [line:55] INFO: language_type : ielts
+[Wed, 24 Feb 2016 14:51:49] path_palnning.py [func:path_planning] [line:63] INFO: exam_type : gmat
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:_logging_conf] [line:199] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:208] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:211] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:219] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:222] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:233] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:236] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:253] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:init] [line:255] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:path_planning] [line:55] INFO: language_type : toefl
+[Wed, 24 Feb 2016 14:52:18] path_palnning.py [func:path_planning] [line:63] INFO: exam_type : gre
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:_logging_conf] [line:199] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:208] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:211] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:219] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:222] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:233] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:236] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:253] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:init] [line:255] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:path_planning] [line:55] INFO: language_type : toefl
+[Wed, 24 Feb 2016 14:52:38] path_palnning.py [func:path_planning] [line:63] INFO: exam_type : gre
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:_logging_conf] [line:199] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:208] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:211] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:219] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:222] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:233] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:236] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:253] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:init] [line:255] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:path_planning] [line:55] INFO: language_type : toefl
+[Wed, 24 Feb 2016 14:55:39] path_palnning.py [func:path_planning] [line:63] INFO: exam_type : gre
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:_logging_conf] [line:200] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:init] [line:209] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:init] [line:212] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:init] [line:220] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:init] [line:223] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:init] [line:234] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:init] [line:237] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 15:55:54] path_palnning.py [func:init] [line:254] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 15:55:54] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 15:55:54] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 15:55:54] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:_logging_conf] [line:200] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:init] [line:209] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:init] [line:212] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:init] [line:220] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:init] [line:223] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:init] [line:234] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:init] [line:237] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 15:56:12] path_palnning.py [func:init] [line:254] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 15:56:12] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 15:56:13] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 15:56:13] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 15:56:13] path_palnning.py [func:init] [line:293] INFO: ending reading data from mongodb，use time 0.579839 s.
+[Wed, 24 Feb 2016 15:56:13] path_palnning.py [func:init] [line:296] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 15:56:13] path_palnning.py [func:init] [line:300] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:_logging_conf] [line:200] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:209] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:212] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:220] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:223] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:234] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:237] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:254] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 15:59:46] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 15:59:46] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 15:59:46] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:293] INFO: ending reading data from mongodb，use time 0.618647 s.
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:296] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 15:59:46] path_palnning.py [func:init] [line:300] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:_logging_conf] [line:200] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:init] [line:209] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:init] [line:212] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:init] [line:220] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:init] [line:223] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:init] [line:234] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:init] [line:237] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:00:48] path_palnning.py [func:init] [line:254] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:00:48] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:00:48] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:00:48] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:00:49] path_palnning.py [func:init] [line:293] INFO: ending reading data from mongodb，use time 0.841238 s.
+[Wed, 24 Feb 2016 16:00:49] path_palnning.py [func:init] [line:296] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:00:49] path_palnning.py [func:init] [line:300] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:_logging_conf] [line:201] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:init] [line:210] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:init] [line:213] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:init] [line:221] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:init] [line:224] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:init] [line:235] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:init] [line:238] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:15:05] path_palnning.py [func:init] [line:255] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:15:05] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:15:05] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:15:05] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:15:06] path_palnning.py [func:init] [line:301] INFO: ending reading data from mongodb，use time 0.693844 s.
+[Wed, 24 Feb 2016 16:15:06] path_palnning.py [func:init] [line:304] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:15:06] path_palnning.py [func:init] [line:308] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:_logging_conf] [line:201] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:210] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:213] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:221] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:224] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:235] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:238] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:255] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:15:33] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:15:33] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:15:33] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:301] INFO: ending reading data from mongodb，use time 0.693844 s.
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:304] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:15:33] path_palnning.py [func:init] [line:308] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:_logging_conf] [line:215] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:224] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:227] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:235] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:238] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:249] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:252] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:269] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:22:14] path_palnning.py [func:init] [line:272] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:22:14] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:22:14] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:22:14] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:22:15] path_palnning.py [func:init] [line:317] INFO: [successed] ending reading data from mongodb，use time 0.829174 s.
+[Wed, 24 Feb 2016 16:22:15] path_palnning.py [func:init] [line:320] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:22:15] path_palnning.py [func:init] [line:324] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:22:15] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:22:15] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:_logging_conf] [line:215] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:224] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:227] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:235] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:238] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:249] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:252] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:269] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:25:24] path_palnning.py [func:init] [line:272] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:25:24] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:25:24] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:25:24] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:25:25] path_palnning.py [func:init] [line:317] INFO: [successed] ending reading data from mongodb，use time 0.685827 s.
+[Wed, 24 Feb 2016 16:25:25] path_palnning.py [func:init] [line:320] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:25:25] path_palnning.py [func:init] [line:324] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:25:25] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:25:25] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:_logging_conf] [line:215] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:224] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:227] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:235] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:238] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:249] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:252] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:269] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:27:00] path_palnning.py [func:init] [line:272] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:27:00] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:27:00] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:27:00] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:27:01] path_palnning.py [func:init] [line:317] INFO: [successed] ending reading data from mongodb，use time 0.756982 s.
+[Wed, 24 Feb 2016 16:27:01] path_palnning.py [func:init] [line:320] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:27:01] path_palnning.py [func:init] [line:324] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:27:01] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:27:01] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:_logging_conf] [line:215] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:224] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:227] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:235] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:238] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:249] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:252] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:269] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:28:04] path_palnning.py [func:init] [line:272] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:28:04] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:28:04] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:28:04] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:28:05] path_palnning.py [func:init] [line:317] INFO: [successed] ending reading data from mongodb，use time 1.281408 s.
+[Wed, 24 Feb 2016 16:28:05] path_palnning.py [func:init] [line:320] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:28:05] path_palnning.py [func:init] [line:324] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:28:05] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:28:05] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:_logging_conf] [line:215] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:224] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:227] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:235] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:238] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:249] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:252] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:269] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:28:32] path_palnning.py [func:init] [line:272] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:28:32] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:28:32] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:28:32] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:28:33] path_palnning.py [func:init] [line:317] INFO: [successed] ending reading data from mongodb，use time 1.639360 s.
+[Wed, 24 Feb 2016 16:28:33] path_palnning.py [func:init] [line:320] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:28:33] path_palnning.py [func:init] [line:324] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:28:33] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:28:33] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:_logging_conf] [line:220] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:229] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:232] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:240] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:243] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:254] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:257] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:274] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:34:02] path_palnning.py [func:init] [line:277] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:34:02] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:34:02] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:34:02] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:34:03] path_palnning.py [func:init] [line:322] INFO: [successed] ending reading data from mongodb，use time 0.656718 s.
+[Wed, 24 Feb 2016 16:34:03] path_palnning.py [func:init] [line:325] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:34:03] path_palnning.py [func:init] [line:329] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:34:03] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:34:03] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:_logging_conf] [line:222] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:231] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:234] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:242] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:245] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:256] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:259] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:276] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:34:59] path_palnning.py [func:init] [line:279] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:34:59] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:34:59] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:34:59] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:35:00] path_palnning.py [func:init] [line:324] INFO: [successed] ending reading data from mongodb，use time 1.342684 s.
+[Wed, 24 Feb 2016 16:35:00] path_palnning.py [func:init] [line:327] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:35:00] path_palnning.py [func:init] [line:331] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:35:00] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:35:00] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:_logging_conf] [line:222] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:231] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:234] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:242] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:245] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:256] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:259] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:276] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:35:31] path_palnning.py [func:init] [line:279] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:35:31] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:35:31] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:35:31] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:35:32] path_palnning.py [func:init] [line:324] INFO: [successed] ending reading data from mongodb，use time 0.654735 s.
+[Wed, 24 Feb 2016 16:35:32] path_palnning.py [func:init] [line:327] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:35:32] path_palnning.py [func:init] [line:331] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:35:32] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:35:32] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:_logging_conf] [line:222] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:231] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:234] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:242] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:245] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:256] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:259] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:276] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:279] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:35:58] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:35:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:35:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:324] INFO: [successed] ending reading data from mongodb，use time 0.807144 s.
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:327] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:init] [line:331] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:35:58] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:_logging_conf] [line:222] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:231] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:234] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:242] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:245] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:256] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:259] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:276] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:37:00] path_palnning.py [func:init] [line:279] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:37:00] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:37:00] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:37:00] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:37:01] path_palnning.py [func:init] [line:324] INFO: [successed] ending reading data from mongodb，use time 0.844216 s.
+[Wed, 24 Feb 2016 16:37:01] path_palnning.py [func:init] [line:327] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:37:01] path_palnning.py [func:init] [line:331] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:37:01] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:37:01] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:_logging_conf] [line:216] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:225] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:228] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:236] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:239] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:250] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:253] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:270] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 16:53:56] path_palnning.py [func:init] [line:273] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 16:53:56] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 16:53:56] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:53:56] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 16:53:57] path_palnning.py [func:init] [line:318] INFO: [successed] ending reading data from mongodb，use time 0.838217 s.
+[Wed, 24 Feb 2016 16:53:57] path_palnning.py [func:init] [line:321] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 16:53:57] path_palnning.py [func:init] [line:325] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 16:53:57] path_palnning.py [func:path_planning] [line:57] INFO: language_type : toefl
+[Wed, 24 Feb 2016 16:53:57] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:_logging_conf] [line:215] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:224] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:227] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:235] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:238] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:249] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:252] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:269] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:07:58] path_palnning.py [func:init] [line:272] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 17:07:58] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 17:07:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:07:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:08:00] path_palnning.py [func:init] [line:317] INFO: [successed] ending reading data from mongodb，use time 1.559771 s.
+[Wed, 24 Feb 2016 17:08:00] path_palnning.py [func:init] [line:320] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 17:08:00] path_palnning.py [func:init] [line:324] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:_logging_conf] [line:215] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:224] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:227] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:235] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:238] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:249] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:252] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:269] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:09:12] path_palnning.py [func:init] [line:272] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 17:09:12] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 17:09:13] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:09:13] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:09:13] path_palnning.py [func:init] [line:317] INFO: [successed] ending reading data from mongodb，use time 0.985650 s.
+[Wed, 24 Feb 2016 17:09:13] path_palnning.py [func:init] [line:320] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 17:09:13] path_palnning.py [func:init] [line:324] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:_logging_conf] [line:214] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:223] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:226] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:234] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:237] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:248] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:251] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:268] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:09:32] path_palnning.py [func:init] [line:271] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 17:09:33] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 17:09:34] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:09:34] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:09:35] path_palnning.py [func:init] [line:316] INFO: [successed] ending reading data from mongodb，use time 2.546772 s.
+[Wed, 24 Feb 2016 17:09:35] path_palnning.py [func:init] [line:319] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 17:09:35] path_palnning.py [func:init] [line:323] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:_logging_conf] [line:216] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:225] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:228] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:236] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:239] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:250] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:253] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:270] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:273] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 17:10:59] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 17:10:59] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:10:59] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:318] INFO: [successed] ending reading data from mongodb，use time 0.810154 s.
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:321] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 17:10:59] path_palnning.py [func:init] [line:325] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:_logging_conf] [line:216] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:225] INFO: [starting] ----------initializing----------
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:228] INFO: [starting] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:236] INFO: [successed] loading NODE ID into dict . . . 
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:239] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:250] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:253] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:270] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Wed, 24 Feb 2016 17:11:31] path_palnning.py [func:init] [line:273] INFO: [starting] loading product information from mongodb . . . 
+[Wed, 24 Feb 2016 17:11:31] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Wed, 24 Feb 2016 17:11:31] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:11:31] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Wed, 24 Feb 2016 17:11:33] path_palnning.py [func:init] [line:318] INFO: [successed] ending reading data from mongodb，use time 1.645388 s.
+[Wed, 24 Feb 2016 17:11:33] path_palnning.py [func:init] [line:321] INFO: close pymongo connection successed.
+[Wed, 24 Feb 2016 17:11:33] path_palnning.py [func:init] [line:325] INFO: [successed] ----------initializing----------
+[Wed, 24 Feb 2016 17:11:33] path_palnning.py [func:path_planning] [line:57] INFO: language_type : ielts
+[Wed, 24 Feb 2016 17:11:33] path_palnning.py [func:path_planning] [line:65] INFO: exam_type : gre
+[Wed, 24 Feb 2016 17:18:20] path_palnning.py [func:_logging_conf] [line:216] INFO: --------logging configurating successed--------
+[Wed, 24 Feb 2016 17:18:55] path_palnning.py [func:logging_conf] [line:216] INFO: --------logging configurating successed--------

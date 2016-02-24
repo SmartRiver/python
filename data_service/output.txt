@@ -1,0 +1,95 @@
+{
+    "dimension": {
+        "internship_dimension": "26.00",
+        "gpa_dimension": "17.55",
+        "scholarship_dimension": "4.50",
+        "exam_dimension": "10.00",
+        "language_dimension": "40.00"
+    },
+    "result": "98.05",
+    "exam_type": "gre",
+    "dimension_full": {
+        "internship_dimension": "26.00",
+        "gpa_dimension": "50.70",
+        "scholarship_dimension": "5.50",
+        "exam_dimension": "26.00",
+        "language_dimension": "72.00"
+    },
+    "level": "2",
+    "language_type": "ielts",
+    "student_info": {
+        "data": {
+            "gmat": {
+                "maths": "12",
+                "writing": "3",
+                "verbal": "12",
+                "total": "300"
+            },
+            "reletter": {
+                "level": [
+                    "1",
+                    "2",
+                    "3"
+                ]
+            },
+            "internship": {
+                "recommendation": "1",
+                "duration": "1",
+                "level": "1"
+            },
+            "gpa": {
+                "score": "3.2",
+                "school": "\u534e\u4e2d\u79d1\u6280\u5927\u5b66|\u6e56\u5317|985",
+                "trend": "2"
+            },
+            "work": {
+                "recommendation": "1",
+                "duration": "1",
+                "level": "1"
+            },
+            "scholarship": {
+                "level": "2"
+            },
+            "ielts": {
+                "writing": "3",
+                "speaking": "12",
+                "total": "7",
+                "listening": "12",
+                "reading": "12"
+            },
+            "research": {
+                "recommendation": "1",
+                "achievement": "1",
+                "duration": "1",
+                "level": "1"
+            },
+            "competition": {
+                "level": "2"
+            },
+            "gre": {
+                "maths": "12",
+                "writing": "4",
+                "verbal": "12",
+                "total": "300"
+            },
+            "activity": {
+                "type": "1",
+                "duration": "1"
+            },
+            "credential": {
+                "level": "2"
+            },
+            "toefl": {
+                "writing": "3",
+                "speaking": "12",
+                "total": "110",
+                "listening": "12",
+                "reading": "12"
+            }
+        },
+        "major": "tesol",
+        "target": "1",
+        "grade": "1"
+    },
+    "result_full": "180.20"
+}
