@@ -22,12 +22,13 @@ def logging_conf():
         print('--------logging configurating failed--------')
 
 class MongoDB():
-    def __init__(self, host, port, username=None, password=None):
+    def __init__(self, host, port, username=None, password=None, is_auth=False):
         #初始化类成员变量
         self.host = host
         self.port = port
         self.username = username
         self.password = password
+        self.is_auth = is_auth
         #建立连接
         self._client_ = MongoClient(self.host, self.port)
 
@@ -35,16 +36,18 @@ class MongoDB():
         
     def get_database(self, db_name):
         self._db_name = self._client_[db_name]
-
-        try:
-            if self._db_name.authenticate(self.username, self.password, mechanism='SCRAM-SHA-1'):
-                db_logger.info('authencation success.')
-                return self._db_name
-            else:
-                db_logger.info('authencation failed.')
+        if self.is_auth:
+            try:
+                if self._db_name.authenticate(self.username, self.password, mechanism='SCRAM-SHA-1'):
+                    db_logger.info('authencation success.')
+                    return self._db_name
+                else:
+                    db_logger.info('authencation failed.')
+                    return False
+            except:
                 return False
-        except:
-            return False
+        else:
+            return self._db_name
 
 
     def get_collection(self, collection_name, db_name=None):
@@ -62,22 +65,3 @@ class MongoDB():
         return self._collection_.insert_one(document).inserted_id
     def close(self):
         self._client_.close()
-
-if __name__ == '__main__':
-    # _logging_conf()
-    # __init__()
-    # keyword = 'h'
-    # province = 'USA'
-    # print(json.dumps(search_school(keyword, province), ensure_ascii=False, indent=4))
-
-    mon = MongoDB('123.57.250.189',27017,'gfulishuo','Dulishuo123')
-    #mon = MongoDB('123.57.250.189',27017)
-    dd = mon.get_collection('institute','dulishuo')
-    if dd == False:
-        print(dd)
-        exit(-1)
-    print(dd.find_one({'ttitle':'哈佛大学'}))
-    #mon =   MongoDB()
-    #print(mon.get_database('jianzhi'))
-    #coll = mon.get_collection('test', 'test')
-    #print(coll.find_one({'name': 'tim'}))

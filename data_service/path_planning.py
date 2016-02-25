@@ -284,7 +284,7 @@ def init():
         path_plan_logger.error(e)
         path_plan_logger.error('configuration failed.')
 
-    mongo_client = MongoDB(host=url, port=port, username=username, password=password)
+    mongo_client = MongoDB(host=url, port=port, username=username, password=password, is_auth=True)
     product_collection = mongo_client.get_collection('product', 'dulishuo')
     for each in product_collection.find():
         try:

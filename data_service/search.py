@@ -247,7 +247,7 @@ def init(dict_from='mongodb'):
             search_logger.error(e)
             search_logger.error('configuration failed.')
 
-        mongo_client = MongoDB(host=url, port=port, username=username, password=password)
+        mongo_client = MongoDB(host=url, port=port, username=username, password=password, is_auth=True)
         school_search_collection = mongo_client.get_collection('school', 'dulishuo')
         for each in school_search_collection.find():
             try:

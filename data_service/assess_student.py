@@ -18,7 +18,6 @@ def init():
     dirs = os.walk('resource'+os.sep+'assess_rule')
     for root, path, files in dirs:
         for file in files:
-            print(root)
             if not major == root.split(os.sep)[-1]:
                 major = root.split(os.sep)[-1]
                 #将所有专业的配置文件载入
