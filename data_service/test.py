@@ -8,7 +8,7 @@ import json
 import logging
 
 student_info = {
-    "major":"teso",
+    "major":"cs",
     "grade":"1",
     "target":"1",
     "data":{
