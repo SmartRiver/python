@@ -116,9 +116,6 @@ def assess(student_info):
         if not 'data' in student_info.keys():
             raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')
         
-       # if not len(student_info['target']) == 1:
-        #    student_info['target'] = handle(student_info['target'])
-        
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in WEIGHT.keys():
             major = 'general'
