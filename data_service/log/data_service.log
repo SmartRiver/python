@@ -3471,3 +3471,5 @@
 [Thu, 25 Feb 2016 13:18:35] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.086075 s.
 [Thu, 25 Feb 2016 13:18:35] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
 [Thu, 25 Feb 2016 13:18:35] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Thu, 25 Feb 2016 13:32:59] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=财经
+[Thu, 25 Feb 2016 13:32:59] service.py [func:get] [line:29] INFO: request IP: 123.116.123.1
