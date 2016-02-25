@@ -15,6 +15,7 @@ def exit_error_func(error_code, error_param=''):
         5: '缺失必要参数',
         6: '参数错误',
         7: '请求方法名错误',
+        8: '接口调用失败',
     }
     return {
 	    'status': 'fail',
@@ -63,7 +64,7 @@ def convert_to_float(input_origin):
         except:
             return False
     elif isinstance(input_origin, bytes):
-        return convert_to_int(input_origin.decode('utf-8'))
+        return convert_to_float(input_origin.decode('utf-8'))
     else:
         return False
 
