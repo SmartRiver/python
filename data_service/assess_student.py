@@ -15,12 +15,12 @@ def init():
     load_translate()
     major = ""
     #遍历resource\assess_rule下所有文件
-    dirs = os.walk('resource/assess_rule')
+    dirs = os.walk('resource'+os.sep+'assess_rule')
     for root, path, files in dirs:
         for file in files:
             print(root)
-            if not major == root.split('/')[-1]:
-                major = root.split('/')[-1]
+            if not major == root.split(os.sep)[-1]:
+                major = root.split(os.sep)[-1]
                 #将所有专业的配置文件载入
                 load_config(major)
 #读取每个专业的配置文件
@@ -34,7 +34,7 @@ def load_config(major):
     
 def load_weight(major):
     weight = {}
-    file = open('resource/assess_rule/'+major+'/weight.csv', 'r', encoding='utf-8')
+    file = open('resource'+os.sep+'assess_rule'+os.sep+major+os.sep+'weight.csv', 'r', encoding='utf-8')
     title = ''
     #遍历文件
     while 1:
@@ -57,7 +57,7 @@ def load_weight(major):
 
 def load_rule(major):
     rule = []
-    file = open('resource/assess_rule/'+major+'/rule.csv', 'r', encoding='utf-8')
+    file = open('resource'+os.sep+'assess_rule'+os.sep+major+os.sep+'rule.csv', 'r', encoding='utf-8')
     while 1:
         line = file.readline()
         if not line:
@@ -83,7 +83,7 @@ def load_max(weight_dict):
     return max
     
 def load_translate():
-    file = open('resource/translate.csv', 'r', encoding='utf-8')
+    file = open('resource'+os.sep+'translate.csv', 'r', encoding='utf-8')
     while 1:
         line = file.readline()
         if not line:
