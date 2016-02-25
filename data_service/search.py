@@ -160,7 +160,8 @@ def search_school(condition, major=None, area=None):
 
     if len(result) > 10: # 如果结果院校数量大于10个，则取前10个返回
         result = result[:10]
-
+    if major not in SCHOOL_SPECIAL_MAJOR:
+        major = None
     if major != None:
         __school_filter_by_major(result, major=major)
 

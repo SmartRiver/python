@@ -18,8 +18,9 @@ def init():
     dirs = os.walk('resource/assess_rule')
     for root, path, files in dirs:
         for file in files:
-            if not major == root.split('\\')[-1]:
-                major = root.split('\\')[-1]
+            print(root)
+            if not major == root.split('/')[-1]:
+                major = root.split('/')[-1]
                 #将所有专业的配置文件载入
                 load_config(major)
 #读取每个专业的配置文件
@@ -99,6 +100,7 @@ def load_translate():
 #--------------------------------------------评估一个学生----------------------------------------------------
 def assess(student_info):
     major = ''
+    print(WEIGHT.keys())
     #学生结果字典
     result = {}
     #满分结果字典
@@ -114,13 +116,8 @@ def assess(student_info):
         if not 'grade' in student_info.keys():
             raise Exception('传入的学生信息没有键值"grade"，请重新检查学生信息结构')
         if not 'data' in student_info.keys():
-<<<<<<< HEAD
-            raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')   
-            
-=======
             raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')
 
->>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in WEIGHT.keys():
             major = 'general'
@@ -142,25 +139,17 @@ def assess(student_info):
     result['dimension_full'] = result_full['dimension']
     result['result_full'] = result_full['result']
     result['student_info'] = student_info
-<<<<<<< HEAD
-    return result
-    
-=======
     return {
         'status': 'success',
         'result': result
     }
 
->>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
+
 def map_weight(student_info, weight_dict, major):
     student_data = student_info['data']
     new_student_data = {}
     new_student_weight_data = {}
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
     if not 'gpa' in student_data.keys():
         raise Exception('学生信息键"data"对应的字典缺少键"gpa"')
     if not 'school' in student_data['gpa'].keys():
@@ -169,26 +158,16 @@ def map_weight(student_info, weight_dict, major):
         raise Exception('学生本科学校格式错误')
     if not student_data['gpa']['school'].split('|')[2] in TRANSLATE.keys():
         raise Exception('学校类型格式错误，找不到对应的学校类型')
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
     student_data['gpa']['school'] = TRANSLATE[student_data['gpa']['school'].split('|')[2]]
     for key in weight_dict:
         main_key = key.split('_')[0] #第一层的键
         sub_key = key.split('_')[1]  #第二层的键
         #如果student_data有第一层相应键
         if main_key in student_data:
-<<<<<<< HEAD
             if not main_key in new_student_weight_data: 
                 new_student_weight_data[main_key] = {}
             if not main_key in new_student_data: 
-=======
-            if not main_key in new_student_weight_data:
-                new_student_weight_data[main_key] = {}
-            if not main_key in new_student_data:
->>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
                 new_student_data[main_key] = {}
             #如果student_data有第二层相应键
             if sub_key in student_data[main_key]:
@@ -218,22 +197,22 @@ def map_weight(student_info, weight_dict, major):
                     if len(student_data[main_key][sub_key]) == 0:
                         #设置权值为0
                         new_student_weight_data[main_key][sub_key] = '0'
-                        break
-                    #如果值的字符串长度不为0
-                    #匹配相应的权值
-                    success = 0
-                    for value_range in weight_dict[key]:
-                        value = float(student_data[main_key][sub_key])
-                        min = float(value_range.split('-')[0])
-                        max = float(value_range.split('-')[1])
-                        #如果找到对应的权值
-                        if value < max and value >= min:
-                            new_student_weight_data[main_key][sub_key] = weight_dict[key][value_range][1]
-                            success = 1
-                            break
-                    #如果没有找到相应的值
-                    if success == 0:
-                        raise Exception('学生信息键"data"对应的字典中的键"'+main_key+'"对应的字典的键"'+sub_key+'"的值无法匹配到相应权值')
+                    else:
+                        #如果值的字符串长度不为0
+                        #匹配相应的权值
+                        success = 0
+                        for value_range in weight_dict[key]:
+                            value = float(student_data[main_key][sub_key])
+                            min = float(value_range.split('-')[0])
+                            max = float(value_range.split('-')[1])
+                            #如果找到对应的权值
+                            if value < max and value >= min:
+                                new_student_weight_data[main_key][sub_key] = weight_dict[key][value_range][1]
+                                success = 1
+                                break
+                        #如果没有找到相应的值
+                        if success == 0:
+                            raise Exception('学生信息键"data"对应的字典中的键"'+main_key+'"对应的字典的键"'+sub_key+'"的值无法匹配到相应权值')
             else:
                 raise Exception('学生信息键"data"对应的字典中的键"'+main_key+'"对应的字典缺少键"'+sub_key+'"')
         else:

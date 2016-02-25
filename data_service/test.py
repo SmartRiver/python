@@ -41,4 +41,7 @@ assess_student.init()
 path_planning.init()
 print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
 #print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+<<<<<<< Updated upstream
 >>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
+=======
+>>>>>>> Stashed changes
