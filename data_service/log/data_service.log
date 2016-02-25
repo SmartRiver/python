@@ -3282,3 +3282,53 @@
 [Thu, 25 Feb 2016 12:13:00] service.py [func:get] [line:29] INFO: request IP: 123.116.119.169
 [Thu, 25 Feb 2016 12:13:02] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
 [Thu, 25 Feb 2016 12:13:02] service.py [func:get] [line:29] INFO: request IP: 123.116.119.169
+[Thu, 25 Feb 2016 12:16:51] service.py [func:__logging_conf] [line:148] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 12:16:51] service.py [func:<module>] [line:158] INFO: data_service server starting.
+[Thu, 25 Feb 2016 12:16:55] service.py [func:get] [line:28] INFO: request uri: /reload
+[Thu, 25 Feb 2016 12:16:55] service.py [func:get] [line:29] INFO: request IP: 123.116.119.169
+[Thu, 25 Feb 2016 12:16:55] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Thu, 25 Feb 2016 12:16:55] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Thu, 25 Feb 2016 12:16:55] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Thu, 25 Feb 2016 12:16:55] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Thu, 25 Feb 2016 12:16:55] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 12:16:55] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 12:16:55] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 12:17:00] search.py [func:init] [line:260] INFO: ending reading data from mongodb，use time 5.863602 s.
+[Thu, 25 Feb 2016 12:17:00] search.py [func:init] [line:263] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 12:17:10] search.py [func:init] [line:275] INFO: completing building trie，use time 15.015052 s.
+[Thu, 25 Feb 2016 12:17:10] search.py [func:init] [line:276] INFO: ----------initializing successed----------
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:_logging_conf] [line:205] INFO: --------logging configurating successed--------
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:214] INFO: [starting] ----------initializing----------
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:217] INFO: [starting] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:225] INFO: [successed] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:228] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:239] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:242] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:259] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:262] INFO: [starting] loading product information from mongodb . . . 
+[Thu, 25 Feb 2016 12:17:10] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 12:17:10] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 12:17:10] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.077949 s.
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 12:17:10] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Thu, 25 Feb 2016 12:17:10] service.py [func:get] [line:55] INFO: service reload success.
+[Thu, 25 Feb 2016 12:17:24] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=华&area=&major=生物
+[Thu, 25 Feb 2016 12:17:24] service.py [func:get] [line:29] INFO: request IP: 123.116.119.169
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:_logging_conf] [line:205] INFO: --------logging configurating successed--------
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:214] INFO: [starting] ----------initializing----------
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:217] INFO: [starting] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:225] INFO: [successed] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:228] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:239] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:242] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:259] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:262] INFO: [starting] loading product information from mongodb . . . 
+[Thu, 25 Feb 2016 12:17:57] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 12:17:57] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 12:17:57] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.084089 s.
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:schedule] [line:55] INFO: language_type : ielts
+[Thu, 25 Feb 2016 12:17:57] path_planning.py [func:schedule] [line:63] INFO: exam_type : gre
