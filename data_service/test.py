@@ -1,6 +1,17 @@
 import json
 import assess_student
+<<<<<<< HEAD
 from assess_student import assess_student
+=======
+from assess_student import assess, init
+import path_planning
+from path_planning import schedule, init
+
+import json
+import logging
+
+
+>>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
 
 student_info = {
     "major":"tesol",
@@ -14,7 +25,7 @@ student_info = {
         "ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},
         "research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},
         "work":{"duration":"1", "level":"1", "recommendation":"1"},
-        "internship":{"duration":"1", "level":"1", "recommendation":"1"},
+        "internship":{"duration":"5", "level":"3", "recommendation":"2"},
         "reletter":{"level":["1","2","3"]},
         "activity":{"duration":"1", "type":"1"},
         "credential":{"level":"2"},
@@ -22,5 +33,12 @@ student_info = {
         "scholarship":{"level":"2"}
     }
 }
+<<<<<<< HEAD
 
 print(json.dumps(assess_student(student_info), ensure_ascii=False, indent=4))
+=======
+assess_student.init()
+path_planning.init()
+print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
+#print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+>>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771

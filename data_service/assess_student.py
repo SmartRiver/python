@@ -1,6 +1,7 @@
 import os
 import copy
 import json
+from common_func import exit_error_func
 
 WEIGHT = {} #各个专业的权重映射表
 RULE = {}   #各个专业的晕眩运算规则
@@ -14,7 +15,7 @@ def init():
     load_translate()
     major = ""
     #遍历resource\assess_rule下所有文件
-    dirs = os.walk('resource\\assess_rule')
+    dirs = os.walk('resource/assess_rule')
     for root, path, files in dirs:
         for file in files:
             if not major == root.split('\\')[-1]:
@@ -96,7 +97,7 @@ def load_translate():
 
 
 #--------------------------------------------评估一个学生----------------------------------------------------
-def assess_student(student_info):
+def assess(student_info):
     major = ''
     #学生结果字典
     result = {}
@@ -113,12 +114,17 @@ def assess_student(student_info):
         if not 'grade' in student_info.keys():
             raise Exception('传入的学生信息没有键值"grade"，请重新检查学生信息结构')
         if not 'data' in student_info.keys():
+<<<<<<< HEAD
             raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')   
             
+=======
+            raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')
+
+>>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in WEIGHT.keys():
             major = 'general'
-        
+
         #将学生信息中的有效项根据权值映射关系替换为为权值，剔除无效项
         student_weight_data = map_weight(student_info, WEIGHT[major], major)
 
@@ -131,18 +137,30 @@ def assess_student(student_info):
         #获得根据各项权值最大值计算的结果
         result_full = exec_rule(student_weight_full_data, RULE[major])
     except Exception as e:
-        return '接口调用失败，错误信息：\n'+str(e)
+        return exit_error_func(1, '接口调用失败，错误信息：\n'+str(e))
 
     result['dimension_full'] = result_full['dimension']
     result['result_full'] = result_full['result']
     result['student_info'] = student_info
+<<<<<<< HEAD
     return result
     
+=======
+    return {
+        'status': 'success',
+        'result': result
+    }
+
+>>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
 def map_weight(student_info, weight_dict, major):
     student_data = student_info['data']
     new_student_data = {}
     new_student_weight_data = {}
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
     if not 'gpa' in student_data.keys():
         raise Exception('学生信息键"data"对应的字典缺少键"gpa"')
     if not 'school' in student_data['gpa'].keys():
@@ -151,16 +169,26 @@ def map_weight(student_info, weight_dict, major):
         raise Exception('学生本科学校格式错误')
     if not student_data['gpa']['school'].split('|')[2] in TRANSLATE.keys():
         raise Exception('学校类型格式错误，找不到对应的学校类型')
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
     student_data['gpa']['school'] = TRANSLATE[student_data['gpa']['school'].split('|')[2]]
     for key in weight_dict:
         main_key = key.split('_')[0] #第一层的键
         sub_key = key.split('_')[1]  #第二层的键
         #如果student_data有第一层相应键
         if main_key in student_data:
+<<<<<<< HEAD
             if not main_key in new_student_weight_data: 
                 new_student_weight_data[main_key] = {}
             if not main_key in new_student_data: 
+=======
+            if not main_key in new_student_weight_data:
+                new_student_weight_data[main_key] = {}
+            if not main_key in new_student_data:
+>>>>>>> 51e831b17ab86a32cf7ff4926db79957b506d771
                 new_student_data[main_key] = {}
             #如果student_data有第二层相应键
             if sub_key in student_data[main_key]:
@@ -307,11 +335,9 @@ def exec_rule(student_data, rule_dict):
         exam_type = 'none'
         
     return {
-        'dimension':dimension_dict,
-        'result':cache_dict['result'],
-        'language_type':language_type,
-        'exam_type':exam_type,
-        'level':'%d'%int(float(cache_dict['level']))
+        'dimension': dimension_dict,
+        'result': cache_dict['result'],
+        'language_type': language_type,
+        'exam_type': exam_type,
+        'level': int(float(cache_dict['level']))
     }
-
-init()

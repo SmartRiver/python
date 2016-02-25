@@ -136,19 +136,18 @@ def __school_sort_by_area(search_result, area=None):
     return result
 
 ''' 学校查找'''
-def search_school(condition='general', major=None, area=None):
-
-    #如果condition、area、major是bytes, 则转化为str
-    condition = convert_to_str(condition)
-    area = convert_to_str(area)
-    major = convert_to_str(major)
-
+def search_school(condition, major=None, area=None):
+    if condition == '':
+        return{
+            'status': 'success',
+            'result': [],
+        }
     try:
         global SCHOOL_TRIE
         search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, condition)
     except:
-        search_logger.error('no normal result returns')
-        return exit_error_func(3, 'params:'+condition)
+        search_logger.error('no normal result returns .')
+        return exit_error_func(3, 'condition: %s' % condition)
 
     # 去重
     search_result_set = set()
@@ -182,7 +181,7 @@ def _logging_conf():
         print('--------logging configurating failed--------')
     
 '''初始化'''
-def __init__(dict_from=None):
+def init(dict_from='mongodb'):
 
     start_time = time.time()
     _logging_conf()
@@ -276,7 +275,7 @@ def __init__(dict_from=None):
     search_logger.info('----------initializing successed----------')
 
 if __name__ == '__main__':
-    __init__(dict_from='mongodb')
+    init(dict_from='mongodb')
     condition = '华'
     area = 'general'
     major = '经济学'
