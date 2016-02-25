@@ -67,10 +67,26 @@ def aaa():
     fff()
     print(aa)
 
+def convert_to_str(input_origin):
+    if isinstance(input_origin, bytes):
+        return input_origin.decode('utf-8')
+    elif isinstance(input_origin, str):
+        input_origin = input_origin.replace(' ', '').replace('\'','').replace('"','')
+        return input_origin
+    elif isinstance(input_origin, (int, float)):
+        return str(input_origin)
+    elif input_origin == None:
+        return input_origin
+    else:
+        try:
+            return str(input_origin)
+        except:
+            return False
+
 aa = None
 if __name__ == '__main__':
 
-    aa = 3
-
-    if aa in []:
-        print(aa)
+    aa = ''.encode('utf-8')
+    print(str(type(aa)))
+    aa = convert_to_str(aa)
+    print('-%s-' % aa)

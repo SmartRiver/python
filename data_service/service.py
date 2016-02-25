@@ -10,8 +10,12 @@ import urllib.parse
 import os
 import logging
 import logging.config
+import assess_student
+from assess_student import assess, init
+import path_planning
+from path_planning import schedule, init
 import search
-from search import search_school
+from search import search_school, init
 from common_func import md5_token, convert_to_str, exit_error_func
 
 # Print the usage of the class
@@ -22,6 +26,11 @@ class MainHandler(tornado.web.RequestHandler):
 
     def get(self, request_type):
         service_logger.info('request uri: %s' % urllib.parse.unquote(self.request.uri))
+        service_logger.info('request IP: %s' % self.request.remote_ip)
+
+        self.set_header('Access-Control-Allow-Origin','*')
+        flag = True
+        error_msg = ''
         # token验证
         if 'token' in self.request.query_arguments:
 
@@ -29,36 +38,104 @@ class MainHandler(tornado.web.RequestHandler):
             service_logger.info('request token :%s' % token_requset)
             token_server = md5_token()
             if token_requset != token_server: # 发送的token跟服务器生成的token不一致
+                service_logger.info('invalid token')
                 self.write(json.dumps(exit_error_func(4), ensure_ascii=False, indent=4))
 
         if request_type == 'reload':
-            #service_logger.info('请求uri:%s' % self.request.uri)
             try:
                 if 'search_flag' in self.request.query_arguments:
                     search_flag = self.request.query_arguments['search_flag'][0]
-                    search.__init__(convert_to_str(search_flag))
+                    search.init(convert_to_str(search_flag))
+                    assess_student.init()
+                    path_planning.init()
                 else:
-                    search.__init__()
+                    search.init()
+                    path_planning.init()
+                    assess_student.init()
+                service_logger.info('service reload success.')
                 self.write('reloaded.')
             except:
+                service_logger.info('service reload success.')
                 self.write('failed.')
         elif request_type == 'school_search':
             if 'condition' in self.request.query_arguments:
-                condition = self.request.query_arguments['condition'][0]
+                try:
+                    condition = self.request.query_arguments['condition'][0]
+                    condition = convert_to_str(condition)
+                    condition = condition.replace(' ', '')
+                except Exception as e:
+                    service_logger.error(e)
+                    error_msg = exit_error_func(1, 'condition')
+                    flag = False
+
             else:
-                self.write(json.dumps(exit_error_func(5, '[conditon]')), ensure_ascii=False, indent=4)
+                error_msg = exit_error_func(5, 'condition是必选参数')
+                flag = False
             if 'area' in self.request.query_arguments:
-                area = self.request.query_arguments['area'][0]
+                try:
+                    area = self.request.query_arguments['area'][0]
+                    area = convert_to_str(area)
+                    area = area.replace(' ', '')
+                    if len(area) < 1:
+                        area = None
+                except Exception as e:
+                    service_logger.error(e)
+                    error_msg = exit_error_func(1, 'area')
+                    flag = False
+                    area = None
             else:
                 area = None
             if 'major' in self.request.query_arguments:
-                major = self.request.query_arguments['major'][0]
+                try:
+                    major = self.request.query_arguments['major'][0]
+                    major = convert_to_str(major)
+                    major = major.replace(' ', '')
+                    if len(major) < 1:
+                        major = None
+                except Exception as e:
+                    service_logger.error(e)
+                    error_msg = exit_error_func(1, 'major')
+                    flag = False
+                    major = None
             else:
                 major= None
-            self.set_header('Access-Control-Allow-Origin','*')
-            self.write(json.dumps(search_school(condition=condition, major=major, area=area), ensure_ascii=False, indent=4))
+            if flag:
+                self.write(json.dumps(search.search_school(condition=condition, major=major, area=area), ensure_ascii=False, indent=4))
+            else:
+                self.write(error_msg)
+        elif request_type == 'assess_student':
+            if 'condition' in self.request.query_arguments:
+                try:
+                    condition = json.loads(convert_to_str(self.request.query_arguments['condition'][0]))
+                except Exception as e:
+                    service_logger.error(e)
+                    error_msg = exit_error_func(1, 'condition格式转换出错')
+                    flag = False
+            else:
+                error_msg = exit_error_func(5, 'condition为必选参数')
+                flag = False
+            if flag:
+                self.write(json.dumps(assess_student.assess(condition), ensure_ascii=False, indent=4))
+            else:
+                self.write(error_msg)
+        elif request_type == 'path_planning':
+            if 'condition' in self.request.query_arguments:
+                try:
+                    condition = json.loads(convert_to_str(self.request.query_arguments['condition'][0]))
+                except Exception as e:
+                    service_logger.error(e)
+                    error_msg = exit_error_func(1, 'condition格式转换出错')
+                    flag = False
+            else:
+                error_msg = exit_error_func(5, 'condition为必选参数')
+                flag = False
+            if flag:
+                self.write(json.dumps(path_planning.schedule(condition), ensure_ascii=False, indent=4))
+            else:
+                self.write(error_msg)
         else:
-            raise MissingArgumentError('Invalid command!')
+            service_logger.info('invalid request method.')
+            self.write(exit_error_func(7, request_type))
 
 global service_logger # logger
 

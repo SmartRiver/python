@@ -14,6 +14,7 @@ def exit_error_func(error_code, error_param=''):
 	    4: '验证失败',
         5: '缺失必要参数',
         6: '参数错误',
+        7: '请求方法名错误',
     }
     return {
 	    'status': 'fail',

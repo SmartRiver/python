@@ -15,7 +15,7 @@ import logging.config
 from db_util import *
 from common_func import exit_error_func, convert_to_str, convert_to_int, convert_to_float
 import assess_student
-from assess_student import assess_student
+from assess_student import assess
 
 TARGET_LEVEL_LIST = [1, 2, 3, 4] # 目标档次学校所以档次， 1为最高档
 GRADE_LEVEL_LSIT = [1, 2, 3, 4] # 年级 1、2、3、4分半代表大一、大二、大三、大四
@@ -44,15 +44,13 @@ def pre_check(target, grade):
         return False
     return True
 
-def path_planning(userr_condition):
+def schedule(user_input):
     try:
-        user_condition = assess_student(userr_condition)
-        print(json.dumps(user_condition, ensure_ascii=False, indent=4))
+        user_condition = assess_student.assess(user_input)['result']
     except:
         return exit_error_func(6)
     part_score_dict = {}
     if 'language_type' in user_condition:
-        print(user_condition['language_type'])
         language_type = convert_to_str(user_condition['language_type'])
         path_plan_logger.info('language_type : %s' % language_type)
         if language_type not in ['ielts', 'toefl', 'neither']: # 用户的语言类型，neither表示两者都不
@@ -88,10 +86,7 @@ def path_planning(userr_condition):
             path_plan_logger.info('format of target/grade is wrong. ')
             return exit_error_func(2, 'target:'+target+', grade:'+grade)
         grade = get_start_term(convert_to_int(grade))
-        print('grade: %s' % grade)
         target = convert_to_int(target)
-        print('target: %s' % target)
-
         if major not in PATH_PLAN_DICT:
             major = 'general'
 
@@ -154,12 +149,8 @@ def path_planning(userr_condition):
         del weight_dict['gmat']
         del weight_dict['gre']
 
-    print('print--------------------------------------------------')
-    print(json.dumps(part_score_dict, ensure_ascii=False, indent=4))
-
     target_dict = TARGET_DICT[target]
 
-    print(json.dumps(target_dict, ensure_ascii=False, indent=4))
     finished_node = []
     unfinished_node = []
 
@@ -184,31 +175,29 @@ def path_planning(userr_condition):
             return_unfinished_node.append(NODE_DICT[each[0]])
 
     # add ID of product to related NODE
-    for index,item in enumerate(finished_node):
-        finished_node[index] = {item: []}
-        if item in NODE_PRODUCT:
-            finished_node[index] = {item: NODE_PRODUCT[item]}
+    #for index,item in enumerate(finished_node):
+    #    finished_node[index] = {'node_id': item, 'products': []}
+    #    if item in NODE_PRODUCT:
+    #        finished_node[index] = {'node_id': item, 'products': NODE_PRODUCT[item]}
     for index,item in enumerate(return_unfinished_node):
-        return_unfinished_node[index] = {item: []}
+        return_unfinished_node[index] = {'node_id': item, 'products': []}
         if item in NODE_PRODUCT:
-            return_unfinished_node[index] = {item: NODE_PRODUCT[item]}
+            return_unfinished_node[index] = {'node_id': item, 'products': NODE_PRODUCT[item]}
     for index,item in enumerate(return_node):
         return_node[index] = {item: []}
         if item in NODE_PRODUCT:
             return_node[index] = {item: NODE_PRODUCT[item]}
 
-
     return {
         'status': 'success',
-        'result': return_node,
-        'finished': finished_node,
-        'unfinished': return_unfinished_node,
+        'result': {
+            'finished': finished_node,
+            'unfinished': return_unfinished_node,
+        },
     }
 
-
-
 ''' 日志配置 '''
-def logging_conf():
+def _logging_conf():
     try:
         global path_plan_logger
         logging.config.fileConfig('./conf/logging.conf')
@@ -302,17 +291,31 @@ def init():
             if 'nodeParent' in each:
                 node_parent = convert_to_int(each['nodeParent'])
                 product_id = convert_to_int(each['id'])
+                product_title = each['title']
+                if 'title_pic' in each:
+                    product_picture = each['title_pic']
+                else:
+                    product_picture = ''
+                temp_product = {
+                    'product_id': product_id,
+                    'title': product_title,
+                    'picture': product_picture
+                }
                 if node_parent == False:
                     continue
                 if node_parent in NODE_PRODUCT:
                     temp_product_list = NODE_PRODUCT[node_parent]
+                    temp_product_list.append(temp_product)
                     NODE_PRODUCT.update({node_parent: temp_product_list})
                 else:
-                    temp_product_list = [product_id]
+                    temp_product_list = [temp_product]
                     NODE_PRODUCT[node_parent] = temp_product_list
         except TypeError as e:
             path_plan_logger.error(e)
-            path_plan_logger.error('wrong line when converting：%s' % each)
+            path_plan_logger.error('wrong record when converting')
+        except Exception as e:
+            path_plan_logger.error(e)
+            path_plan_logger.error('wrong record when converting')
 
     product_load_time = time.time()
     path_plan_logger.info('[successed] ending reading data from mongodb，use time %f s.' % (product_load_time - start_time))
@@ -323,77 +326,3 @@ def init():
         path_plan_logger.error('close pymongo connection failed.')
 
     path_plan_logger.info('[successed] ----------initializing----------')
-
-if __name__ == '__main__':
-
-    origin_condition =  {
-        'major':'accounting',
-        'grade':'1',
-        'target':'1',
-        'data':{
-            'gpa':{'score':'3.4', 'trend':'2', 'school':'华中科技大学|湖北|985'},
-            'gmat':{'total':'300', 'writing':'3', 'verbal':'12', 'maths':'12'},
-            'gre':{'total':'300', 'writing':'4', 'verbal':'12', 'maths':'12'},
-            'toefl':{'total':'110', 'writing':'3', 'reading':'12', 'listening':'12', 'speaking':'12'},
-            'ielts':{'total':'7', 'writing':'3', 'reading':'12','listening':'12', 'speaking':'12'},
-            'research':{'duration':'1', 'level':'1', 'achievement':'1', 'recommendation':'1'},
-            'work':{'duration':'1', 'level':'1', 'recommendation':'1'},
-            'internship':{'duration':'1', 'level':'1', 'recommendation':'1'},
-            'reletter':{'level':['1','2','3']},
-            'activity':{'duration':'1', 'type':'1'},
-            'credential':{'level':'2'},
-            'competition':{'level':'2'},
-            'scholarship':{'level':'2'}
-        }
-    }
-
-    user_input = {
-        'dimension':{
-            'gpa_dimension':'20',
-            'exam_dimension':'20',
-            'research_dimension':'20',
-            'language_dimension':'20',
-            'internship_dimension':'20',
-            'competition_dimension':'20',
-            'scholarship_dimension':'20',
-            'credential_dimension':'20',
-            'activity_dimension':'20',
-        },
-        'dimension_full':{
-            'gpa_dimension':'30',
-            'exam_dimension':'30',
-            'research_dimension':'30',
-            'language_dimension':'30',
-            'internship_dimension':'30',
-            'competition_dimension':'30',
-            'scholarship_dimension':'30',
-            'credential_dimension':'30',
-            'activity_dimension':'30',
-        },
-        'result':'200',
-        'level':'1.00',
-        'language_type':'toefl',
-        'exam_type':'gre',
-        'student_info':{
-            "major":"accounting",
-            "grade":"1",
-            "target":"3",
-            "data":{
-                "gpa":{"score":"3.8", "trend":"2", "school":"华中科技大学|湖北|985"},
-                "gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},
-                "gre":{"total":"330", "writing":"4", "verbal":"12", "maths":"12"},
-                "toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},
-                "ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},
-                "research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},
-                "work":{"duration":"1", "level":"1", "recommendation":"1"},
-                "internship":{"duration":"1", "level":"1", "recommendation":"1"},
-                "reletter":{"level":["1","2","3"]},
-                "activity":{"duration":"1", "type":"1"},
-                "credential":{"level":"1"},
-                "competition":{"level":"2"},
-                "scholarship":{"level":"2"}
-            }
-        }
-    }
-    init()
-    print(json.dumps(path_planning(origin_condition), ensure_ascii=False, indent=4))
