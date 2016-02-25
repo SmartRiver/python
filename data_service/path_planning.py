@@ -135,7 +135,7 @@ def schedule(user_input):
     except Exception as e:
         return exit_error_func(6)
 
-    weight_dict = PATH_PLAN_DICT[major][grade]
+    weight_dict = copy.deepcopy(PATH_PLAN_DICT[major][grade])
 
     if language_type == 'ielts':
         del weight_dict['toefl']

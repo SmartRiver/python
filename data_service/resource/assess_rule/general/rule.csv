@@ -1,5 +1,5 @@
 gpa,                   multi,   %gpa_score,35,%gpa_school
-toefl,                 multi,   35,%toefl_total
+toefl,                 multi,   35,%toefl_total,%toefl_speaking
 ielts,                 multi,   35,%ielts_total
 language,              max,     %toefl,%ielts
 activity_base,         multi,   %activity_duration,%activity_type
@@ -32,10 +32,8 @@ internship_factor,     range,   0.6,     %internship_base,  2,2.5,        6
 internship_factor,     range,   0.5,     %internship_base,  1,2,          7
 internship_factor,     range,   0,       %internship_base,  0,1,          8
 internship,            multi,   20,%internship_factor
-social,                max,     %internship
-competition,           multi,   15,%competition_level
 scholarship,           multi,   5,%scholarship_level
-result,                sum,     %language,%gpa,%activity,%social,%research,%competition,%scholarship,%exam
+result,                sum,     %language,%gpa,%activity,%internship,%research,%scholarship,%exam
 level,                 range,   1,       %result,             133.5,1000,       1
 level,                 range,   2,       %result,             114.6,133.5,      2
 level,                 range,   3,       %result,             102,114.6,        3
@@ -48,5 +46,6 @@ gpa_dimension,         dimension,          %gpa
 exam_dimension,        dimension,          %exam
 research_dimension,    dimension,          %research
 language_dimension,    dimension,          %language
-social_dimension,      dimension,          %social
-other_dimension,       dimension,          %competition,%scholarship,%activity
+internship_dimension,  dimension,          %internship
+activity_dimension,    dimension,          %activity
+scholarship_dimension, dimension,          %scholarship
