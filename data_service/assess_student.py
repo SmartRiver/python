@@ -15,7 +15,7 @@ def init():
     load_translate()
     major = ""
     #遍历resource\assess_rule下所有文件
-    dirs = os.walk('resource\\assess_rule')
+    dirs = os.walk('resource/assess_rule')
     for root, path, files in dirs:
         for file in files:
             if not major == root.split('\\')[-1]:
