@@ -3545,3 +3545,4 @@
 [Thu, 25 Feb 2016 16:44:17] service.py [func:get] [line:29] INFO: request IP: ::1
 [Thu, 25 Feb 2016 16:44:17] path_planning.py [func:schedule] [line:55] INFO: language_type : ielts
 [Thu, 25 Feb 2016 16:44:17] path_planning.py [func:schedule] [line:63] INFO: exam_type : gre
+[Thu, 25 Feb 2016 17:21:41] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
