@@ -19,12 +19,36 @@ from assess_student import assess
 
 TARGET_LEVEL_LIST = [1, 2, 3, 4] # 目标档次学校所以档次， 1为最高档
 GRADE_LEVEL_LSIT = [1, 2, 3, 4] # 年级 1、2、3、4分半代表大一、大二、大三、大四
-FIXED_NODES = [79,80,81,94] #固定的结点（写文书、选择申请学校、网申、申请后工作）
+FIXED_NODES = [ #固定的结点（写文书、选择申请学校、网申、申请后工作）
+    {
+        'node_id': 79,
+        'node_name': '写文书任务',
+        'products': []
+    },
+    {
+        'node_id': 80,
+        'node_name': '选择申请学校列表',
+        'products': []
+    },
+    {
+        'node_id': 81,
+        'node_name': '网上申请',
+        'products': []
+    },
+    {
+        'node_id': 94,
+        'node_name': '申请后工作',
+        'products': []
+    }
+] 
 path_plan_logger = None # 日志
 PATH_PLAN_DICT = {} # 各个专业每个学期的各学习提升任务权重值
 TARGET_DICT = {} # 各个档次学校的每个部分的目标值
-NODE_DICT = {} # 各个学习提升任务对应数据库里NODE表的ID
+NODE_NAME_DICT = {} # 各个学习提升任务对应数据库里NODE表的ID
+NODE_DISPLAY_DICT = {} #各个学习提示功能任务对应前端展示的卡片名
 NODE_PRODUCT = {} #product所属的NODE（大结点）
+PRODUCT_RECOMMEND = {} #每个Tag对应的推荐的机会产品
+NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'丰富科研经历'}
 
 '''获取当前时间段(学期)'''
 def get_start_term(grade=1):
@@ -51,7 +75,6 @@ def get_target(target):
 # 调用评估算法， 转化用户的信息
 def get_user_condition(user_input):
     return_assess_student = assess_student.assess(user_input)
-    print(json.dumps(return_assess_student, ensure_ascii=False, indent=4))
     if 'result' in return_assess_student:
         return return_assess_student['result']
     else:
@@ -205,7 +228,7 @@ def calculate_nodes_weight(part_score_dict, language_type, exam_type):
     for each in weight_dict:
         if each in part_score_dict:
             if part_score_dict[each] > target_dict[each]:
-                finished_nodes.append(NODE_DICT[each])
+                finished_nodes.append({'node_id': NODE_NAME_DICT[each], 'node_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]]})
             else:
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
                 weight_dict[each] = weight_dict[each] * (1+ratio)
@@ -214,6 +237,10 @@ def calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
     return finished_nodes, unfinished_nodes, result_weight
 
+def get_product_by_node_id(node_id):
+    
+    return PRODUCT_RECOMMEND[node_id]
+
 def get_nodes_products(part_score_dict, language_type, exam_type):
 
     unfinished_nodes_products = [] # 未完成任务结点（关联了相应的机会产品、项目）
@@ -221,17 +248,19 @@ def get_nodes_products(part_score_dict, language_type, exam_type):
 
     # 计算各个结点的权值，按照计算后的权重值对各个学习提升任务排序
     finished_nodes, unfinished_nodes, result_weight = calculate_nodes_weight(part_score_dict, language_type, exam_type)
+    path_plan_logger.info('5')
 
     for each in result_weight:
         if each[0] in unfinished_nodes:
-            return_unfinished_nodes.append(NODE_DICT[each[0]])
-    return_unfinished_nodes.extend(FIXED_NODES)
+            return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
 
     for index,item in enumerate(return_unfinished_nodes):
-        if item in NODE_PRODUCT:
-            unfinished_nodes_products.append({'node_id': item, 'products': NODE_PRODUCT[item]})
+        if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
+            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'products': get_product_by_node_id(NODEID_TO_TEXT[item])})
         else:
-            unfinished_nodes_products.append({'node_id': item, 'products': []})
+            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'products': []})
+    unfinished_nodes_products.extend(FIXED_NODES)
+
     return finished_nodes, unfinished_nodes_products
     
 def schedule(user_input):
@@ -252,18 +281,22 @@ def schedule(user_input):
 
         #提取出用户的申请属性（major、 grade、 target）
         part_score_dict.update(get_mgt(student_info))
+        path_plan_logger.info('1')
 
         # 提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）
         part_score_dict.update(get_hard_condition(student_info, language_type, exam_type))
+        path_plan_logger.info('2')
 
         #提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）
         part_score_dict.update(get_soft_condition(user_condition))
+        path_plan_logger.info('3')
 
         # 为学习提升任务结点关联相应的机会产品
         finished_nodes, unfinished_nodes_products = get_nodes_products(part_score_dict, language_type, exam_type)
+        path_plan_logger.info('4')
         
     except Exception as e:
-        return exit_error_func(1, '接口调用失败，错误信息：'+str(e))
+        return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
 
     
     #for index,item in enumerate(finished_node):
@@ -301,9 +334,11 @@ def load_node():
         each = each.strip('\r\n').rstrip(' ')
         if each[:1] != '#':
             if each.find(',') > 0:
-                node_name = each.split('//')[0].split(',')[1]
-                node_id = int(each.split('//')[0].split(',')[0])
-                NODE_DICT[node_name] = node_id
+                node_name = each.split('//')[0].split(',')[1] # 结点Node名字
+                node_display_name = each.split('//')[0].split(',')[2] # 前端展示的任务卡的名字
+                node_id = int(each.split('//')[0].split(',')[0]) # 结点ID
+                NODE_NAME_DICT[node_name] = node_id
+                NODE_DISPLAY_DICT[node_id] = node_display_name
     path_plan_logger.info('[successed] loading NODE ID into dict . . . ')
 
 def load_target():
@@ -340,7 +375,15 @@ def load_init_weight():
             PATH_PLAN_DICT[major] = temp_major_dict
     path_plan_logger.info('[successed] loading weight of all parts in different semester into dict . . . ')
 
-def load_products():
+def get_tag_dict(tag_list, collection):
+    tag_dict = {}
+    for tag_name in tag_list:
+        result = collection.find_one({'name':tag_name},{'id':1})
+        if isinstance(result, dict):
+            tag_dict[tag_name] = '%d'%result['id']
+    return tag_dict
+
+def load_products_by_tag():
     path_plan_logger.info('[starting] loading product information from mongodb . . . ')
     try:
         for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
@@ -368,38 +411,25 @@ def load_products():
         return exit_error_func(3)
 
     mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
-    product_collection = mongo_client.get_collection('product', 'dulishuo')
-    for each in product_collection.find():
-        try:
-            if 'nodeParent' in each:
-                node_parent = convert_to_int(each['nodeParent'])
-                product_id = convert_to_int(each['id'])
-                product_title = each['title']
-                if 'title_pic' in each:
-                    product_picture = each['title_pic']
-                else:
-                    product_picture = ''
-                temp_product = {
-                    'product_id': product_id,
-                    'title': product_title,
-                    'picture': product_picture
-                }
-                if node_parent == False:
-                    continue
-                if node_parent in NODE_PRODUCT:
-                    temp_product_list = NODE_PRODUCT[node_parent]
-                    temp_product_list.append(temp_product)
-                    NODE_PRODUCT.update({node_parent: temp_product_list})
-                else:
-                    temp_product_list = [temp_product]
-                    NODE_PRODUCT[node_parent] = temp_product_list
-        except TypeError as e:
-            path_plan_logger.error(e)
-            path_plan_logger.error('wrong record when converting')
-        except Exception as e:
-            path_plan_logger.error(e)
-            path_plan_logger.error('wrong record when converting')
+    mongo_client.get_database('dulishuo')
+    product_collection = mongo_client.get_collection('product')
+    producttag_collection = mongo_client.get_collection('producttag')
+    tag_list = ['提升GPA','提升托福成绩','提升雅思成绩','提升GRE成绩','提升GMAT成绩','竞赛','实习','证书','奖学金','活动','推荐信','科研能力提升']
+    tag_dict = get_tag_dict(tag_list,producttag_collection)
+    
+    for tag_name in tag_dict:
+        producs_list = []
+        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}},{'id':1,'title':1,'title_pic':1,'tag':1}):
+            product = {}
+            try:
+                product['product_id'] = record['id']
+                product['title'] = record['title']
+                product['picture'] = record['title_pic']
+            except KeyError:
+                continue
+            producs_list.append(product)
 
+        PRODUCT_RECOMMEND[tag_name] = producs_list
     product_load_time = time.time()
     path_plan_logger.info('[successed] ending reading data from mongodb.')
     try:
@@ -422,6 +452,6 @@ def init():
     
     load_init_weight()# 加载各个专业的每个学期的学习提升任务的安排(按照咨询师给的初始权重值排序)
     
-    load_products()# 从mongodb库里的product集合加载product信息
+    load_products_by_tag()# 从mongodb库里的product集合加载product信息,并按标签tag分类
     
     path_plan_logger.info('[successed] ----------initializing----------')

@@ -85,8 +85,31 @@ def convert_to_str(input_origin):
 
 aa = None
 if __name__ == '__main__':
+    aa = [
+    {
+        'a': 34
+    }
+    ]
 
-    aa = ''.encode('utf-8')
-    print(str(type(aa)))
-    aa = convert_to_str(aa)
-    print('-%s-' % aa)
+    FIXED_NODES = [
+    {
+        'node_id': 79,
+        'node_name': 'XX',
+    },
+    {
+        'node_id': 80,
+        'node_name': 'XX',
+    },
+    {
+        'node_id': 81,
+        'node_name': 'XX',
+    },
+    {
+        'node_id': 94,
+        'node_name': 'XX',
+    }] 
+    #固定的结点（写文书、选择申请学校、网申、申请后工作）
+    cc = []
+    aa.extend(FIXED_NODES)
+    for each in aa:
+        print(each)

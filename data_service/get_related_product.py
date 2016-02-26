@@ -5,7 +5,7 @@ def get_tag_dict(tag_list, collection):
     tag_dict = {}
     for tag_name in tag_list:
         result = collection.find_one({'name':tag_name},{'id':1})
-        if isinstance(result,dict):
+        if isinstance(result, dict):
             tag_dict[tag_name] = '%d'%result['id']
     return tag_dict
     
@@ -34,7 +34,7 @@ def get_product_by_node_id(node_id):
     print(PRODUCT_RECOMMEND[NODEID_TO_TEXT[node_id]])
 
 init()
-get_product_by_node_id(1)
+get_product_by_node_id(6)
 
 
 

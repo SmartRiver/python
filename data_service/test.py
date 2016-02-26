@@ -30,9 +30,9 @@ student_info = {
 }
 
 assess_student.init()
-#path_planning.init()
-#print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
-print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+path_planning.init()
+print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
+#print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
 
 #tt = db_util.get_connection()
 #print(tt)
