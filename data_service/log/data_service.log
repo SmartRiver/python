@@ -3889,3 +3889,13 @@
 [Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
 [Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
 [Fri, 26 Feb 2016 12:27:12] service.py [func:get] [line:55] INFO: service reload success.
+[Fri, 26 Feb 2016 12:28:24] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"biology","grade":"1","target":"密歇根大学安娜堡分校","data":{"gpa":{"score":"1","school":"密歇根大学安娜堡分校|USA|海本综排top21-top35"},"gmat":{"total":"100","writing":"100"},"gre":{"total":"100","writing":"100","verbal":"0"},"toefl":{"total":"100","speaking":"100"},"ielts":{"total":"100"},"research":{"duration":"1","level":"1","achievement":"1","recommendation":"1"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"1","level":"1","recommendation":"1"},"activity":{"duration":"1","type":"1"},"competition":{"level":""},"scholarship":{"level":""}}}
+[Fri, 26 Feb 2016 12:28:24] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:28:24] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:28:24] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:28:24] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"biology","grade":"1","target":"密歇根大学安娜堡分校","data":{"gpa":{"score":"1","school":"密歇根大学安娜堡分校|USA|海本综排top21-top35"},"gmat":{"total":"100","writing":"100"},"gre":{"total":"100","writing":"100","verbal":"0"},"toefl":{"total":"100","speaking":"100"},"ielts":{"total":"100"},"research":{"duration":"1","level":"1","achievement":"1","recommendation":"1"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"1","level":"1","recommendation":"1"},"activity":{"duration":"1","type":"1"},"competition":{"level":""},"scholarship":{"level":""}}}
+[Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:137] INFO: invalid request method.
