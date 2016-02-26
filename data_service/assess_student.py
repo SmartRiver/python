@@ -18,7 +18,6 @@ def init():
     dirs = os.walk('resource'+os.sep+'assess_rule')
     for root, path, files in dirs:
         for file in files:
-            print(root)
             if not major == root.split(os.sep)[-1]:
                 major = root.split(os.sep)[-1]
                 #将所有专业的配置文件载入
@@ -100,7 +99,6 @@ def load_translate():
 #--------------------------------------------评估一个学生----------------------------------------------------
 def assess(student_info):
     major = ''
-    print(WEIGHT.keys())
     #学生结果字典
     result = {}
     #满分结果字典
@@ -117,7 +115,7 @@ def assess(student_info):
             raise Exception('传入的学生信息没有键值"grade"，请重新检查学生信息结构')
         if not 'data' in student_info.keys():
             raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')
-
+        
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in WEIGHT.keys():
             major = 'general'
@@ -125,6 +123,7 @@ def assess(student_info):
         if 'reletter' in student_info['data'].keys():
             student_info['data']['reletter'] = {}
             student_info['data']['reletter']['level'] = ['3','3','3']
+
         #将学生信息中的有效项根据权值映射关系替换为为权值，剔除无效项
         student_weight_data = map_weight(student_info, WEIGHT[major], major)
 
@@ -227,7 +226,7 @@ def fill_with_full(student_data_copy, max):
     for key in max:
         student_data_copy[key.split('_')[0]][key.split('_')[1]] = max[key]
     return student_data_copy
-
+    
 def exec_rule(student_data, rule_dict):
     student_data_copy = copy.deepcopy(student_data)
     cache_dict = {}  #储存各类运算结果的临时字典
