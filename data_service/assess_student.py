@@ -121,7 +121,10 @@ def assess(student_info):
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in WEIGHT.keys():
             major = 'general'
-
+	
+        if 'reletter' in student_info['data'].keys():
+            student_info['data']['reletter'] = {}
+            student_info['data']['reletter']['level'] = ['3','3','3']
         #将学生信息中的有效项根据权值映射关系替换为为权值，剔除无效项
         student_weight_data = map_weight(student_info, WEIGHT[major], major)
 

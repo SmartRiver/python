@@ -3503,3 +3503,389 @@
 [Thu, 25 Feb 2016 13:59:49] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.089722 s.
 [Thu, 25 Feb 2016 13:59:49] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
 [Thu, 25 Feb 2016 13:59:49] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Thu, 25 Feb 2016 15:49:04] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 15:49:04] service.py [func:get] [line:29] INFO: request IP: 123.116.117.88
+[Thu, 25 Feb 2016 15:49:26] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 15:49:26] service.py [func:get] [line:29] INFO: request IP: 123.116.117.88
+[Thu, 25 Feb 2016 15:49:51] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 15:49:51] service.py [func:get] [line:29] INFO: request IP: 123.116.117.88
+[Thu, 25 Feb 2016 15:54:05] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=å°çç§å­¦
+[Thu, 25 Feb 2016 15:54:05] service.py [func:get] [line:29] INFO: request IP: 123.116.117.88
+[Thu, 25 Feb 2016 15:56:18] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 15:56:18] service.py [func:get] [line:29] INFO: request IP: 123.116.117.88
+[Thu, 25 Feb 2016 15:56:19] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 15:56:19] service.py [func:get] [line:29] INFO: request IP: 123.116.117.88
+[Thu, 25 Feb 2016 16:02:52] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:02:52] service.py [func:get] [line:29] INFO: request IP: 123.116.117.88
+[Thu, 25 Feb 2016 16:24:29] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:24:29] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:27:54] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:27:54] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:27:59] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:27:59] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:27:59] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=sa&area=&major=
+[Thu, 25 Feb 2016 16:27:59] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:28:01] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:28:01] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:28:11] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:28:11] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:30:29] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:30:29] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:32:12] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:32:12] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:32:13] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:32:13] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:36:19] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:36:19] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:36:20] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:36:20] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:36:44] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬å¤§å­¦å»å­¦&area=&major=
+[Thu, 25 Feb 2016 16:36:44] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:36:45] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬å¤§å­¦å»&area=&major=
+[Thu, 25 Feb 2016 16:36:45] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:36:47] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬å¤§å­¦&area=&major=
+[Thu, 25 Feb 2016 16:36:47] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:36:49] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬å¤§&area=&major=
+[Thu, 25 Feb 2016 16:36:49] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:36:51] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬&area=&major=
+[Thu, 25 Feb 2016 16:36:51] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:37:32] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çç©
+[Thu, 25 Feb 2016 16:37:32] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:37:53] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:37:53] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:38:35] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çç©
+[Thu, 25 Feb 2016 16:38:35] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:38:35] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=ss&area=&major=çç©
+[Thu, 25 Feb 2016 16:38:35] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:38:39] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çç©
+[Thu, 25 Feb 2016 16:38:39] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:38:53] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:38:53] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:07] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 16:39:07] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:14] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:39:14] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:27] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=æ¯å¦ç¦å¤§&area=&major=çç©
+[Thu, 25 Feb 2016 16:39:27] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:37] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=æ¯å¦ç¦å¤§&area=&major=çç©
+[Thu, 25 Feb 2016 16:39:37] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:40] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=H&area=&major=
+[Thu, 25 Feb 2016 16:39:40] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:42] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:39:42] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:43] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:39:43] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:50] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬å¤§å­¦å»å­¦é¨|&area=&major=
+[Thu, 25 Feb 2016 16:39:50] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:52] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬å¤§å­¦å»å­¦é¨&area=&major=
+[Thu, 25 Feb 2016 16:39:52] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:39:54] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=åäº¬å¤§å­¦å»å­¦é¨&area=&major=
+[Thu, 25 Feb 2016 16:39:54] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:42:56] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:42:56] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:43:19] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:43:19] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:43:39] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Thu, 25 Feb 2016 16:43:39] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:43:55] service.py [func:get] [line:28] INFO: request uri: /path_planning?condition={"major":"t","grade":"2","target":"1","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"2"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+[Thu, 25 Feb 2016 16:43:55] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:43:59] service.py [func:get] [line:28] INFO: request uri: /path_planning?condition={"major":"t","grade":"2","target":"1","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"2"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+[Thu, 25 Feb 2016 16:43:59] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:44:01] service.py [func:get] [line:28] INFO: request uri: /path_planning?condition={"major":"t","grade":"2","target":"2","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"2"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+[Thu, 25 Feb 2016 16:44:01] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:44:52] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:44:52] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:46:17] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:46:17] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:47:49] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:47:49] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:50:34] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:50:34] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:51:19] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:51:19] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:51:32] service.py [func:get] [line:28] INFO: request uri: /reload
+[Thu, 25 Feb 2016 16:51:32] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:51:32] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Thu, 25 Feb 2016 16:51:32] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Thu, 25 Feb 2016 16:51:32] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Thu, 25 Feb 2016 16:51:32] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Thu, 25 Feb 2016 16:51:32] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 16:51:32] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:32] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:39] search.py [func:init] [line:260] INFO: ending reading data from mongodb，use time 6.911309 s.
+[Thu, 25 Feb 2016 16:51:39] search.py [func:init] [line:263] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 16:51:43] search.py [func:init] [line:275] INFO: completing building trie，use time 11.195258 s.
+[Thu, 25 Feb 2016 16:51:43] search.py [func:init] [line:276] INFO: ----------initializing successed----------
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:_logging_conf] [line:205] INFO: --------logging configurating successed--------
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:214] INFO: [starting] ----------initializing----------
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:217] INFO: [starting] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:225] INFO: [successed] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:228] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:239] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:242] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:259] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:262] INFO: [starting] loading product information from mongodb . . . 
+[Thu, 25 Feb 2016 16:51:43] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 16:51:43] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:43] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.073561 s.
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 16:51:43] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Thu, 25 Feb 2016 16:51:43] service.py [func:get] [line:55] INFO: service reload success.
+[Thu, 25 Feb 2016 16:51:43] service.py [func:get] [line:28] INFO: request uri: /reload
+[Thu, 25 Feb 2016 16:51:43] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:51:43] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Thu, 25 Feb 2016 16:51:43] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Thu, 25 Feb 2016 16:51:43] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Thu, 25 Feb 2016 16:51:43] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Thu, 25 Feb 2016 16:51:43] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 16:51:43] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:43] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:51] search.py [func:init] [line:260] INFO: ending reading data from mongodb，use time 7.694937 s.
+[Thu, 25 Feb 2016 16:51:51] search.py [func:init] [line:263] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 16:51:58] search.py [func:init] [line:275] INFO: completing building trie，use time 14.066891 s.
+[Thu, 25 Feb 2016 16:51:58] search.py [func:init] [line:276] INFO: ----------initializing successed----------
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:_logging_conf] [line:205] INFO: --------logging configurating successed--------
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:214] INFO: [starting] ----------initializing----------
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:217] INFO: [starting] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:225] INFO: [successed] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:228] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:239] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:242] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:259] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:262] INFO: [starting] loading product information from mongodb . . . 
+[Thu, 25 Feb 2016 16:51:58] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 16:51:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.075724 s.
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 16:51:58] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Thu, 25 Feb 2016 16:51:58] service.py [func:get] [line:55] INFO: service reload success.
+[Thu, 25 Feb 2016 16:51:58] service.py [func:get] [line:28] INFO: request uri: /reload
+[Thu, 25 Feb 2016 16:51:58] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:51:58] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Thu, 25 Feb 2016 16:51:58] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Thu, 25 Feb 2016 16:51:58] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Thu, 25 Feb 2016 16:51:58] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Thu, 25 Feb 2016 16:51:58] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 16:51:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:51:58] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:52:05] search.py [func:init] [line:260] INFO: ending reading data from mongodb，use time 7.826729 s.
+[Thu, 25 Feb 2016 16:52:05] search.py [func:init] [line:263] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 16:52:14] search.py [func:init] [line:275] INFO: completing building trie，use time 16.600062 s.
+[Thu, 25 Feb 2016 16:52:14] search.py [func:init] [line:276] INFO: ----------initializing successed----------
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:_logging_conf] [line:205] INFO: --------logging configurating successed--------
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:214] INFO: [starting] ----------initializing----------
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:217] INFO: [starting] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:225] INFO: [successed] loading NODE ID into dict . . . 
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:228] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:239] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:242] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:259] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:262] INFO: [starting] loading product information from mongodb . . . 
+[Thu, 25 Feb 2016 16:52:14] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Thu, 25 Feb 2016 16:52:14] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:52:14] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.080386 s.
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
+[Thu, 25 Feb 2016 16:52:14] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Thu, 25 Feb 2016 16:52:14] service.py [func:get] [line:55] INFO: service reload success.
+[Thu, 25 Feb 2016 16:52:22] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"t","grade":"2","target":"1","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"2"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+[Thu, 25 Feb 2016 16:52:22] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:52:31] service.py [func:get] [line:28] INFO: request uri: /path_planning?condition={"major":"t","grade":"2","target":"1","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"2"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+[Thu, 25 Feb 2016 16:52:31] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:52:31] path_planning.py [func:schedule] [line:55] INFO: language_type : ielts
+[Thu, 25 Feb 2016 16:52:31] path_planning.py [func:schedule] [line:63] INFO: exam_type : gre
+[Thu, 25 Feb 2016 16:52:38] service.py [func:get] [line:28] INFO: request uri: /path_planning?condition={"major":"t","grade":"2","target":"2","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"2"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+[Thu, 25 Feb 2016 16:52:38] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:52:38] path_planning.py [func:schedule] [line:55] INFO: language_type : ielts
+[Thu, 25 Feb 2016 16:52:38] path_planning.py [func:schedule] [line:63] INFO: exam_type : gre
+[Thu, 25 Feb 2016 16:53:04] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çç©
+[Thu, 25 Feb 2016 16:53:04] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:56:17] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:56:17] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:59:38] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:59:38] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 16:59:39] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 16:59:39] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:01:14] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 17:01:14] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:02:18] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=åæ¨å·¥ç¨
+[Thu, 25 Feb 2016 17:02:18] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:03:22] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=åæ¨å·¥ç¨
+[Thu, 25 Feb 2016 17:03:22] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:04:08] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=åæ¨å·¥ç¨
+[Thu, 25 Feb 2016 17:04:08] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:05:38] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 17:05:38] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:14:08] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 17:14:08] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:14:09] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 17:14:09] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:15:43] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Thu, 25 Feb 2016 17:15:43] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:17:08] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 17:17:08] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 17:17:09] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 17:17:09] service.py [func:get] [line:29] INFO: request IP: 123.116.119.108
+[Thu, 25 Feb 2016 18:07:04] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=åæ¨å·¥ç¨
+[Thu, 25 Feb 2016 18:07:04] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 19:00:30] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=èªç©ºèªå¤©
+[Thu, 25 Feb 2016 19:00:30] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 19:00:31] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=ss&area=&major=èªç©ºèªå¤©
+[Thu, 25 Feb 2016 19:00:31] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 19:00:31] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=sss&area=&major=èªç©ºèªå¤©
+[Thu, 25 Feb 2016 19:00:31] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 19:00:31] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=ssss&area=&major=èªç©ºèªå¤©
+[Thu, 25 Feb 2016 19:00:31] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 20:34:52] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=a&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 20:34:52] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 20:34:54] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 20:34:54] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 20:34:56] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 20:34:56] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 20:34:57] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=d&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 20:34:57] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 20:34:57] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=f&area=&major=çµæº/çµå­å·¥ç¨
+[Thu, 25 Feb 2016 20:34:57] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Thu, 25 Feb 2016 23:34:16] service.py [func:get] [line:28] INFO: request uri: /
+[Thu, 25 Feb 2016 23:34:16] service.py [func:get] [line:29] INFO: request IP: 121.42.0.39
+[Thu, 25 Feb 2016 23:34:16] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 10:21:47] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çç©
+[Fri, 26 Feb 2016 10:21:47] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 10:33:28] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çç©
+[Fri, 26 Feb 2016 10:33:28] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 10:36:40] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=w&area=&major=èªç©ºèªå¤©
+[Fri, 26 Feb 2016 10:36:40] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 10:37:51] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Fri, 26 Feb 2016 10:37:51] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 10:54:45] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=çç©
+[Fri, 26 Feb 2016 10:54:45] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 10:56:30] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Fri, 26 Feb 2016 10:56:30] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 10:57:40] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=s&area=&major=
+[Fri, 26 Feb 2016 10:57:40] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:08:12] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=f&area=&major=çµæº/çµå­å·¥ç¨
+[Fri, 26 Feb 2016 11:08:12] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:27:52] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=g&area=&major=çç©
+[Fri, 26 Feb 2016 11:27:52] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:27:54] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=b&area=&major=çç©
+[Fri, 26 Feb 2016 11:27:54] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:39:28] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Fri, 26 Feb 2016 11:39:28] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:42:48] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=h&area=&major=
+[Fri, 26 Feb 2016 11:42:48] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:56:52] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=华中&area=湖北&major=经济学
+[Fri, 26 Feb 2016 11:56:52] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:56:54] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=华中&area=湖北&major=经济学
+[Fri, 26 Feb 2016 11:56:54] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:56:54] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 11:56:54] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:56:54] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 11:57:30] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"biology","grade":1,"target":"密歇根大学安娜堡分校","data":{"gpa":{"score":1,"school":"密歇根大学安娜堡分校|USA|海本综排top21-top35"},"gmat":{"total":100,"writing":100},"gre":{"total":100,"writing":100,"verbal":0},"toefl":{"total":100,"speaking":100},"ielts":{"total":100},"research":{"duration":1,"level":1,"achievement":1,"recommendation":1},"work":{"duration":0,"level":0,"recommendation":0},"internship":{"duration":1,"level":1,"recommendation":1},"activity":{"duration":1,"type":1},"competition":{"level":0},"scholarship":{"level":0}}}
+[Fri, 26 Feb 2016 11:57:30] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:57:30] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 11:57:30] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 11:57:30] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:00:06] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"biology","grade":"1","target":"密歇根大学安娜堡分校","data":{"gpa":{"score":"1","school":"密歇根大学安娜堡分校|USA|海本综排top21-top35"},"gmat":{"total":"100","writing":"100"},"gre":{"total":"100","writing":"100","verbal":"0"},"toefl":{"total":"100","speaking":"100"},"ielts":{"total":"100"},"research":{"duration":"1","level":"1","achievement":"1","recommendation":"1"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"1","level":"1","recommendation":"1"},"activity":{"duration":"1","type":"1"},"competition":{"level":""},"scholarship":{"level":""}}}
+[Fri, 26 Feb 2016 12:00:06] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:00:06] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:00:06] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:00:06] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:03:57] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"biology","grade":"1","target":"密歇根大学安娜堡分校","data":{"gpa":{"score":"1","school":"密歇根大学安娜堡分校|USA|海本综排top21-top35"},"gmat":{"total":"100","writing":"100"},"gre":{"total":"100","writing":"100","verbal":"0"},"toefl":{"total":"100","speaking":"100"},"ielts":{"total":"100"},"research":{"duration":"1","level":"1","achievement":"1","recommendation":"1"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"1","level":"1","recommendation":"1"},"activity":{"duration":"1","type":"1"},"competition":{"level":""},"scholarship":{"level":""}}}
+[Fri, 26 Feb 2016 12:03:57] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:03:57] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:03:57] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:03:57] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:05:24] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"biology","grade":"1","target":"密歇根大学安娜堡分校","data":{"gpa":{"score":"1","school":"密歇根大学安娜堡分校|USA|海本综排top21-top35"},"gmat":{"total":"100","writing":"100"},"gre":{"total":"100","writing":"100","verbal":"0"},"toefl":{"total":"100","speaking":"100"},"ielts":{"total":"100"},"research":{"duration":"1","level":"1","achievement":"1","recommendation":"1"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"1","level":"1","recommendation":"1"},"activity":{"duration":"1","type":"1"},"competition":{"level":""},"scholarship":{"level":""}}}
+[Fri, 26 Feb 2016 12:05:24] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:05:24] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:05:24] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:05:24] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:05:28] service.py [func:get] [line:28] INFO: request uri: /assess_student?condition={"major":"biology","grade":"1","target":"密歇根大学安娜堡分校","data":{"gpa":{"score":"1","school":"密歇根大学安娜堡分校|USA|海本综排top21-top35"},"gmat":{"total":"100","writing":"100"},"gre":{"total":"100","writing":"100","verbal":"0"},"toefl":{"total":"100","speaking":"100"},"ielts":{"total":"100"},"research":{"duration":"1","level":"1","achievement":"1","recommendation":"1"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"1","level":"1","recommendation":"1"},"activity":{"duration":"1","type":"1"},"competition":{"level":""},"scholarship":{"level":""}}}
+[Fri, 26 Feb 2016 12:05:28] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:05:28] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:05:28] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:05:28] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:17:21] service.py [func:__logging_conf] [line:148] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:17:21] service.py [func:<module>] [line:158] INFO: data_service server starting.
+[Fri, 26 Feb 2016 12:17:38] service.py [func:__logging_conf] [line:148] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:17:38] service.py [func:<module>] [line:158] INFO: data_service server starting.
+[Fri, 26 Feb 2016 12:17:38] service.py [func:<module>] [line:163] ERROR: data_service server starts failed.
+[Fri, 26 Feb 2016 12:18:05] service.py [func:__logging_conf] [line:148] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:18:05] service.py [func:<module>] [line:158] INFO: data_service server starting.
+[Fri, 26 Feb 2016 12:18:11] service.py [func:get] [line:28] INFO: request uri: /reload
+[Fri, 26 Feb 2016 12:18:11] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:18:11] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Fri, 26 Feb 2016 12:18:11] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Fri, 26 Feb 2016 12:18:11] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Fri, 26 Feb 2016 12:18:11] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Fri, 26 Feb 2016 12:18:11] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:18:11] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:18:11] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:18:19] search.py [func:init] [line:260] INFO: ending reading data from mongodb，use time 7.573007 s.
+[Fri, 26 Feb 2016 12:18:19] search.py [func:init] [line:263] INFO: close pymongo connection successed.
+[Fri, 26 Feb 2016 12:18:28] search.py [func:init] [line:275] INFO: completing building trie，use time 17.162589 s.
+[Fri, 26 Feb 2016 12:18:28] search.py [func:init] [line:276] INFO: ----------initializing successed----------
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:_logging_conf] [line:205] INFO: --------logging configurating successed--------
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:214] INFO: [starting] ----------initializing----------
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:217] INFO: [starting] loading NODE ID into dict . . . 
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:225] INFO: [successed] loading NODE ID into dict . . . 
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:228] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:239] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:242] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:259] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:262] INFO: [starting] loading product information from mongodb . . . 
+[Fri, 26 Feb 2016 12:18:28] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:18:28] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:18:28] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.093310 s.
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
+[Fri, 26 Feb 2016 12:18:28] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Fri, 26 Feb 2016 12:18:29] service.py [func:get] [line:55] INFO: service reload success.
+[Fri, 26 Feb 2016 12:18:29] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:18:29] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:18:29] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:18:29] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
+[Fri, 26 Feb 2016 12:18:29] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:18:29] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 12:19:04] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=央&area=&major=
+[Fri, 26 Feb 2016 12:19:04] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:19:10] service.py [func:get] [line:28] INFO: request uri: /school_search?condition=交通&area=&major=
+[Fri, 26 Feb 2016 12:19:10] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:19:36] service.py [func:get] [line:28] INFO: request uri: /path_planning?condition={"major":"tesol","grade":"1","target":"1","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"2"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+[Fri, 26 Feb 2016 12:19:36] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:19:36] path_planning.py [func:schedule] [line:55] INFO: language_type : ielts
+[Fri, 26 Feb 2016 12:19:36] path_planning.py [func:schedule] [line:63] INFO: exam_type : gre
+[Fri, 26 Feb 2016 12:26:14] service.py [func:<module>] [line:163] ERROR: data_service server starts failed.
+[Fri, 26 Feb 2016 12:26:41] service.py [func:__logging_conf] [line:148] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:26:41] service.py [func:<module>] [line:158] INFO: data_service server starting.
+[Fri, 26 Feb 2016 12:26:55] service.py [func:get] [line:28] INFO: request uri: /reload
+[Fri, 26 Feb 2016 12:26:55] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
+[Fri, 26 Feb 2016 12:26:55] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Fri, 26 Feb 2016 12:26:55] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Fri, 26 Feb 2016 12:26:55] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Fri, 26 Feb 2016 12:26:55] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Fri, 26 Feb 2016 12:26:55] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:26:55] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:26:55] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:27:02] search.py [func:init] [line:260] INFO: ending reading data from mongodb，use time 6.901746 s.
+[Fri, 26 Feb 2016 12:27:02] search.py [func:init] [line:263] INFO: close pymongo connection successed.
+[Fri, 26 Feb 2016 12:27:12] search.py [func:init] [line:275] INFO: completing building trie，use time 16.806789 s.
+[Fri, 26 Feb 2016 12:27:12] search.py [func:init] [line:276] INFO: ----------initializing successed----------
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:_logging_conf] [line:205] INFO: --------logging configurating successed--------
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:214] INFO: [starting] ----------initializing----------
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:217] INFO: [starting] loading NODE ID into dict . . . 
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:225] INFO: [successed] loading NODE ID into dict . . . 
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:228] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:239] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:242] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:259] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:262] INFO: [starting] loading product information from mongodb . . . 
+[Fri, 26 Feb 2016 12:27:12] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 12:27:12] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:27:12] db_util.py [func:get_database] [line:41] INFO: authencation success.
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:321] INFO: [successed] ending reading data from mongodb，use time 0.077233 s.
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:324] INFO: close pymongo connection successed.
+[Fri, 26 Feb 2016 12:27:12] path_planning.py [func:init] [line:328] INFO: [successed] ----------initializing----------
+[Fri, 26 Feb 2016 12:27:12] service.py [func:get] [line:55] INFO: service reload success.
