@@ -27,6 +27,9 @@ NODE_PRODUCT = {} #product所属的NODE（大结点）
 
 '''获取当前时间段(学期)'''
 def get_start_term(grade=1):
+    grade = convert_to_int(grade)
+    if grade == False or grade not in GRADE_LEVEL_LSIT:
+        raise Exception('字段grade不在[1-4]之间')
     now_month = time.localtime().tm_mon # 获取当前的月份
     if 3 <= now_month <= 8:
         increase = 0
@@ -35,112 +38,128 @@ def get_start_term(grade=1):
     grade = grade * 2 + increase
     return grade
 
-def pre_check(target, grade):
+def get_target(target):
     target = convert_to_int(target)
-    if target == False or target not in TARGET_LEVEL_LIST:
-        return False
-    grade = convert_to_int(grade)
-    if grade == False or grade not in GRADE_LEVEL_LSIT:
-        return False
-    return True
+    if target not in TARGET_LEVEL_LIST:
+        raise Exception('字段target不在[1-4]之间')
+    elif target == False:
+        return 4
+    else:
+        raise Exception('字段target不在[1-4]之间')
 
-def schedule(user_input):
-    try:
-        user_condition = assess_student.assess(user_input)['result']
-    except:
-        return exit_error_func(6)
-    part_score_dict = {}
+# 调用评估算法， 转化用户的信息
+def get_user_condition(user_input):
+    return_assess_student = assess_student.assess(user_input)
+    if 'result' in return_assess_student:
+        return return_assess_student['result']
+    else:
+        raise Exception()
+    
+# 确定用户的语言类型（toefl or ielts）、（gre or gmat)
+def get_language_exam_type(user_condition):
     if 'language_type' in user_condition:
         language_type = convert_to_str(user_condition['language_type'])
-        path_plan_logger.info('language_type : %s' % language_type)
-        if language_type not in ['ielts', 'toefl', 'neither']: # 用户的语言类型，neither表示两者都不
-            return exit_error_func(2, '托福或者雅思分数错误')
+        if language_type not in ['ielts', 'toefl', 'neither', 'none']: # 用户的语言类型，neither表示两者都不
+            raise Exception('无效的属性值language_type')
     else:
-        return exit_error_func(5, '缺乏托福或者雅思分数')
+        raise Exception('缺少字段language_type')
 
     if 'exam_type' in user_condition:
         exam_type = convert_to_str(user_condition['exam_type'])
-        path_plan_logger.info('exam_type : %s' % exam_type)
         if exam_type not in ['gre', 'gmat', 'neither', 'none']:
-            return exit_error_func(2, 'gre或者gmat分数错误')
+            raise Exception('无效的属性值exam_type')
     else:
-        return exit_error_func(5, '缺乏GRE或者GMAT参数类型说明')
+        raise Exception('缺少字段exam_type')
+    return language_type, exam_type
 
-    if 'student_info' in user_condition:
-        student_info = user_condition['student_info']
-        if 'major' in student_info:
-            major = student_info['major']
-            major = convert_to_str(major)
-        else:
-            return exit_error_func(5, 'student_info[\'major\']')
-        if 'target' in student_info:
-            target = student_info['target']
-        else:
-            return exit_error_func(5, 'student_info[\'target\']')
-        if 'grade' in student_info:
-            grade = student_info['grade']
-        else:
-            return exit_error_func(5, 'student_info[\'grade\']')
-
-        if not pre_check(target, grade):
-            path_plan_logger.info('format of target/grade is wrong. ')
-            return exit_error_func(2, 'target:'+target+', grade:'+grade)
-        grade = get_start_term(convert_to_int(grade))
-        target = convert_to_int(target)
+def get_mgt(student_info):
+    if 'major' in student_info:
+        major = student_info['major']
+        major = convert_to_str(major)
         if major not in PATH_PLAN_DICT:
             major = 'general'
-
-        if 'data' in student_info:
-            user_data = student_info['data']
-            try:
-                part_score_dict['gpa'] = convert_to_float(user_data['gpa']['score'])
-                if language_type == 'ielts':
-                    part_score_dict['ielts'] = convert_to_float(user_data[language_type]['total'])
-                if language_type == 'toefl':
-                    part_score_dict['toefl'] = convert_to_float(user_data[language_type]['total'])
-                if exam_type == 'gre':
-                    part_score_dict['gre'] = convert_to_float(user_data[exam_type]['total'])
-                if exam_type == 'gmat':
-                    part_score_dict['gmat'] = convert_to_float(user_data[exam_type]['total'])
-            except Exception as e:
-                return exit_error_func(5, 'student_info[\'data\']')
-        else:
-            return exit_error_func(5, '学生各部分分数信息')
     else:
-        return exit_error_func(5, 'student_info')
+        raise Exception('缺失字段[student_info][major]')
+    if 'target' in student_info:
+        target = student_info['target']
+    else:
+        raise Exception('缺失字段[student_info][target]')
+    if 'grade' in student_info:
+        grade = student_info['grade']
+    else:
+        raise Exception('缺失字段[student_info][grade]')
 
+    grade = get_start_term(grade) # 将用户的年级（大一到大四[1-4]）按当前月份分为1-8
+    target = get_target(target) # 获取用户的目标院校档次
+        
+    return {
+        'grade': grade,
+        'target': target,
+        'major': major
+    }
+
+def get_soft_condition(user_condition):
     if 'dimension' in user_condition:
         dimension = user_condition['dimension']
     else:
-        return exit_error_func(5, 'dimension')
+        raise Exception('缺少字段dimension')
 
     if 'dimension_full' in user_condition:
         dimension_full = user_condition['dimension_full']
     else:
-        return exit_error_func(5, 'dimension_full')
-
+        raise Exception('缺少字段dimension_full')
+    temp_soft_condition = {}
     try:
         if 'research_dimension' in dimension:
-            part_score_dict['research'] = convert_to_float(dimension['research_dimension'])/convert_to_float(dimension_full['research_dimension'])
+            temp_soft_condition['research'] = convert_to_float(dimension['research_dimension'])/convert_to_float(dimension_full['research_dimension'])
         if 'internship_dimension' in dimension:
-            part_score_dict['internship'] = convert_to_float(dimension['internship_dimension'])/convert_to_float(dimension_full['internship_dimension'])
+            temp_soft_condition['internship'] = convert_to_float(dimension['internship_dimension'])/convert_to_float(dimension_full['internship_dimension'])
         if 'activity_dimension' in dimension:
-            part_score_dict['activity'] = convert_to_float(dimension['activity_dimension'])/convert_to_float(dimension_full['activity_dimension'])
+            temp_soft_condition['activity'] = convert_to_float(dimension['activity_dimension'])/convert_to_float(dimension_full['activity_dimension'])
         if 'scholarship_dimension':
-            part_score_dict['scholarship'] = convert_to_float(dimension['scholarship_dimension'])/convert_to_float(dimension_full['scholarship_dimension'])
+            temp_soft_condition['scholarship'] = convert_to_float(dimension['scholarship_dimension'])/convert_to_float(dimension_full['scholarship_dimension'])
         if 'credential_dimension' in dimension:
-            part_score_dict['credential'] = convert_to_float(dimension['credential_dimension'])/convert_to_float(dimension_full['credential_dimension'])
+            temp_soft_condition['credential'] = convert_to_float(dimension['credential_dimension'])/convert_to_float(dimension_full['credential_dimension'])
         if 'competition_dimension' in dimension:
-            part_score_dict['competition'] = convert_to_float(dimension['competition_dimension'])/convert_to_float(dimension_full['competition_dimension'])
+            temp_soft_condition['competition'] = convert_to_float(dimension['competition_dimension'])/convert_to_float(dimension_full['competition_dimension'])
     except Exception as e:
-        return exit_error_func(6)
+        return exit_error_func(6, '软性条件比例获取时出错：'+str(e))
 
-    weight_dict = copy.deepcopy(PATH_PLAN_DICT[major][grade])
+    return temp_soft_condition
 
+def get_hard_condition(user_condition, language_type, exam_type):
+    if 'student_info' in user_condition:
+        student_info = user_condition['student_info']
+    else:
+        raise Exception('缺少字段student_info')
+    if 'data' in student_info:
+        user_data = student_info['data']
+    else:
+        raise Exception('缺少字段student_info[data]')
+    temp_hard_condition = {}
+    try:
+        temp_hard_condition['gpa'] = convert_to_float(user_data['gpa']['score'])
+        if language_type == 'ielts':
+            temp_hard_condition['ielts'] = convert_to_float(user_data[language_type]['total'])
+        if language_type == 'toefl':
+            temp_hard_condition['toefl'] = convert_to_float(user_data[language_type]['total'])
+        if exam_type == 'gre':
+            temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
+        if exam_type == 'gmat':
+            temp_hard_condition['gmat'] = convert_to_float(user_data[exam_type]['total'])
+    except Exception as e:
+        return exit_error_func(6, '硬性条件比例获取时出错：'+str(e)')
+
+    return temp_hard_condition
+
+def filter_weight_field(weight_dict, language_type, exam_type):
     if language_type == 'ielts':
         del weight_dict['toefl']
     elif language_type == 'toefl':
         del weight_dict['ielts']
+    elif language_type == 'none':
+        del weight_dict['ielts']
+        del weight_dict['toefl']
     if exam_type == 'gre':
         del weight_dict['gmat']
     elif exam_type == 'gmat':
@@ -148,6 +167,33 @@ def schedule(user_input):
     elif exam_type == 'none':
         del weight_dict['gmat']
         del weight_dict['gre']
+    
+def schedule(user_input):
+    part_score_dict = {}
+    try:
+        # 调用assess_student模块的assess(), 提取出所需要的用户信息
+        user_condition = get_user_condition(user_input) 
+
+        # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
+        language_type, exam_type = get_language_exam_type(user_condition)
+
+        #提取出用户的申请属性（major、 grade、 target）
+        part_score_dict.update(get_mgt(student_info))
+
+        # 提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）
+        part_score_dict.update(get_hard_condition(user_condition))
+
+        #提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）
+        part_score_dict.update(get_soft_condition(user_condition))
+        
+    except Exception as e:
+        return exit_error_func(1, '接口调用失败，错误信息：'+str(e))
+    
+
+    # 获取不同专业不同学期的初始化的各任务（节点）权重
+    weight_dict = copy.deepcopy(PATH_PLAN_DICT[major][grade])
+    #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
+    filter_weight_field(weight_dict, language_type, exam_type)
 
     target_dict = TARGET_DICT[target]
 
@@ -162,7 +208,7 @@ def schedule(user_input):
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
                 weight_dict[each] = weight_dict[each] * (1+ratio)
                 unfinished_node.append(each)
-
+    # 按照计算后的权重值对各个学习提升任务排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
 
     return_node = [79,80,81,94]
@@ -207,13 +253,7 @@ def _logging_conf():
     except Exception as e:
         print('--------logging configurating failed--------')
 
-def init():
-    #global path_plan_logger
-    start_time = time.time()
-    _logging_conf()
-    path_plan_logger.info('[starting] ----------initializing----------')
-
-    # 加载每个学习提升任务对应数据库里的Node节点的ID
+def load_node():
     path_plan_logger.info('[starting] loading NODE ID into dict . . . ')
     for each in open('resource/plan/activity.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
@@ -224,7 +264,7 @@ def init():
                 NODE_DICT[node_name] = node_id
     path_plan_logger.info('[successed] loading NODE ID into dict . . . ')
 
-    # 加载每个档次院校个学习提升任务的目标值
+def load_target():
     path_plan_logger.info('[starting] loading target scores of different levels institutes into dict . . . ')
     for each in open('resource/plan/target.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
@@ -238,7 +278,7 @@ def init():
             TARGET_DICT.update({target_level: {target_name: target_score}})
     path_plan_logger.info('[successed] loading target scores of different levels institutes into dict . . . ')
 
-    # 加载各个专业的每个学期的学习提升任务的安排
+def load_init_weight():
     path_plan_logger.info('[starting] loading weight of all parts in different semester into dict . . . ')
     path_plan_dirs = os.walk('resource/plan/weight')
     for root, dirs, files in path_plan_dirs:
@@ -258,7 +298,7 @@ def init():
             PATH_PLAN_DICT[major] = temp_major_dict
     path_plan_logger.info('[successed] loading weight of all parts in different semester into dict . . . ')
 
-    # 从mongodb库里的product集合加载product信息
+def load_products():
     path_plan_logger.info('[starting] loading product information from mongodb . . . ')
     try:
         for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
@@ -282,7 +322,8 @@ def init():
         return exit_error_func(3)
     except Exception as e:
         path_plan_logger.error(e)
-        path_plan_logger.error('configuration failed.')
+        path_plan_logger.error(3, 'mongodb configuration failed.')
+        return exit_error_func(3)
 
     mongo_client = MongoDB(host=url, port=port, username=username, password=password, is_auth=True)
     product_collection = mongo_client.get_collection('product', 'dulishuo')
@@ -318,11 +359,27 @@ def init():
             path_plan_logger.error('wrong record when converting')
 
     product_load_time = time.time()
-    path_plan_logger.info('[successed] ending reading data from mongodb，use time %f s.' % (product_load_time - start_time))
+    path_plan_logger.info('[successed] ending reading data from mongodb.')
     try:
         mongo_client.close() # 关闭连接
         path_plan_logger.info('close pymongo connection successed.')
     except Exception as e:
         path_plan_logger.error('close pymongo connection failed.')
 
+def init():
+
+    start_time = time.time()
+
+    _logging_conf() #初始化日志设置
+
+    path_plan_logger.info('[starting] ----------initializing----------')
+
+    load_node() # 加载每个学习提升任务对应数据库里的Node节点的ID
+
+    load_target()# 加载每个档次院校个学习提升任务的目标值
+    
+    load_init_weight()# 加载各个专业的每个学期的学习提升任务的安排(按照咨询师给的初始权重值排序)
+    
+    load_products()# 从mongodb库里的product集合加载product信息
+    
     path_plan_logger.info('[successed] ----------initializing----------')
