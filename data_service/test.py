@@ -22,7 +22,6 @@ student_info = {
         "research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},
         "work":{"duration":"1", "level":"1", "recommendation":"1"},
         "internship":{"duration":"5", "level":"3", "recommendation":"2"},
-        "reletter":{"level":["1","2","3"]},
         "activity":{"duration":"1", "type":"1"},
         "credential":{"level":"2"},
         "competition":{"level":"2"},
@@ -30,10 +29,10 @@ student_info = {
     }
 }
 
-#assess_student.init()
+assess_student.init()
 #path_planning.init()
 #print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
-#print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
 
-tt = db_util.get_connection()
-print(tt)
+#tt = db_util.get_connection()
+#print(tt)

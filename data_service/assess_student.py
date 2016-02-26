@@ -120,7 +120,7 @@ def assess(student_info):
         if not major in WEIGHT.keys():
             major = 'general'
 	
-        if 'reletter' in student_info['data'].keys():
+        if not 'reletter' in student_info['data'].keys():
             student_info['data']['reletter'] = {}
             student_info['data']['reletter']['level'] = ['3','3','3']
 
