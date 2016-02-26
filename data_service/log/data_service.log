@@ -3899,3 +3899,47 @@
 [Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:28] INFO: request uri: /favicon.ico
 [Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:29] INFO: request IP: 123.116.115.31
 [Fri, 26 Feb 2016 12:28:28] service.py [func:get] [line:137] INFO: invalid request method.
+[Fri, 26 Feb 2016 13:27:47] service.py [func:__logging_conf] [line:148] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 13:27:47] service.py [func:<module>] [line:158] INFO: data_service server starting.
+[Fri, 26 Feb 2016 13:28:00] service.py [func:get] [line:28] INFO: request uri: /reload
+[Fri, 26 Feb 2016 13:28:00] service.py [func:get] [line:29] INFO: request IP: ::1
+[Fri, 26 Feb 2016 13:28:00] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Fri, 26 Feb 2016 13:28:00] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Fri, 26 Feb 2016 13:28:00] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Fri, 26 Feb 2016 13:28:00] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Fri, 26 Feb 2016 13:28:00] service.py [func:get] [line:58] INFO: service reload success.
+[Fri, 26 Feb 2016 13:29:16] service.py [func:__logging_conf] [line:148] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 13:29:16] service.py [func:<module>] [line:158] INFO: data_service server starting.
+[Fri, 26 Feb 2016 13:29:22] service.py [func:get] [line:28] INFO: request uri: /reload
+[Fri, 26 Feb 2016 13:29:22] service.py [func:get] [line:29] INFO: request IP: ::1
+[Fri, 26 Feb 2016 13:29:22] search.py [func:_logging_conf] [line:180] INFO: --------logging configurating success--------
+[Fri, 26 Feb 2016 13:29:22] search.py [func:init] [line:189] INFO: ----------initializing----------
+[Fri, 26 Feb 2016 13:29:22] search.py [func:init] [line:190] INFO: type of reload : mongodb
+[Fri, 26 Feb 2016 13:29:22] search.py [func:init] [line:225] INFO: school configuration from mongodb.
+[Fri, 26 Feb 2016 13:29:22] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 13:29:22] db_util.py [func:get_database] [line:41] INFO: mongodb authencating
+[Fri, 26 Feb 2016 13:29:22] db_util.py [func:get_database] [line:43] INFO: authencation success.
+[Fri, 26 Feb 2016 13:29:22] db_util.py [func:get_database] [line:41] INFO: mongodb authencating
+[Fri, 26 Feb 2016 13:29:22] db_util.py [func:get_database] [line:43] INFO: authencation success.
+[Fri, 26 Feb 2016 13:29:32] search.py [func:init] [line:260] INFO: ending reading data from mongodb£¬use time 9.931228 s.
+[Fri, 26 Feb 2016 13:29:32] search.py [func:init] [line:263] INFO: close pymongo connection successed.
+[Fri, 26 Feb 2016 13:29:37] search.py [func:init] [line:275] INFO: completing building trie£¬use time 15.520236 s.
+[Fri, 26 Feb 2016 13:29:37] search.py [func:init] [line:276] INFO: ----------initializing successed----------
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:_logging_conf] [line:293] INFO: --------logging configurating successed--------
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:init] [line:417] INFO: [starting] ----------initializing----------
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:load_node] [line:299] INFO: [starting] loading NODE ID into dict . . . 
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:load_node] [line:307] INFO: [successed] loading NODE ID into dict . . . 
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:load_target] [line:310] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:load_target] [line:321] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:load_init_weight] [line:324] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:load_init_weight] [line:341] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Fri, 26 Feb 2016 13:29:37] path_planning.py [func:load_products] [line:344] INFO: [starting] loading product information from mongodb . . . 
+[Fri, 26 Feb 2016 13:29:37] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Fri, 26 Feb 2016 13:29:37] db_util.py [func:get_database] [line:41] INFO: mongodb authencating
+[Fri, 26 Feb 2016 13:29:38] db_util.py [func:get_database] [line:43] INFO: authencation success.
+[Fri, 26 Feb 2016 13:29:38] db_util.py [func:get_database] [line:41] INFO: mongodb authencating
+[Fri, 26 Feb 2016 13:29:38] db_util.py [func:get_database] [line:43] INFO: authencation success.
+[Fri, 26 Feb 2016 13:29:39] path_planning.py [func:load_products] [line:404] INFO: [successed] ending reading data from mongodb.
+[Fri, 26 Feb 2016 13:29:39] path_planning.py [func:load_products] [line:407] INFO: close pymongo connection successed.
+[Fri, 26 Feb 2016 13:29:39] path_planning.py [func:init] [line:427] INFO: [successed] ----------initializing----------
+[Fri, 26 Feb 2016 13:29:39] service.py [func:get] [line:55] INFO: service reload success.

@@ -31,7 +31,7 @@ def init():
         PRODUCT_RECOMMEND[tag_name] = list
 
 def get_product_by_node_id(node_id):
-    print(PRODUCT_RECOMMEND[NODEID_TO_TEXT[node_id]])
+    return PRODUCT_RECOMMEND[NODEID_TO_TEXT[node_id]]
 
 init()
 get_product_by_node_id(1)
