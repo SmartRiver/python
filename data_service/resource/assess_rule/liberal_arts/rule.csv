@@ -1,5 +1,5 @@
 #gpa_dimension
-gpa,                   multi,   %gpa_score,25,%gpa_school
+gpa,                   multi,   %gpa_score,50,%gpa_school
 
 #language_dimension
 toefl,                 multi,   30,%toefl_total,%toefl_speaking
@@ -49,12 +49,14 @@ competition,           multi,   15,%competition_level
 result,                sum,     %language,%gpa,%internship,%research,%competition,%scholarship,%exam,%reletter
 
 #level
-level,                 range,   1,       %result,             195,1000,     1
-level,                 range,   2,       %result,             178,195,      2
-level,                 range,   3,       %result,             141.75,178,   3
-level,                 range,   4,       %result,             122.5,141.75, 4
-level,                 range,   5,       %result,             96.5,122.5,   5
-level,                 range,   6,       %result,             0,96.5,       6
+level,                 range,   1,       %result,             167,1000,     1
+level,                 range,   2,       %result,             163.5,167,    2
+level,                 range,   3,       %result,             145,163.5,    3
+level,                 range,   4,       %result,             138.5,145,    4
+level,                 range,   5,       %result,             131.5,138.5,  5
+level,                 range,   6,       %result,             118.9,131.5,  6
+level,                 range,   7,       %result,             100,118.9,    7
+level,                 range,   8,       %result,             0,100,        8
 
 #维度标识 计算规则为sum
 gpa_dimension,          dimension,        %gpa

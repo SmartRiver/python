@@ -52,18 +52,18 @@ competition,           multi,   15,%competition_level
 scholarship,           multi,   10,%scholarship_level
 
 #credential
-credential,            multi,   10,%credential_level
+credential,            multi,   20,%credential_level
 
 #result
 result,                sum,     %language,%gpa,%activity,%internship,%research,%competition,%scholarship,%credential,%exam
 
 #level
-level,                 range,   1,       %result,             195,1000,     1
-level,                 range,   2,       %result,             178,195,      2
-level,                 range,   3,       %result,             141.75,178,   3
-level,                 range,   4,       %result,             122.5,141.75, 4
-level,                 range,   5,       %result,             96.5,122.5,   5
-level,                 range,   6,       %result,             0,96.5,       6
+level,                 range,   1,       %result,             201,1000,     1
+level,                 range,   2,       %result,             184,201,      2
+level,                 range,   3,       %result,             147.75,184,   3
+level,                 range,   4,       %result,             128.5,147.75, 4
+level,                 range,   5,       %result,             102.5,128.5,  5
+level,                 range,   6,       %result,             0,102.5,      6
 
 #维度标识 计算规则为sum
 gpa_dimension,         dimension,          %gpa

@@ -20,7 +20,7 @@ research_factor,       range,   0.75,    %research_base,   2.5,2.7,      5
 research_factor,       range,   0.6,     %research_base,   2,2.5,        6
 research_factor,       range,   0.5,     %research_base,   1,2,          7
 research_factor,       range,   0,       %research_base,   0,1,          8
-research,              multi,   20,%research_factor
+research,              multi,   15,%research_factor
 
 #internship_dimension
 internship_base,       multi,   %internship_duration,%internship_level,%internship_recommendation
@@ -32,10 +32,10 @@ internship_factor,     range,   0.75,    %internship_base,  2.5,2.7,      5
 internship_factor,     range,   0.6,     %internship_base,  2,2.5,        6
 internship_factor,     range,   0.5,     %internship_base,  1,2,          7
 internship_factor,     range,   0,       %internship_base,  0,1,          8
-internship,            multi,   20,%internship_factor
+internship,            multi,   15,%internship_factor
 
 #competition_dimension
-competition,           multi,   15,%competition_level
+competition,           multi,   10,%competition_level
 
 #scholarship_dimension
 scholarship,           multi,   5,%scholarship_level
@@ -47,14 +47,13 @@ reletter,              multi,   5,%reletter_level
 result,                sum,     %language,%gpa,%internship,%research,%competition,%scholarship,%exam,%reletter
 
 #level
-level,                 range,   1,       %result,          155,1000,      1
-level,                 range,   2,       %result,          135,155,       2
-level,                 range,   3,       %result,          120,135,       3
-level,                 range,   4,       %result,          110,120,       4
-level,                 range,   5,       %result,          100,110,       5
-level,                 range,   6,       %result,          90,100,        6
-level,                 range,   7,       %result,          0,90,          7
-level,                 range,   8,       %result,          0,78.5,        8
+level,                 range,   1,       %result,          146,1000,      1
+level,                 range,   2,       %result,          126,146,       2
+level,                 range,   3,       %result,          111,126,       3
+level,                 range,   4,       %result,          101,111,       4
+level,                 range,   5,       %result,          92,101,        5
+level,                 range,   6,       %result,          81,92,         6
+level,                 range,   7,       %result,          0,81,          7
 
 #维度标识 计算规则为sum
 gpa_dimension,         dimension,          %gpa
