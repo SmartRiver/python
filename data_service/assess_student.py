@@ -141,11 +141,13 @@ def assess(student_info):
         else:
             if not major in WEIGHT.keys():
                 major = MAJOR[major]
-        print(major)
         if not 'reletter' in student_info['data'].keys():
             student_info['data']['reletter'] = {}
             student_info['data']['reletter']['level'] = ['3','3','3']
-
+        if not 'credential' in student_info['data']:
+            student_info['data']['credential'] = {}
+            student_info['data']['credential']['level'] = "2"
+            
         #将学生信息中的有效项根据权值映射关系替换为为权值，剔除无效项
         student_weight_data = map_weight(student_info, WEIGHT[major], major)
 

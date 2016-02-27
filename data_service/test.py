@@ -10,7 +10,7 @@ import json
 import logging
 
 student_info = {
-    "major":"logic",
+    "major":"accounting",
     "grade":"1",
     "target":"1",
     "data":{
@@ -23,7 +23,6 @@ student_info = {
         "work":{"duration":"1", "level":"1", "recommendation":"1"},
         "internship":{"duration":"5", "level":"3", "recommendation":"2"},
         "activity":{"duration":"1", "type":"1"},
-        "credential":{"level":"2"},
         "competition":{"level":"2"},
         "scholarship":{"level":"2"}
     }
