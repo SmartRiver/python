@@ -8,20 +8,20 @@ import hashlib
 
 def exit_error_func(error_code, error_param=''):
     error_dict = {
-		1: '参数格式错误',
-	    2: '参数内容错误',
-	    3: '程序内部错误',
-	    4: '验证失败',
+        1: '参数格式错误',
+        2: '参数内容错误',
+        3: '程序内部错误',
+        4: '验证失败',
         5: '缺失必要参数',
         6: '参数错误',
         7: '请求方法名错误',
         8: '接口调用失败',
     }
     return {
-	    'status': 'fail',
-	    'error': error_dict[error_code],
-	    'msg': error_param,
-	}
+        'status': 'fail',
+        'error': error_dict[error_code],
+        'msg': error_param,
+    }
 def convert_to_str(input_origin):
     if isinstance(input_origin, bytes):
         return input_origin.decode('utf-8')

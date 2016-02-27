@@ -34,10 +34,10 @@ class MainHandler(tornado.web.RequestHandler):
         # token验证
         if 'token' in self.request.query_arguments:
 
-            token_requset = convert_to_str(convert_to_str(self.request.query_arguments['token'][0]))
+            token_requset = convert_to_str(self.request.query_arguments['token'][0])
             service_logger.info('request token :%s' % token_requset)
-            token_server = md5_token()
-            if token_requset != token_server: # 发送的token跟服务器生成的token不一致
+            token_server = md5_token(token_requset)
+            if not token_server: # 发送的token跟服务器生成的token不一致
                 service_logger.info('invalid token')
                 self.write(json.dumps(exit_error_func(4), ensure_ascii=False, indent=4))
 
@@ -115,6 +115,7 @@ class MainHandler(tornado.web.RequestHandler):
                 error_msg = exit_error_func(5, 'condition为必选参数')
                 flag = False
             if flag:
+                assess_student.init()
                 self.write(json.dumps(assess_student.assess(condition), ensure_ascii=False, indent=4))
             else:
                 self.write(error_msg)

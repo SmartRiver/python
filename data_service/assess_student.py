@@ -15,6 +15,7 @@ def init():
     #读取学校和标识之间的映射关系
     load_translate()
     load_major()
+    print('---after---')
     major = ""
     #遍历resource\assess_rule下所有文件
     dirs = os.walk('resource'+os.sep+'assess_rule')
@@ -98,7 +99,11 @@ def load_translate():
 
 def load_major():
     value = ''
-    file = open('resource'+os.sep+'major.csv', 'r', encoding='utf-8')
+    print('resource'+os.sep+'major.csv')
+    try:
+        file = open('resource'+os.sep+'major.csv', 'r', encoding='utf-8')
+    except Exception as e:
+        print(e)
     while 1:
         line = file.readline()
         if not line:
@@ -137,15 +142,18 @@ def assess(student_info):
         
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in MAJOR:
+            print('_________________________________________________________________________________________________')
             major = 'general'
         else:
             if not major in WEIGHT.keys():
                 major = MAJOR[major]
-        print(major)
         if not 'reletter' in student_info['data'].keys():
             student_info['data']['reletter'] = {}
             student_info['data']['reletter']['level'] = ['3','3','3']
-
+        if not 'credential' in student_info['data']:
+            student_info['data']['credential'] = {}
+            student_info['data']['credential']['level'] = "2"
+            
         #将学生信息中的有效项根据权值映射关系替换为为权值，剔除无效项
         student_weight_data = map_weight(student_info, WEIGHT[major], major)
 

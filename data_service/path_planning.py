@@ -262,7 +262,22 @@ def get_nodes_products(part_score_dict, language_type, exam_type):
     unfinished_nodes_products.extend(FIXED_NODES)
 
     return finished_nodes, unfinished_nodes_products
-    
+
+def get_return_target(target, language_type, exam_type):
+    return_target_dict = {}
+    target = TARGET_DICT[target]
+    return_target_dict['gpa'] = {'type': 'GPA', 'score': target['gpa']}
+    if language_type in ['toefl', 'ielts']:
+        return_target_dict['language'] = {'type': language_type.upper() , 'score': target[language_type]}
+    else:
+        return_target_dict['language'] = {'type': 'toefl/ielts'.upper(), 'score': target['toefl']+'/'+target['ielts']}
+    if exam_type in ['gre', 'gmat']:
+        return_target_dict['exam'] = {'type': language_type.upper(), 'score': target[language_type]}
+    else:
+        return_target_dict['exam'] = {'type': 'GRE/GMAT', 'score': target['gre']+'/'+target['gmat']}
+
+    return return_target_dict
+
 def schedule(user_input):
     part_score_dict = {}
     try:
@@ -294,6 +309,8 @@ def schedule(user_input):
         # 为学习提升任务结点关联相应的机会产品
         finished_nodes, unfinished_nodes_products = get_nodes_products(part_score_dict, language_type, exam_type)
         path_plan_logger.info('4')
+
+        return_target = get_return_target(part_score_dict['target'], language_type, exam_type)
         
     except Exception as e:
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
@@ -312,6 +329,7 @@ def schedule(user_input):
     return {
         'status': 'success',
         'result': {
+            'target': return_target,
             'finished': finished_nodes,
             'unfinished': unfinished_nodes_products,
         },
