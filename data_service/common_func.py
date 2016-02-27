@@ -68,19 +68,41 @@ def convert_to_float(input_origin):
     else:
         return False
 
+def pre_token_check(client_token):
+    if not isinstance(client_token, str):
+        raise Exception('参数应为字符串格式')
+    if len(client_token) != 16:
+        raise Exception('参数字符位数不是16位')
 
-def md5_token(token_key='dulishuo0306'):
-    now = time.gmtime() # 获取当前UTC统一时间，与时区无关
 
-    year = now.tm_year * 1
-    month = now.tm_mon * 12
-    day = now.tm_mday * 30
-    hour = now.tm_hour * 60
+def md5_token(client_token):
+    key_a = 1237 # 质数因子
+    key = '100117108105115104117111' # key = ''.join(str(ord(x)) for x in 'dulishuo') 额外的关键字
+    try:
+        pre_token_check(client_token)
+        # 取固定位置的标识符
+        year = client_token[3]
+        month = client_token[7]
+        day = client_token[11]
+        hour = client_token[15]
 
-    token_before = token_key+str(year+month+day+hour)
+        token_str = ''.join(str(int(x) * key_a) for x in [year, month, day, hour])
+        token_str = token_str+key
+        #md5加密
+        m = hashlib.md5()
+        m.update(token_str.encode('utf-8'))
+        token_m = m.hexdigest()[:16]
 
-    m = hashlib.md5()
-    m.update(token_before.encode('utf-8'))
-    token = m.hexdigest()[:16]
+        token_list = list(token_m)
+        token_list[3] = year
+        token_list[7] = month
+        token_list[11] = day
+        token_list[15] = hour
+        token_server = ''.join(token_list)
 
-    return token
+        if client_token == token_server:
+            return True
+        else:
+            return False
+    except Exception as e:
+        return exit_error_func(6, str(e))
