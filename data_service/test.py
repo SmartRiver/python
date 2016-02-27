@@ -13,7 +13,7 @@ import json
 import logging
 
 student_info = {
-    "major":"cs",
+    "major":"logic",
     "grade":"1",
     "target":"1",
     "data":{
@@ -32,10 +32,17 @@ student_info = {
     }
 }
 
+<<<<<<< HEAD
 #assess_student.init()
 #path_planning.init()
 #print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
 #print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+=======
+assess_student.init()
+#path_planning.init()
+#print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
+print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+>>>>>>> 94f3591dd370b140d8ff87cb00f2f9ef39f50f68
 
 #tt = db_util.get_connection()
 #print(tt)

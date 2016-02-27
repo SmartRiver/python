@@ -7,12 +7,14 @@ WEIGHT = {} #各个专业的权重映射表
 RULE = {}   #各个专业的晕眩运算规则
 TRANSLATE = {} #学校与标识之间的映射
 MAX = {}    #储存各个专业所有属性的最高值
+MAJOR = {}  #储存所有专业和其分类
 
 #-------------------------------------------初始化---------------------------------------------------
 #初始化程序，将配置文件载入全局字典
 def init():
     #读取学校和标识之间的映射关系
     load_translate()
+    load_major()
     major = ""
     #遍历resource\assess_rule下所有文件
     dirs = os.walk('resource'+os.sep+'assess_rule')
@@ -22,6 +24,7 @@ def init():
                 major = root.split(os.sep)[-1]
                 #将所有专业的配置文件载入
                 load_config(major)
+                
 #读取每个专业的配置文件
 def load_config(major):
     #载入该major权值映射关系
@@ -92,6 +95,22 @@ def load_translate():
         line = list(map(lambda column: column.strip('\n').strip(), line.split(',')))
         #遍历翻译文件，将学校名和代号载入字典
         TRANSLATE[line[0]] = line[1]
+
+def load_major():
+    value = ''
+    file = open('resource'+os.sep+'major.csv', 'r', encoding='utf-8')
+    while 1:
+        line = file.readline()
+        if not line:
+            break
+        if len(line.strip('\n').strip()) == 0 or line.strip('\n').strip()[0] == '#':
+            continue
+        line = list(map(lambda column: column.strip('\n').strip(), line.split(',')))
+        if line[0][0] == '*':
+            value = line[0][1:]
+        else:
+            MAJOR[line[0]] = value
+            
 #---------------------------------------------初始化结束----------------------------------------------------- 
 
 
@@ -117,9 +136,12 @@ def assess(student_info):
             raise Exception('传入的学生信息没有键值"data"，请重新检查学生信息结构')
         
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
-        if not major in WEIGHT.keys():
+        if not major in MAJOR:
             major = 'general'
-	
+        else:
+            if not major in WEIGHT.keys():
+                major = MAJOR[major]
+        print(major)
         if not 'reletter' in student_info['data'].keys():
             student_info['data']['reletter'] = {}
             student_info['data']['reletter']['level'] = ['3','3','3']
