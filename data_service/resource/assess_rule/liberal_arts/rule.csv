@@ -2,13 +2,15 @@
 gpa,                   multi,   %gpa_score,25,%gpa_school
 
 #language_dimension
-toefl,                 multi,   40,%toefl_total
-ielts,                 multi,   40,%ielts_total
+toefl,                 multi,   30,%toefl_total,%toefl_speaking
+ielts,                 multi,   30,%ielts_total
 language,              max,     %toefl,%ielts
 
 #exam_dimension
-gre_factor,            multi,   %gre_total
-exam,                  multi,   25,%gre_factor
+gre_factor,            multi,   %gre_total,%gre_writing,%gre_verbal
+gmat_factor,           multi,   %gmat_total,%gmat_writing
+exam_factor,           max,     %gmat_factor,%gre_factor
+exam,                  multi,   25,%exam_factor
 
 #research_dimension
 research_base,         multi,   %research_duration,%research_achievement,%research_level,%research_recommendation
@@ -32,24 +34,34 @@ internship_factor,     range,   0.75,    %internship_base,  2.5,2.7,      5
 internship_factor,     range,   0.6,     %internship_base,  2,2.5,        6
 internship_factor,     range,   0.5,     %internship_base,  1,2,          7
 internship_factor,     range,   0,       %internship_base,  0,1,          8
-internship,            multi,   20,%internship_factor
+internship,            multi,   25,%internship_factor
 
 #scholarship_dimension
-scholarship,           multi,   5,%scholarship_level
+scholarship,           multi,   10,%scholarship_level
+
+#reletter_dimension
+reletter,              multi,   5,%reletter_level
+
+#competition_dimension
+competition,           multi,   15,%competition_level
 
 #result
-result,                sum,     %language,%gpa,%internship,%research,%scholarship,%exam
+result,                sum,     %language,%gpa,%internship,%research,%competition,%scholarship,%exam,%reletter
 
 #level
-level,                 range,   1,       %result,          156.75,1000,     1
-level,                 range,   2,       %result,          107,156.75,      2
-level,                 range,   3,       %result,          93.25,107,       3
-level,                 range,   4,       %result,          0,93.25,         4
+level,                 range,   1,       %result,             195,1000,     1
+level,                 range,   2,       %result,             178,195,      2
+level,                 range,   3,       %result,             141.75,178,   3
+level,                 range,   4,       %result,             122.5,141.75, 4
+level,                 range,   5,       %result,             96.5,122.5,   5
+level,                 range,   6,       %result,             0,96.5,       6
 
 #维度标识 计算规则为sum
-gpa_dimension,         dimension,          %gpa
-exam_dimension,        dimension,          %exam
-research_dimension,    dimension,          %research
-language_dimension,    dimension,          %language
-internship_dimension,  dimension,          %internship
-scholarship_dimension, dimension,          %scholarship
+gpa_dimension,          dimension,        %gpa
+exam_dimension,         dimension,        %exam
+research_dimension,     dimension,        %research
+language_dimension,     dimension,        %language
+internship_dimension,   dimension,        %internship
+competition_dimension,  dimension,        %competition
+scholarship_dimension,  dimension,        %scholarship
+reletter_dimension,     dimension,        %reletter

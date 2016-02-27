@@ -4774,3 +4774,23 @@
 [Fri, 26 Feb 2016 16:22:42] path_planning.py [func:schedule] [line:296] INFO: 4
 [Fri, 26 Feb 2016 16:22:45] service.py [func:get] [line:28] INFO: request uri: /path_planning?condition={"major":"tesol","grade":"6","target":"xx","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"1", "level":"1", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
 [Fri, 26 Feb 2016 16:22:45] service.py [func:get] [line:29] INFO: request IP: ::1
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:_logging_conf] [line:326] INFO: --------logging configurating successed--------
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:init] [line:447] INFO: [starting] ----------initializing----------
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:load_node] [line:332] INFO: [starting] loading NODE ID into dict . . . 
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:load_node] [line:342] INFO: [successed] loading NODE ID into dict . . . 
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:load_target] [line:345] INFO: [starting] loading target scores of different levels institutes into dict . . . 
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:load_target] [line:356] INFO: [successed] loading target scores of different levels institutes into dict . . . 
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:load_init_weight] [line:359] INFO: [starting] loading weight of all parts in different semester into dict . . . 
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:load_init_weight] [line:376] INFO: [successed] loading weight of all parts in different semester into dict . . . 
+[Sat, 27 Feb 2016 11:13:15] path_planning.py [func:load_products_by_tag] [line:387] INFO: [starting] loading product information from mongodb . . . 
+[Sat, 27 Feb 2016 11:13:15] db_util.py [func:logging_conf] [line:20] INFO: --------completing confuration--------
+[Sat, 27 Feb 2016 11:13:15] db_util.py [func:get_database] [line:41] INFO: mongodb authencating
+[Sat, 27 Feb 2016 11:13:16] db_util.py [func:get_database] [line:43] INFO: authencation success.
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:load_products_by_tag] [line:434] INFO: [successed] ending reading data from mongodb.
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:load_products_by_tag] [line:437] INFO: close pymongo connection successed.
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:init] [line:457] INFO: [successed] ----------initializing----------
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:schedule] [line:284] INFO: 1
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:schedule] [line:288] INFO: 2
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:schedule] [line:292] INFO: 3
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:get_nodes_products] [line:251] INFO: 5
+[Sat, 27 Feb 2016 11:13:17] path_planning.py [func:schedule] [line:296] INFO: 4
