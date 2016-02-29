@@ -10,6 +10,7 @@ import time
 import json
 import os
 import copy
+from reason import get_reason_by_nodeid
 import logging
 import logging.config
 from db_util import *
@@ -241,7 +242,7 @@ def get_product_by_node_id(node_id):
     
     return PRODUCT_RECOMMEND[node_id]
 
-def get_nodes_products(part_score_dict, language_type, exam_type):
+def get_nodes_products(part_score_dict, language_type, exam_type, grade):
 
     unfinished_nodes_products = [] # 未完成任务结点（关联了相应的机会产品、项目）
     return_unfinished_nodes = [] # 未完成任务结点（存储的是结点ID）
@@ -254,9 +255,12 @@ def get_nodes_products(part_score_dict, language_type, exam_type):
         if each[0] in unfinished_nodes:
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
 
+    #获取推荐理由
+    reason_dict = get_reason_by_nodeid(grade, list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)), NODE_NAME_DICT)
+    
     for index,item in enumerate(return_unfinished_nodes):
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
-            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'products': get_product_by_node_id(NODEID_TO_TEXT[item])})
+            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'reason': reason_dict[item], 'products': get_product_by_node_id(NODEID_TO_TEXT[item])})
         else:
             unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'products': []})
     unfinished_nodes_products.extend(FIXED_NODES)
@@ -283,7 +287,6 @@ def schedule(user_input):
     try:
         # 调用assess_student模块的assess(), 提取出所需要的用户信息
         user_condition = get_user_condition(user_input) 
-
         # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
         language_type, exam_type = get_language_exam_type(user_condition)
 
@@ -307,7 +310,7 @@ def schedule(user_input):
         path_plan_logger.info('3')
 
         # 为学习提升任务结点关联相应的机会产品
-        finished_nodes, unfinished_nodes_products = get_nodes_products(part_score_dict, language_type, exam_type)
+        finished_nodes, unfinished_nodes_products = get_nodes_products(part_score_dict, language_type, exam_type, user_condition['student_info']['grade'])
         path_plan_logger.info('4')
 
         return_target = get_return_target(part_score_dict['target'], language_type, exam_type)
