@@ -45,9 +45,11 @@ path_plan_logger = None # 日志
 PATH_PLAN_DICT = {} # 各个专业每个学期的各学习提升任务权重值
 TARGET_DICT = {} # 各个档次学校的每个部分的目标值
 NODE_NAME_DICT = {} # 各个学习提升任务对应数据库里NODE表的ID
+NODE_TYPE_DICT = {} # 各个NODE表ID对应各个学习提升任务的名字
+NODE_TITLE_DICT = {} # 各个NODE表ID对应的前端卡片展示的title
 NODE_DISPLAY_DICT = {} #各个学习提示功能任务对应前端展示的卡片名
-NODE_PRODUCT = {} #product所属的NODE（大结点）
-PRODUCT_RECOMMEND = {} #每个Tag对应的推荐的机会产品
+NODE_PRODUCT = {} # product所属的NODE（大结点）
+PRODUCT_RECOMMEND = {} # 每个Tag对应的推荐的机会产品
 NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'丰富科研经历'}
 
 '''获取当前时间段(学期)'''
@@ -249,7 +251,7 @@ def _get_product_by_node_id(node_id, size=10):
 def _get_reason_by_nodeid(grade, node_list, node_name_dict):
     init()
     result_dict = {}
-    grade_dict = {'1':'大一','2':'大一','3':'大二','4':'大二','5':'大三','6':'大三'}
+    grade_dict = {1: '大一', 2: '大一', 3: '大二', 4: '大二', 5: '大三', 6: '大三'}
     if grade in grade_dict:
         grade = grade_dict[grade]
     else:
@@ -262,7 +264,7 @@ def _get_reason_by_nodeid(grade, node_list, node_name_dict):
         result_dict[node['nodeid']] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].replace('{grade}',grade)     
     return result_dict        
 
-def _get_nodes_products(part_score_dict, language_type, exam_type, grade, size):
+def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     unfinished_nodes_products = [] # 未完成任务结点（关联了相应的机会产品、项目）
     return_unfinished_nodes = [] # 未完成任务结点（存储的是结点ID）
 
@@ -275,14 +277,15 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, grade, size):
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
 
     #获取推荐理由
-    reason_dict = _get_reason_by_nodeid(grade, list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)), NODE_NAME_DICT)
+    reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)), NODE_NAME_DICT)
     
     for index,item in enumerate(return_unfinished_nodes):
+        _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
-            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'reason': reason_dict[item], 'products': _get_product_by_node_id(NODEID_TO_TEXT[item], size)})
+            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)), 'node_target': _temp_target_score, 'reason': reason_dict[item], 'products': _get_product_by_node_id(NODEID_TO_TEXT[item], size)})
         else:
-            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'products': []})
-    unfinished_nodes_products.extend(FIXED_NODES)
+            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)), 'node_target': _temp_target_score, 'reason': reason_dict[item], 'products': []})
+    #unfinished_nodes_products.extend(FIXED_NODES)
 
     return finished_nodes, unfinished_nodes_products
 
@@ -342,7 +345,7 @@ def schedule(condition, size=None):
         path_plan_logger.info('[successed] _get_soft_condition()')
 
         # 为学习提升任务结点关联相应的机会产品
-        finished_nodes, unfinished_nodes_products = _get_nodes_products(part_score_dict, language_type, exam_type, user_condition['student_info']['grade'], size)
+        finished_nodes, unfinished_nodes_products = _get_nodes_products(part_score_dict, language_type, exam_type, size)
 
         path_plan_logger.info('[successed] _get_nodes_products()')
 
@@ -384,15 +387,20 @@ def _logging_conf():
 
 def _load_node():
     path_plan_logger.info('[starting] loading NODE ID into dict . . . ')
+    
     for each in open('resource/plan/activity.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
         if each[:1] != '#':            
             if each.find(',') > 0:
-                node_name = each.split('//')[0].split(',')[1] # 结点Node名字
-                node_display_name = each.split('//')[0].split(',')[2] # 前端展示的任务卡的名字
-                node_id = int(each.split('//')[0].split(',')[0]) # 结点ID
+                each = each.split('//')[0]
+                node_id = int(each.split(',')[0]) # 结点ID
+                node_name = each.split(',')[1] # 结点Node名字
+                node_display_name = each.split(',')[2] # 前端展示的任务卡的名字
+                node_title = each.split(',')[3] # 前端展示的任务卡的标题
                 NODE_NAME_DICT[node_name] = node_id
+                NODE_TYPE_DICT[node_id] = node_name
                 NODE_DISPLAY_DICT[node_id] = node_display_name
+                NODE_TITLE_DICT[node_id] = node_title
     path_plan_logger.info('[successed] loading NODE ID into dict . . . ')
 
 def _load_target():

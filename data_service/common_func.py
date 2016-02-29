@@ -84,6 +84,7 @@ def convert_to_float(input_origin):
         raise TypeError('参数格式错误')
 
 def _timestamp_check(timestamp_client):
+    '''校队客户端请求的时间戳是否在允许范围之内'''
     now_time = int(time.time())
     if -300 < now_time-timestamp_client < 300: # 客户端请求与服务端获取的时间差不超过5分钟，
         return True
@@ -98,13 +99,15 @@ def pre_token_check(client_token):
 
 def md5_token(client_token):
     key_a = 1237 # 质数因子
-    key = '100117108105115104117111' # key = ''.join(str(ord(x)) for x in 'dulishuo') 额外的关键字
+    # key = ''.join(str(ord(x)) for x in 'dulishuo') 额外的关键字 ， 取每个字母的ascll码拼接起来
+    key = '100117108105115104117111'
 
     try:
+        # 客户端client_token格式、位数校对
         pre_token_check(client_token)
-        msg_client = client_token[:16]
-        timestamp_client = client_token[16:26]
-
+        msg_client = client_token[:16] # 客户端加密后的字符串16位
+        timestamp_client = client_token[16:26] # 客户端调用的时间戳，精确到秒
+        #时间戳校对，客户端调用和服务端响应时间差 +-5分钟之内通过校对
         timestamp_client = int(timestamp_client)
         if not _timestamp_check(timestamp_client):
             return False
@@ -115,14 +118,14 @@ def md5_token(client_token):
         day = client_time.tm_mday
         hour = client_time.tm_hour
 
-        token_str = ''.join(str(int(x) * key_a) for x in [year, month, day, hour])
+        token_str = ''.join(str(int(x) * key_a) for x in [year, month, day, hour]) #将每个元素乘以质数1237再相加
         token_str = token_str+key
         #md5加密
         m = hashlib.md5()
         m.update(token_str.encode('utf-8'))
-        token_m = m.hexdigest()[:16]
+        token_server = m.hexdigest()[:16]
 
-        if msg_client == token_m:
+        if msg_client == token_server:
             return True
         else:
             return False
