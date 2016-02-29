@@ -39,7 +39,7 @@ class MainHandler(tornado.web.RequestHandler):
             token_server = md5_token(token_requset)
             if not token_server: # 发送的token跟服务器生成的token不一致
                 service_logger.info('invalid token')
-                self.write(json.dumps(exit_error_func(4), ensure_ascii=False, indent=4))
+                self.finish(json.dumps(exit_error_func(4, 'token验证失败'), ensure_ascii=False, indent=4))
 
         if request_type == 'reload':
             try:
@@ -53,10 +53,10 @@ class MainHandler(tornado.web.RequestHandler):
                     assess_student.init()
                     path_planning.init()
                 service_logger.info('service reload success.')
-                self.write('reloaded.')
+                self.finish('reloaded.')
             except:
                 service_logger.info('service reload success.')
-                self.write('failed.')
+                self.finish('failed.')
         elif request_type == 'school_search':
             if 'condition' in self.request.query_arguments:
                 try:
@@ -100,9 +100,9 @@ class MainHandler(tornado.web.RequestHandler):
             else:
                 major= None
             if flag:
-                self.write(json.dumps(search.search_school(condition=condition, major=major, area=area), ensure_ascii=False, indent=4))
+                self.finish(json.dumps(search.search_school(condition=condition, major=major, area=area), ensure_ascii=False, indent=4))
             else:
-                self.write(error_msg)
+                self.finish(error_msg)
         elif request_type == 'assess_student':
             if 'condition' in self.request.query_arguments:
                 try:
@@ -116,9 +116,9 @@ class MainHandler(tornado.web.RequestHandler):
                 flag = False
             if flag:
                 assess_student.init()
-                self.write(json.dumps(assess_student.assess(condition), ensure_ascii=False, indent=4))
+                self.finish(json.dumps(assess_student.assess(condition), ensure_ascii=False, indent=4))
             else:
-                self.write(error_msg)
+                self.finish(error_msg)
         elif request_type == 'path_planning':
             if 'condition' in self.request.query_arguments:
                 try:
@@ -130,13 +130,17 @@ class MainHandler(tornado.web.RequestHandler):
             else:
                 error_msg = exit_error_func(5, 'condition为必选参数')
                 flag = False
-            if flag:
-                self.write(json.dumps(path_planning.schedule(condition), ensure_ascii=False, indent=4))
+            if 'size' in self.request.query_arguments:
+                size = self.request.query_arguments['size'][0]
             else:
-                self.write(error_msg)
+                size = None
+            if flag:
+                self.finish(json.dumps(path_planning.schedule(condition=condition, size=size), ensure_ascii=False, indent=4))
+            else:
+                self.finish(error_msg)
         else:
             service_logger.info('invalid request method.')
-            self.write(exit_error_func(7, request_type))
+            self.finish(exit_error_func(7, request_type))
 
 global service_logger # logger
 

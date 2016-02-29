@@ -15,7 +15,6 @@ def init():
     #读取学校和标识之间的映射关系
     load_translate()
     load_major()
-    print('---after---')
     major = ""
     #遍历resource\assess_rule下所有文件
     dirs = os.walk('resource'+os.sep+'assess_rule')
@@ -99,7 +98,6 @@ def load_translate():
 
 def load_major():
     value = ''
-    print('resource'+os.sep+'major.csv')
     try:
         file = open('resource'+os.sep+'major.csv', 'r', encoding='utf-8')
     except Exception as e:

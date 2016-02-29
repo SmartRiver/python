@@ -10,7 +10,6 @@ import time
 import json
 import os
 import copy
-from reason import get_reason_by_nodeid
 import logging
 import logging.config
 from db_util import *
@@ -52,7 +51,7 @@ PRODUCT_RECOMMEND = {} #每个Tag对应的推荐的机会产品
 NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'丰富科研经历'}
 
 '''获取当前时间段(学期)'''
-def get_start_term(grade=1):
+def _get_start_term(grade=1):
     grade = convert_to_int(grade)
     if grade == False or grade not in GRADE_LEVEL_LSIT:
         raise Exception('字段grade不在[1-4]之间')
@@ -64,7 +63,7 @@ def get_start_term(grade=1):
     grade = grade * 2 + increase
     return grade
 
-def get_target(target):
+def _get_school_target(target):
     target = convert_to_int(target)
     if target in TARGET_LEVEL_LIST:
         return target
@@ -74,7 +73,7 @@ def get_target(target):
         raise Exception('字段target不在[1-4]之间')
 
 # 调用评估算法， 转化用户的信息
-def get_user_condition(user_input):
+def _get_user_condition(user_input):
     return_assess_student = assess_student.assess(user_input)
     if 'result' in return_assess_student:
         return return_assess_student['result']
@@ -87,7 +86,7 @@ def get_user_condition(user_input):
             raise Exception(return_assess_student)
     
 # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
-def get_language_exam_type(user_condition):
+def _get_language_exam_type(user_condition):
     if 'language_type' in user_condition:
         language_type = convert_to_str(user_condition['language_type'])
         if language_type not in ['ielts', 'toefl', 'neither', 'none']: # 用户的语言类型，neither表示两者都不
@@ -107,7 +106,7 @@ def get_language_exam_type(user_condition):
         raise Exception('缺少字段exam_type')
     return language_type, exam_type
 
-def get_mgt(student_info):
+def _get_mgt(student_info):
     if 'major' in student_info:
         major = student_info['major']
         major = convert_to_str(major)
@@ -127,8 +126,8 @@ def get_mgt(student_info):
         path_plan_logger.error('缺失字段[student_info][grade]')
         raise Exception('缺失字段[student_info][grade]')
 
-    grade = get_start_term(grade) # 将用户的年级（大一到大四[1-4]）按当前月份分为1-8
-    target = get_target(target) # 获取用户的目标院校档次
+    grade = _get_start_term(grade) # 将用户的年级（大一到大四[1-4]）按当前月份分为1-8
+    target = _get_school_target(target) # 获取用户的目标院校档次
         
     return {
         'grade': grade,
@@ -136,7 +135,7 @@ def get_mgt(student_info):
         'major': major
     }
 
-def get_soft_condition(user_condition):
+def _get_soft_condition(user_condition):
     if 'dimension' in user_condition:
         dimension = user_condition['dimension']
     else:
@@ -168,7 +167,7 @@ def get_soft_condition(user_condition):
 
     return temp_soft_condition
 
-def get_hard_condition(student_info, language_type, exam_type):
+def _get_hard_condition(student_info, language_type, exam_type):
     if 'data' in student_info:
         user_data = student_info['data']
     else:
@@ -191,7 +190,7 @@ def get_hard_condition(student_info, language_type, exam_type):
 
     return temp_hard_condition
 
-def filter_weight_field(weight_dict, language_type, exam_type):
+def _filter_weight_field(weight_dict, language_type, exam_type):
     if language_type == 'ielts':
         if 'toefl' in weight_dict:
             del weight_dict['toefl']
@@ -215,11 +214,11 @@ def filter_weight_field(weight_dict, language_type, exam_type):
         if 'gre' in weight_dict:
             del weight_dict['gre']
 
-def calculate_nodes_weight(part_score_dict, language_type, exam_type):
+def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
     # 获取不同专业不同学期的初始化的各任务（节点）权重
     weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
     #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
-    filter_weight_field(weight_dict, language_type, exam_type)
+    _filter_weight_field(weight_dict, language_type, exam_type)
 
     target_dict = TARGET_DICT[part_score_dict['target']]
 
@@ -238,57 +237,90 @@ def calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
     return finished_nodes, unfinished_nodes, result_weight
 
-def get_product_by_node_id(node_id):
-    
-    return PRODUCT_RECOMMEND[node_id]
+def _get_product_by_node_id(node_id, size=10):
+    _temp_prodict_size = len(PRODUCT_RECOMMEND[node_id])
+    if size == None:
+        size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
+    if size > _temp_prodict_size:
+        return PRODUCT_RECOMMEND[node_id]
+    else:
+        return PRODUCT_RECOMMEND[node_id][:size]
 
-def get_nodes_products(part_score_dict, language_type, exam_type, grade):
+def _get_reason_by_nodeid(grade, node_list, node_name_dict):
+    init()
+    result_dict = {}
+    grade_dict = {'1':'大一','2':'大一','3':'大二','4':'大二','5':'大三','6':'大三'}
+    if grade in grade_dict:
+        grade = grade_dict[grade]
+    else:
+        raise Exception('no such grade')
+    node_name_dict = dict((v,k) for k, v in node_name_dict.items())
+    #优先级高
+    for node in node_list[:3]:
+        result_dict[node['nodeid']] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].replace('{grade}',grade)
+    for node in node_list[3:]:
+        result_dict[node['nodeid']] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].replace('{grade}',grade)     
+    return result_dict        
 
+def _get_nodes_products(part_score_dict, language_type, exam_type, grade, size):
     unfinished_nodes_products = [] # 未完成任务结点（关联了相应的机会产品、项目）
     return_unfinished_nodes = [] # 未完成任务结点（存储的是结点ID）
 
     # 计算各个结点的权值，按照计算后的权重值对各个学习提升任务排序
-    finished_nodes, unfinished_nodes, result_weight = calculate_nodes_weight(part_score_dict, language_type, exam_type)
-    path_plan_logger.info('5')
+    finished_nodes, unfinished_nodes, result_weight = _calculate_nodes_weight(part_score_dict, language_type, exam_type)
+    path_plan_logger.info('calculate_nodes_weight')
 
     for each in result_weight:
         if each[0] in unfinished_nodes:
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
 
     #获取推荐理由
-    reason_dict = get_reason_by_nodeid(grade, list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)), NODE_NAME_DICT)
+    reason_dict = _get_reason_by_nodeid(grade, list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)), NODE_NAME_DICT)
     
     for index,item in enumerate(return_unfinished_nodes):
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
-            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'reason': reason_dict[item], 'products': get_product_by_node_id(NODEID_TO_TEXT[item])})
+            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'reason': reason_dict[item], 'products': _get_product_by_node_id(NODEID_TO_TEXT[item], size)})
         else:
             unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'products': []})
     unfinished_nodes_products.extend(FIXED_NODES)
 
     return finished_nodes, unfinished_nodes_products
 
-def get_return_target(target, language_type, exam_type):
+def _get_return_target(target, language_type, exam_type):
     return_target_dict = {}
     target = TARGET_DICT[target]
     return_target_dict['gpa'] = {'type': 'GPA', 'score': target['gpa']}
     if language_type in ['toefl', 'ielts']:
         return_target_dict['language'] = {'type': language_type.upper() , 'score': target[language_type]}
     else:
-        return_target_dict['language'] = {'type': 'toefl/ielts'.upper(), 'score': target['toefl']+'/'+target['ielts']}
+        return_target_dict['language'] = {'type': 'TOEFL/IELTS', 'score': target['toefl']+'/'+target['ielts']}
     if exam_type in ['gre', 'gmat']:
-        return_target_dict['exam'] = {'type': language_type.upper(), 'score': target[language_type]}
+        return_target_dict['exam'] = {'type': exam_type.upper(), 'score': target[exam_type]}
     else:
         return_target_dict['exam'] = {'type': 'GRE/GMAT', 'score': target['gre']+'/'+target['gmat']}
 
     return return_target_dict
 
-def schedule(user_input):
+def _check_schedule_size(size):
+    if size == None:
+        return size
+    size = convert_to_int(size)
+    if size < 1:
+        raise ValueError('size应为大于0的整数')
+    else:
+        return size
+
+def schedule(condition, size=None):
     part_score_dict = {}
     try:
+        #size 校对是否为大于0的整数
+        size = _check_schedule_size(size)
+
         # 调用assess_student模块的assess(), 提取出所需要的用户信息
-        user_condition = get_user_condition(user_input) 
+        user_condition = _get_user_condition(condition) 
+
         # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
-        language_type, exam_type = get_language_exam_type(user_condition)
+        language_type, exam_type = _get_language_exam_type(user_condition)
 
         #确定'student_info'字段是否存在
         if 'student_info' in user_condition:
@@ -298,22 +330,24 @@ def schedule(user_input):
             raise Exception('缺少字段student_info')
 
         #提取出用户的申请属性（major、 grade、 target）
-        part_score_dict.update(get_mgt(student_info))
-        path_plan_logger.info('1')
+        part_score_dict.update(_get_mgt(student_info))
+        path_plan_logger.info('[successed] _get_mgt()')
 
         # 提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）
-        part_score_dict.update(get_hard_condition(student_info, language_type, exam_type))
-        path_plan_logger.info('2')
+        part_score_dict.update(_get_hard_condition(student_info, language_type, exam_type))
+        path_plan_logger.info('[successed] _get_hard_condition()')
 
         #提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）
-        part_score_dict.update(get_soft_condition(user_condition))
-        path_plan_logger.info('3')
+        part_score_dict.update(_get_soft_condition(user_condition))
+        path_plan_logger.info('[successed] _get_soft_condition()')
 
         # 为学习提升任务结点关联相应的机会产品
-        finished_nodes, unfinished_nodes_products = get_nodes_products(part_score_dict, language_type, exam_type, user_condition['student_info']['grade'])
-        path_plan_logger.info('4')
+        finished_nodes, unfinished_nodes_products = _get_nodes_products(part_score_dict, language_type, exam_type, user_condition['student_info']['grade'], size)
 
-        return_target = get_return_target(part_score_dict['target'], language_type, exam_type)
+        path_plan_logger.info('[successed] _get_nodes_products()')
+
+        return_target = _get_return_target(part_score_dict['target'], language_type, exam_type)
+        path_plan_logger.info('[successed] _get_return_target()')
         
     except Exception as e:
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
@@ -338,22 +372,21 @@ def schedule(user_input):
         },
     }
 
-''' 日志配置 '''
 def _logging_conf():
+    ''' 日志配置 '''
     try:
         global path_plan_logger
         logging.config.fileConfig('./conf/logging.conf')
         path_plan_logger = logging.getLogger('general')
         path_plan_logger.info('--------logging configurating successed--------')
-        print('logging :%s' % id(path_plan_logger))
     except Exception as e:
         print('--------logging configurating failed--------')
 
-def load_node():
+def _load_node():
     path_plan_logger.info('[starting] loading NODE ID into dict . . . ')
     for each in open('resource/plan/activity.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
-        if each[:1] != '#':
+        if each[:1] != '#':            
             if each.find(',') > 0:
                 node_name = each.split('//')[0].split(',')[1] # 结点Node名字
                 node_display_name = each.split('//')[0].split(',')[2] # 前端展示的任务卡的名字
@@ -362,7 +395,7 @@ def load_node():
                 NODE_DISPLAY_DICT[node_id] = node_display_name
     path_plan_logger.info('[successed] loading NODE ID into dict . . . ')
 
-def load_target():
+def _load_target():
     path_plan_logger.info('[starting] loading target scores of different levels institutes into dict . . . ')
     for each in open('resource/plan/target.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
@@ -370,13 +403,17 @@ def load_target():
         target_name = each.split(',')[0]
         target_level = int(each.split(',')[1])
         target_score = float(each.split(',')[2])
+        if each.split(',')[2].find('.') > 0:
+            target_score = float(each.split(',')[2])
+        else:
+            target_score = int(each.split(',')[2])
         if target_level in TARGET_DICT:
             TARGET_DICT[target_level].update({target_name: target_score})
         else:
             TARGET_DICT.update({target_level: {target_name: target_score}})
     path_plan_logger.info('[successed] loading target scores of different levels institutes into dict . . . ')
 
-def load_init_weight():
+def _load_init_weight():
     path_plan_logger.info('[starting] loading weight of all parts in different semester into dict . . . ')
     path_plan_dirs = os.walk('resource/plan/weight')
     for root, dirs, files in path_plan_dirs:
@@ -396,7 +433,7 @@ def load_init_weight():
             PATH_PLAN_DICT[major] = temp_major_dict
     path_plan_logger.info('[successed] loading weight of all parts in different semester into dict . . . ')
 
-def get_tag_dict(tag_list, collection):
+def _get_tag_dict(tag_list, collection):
     tag_dict = {}
     for tag_name in tag_list:
         result = collection.find_one({'name':tag_name},{'id':1})
@@ -404,7 +441,7 @@ def get_tag_dict(tag_list, collection):
             tag_dict[tag_name] = '%d'%result['id']
     return tag_dict
 
-def load_products_by_tag():
+def _load_products_by_tag():
     path_plan_logger.info('[starting] loading product information from mongodb . . . ')
     try:
         for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
@@ -430,13 +467,14 @@ def load_products_by_tag():
         path_plan_logger.error(e)
         path_plan_logger.error(3, 'mongodb configuration failed.')
         return exit_error_func(3)
-
+    path_plan_logger.info('[successed] load resource/db.conf')
     mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
     mongo_client.get_database('dulishuo')
     product_collection = mongo_client.get_collection('product')
     producttag_collection = mongo_client.get_collection('producttag')
     tag_list = ['提升GPA','提升托福成绩','提升雅思成绩','提升GRE成绩','提升GMAT成绩','竞赛','实习','证书','奖学金','活动','推荐信','科研能力提升']
-    tag_dict = get_tag_dict(tag_list,producttag_collection)
+    tag_dict = _get_tag_dict(tag_list,producttag_collection)
+    path_plan_logger.info('[successed] get tag dict')
     
     for tag_name in tag_dict:
         producs_list = []
@@ -452,27 +490,52 @@ def load_products_by_tag():
 
         PRODUCT_RECOMMEND[tag_name] = producs_list
     product_load_time = time.time()
-    path_plan_logger.info('[successed] ending reading data from mongodb.')
     try:
         mongo_client.close() # 关闭连接
         path_plan_logger.info('close pymongo connection successed.')
     except Exception as e:
         path_plan_logger.error('close pymongo connection failed.')
 
-def init():
+def _load_reason():
+    path_plan_logger.info('[starting] loading reason of different nodes from reason.csv to dict.')
+    global REASON_DICT
+    REASON_DICT = {}
+    file = open('resource'+os.sep+'reason'+os.sep+'reason.csv', 'r', encoding='utf-8')
+    while 1:
+        line = file.readline()
+        if not line:
+            break
+        if len(line.strip('\n').strip()) == 0 or line.strip('\n').strip()[0] == '#':
+            continue
+        line = list(map(lambda column: column.strip('\n').strip(), line.split(',')))
+        if line[0] == 'common':
+            if line[0] in REASON_DICT:
+                if line[1] in REASON_DICT[line[0]]:
+                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]
+                else:
+                    REASON_DICT[line[0]][line[1]] = {}
+                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]
+            else:
+                REASON_DICT[line[0]] = {}
+                REASON_DICT[line[0]][line[1]] = {}
+                REASON_DICT[line[0]][line[1]][line[2]] = line[3]
+    path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
+def init():
     start_time = time.time()
 
     _logging_conf() #初始化日志设置
 
     path_plan_logger.info('[starting] ----------initializing----------')
 
-    load_node() # 加载每个学习提升任务对应数据库里的Node节点的ID
+    _load_node() # 加载每个学习提升任务对应数据库里的Node节点的ID
 
-    load_target()# 加载每个档次院校个学习提升任务的目标值
+    _load_target() # 加载每个档次院校个学习提升任务的目标值
     
-    load_init_weight()# 加载各个专业的每个学期的学习提升任务的安排(按照咨询师给的初始权重值排序)
+    _load_init_weight() # 加载各个专业的每个学期的学习提升任务的安排(按照咨询师给的初始权重值排序)
     
-    load_products_by_tag()# 从mongodb库里的product集合加载product信息,并按标签tag分类
+    _load_products_by_tag() # 从mongodb库里的product集合加载product信息,并按标签tag分类
+
+    _load_reason() # 从配置文件[reason/reason.csv]中加载文案
     
     path_plan_logger.info('[successed] ----------initializing----------')

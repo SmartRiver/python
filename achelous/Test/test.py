@@ -5,6 +5,57 @@ import jieba
 import hashlib
 import time
 import urllib
+import hashlib
+
+
+
+def _timestamp_check(timestamp_client):
+    now_time = int(time.time())
+    if -300 < now_time-timestamp_client < 300:
+        return True
+    else:
+        return False
+
+def pre_token_check(client_token):
+    if not isinstance(client_token, str):
+        raise Exception('参数应为字符串格式')
+    if len(client_token) < 26:
+        raise Exception('参数字符位数不小于26位')
+
+def md5_token(client_token):
+    key_a = 1237 # 质数因子
+    key = '100117108105115104117111' # key = ''.join(str(ord(x)) for x in 'dulishuo') 额外的关键字
+
+    try:
+        pre_token_check(client_token)
+        msg_client = client_token[:16]
+        timestamp_client = client_token[16:26]
+
+        timestamp_client = int(timestamp_client)
+        if not _timestamp_check(timestamp_client):
+            return False
+        # 取年月日小时
+        client_time = time.gmtime(timestamp_client)
+        year = client_time.tm_year
+        month = client_time.tm_mon
+        day = client_time.tm_mday
+        hour = client_time.tm_hour
+
+        token_str = ''.join(str(int(x) * key_a) for x in [year, month, day, hour])
+        token_str = token_str+key
+        #md5加密
+        m = hashlib.md5()
+        m.update(token_str.encode('utf-8'))
+        token_m = m.hexdigest()[:16]
+        print(('token_m:'+token_m))
+
+        if msg_client == token_m:
+            return True
+        else:
+            return False
+    except Exception as e:
+        #raise Exception(exit_error_func(6, str(e)))
+        return False
 
 
 
@@ -82,34 +133,34 @@ def convert_to_str(input_origin):
             return str(input_origin)
         except:
             return False
+def test_token():
+        client_time = time.gmtime(time.time())
+        print(client_time)
+        key_a = 1237 # 质数因子
+        key = '100117108105115104117111' # key = ''.join(str(ord(x)) for x in 'dulishuo') 额外的关键字
+        year = client_time.tm_year
+        month = client_time.tm_mon
+        day = client_time.tm_mday
+        hour = client_time.tm_hour
 
-aa = None
+        token_str = ''.join(str(int(x) * key_a) for x in [year, month, day, hour])
+        token_str = token_str+key
+
+        #md5加密
+        m = hashlib.md5()
+        m.update(token_str.encode('utf-8'))
+        token_m = m.hexdigest()[:16]
+
+
+        token_server = ''.join(token_m)
+        token_server = token_server + str(int(time.time()))
+        print(str(int(time.time())))
+        print('token_server:'+token_server)
+        #time.sleep(32)
+        print('sleep end')
+        print(md5_token('f6e5ec9928c65d2c1456715513'))
+
 if __name__ == '__main__':
-    aa = [
-    {
-        'a': 34
-    }
-    ]
 
-    FIXED_NODES = [
-    {
-        'node_id': 79,
-        'node_name': 'XX',
-    },
-    {
-        'node_id': 80,
-        'node_name': 'XX',
-    },
-    {
-        'node_id': 81,
-        'node_name': 'XX',
-    },
-    {
-        'node_id': 94,
-        'node_name': 'XX',
-    }] 
-    #固定的结点（写文书、选择申请学校、网申、申请后工作）
-    cc = []
-    aa.extend(FIXED_NODES)
-    for each in aa:
-        print(each)
+    aa = ['1', 2]
+    print(aa[:1])
