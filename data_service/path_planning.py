@@ -339,6 +339,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
                 })
     #为硬实力做特殊处理
     for index, item in enumerate(unfinished_nodes_products):
+        unfinished_nodes_products[index]['field'] = NODE_TYPE_DICT[item['node_id']]
         if item['node_id'] in [1, 2, 3, 4, 103]:
             unfinished_nodes_products[index]['node_name'] = item['node_task_name'].replace('任务', '')
             unfinished_nodes_products[index]['node_score'] = part_score_dict[NODE_TYPE_DICT[item['node_id']]]
@@ -349,6 +350,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     for index, item in enumerate(finished_nodes):
         finished_nodes[index]['what'] = reason_dict[item['node_id']]['what']
         finished_nodes[index]['how'] = reason_dict[item['node_id']]['how']
+        finished_nodes[index]['field'] = NODE_TYPE_DICT[item['node_id']]
         if item['node_id'] in [1, 2, 3, 4, 103]:
             finished_nodes[index]['node_name'] = item['node_task_name'].replace('任务', '')
             finished_nodes[index]['node_score'] = part_score_dict[NODE_TYPE_DICT[item['node_id']]]
