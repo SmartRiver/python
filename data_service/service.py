@@ -49,7 +49,7 @@ class MainHandler(tornado.web.RequestHandler):
                     assess_student.init()
                     path_planning.init()
                 else:
-                    search.init()
+                    #search.init()
                     assess_student.init()
                     path_planning.init()
                 service_logger.info('service reload success.')

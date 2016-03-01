@@ -17,7 +17,7 @@ student_info = {
     "grade":"3",
     "target":"1",
     "data":{
-        "gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},
+        "gpa":{"score":"3.2", "trend":"2", "school":"ggg|usa|985"},
         "gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},
         "gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},
         "toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},

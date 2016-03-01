@@ -180,11 +180,17 @@ def _get_hard_condition(student_info, language_type, exam_type):
         temp_hard_condition['gpa'] = convert_to_float(user_data['gpa']['score'])
         if language_type == 'ielts':
             temp_hard_condition['ielts'] = convert_to_float(user_data[language_type]['total'])
-        if language_type == 'toefl':
+        elif language_type == 'toefl':
+            temp_hard_condition['toefl'] = convert_to_float(user_data[language_type]['total'])
+        else:
+            temp_hard_condition['ielts'] = convert_to_float(user_data[language_type]['total'])
             temp_hard_condition['toefl'] = convert_to_float(user_data[language_type]['total'])
         if exam_type == 'gre':
             temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
-        if exam_type == 'gmat':
+        elif exam_type == 'gmat':
+            temp_hard_condition['gmat'] = convert_to_float(user_data[exam_type]['total'])
+        else:
+            temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
             temp_hard_condition['gmat'] = convert_to_float(user_data[exam_type]['total'])
     except Exception as e:
         path_plan_logger.error('硬性条件比例获取时出错：'+str(e))
@@ -231,7 +237,12 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
         if each in part_score_dict:
             if part_score_dict[each] > target_dict[each]:
                 _temp_target_score = TARGET_DICT[part_score_dict['target']][each]
-                finished_nodes.append({'node_id': NODE_NAME_DICT[each], 'node_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]], 'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)), 'node_target': _temp_target_score,})
+                finished_nodes.append({
+                    'node_id': NODE_NAME_DICT[each], 
+                    'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]], 
+                    'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)), 
+                    'node_target': _temp_target_score,
+                    })
             else:
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
                 weight_dict[each] = weight_dict[each] * (1+ratio)
@@ -292,16 +303,51 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
     deviation_list = list(map(lambda x:round(TARGET_DICT[part_score_dict['target']][x] - part_score_dict[x],2),['gpa', exam_type, language_type]))
     deviation_dict = {'gpa':deviation_list[0], exam_type:deviation_list[1], language_type:deviation_list[2]}
+    _temp_unfinished_nodes = list(map(lambda x:{'nodeid':x}, return_unfinished_nodes))
+    for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
+        _temp_unfinished_nodes.append(each)
+    print(_temp_unfinished_nodes)
     
     #获取推荐理由
-    reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)),deviation_dict)
+    reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
     
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
-            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)), 'node_target': _temp_target_score, 'reason': reason_dict[item], 'products': _get_product_by_node_id(NODEID_TO_TEXT[item], size)})
+            unfinished_nodes_products.append({
+                'node_id': item,
+                'node_task_name': NODE_DISPLAY_DICT[item],
+                'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)),
+                'node_target': _temp_target_score,
+                'reason': reason_dict[item],
+                'products': _get_product_by_node_id(NODEID_TO_TEXT[item], size),
+                })
         else:
-            unfinished_nodes_products.append({'node_id': item, 'node_name': NODE_DISPLAY_DICT[item], 'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)), 'node_target': _temp_target_score, 'reason': reason_dict[item], 'products': []})
+            unfinished_nodes_products.append({
+                'node_id': item,
+                'node_task_name': NODE_DISPLAY_DICT[item],
+                'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)),
+                'node_target': _temp_target_score,
+                'reason': reason_dict[item],
+                'products': [],
+                })
+    #为硬实力做特殊处理
+    for index, item in enumerate(unfinished_nodes_products):
+        if item['node_id'] in [1, 2, 3, 4, 103]:
+            unfinished_nodes_products[index]['node_name'] = item['node_task_name'].replace('任务', '')
+            unfinished_nodes_products[index]['node_score'] = part_score_dict[NODE_TYPE_DICT[item['node_id']]]
+        else:
+            unfinished_nodes_products[index]['node_target'] = ''
+            unfinished_nodes_products[index]['node_score'] = ''
+
+    for index, item in enumerate(finished_nodes):
+        finished_nodes[index]['reason'] = reason_dict[item['node_id']]
+        if item['node_id'] in [1, 2, 3, 4, 103]:
+            finished_nodes[index]['node_name'] = item['node_task_name'].replace('任务', '')
+            finished_nodes[index]['node_score'] = part_score_dict[NODE_TYPE_DICT[item['node_id']]]
+        else:
+            finished_nodes[index]['node_target'] = ''
+            finished_nodes[index]['node_score'] = ''      
     #unfinished_nodes_products.extend(FIXED_NODES)
 
     return finished_nodes, unfinished_nodes_products
