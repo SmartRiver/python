@@ -273,22 +273,27 @@ def _get_reason_by_nodeid(semester, node_list, deviation_dict):
             deviation = deviation_dict[attribute]
             for row in REASON_DICT['special'][attribute]:
                 if deviation >= float(row[0]) and row[1].count(str(semester)) > 0:
-                    result_dict[NODE_NAME_DICT[attribute]] = row[2].replace('{grade}',grade_dict[semester])
-                    
+                    result_dict[NODE_NAME_DICT[attribute]]= {}
+                    result_dict[NODE_NAME_DICT[attribute]]['what'] = row[2].replace('{grade}',grade_dict[semester])
+                    result_dict[NODE_NAME_DICT[attribute]]['how'] = row[3].replace('{grade}',grade_dict[semester])
+             
     #反转节点字典
     node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
     #优先级高
     for node in node_list[:3]:
         if node['nodeid'] in result_dict:
             continue
-        result_dict[node['nodeid']] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].replace('{grade}',grade_dict[semester])
-    
+        result_dict[node['nodeid']] = {}
+        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split(',')[0].replace('{grade}',grade_dict[semester])
+        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split(',')[1].replace('{grade}',grade_dict[semester])
     #优先级低
     for node in node_list[3:]:
         if node['nodeid'] in result_dict:
             continue
-        result_dict[node['nodeid']] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].replace('{grade}',grade_dict[semester])     
-    return result_dict        
+        result_dict[node['nodeid']] = {}
+        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split(',')[0].replace('{grade}',grade_dict[semester])
+        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split(',')[1].replace('{grade}',grade_dict[semester])
+    return result_dict
 
 def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     unfinished_nodes_products = [] # 未完成任务结点（关联了相应的机会产品、项目）
@@ -306,8 +311,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     _temp_unfinished_nodes = list(map(lambda x:{'nodeid':x}, return_unfinished_nodes))
     for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
         _temp_unfinished_nodes.append(each)
-    print(_temp_unfinished_nodes)
-    
+
     #获取推荐理由
     reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
     
@@ -319,7 +323,8 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
                 'node_task_name': NODE_DISPLAY_DICT[item],
                 'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)),
                 'node_target': _temp_target_score,
-                'reason': reason_dict[item],
+                'what': reason_dict[item]['what'],
+                'how':reason_dict[item]['how'],
                 'products': _get_product_by_node_id(NODEID_TO_TEXT[item], size),
                 })
         else:
@@ -328,7 +333,8 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
                 'node_task_name': NODE_DISPLAY_DICT[item],
                 'node_title': NODE_TITLE_DICT[item].replace('?', str(_temp_target_score)),
                 'node_target': _temp_target_score,
-                'reason': reason_dict[item],
+                'what': reason_dict[item]['what'],
+                'how':reason_dict[item]['how'],
                 'products': [],
                 })
     #为硬实力做特殊处理
@@ -341,7 +347,8 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
             unfinished_nodes_products[index]['node_score'] = ''
 
     for index, item in enumerate(finished_nodes):
-        finished_nodes[index]['reason'] = reason_dict[item['node_id']]
+        finished_nodes[index]['what'] = reason_dict[item['node_id']]['what']
+        finished_nodes[index]['how'] = reason_dict[item['node_id']]['how']
         if item['node_id'] in [1, 2, 3, 4, 103]:
             finished_nodes[index]['node_name'] = item['node_task_name'].replace('任务', '')
             finished_nodes[index]['node_score'] = part_score_dict[NODE_TYPE_DICT[item['node_id']]]
@@ -582,14 +589,14 @@ def _load_reason():
         if line[0] == 'common':
             if line[0] in REASON_DICT:
                 if line[1] in REASON_DICT[line[0]]:
-                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]
+                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+','+line[4]
                 else:
                     REASON_DICT[line[0]][line[1]] = {}
-                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]
+                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+','+line[4]
             else:
                 REASON_DICT[line[0]] = {}
                 REASON_DICT[line[0]][line[1]] = {}
-                REASON_DICT[line[0]][line[1]][line[2]] = line[3]
+                REASON_DICT[line[0]][line[1]][line[2]] = line[3]+','+line[4]
         elif line[0] == 'special':
             if line[0] in REASON_DICT:
                 if line[1] in REASON_DICT[line[0]]:

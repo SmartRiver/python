@@ -1,61 +1,61 @@
 #通用文案
-#gpa
-common,priority_high,gpa,你的gpa跟目标差值很大，建议先从提高gpa入手，因为你正处于{grade}，gpa的优先级很高
-common,priority_low,gpa,你正处于{grade}，gpa对于你的优先级不是很高，建议在有余力的情况下参与
+#gpa                                                                                      
+common,priority_high,gpa,你的gpa跟目标差值很大，建议先从提高gpa入手，因为你正处于{grade}，gpa的优先级很高,gpa建议
+common,priority_low,gpa,你正处于{grade}，gpa对于你的优先级不是很高，建议在有余力的情况下参与,gpa建议
 
 #scholarship
-common,priority_high,scholarship,你的scholarship跟目标差值很大，建议先从提高scholarship入手，因为你正处于{grade}，scholarship的优先级很高
-common,priority_low,scholarship,你正处于{grade}，scholarship对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,scholarship,你的scholarship跟目标差值很大，建议先从提高scholarship入手，因为你正处于{grade}，scholarship的优先级很高,scholarship建议
+common,priority_low,scholarship,你正处于{grade}，scholarship对于你的优先级不是很高，建议在有余力的情况下参与,scholarship建议
 
 #gre
-common,priority_high,gre,你的gre跟目标差值很大，建议先从提高gre入手，因为你正处于{grade}，gre的优先级很高
-common,priority_low,gre,你正处于{grade}，gre对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,gre,你的gre跟目标差值很大，建议先从提高gre入手，因为你正处于{grade}，gre的优先级很高,gre建议
+common,priority_low,gre,你正处于{grade}，gre对于你的优先级不是很高，建议在有余力的情况下参与,gre建议
 
 #toefl
-common,priority_high,toefl,你的toefl跟目标差值很大，建议先从提高toefl入手，因为你正处于{grade}，toefl的优先级很高
-common,priority_low,toefl,你正处于{grade}，toefl对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,toefl,你的toefl跟目标差值很大，建议先从提高toefl入手，因为你正处于{grade}，toefl的优先级很高,toefl建议
+common,priority_low,toefl,你正处于{grade}，toefl对于你的优先级不是很高，建议在有余力的情况下参与,toefl建议
 
 #ielts
-common,priority_high,ielts,你的ielts跟目标差值很大，建议先从提高ielts入手，因为你正处于{grade}，ielts的优先级很高
-common,priority_low,ielts,你正处于{grade}，ielts对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,ielts,你的ielts跟目标差值很大，建议先从提高ielts入手，因为你正处于{grade}，ielts的优先级很高,ielts建议
+common,priority_low,ielts,你正处于{grade}，ielts对于你的优先级不是很高，建议在有余力的情况下参与,ielts建议
 
 #research
-common,priority_high,research,你的research跟目标差值很大，建议先从提高gpa入手，因为你正处于{grade}，research的优先级很高
-common,priority_low,research,你正处于{grade}，research对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,research,你的research跟目标差值很大，建议先从提高gpa入手，因为你正处于{grade}，research的优先级很高,research建议
+common,priority_low,research,你正处于{grade}，research对于你的优先级不是很高，建议在有余力的情况下参与,research建议
 
 #internship
-common,priority_high,internship,你的internship跟目标差值很大，建议先从提高internship入手，因为你正处于{grade}，internship的优先级很高
-common,priority_low,internship,你正处于{grade}，internship对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,internship,你的internship跟目标差值很大，建议先从提高internship入手，因为你正处于{grade}，internship的优先级很高,internship建议
+common,priority_low,internship,你正处于{grade}，internship对于你的优先级不是很高，建议在有余力的情况下参与,internship建议
 
 #competition
-common,priority_high,competition,你的competition跟目标差值很大，建议先从提高competition入手，因为你正处于{grade}，competition的优先级很高
-common,priority_low,competition,你正处于{grade}，competition对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,competition,你的competition跟目标差值很大，建议先从提高competition入手，因为你正处于{grade}，competition的优先级很高,competition建议
+common,priority_low,competition,你正处于{grade}，competition对于你的优先级不是很高，建议在有余力的情况下参与,competition建议
 
 #credential
-common,priority_high,credential,你的credential跟目标差值很大，建议先从提高credential入手，因为你正处于{grade}，credential的优先级很高
-common,priority_low,credential,你正处于{grade}，credential对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,credential,你的credential跟目标差值很大，建议先从提高credential入手，因为你正处于{grade}，credential的优先级很高,credential建议
+common,priority_low,credential,你正处于{grade}，credential对于你的优先级不是很高，建议在有余力的情况下参与,credential建议
 
 #activity
-common,priority_high,activity,你的activity跟目标差值很大，建议先从提高activity入手，因为你正处于{grade}，activity的优先级很高
-common,priority_low,activity,你正处于{grade}，activity对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,activity,你的activity跟目标差值很大，建议先从提高activity入手，因为你正处于{grade}，activity的优先级很高,activity建议
+common,priority_low,activity,你正处于{grade}，activity对于你的优先级不是很高，建议在有余力的情况下参与,activity建议
 
 #scholarship
-common,priority_high,scholarship,你的scholarship跟目标差值很大，建议先从提高scholarship入手，因为你正处于{grade}，scholarship的优先级很高
-common,priority_low,scholarship,你正处于{grade}，scholarship对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,scholarship,你的scholarship跟目标差值很大，建议先从提高scholarship入手，因为你正处于{grade}，scholarship的优先级很高,scholarship建议
+common,priority_low,scholarship,你正处于{grade}，scholarship对于你的优先级不是很高，建议在有余力的情况下参与,scholarship建议
 
 #gmat
-common,priority_high,gmat,你的gmat跟目标差值很大，建议先从提高gmat入手，因为你正处于{grade}，gmat的优先级很高
-common,priority_low,gmat,你正处于{grade}，gmat对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,gmat,你的gmat跟目标差值很大，建议先从提高gmat入手，因为你正处于{grade}，gmat的优先级很高,gmat建议
+common,priority_low,gmat,你正处于{grade}，gmat对于你的优先级不是很高，建议在有余力的情况下参与,gmat建议
 
 #reletter
-common,priority_high,reletter,你的reletter跟目标差值很大，建议先从提高reletter入手，因为你正处于{grade}，reletter的优先级很高
-common,priority_low,reletter,你正处于{grade}，reletter对于你的优先级不是很高，建议在有余力的情况下参与
+common,priority_high,reletter,你的reletter跟目标差值很大，建议先从提高reletter入手，因为你正处于{grade}，reletter的优先级很高,reletter建议
+common,priority_low,reletter,你正处于{grade}，reletter对于你的优先级不是很高，建议在有余力的情况下参与,reletter建议
 
-#特殊理由 属性  偏差值   学期   单项文案
+#特殊理由 属性  偏差值   学期   单项what   单项how
 #gpa监测
-special,gpa,0.3,1234,你的gpa跟目标值差距过大（超过0.3），鉴于你处于{grade}，希望你在剩下的时间里重视平时课程，将gpa提上去
-special,gpa,0.3,56,你的gpa跟目标值差距过大（超过0.3），鉴于你处于大三，建议你通过刷分或者其他有效方式弥补gpa
+special,gpa,0.3,1234,你的gpa跟目标值差距过大（超过0.3），鉴于你处于{grade}，希望你在剩下的时间里重视平时课程，将gpa提上去,gpa建议
+special,gpa,0.3,56,你的gpa跟目标值差距过大（超过0.3），鉴于你处于大三，建议你通过刷分或者其他有效方式弥补gpa,gpa建议
 #gre监测
-special,gre,10,6,你的gre成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排语言考试
+special,gre,10,6,你的gre成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排语言考试,gre建议
 #toefl监测
-special,toefl,15,6,你的toefl成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排toefl考试
+special,toefl,15,6,你的toefl成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排toefl考试,toefl建议
