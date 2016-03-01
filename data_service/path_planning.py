@@ -279,6 +279,43 @@ def _get_reason_by_nodeid(semester, node_list, deviation_dict):
              
     #反转节点字典
     node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
+    
+    compare = []
+    #两项对比
+    for node in node_list[:3]:
+        if node['nodeid'] in result_dict:
+            compare.append(node['nodeid'])
+            
+    compare = list(map(lambda x:node_name_dict[x], compare))
+    if len(compare) >=2:
+        success = 0
+        #在前三项的第一项和第二项产生比较，必然第一项>第二项
+        for row in REASON_DICT['compare']:
+            if row[0] == compare[0]:
+                if row[1] == compare[1]:
+                    if row[2].count(str(semester)) > 0:
+                        result_dict[NODE_NAME_DICT[compare[0]]] = {'what':row[3],'how':row[4]}
+                        result_dict[NODE_NAME_DICT[compare[1]]] = {'what':row[5],'how':row[6]}
+                        success = 1
+        
+        if not success == 1 and len(compare) >= 3:
+            #第一项和第三项产生比较，必然第一项>第三项
+            for row in REASON_DICT['compare']:
+                if row[0] == compare[0]:
+                    if row[1] == compare[2]:
+                        if row[2].count(str(semester)) > 0:
+                            result_dict[NODE_NAME_DICT[compare[0]]] = {'what':row[3],'how':row[4]}
+                            result_dict[NODE_NAME_DICT[compare[2]]] = {'what':row[5],'how':row[6]}
+                            success = 1
+                        
+        if not success == 1 and len(compare) >= 3:
+            #第二项和第三项产生比较，必然第二项>第三项
+            for row in REASON_DICT['compare']:
+                if row[0] == compare[1]:
+                    if row[1] == compare[2]:
+                        if row[2].count(str(semester)) > 0:
+                            result_dict[NODE_NAME_DICT[compare[1]]] = {'what':row[3],'how':row[4]}
+                            result_dict[NODE_NAME_DICT[compare[2]]] = {'what':row[5],'how':row[6]}
     #优先级高
     for node in node_list[:3]:
         if node['nodeid'] in result_dict:
@@ -609,6 +646,12 @@ def _load_reason():
                 REASON_DICT[line[0]] = {}
                 REASON_DICT[line[0]][line[1]] = []
                 REASON_DICT[line[0]][line[1]].append(line[2:])
+        elif line[0] == 'compare':
+            if line[0] in REASON_DICT:
+                REASON_DICT[line[0]].append(line[1:])
+            else:
+                REASON_DICT[line[0]] = []
+                REASON_DICT[line[0]].append(line[1:])
                 
     path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
