@@ -249,20 +249,34 @@ def _get_product_by_node_id(node_id, size=10):
     else:
         return PRODUCT_RECOMMEND[node_id][:size]
 
-def _get_reason_by_nodeid(grade, node_list, node_name_dict):
-    init()
+def _get_reason_by_nodeid(semester, node_list, deviation_dict):
+    #结果字典
     result_dict = {}
-    grade_dict = {1: '大一', 2: '大一', 3: '大二', 4: '大二', 5: '大三', 6: '大三'}
-    if grade in grade_dict:
-        grade = grade_dict[grade]
-    else:
-        raise Exception('no such grade')
-    node_name_dict = dict((v,k) for k, v in node_name_dict.items())
+    #学期（数字）转学期（中文）字典
+    semester_dict = {1:'大一上', 2:'大一下', 3:'大二上', 4:'大二下', 5:'大三上', 6:'大三下'}
+    #学期（数字）转年级（中文）字典
+    grade_dict = {1:'大一', 2:'大一', 3:'大二', 4:'大二', 5:'大三', 6:'大三'}
+    
+    for attribute in deviation_dict:
+        if attribute in REASON_DICT['special']:
+            deviation = deviation_dict[attribute]
+            for row in REASON_DICT['special'][attribute]:
+                if deviation >= float(row[0]) and row[1].count(str(semester)) > 0:
+                    result_dict[NODE_NAME_DICT[attribute]] = row[2].replace('{grade}',grade_dict[semester])
+                    
+    #反转节点字典
+    node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
     #优先级高
     for node in node_list[:3]:
-        result_dict[node['nodeid']] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].replace('{grade}',grade)
+        if node['nodeid'] in result_dict:
+            continue
+        result_dict[node['nodeid']] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].replace('{grade}',grade_dict[semester])
+    
+    #优先级低
     for node in node_list[3:]:
-        result_dict[node['nodeid']] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].replace('{grade}',grade)     
+        if node['nodeid'] in result_dict:
+            continue
+        result_dict[node['nodeid']] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].replace('{grade}',grade_dict[semester])     
     return result_dict        
 
 def _get_nodes_products(part_score_dict, language_type, exam_type, size):
@@ -276,9 +290,11 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     for each in result_weight:
         if each[0] in unfinished_nodes:
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
-
+    deviation_list = list(map(lambda x:round(TARGET_DICT[part_score_dict['target']][x] - part_score_dict[x],2),['gpa', exam_type, language_type]))
+    deviation_dict = {'gpa':deviation_list[0], exam_type:deviation_list[1], language_type:deviation_list[2]}
+    
     #获取推荐理由
-    reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)), NODE_NAME_DICT)
+    reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], list(map(lambda x:{'nodeid':x}, return_unfinished_nodes)),deviation_dict)
     
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
@@ -528,6 +544,18 @@ def _load_reason():
                 REASON_DICT[line[0]] = {}
                 REASON_DICT[line[0]][line[1]] = {}
                 REASON_DICT[line[0]][line[1]][line[2]] = line[3]
+        elif line[0] == 'special':
+            if line[0] in REASON_DICT:
+                if line[1] in REASON_DICT[line[0]]:
+                    REASON_DICT[line[0]][line[1]].append(line[2:])
+                else:
+                    REASON_DICT[line[0]][line[1]] = []
+                    REASON_DICT[line[0]][line[1]].append(line[2:])
+            else:
+                REASON_DICT[line[0]] = {}
+                REASON_DICT[line[0]][line[1]] = []
+                REASON_DICT[line[0]][line[1]].append(line[2:])
+                
     path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
 def init():

@@ -14,7 +14,7 @@ import logging
 
 student_info = {
     "major":"mathematics",
-    "grade":"1",
+    "grade":"3",
     "target":"1",
     "data":{
         "gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},

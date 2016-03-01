@@ -140,7 +140,6 @@ def assess(student_info):
         
         #匹配专业，如果没有具体的评估规则，则将major转为general进行评估
         if not major in MAJOR:
-            print('_________________________________________________________________________________________________')
             major = 'general'
         else:
             if not major in WEIGHT.keys():

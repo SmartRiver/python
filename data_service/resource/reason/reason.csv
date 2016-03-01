@@ -50,3 +50,12 @@ common,priority_low,gmat,你正处于{grade}，gmat对于你的优先级不是�
 #reletter
 common,priority_high,reletter,你的reletter跟目标差值很大，建议先从提高reletter入手，因为你正处于{grade}，reletter的优先级很高
 common,priority_low,reletter,你正处于{grade}，reletter对于你的优先级不是很高，建议在有余力的情况下参与
+
+#特殊理由 属性  偏差值   学期   单项文案
+#gpa监测
+special,gpa,0.3,1234,你的gpa跟目标值差距过大（超过0.3），鉴于你处于{grade}，希望你在剩下的时间里重视平时课程，将gpa提上去
+special,gpa,0.3,56,你的gpa跟目标值差距过大（超过0.3），鉴于你处于大三，建议你通过刷分或者其他有效方式弥补gpa
+#gre监测
+special,gre,10,6,你的gre成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排语言考试
+#toefl监测
+special,toefl,15,6,你的toefl成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排toefl考试
