@@ -1,4 +1,6 @@
 #通用文案
+#{grade}在文案中获取当前年级，{semester}在文案中获取当前学期
+#common为标志,priority_high为优先级高（前三项），gpa为属性，后面的文案分为两部分，第一部分为what，第二部分为how
 #gpa                                                                                      
 common,priority_high,gpa,你的gpa跟目标差值很大，建议先从提高gpa入手，因为你正处于{grade}，gpa的优先级很高,gpa建议
 common,priority_low,gpa,你正处于{grade}，gpa对于你的优先级不是很高，建议在有余力的情况下参与,gpa建议
@@ -52,10 +54,21 @@ common,priority_high,reletter,你的reletter跟目标差值很大，建议先从
 common,priority_low,reletter,你正处于{grade}，reletter对于你的优先级不是很高，建议在有余力的情况下参与,reletter建议
 
 #特殊理由 属性  偏差值   学期   单项what   单项how
+#gpa为需要检测的属性，0.3为该属性低于目标xx时报警，1234为横跨的学期，当学期为1/2/3/4时，会触发该检测。{grade}为年级变量。后面的文案分
+#两部分，第一部分为what，第二部分为how，以英文逗号分隔，文案只能用中文逗号
+
 #gpa监测
 special,gpa,0.3,1234,你的gpa跟目标值差距过大（超过0.3），鉴于你处于{grade}，希望你在剩下的时间里重视平时课程，将gpa提上去,gpa建议
 special,gpa,0.3,56,你的gpa跟目标值差距过大（超过0.3），鉴于你处于大三，建议你通过刷分或者其他有效方式弥补gpa,gpa建议
+
 #gre监测
 special,gre,10,6,你的gre成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排语言考试,gre建议
+
 #toefl监测
 special,toefl,15,6,你的toefl成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排toefl考试,toefl建议
+
+#compare为比较用，第一项举例，gre在gpa之前，所以两者都在在优先级为前三的时候，如果gre比gpa优先级高，则前一个what和how给gre，后一个给gpa
+#比较理由  大的项   小的项   学期    大项what   大项how    小项what    小项how（特殊理由触发时）
+
+compare,gre,gpa,56,gre的how,gre的what,gpa的how,gpa的what
+compare,toefl,gpa,56,toefl的how,toefl的what,gpa的how,gpa的what
