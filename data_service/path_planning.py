@@ -439,6 +439,7 @@ def schedule(condition, size=None):
     return {
         'status': 'success',
         'result': {
+            'user_condition': user_condition,
             'target': return_target,
             'finished': finished_nodes,
             'unfinished': unfinished_nodes_products,
