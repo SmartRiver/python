@@ -235,7 +235,7 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
     for each in weight_dict:
         if each in part_score_dict:
-            if part_score_dict[each] > target_dict[each]:
+            if part_score_dict[each] >= target_dict[each]:
                 _temp_target_score = TARGET_DICT[part_score_dict['target']][each]
                 finished_nodes.append({
                     'node_id': NODE_NAME_DICT[each], 
