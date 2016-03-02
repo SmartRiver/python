@@ -267,12 +267,11 @@ def _get_reason_by_nodeid(semester, node_list, deviation_dict):
     semester_dict = {1:'大一上学期', 2:'大一下学期', 3:'大二上学期', 4:'大二下学期', 5:'大三上学期', 6:'大三下学期'}
     #学期（数字）转年级（中文）字典
     grade_dict = {1:'大一', 2:'大一', 3:'大二', 4:'大二', 5:'大三', 6:'大三'}
-    
     for attribute in deviation_dict:
         if attribute in REASON_DICT['special']:
             deviation = deviation_dict[attribute]
             for row in REASON_DICT['special'][attribute]:
-                if deviation >= float(row[0]) and row[1].count(str(semester)) > 0:
+                if deviation >= float(row[0].split('-')[0]) and deviation < float(row[0].split('-')[1]) and row[1].count(str(semester)) > 0:
                     result_dict[NODE_NAME_DICT[attribute]]= {}
                     result_dict[NODE_NAME_DICT[attribute]]['what'] = row[2].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
                     result_dict[NODE_NAME_DICT[attribute]]['how'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
