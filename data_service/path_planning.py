@@ -435,6 +435,7 @@ def _check_schedule_size(size):
         return size
 
 def schedule(condition, size=None):
+    print(PRODUCT_RECOMMEND)
     part_score_dict = {}
     try:
         #size 校对是否为大于0的整数

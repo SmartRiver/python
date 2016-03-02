@@ -191,7 +191,7 @@ def map_weight(student_info, weight_dict, major):
             student_data['gpa']['school'] = '12'
         else:
             student_data['gpa']['school'] = TRANSLATE[student_data['gpa']['school'].split('|')[2]]
-        
+    print(student_data['gpa']['school'])
     for key in weight_dict:
         main_key = key.split('_')[0] #第一层的键
         sub_key = key.split('_')[1]  #第二层的键
