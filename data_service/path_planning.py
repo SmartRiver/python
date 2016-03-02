@@ -329,15 +329,15 @@ def _get_reason_by_nodeid(semester, node_list, deviation_dict):
         if node['nodeid'] in result_dict:
             continue
         result_dict[node['nodeid']] = {}
-        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split(',')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
-        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split(',')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
+        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split('|')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
+        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split('|')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
     #优先级低
     for node in node_list[3:]:
         if node['nodeid'] in result_dict:
             continue
         result_dict[node['nodeid']] = {}
-        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split(',')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
-        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split(',')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
+        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
+        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
     return result_dict
 
 def _get_nodes_products(part_score_dict, language_type, exam_type, size):
@@ -632,18 +632,18 @@ def _load_reason():
             break
         if len(line.strip('\n').strip()) == 0 or line.strip('\n').strip()[0] == '#':
             continue
-        line = list(map(lambda column: column.strip('\n').strip(), line.split(',')))
+        line = list(map(lambda column: column.strip('\n').strip(), line.split('|')))
         if line[0] == 'common':
             if line[0] in REASON_DICT:
                 if line[1] in REASON_DICT[line[0]]:
-                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+','+line[4]
+                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+'|'+line[4]
                 else:
                     REASON_DICT[line[0]][line[1]] = {}
-                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+','+line[4]
+                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+'|'+line[4]
             else:
                 REASON_DICT[line[0]] = {}
                 REASON_DICT[line[0]][line[1]] = {}
-                REASON_DICT[line[0]][line[1]][line[2]] = line[3]+','+line[4]
+                REASON_DICT[line[0]][line[1]][line[2]] = line[3]+'|'+line[4]
         elif line[0] == 'special':
             if line[0] in REASON_DICT:
                 if line[1] in REASON_DICT[line[0]]:
