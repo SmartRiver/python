@@ -129,6 +129,7 @@ internship_duration,    0,        5-6,         5
 internship_level,       1.4,      1-2,         1
 internship_level,       1,        2-3,         2
 internship_level,       0.8,      3-4,         3
+internship_level,       0,        4-5,         4
 
 #1:部门主管    2:直属领导    3:无
 internship_recommendation,     1,        1-2,        1
