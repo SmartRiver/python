@@ -291,14 +291,10 @@ def _get_reason_by_nodeid(semester, node_list, deviation_dict):
              
     #反转节点字典
     node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
-    
-    compare = []
+
     #两项对比
-    for node in node_list[:3]:
-        if node['nodeid'] in result_dict:
-            compare.append(node['nodeid'])
-            
-    compare = list(map(lambda x:node_name_dict[x], compare))
+    compare = list(map(lambda x:node_name_dict[x['nodeid']], node_list[:3]))
+    
     if len(compare) >=2:
         success = 0
         #在前三项的第一项和第二项产生比较，必然第一项>第二项
@@ -360,10 +356,8 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     _temp_unfinished_nodes = list(map(lambda x:{'nodeid':x}, return_unfinished_nodes))
     for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
         _temp_unfinished_nodes.append(each)
-
     #获取推荐理由
     reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
-    
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
@@ -435,7 +429,6 @@ def _check_schedule_size(size):
         return size
 
 def schedule(condition, size=None):
-    print(PRODUCT_RECOMMEND)
     part_score_dict = {}
     try:
         #size 校对是否为大于0的整数
