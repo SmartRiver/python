@@ -183,12 +183,15 @@ def map_weight(student_info, weight_dict, major):
         raise Exception('学生信息键"data"对应的字典缺少键"gpa"')
     if not 'school' in student_data['gpa'].keys():
         raise Exception('学生信息键"data"对应的字典中的键"gpa"对应的字典缺少键"school"')
+    
     if not student_data['gpa']['school'].count('|') == 2:
-        raise Exception('学生本科学校格式错误')
-    if not student_data['gpa']['school'].split('|')[2] in TRANSLATE.keys():
-        raise Exception('学校类型格式错误，找不到对应的学校类型')
-
-    student_data['gpa']['school'] = TRANSLATE[student_data['gpa']['school'].split('|')[2]]
+        student_data['gpa']['school'] = '12'
+    else:
+        if not student_data['gpa']['school'].split('|')[2] in TRANSLATE.keys():
+            student_data['gpa']['school'] = '12'
+        else:
+            student_data['gpa']['school'] = TRANSLATE[student_data['gpa']['school'].split('|')[2]]
+        
     for key in weight_dict:
         main_key = key.split('_')[0] #第一层的键
         sub_key = key.split('_')[1]  #第二层的键

@@ -17,7 +17,7 @@ student_info = {
     "grade":"3",
     "target":"1",
     "data":{
-        "gpa":{"score":"3", "trend":"2", "school":"ggg|usa|985"},
+        "gpa":{"score":"3", "trend":"2", "school":""},
         "gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},
         "gre":{"total":"200", "writing":"4", "verbal":"12", "maths":"12"},
         "toefl":{"total":"1", "writing":"0", "reading":"12", "listening":"12", "speaking":"1"},
@@ -33,7 +33,7 @@ student_info = {
 
 assess_student.init()
 path_planning.init()
-print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
-#print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+#print(json.dumps(path_planning.schedule(student_info), ensure_ascii=False, indent=4))
+print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
 
 
