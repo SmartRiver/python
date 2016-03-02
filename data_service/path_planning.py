@@ -109,7 +109,11 @@ def _get_language_exam_type(user_condition):
     return language_type, exam_type
 
 def _get_mgt(student_info):
+    major = ''
+    real_major = ''
+    
     if 'major' in student_info:
+        real_major = student_info['major']
         major = student_info['major']
         major = convert_to_str(major)
         if major not in PATH_PLAN_DICT:
@@ -134,7 +138,8 @@ def _get_mgt(student_info):
     return {
         'grade': grade,
         'target': target,
-        'major': major
+        'major': major,
+        'real_major': real_major
     }
 
 def _get_soft_condition(user_condition):
@@ -251,14 +256,22 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
     return finished_nodes, unfinished_nodes, result_weight
 
-def _get_product_by_node_id(node_id, size=10):
-    _temp_prodict_size = len(PRODUCT_RECOMMEND[node_id])
+def _get_product_by_node_id(node_id, major, size=10):
+    product_recommend = []
+    if node_id in PRODUCT_RECOMMEND and major in PRODUCT_RECOMMEND:
+        for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
+            for product_by_major in PRODUCT_RECOMMEND[major]:
+                if product_by_attribute['title'] == product_by_major['title']:
+                    product_recommend.append(product_by_attribute)
+    else:
+        return []
+    _temp_prodict_size = len(product_recommend)
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
     if size > _temp_prodict_size:
-        return PRODUCT_RECOMMEND[node_id]
+        return product_recommend
     else:
-        return PRODUCT_RECOMMEND[node_id][:size]
+        return product_recommend[:size]
 
 def _get_reason_by_nodeid(semester, node_list, deviation_dict):
     #结果字典
@@ -361,7 +374,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
                 'node_target': _temp_target_score,
                 'what': reason_dict[item]['what'],
                 'how':reason_dict[item]['how'],
-                'products': _get_product_by_node_id(NODEID_TO_TEXT[item], size),
+                'products': _get_product_by_node_id(NODEID_TO_TEXT[item], part_score_dict['real_major'], size),
                 })
         else:
             unfinished_nodes_products.append({
@@ -551,6 +564,8 @@ def _load_init_weight():
     path_plan_logger.info('[successed] loading weight of all parts in different semester into dict . . . ')
 
 def _get_tag_dict(tag_list, collection):
+    for major in assess_student.MAJOR:
+        tag_list.append(major)
     tag_dict = {}
     for tag_name in tag_list:
         result = collection.find_one({'name':tag_name},{'id':1})
@@ -604,7 +619,6 @@ def _load_products_by_tag():
             except KeyError:
                 continue
             producs_list.append(product)
-
         PRODUCT_RECOMMEND[tag_name] = producs_list
     product_load_time = time.time()
     try:

@@ -13,7 +13,7 @@ import json
 import logging
 
 student_info = {
-    "major":"mathematics",
+    "major":"environment",
     "grade":"3",
     "target":"1",
     "data":{
@@ -23,9 +23,8 @@ student_info = {
         "toefl":{"total":"1", "writing":"0", "reading":"12", "listening":"12", "speaking":"1"},
         "ielts":{"total":"0", "writing":"0", "reading":"12","listening":"12", "speaking":"0"},
         "research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},
-        "work":{"duration":"1", "level":"1", "recommendation":"1"},
         "internship":{"duration":"5", "level":"3", "recommendation":"2"},
-        "activity":{"duration":"1", "type":"1"},
+        "activity":{"duration":"5", "type":"3"},
         "competition":{"level":"2"},
         "scholarship":{"level":"2"}
     }
