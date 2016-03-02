@@ -19,9 +19,9 @@ student_info = {
     "data":{
         "gpa":{"score":"3", "trend":"2", "school":"ggg|usa|985"},
         "gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},
-        "gre":{"total":"30", "writing":"4", "verbal":"12", "maths":"12"},
-        "toefl":{"total":"40", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},
-        "ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},
+        "gre":{"total":"200", "writing":"4", "verbal":"12", "maths":"12"},
+        "toefl":{"total":"1", "writing":"0", "reading":"12", "listening":"12", "speaking":"1"},
+        "ielts":{"total":"0", "writing":"0", "reading":"12","listening":"12", "speaking":"0"},
         "research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},
         "work":{"duration":"1", "level":"1", "recommendation":"1"},
         "internship":{"duration":"5", "level":"3", "recommendation":"2"},

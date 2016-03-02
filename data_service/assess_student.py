@@ -322,6 +322,7 @@ def exec_rule(student_data, rule_dict):
             pass
     language_type = ''
     exam_type = ''
+    print(cache_dict)
     if float(cache_dict['ielts']) > float(cache_dict['toefl']):
         language_type = 'ielts'
     else:
