@@ -59,16 +59,15 @@ common,priority_low,reletter,你正处于{grade}，reletter对于你的优先级
 
 #gpa监测
 special,gpa,0.3,1234,你的gpa跟目标值差距过大（超过0.3），鉴于你处于{grade}，希望你在剩下的时间里重视平时课程，将gpa提上去,gpa建议
-special,gpa,0.3,56,你的gpa跟目标值差距过大（超过0.3），鉴于你处于大三，建议你通过刷分或者其他有效方式弥补gpa,gpa建议
+special,gpa,0.3,56,你的gpa跟目标值差距过大（超过0.3），鉴于你处于{grade}，建议你通过刷分或者其他有效方式弥补gpa,gpa建议
 
 #gre监测
-special,gre,10,6,你的gre成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排语言考试,gre建议
+special,gre,10,6,你的gre成绩距离目标值差距过大，鉴于你已经处于{semester}，建议抓紧时间安排语言考试,gre建议
 
 #toefl监测
-special,toefl,15,6,你的toefl成绩距离目标值差距过大，鉴于你已经处于大三下学期，建议抓紧时间安排toefl考试,toefl建议
+special,toefl,15,6,你的toefl成绩距离目标值差距过大，鉴于你已经处于{semester}，建议抓紧时间安排toefl考试,toefl建议
 
 #compare为比较用，第一项举例，gre在gpa之前，所以两者都在在优先级为前三的时候，如果gre比gpa优先级高，则前一个what和how给gre，后一个给gpa
 #比较理由  大的项   小的项   学期    大项what   大项how    小项what    小项how（特殊理由触发时）
 
-compare,gre,gpa,56,gre的how,gre的what,gpa的how,gpa的what
-compare,toefl,gpa,56,toefl的how,toefl的what,gpa的how,gpa的what
+compare,toefl,gpa,56,你的托福成绩和目标值差距很大，虽然你的gpa也没有达到目标值，但我们还是建议你先去参加托福考试，因为你已经处于大三，语言考试的优先级特别高,toefl的what,gpa的how,gpa的what
