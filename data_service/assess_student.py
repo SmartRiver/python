@@ -202,7 +202,7 @@ def map_weight(student_info, weight_dict, major):
                 new_student_data[main_key] = {}
             #如果student_data有第二层相应键
             if sub_key in student_data[main_key]:
-                if len(student_data[main_key][sub_key].strip()) == 0:
+                if len(student_data[main_key][sub_key]) == 0 and not isinstance(student_data[main_key][sub_key], list):
                     new_student_data[main_key][sub_key] = '0'
                 else:
                     new_student_data[main_key][sub_key] = student_data[main_key][sub_key]
