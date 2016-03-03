@@ -50,6 +50,28 @@ NODE_TITLE_DICT = {} # 各个NODE表ID对应的前端卡片展示的title
 NODE_DISPLAY_DICT = {} #各个学习提示功能任务对应前端展示的卡片名
 NODE_PRODUCT = {} # product所属的NODE（大结点）
 PRODUCT_RECOMMEND = {} # 每个Tag对应的推荐的机会产品
+USER_ANALYSIS = {} # 咨询师为不同用户设置的软、硬件分析文案
+ANALYSIS_TABLE = [
+                ('gpa', 'gpa_score', 1, 0, 0, 'GPA'),
+                ('school', 'gpa_school', 1, 1, 12, '学校'),
+                ('toefl', 'toefl_total', 1, 0, 0, '托福'),
+                ('toefl_speaking', 'toefl_speaking', 1, 0, 0),
+                ('ielts', 'ielts_total', 1, 0, 0, '雅思'),
+                ('ielts_speaking', 'ielts_speaking', 1, 0, 0),
+                ('gre', 'gre_total', 1, 0, 0, 'GRE'),
+                ('gre_writing', 'gre_writing', 1, 0, 0),
+                ('gmat', 'gmat_total', 1, 0, 0, 'GMAT'),
+                ('gmat_writing', 'gmat_writing', 1, 0, 0),
+                ('research_duration', 'research_duration', 0, 1, 4, '科研能力'),
+                ('research_level', 'research_level', 0, 1, 4),
+                ('research_achievement', 'research_achievement', 0, 1, 4),
+                ('internship_duration', 'internship_duration', 0, 1, 4, '实习'),
+                ('internship_level', 'internship_level', 0, 1, 3),
+                ('internship_recommendation', 'internship_recommendation', 0, 1, 3),
+                ('scholarship', 'scholarship_level', 0, 1, 5, '竞赛获奖'),
+                ('activity_duration', 'activity_duration', 0, 1, 3, '活动经历'),
+                ('activity_level', 'activity_type', 0, 1, 4)
+                ]
 NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'科研能力提升'}
 
 '''获取当前时间段(学期)'''
@@ -259,6 +281,10 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
+                if each == 'gpa':
+                    ratio = ratio + 0.3
+                if each in ['toefl', 'ielts', 'gre', 'gmat']:
+                    ratio = ratio + 0.35
                 weight_dict[each] = weight_dict[each] * ratio
                 unfinished_nodes.append(each)
     #对结果进行排序
@@ -589,6 +615,115 @@ def _check_schedule_size(size):
         raise ValueError('size应为大于0的整数')
     else:
         return size
+# 写的很乱。需要重构
+def _get_user_analysis(pre_handle_condition, after_handle_condition, target, language_type, exam_type):
+    ''' 为用户返回咨询师提供的软性、硬性分析文案'''
+    target = str(target)
+    _hard_condition_analysis_list = []
+    _soft_condition_analysis_list = []
+    _temp_hard_cnt = ''
+    _temp_soft_cnt = ''
+    flag_soft = 1
+    flag_hard = 1
+    title_flag_soft = ''
+    title_flag_hard = ''
+    for index, each in enumerate(ANALYSIS_TABLE):
+        table_key = each[0]
+        if language_type == 'toefl':
+            if table_key[:5] == 'ielts':
+                continue
+        elif language_type == 'ietls':
+            if table_key[:5] == 'toefl':
+                continue
+        elif language_type == 'none':
+            if table_key[:5] == 'toefl' or table_key[:5] == 'ielts' :
+                continue
+        if exam_type == 'gre':
+            if table_key[:4] == 'gmat':
+                continue
+        elif exam_type == 'gmat':
+            if table_key[:3] == 'gre':
+                continue
+        elif exam_type == 'none':
+            if table_key[:4] == 'gmat' or table_key[:3] == 'gre' :
+                continue
+        field_user = each[1]
+        is_hard_condition = int(each[2])
+        is_level_divide = int(each[3])
+        default_level = each[4]
+        if is_hard_condition == 1:
+            if len(each) > 5:
+                if flag_hard < 1:
+                    flag_hard = 0
+                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<br>'+each[5]+'<br>'
+                    
+                    title_flag_soft = '<br>'+each[5]+'<br>'
+                else:
+                    _temp_hard_cnt = _temp_hard_cnt  + '<br>'+each[5]+'<br>'
+                    title_flag_hard = '<br>'+each[5]+'<br>'
+                    flag_hard = 0
+                
+            if field_user.find('_') > 0:
+                try:
+                    _temp_field = float(after_handle_condition[field_user.split('_')[0]][field_user.split('_')[1]])
+                except:
+                    try:
+                        _temp_field = float(pre_handle_condition[field_user.split('_')[0]][field_user.split('_')[1]])
+                    except:
+                        _temp_field = float(default_level)
+            else:
+                try:
+                    _temp_field = float(pre_handle_condition[field_user])
+                except:
+                    _temp_field = float(default_level)
+            if is_level_divide == 0:
+                for each_record in USER_ANALYSIS[table_key]:
+                    if float(each_record['min_value']) <= _temp_field <= float(each_record['max_value']):
+                        if len(each_record['target'][target]) > 1:
+                            _temp_hard_cnt = _temp_hard_cnt + each_record['target'][target]
+            else:
+                _temp_field = convert_to_str(int(_temp_field))
+                for each_record in USER_ANALYSIS[table_key]:
+                    if _temp_field == each_record['level']:
+                        if len(each_record['target'][target]) > 1:
+                            _temp_hard_cnt = _temp_hard_cnt + each_record['target'][target]+'<br>'
+                            flag_hard = flag_hard + 1
+                       
+        else:
+            if len(each) > 5:
+                if flag_soft < 1:
+                    flag_soft = 0
+                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<br>'+each[5]+'<br>'
+                    title_flag_soft = '<br>'+each[5]+'<br>'
+                else:
+                    _temp_soft_cnt = _temp_soft_cnt  + '<br>'+each[5]+'<br>'
+                    title_flag_soft = '<br>'+each[5]+'<br>'
+                    flag_soft = 0
+            if is_level_divide == 1:
+                if field_user.find('_') > 0:
+                    try:
+                        _temp_field = str(after_handle_condition[field_user.split('_')[0]][field_user.split('_')[1]])
+                    except:
+                        _temp_field = str(default_level)
+                else:
+                    try:
+                        _temp_field = str(after_handle_condition[field_user])
+                    except:
+                        _temp_field = str(default_level)
+                _temp_field = _temp_field.replace('.0', '')
+                for each_record in USER_ANALYSIS[table_key]:
+                    if _temp_field == each_record['level']:
+                        if len(each_record['target'][target]) > 1:
+                            _temp_soft_cnt = _temp_soft_cnt + each_record['target'][target] + '<br>'
+                            flag_soft = flag_soft + 1
+            if index == len(ANALYSIS_TABLE)-1:
+                if flag_soft < 1:
+                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')
+
+    return {
+        'hard_condition_analysis': _temp_hard_cnt.lstrip('<br>').replace('<br><br>', '<br>'),
+        'soft_condition_analysis': _temp_soft_cnt.lstrip('<br>').replace('<br><br>', '<br>'),
+    }
 
 def schedule(condition, size=None):
     part_score_dict = {}
@@ -627,8 +762,15 @@ def schedule(condition, size=None):
         finished_nodes, unfinished_nodes_products = _get_nodes_products(part_score_dict, language_type, exam_type, size)
         path_plan_logger.info('[successed] _get_nodes_products()')
 
+        # 返回目标值
         return_target = _get_return_target(part_score_dict['target'], language_type, exam_type)
         path_plan_logger.info('[successed] _get_return_target()')
+
+        # 返回软硬性条件分析文案
+        try:
+            user_analysis = _get_user_analysis(condition['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
+        except Exception as e:
+            print('except:'+str(e))
         
     except Exception as e:
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
@@ -647,6 +789,7 @@ def schedule(condition, size=None):
     return {
         'status': 'success',
         'result': {
+            'user_analysis':user_analysis,
             'user_condition': user_condition,
             'target': return_target,
             'finished': finished_nodes,
@@ -836,6 +979,54 @@ def _load_reason():
                 REASON_DICT[line[0]][line[1]].append(line[2:])
     path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
+def _load_user_analysis():
+    path_plan_logger.info('[starting] loading userAnalysis information from mongodb . . . ')
+    try:
+        for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
+            try:
+                each = each.strip('\r').strip('\n')
+                if(each.split('=')[0] == 'mongodb.url'):
+                    url = each.split('=')[1]
+                if(each.split('=')[0] == 'mongodb.port'):
+                    port = int(each.split('=')[1])
+                if(each.split('=')[0] == 'mongodb.dulishuo.username'):
+                    username = each.split('=')[1]
+                if(each.split('=')[0] == 'mongodb.dulishuo.password'):
+                    password = each.split('=')[1]
+            except Exception as e:
+                path_plan_logger.error(e)
+                path_plan_logger.error('some line is wrong when read .')
+                path_plan_logger.info('wrong line : %s ', each)
+                return
+    except FileNotFoundError:
+        path_plan_logger.error('File resource/db.conf not found . . . ')
+        return exit_error_func(3)
+    except Exception as e:
+        path_plan_logger.error(e)
+        path_plan_logger.error(3, 'mongodb configuration failed.')
+        return exit_error_func(3)
+    path_plan_logger.info('[successed] load resource/db.conf')
+    mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
+    mongo_client.get_database('dulishuo')
+    userAnalysis_collection = mongo_client.get_collection('userAnalysis')
+    for each in userAnalysis_collection.find():
+        try:
+            _temp_analysis = []
+            if each['type'] in USER_ANALYSIS:
+                _temp_analysis = USER_ANALYSIS[each['type']]
+            _temp_analysis.append(each)
+            USER_ANALYSIS[each['type']] = _temp_analysis
+        except Exception as e:
+            path_plan_logger.error(e)
+            path_plan_logger.error('some record invalid .')
+            path_plan_logger.info('wrong record : %s ', str(each))
+            return
+    try:
+        mongo_client.close() # 关闭连接
+        path_plan_logger.info('close pymongo connection successed.')
+    except Exception as e:
+        path_plan_logger.error('close pymongo connection failed.')
+
 def init():
     start_time = time.time()
 
@@ -852,5 +1043,7 @@ def init():
     _load_products_by_tag() # 从mongodb库里的product集合加载product信息,并按标签tag分类
 
     _load_reason() # 从配置文件[reason/reason.csv]中加载文案
+
+    _load_user_analysis() # 从mongodb库里的userAnalysis集合里加载咨询师的软硬性分析文案
     
     path_plan_logger.info('[successed] ----------initializing----------')
