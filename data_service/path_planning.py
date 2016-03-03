@@ -18,7 +18,7 @@ import assess_student
 from assess_student import assess
 
 TARGET_LEVEL_LIST = [1, 2, 3, 4] # 目标档次学校所以档次， 1为最高档
-GRADE_LEVEL_LSIT = [1, 2, 3, 4] # 年级 1、2、3、4分半代表大一、大二、大三、大四
+GRADE_LEVEL_LSIT = [1, 2, 3] # 年级 1、2、3、4分半代表大一、大二、大三、大四
 FIXED_NODES = [ #固定的结点（写文书、选择申请学校、网申、申请后工作）
     {
         'node_id': 79,
@@ -56,7 +56,7 @@ NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:
 def _get_start_term(grade=1):
     grade = convert_to_int(grade)
     if grade == False or grade not in GRADE_LEVEL_LSIT:
-        raise Exception('字段grade不在[1-4]之间')
+        raise Exception('字段grade不在[1-3]之间')
     now_month = time.localtime().tm_mon # 获取当前的月份
     if 3 <= now_month <= 8:
         increase = 0
