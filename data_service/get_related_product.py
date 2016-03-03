@@ -22,7 +22,9 @@ def init():
     tag_dict = get_tag_dict(tag_list,producttag_collection)
     for tag_name in tag_dict:
         list = []
-        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}},{'id':1,'title':1,'title_pic':1,'tag':1}):
+        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}}):
+            print(record)
+            return
             product = {}
             product['product_id'] = record['id']
             product['title'] = record['title']

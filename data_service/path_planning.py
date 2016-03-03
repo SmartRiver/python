@@ -562,22 +562,23 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     return finished_nodes, unfinished_nodes_products
 
 def _get_return_target(target, language_type, exam_type):
-    print(target)
-    print(language_type)
-    print(exam_type)
-    raise Exception('')
+    
     return_target_dict = {}
     target = TARGET_DICT[target]
     return_target_dict['gpa'] = {'type': 'GPA', 'score': target['gpa']}
     if language_type in ['toefl', 'ielts']:
         return_target_dict['language'] = {'type': language_type.upper() , 'score': target[language_type]}
+    elif language_type == 'neither':
+        return_target_dict['language'] = {'type': 'TOEFL/IELTS', 'score': str(target['toefl'])+'/'+str(target['ielts'])}
     else:
-        return_target_dict['language'] = {'type': 'TOEFL/IELTS', 'score': target['toefl']+'/'+target['ielts']}
+        pass
+    
     if exam_type in ['gre', 'gmat']:
         return_target_dict['exam'] = {'type': exam_type.upper(), 'score': target[exam_type]}
+    elif exam_type == 'neither':
+        return_target_dict['exam'] = {'type': 'GRE/GMAT', 'score': str(target['gre'])+'/'+str(target['gmat'])}
     else:
-        return_target_dict['exam'] = {'type': 'GRE/GMAT', 'score': target['gre']+'/'+target['gmat']}
-
+        pass
     return return_target_dict
 
 def _check_schedule_size(size):
@@ -766,7 +767,7 @@ def _load_products_by_tag():
     
     for tag_name in tag_dict:
         products_list = []
-        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}},{'id':1,'title':1,'title_pic':1,'tag':1}):
+        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}, 'is_online':{'$ne':0}},{'id':1,'title':1,'title_pic':1,'tag':1}):
             product = {}
             try:
                 product['product_id'] = record['id']
