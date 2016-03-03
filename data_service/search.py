@@ -16,8 +16,8 @@ from db_util import *
 import logging
 import logging.config
 
-'''构建的字典前缀树'''
 class SchoolTree(object):
+    '''构建的院校的字典前缀树'''
     def __init__(self):
         self.root  = Node()  # Trie树root节点引用
 
@@ -106,8 +106,16 @@ SCHOOL_TRIE = SchoolTree() # 学校库的前缀树
 
 SCHOOL_SPECIAL_MAJOR = {} #综合前十或者专业优势
 
-''' 将匹配到的院校集合按照档次权重值排序'''
-def __sorted_school_weight(result):
+def _school_filter_by_country(search_result, country):
+    '''如果指定国家，则只显示匹配到该国家的院校'''
+    if country == None:
+        return search_result
+    country = country.lower()
+    return list(filter(lambda x : eval(x)['result'].split('|')[1] == country, search_result))
+
+
+def _sorted_school_weight(result):
+    ''' 将匹配到的院校集合按照档次权重值排序'''
     return_result = []
     result_school_dict = {}
     for each in result:
@@ -117,15 +125,15 @@ def __sorted_school_weight(result):
         return_result.append(each[0])
     return return_result
 
-''' 如果是该专业的优势学校，并且不是清华北大，则变成'综合前十或者专业优势学校' '''
-def __school_filter_by_major(result, major):
+def _school_filter_by_major(result, major):
+    ''' 如果是该专业的优势学校，并且不是清华北大，则变成'综合前十或者专业优势学校' '''
     for index,item in enumerate(result):
         if item.split('|')[0] in SCHOOL_SPECIAL_MAJOR[major]:
             if item.split('|')[2] != '清华北大':
                 result[index] = item.split('|')[0] + '|' + item.split('|')[1] + '|综合前十或专业优势'
 
-'''如果指定地区，则将该地区匹配到的院校优先排列'''
-def __school_sort_by_area(search_result, area=None):
+def _school_sort_by_area(search_result, area=None):
+    '''如果指定地区，则将该地区匹配到的院校优先排列'''
     result = []
     for each in search_result:
         each = eval(each)
@@ -135,8 +143,8 @@ def __school_sort_by_area(search_result, area=None):
             result.append(str(each))
     return result
 
-''' 学校查找'''
-def search_school(condition, major=None, area=None):
+def search_school(condition, major=None, area=None, country=None):
+    ''' 学校查找'''
     if condition == '':
         return{
             'status': 'success',
@@ -154,25 +162,28 @@ def search_school(condition, major=None, area=None):
     for each in search_result:
         search_result_set.add(each)
 
-    result = __school_sort_by_area(search_result_set, area=area)
+    result = _school_filter_by_country(search_result_set, country=country) # 如果指定国家，则只显示匹配到该国家的院校
 
-    result = __sorted_school_weight(result)
+    if area != None:
+        result = _school_sort_by_area(result, area=area) # 如果指定地区，则将该地区匹配到的院校优先排列
+
+    result = _sorted_school_weight(result) # 将匹配到的院校集合按照档次权重值排序
 
     if len(result) > 10: # 如果结果院校数量大于10个，则取前10个返回
         result = result[:10]
+
     if major not in SCHOOL_SPECIAL_MAJOR:
         major = None
     if major != None:
-        __school_filter_by_major(result, major=major)
+        _school_filter_by_major(result, major=major) # 如果是该专业的优势学校，并且不是清华北大，则变成'综合前十或者专业优势学校'
 
-    #print('result:%s' % result)
     return{
         'status': 'success',
         'result': result,
     }
 
-'''日志配置'''
 def _logging_conf():
+    '''日志配置'''
     try:
         global search_logger
         logging.config.fileConfig('./conf/logging.conf')
@@ -181,8 +192,8 @@ def _logging_conf():
     except Exception as e:
         print('--------logging configurating failed--------')
     
-'''初始化'''
 def init(dict_from='mongodb'):
+    '''初始化'''
 
     start_time = time.time()
     _logging_conf()
@@ -251,7 +262,7 @@ def init(dict_from='mongodb'):
         school_search_collection = mongo_client.get_collection('school', 'dulishuo')
         for each in school_search_collection.find():
             try:
-                UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area']+'|'+str(each['type']).replace('.0','')+'|'+str(each['weight']))
+                UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area'].lower()+'|'+str(each['type']).replace('.0','')+'|'+str(each['weight']))
             except TypeError as e:
                 search_logger.error(e)
                 search_logger.error('wrong line when converting：%s' % each)

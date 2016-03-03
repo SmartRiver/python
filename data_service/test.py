@@ -6,6 +6,8 @@ from path_planning import schedule, init
 import db_util
 from db_util import get_connection
 from common_func import md5_token
+import search
+from search import search_school, init
 import hashlib
 import time
 
@@ -31,7 +33,9 @@ student_info = {
 }
 
 
-assess_student.init()
-path_planning.init()
-print(json.dumps(path_planning.schedule(student_info, size=1), ensure_ascii=False, indent=4))
+# assess_student.init()
+# path_planning.init()
+# print(json.dumps(path_planning.schedule(student_info, size=1), ensure_ascii=False, indent=4))
 #print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+search.init()
+print(json.dumps(search.search_school(condition='a', country=None), ensure_ascii=False, indent=4))
