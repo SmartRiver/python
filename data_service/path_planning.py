@@ -263,8 +263,17 @@ def _get_product_by_node_id(node_id, major, size=10):
             for product_by_major in PRODUCT_RECOMMEND[major]:
                 if product_by_attribute['title'] == product_by_major['title']:
                     product_recommend.append(product_by_attribute)
-    else:
-        return []
+    if node_id in PRODUCT_RECOMMEND:
+        temp_product_recommend = []
+        for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
+            insert = 1
+            for product_in_list in product_recommend:
+                if product_by_attribute['title'] == product_in_list['title']:
+                    insert = 0
+            if insert == 1:
+                temp_product_recommend.append(product_by_attribute)
+        if len(temp_product_recommend) > 0:
+            product_recommend.extend(temp_product_recommend)
     _temp_prodict_size = len(product_recommend)
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
@@ -273,71 +282,89 @@ def _get_product_by_node_id(node_id, major, size=10):
     else:
         return product_recommend[:size]
 
-def _get_reason_by_nodeid(semester, node_list, deviation_dict):
+def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
+    #获取专业大类
+    major_type = assess_student.MAJOR[major]
+    if not major_type in REASON_DICT:
+        major_type = 'commerce'
     #结果字典
     result_dict = {}
     #学期（数字）转学期（中文）字典
     semester_dict = {1:'大一上学期', 2:'大一下学期', 3:'大二上学期', 4:'大二下学期', 5:'大三上学期', 6:'大三下学期'}
     #学期（数字）转年级（中文）字典
     grade_dict = {1:'大一', 2:'大一', 3:'大二', 4:'大二', 5:'大三', 6:'大三'}
+    #专业分类（英文）转专业分类（中文）字典
+    major_type_dict = {'commerce':'商科','liberal_arts':'文科','engineering':'工科','science':'理科'}
     for attribute in deviation_dict:
-        if attribute in REASON_DICT['special']:
+        if attribute in REASON_DICT[major_type]['special']:
             deviation = deviation_dict[attribute]
-            for row in REASON_DICT['special'][attribute]:
-                if deviation >= float(row[0].split('-')[0]) and deviation < float(row[0].split('-')[1]) and row[1].count(str(semester)) > 0:
-                    result_dict[NODE_NAME_DICT[attribute]]= {}
-                    result_dict[NODE_NAME_DICT[attribute]]['what'] = row[2].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
-                    result_dict[NODE_NAME_DICT[attribute]]['how'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
-             
+            for row in REASON_DICT[major_type]['special'][attribute]:
+                if deviation >= float(row[0].split('-')[0]) and deviation <= float(row[0].split('-')[1]) and row[1].count(str(semester)) > 0:
+                    result_dict[NODE_NAME_DICT[attribute]] = {}
+                    result_dict[NODE_NAME_DICT[attribute]]['what'] = row[2].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                    result_dict[NODE_NAME_DICT[attribute]]['how'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
     #反转节点字典
     node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
+    
 
     #两项对比
     compare = list(map(lambda x:node_name_dict[x['nodeid']], node_list[:3]))
-    
     if len(compare) >=2:
         success = 0
         #在前三项的第一项和第二项产生比较，必然第一项>第二项
-        for row in REASON_DICT['compare']:
+        for row in REASON_DICT[major_type]['compare']:
             if row[0] == compare[0]:
                 if row[1] == compare[1]:
                     if row[2].count(str(semester)) > 0:
-                        result_dict[NODE_NAME_DICT[compare[0]]] = {'what':row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]),'how':row[4].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])}
-                        result_dict[NODE_NAME_DICT[compare[1]]] = {'what':row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]),'how':row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])}
+                        result_dict[NODE_NAME_DICT[compare[0]]] = {}
+                        result_dict[NODE_NAME_DICT[compare[0]]]['what'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                        result_dict[NODE_NAME_DICT[compare[0]]]['how'] = row[4].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                        result_dict[NODE_NAME_DICT[compare[1]]] = {}
+                        result_dict[NODE_NAME_DICT[compare[1]]]['what'] = row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                        result_dict[NODE_NAME_DICT[compare[1]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
                         success = 1
-        
         if not success == 1 and len(compare) >= 3:
             #第一项和第三项产生比较，必然第一项>第三项
-            for row in REASON_DICT['compare']:
+            for row in REASON_DICT[major_type]['compare']:
                 if row[0] == compare[0]:
                     if row[1] == compare[2]:
                         if row[2].count(str(semester)) > 0:
-                            result_dict[NODE_NAME_DICT[compare[0]]] = {'what':row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]),'how':row[4].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])}
-                            result_dict[NODE_NAME_DICT[compare[2]]] = {'what':row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]),'how':row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])}
-                            success = 1
-                        
+                            result_dict[NODE_NAME_DICT[compare[0]]] = {}
+                            result_dict[NODE_NAME_DICT[compare[0]]]['what'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                            result_dict[NODE_NAME_DICT[compare[0]]]['how'] = row[4].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                            result_dict[NODE_NAME_DICT[compare[2]]] = {}
+                            result_dict[NODE_NAME_DICT[compare[2]]]['what'] = row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                            result_dict[NODE_NAME_DICT[compare[2]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                            success = 1           
         if not success == 1 and len(compare) >= 3:
             #第二项和第三项产生比较，必然第二项>第三项
             for row in REASON_DICT['compare']:
                 if row[0] == compare[1]:
                     if row[1] == compare[2]:
                         if row[2].count(str(semester)) > 0:
-                            result_dict[NODE_NAME_DICT[compare[1]]] = {'what':row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]),'how':row[4].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])}
-                            result_dict[NODE_NAME_DICT[compare[2]]] = {'what':row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]),'how':row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])}
+                            result_dict[NODE_NAME_DICT[compare[1]]] = {}
+                            result_dict[NODE_NAME_DICT[compare[1]]]['what'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                            result_dict[NODE_NAME_DICT[compare[1]]]['how'] = row[4].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                            result_dict[NODE_NAME_DICT[compare[2]]] = {}
+                            result_dict[NODE_NAME_DICT[compare[2]]]['what'] = row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+                            result_dict[NODE_NAME_DICT[compare[2]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+
     #优先级高
     for node in node_list[:3]:
         if node['nodeid'] in result_dict:
             continue
         result_dict[node['nodeid']] = {}
-        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split('|')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
-        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_high'][node_name_dict[node['nodeid']]].split('|')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
+        result_dict[node['nodeid']]['what'] = REASON_DICT[major_type]['common']['priority_high'][node_name_dict[node['nodeid']]].split('|')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+        result_dict[node['nodeid']]['how'] = REASON_DICT[major_type]['common']['priority_high'][node_name_dict[node['nodeid']]].split('|')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
     #优先级低
+
     for node in node_list[3:]:
         if node['nodeid'] in result_dict:
             continue
         result_dict[node['nodeid']] = {}
-        result_dict[node['nodeid']]['what'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
-        result_dict[node['nodeid']]['how'] = REASON_DICT['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester])
+        result_dict[node['nodeid']]['what'] = REASON_DICT[major_type]['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+        result_dict[node['nodeid']]['how'] = REASON_DICT[major_type]['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
+
     return result_dict
 
 def _get_nodes_products(part_score_dict, language_type, exam_type, size):
@@ -357,7 +384,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
         _temp_unfinished_nodes.append(each)
     #获取推荐理由
-    reason_dict = _get_reason_by_nodeid(part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
+    reason_dict = _get_reason_by_nodeid(part_score_dict['real_major'],part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
@@ -603,7 +630,7 @@ def _load_products_by_tag():
     path_plan_logger.info('[successed] get tag dict')
     
     for tag_name in tag_dict:
-        producs_list = []
+        products_list = []
         for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}},{'id':1,'title':1,'title_pic':1,'tag':1}):
             product = {}
             try:
@@ -612,8 +639,8 @@ def _load_products_by_tag():
                 product['picture'] = record['title_pic']
             except KeyError:
                 continue
-            producs_list.append(product)
-        PRODUCT_RECOMMEND[tag_name] = producs_list
+            products_list.append(product)
+        PRODUCT_RECOMMEND[tag_name] = products_list
     product_load_time = time.time()
     try:
         mongo_client.close() # 关闭连接
@@ -633,35 +660,44 @@ def _load_reason():
         if len(line.strip('\n').strip()) == 0 or line.strip('\n').strip()[0] == '#':
             continue
         line = list(map(lambda column: column.strip('\n').strip(), line.split('|')))
-        if line[0] == 'common':
-            if line[0] in REASON_DICT:
-                if line[1] in REASON_DICT[line[0]]:
-                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+'|'+line[4]
+        #如果专业不在字典中则新建专业字典
+        if not line[0] in REASON_DICT:
+            REASON_DICT[line[0]] = {}
+        #如果common在专业字典中
+        if line[1] == 'common':
+            if line[1] in REASON_DICT[line[0]]:
+                #如果优先级在common字典中
+                if line[2] in REASON_DICT[line[0]][line[1]]:
+                    #则在优先级字典中加入key属性，并且给key复制
+                    REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
                 else:
-                    REASON_DICT[line[0]][line[1]] = {}
-                    REASON_DICT[line[0]][line[1]][line[2]] = line[3]+'|'+line[4]
+                    REASON_DICT[line[0]][line[1]][line[2]] = {}
+                    REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
             else:
-                REASON_DICT[line[0]] = {}
+                #common不在字典中则添加common
                 REASON_DICT[line[0]][line[1]] = {}
-                REASON_DICT[line[0]][line[1]][line[2]] = line[3]+'|'+line[4]
-        elif line[0] == 'special':
-            if line[0] in REASON_DICT:
-                if line[1] in REASON_DICT[line[0]]:
-                    REASON_DICT[line[0]][line[1]].append(line[2:])
+                #添加优先级
+                REASON_DICT[line[0]][line[1]][line[2]] = {}
+                #添加key和value
+                REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
+        #如果special在专业字典中
+        elif line[1] == 'special':
+            if line[1] in REASON_DICT[line[0]]:
+                if line[2] in REASON_DICT[line[0]][line[1]]:
+                    REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
                 else:
-                    REASON_DICT[line[0]][line[1]] = []
-                    REASON_DICT[line[0]][line[1]].append(line[2:])
+                    REASON_DICT[line[0]][line[1]][line[2]] = []
+                    REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
             else:
-                REASON_DICT[line[0]] = {}
+                REASON_DICT[line[0]][line[1]] = {}
+                REASON_DICT[line[0]][line[1]][line[2]] = []
+                REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
+        elif line[1] == 'compare':
+            if line[1] in REASON_DICT[line[0]]:
+                REASON_DICT[line[0]][line[1]].append(line[2:])
+            else:
                 REASON_DICT[line[0]][line[1]] = []
                 REASON_DICT[line[0]][line[1]].append(line[2:])
-        elif line[0] == 'compare':
-            if line[0] in REASON_DICT:
-                REASON_DICT[line[0]].append(line[1:])
-            else:
-                REASON_DICT[line[0]] = []
-                REASON_DICT[line[0]].append(line[1:])
-                
     path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
 def init():
