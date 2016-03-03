@@ -161,8 +161,5 @@ def test_token():
         print(md5_token('f6e5ec9928c65d2c1456715513'))
 
 if __name__ == '__main__':
-
-    aa = [{'nodeid': 1}, {'nodeid': 102}, {'nodeid': 2}, {'nodeid': 4}]
-    bb = [{'nodeid': 6}, {'nodeid': 1}]
-
-    print(list(set(aa) ^ set(bb)))
+    if 3 >= 3:
+        print(True)

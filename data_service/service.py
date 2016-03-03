@@ -75,7 +75,7 @@ class MainHandler(tornado.web.RequestHandler):
                 try:
                     area = self.request.query_arguments['area'][0]
                     area = convert_to_str(area)
-                    area = area.replace(' ', '')
+                    area = area.strip()
                     if len(area) < 1:
                         area = None
                 except Exception as e:
@@ -89,7 +89,7 @@ class MainHandler(tornado.web.RequestHandler):
                 try:
                     major = self.request.query_arguments['major'][0]
                     major = convert_to_str(major)
-                    major = major.replace(' ', '')
+                    major = major.strip()
                     if len(major) < 1:
                         major = None
                 except Exception as e:

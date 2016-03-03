@@ -144,7 +144,7 @@ def search_school(condition, major=None, area=None):
         }
     try:
         global SCHOOL_TRIE
-        search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, condition)
+        search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, condition.lower())
     except:
         search_logger.error('no normal result returns .')
         return exit_error_func(3, 'condition: %s' % condition)

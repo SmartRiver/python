@@ -194,6 +194,7 @@ $RECYCLE.BIN/
 __pycache__/
 *.py[cod]
 *$py.class
+test.py
 
 # pyCharms
 .idea/
