@@ -144,30 +144,21 @@ def _get_mgt(student_info):
 
 def _get_soft_condition(user_condition):
     if 'dimension' in user_condition:
-        dimension = user_condition['dimension']
+        dimension_dict = user_condition['dimension']
     else:
         path_plan_logger.error('缺少字段dimension')
         raise Exception('缺少字段dimension')
 
     if 'dimension_full' in user_condition:
-        dimension_full = user_condition['dimension_full']
+        dimension_full_dict = user_condition['dimension_full']
     else:
         path_plan_logger.error('缺少字段dimension_full')
         raise Exception('缺少字段dimension_full')
     temp_soft_condition = {}
     try:
-        if 'research_dimension' in dimension:
-            temp_soft_condition['research'] = convert_to_float(dimension['research_dimension'])/convert_to_float(dimension_full['research_dimension'])
-        if 'internship_dimension' in dimension:
-            temp_soft_condition['internship'] = convert_to_float(dimension['internship_dimension'])/convert_to_float(dimension_full['internship_dimension'])
-        if 'activity_dimension' in dimension:
-            temp_soft_condition['activity'] = convert_to_float(dimension['activity_dimension'])/convert_to_float(dimension_full['activity_dimension'])
-        if 'scholarship_dimension':
-            temp_soft_condition['scholarship'] = convert_to_float(dimension['scholarship_dimension'])/convert_to_float(dimension_full['scholarship_dimension'])
-        if 'credential_dimension' in dimension:
-            temp_soft_condition['credential'] = convert_to_float(dimension['credential_dimension'])/convert_to_float(dimension_full['credential_dimension'])
-        if 'competition_dimension' in dimension:
-            temp_soft_condition['competition'] = convert_to_float(dimension['competition_dimension'])/convert_to_float(dimension_full['competition_dimension'])
+        for dimension in dimension_dict:
+            if not dimension.split('_')[0] == 'gpa' and not dimension.split('_')[0] == 'exam' and not dimension.split('_')[0] == 'language':
+                temp_soft_condition[dimension.split('_')[0]] = convert_to_float(dimension_dict[dimension])/convert_to_float(dimension_full_dict[dimension])
     except Exception as e:
         path_plan_logger.error('软性条件比例获取时出错：'+str(e))
         return exit_error_func(6, '软性条件比例获取时出错：'+str(e))
@@ -180,32 +171,35 @@ def _get_hard_condition(student_info, language_type, exam_type):
     else:
         path_plan_logger.error('缺少字段student_info[data]')
         raise Exception('缺少字段student_info[data]')
+    #user_data 为筛选过后的学生输入
     temp_hard_condition = {}
     try:
         temp_hard_condition['gpa'] = convert_to_float(user_data['gpa']['score'])
+        
         if language_type == 'ielts':
             temp_hard_condition['ielts'] = convert_to_float(user_data[language_type]['total'])
         elif language_type == 'toefl':
             temp_hard_condition['toefl'] = convert_to_float(user_data[language_type]['total'])
-        else:
+        elif language_type == 'neither':
             temp_hard_condition['ielts'] = 0
             temp_hard_condition['toefl'] = 0
-            language_type = 'toefl'
+        else:
+            pass
             
         if exam_type == 'gre':
             temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
         elif exam_type == 'gmat':
             temp_hard_condition['gmat'] = convert_to_float(user_data[exam_type]['total'])
+        elif exam_type == 'neither':
+            temp_hard_condition['gre'] = 0
+            temp_hard_condition['gmat'] = 0
         else:
-            temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
-            temp_hard_condition['gmat'] = convert_to_float(user_data[exam_type]['total'])
-            exam_type = 'both'
-            
+            pass
+  
     except Exception as e:
         path_plan_logger.error('硬性条件比例获取时出错：'+str(e))
         return exit_error_func(6, '硬性条件比例获取时出错：'+str(e))
-
-    return temp_hard_condition, language_type, exam_type
+    return temp_hard_condition
 
 def _filter_weight_field(weight_dict, language_type, exam_type):
     if language_type == 'ielts':
@@ -219,6 +213,9 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
             del weight_dict['ielts']
         if 'toefl' in weight_dict:
             del weight_dict['toefl']
+    else:
+        pass#都保留
+        
     if exam_type == 'gre':
         if 'gmat' in weight_dict:
             del weight_dict['gmat']
@@ -230,34 +227,42 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
             del weight_dict['gmat']
         if 'gre' in weight_dict:
             del weight_dict['gre']
+    else:
+        pass#都保留
 
 def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
+
     # 获取不同专业不同学期的初始化的各任务（节点）权重
     weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
+    
     #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
     _filter_weight_field(weight_dict, language_type, exam_type)
-
+    
     target_dict = TARGET_DICT[part_score_dict['target']]
-
     unfinished_nodes = [] # 未完成的任务结点(存储的是结点ID)
     finished_nodes = [] # 已完成的任务结点(存储的是结点的内容such gpa)
-
+    #对于每一个权值的键
     for each in weight_dict:
+        #如果该键在part_score_dict出现
         if each in part_score_dict:
+            #如果part_score_dict中的该键的值大于等于目标中该键的值(属性的值)
             if part_score_dict[each] >= target_dict[each]:
                 _temp_target_score = TARGET_DICT[part_score_dict['target']][each]
+                #则向已完成节点中追加完成节点的信息（无序）
                 finished_nodes.append({
                     'node_id': NODE_NAME_DICT[each], 
                     'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]], 
                     'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)), 
                     'node_target': _temp_target_score,
                     })
+            #如果part_score_dict中的改键的值小于目标中该键的值（属性的值）
             else:
+                #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
-                weight_dict[each] = weight_dict[each] * (1+ratio)
+                weight_dict[each] = weight_dict[each] * ratio
                 unfinished_nodes.append(each)
+    #对结果进行排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
-
     return finished_nodes, unfinished_nodes, result_weight
 
 def _get_product_by_node_id(node_id, major, size=10):
@@ -287,6 +292,7 @@ def _get_product_by_node_id(node_id, major, size=10):
         return product_recommend[:size]
 
 def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
+
     #获取专业大类
     if major in assess_student.MAJOR:
         major_type = assess_student.MAJOR[major]
@@ -320,6 +326,7 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
         #反转节点字典
         node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
         
+        print(result_dict)
         #两项对比
         compare = list(map(lambda x:node_name_dict[x['nodeid']], node_list[:3]))
         
@@ -399,6 +406,7 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
                     result_dict[NODE_NAME_DICT[attribute]]['how'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
     #反转节点字典
     node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
+
     #两项对比
     compare = list(map(lambda x:node_name_dict[x['nodeid']], node_list[:3]))
     if len(compare) >=2:
@@ -467,24 +475,42 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
     return result_dict
 
 def _get_nodes_products(part_score_dict, language_type, exam_type, size):
+
     unfinished_nodes_products = [] # 未完成任务结点（关联了相应的机会产品、项目）
     return_unfinished_nodes = [] # 未完成任务结点（存储的是结点ID）
 
     # 计算各个结点的权值，按照计算后的权重值对各个学习提升任务排序
     finished_nodes, unfinished_nodes, result_weight = _calculate_nodes_weight(part_score_dict, language_type, exam_type)
+
     path_plan_logger.info('calculate_nodes_weight')
     for each in result_weight:
         if each[0] in unfinished_nodes:
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
-
-    deviation_list = list(map(lambda x:round(TARGET_DICT[part_score_dict['target']][x] - part_score_dict[x],2),['gpa', exam_type, language_type]))
-    deviation_dict = {'gpa':deviation_list[0], exam_type:deviation_list[1], language_type:deviation_list[2]}
+    
+    temp_list = []
+    if 'gpa' in part_score_dict:
+        temp_list.append('gpa')
+    if 'ielts' in part_score_dict:
+        temp_list.append('ielts')
+    if 'toefl' in part_score_dict:
+        temp_list.append('toefl')
+    if 'gre' in part_score_dict:
+        temp_list.append('gre')
+    if 'gmat' in part_score_dict:
+        temp_list.append('gmat')
+    
+    deviation_list = list(map(lambda x:{x:round(TARGET_DICT[part_score_dict['target']][x] - part_score_dict[x],2)},temp_list))
+    deviation_dict = {}
+    for node in deviation_list:
+        for key in node:
+            deviation_dict[key] = node[key]
     _temp_unfinished_nodes = list(map(lambda x:{'nodeid':x}, return_unfinished_nodes))
     for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
         _temp_unfinished_nodes.append(each)
+        
     #获取推荐理由
-
     reason_dict = _get_reason_by_nodeid(part_score_dict['real_major'],part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
+    
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
@@ -507,6 +533,8 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
                 'how':reason_dict[item]['how'],
                 'products': [],
                 })
+    
+
     #为硬实力做特殊处理
     for index, item in enumerate(unfinished_nodes_products):
         unfinished_nodes_products[index]['field'] = NODE_TYPE_DICT[item['node_id']]
@@ -516,6 +544,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
         else:
             unfinished_nodes_products[index]['node_target'] = ''
             unfinished_nodes_products[index]['node_score'] = ''
+    
 
     for index, item in enumerate(finished_nodes):
         finished_nodes[index]['what'] = reason_dict[item['node_id']]['what']
@@ -526,12 +555,17 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
             finished_nodes[index]['node_score'] = part_score_dict[NODE_TYPE_DICT[item['node_id']]]
         else:
             finished_nodes[index]['node_target'] = ''
-            finished_nodes[index]['node_score'] = ''      
+            finished_nodes[index]['node_score'] = ''  
+
     #unfinished_nodes_products.extend(FIXED_NODES)
 
     return finished_nodes, unfinished_nodes_products
 
 def _get_return_target(target, language_type, exam_type):
+    print(target)
+    print(language_type)
+    print(exam_type)
+    raise Exception('')
     return_target_dict = {}
     target = TARGET_DICT[target]
     return_target_dict['gpa'] = {'type': 'GPA', 'score': target['gpa']}
@@ -559,37 +593,37 @@ def schedule(condition, size=None):
     part_score_dict = {}
     try:
         #size 校对是否为大于0的整数
-     
         size = _check_schedule_size(size)
    
         # 调用assess_student模块的assess(), 提取出所需要的用户信息
         user_condition = _get_user_condition(condition) 
-    
+
         # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
         language_type, exam_type = _get_language_exam_type(user_condition)
-   
+        
         #确定'student_info'字段是否存在
         if 'student_info' in user_condition:
             student_info = user_condition['student_info']
         else:
             path_plan_logger.error('缺少字段student_info')
             raise Exception('缺少字段student_info')
-
+        
+        
         #提取出用户的申请属性（major、 grade、 target）
         part_score_dict.update(_get_mgt(student_info))
         path_plan_logger.info('[successed] _get_mgt()')
-
+        
         # 提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）
-        temp_dict, language_type, exam_type = _get_hard_condition(student_info, language_type, exam_type)
-        part_score_dict.update(temp_dict)
+        hard_condition = _get_hard_condition(student_info, language_type, exam_type)
+        part_score_dict.update(hard_condition)
         path_plan_logger.info('[successed] _get_hard_condition()')
-
+       
         #提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）
         part_score_dict.update(_get_soft_condition(user_condition))
         path_plan_logger.info('[successed] _get_soft_condition()')
+
         # 为学习提升任务结点关联相应的机会产品
         finished_nodes, unfinished_nodes_products = _get_nodes_products(part_score_dict, language_type, exam_type, size)
-
         path_plan_logger.info('[successed] _get_nodes_products()')
 
         return_target = _get_return_target(part_score_dict['target'], language_type, exam_type)

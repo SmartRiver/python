@@ -325,14 +325,24 @@ def exec_rule(student_data, rule_dict):
             dimension_dict[key] = '%.2f'%value
         else:
             pass
+    #neither 都没有考
+    #none 都没有该结构
     language_type = ''
     exam_type = ''
-    if float(cache_dict['ielts']) > float(cache_dict['toefl']):
+    if 'ielts' in cache_dict.keys() and 'toefl' in cache_dict.keys():
+        if float(cache_dict['ielts']) > float(cache_dict['toefl']):
+            language_type = 'ielts'
+        else:
+            language_type = 'toefl'
+        if float(cache_dict['ielts']) == 0 and float(cache_dict['toefl']) == 0:
+            language_type = 'neither'
+    elif 'ielts' in cache_dict.keys():
         language_type = 'ielts'
-    else:
+    elif 'toefl' in cache_dict.keys():
         language_type = 'toefl'
-    if float(cache_dict['ielts']) == 0 and float(cache_dict['toefl']) == 0:
+    else:
         language_type = 'none'
+        
     if 'gre_factor' in cache_dict.keys() and 'gmat_factor' in cache_dict.keys():
         if float(cache_dict['gre_factor']) > float(cache_dict['gmat_factor']):
             exam_type = 'gre'
