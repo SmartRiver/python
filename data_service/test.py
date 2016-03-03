@@ -13,7 +13,7 @@ import json
 import logging
 
 student_info = {
-    "major":"marketing",
+    "major":"cs",
     "grade":"3",
     "target":"1",
     "data":{
