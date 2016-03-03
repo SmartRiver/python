@@ -285,7 +285,10 @@ def _get_product_by_node_id(node_id, major, size=10):
 def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
 
     #获取专业大类
-    major_type = assess_student.MAJOR[major]
+    if major in assess_student.MAJOR:
+        major_type = assess_student.MAJOR[major]
+    else:
+        major_type = 'general'
     
     #结果字典
     result_dict = {}
