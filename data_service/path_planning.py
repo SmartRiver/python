@@ -188,8 +188,10 @@ def _get_hard_condition(student_info, language_type, exam_type):
         elif language_type == 'toefl':
             temp_hard_condition['toefl'] = convert_to_float(user_data[language_type]['total'])
         else:
-            temp_hard_condition['ielts'] = convert_to_float(user_data[language_type]['total'])
-            temp_hard_condition['toefl'] = convert_to_float(user_data[language_type]['total'])
+            temp_hard_condition['ielts'] = 0
+            temp_hard_condition['toefl'] = 0
+            language_type = 'toefl'
+            
         if exam_type == 'gre':
             temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
         elif exam_type == 'gmat':
@@ -197,11 +199,13 @@ def _get_hard_condition(student_info, language_type, exam_type):
         else:
             temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
             temp_hard_condition['gmat'] = convert_to_float(user_data[exam_type]['total'])
+            exam_type = 'both'
+            
     except Exception as e:
         path_plan_logger.error('硬性条件比例获取时出错：'+str(e))
         return exit_error_func(6, '硬性条件比例获取时出错：'+str(e))
 
-    return temp_hard_condition
+    return temp_hard_condition, language_type, exam_type
 
 def _filter_weight_field(weight_dict, language_type, exam_type):
     if language_type == 'ielts':
@@ -283,7 +287,6 @@ def _get_product_by_node_id(node_id, major, size=10):
         return product_recommend[:size]
 
 def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
-
     #获取专业大类
     if major in assess_student.MAJOR:
         major_type = assess_student.MAJOR[major]
@@ -470,16 +473,17 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     # 计算各个结点的权值，按照计算后的权重值对各个学习提升任务排序
     finished_nodes, unfinished_nodes, result_weight = _calculate_nodes_weight(part_score_dict, language_type, exam_type)
     path_plan_logger.info('calculate_nodes_weight')
-
     for each in result_weight:
         if each[0] in unfinished_nodes:
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
+
     deviation_list = list(map(lambda x:round(TARGET_DICT[part_score_dict['target']][x] - part_score_dict[x],2),['gpa', exam_type, language_type]))
     deviation_dict = {'gpa':deviation_list[0], exam_type:deviation_list[1], language_type:deviation_list[2]}
     _temp_unfinished_nodes = list(map(lambda x:{'nodeid':x}, return_unfinished_nodes))
     for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
         _temp_unfinished_nodes.append(each)
     #获取推荐理由
+
     reason_dict = _get_reason_by_nodeid(part_score_dict['real_major'],part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
@@ -555,14 +559,15 @@ def schedule(condition, size=None):
     part_score_dict = {}
     try:
         #size 校对是否为大于0的整数
+     
         size = _check_schedule_size(size)
-
+   
         # 调用assess_student模块的assess(), 提取出所需要的用户信息
         user_condition = _get_user_condition(condition) 
-
+    
         # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
         language_type, exam_type = _get_language_exam_type(user_condition)
-
+   
         #确定'student_info'字段是否存在
         if 'student_info' in user_condition:
             student_info = user_condition['student_info']
@@ -575,13 +580,13 @@ def schedule(condition, size=None):
         path_plan_logger.info('[successed] _get_mgt()')
 
         # 提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）
-        part_score_dict.update(_get_hard_condition(student_info, language_type, exam_type))
+        temp_dict, language_type, exam_type = _get_hard_condition(student_info, language_type, exam_type)
+        part_score_dict.update(temp_dict)
         path_plan_logger.info('[successed] _get_hard_condition()')
 
         #提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）
         part_score_dict.update(_get_soft_condition(user_condition))
         path_plan_logger.info('[successed] _get_soft_condition()')
-
         # 为学习提升任务结点关联相应的机会产品
         finished_nodes, unfinished_nodes_products = _get_nodes_products(part_score_dict, language_type, exam_type, size)
 
