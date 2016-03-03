@@ -49,9 +49,7 @@ class MainHandler(tornado.web.RequestHandler):
                     assess_student.init()
                     path_planning.init()
                 else:
-                    search.init()
-                    assess_student.init()
-                    path_planning.init()
+                    _init()
                 service_logger.info('service reload success.')
                 self.finish('reloaded.')
             except:
@@ -85,6 +83,20 @@ class MainHandler(tornado.web.RequestHandler):
                     area = None
             else:
                 area = None
+            if 'country' in self.request.query_arguments:
+                try:
+                    country = self.request.query_arguments['country'][0]
+                    country = convert_to_str(country)
+                    country = country.strip()
+                    if len(country) < 1:
+                        country = None
+                except Exception as e:
+                    service_logger.error(e)
+                    error_msg = exit_error_func(1, 'country')
+                    flag = False
+                    country = None
+            else:
+                country = None
             if 'major' in self.request.query_arguments:
                 try:
                     major = self.request.query_arguments['major'][0]
@@ -100,7 +112,7 @@ class MainHandler(tornado.web.RequestHandler):
             else:
                 major= None
             if flag:
-                self.finish(json.dumps(search.search_school(condition=condition, major=major, area=area), ensure_ascii=False, indent=4))
+                self.finish(json.dumps(search.search_school(condition=condition, major=major, area=area, country=country), ensure_ascii=False, indent=4))
             else:
                 self.finish(error_msg)
         elif request_type == 'assess_student':
@@ -145,7 +157,7 @@ class MainHandler(tornado.web.RequestHandler):
 global service_logger # logger
 
 '''日志配置'''
-def __logging_conf():
+def _logging_conf():
     try:
         global service_logger
         logging.config.fileConfig('./conf/logging.conf')
@@ -156,11 +168,17 @@ def __logging_conf():
 
 application = tornado.web.Application([(r"/(.*)", MainHandler)])
 
+def _init():
+    ''' 其他模块统一初始化 '''
+    search.init()
+    assess_student.init()
+    path_planning.init()
 
 if __name__ == "__main__":
-    __logging_conf()
+    _logging_conf()
     try:
         service_logger.info('data_service server starting.')
+        _init() # 将需要引用的模块统一初始化
         application.listen(8826)
         tornado.ioloop.IOLoop.instance().start()
         service_logger.info('data_service server starts success.')
