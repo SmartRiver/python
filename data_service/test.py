@@ -14,7 +14,7 @@ import time
 import json
 import logging
 
-student_info = {"major":"xx","grade":"1","target":"1","data":{"gpa":{"score":"3", "trend":"", "school":""},"gmat":{"total":"", "writing":"", "verbal":"", "maths":""},"gre":{"total":"", "writing":"", "verbal":"", "maths":""},"toefl":{"total":"", "writing":"", "reading":"", "listening":"", "speaking":""},"ielts":{"total":"", "writing":"", "reading":"","listening":"", "speaking":""},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"1", "level":"1", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+student_info = {"major":"xx","grade":"1","target":"1","data":{"gpa":{"score":"3", "trend":"", "school":""},"gmat":{"total":"", "writing":"", "verbal":"", "maths":""},"gre":{"total":"", "writing":"", "verbal":"", "maths":""},"toefl":{"total":"", "writing":"", "reading":"", "listening":"", "speaking":""},"ielts":{"total":"", "writing":"", "reading":"","listening":"", "speaking":""},"research":{"duration":"4", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"1", "level":"1", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
 
 
 assess_student.init()
