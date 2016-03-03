@@ -191,7 +191,6 @@ def map_weight(student_info, weight_dict, major):
             student_data['gpa']['school'] = '12'
         else:
             student_data['gpa']['school'] = TRANSLATE[student_data['gpa']['school'].split('|')[2]]
-    print(student_data['gpa']['school'])
     for key in weight_dict:
         main_key = key.split('_')[0] #第一层的键
         sub_key = key.split('_')[1]  #第二层的键
@@ -203,7 +202,10 @@ def map_weight(student_info, weight_dict, major):
                 new_student_data[main_key] = {}
             #如果student_data有第二层相应键
             if sub_key in student_data[main_key]:
-                new_student_data[main_key][sub_key] = student_data[main_key][sub_key]
+                if len(student_data[main_key][sub_key].strip()) == 0:
+                    new_student_data[main_key][sub_key] = '0'
+                else:
+                    new_student_data[main_key][sub_key] = student_data[main_key][sub_key]
                 #判断值是否为列表（推荐信）
                 #如果值是列表
                 if isinstance(student_data[main_key][sub_key],list):
