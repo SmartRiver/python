@@ -12,23 +12,7 @@ import time
 import json
 import logging
 
-student_info = {
-    "major":"cs",
-    "grade":"3",
-    "target":"1",
-    "data":{
-        "gpa":{"score":"1", "trend":"2", "school":"1"},
-        "gmat":{"total":"1", "writing":"1", "verbal":"12", "maths":"12"},
-        "gre":{"total":"1", "writing":"1", "verbal":"12", "maths":"12"},
-        "toefl":{"total":"1", "writing":"0", "reading":"12", "listening":"12", "speaking":"1"},
-        "ielts":{"total":"1", "writing":"0", "reading":"12","listening":"12", "speaking":"1"},
-        "research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},
-        "internship":{"duration":"5", "level":"3", "recommendation":"2"},
-        "activity":{"duration":"5", "type":"3"},
-        "competition":{"level":"2"},
-        "scholarship":{"level":"2"}
-    }
-}
+student_info = {"major":"tesol","grade":"1","target":"1","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"300", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"300", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"110", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"7", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"1", "level":"1", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
 
 
 assess_student.init()
