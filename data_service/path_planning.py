@@ -296,22 +296,57 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
 def _get_product_by_node_id(node_id, major, size=10):
     product_recommend = []
+    major_only = major + '_only'
+    if major in assess_student.MAJOR:
+        major_type = assess_student.MAJOR[major]
+    else:
+        return []
+    #先找结点相关，专业only
+    #如果存在该结点相关和专业only
+    if node_id in PRODUCT_RECOMMEND and major_only in PRODUCT_RECOMMEND:
+        for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
+            for product_by_major_only in PRODUCT_RECOMMEND[major_only]:
+                if product_by_attribute['title'] == product_by_major_only['title']:
+                    product_recommend.append(product_by_attribute)
+    #然后找结点相关，专业相关
+    #如果存在该结点相关和专业
     if node_id in PRODUCT_RECOMMEND and major in PRODUCT_RECOMMEND:
+        temp_product_recommend = []
         for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
             for product_by_major in PRODUCT_RECOMMEND[major]:
                 if product_by_attribute['title'] == product_by_major['title']:
-                    product_recommend.append(product_by_attribute)
-    if node_id in PRODUCT_RECOMMEND:
+                    temp_product_recommend.append(product_by_attribute)
+    #合并列表，去除重复   
+    for product in temp_product_recommend:
+        if not product in product_recommend:
+            product_recommend.append(product)
+     
+    #然后找结点相关，专业大类相关
+    #如果存在该结点相关和专业大类                   
+    if node_id in PRODUCT_RECOMMEND and major_type in PRODUCT_RECOMMEND:
         temp_product_recommend = []
         for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
-            insert = 1
-            for product_in_list in product_recommend:
-                if product_by_attribute['title'] == product_in_list['title']:
-                    insert = 0
-            if insert == 1:
-                temp_product_recommend.append(product_by_attribute)
-        if len(temp_product_recommend) > 0:
-            product_recommend.extend(temp_product_recommend)
+            for product_by_major_type in PRODUCT_RECOMMEND[major_type]:
+                if product_by_attribute['title'] == product_by_major_type['title']:
+                    temp_product_recommend.append(product_by_major_type)
+                        
+    #合并列表，去除重复   
+    for product in temp_product_recommend:
+        if not product in product_recommend:
+            product_recommend.append(product)
+    
+    if node_id in PRODUCT_RECOMMEND and 'general' in PRODUCT_RECOMMEND:
+        temp_product_recommend = []
+        for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
+            for product_by_general in PRODUCT_RECOMMEND['general']:
+                if product_by_attribute['title'] == product_by_general['title']:
+                    temp_product_recommend.append(product_by_general)
+                        
+    #合并列表，去除重复   
+    for product in temp_product_recommend:
+        if not product in product_recommend:
+            product_recommend.append(product)
+
     _temp_prodict_size = len(product_recommend)
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
@@ -355,7 +390,6 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
         #反转节点字典
         node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
         
-        print(result_dict)
         #两项对比
         compare = list(map(lambda x:node_name_dict[x['nodeid']], node_list[:3]))
         
@@ -867,8 +901,15 @@ def _load_init_weight():
     path_plan_logger.info('[successed] loading weight of all parts in different semester into dict . . . ')
 
 def _get_tag_dict(tag_list, collection):
+    temp_dict = {}
     for major in assess_student.MAJOR:
         tag_list.append(major)
+        tag_list.append(major+'_only')
+        temp_dict[assess_student.MAJOR[major]] = ""
+    for major_type in temp_dict:
+        tag_list.append(major_type)
+
+    #从数据库中获取tag对应的id
     tag_dict = {}
     for tag_name in tag_list:
         result = collection.find_one({'name':tag_name},{'id':1})

@@ -22,7 +22,7 @@ def init():
     tag_dict = get_tag_dict(tag_list,producttag_collection)
     for tag_name in tag_dict:
         list = []
-        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}}):
+        for record in product_collection.find({'tag':{'$regex':'科研能力提升'}, 'is_online':1, 'is_delete':0, 'is_status':0},{'id':1,'title':1,'title_pic':1,'tag':1}):
             print(record)
             return
             product = {}
@@ -32,11 +32,8 @@ def init():
             list.append(product)
         PRODUCT_RECOMMEND[tag_name] = list
 
-def get_product_by_node_id(node_id):
-    print(PRODUCT_RECOMMEND[NODEID_TO_TEXT[node_id]])
 
 init()
-get_product_by_node_id(6)
 
 
 
