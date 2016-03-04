@@ -668,6 +668,7 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
     flag_hard = 1
     title_flag_soft = ''
     title_flag_hard = ''
+    is_last = 0 
     for index, each in enumerate(ANALYSIS_TABLE):
         table_key = each[0]
         if language_type == 'toefl':
@@ -696,11 +697,11 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
             if len(each) > 5:
                 if flag_hard < 1:
                     flag_hard = 0
-                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
-                    title_flag_hard = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                 else:
-                    _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
-                    title_flag_hard = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</strong></p>'
                     flag_hard = 0
                 
             if field_user.find('_') > 0:
@@ -731,14 +732,16 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                             flag_hard = flag_hard + 1
                        
         else:
+            if is_last == 1 and field_user.split('_')[0] == 'internship':
+                    continue
             if len(each) > 5:
                 if flag_soft < 1:
                     flag_soft = 0
-                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
-                    title_flag_soft = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                 else:
-                    _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
-                    title_flag_soft = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     flag_soft = 0
             if is_level_divide == 1:
                 if field_user.find('_') > 0:
@@ -757,6 +760,9 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                         if len(each_record['target'][target]) > 1:
                             _temp_soft_cnt = _temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
                             flag_soft = flag_soft + 1
+                if _temp_field  == '5' and field_user == 'internship_duration':
+                    is_last = 1
+
             if index == len(ANALYSIS_TABLE)-1:
                 if flag_soft < 1:
                     _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')
@@ -813,7 +819,7 @@ def schedule(condition, size=None):
             user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
         except Exception as e:
             print('except:'+str(e))
-
+        print(user_analysis)
     except Exception as e:
         file = open('err_log.txt', 'a', encoding='utf-8')
         file.write(str(e))
