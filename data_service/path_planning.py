@@ -68,7 +68,7 @@ ANALYSIS_TABLE = [
                 ('internship_duration', 'internship_duration', 0, 1, 4, '实习'),
                 ('internship_level', 'internship_level', 0, 1, 3),
                 ('internship_recommendation', 'internship_recommendation', 0, 1, 3),
-                ('scholarship', 'scholarship_level', 0, 1, 5, '竞赛获奖'),
+                ('competition', 'competition_level', 0, 1, 5, '竞赛获奖'),
                 ('activity_duration', 'activity_duration', 0, 1, 3, '活动经历'),
                 ('activity_level', 'activity_type', 0, 1, 4)
                 ]
@@ -281,15 +281,16 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
-                if int(ratio) == 1:
-                    ratio = 0.4
+                if ratio > 0.6:
+                    ratio = 0.5
                 if each == 'gpa':
-                    ratio = ratio + 0.3
+                    if ratio < 0.5:
+                        ratio = ratio + 0.25
                 if each in ['toefl', 'ielts', 'gre', 'gmat']:
-                    ratio = ratio + 0.35
+                    if ratio < 0.5:
+                        ratio = ratio + 0.3
                 weight_dict[each] = weight_dict[each] * ratio
                 unfinished_nodes.append(each)
-
     #对结果进行排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
     return finished_nodes, unfinished_nodes, result_weight
@@ -690,11 +691,11 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
             if len(each) > 5:
                 if flag_hard < 1:
                     flag_hard = 0
-                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde">'+each[5]+'</p>'
-                    title_flag_hard = '<p class="p1_Tde">'+each[5]+'</p>'
+                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    title_flag_hard = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
                 else:
-                    _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde">'+each[5]+'</p>'
-                    title_flag_hard = '<p class="p1_Tde">'+each[5]+'</p>'
+                    _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    title_flag_hard = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
                     flag_hard = 0
                 
             if field_user.find('_') > 0:
@@ -728,11 +729,11 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
             if len(each) > 5:
                 if flag_soft < 1:
                     flag_soft = 0
-                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde">'+each[5]+'</p>'
-                    title_flag_soft = '<p class="p1_Tde">'+each[5]+'</p>'
+                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    title_flag_soft = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
                 else:
-                    _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde">'+each[5]+'</p>'
-                    title_flag_soft = '<p class="p1_Tde">'+each[5]+'</p>'
+                    _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
+                    title_flag_soft = '<p class="p1_Tde" align="center"><strong>'+each[5]+'</strong></p>'
                     flag_soft = 0
             if is_level_divide == 1:
                 if field_user.find('_') > 0:
