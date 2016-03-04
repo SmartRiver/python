@@ -282,14 +282,14 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
-                if ratio > 0.6:
-                    ratio = 0.5
+           #     if ratio > 0.6:
+            #        ratio = 0.5
             #    if each == 'gpa':
             #        if ratio < 0.5:
             #            ratio = ratio + 0.25
-                if each in ['toefl', 'ielts', 'gre', 'gmat']:
-                    if ratio < 0.5:
-                        ratio = ratio + 0.3
+           #     if each in ['toefl', 'ielts', 'gre', 'gmat']:
+           #         if ratio < 0.5:
+           #             ratio = ratio + 0.3
                 weight_dict[each] = weight_dict[each] * ratio
                 unfinished_nodes.append(each)
     #对结果进行排序
