@@ -1,5 +1,5 @@
 #1-大一上
-gpa,5
+gpa,20
 activity,4.5
 scholarship,4
 competition,3.5
@@ -11,7 +11,7 @@ internship,2
 credential,1
 research,0.9
 #2-大一下
-gpa,5
+gpa,20
 competition,4.5
 scholarship,4
 activity,3.5
@@ -23,7 +23,7 @@ internship,2
 credential,1
 research,0.9
 #3-大二上
-gpa,5
+gpa,20
 competition,4.5
 gre,4
 gmat,4
@@ -35,7 +35,7 @@ toefl,2
 credential,1
 activity,0.9
 #4-大二下
-gpa,5
+gpa,20
 gre,4.5
 gmat,4.5
 competition,4
