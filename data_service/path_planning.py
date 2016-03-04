@@ -766,7 +766,6 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
             if index == len(ANALYSIS_TABLE)-1:
                 if flag_soft < 1:
                     _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')
-
     return {
         'hard_condition_analysis': _temp_hard_cnt.strip(),
         'soft_condition_analysis': _temp_soft_cnt.strip(),
