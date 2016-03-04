@@ -809,9 +809,9 @@ def schedule(condition, size=None):
             print('except:'+str(e))
 
     except Exception as e:
-        file = open('err_log.txt', 'w', encoding='utf-8')
+        file = open('err_log.txt', 'a', encoding='utf-8')
         file.write(str(e))
-        file.write(str(condition))
+        file.write(str(condition)+'\n')
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
 
     
