@@ -14,7 +14,7 @@ import time
 import json
 import logging
 
-student_info = {"major":"cs","grade":"3","target":"1","data":{"gpa":{"score":"4", "trend":"2", "school":"9"},"gre":{"total":"320","verbal":"160","writing":"5"},"toefl":{"total":"", "writing":"", "reading":"", "listening":"", "speaking":""},"ielts":{"total":"", "writing":"", "reading":"","listening":"", "speaking":""},"research":{"duration":"4", "level":"2", "achievement":"2", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"1", "level":"1", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+student_info = {"major":"cs","grade":"3","target":"2","data":{"gpa":{"score":"3.5", "trend":"2", "school":"9"},"gre":{"total":"320","verbal":"160","writing":"5"},"toefl":{"total":"110", "writing":"", "reading":"", "listening":"", "speaking":""},"ielts":{"total":"6", "writing":"", "reading":"","listening":"", "speaking":""},"research":{"duration":"4", "level":"2", "achievement":"2", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"4", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"4", "type":"5"},"credential":{"level":"4"},"competition":{"level":"5"},"scholarship":{"level":"7"}}}
 
 
 assess_student.init()
