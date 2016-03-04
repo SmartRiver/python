@@ -619,8 +619,6 @@ def _check_schedule_size(size):
 def _get_user_analysis(pre_handle_condition, after_handle_condition, target, language_type, exam_type):
     ''' 为用户返回咨询师提供的软性、硬性分析文案'''
     target = str(target)
-    _hard_condition_analysis_list = []
-    _soft_condition_analysis_list = []
     _temp_hard_cnt = ''
     _temp_soft_cnt = ''
     flag_soft = 1
@@ -655,12 +653,11 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
             if len(each) > 5:
                 if flag_hard < 1:
                     flag_hard = 0
-                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<br>'+each[5]+'<br>'
-                    
-                    title_flag_soft = '<br>'+each[5]+'<br>'
+                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde">'+each[5]+'</p>'
+                    title_flag_hard = '<p class="p1_Tde">'+each[5]+'</p>'
                 else:
-                    _temp_hard_cnt = _temp_hard_cnt  + '<br>'+each[5]+'<br>'
-                    title_flag_hard = '<br>'+each[5]+'<br>'
+                    _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde">'+each[5]+'</p>'
+                    title_flag_hard = '<p class="p1_Tde">'+each[5]+'</p>'
                     flag_hard = 0
                 
             if field_user.find('_') > 0:
@@ -680,24 +677,25 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 for each_record in USER_ANALYSIS[table_key]:
                     if float(each_record['min_value']) <= _temp_field <= float(each_record['max_value']):
                         if len(each_record['target'][target]) > 1:
-                            _temp_hard_cnt = _temp_hard_cnt + each_record['target'][target]
+                            _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
+                            flag_hard = flag_hard + 1
             else:
                 _temp_field = convert_to_str(int(_temp_field))
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 1:
-                            _temp_hard_cnt = _temp_hard_cnt + each_record['target'][target]+'<br>'
+                            _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
                             flag_hard = flag_hard + 1
                        
         else:
             if len(each) > 5:
                 if flag_soft < 1:
                     flag_soft = 0
-                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<br>'+each[5]+'<br>'
-                    title_flag_soft = '<br>'+each[5]+'<br>'
+                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde">'+each[5]+'</p>'
+                    title_flag_soft = '<p class="p1_Tde">'+each[5]+'</p>'
                 else:
-                    _temp_soft_cnt = _temp_soft_cnt  + '<br>'+each[5]+'<br>'
-                    title_flag_soft = '<br>'+each[5]+'<br>'
+                    _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde">'+each[5]+'</p>'
+                    title_flag_soft = '<p class="p1_Tde">'+each[5]+'</p>'
                     flag_soft = 0
             if is_level_divide == 1:
                 if field_user.find('_') > 0:
@@ -714,15 +712,15 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 1:
-                            _temp_soft_cnt = _temp_soft_cnt + each_record['target'][target] + '<br>'
+                            _temp_soft_cnt = _temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
                             flag_soft = flag_soft + 1
             if index == len(ANALYSIS_TABLE)-1:
                 if flag_soft < 1:
                     _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')
 
     return {
-        'hard_condition_analysis': _temp_hard_cnt.lstrip('<br>').replace('<br><br>', '<br>'),
-        'soft_condition_analysis': _temp_soft_cnt.lstrip('<br>').replace('<br><br>', '<br>'),
+        'hard_condition_analysis': _temp_hard_cnt.strip(),
+        'soft_condition_analysis': _temp_soft_cnt.strip(),
     }
 
 def schedule(condition, size=None):
