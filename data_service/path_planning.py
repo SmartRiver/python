@@ -271,12 +271,13 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
             if part_score_dict[each] >= target_dict[each]:
                 _temp_target_score = TARGET_DICT[part_score_dict['target']][each]
                 #则向已完成节点中追加完成节点的信息（无序）
-                finished_nodes.append({
-                    'node_id': NODE_NAME_DICT[each], 
-                    'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]], 
-                    'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)), 
-                    'node_target': _temp_target_score,
-                    })
+                if not each == 'activity':
+                    finished_nodes.append({
+                        'node_id': NODE_NAME_DICT[each], 
+                        'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]], 
+                        'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)), 
+                        'node_target': _temp_target_score,
+                        })
             #如果part_score_dict中的改键的值小于目标中该键的值（属性的值）
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
@@ -548,7 +549,9 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
 
     # 计算各个结点的权值，按照计算后的权重值对各个学习提升任务排序
     finished_nodes, unfinished_nodes, result_weight = _calculate_nodes_weight(part_score_dict, language_type, exam_type)
-
+    if not 'activity' in unfinished_nodes:
+        unfinished_nodes.append('activity')
+        
     path_plan_logger.info('calculate_nodes_weight')
     for each in result_weight:
         if each[0] in unfinished_nodes:
@@ -577,7 +580,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
         
     #获取推荐理由
     reason_dict = _get_reason_by_nodeid(part_score_dict['real_major'],part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
-    
+
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
@@ -611,7 +614,6 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
         else:
             unfinished_nodes_products[index]['node_target'] = ''
             unfinished_nodes_products[index]['node_score'] = ''
-    
 
     for index, item in enumerate(finished_nodes):
         finished_nodes[index]['what'] = reason_dict[item['node_id']]['what']
