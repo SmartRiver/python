@@ -281,14 +281,14 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
+                if int(ratio) == 1:
+                    ratio = 0.4
                 if each == 'gpa':
                     ratio = ratio + 0.3
                 if each in ['toefl', 'ielts', 'gre', 'gmat']:
                     ratio = ratio + 0.35
                 weight_dict[each] = weight_dict[each] * ratio
                 unfinished_nodes.append(each)
-    for each in weight_dict:
-        print(each+'---'+str(weight_dict[each]))
 
     #对结果进行排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
@@ -807,7 +807,6 @@ def schedule(condition, size=None):
             user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
         except Exception as e:
             print('except:'+str(e))
-        print(user_analysis)
 
     except Exception as e:
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
