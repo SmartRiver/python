@@ -701,7 +701,7 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                     title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                 else:
                     _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</strong></p>'
+                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     flag_hard = 0
                 
             if field_user.find('_') > 0:
@@ -819,7 +819,6 @@ def schedule(condition, size=None):
             user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
         except Exception as e:
             print('except:'+str(e))
-        print(user_analysis)
     except Exception as e:
         file = open('err_log.txt', 'a', encoding='utf-8')
         file.write(str(e))

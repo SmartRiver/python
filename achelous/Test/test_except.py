@@ -20,19 +20,10 @@ def bb():
 
 if __name__ == '__main__':
 	try:
-		a,b,c = aa()
-		print('--%d--' % b)
+		a = 1/0
 	except Exception as e:
+		try:
+			print("----")
+		except:
+			print('----end----')
 		
-		print(str(type(e)))
-		print('except:%s' % str(e))
-	finally:
-		print('returns')
-
-	dicta = {'a': 1}
-	dictb = {'b': 2}
-
-	dicta.update(dictb)
-	print(dicta)
-	dictb['a'] = 3
-	print(dicta)
