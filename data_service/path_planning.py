@@ -287,6 +287,9 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                     ratio = ratio + 0.35
                 weight_dict[each] = weight_dict[each] * ratio
                 unfinished_nodes.append(each)
+    for each in weight_dict:
+        print(each+'---'+str(weight_dict[each]))
+
     #对结果进行排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
     return finished_nodes, unfinished_nodes, result_weight
@@ -728,6 +731,7 @@ def schedule(condition, size=None):
     try:
         #size 校对是否为大于0的整数
         size = _check_schedule_size(size)
+        condition_copy = copy.deepcopy(condition)
    
         # 调用assess_student模块的assess(), 提取出所需要的用户信息
         user_condition = _get_user_condition(condition) 
@@ -766,10 +770,11 @@ def schedule(condition, size=None):
 
         # 返回软硬性条件分析文案
         try:
-            user_analysis = _get_user_analysis(condition['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
+            user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
         except Exception as e:
             print('except:'+str(e))
-        
+        print(user_analysis)
+
     except Exception as e:
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
 
@@ -908,7 +913,7 @@ def _load_products_by_tag():
     
     for tag_name in tag_dict:
         products_list = []
-        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}, 'is_online':{'$ne':0}},{'id':1,'title':1,'title_pic':1,'tag':1}):
+        for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}, 'is_online':1, 'is_delete':0, 'is_status':0},{'id':1,'title':1,'title_pic':1,'tag':1}):
             product = {}
             try:
                 product['product_id'] = record['id']
