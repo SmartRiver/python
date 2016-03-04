@@ -302,6 +302,7 @@ def _get_product_by_node_id(node_id, major, size=10):
         major_type = assess_student.MAJOR[major]
     else:
         return []
+
     #先找结点相关，专业only
     #如果存在该结点相关和专业only
     if node_id in PRODUCT_RECOMMEND and major_only in PRODUCT_RECOMMEND:
@@ -309,6 +310,8 @@ def _get_product_by_node_id(node_id, major, size=10):
             for product_by_major_only in PRODUCT_RECOMMEND[major_only]:
                 if product_by_attribute['title'] == product_by_major_only['title']:
                     product_recommend.append(product_by_attribute)
+    
+
     #然后找结点相关，专业相关
     #如果存在该结点相关和专业
     if node_id in PRODUCT_RECOMMEND and major in PRODUCT_RECOMMEND:
@@ -321,7 +324,7 @@ def _get_product_by_node_id(node_id, major, size=10):
     for product in temp_product_recommend:
         if not product in product_recommend:
             product_recommend.append(product)
-     
+
     #然后找结点相关，专业大类相关
     #如果存在该结点相关和专业大类                   
     if node_id in PRODUCT_RECOMMEND and major_type in PRODUCT_RECOMMEND:
@@ -335,7 +338,7 @@ def _get_product_by_node_id(node_id, major, size=10):
     for product in temp_product_recommend:
         if not product in product_recommend:
             product_recommend.append(product)
-    
+
     if node_id in PRODUCT_RECOMMEND and 'general' in PRODUCT_RECOMMEND:
         temp_product_recommend = []
         for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
@@ -347,7 +350,7 @@ def _get_product_by_node_id(node_id, major, size=10):
     for product in temp_product_recommend:
         if not product in product_recommend:
             product_recommend.append(product)
-
+    
     _temp_prodict_size = len(product_recommend)
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
@@ -911,7 +914,8 @@ def _get_tag_dict(tag_list, collection):
         temp_dict[assess_student.MAJOR[major]] = ""
     for major_type in temp_dict:
         tag_list.append(major_type)
-
+        
+    tag_list.append('general')
     #从数据库中获取tag对应的id
     tag_dict = {}
     for tag_name in tag_list:
