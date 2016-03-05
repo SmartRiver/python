@@ -263,6 +263,7 @@ def init(dict_from='mongodb'):
         for each in school_search_collection.find():
             try:
                 UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area'].lower()+'|'+str(each['type']).replace('.0','')+'|'+str(each['weight']))
+
             except TypeError as e:
                 search_logger.error(e)
                 search_logger.error('wrong line when converting：%s' % each)

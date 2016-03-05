@@ -73,6 +73,11 @@ ANALYSIS_TABLE = [
                 ('activity_level', 'activity_type', 0, 1, 4)
                 ]
 NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'科研能力提升'}
+INSTITUTE = {} # 院校institute库
+
+RANK_FACULTY = {} # 学校专排
+
+ABBR_TO_RANKID = {} # 专业英文缩写对应专排ID
 
 '''获取当前时间段(学期)'''
 def _get_start_term(grade=1):
@@ -87,14 +92,32 @@ def _get_start_term(grade=1):
     grade = grade * 2 + increase
     return grade
 
-def _get_school_target(target):
-    target = convert_to_int(target)
-    if target in TARGET_LEVEL_LIST:
-        return target
-    elif target == False:
-        return 4
-    elif target not in TARGET_LEVEL_LIST:
-        raise Exception('字段target不在[1-4]之间')
+def _get_school_target(target, major):
+    if isinstance(target , int):
+        if target in TARGET_LEVEL_LIST:
+            return target
+        else:
+            return 2
+    elif isinstance(target, str):
+        target = target.lower().replace('+',' ').replace('&amp', '&')
+        res_target = 2
+        if target in INSTITUTE and major in ABBR_TO_RANKID:
+            if INSTITUTE[target] in RANK_FACULTY:
+                if ABBR_TO_RANKID[major] in RANK_FACULTY[INSTITUTE[target]]:
+                    rank = int(RANK_FACULTY[INSTITUTE[target]][ABBR_TO_RANKID[major]])
+                    if rank <= 10:
+                        res_target =  1
+                    elif rank <= 30:
+                        res_target = 2
+                    elif rank <= 50:
+                        res_target =  3 
+                    elif rank <= 100:
+                        res_target =  4
+                    else:
+                        res_target =  4
+        return res_target
+    else:
+        return 2
 
 # 调用评估算法， 转化用户的信息
 def _get_user_condition(user_input):
@@ -155,7 +178,7 @@ def _get_mgt(student_info):
         raise Exception('缺失字段[student_info][grade]')
 
     grade = _get_start_term(grade) # 将用户的年级（大一到大四[1-4]）按当前月份分为1-8
-    target = _get_school_target(target) # 获取用户的目标院校档次
+    target = _get_school_target(target, real_major) # 获取用户的目标院校档次
         
     return {
         'grade': grade,
@@ -674,17 +697,21 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
     target = str(target)
     _temp_hard_cnt = ''
     _temp_soft_cnt = ''
+    _temp_hard_cnt_list = []
+    _temp_soft_cnt_list = []
     flag_soft = 1
     flag_hard = 1
     title_flag_soft = ''
     title_flag_hard = ''
     is_last = 0 
+    is_last_flag = 0
+    is_last_type = ''
     for index, each in enumerate(ANALYSIS_TABLE):
         table_key = each[0]
         if language_type == 'toefl':
             if table_key[:5] == 'ielts':
                 continue
-        elif language_type == 'ietls':
+        elif language_type == 'ielts':
             if table_key[:5] == 'toefl':
                 continue
         elif language_type == 'none':
@@ -704,12 +731,19 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
         is_level_divide = int(each[3])
         default_level = each[4]
         if is_hard_condition == 1:
+            if is_last_flag == 1 and field_user.split('_')[0] == is_last_type:
+                is_last_flag = 0
+                is_last_type = ''
+                continue
+
             if len(each) > 5:
                 if flag_hard < 1:
                     flag_hard = 0
                     _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    _temp_hard_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                 else:
+                    #_temp_hard_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                     _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     flag_hard = 0
@@ -729,18 +763,22 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                     _temp_field = float(default_level)
             if is_level_divide == 0:
                 for each_record in USER_ANALYSIS[table_key]:
-                    if float(each_record['min_value']) <= _temp_field <= float(each_record['max_value']):
-                        if len(each_record['target'][target]) > 1:
+                    if float(each_record['min_value']) <= float(_temp_field) <= float(each_record['max_value']):
+                        if len(each_record['target'][target]) > 0:
                             _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
+                            #_temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
+                if convert_to_int(_temp_field) == 0:
+                    is_last_flag = 1
+                    is_last_type = field_user.split('_')[0]
             else:
                 _temp_field = convert_to_str(int(_temp_field))
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
-                        if len(each_record['target'][target]) > 1:
+                        if len(each_record['target'][target]) > 0:
                             _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
+                            #_temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
-                       
         else:
             if is_last == 1 and field_user.split('_')[0] == 'internship':
                     continue
@@ -749,9 +787,12 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                     flag_soft = 0
                     _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    #_temp_soft_cnt_list.pop()
+                    #_temp_soft_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                 else:
                     _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    #_temp_soft_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                     flag_soft = 0
             if is_level_divide == 1:
                 if field_user.find('_') > 0:
@@ -769,17 +810,21 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 1:
                             _temp_soft_cnt = _temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
+                            #_temp_soft_cnt_list.append(_temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>')
                             flag_soft = flag_soft + 1
+
                 if _temp_field  == '5' and field_user == 'internship_duration':
                     is_last = 1
 
             if index == len(ANALYSIS_TABLE)-1:
                 if flag_soft < 1:
                     _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')
+                    #_temp_soft_cnt_list.pop()
     return {
         'hard_condition_analysis': _temp_hard_cnt.strip(),
         'soft_condition_analysis': _temp_soft_cnt.strip(),
     }
+
 
 def schedule(condition, size=None):
     part_score_dict = {}
@@ -828,13 +873,13 @@ def schedule(condition, size=None):
             user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
         except Exception as e:
             print('except:'+str(e))
+        # print(user_analysis)
     except Exception as e:
         file = open('err_log.txt', 'a', encoding='utf-8')
         file.write(str(e))
         file.write(str(condition)+'\n')
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
 
-    
     #for index,item in enumerate(finished_node):
     #    finished_node[index] = {'node_id': item, 'products': []}
     #    if item in NODE_PRODUCT:
@@ -940,35 +985,9 @@ def _get_tag_dict(tag_list, collection):
             tag_dict[tag_name] = '%d'%result['id']
     return tag_dict
 
-def _load_products_by_tag():
+def _load_products_by_tag(mongo_client):
     path_plan_logger.info('[starting] loading product information from mongodb . . . ')
-    try:
-        for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
-            try:
-                each = each.strip('\r').strip('\n')
-                if(each.split('=')[0] == 'mongodb.url'):
-                    url = each.split('=')[1]
-                if(each.split('=')[0] == 'mongodb.port'):
-                    port = int(each.split('=')[1])
-                if(each.split('=')[0] == 'mongodb.dulishuo.username'):
-                    username = each.split('=')[1]
-                if(each.split('=')[0] == 'mongodb.dulishuo.password'):
-                    password = each.split('=')[1]
-            except Exception as e:
-                path_plan_logger.error(e)
-                path_plan_logger.error('some line is wrong when read .')
-                path_plan_logger.info('wrong line : %s ', each)
-                return
-    except FileNotFoundError:
-        path_plan_logger.error('File resource/db.conf not found . . . ')
-        return exit_error_func(3)
-    except Exception as e:
-        path_plan_logger.error(e)
-        path_plan_logger.error(3, 'mongodb configuration failed.')
-        return exit_error_func(3)
-    path_plan_logger.info('[successed] load resource/db.conf')
-    mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
-    mongo_client.get_database('dulishuo')
+
     product_collection = mongo_client.get_collection('product')
     producttag_collection = mongo_client.get_collection('producttag')
     tag_list = ['提升GPA','提升托福成绩','提升雅思成绩','提升GRE成绩','提升GMAT成绩','竞赛','实习','证书','奖学金','活动','推荐信','科研能力提升']
@@ -988,11 +1007,11 @@ def _load_products_by_tag():
             products_list.append(product)
         PRODUCT_RECOMMEND[tag_name] = products_list
     product_load_time = time.time()
-    try:
-        mongo_client.close() # 关闭连接
-        path_plan_logger.info('close pymongo connection successed.')
-    except Exception as e:
-        path_plan_logger.error('close pymongo connection failed.')
+    # try:
+    #     mongo_client.close() # 关闭连接
+    #     path_plan_logger.info('close pymongo connection successed.')
+    # except Exception as e:
+    #     path_plan_logger.error('close pymongo connection failed.')
 
 def _load_reason():
     path_plan_logger.info('[starting] loading reason of different nodes from reason.csv to dict.')
@@ -1046,8 +1065,52 @@ def _load_reason():
                 REASON_DICT[line[0]][line[1]].append(line[2:])
     path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
-def _load_user_analysis():
+def _load_user_analysis(mongo_client):
     path_plan_logger.info('[starting] loading userAnalysis information from mongodb . . . ')
+    userAnalysis_collection = mongo_client.get_collection('userAnalysis')
+    for each in userAnalysis_collection.find():
+        try:
+            _temp_analysis = []
+            if each['type'] in USER_ANALYSIS:
+                _temp_analysis = USER_ANALYSIS[each['type']]
+            _temp_analysis.append(each)
+            USER_ANALYSIS[each['type']] = _temp_analysis
+        except Exception as e:
+            path_plan_logger.error(e)
+            path_plan_logger.error('some record invalid .')
+            path_plan_logger.info('wrong record : %s ', str(each))
+            return
+    # try:
+    #     mongo_client.close() # 关闭连接
+    #     path_plan_logger.info('close pymongo connection successed.')
+    # except Exception as e:
+    #     path_plan_logger.error('close pymongo connection failed.')
+
+def _load_institute_rank(rank_collection):
+    ''' 加载rank排名库 '''
+    global RANK_FACULTY
+    for each in rank_collection.find():
+        try:
+            if each['from'] == 'shenQF' and int(each['institute_id']) > -1:
+                if int(each['institute_id']) in RANK_FACULTY:
+                    RANK_FACULTY[int(each['institute_id'])].update({int(each['rank_type_id']): int(each['value'])})
+                else:
+                    RANK_FACULTY.update({int(each['institute_id']): {int(each['rank_type_id']): int(each['value'])}})
+        except:
+            pass # 忽略错误记录
+def _load_institute(institute_collection):
+    ''' 加载院校institute库 '''
+    global INSTITUTE
+    for each in institute_collection.find():
+        try:
+            INSTITUTE[each['title'].strip().lower().replace('&amp', '&')] = int(each['id'])
+            INSTITUTE[each['ttitle'].strip().lower().replace('&amp', '&')] = int(each['id'])
+        except:
+            pass # 忽略错误记录
+
+def _load_mongodb_dulishuo():
+    '''加载mongodb的dulishuo db.'''
+    path_plan_logger.info('[starting] loading db[dulishuo] connecting to  mongodb . . . ')
     try:
         for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
             try:
@@ -1075,24 +1138,31 @@ def _load_user_analysis():
     path_plan_logger.info('[successed] load resource/db.conf')
     mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
     mongo_client.get_database('dulishuo')
-    userAnalysis_collection = mongo_client.get_collection('userAnalysis')
-    for each in userAnalysis_collection.find():
-        try:
-            _temp_analysis = []
-            if each['type'] in USER_ANALYSIS:
-                _temp_analysis = USER_ANALYSIS[each['type']]
-            _temp_analysis.append(each)
-            USER_ANALYSIS[each['type']] = _temp_analysis
-        except Exception as e:
-            path_plan_logger.error(e)
-            path_plan_logger.error('some record invalid .')
-            path_plan_logger.info('wrong record : %s ', str(each))
-            return
+    path_plan_logger.info('[success] loaded db[dulishuo] connecting to  mongodb . . . ')
+
+    return mongo_client
+
+def _load_faculty_type():
+    ''' 从配置文件加载专业英文缩写跟ID的对应表 '''
+    path_plan_logger.info('[starting] loading school/institute_to_rankType.csv to dict . . . ')
     try:
-        mongo_client.close() # 关闭连接
-        path_plan_logger.info('close pymongo connection successed.')
+        global ABBR_TO_RANKID
+        for each in open('resource/school/institute_to_rankType.csv', 'r', encoding='utf-8').readlines():
+            try:
+                each = each.strip('\r').strip('\n')
+                ABBR_TO_RANKID[each.split(',')[0]] = int(each.split(',')[1])
+            except Exception as e:
+                path_plan_logger.error(e)
+                path_plan_logger.error('some line is wrong when read .')
+                path_plan_logger.info('wrong line : %s ', each)
+                return
+    except FileNotFoundError:
+        path_plan_logger.error('File school/institute_to_rankType.csv not found . . . ')
+        return exit_error_func(3)
     except Exception as e:
-        path_plan_logger.error('close pymongo connection failed.')
+        path_plan_logger.error(3, 'school/institute_to_rankType.csv load failed.')
+        return exit_error_func(3)
+    path_plan_logger.info('[success] loaded school/institute_to_rankType.csv to dict . . . ')
 
 def init():
     start_time = time.time()
@@ -1101,16 +1171,26 @@ def init():
 
     path_plan_logger.info('[starting] ----------initializing----------')
 
+    duishuo_client = _load_mongodb_dulishuo() # 加载mongodb的dulishuo db.
+
     _load_node() # 加载每个学习提升任务对应数据库里的Node节点的ID
 
     _load_target() # 加载每个档次院校个学习提升任务的目标值
     
     _load_init_weight() # 加载各个专业的每个学期的学习提升任务的安排(按照咨询师给的初始权重值排序)
     
-    _load_products_by_tag() # 从mongodb库里的product集合加载product信息,并按标签tag分类
+    _load_products_by_tag(duishuo_client) # 从mongodb库里的product集合加载product信息,并按标签tag分类
 
     _load_reason() # 从配置文件[reason/reason.csv]中加载文案
 
-    _load_user_analysis() # 从mongodb库里的userAnalysis集合里加载咨询师的软硬性分析文案
+    _load_user_analysis(duishuo_client) # 从mongodb库里的userAnalysis集合里加载咨询师的软硬性分析文案
+
+    # 从数据库加载排名库rank
+    _load_institute_rank(duishuo_client.get_collection('rank'))
+
+    # 从数据库加载院校库institute
+    _load_institute(duishuo_client.get_collection('institute'))
+
+    _load_faculty_type() # 从配置文件加载专业英文缩写跟ID的对应表
     
     path_plan_logger.info('[successed] ----------initializing----------')
