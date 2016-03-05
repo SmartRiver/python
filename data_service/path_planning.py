@@ -255,7 +255,10 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
 def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
     # 获取不同专业不同学期的初始化的各任务（节点）权重
-    weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
+    if part_score_dict['major'] in assess_student.MAJOR:
+        weight_dict = copy.deepcopy(PATH_PLAN_DICT[assess_student.MAJOR[part_score_dict['major']]][part_score_dict['grade']])
+    else:
+        weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
     
     #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
     _filter_weight_field(weight_dict, language_type, exam_type)
