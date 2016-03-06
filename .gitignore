@@ -198,6 +198,7 @@ test.py
 
 # pyCharms
 .idea/
+err_log.txt
 
 #test
 achelous/
