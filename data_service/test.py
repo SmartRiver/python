@@ -14,13 +14,10 @@ import time
 import json
 import logging
 
- # student_info = {"major":"marketing","grade":"2","target":"哈佛大学","data":{"gpa":{"score":"3", "trend":"2", "school":"9"},"gre":{"total":"301","verbal":"160","writing":"5"},"toefl":{"total":"105", "writing":"", "reading":"", "listening":"", "speaking":"28"},"ielts":{"total":"6", "writing":"", "reading":"","listening":"", "speaking":""},"research":{"duration":"4", "level":"3", "achievement":"2", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"3", "type":"2"},"credential":{"level":"4"},"competition":{"level":"2"},"scholarship":{"level":"3"}}}
-# student_info = {"major":"economics","grade":"2","target":"2","data":{"gpa":{"score":"3.2", "trend":"2", "school":"9"},"gre":{"total":"0","verbal":"0","writing":""},"toefl":{"total":"", "writing":"", "reading":"", "listening":"", "speaking":""},"ielts":{"total":"", "writing":"", "reading":"","listening":"", "speaking":""},"research":{"duration":"4", "level":"3", "achievement":"2", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"5", "level":"3", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"3", "type":"2"},"credential":{"level":"4"},"competition":{"level":"4"},"scholarship":{"level":"4"}}}
-
-student_info = {"major":"cs","grade":"1","target":"xxx","data":{"gpa":{"score":"3.2", "trend":"2", "school":"华中科技大学|湖北|985"},"gmat":{"total":"0", "writing":"3", "verbal":"12", "maths":"12"},"gre":{"total":"0", "writing":"4", "verbal":"12", "maths":"12"},"toefl":{"total":"1", "writing":"3", "reading":"12", "listening":"12", "speaking":"12"},"ielts":{"total":"9", "writing":"3", "reading":"12","listening":"12", "speaking":"12"},"research":{"duration":"1", "level":"1", "achievement":"1", "recommendation":"1"},"work":{"duration":"1", "level":"1", "recommendation":"1"},"internship":{"duration":"1", "level":"1", "recommendation":"1"},"reletter":{"level":["1","2","3"]},"activity":{"duration":"1", "type":"1"},"credential":{"level":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"}}}
+student_info = {'target': '1', 'data': {'internship': {'level': '1', 'recommendation': '1', 'duration': '1'}, 'ielts': {'total': '6.5'}, 'reletter': {'level': ['3', '3', '3']}, 'toefl': {'total': '0', 'speaking': '0'}, 'gpa': {'score': '3.58', 'school': '11'}, 'competition': {'level': '2'}, 'research': {'level': '6', 'recommendation': '3', 'achievement': '5', 'duration': '5'}, 'gmat': {'writing': '0', 'total': '0'}, 'gre': {'writing': '0', 'verbal': '0', 'total': '0'}, 'scholarship': {'level': '4'}}, 'grade': 3, 'major': 'education'}
 assess_student.init()
 path_planning.init()
-path_planning.schedule(student_info, size=1)
+#path_planning.schedule(student_info, size=1)
 
 
 
