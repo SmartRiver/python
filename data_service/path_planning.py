@@ -40,7 +40,7 @@ FIXED_NODES = [ #固定的结点（写文书、选择申请学校、网申、申
         'node_name': '申请后工作',
         'products': []
     }
-] 
+]
 path_plan_logger = None # 日志
 PATH_PLAN_DICT = {} # 各个专业每个学期的各学习提升任务权重值
 TARGET_DICT = {} # 各个档次学校的每个部分的目标值
@@ -73,6 +73,11 @@ ANALYSIS_TABLE = [
                 ('activity_level', 'activity_type', 0, 1, 4)
                 ]
 NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'科研能力提升'}
+INSTITUTE = {} # 院校institute库
+
+RANK_FACULTY = {} # 学校专排
+
+ABBR_TO_RANKID = {} # 专业英文缩写对应专排ID
 
 '''获取当前时间段(学期)'''
 def _get_start_term(grade=1):
@@ -87,14 +92,32 @@ def _get_start_term(grade=1):
     grade = grade * 2 + increase
     return grade
 
-def _get_school_target(target):
-    target = convert_to_int(target)
-    if target in TARGET_LEVEL_LIST:
-        return target
-    elif target == False:
-        return 4
-    elif target not in TARGET_LEVEL_LIST:
-        raise Exception('字段target不在[1-4]之间')
+def _get_school_target(target, major):
+    if isinstance(target , int):
+        if target in TARGET_LEVEL_LIST:
+            return target
+        else:
+            return 2
+    elif isinstance(target, str):
+        target = target.lower().replace('+',' ').replace('&amp', '&')
+        res_target = 2
+        if target in INSTITUTE and major in ABBR_TO_RANKID:
+            if INSTITUTE[target] in RANK_FACULTY:
+                if ABBR_TO_RANKID[major] in RANK_FACULTY[INSTITUTE[target]]:
+                    rank = int(RANK_FACULTY[INSTITUTE[target]][ABBR_TO_RANKID[major]])
+                    if rank <= 10:
+                        res_target =  1
+                    elif rank <= 30:
+                        res_target = 2
+                    elif rank <= 50:
+                        res_target =  3
+                    elif rank <= 100:
+                        res_target =  4
+                    else:
+                        res_target =  4
+        return res_target
+    else:
+        return 2
 
 # 调用评估算法， 转化用户的信息
 def _get_user_condition(user_input):
@@ -108,7 +131,7 @@ def _get_user_condition(user_input):
         else:
             path_plan_logger.error('调用assess_student模块的assess出错：'+return_assess_student)
             raise Exception(return_assess_student)
-    
+
 # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
 def _get_language_exam_type(user_condition):
     if 'language_type' in user_condition:
@@ -133,7 +156,7 @@ def _get_language_exam_type(user_condition):
 def _get_mgt(student_info):
     major = ''
     real_major = ''
-    
+
     if 'major' in student_info:
         real_major = student_info['major']
         major = student_info['major']
@@ -155,8 +178,8 @@ def _get_mgt(student_info):
         raise Exception('缺失字段[student_info][grade]')
 
     grade = _get_start_term(grade) # 将用户的年级（大一到大四[1-4]）按当前月份分为1-8
-    target = _get_school_target(target) # 获取用户的目标院校档次
-        
+    target = _get_school_target(target, real_major) # 获取用户的目标院校档次
+
     return {
         'grade': grade,
         'target': target,
@@ -197,7 +220,7 @@ def _get_hard_condition(student_info, language_type, exam_type):
     temp_hard_condition = {}
     try:
         temp_hard_condition['gpa'] = convert_to_float(user_data['gpa']['score'])
-        
+
         if language_type == 'ielts':
             temp_hard_condition['ielts'] = convert_to_float(user_data[language_type]['total'])
         elif language_type == 'toefl':
@@ -207,7 +230,7 @@ def _get_hard_condition(student_info, language_type, exam_type):
             temp_hard_condition['toefl'] = 0
         else:
             pass
-            
+
         if exam_type == 'gre':
             temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
         elif exam_type == 'gmat':
@@ -217,7 +240,7 @@ def _get_hard_condition(student_info, language_type, exam_type):
             temp_hard_condition['gmat'] = 0
         else:
             pass
-  
+
     except Exception as e:
         path_plan_logger.error('硬性条件比例获取时出错：'+str(e))
         return exit_error_func(6, '硬性条件比例获取时出错：'+str(e))
@@ -237,7 +260,7 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
             del weight_dict['toefl']
     else:
         pass#都保留
-        
+
     if exam_type == 'gre':
         if 'gmat' in weight_dict:
             del weight_dict['gmat']
@@ -255,11 +278,14 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
 def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
     # 获取不同专业不同学期的初始化的各任务（节点）权重
-    weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
-    
+    if part_score_dict['major'] in assess_student.MAJOR:
+        weight_dict = copy.deepcopy(PATH_PLAN_DICT[assess_student.MAJOR[part_score_dict['major']]][part_score_dict['grade']])
+    else:
+        weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
+
     #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
     _filter_weight_field(weight_dict, language_type, exam_type)
-    
+
     target_dict = TARGET_DICT[part_score_dict['target']]
     unfinished_nodes = [] # 未完成的任务结点(存储的是结点ID)
     finished_nodes = [] # 已完成的任务结点(存储的是结点的内容such gpa)
@@ -273,25 +299,32 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                 #则向已完成节点中追加完成节点的信息（无序）
                 if not each == 'activity':
                     finished_nodes.append({
-                        'node_id': NODE_NAME_DICT[each], 
-                        'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]], 
-                        'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)), 
+                        'node_id': NODE_NAME_DICT[each],
+                        'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]],
+                        'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)),
                         'node_target': _temp_target_score,
                         })
             #如果part_score_dict中的改键的值小于目标中该键的值（属性的值）
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
-           #     if ratio > 0.6:
-            #        ratio = 0.5
-            #    if each == 'gpa':
-            #        if ratio < 0.5:
-            #            ratio = ratio + 0.25
-           #     if each in ['toefl', 'ielts', 'gre', 'gmat']:
-           #         if ratio < 0.5:
-           #             ratio = ratio + 0.3
+                if each == 'gpa':
+                    if ratio < 0.5:
+                        ratio = ratio + 0.25
+                elif each in ['toefl', 'ielts', 'gre', 'gmat']:
+                    if ratio > 0.9:
+                        ratio = 0.3
+                    elif ratio < 0.5:
+                        ratio = ratio + 0.3
+                else:
+                    if ratio > 0.65:
+                        ratio = 0.5
+                    elif ratio > 0.5:
+                        ratio = 0.45
                 weight_dict[each] = weight_dict[each] * ratio
                 unfinished_nodes.append(each)
+    # for each in sorted(weight_dict.items(), key=lambda x:x[1], reverse=True):
+    #     print(each[0]+'\t'+str(each[1]))
     #对结果进行排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
     return finished_nodes, unfinished_nodes, result_weight
@@ -311,7 +344,7 @@ def _get_product_by_node_id(node_id, major, size=10):
             for product_by_major_only in PRODUCT_RECOMMEND[major_only]:
                 if product_by_attribute['title'] == product_by_major_only['title']:
                     product_recommend.append(product_by_attribute)
-    
+
 
     #然后找结点相关，专业相关
     #如果存在该结点相关和专业
@@ -321,21 +354,21 @@ def _get_product_by_node_id(node_id, major, size=10):
             for product_by_major in PRODUCT_RECOMMEND[major]:
                 if product_by_attribute['title'] == product_by_major['title']:
                     temp_product_recommend.append(product_by_attribute)
-    #合并列表，去除重复   
+    #合并列表，去除重复
     for product in temp_product_recommend:
         if not product in product_recommend:
             product_recommend.append(product)
 
     #然后找结点相关，专业大类相关
-    #如果存在该结点相关和专业大类                   
+    #如果存在该结点相关和专业大类
     if node_id in PRODUCT_RECOMMEND and major_type in PRODUCT_RECOMMEND:
         temp_product_recommend = []
         for product_by_attribute in PRODUCT_RECOMMEND[node_id]:
             for product_by_major_type in PRODUCT_RECOMMEND[major_type]:
                 if product_by_attribute['title'] == product_by_major_type['title']:
                     temp_product_recommend.append(product_by_major_type)
-                        
-    #合并列表，去除重复   
+
+    #合并列表，去除重复
     for product in temp_product_recommend:
         if not product in product_recommend:
             product_recommend.append(product)
@@ -346,12 +379,12 @@ def _get_product_by_node_id(node_id, major, size=10):
             for product_by_general in PRODUCT_RECOMMEND['general']:
                 if product_by_attribute['title'] == product_by_general['title']:
                     temp_product_recommend.append(product_by_general)
-                        
-    #合并列表，去除重复   
+
+    #合并列表，去除重复
     for product in temp_product_recommend:
         if not product in product_recommend:
             product_recommend.append(product)
-    
+
     _temp_prodict_size = len(product_recommend)
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
@@ -366,7 +399,7 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
         major_type = assess_student.MAJOR[major]
     else:
         major_type = 'general'
-    
+
     #结果字典
     result_dict = {}
     temp_result_dict = {}
@@ -376,10 +409,10 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
     grade_dict = {1:'大一', 2:'大一', 3:'大二', 4:'大二', 5:'大三', 6:'大三'}
     #专业分类（英文）转专业分类（中文）字典
     major_type_dict = {'commerce':'商科','liberal_arts':'文科','engineering':'工科','science':'理科','general':'所有专业'}
-    
+
     if not major_type in REASON_DICT:
         major_type = 'general'
-    
+
     if not major_type == 'general':
         for attribute in deviation_dict:
             if not 'special' in REASON_DICT[major_type]:
@@ -393,10 +426,10 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
                         result_dict[NODE_NAME_DICT[attribute]]['how'] = row[3].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
         #反转节点字典
         node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
-        
+
         #两项对比
         compare = list(map(lambda x:node_name_dict[x['nodeid']], node_list[:3]))
-        
+
         if len(compare) >=2:
             success = 0
             if 'compare' in REASON_DICT[major_type]:
@@ -424,7 +457,7 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
                                     result_dict[NODE_NAME_DICT[compare[2]]] = {}
                                     result_dict[NODE_NAME_DICT[compare[2]]]['what'] = row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
                                     result_dict[NODE_NAME_DICT[compare[2]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
-                                    success = 1           
+                                    success = 1
                 if not success == 1 and len(compare) >= 3:
                     #第二项和第三项产生比较，必然第二项>第三项
                     for row in REASON_DICT[major_type]['compare']:
@@ -437,7 +470,7 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
                                     result_dict[NODE_NAME_DICT[compare[2]]] = {}
                                     result_dict[NODE_NAME_DICT[compare[2]]]['what'] = row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
                                     result_dict[NODE_NAME_DICT[compare[2]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
-                                    
+
         if 'common' in REASON_DICT[major_type]:
             if 'priority_high' in REASON_DICT[major_type]['common']:
             #优先级高
@@ -491,7 +524,7 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
                             result_dict[NODE_NAME_DICT[compare[1]]]['what'] = row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
                             result_dict[NODE_NAME_DICT[compare[1]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
                             success = 1
-            
+
             if not success == 1 and len(compare) >= 3:
                 #第一项和第三项产生比较，必然第一项>第三项
                 for row in REASON_DICT[major_type]['compare']:
@@ -516,7 +549,7 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
                                 result_dict[NODE_NAME_DICT[compare[1]]]['how'] = row[4].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
                                 result_dict[NODE_NAME_DICT[compare[2]]] = {}
                                 result_dict[NODE_NAME_DICT[compare[2]]]['what'] = row[5].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
-                                result_dict[NODE_NAME_DICT[compare[2]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])                 
+                                result_dict[NODE_NAME_DICT[compare[2]]]['how'] = row[6].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
     if 'common' in REASON_DICT[major_type]:
         if 'priority_high' in REASON_DICT[major_type]['common']:
         #优先级高
@@ -550,12 +583,12 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     finished_nodes, unfinished_nodes, result_weight = _calculate_nodes_weight(part_score_dict, language_type, exam_type)
     if not 'activity' in unfinished_nodes:
         unfinished_nodes.append('activity')
-        
+
     path_plan_logger.info('calculate_nodes_weight')
     for each in result_weight:
         if each[0] in unfinished_nodes:
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
-    
+
     temp_list = []
     if 'gpa' in part_score_dict:
         temp_list.append('gpa')
@@ -567,7 +600,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
         temp_list.append('gre')
     if 'gmat' in part_score_dict:
         temp_list.append('gmat')
-    
+
     deviation_list = list(map(lambda x:{x:round(TARGET_DICT[part_score_dict['target']][x] - part_score_dict[x],2)},temp_list))
     deviation_dict = {}
     for node in deviation_list:
@@ -581,7 +614,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     _temp_unfinished_nodes = list(map(lambda x:{'nodeid':x}, return_unfinished_nodes))
     for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
         _temp_unfinished_nodes.append(each)
-        
+
     #获取推荐理由
     reason_dict = _get_reason_by_nodeid(part_score_dict['real_major'],part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
 
@@ -607,7 +640,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
                 'how':reason_dict[item]['how'],
                 'products': [],
                 })
-    
+
 
     #为硬实力做特殊处理
     for index, item in enumerate(unfinished_nodes_products):
@@ -628,14 +661,14 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
             finished_nodes[index]['node_score'] = part_score_dict[NODE_TYPE_DICT[item['node_id']]]
         else:
             finished_nodes[index]['node_target'] = ''
-            finished_nodes[index]['node_score'] = ''  
+            finished_nodes[index]['node_score'] = ''
 
     #unfinished_nodes_products.extend(FIXED_NODES)
 
     return finished_nodes, unfinished_nodes_products
 
 def _get_return_target(target, language_type, exam_type):
-    
+
     return_target_dict = {}
     target = TARGET_DICT[target]
     return_target_dict['gpa'] = {'type': 'GPA', 'score': target['gpa']}
@@ -645,7 +678,7 @@ def _get_return_target(target, language_type, exam_type):
         return_target_dict['language'] = {'type': 'TOEFL/IELTS', 'score': str(target['toefl'])+'/'+str(target['ielts'])}
     else:
         pass
-    
+
     if exam_type in ['gre', 'gmat']:
         return_target_dict['exam'] = {'type': exam_type.upper(), 'score': target[exam_type]}
     elif exam_type == 'neither':
@@ -668,17 +701,21 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
     target = str(target)
     _temp_hard_cnt = ''
     _temp_soft_cnt = ''
+    _temp_hard_cnt_list = []
+    _temp_soft_cnt_list = []
     flag_soft = 1
     flag_hard = 1
     title_flag_soft = ''
     title_flag_hard = ''
-    is_last = 0 
+    is_last = 0
+    is_last_flag = 0
+    is_last_type = ''
     for index, each in enumerate(ANALYSIS_TABLE):
         table_key = each[0]
         if language_type == 'toefl':
             if table_key[:5] == 'ielts':
                 continue
-        elif language_type == 'ietls':
+        elif language_type == 'ielts':
             if table_key[:5] == 'toefl':
                 continue
         elif language_type == 'none':
@@ -698,16 +735,23 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
         is_level_divide = int(each[3])
         default_level = each[4]
         if is_hard_condition == 1:
+            if is_last_flag == 1 and field_user.split('_')[0] == is_last_type:
+                is_last_flag = 0
+                is_last_type = ''
+                continue
+
             if len(each) > 5:
                 if flag_hard < 1:
                     flag_hard = 0
                     _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    _temp_hard_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                 else:
+                    #_temp_hard_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                     _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</strong></p>'
+                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     flag_hard = 0
-                
+
             if field_user.find('_') > 0:
                 try:
                     _temp_field = float(after_handle_condition[field_user.split('_')[0]][field_user.split('_')[1]])
@@ -723,18 +767,22 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                     _temp_field = float(default_level)
             if is_level_divide == 0:
                 for each_record in USER_ANALYSIS[table_key]:
-                    if float(each_record['min_value']) <= _temp_field <= float(each_record['max_value']):
-                        if len(each_record['target'][target]) > 1:
+                    if float(each_record['min_value']) <= float(_temp_field) <= float(each_record['max_value']):
+                        if len(each_record['target'][target]) > 0:
                             _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
+                            #_temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
+                if convert_to_int(_temp_field) == 0:
+                    is_last_flag = 1
+                    is_last_type = field_user.split('_')[0]
             else:
                 _temp_field = convert_to_str(int(_temp_field))
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
-                        if len(each_record['target'][target]) > 1:
+                        if len(each_record['target'][target]) > 0:
                             _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
+                            #_temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
-                       
         else:
             if is_last == 1 and field_user.split('_')[0] == 'internship':
                     continue
@@ -743,9 +791,12 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                     flag_soft = 0
                     _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    #_temp_soft_cnt_list.pop()
+                    #_temp_soft_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                 else:
                     _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
                     title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
+                    #_temp_soft_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
                     flag_soft = 0
             if is_level_divide == 1:
                 if field_user.find('_') > 0:
@@ -763,18 +814,21 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 1:
                             _temp_soft_cnt = _temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
+                            #_temp_soft_cnt_list.append(_temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>')
                             flag_soft = flag_soft + 1
+
                 if _temp_field  == '5' and field_user == 'internship_duration':
                     is_last = 1
 
             if index == len(ANALYSIS_TABLE)-1:
                 if flag_soft < 1:
                     _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')
-
+                    #_temp_soft_cnt_list.pop()
     return {
         'hard_condition_analysis': _temp_hard_cnt.strip(),
         'soft_condition_analysis': _temp_soft_cnt.strip(),
     }
+
 
 def schedule(condition, size=None):
     part_score_dict = {}
@@ -782,30 +836,30 @@ def schedule(condition, size=None):
         #size 校对是否为大于0的整数
         size = _check_schedule_size(size)
         condition_copy = copy.deepcopy(condition)
-   
+
         # 调用assess_student模块的assess(), 提取出所需要的用户信息
-        user_condition = _get_user_condition(condition) 
+        user_condition = _get_user_condition(condition)
 
         # 确定用户的语言类型（toefl or ielts）、（gre or gmat)
         language_type, exam_type = _get_language_exam_type(user_condition)
-        
+
         #确定'student_info'字段是否存在
         if 'student_info' in user_condition:
             student_info = user_condition['student_info']
         else:
             path_plan_logger.error('缺少字段student_info')
             raise Exception('缺少字段student_info')
-        
-        
+
+
         #提取出用户的申请属性（major、 grade、 target）
         part_score_dict.update(_get_mgt(student_info))
         path_plan_logger.info('[successed] _get_mgt()')
-        
+
         # 提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）
         hard_condition = _get_hard_condition(student_info, language_type, exam_type)
         part_score_dict.update(hard_condition)
         path_plan_logger.info('[successed] _get_hard_condition()')
-       
+
         #提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）
         part_score_dict.update(_get_soft_condition(user_condition))
         path_plan_logger.info('[successed] _get_soft_condition()')
@@ -829,12 +883,11 @@ def schedule(condition, size=None):
         file.write(str(condition)+'\n')
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
 
-    
     #for index,item in enumerate(finished_node):
     #    finished_node[index] = {'node_id': item, 'products': []}
     #    if item in NODE_PRODUCT:
     #        finished_node[index] = {'node_id': item, 'products': NODE_PRODUCT[item]}
-    
+
     # for index,item in enumerate(return_node):
     #     return_node[index] = {item: []}
     #     if item in NODE_PRODUCT:
@@ -863,10 +916,10 @@ def _logging_conf():
 
 def _load_node():
     path_plan_logger.info('[starting] loading NODE ID into dict . . . ')
-    
+
     for each in open('resource/plan/activity.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
-        if each[:1] != '#':            
+        if each[:1] != '#':
             if each.find(',') > 0:
                 each = each.split('//')[0]
                 node_id = int(each.split(',')[0]) # 结点ID
@@ -925,7 +978,7 @@ def _get_tag_dict(tag_list, collection):
         temp_dict[assess_student.MAJOR[major]] = ""
     for major_type in temp_dict:
         tag_list.append(major_type)
-        
+
     tag_list.append('general')
     #从数据库中获取tag对应的id
     tag_dict = {}
@@ -935,41 +988,15 @@ def _get_tag_dict(tag_list, collection):
             tag_dict[tag_name] = '%d'%result['id']
     return tag_dict
 
-def _load_products_by_tag():
+def _load_products_by_tag(mongo_client):
     path_plan_logger.info('[starting] loading product information from mongodb . . . ')
-    try:
-        for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
-            try:
-                each = each.strip('\r').strip('\n')
-                if(each.split('=')[0] == 'mongodb.url'):
-                    url = each.split('=')[1]
-                if(each.split('=')[0] == 'mongodb.port'):
-                    port = int(each.split('=')[1])
-                if(each.split('=')[0] == 'mongodb.dulishuo.username'):
-                    username = each.split('=')[1]
-                if(each.split('=')[0] == 'mongodb.dulishuo.password'):
-                    password = each.split('=')[1]
-            except Exception as e:
-                path_plan_logger.error(e)
-                path_plan_logger.error('some line is wrong when read .')
-                path_plan_logger.info('wrong line : %s ', each)
-                return
-    except FileNotFoundError:
-        path_plan_logger.error('File resource/db.conf not found . . . ')
-        return exit_error_func(3)
-    except Exception as e:
-        path_plan_logger.error(e)
-        path_plan_logger.error(3, 'mongodb configuration failed.')
-        return exit_error_func(3)
-    path_plan_logger.info('[successed] load resource/db.conf')
-    mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
-    mongo_client.get_database('dulishuo')
+
     product_collection = mongo_client.get_collection('product')
     producttag_collection = mongo_client.get_collection('producttag')
     tag_list = ['提升GPA','提升托福成绩','提升雅思成绩','提升GRE成绩','提升GMAT成绩','竞赛','实习','证书','奖学金','活动','推荐信','科研能力提升']
     tag_dict = _get_tag_dict(tag_list,producttag_collection)
     path_plan_logger.info('[successed] get tag dict')
-    
+
     for tag_name in tag_dict:
         products_list = []
         for record in product_collection.find({'tag':{'$regex':tag_dict[tag_name]}, 'is_online':1, 'is_delete':0, 'is_status':0},{'id':1,'title':1,'title_pic':1,'tag':1}):
@@ -983,11 +1010,11 @@ def _load_products_by_tag():
             products_list.append(product)
         PRODUCT_RECOMMEND[tag_name] = products_list
     product_load_time = time.time()
-    try:
-        mongo_client.close() # 关闭连接
-        path_plan_logger.info('close pymongo connection successed.')
-    except Exception as e:
-        path_plan_logger.error('close pymongo connection failed.')
+    # try:
+    #     mongo_client.close() # 关闭连接
+    #     path_plan_logger.info('close pymongo connection successed.')
+    # except Exception as e:
+    #     path_plan_logger.error('close pymongo connection failed.')
 
 def _load_reason():
     path_plan_logger.info('[starting] loading reason of different nodes from reason.csv to dict.')
@@ -1041,8 +1068,52 @@ def _load_reason():
                 REASON_DICT[line[0]][line[1]].append(line[2:])
     path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
-def _load_user_analysis():
+def _load_user_analysis(mongo_client):
     path_plan_logger.info('[starting] loading userAnalysis information from mongodb . . . ')
+    userAnalysis_collection = mongo_client.get_collection('userAnalysis')
+    for each in userAnalysis_collection.find():
+        try:
+            _temp_analysis = []
+            if each['type'] in USER_ANALYSIS:
+                _temp_analysis = USER_ANALYSIS[each['type']]
+            _temp_analysis.append(each)
+            USER_ANALYSIS[each['type']] = _temp_analysis
+        except Exception as e:
+            path_plan_logger.error(e)
+            path_plan_logger.error('some record invalid .')
+            path_plan_logger.info('wrong record : %s ', str(each))
+            return
+    # try:
+    #     mongo_client.close() # 关闭连接
+    #     path_plan_logger.info('close pymongo connection successed.')
+    # except Exception as e:
+    #     path_plan_logger.error('close pymongo connection failed.')
+
+def _load_institute_rank(rank_collection):
+    ''' 加载rank排名库 '''
+    global RANK_FACULTY
+    for each in rank_collection.find():
+        try:
+            if each['from'] == 'shenQF' and int(each['institute_id']) > -1:
+                if int(each['institute_id']) in RANK_FACULTY:
+                    RANK_FACULTY[int(each['institute_id'])].update({int(each['rank_type_id']): int(each['value'])})
+                else:
+                    RANK_FACULTY.update({int(each['institute_id']): {int(each['rank_type_id']): int(each['value'])}})
+        except:
+            pass # 忽略错误记录
+def _load_institute(institute_collection):
+    ''' 加载院校institute库 '''
+    global INSTITUTE
+    for each in institute_collection.find():
+        try:
+            INSTITUTE[each['title'].strip().lower().replace('&amp', '&')] = int(each['id'])
+            INSTITUTE[each['ttitle'].strip().lower().replace('&amp', '&')] = int(each['id'])
+        except:
+            pass # 忽略错误记录
+
+def _load_mongodb_dulishuo():
+    '''加载mongodb的dulishuo db.'''
+    path_plan_logger.info('[starting] loading db[dulishuo] connecting to  mongodb . . . ')
     try:
         for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
             try:
@@ -1070,24 +1141,31 @@ def _load_user_analysis():
     path_plan_logger.info('[successed] load resource/db.conf')
     mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
     mongo_client.get_database('dulishuo')
-    userAnalysis_collection = mongo_client.get_collection('userAnalysis')
-    for each in userAnalysis_collection.find():
-        try:
-            _temp_analysis = []
-            if each['type'] in USER_ANALYSIS:
-                _temp_analysis = USER_ANALYSIS[each['type']]
-            _temp_analysis.append(each)
-            USER_ANALYSIS[each['type']] = _temp_analysis
-        except Exception as e:
-            path_plan_logger.error(e)
-            path_plan_logger.error('some record invalid .')
-            path_plan_logger.info('wrong record : %s ', str(each))
-            return
+    path_plan_logger.info('[success] loaded db[dulishuo] connecting to  mongodb . . . ')
+
+    return mongo_client
+
+def _load_faculty_type():
+    ''' 从配置文件加载专业英文缩写跟ID的对应表 '''
+    path_plan_logger.info('[starting] loading school/institute_to_rankType.csv to dict . . . ')
     try:
-        mongo_client.close() # 关闭连接
-        path_plan_logger.info('close pymongo connection successed.')
+        global ABBR_TO_RANKID
+        for each in open('resource/school/institute_to_rankType.csv', 'r', encoding='utf-8').readlines():
+            try:
+                each = each.strip('\r').strip('\n')
+                ABBR_TO_RANKID[each.split(',')[0]] = int(each.split(',')[1])
+            except Exception as e:
+                path_plan_logger.error(e)
+                path_plan_logger.error('some line is wrong when read .')
+                path_plan_logger.info('wrong line : %s ', each)
+                return
+    except FileNotFoundError:
+        path_plan_logger.error('File school/institute_to_rankType.csv not found . . . ')
+        return exit_error_func(3)
     except Exception as e:
-        path_plan_logger.error('close pymongo connection failed.')
+        path_plan_logger.error(3, 'school/institute_to_rankType.csv load failed.')
+        return exit_error_func(3)
+    path_plan_logger.info('[success] loaded school/institute_to_rankType.csv to dict . . . ')
 
 def init():
     start_time = time.time()
@@ -1096,16 +1174,26 @@ def init():
 
     path_plan_logger.info('[starting] ----------initializing----------')
 
+    duishuo_client = _load_mongodb_dulishuo() # 加载mongodb的dulishuo db.
+
     _load_node() # 加载每个学习提升任务对应数据库里的Node节点的ID
 
     _load_target() # 加载每个档次院校个学习提升任务的目标值
-    
+
     _load_init_weight() # 加载各个专业的每个学期的学习提升任务的安排(按照咨询师给的初始权重值排序)
-    
-    _load_products_by_tag() # 从mongodb库里的product集合加载product信息,并按标签tag分类
+
+    _load_products_by_tag(duishuo_client) # 从mongodb库里的product集合加载product信息,并按标签tag分类
 
     _load_reason() # 从配置文件[reason/reason.csv]中加载文案
 
-    _load_user_analysis() # 从mongodb库里的userAnalysis集合里加载咨询师的软硬性分析文案
-    
+    _load_user_analysis(duishuo_client) # 从mongodb库里的userAnalysis集合里加载咨询师的软硬性分析文案
+
+    # 从数据库加载排名库rank
+    _load_institute_rank(duishuo_client.get_collection('rank'))
+
+    # 从数据库加载院校库institute
+    _load_institute(duishuo_client.get_collection('institute'))
+
+    _load_faculty_type() # 从配置文件加载专业英文缩写跟ID的对应表
+
     path_plan_logger.info('[successed] ----------initializing----------')
