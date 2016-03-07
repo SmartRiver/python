@@ -14,15 +14,15 @@ import time
 import json
 import logging
 
-student_info = {'target': '1', 'data': {'internship': {'level': '1', 'recommendation': '1', 'duration': '1'}, 'ielts': {'total': '6.5'}, 'reletter': {'level': ['3', '3', '3']}, 'toefl': {'total': '0', 'speaking': '0'}, 'gpa': {'score': '3.58', 'school': '11'}, 'competition': {'level': '2'}, 'research': {'level': '6', 'recommendation': '3', 'achievement': '5', 'duration': '5'}, 'gmat': {'writing': '0', 'total': '0'}, 'gre': {'writing': '0', 'verbal': '0', 'total': '0'}, 'scholarship': {'level': '4'}}, 'grade': 3, 'major': 'education'}
+student_info = {'target': '2', 'data': {'internship': {'level': '4', 'recommendation': '3', 'duration': '5'}, 'ielts': {'total': '0'}, 'toefl': {'total': '0', 'speaking': '0'}, 'gpa': {'score': '3.3', 'school': '12'}, 'research': {'level': '6', 'recommendation': '3', 'achievement': '5', 'duration': '5'}, 'scholarship': {'level': '7'}, 'activity': {'duration': '3', 'type': '2'}}, 'grade': 1, 'major': 'law'}
 assess_student.init()
 path_planning.init()
 #path_planning.schedule(student_info, size=1)
 
 
 
-print(json.dumps(path_planning.schedule(student_info, size=1), ensure_ascii=False, indent=4))
-#print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
+#print(json.dumps(path_planning.schedule(student_info, size=1), ensure_ascii=False, indent=4))
+print(json.dumps(assess_student.assess(student_info), ensure_ascii=False, indent=4))
 #search.init()
 #print(json.dumps(search.search_school(condition='a', country=None), ensure_ascii=False, indent=4))
 # 周一：完善学校搜索算法和接口的工作，重构接口代码；

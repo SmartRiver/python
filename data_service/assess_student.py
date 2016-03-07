@@ -162,6 +162,7 @@ def assess(student_info):
 
         #获得根据各项权值最大值计算的结果
         result_full = exec_rule(student_weight_full_data, RULE[major])
+
     except Exception as e:
         return exit_error_func(1, '接口调用失败，错误信息：\n'+str(e))
 
