@@ -361,7 +361,6 @@ def _get_product_by_node_id(node_id, major, size=10):
         return product_recommend[:size]
 
 def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
-
     #获取专业大类
     if major in assess_student.MAJOR:
         major_type = assess_student.MAJOR[major]
@@ -574,6 +573,11 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     for node in deviation_list:
         for key in node:
             deviation_dict[key] = node[key]
+            
+    for attribute in deviation_dict:
+        if deviation_dict[attribute] >= TARGET_DICT[part_score_dict['target']][attribute]:
+            deviation_dict[attribute] = 1000
+
     _temp_unfinished_nodes = list(map(lambda x:{'nodeid':x}, return_unfinished_nodes))
     for each in list(map(lambda x:{'nodeid': x['node_id']}, finished_nodes)):
         _temp_unfinished_nodes.append(each)
@@ -819,7 +823,6 @@ def schedule(condition, size=None):
             user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
         except Exception as e:
             print('except:'+str(e))
-        print(user_analysis)
     except Exception as e:
         file = open('err_log.txt', 'a', encoding='utf-8')
         file.write(str(e))
