@@ -93,6 +93,8 @@ def _get_start_term(grade=1):
     return grade
 
 def _get_school_target(target, major):
+    if convert_to_int(target) != False:
+        return convert_to_int(target)
     if isinstance(target , int):
         if target in TARGET_LEVEL_LIST:
             return target
@@ -617,7 +619,6 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
 
     #获取推荐理由
     reason_dict = _get_reason_by_nodeid(part_score_dict['real_major'],part_score_dict['grade'], _temp_unfinished_nodes, deviation_dict)
-
     for index,item in enumerate(return_unfinished_nodes):
         _temp_target_score = TARGET_DICT[part_score_dict['target']][NODE_TYPE_DICT[item]]
         if NODEID_TO_TEXT[item] in PRODUCT_RECOMMEND:
@@ -831,6 +832,7 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
 
 
 def schedule(condition, size=None):
+
     part_score_dict = {}
     try:
         #size 校对是否为大于0的整数
