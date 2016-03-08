@@ -488,19 +488,16 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
                         result_dict[node['nodeid']]['what'] = REASON_DICT[major_type]['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[0].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
                         result_dict[node['nodeid']]['how'] = REASON_DICT[major_type]['common']['priority_low'][node_name_dict[node['nodeid']]].split('|')[1].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
     temp_result_dict = copy.deepcopy(result_dict)
-    print(2)
+
     result_dict = {}
     #通用
     major_type = 'general'
     for attribute in deviation_dict:
-        #print(attribute)
         if not 'special' in REASON_DICT[major_type]:
             break
         if attribute in REASON_DICT[major_type]['special']:
-            #print(attribute+'  in')
             deviation = deviation_dict[attribute]
             for row in REASON_DICT[major_type]['special'][attribute]:
-                #print(row)
                 if deviation >= float(row[0].split('-')[0]) and deviation <= float(row[0].split('-')[1]) and row[1].count(str(semester)) > 0:
                     result_dict[NODE_NAME_DICT[attribute]] = {}
                     result_dict[NODE_NAME_DICT[attribute]]['what'] = row[2].replace('{grade}',grade_dict[semester]).replace('{semester}',semester_dict[semester]).replace('{major_type}',major_type_dict[major_type])
