@@ -203,7 +203,7 @@ test.py
 achelous/
 
 # log dir
-log/
+*.log
 
 # Packages
 *.egg

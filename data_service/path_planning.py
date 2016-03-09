@@ -17,13 +17,13 @@ from common_func import exit_error_func, convert_to_str, convert_to_int, convert
 import assess_student
 from assess_student import assess
 
-TARGET_LEVEL_LIST = [1, 2, 3, 4] # 目标档次学校所以档次， 1为最高档
+TARGET_LEVEL_LIST = [1, 2, 3, 4, '1', '2', '3', '4'] # 目标档次学校所以档次， 1为最高档
 GRADE_LEVEL_LSIT = [1, 2, 3] # 年级 1、2、3、4分半代表大一、大二、大三、大四
 FIXED_NODES = [ #固定的结点（写文书、选择申请学校、网申、申请后工作）
     {
         'node_id': 79,
         'node_name': '写文书任务',
-        'products': []
+        'products': [],
     },
     {
         'node_id': 80,
@@ -93,13 +93,10 @@ def _get_start_term(grade=1):
     return grade
 
 def _get_school_target(target, major):
-    if convert_to_int(target) != False:
-        return convert_to_int(target)
-    if isinstance(target , int):
-        if target in TARGET_LEVEL_LIST:
-            return target
-        else:
-            return 2
+    
+    if target in TARGET_LEVEL_LIST:
+        target = convert_to_int(target)
+        return target
     elif isinstance(target, str):
         target = target.lower().replace('+',' ').replace('&amp', '&')
         res_target = 2
@@ -877,6 +874,7 @@ def schedule(condition, size=None):
         # 返回软硬性条件分析文案
         try:
             user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
+            #print(user_analysis)
         except Exception as e:
             print('except:'+str(e))
     except Exception as e:
