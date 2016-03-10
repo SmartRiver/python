@@ -1,0 +1,17 @@
+fee,regex:生活费
+fee,keyword:fee
+weather,keyword:天气
+weather,keyword:气候
+weather,keyword:weather
+state,regex:所在州
+state,keyword:state
+area,regex:地理位置
+area,keyword:location
+area,keyword:area
+area,keyword:位置
+security,regex:城市安全
+security,keyword:security
+security,keyword:安全
+traffic,keyword:交通
+traffic,keyword:traffic
+traffic,regex:城市交通

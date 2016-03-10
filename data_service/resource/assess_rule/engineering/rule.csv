@@ -1,0 +1,66 @@
+#gpa_dimension
+gpa,                   multi,   %gpa_score,45,%gpa_school
+
+#language_dimension
+toefl,                 multi,   25,%toefl_total
+ielts,                 multi,   25,%ielts_total
+language,              max,     %toefl,%ielts
+
+#exam_dimension
+gre_factor,            multi,   %gre_total,%gre_verbal
+exam,                  multi,   25,%gre_factor
+
+#research_dimension
+research_base,         multi,   %research_duration,%research_achievement,%research_level,%research_recommendation
+research_factor,       range,   1.3,     %research_base,   4,100,        1
+research_factor,       range,   1,       %research_base,   3.5,4,        2
+research_factor,       range,   0.9,     %research_base,   3.3,3.5,      3
+research_factor,       range,   0.85,    %research_base,   2.7,3.3,      4
+research_factor,       range,   0.75,    %research_base,   2.5,2.7,      5
+research_factor,       range,   0.6,     %research_base,   2,2.5,        6
+research_factor,       range,   0.5,     %research_base,   1,2,          7
+research_factor,       range,   0,       %research_base,   0,1,          8
+research,              multi,   15,%research_factor
+
+#internship_dimension
+internship_base,       multi,   %internship_duration,%internship_level,%internship_recommendation
+internship_factor,     range,   1.3,     %internship_base,  4,100,        1
+internship_factor,     range,   1,       %internship_base,  3.5,4,        2
+internship_factor,     range,   0.9,     %internship_base,  3.3,3.5,      3
+internship_factor,     range,   0.85,    %internship_base,  2.7,3.3,      4
+internship_factor,     range,   0.75,    %internship_base,  2.5,2.7,      5
+internship_factor,     range,   0.6,     %internship_base,  2,2.5,        6
+internship_factor,     range,   0.5,     %internship_base,  1,2,          7
+internship_factor,     range,   0,       %internship_base,  0,1,          8
+internship,            multi,   15,%internship_factor
+
+#competition_dimension
+competition,           multi,   10,%competition_level
+
+#scholarship_dimension
+scholarship,           multi,   5,%scholarship_level
+
+#reletter_dimension
+reletter,              multi,   5,%reletter_level
+
+#result
+result,                sum,     %language,%gpa,%internship,%research,%competition,%scholarship,%exam,%reletter
+
+#level
+level,                 range,   1,       %result,          146,1000,      1
+level,                 range,   2,       %result,          126,146,       2
+level,                 range,   3,       %result,          111,126,       3
+level,                 range,   4,       %result,          101,111,       4
+level,                 range,   5,       %result,          92,101,        5
+level,                 range,   6,       %result,          81,92,         6
+level,                 range,   7,       %result,          0,81,          7
+
+#维度标识 计算规则为sum
+gpa_dimension,         dimension,          %gpa
+exam_dimension,        dimension,          %exam
+research_dimension,    dimension,          %research
+language_dimension,    dimension,          %language
+scholarship_dimension, dimension,          %scholarship
+internship_dimension,  dimension,          %internship
+competition_dimension, dimension,          %competition
+reletter_dimension,    dimension,          %reletter

@@ -1,0 +1,6 @@
+qs,keyword:qs
+us-news,keyword:us,keyword:news
+qs,regex:世界.*排名
+qs,regex:全球.*排名
+us-news,entity:country:USA,regex:排名
+none,regex:排名
