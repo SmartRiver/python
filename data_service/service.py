@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-__author__ = 'johnson'
+
+__author__  = 'johnson'
+__doc__     = '''this file is used to process all of requests from clients'''
 
 import tornado.ioloop
 import tornado.web
@@ -8,19 +11,16 @@ import sys
 import json
 import urllib.parse
 import os
-import logging
-import logging.config
-import assess_student
 from assess_student import assess, init
-import path_planning
 from path_planning import schedule, init
-import search
 from search import search_school, init
-from common_func import md5_token, convert_to_str, exit_error_func
+from common_func import md5_token, convert_to_str, exit_error_func, process_param_string
+from global_variable import service_logger
 
 # Print the usage of the class
 def print_usage():
     sys.stdout.write('''Welcome to use python service for dulishuo.''')
+
 
 class MainHandler(tornado.web.RequestHandler):
 
@@ -57,64 +57,23 @@ class MainHandler(tornado.web.RequestHandler):
                 self.finish('failed.')
         elif request_type == 'school_search':
             if 'condition' in self.request.query_arguments:
-                try:
-                    condition = self.request.query_arguments['condition'][0]
-                    condition = convert_to_str(condition)
-                    condition = condition.replace(' ', '')
-                except Exception as e:
-                    service_logger.error(e)
-                    error_msg = exit_error_func(1, 'condition')
-                    flag = False
-
+                condition = process_param_string(self.request.query_arguments['condition'][0])
             else:
-                error_msg = exit_error_func(5, 'condition是必选参数')
-                flag = False
+                raise Exception(exit_error_func(5, 'condition是必选参数'))
             if 'area' in self.request.query_arguments:
-                try:
-                    area = self.request.query_arguments['area'][0]
-                    area = convert_to_str(area)
-                    area = area.strip()
-                    if len(area) < 1:
-                        area = None
-                except Exception as e:
-                    service_logger.error(e)
-                    error_msg = exit_error_func(1, 'area')
-                    flag = False
-                    area = None
+                area = process_param_string(self.request.query_arguments['area'][0], option_param=1)
             else:
                 area = None
             if 'country' in self.request.query_arguments:
-                try:
-                    country = self.request.query_arguments['country'][0]
-                    country = convert_to_str(country)
-                    country = country.strip()
-                    if len(country) < 1:
-                        country = None
-                except Exception as e:
-                    service_logger.error(e)
-                    error_msg = exit_error_func(1, 'country')
-                    flag = False
-                    country = None
+                country = process_param_string(self.request.query_arguments['country'][0], option_param=1)
             else:
                 country = None
             if 'major' in self.request.query_arguments:
-                try:
-                    major = self.request.query_arguments['major'][0]
-                    major = convert_to_str(major)
-                    major = major.strip()
-                    if len(major) < 1:
-                        major = None
-                except Exception as e:
-                    service_logger.error(e)
-                    error_msg = exit_error_func(1, 'major')
-                    flag = False
-                    major = None
+                major = process_param_string(self.request.query_arguments['major'][0], option_param=1)
             else:
-                major= None
-            if flag:
-                self.finish(json.dumps(search.search_school(condition=condition, major=major, area=area, country=country), ensure_ascii=False, indent=4))
-            else:
-                self.finish(error_msg)
+                major = None
+            self.finish(json.dumps(search.search_school(condition=condition, major=major, area=area, country=country), ensure_ascii=False, indent=4))
+            
         elif request_type == 'assess_student':
             if 'condition' in self.request.query_arguments:
                 try:
@@ -154,18 +113,6 @@ class MainHandler(tornado.web.RequestHandler):
             service_logger.info('invalid request method.')
             self.finish(exit_error_func(7, request_type))
 
-global service_logger # logger
-
-'''日志配置'''
-def _logging_conf():
-    try:
-        global service_logger
-        logging.config.fileConfig('./conf/logging.conf')
-        service_logger = logging.getLogger('general')
-        service_logger.info('--------completing confuration--------')
-    except Exception as e:
-        print('--------logging configurating failed--------')
-
 application = tornado.web.Application([(r"/(.*)", MainHandler)])
 
 def _init():
@@ -175,7 +122,6 @@ def _init():
     path_planning.init()
 
 if __name__ == "__main__":
-    _logging_conf()
     try:
         service_logger.info('data_service server starting.')
         _init() # 将需要引用的模块统一初始化

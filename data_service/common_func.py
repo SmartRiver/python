@@ -132,3 +132,13 @@ def md5_token(client_token):
     except Exception as e:
         #raise Exception(exit_error_func(6, str(e)))
         return False
+
+def process_param_string(input_param, option_param=0):
+    try:
+        condition = self.request.query_arguments['condition'][0]
+        condition = convert_to_str(condition)
+        condition = condition.strip()
+    except Exception as e:
+        service_logger.error(e)
+        error_msg = exit_error_func(1, 'condition')
+        flag = False
