@@ -328,7 +328,7 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
     return finished_nodes, unfinished_nodes, result_weight
 
-def _get_product_by_node_id(node_id, major, size=10):
+def _get_product_by_node_id(node_id, major, semester, size=10):
     product_recommend = []
     major_only = major + '_only'
     if major in assess_student.MAJOR:
@@ -383,8 +383,35 @@ def _get_product_by_node_id(node_id, major, size=10):
     for product in temp_product_recommend:
         if not product in product_recommend:
             product_recommend.append(product)
+            
+            
+    grade_dict = {1:"大一",2:"大一",3:"大二",4:"大二",5:"大三",6:"大三"}
+    grade = grade_dict[semester]
+    grade_list = ["大一","大二","大三"]
+    grade_list.remove(grade)
+    
+    if "大一" in PRODUCT_RECOMMEND:
+        print("123")
+    #找到不符合的年级标签
+    error_products_list = []
+    for error_grade in grade_list:
+        if error_grade in PRODUCT_RECOMMEND:
+            error_products_list.extend(PRODUCT_RECOMMEND[error_grade])
+        
+    #筛选，去掉年级标签不符合的
+    for product in product_recommend:
+        if product in error_products_list:
+            product_recommend.remove(product)
+    
+    #移动置顶
+    for product in product_recommend:
+        if product in PRODUCT_RECOMMEND['置顶']:
+            product_recommend.remove(product)
+            product_recommend.insert(0,product)
 
     _temp_prodict_size = len(product_recommend)
+    
+    print(product_recommend)
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
     if size > _temp_prodict_size:
@@ -626,7 +653,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
                 'node_target': _temp_target_score,
                 'what': reason_dict[item]['what'],
                 'how':reason_dict[item]['how'],
-                'products': _get_product_by_node_id(NODEID_TO_TEXT[item], part_score_dict['real_major'], size),
+                'products': _get_product_by_node_id(NODEID_TO_TEXT[item], part_score_dict['real_major'], part_score_dict['grade'], size),
                 })
         else:
             unfinished_nodes_products.append({
@@ -693,7 +720,11 @@ def _check_schedule_size(size):
         raise ValueError('size应为大于0的整数')
     else:
         return size
+<<<<<<< HEAD
 
+=======
+# 写的很乱。需要重构
+>>>>>>> 304bf8d52e6ee48109076129bcd1b271a02deab4
 def _get_user_analysis(pre_handle_condition, after_handle_condition, target, language_type, exam_type):
     ''' 为用户返回咨询师提供的软性、硬性分析文案'''
     target = str(target)
@@ -979,6 +1010,10 @@ def _get_tag_dict(tag_list, collection):
         tag_list.append(major_type)
 
     tag_list.append('general')
+    tag_list.append('大一')
+    tag_list.append('大二')
+    tag_list.append('大三')
+    tag_list.append('置顶')
     #从数据库中获取tag对应的id
     tag_dict = {}
     for tag_name in tag_list:
@@ -1100,7 +1135,6 @@ def _load_institute_rank(rank_collection):
                     RANK_FACULTY.update({int(each['institute_id']): {int(each['rank_type_id']): int(each['value'])}})
         except:
             pass # 忽略错误记录
-
 def _load_institute(institute_collection):
     ''' 加载院校institute库 '''
     global INSTITUTE
