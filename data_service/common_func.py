@@ -142,3 +142,5 @@ def process_param_string(input_param, option_param=0):
         service_logger.error(e)
         error_msg = exit_error_func(1, 'condition')
         flag = False
+def return_json_dump(input_param):
+    return json
