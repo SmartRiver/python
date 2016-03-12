@@ -5,6 +5,7 @@ __doc__ = '''this py file is the collection of those functions or methods used i
 
 import time
 import hashlib
+import json
 
 def exit_error_func(error_code, error_param=''):
     error_dict = {
@@ -143,4 +144,4 @@ def process_param_string(input_param, option_param=0):
         error_msg = exit_error_func(1, 'condition')
         flag = False
 def return_json_dump(input_param):
-    return json
+    return json.dumps(input_param, ensure_ascii=False, indent=4)
