@@ -275,16 +275,15 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
         pass#都保留
 
 def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
-
     # 获取不同专业不同学期的初始化的各任务（节点）权重
-    if part_score_dict['major'] in assess_student.MAJOR:
-        weight_dict = copy.deepcopy(PATH_PLAN_DICT[assess_student.MAJOR[part_score_dict['major']]][part_score_dict['grade']])
+    if part_score_dict['real_major'] in assess_student.MAJOR:
+        weight_dict = copy.deepcopy(PATH_PLAN_DICT[assess_student.MAJOR[part_score_dict['real_major']]][part_score_dict['grade']])
     else:
         weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
 
     #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
     _filter_weight_field(weight_dict, language_type, exam_type)
-
+    grade = convert_to_int(part_score_dict['grade'])
     target_dict = TARGET_DICT[part_score_dict['target']]
     unfinished_nodes = [] # 未完成的任务结点(存储的是结点ID)
     finished_nodes = [] # 已完成的任务结点(存储的是结点的内容such gpa)
@@ -296,32 +295,66 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
             if part_score_dict[each] >= target_dict[each]:
                 _temp_target_score = TARGET_DICT[part_score_dict['target']][each]
                 #则向已完成节点中追加完成节点的信息（无序）
-                if not each == 'activity':
-                    finished_nodes.append({
-                        'node_id': NODE_NAME_DICT[each],
-                        'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]],
-                        'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)),
-                        'node_target': _temp_target_score,
-                        })
+                #if not each == 'activity':
+                finished_nodes.append({
+                    'node_id': NODE_NAME_DICT[each],
+                    'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]],
+                    'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)),
+                    'node_target': _temp_target_score,
+                    })
             #如果part_score_dict中的改键的值小于目标中该键的值（属性的值）
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
+                distance = target_dict[each] - part_score_dict[each]
+                # 当大一时期。ielts、toefl过了2年失效。不建议学生大一准备
+                if grade in [1, 2]:
+                    if each == 'ielts' or each == 'toefl':
+                        continue
                 if each == 'gpa':
-                    if ratio < 0.5:
-                        ratio = ratio + 0.25
-                elif each in ['toefl', 'ielts', 'gre', 'gmat']:
-                    if ratio > 0.9:
-                        ratio = 0.3
-                    elif ratio < 0.5:
-                        ratio = ratio + 0.3
-                else:
-                    if ratio > 0.65:
-                        ratio = 0.5
-                    elif ratio > 0.5:
-                        ratio = 0.45
-                weight_dict[each] = weight_dict[each] * ratio
+                    if grade <= 4:
+                        if distance >= 0.2:
+                            ratio = 100 #如果大一大二的gpa跟目标差0.2分。则无条件首推
+                        else:
+                            ratio = 10
+                    elif 5 <= grade <= 6:
+                        if distance >= 0.5:
+                            ratio = 100
+                        elif distance < 0.5:
+                            ratio = distance * 35
+                    else:
+                        ratio = distance * 30
+                elif each == 'toefl':
+                    if distance >= 5:
+                        ratio = 20 + (distance - 5) * 3
+                    else:
+                        ratio = 5 + distance * 2.8
+                elif each == 'ielts':
+                    if distance >= 1:
+                        ratio = 20 + (distance - 1)* 30
+                    else:
+                        ratio = 5 + distance * 25
+                elif each == 'gre':
+                    if distance >= 6:
+                        ratio = 20 + (distance - 6) * 2
+                    else:
+                        ratio = 5 + distance * 2
+                elif each == 'gmat':
+                    if distance >= 40:
+                        ratio = 20 + (distance - 40) * 0.4
+                    else:
+                        ratio = 5 + distance * 0.4
+                else: #软性条件
+                    if distance > 0.5:
+                        distance = 0.5
+                    if distance > 0.3:
+                        ratio = 13 + (weight_dict[each] - 2) * 2 + distance * 10
+                    else:
+                        ratio = (weight_dict[each] - 2) * 2 + distance * 10
+                    
+                weight_dict[each] =  ratio
                 unfinished_nodes.append(each)
+    # print('after___________')
     # for each in sorted(weight_dict.items(), key=lambda x:x[1], reverse=True):
     #     print(each[0]+'\t'+str(each[1]))
     #对结果进行排序
@@ -580,8 +613,8 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
 
     # 计算各个结点的权值，按照计算后的权重值对各个学习提升任务排序
     finished_nodes, unfinished_nodes, result_weight = _calculate_nodes_weight(part_score_dict, language_type, exam_type)
-    if not 'activity' in unfinished_nodes:
-        unfinished_nodes.append('activity')
+    # if not 'activity' in unfinished_nodes:
+    #     unfinished_nodes.append('activity')
 
     path_plan_logger.info('calculate_nodes_weight')
     for each in result_weight:
@@ -1021,51 +1054,55 @@ def _load_reason():
     global REASON_DICT
     REASON_DICT = {}
     file = open('resource'+os.sep+'reason'+os.sep+'reason.csv', 'r', encoding='utf-8')
-    while 1:
-        line = file.readline()
-        if not line:
-            break
-        if len(line.strip('\n').strip()) == 0 or line.strip('\n').strip()[0] == '#':
-            continue
-        line = list(map(lambda column: column.strip('\n').strip(), line.split('|')))
-        #如果专业不在字典中则新建专业字典
-        if not line[0] in REASON_DICT:
-            REASON_DICT[line[0]] = {}
-        #如果common在专业字典中
-        if line[1] == 'common':
-            if line[1] in REASON_DICT[line[0]]:
-                #如果优先级在common字典中
-                if line[2] in REASON_DICT[line[0]][line[1]]:
-                    #则在优先级字典中加入key属性，并且给key复制
-                    REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
+    try:
+        while 1:
+            line = file.readline()
+            if not line:
+                break
+            if len(line.strip('\n').strip()) == 0 or line.strip('\n').strip()[0] == '#':
+                continue
+            line = list(map(lambda column: column.strip('\n').strip(), line.split('|')))
+            #如果专业不在字典中则新建专业字典
+            if not line[0] in REASON_DICT:
+                REASON_DICT[line[0]] = {}
+            #如果common在专业字典中
+            if line[1] == 'common':
+                if line[1] in REASON_DICT[line[0]]:
+                    #如果优先级在common字典中
+                    if line[2] in REASON_DICT[line[0]][line[1]]:
+                        #则在优先级字典中加入key属性，并且给key复制
+                        REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
+                    else:
+                        REASON_DICT[line[0]][line[1]][line[2]] = {}
+                        REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
                 else:
+                    #common不在字典中则添加common
+                    REASON_DICT[line[0]][line[1]] = {}
+                    #添加优先级
                     REASON_DICT[line[0]][line[1]][line[2]] = {}
+                    #添加key和value
                     REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
-            else:
-                #common不在字典中则添加common
-                REASON_DICT[line[0]][line[1]] = {}
-                #添加优先级
-                REASON_DICT[line[0]][line[1]][line[2]] = {}
-                #添加key和value
-                REASON_DICT[line[0]][line[1]][line[2]][line[3]] = line[4]+'|'+line[5]
-        #如果special在专业字典中
-        elif line[1] == 'special':
-            if line[1] in REASON_DICT[line[0]]:
-                if line[2] in REASON_DICT[line[0]][line[1]]:
-                    REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
+            #如果special在专业字典中
+            elif line[1] == 'special':
+                if line[1] in REASON_DICT[line[0]]:
+                    if line[2] in REASON_DICT[line[0]][line[1]]:
+                        REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
+                    else:
+                        REASON_DICT[line[0]][line[1]][line[2]] = []
+                        REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
                 else:
+                    REASON_DICT[line[0]][line[1]] = {}
                     REASON_DICT[line[0]][line[1]][line[2]] = []
                     REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
-            else:
-                REASON_DICT[line[0]][line[1]] = {}
-                REASON_DICT[line[0]][line[1]][line[2]] = []
-                REASON_DICT[line[0]][line[1]][line[2]].append(line[3:])
-        elif line[1] == 'compare':
-            if line[1] in REASON_DICT[line[0]]:
-                REASON_DICT[line[0]][line[1]].append(line[2:])
-            else:
-                REASON_DICT[line[0]][line[1]] = []
-                REASON_DICT[line[0]][line[1]].append(line[2:])
+            elif line[1] == 'compare':
+                if line[1] in REASON_DICT[line[0]]:
+                    REASON_DICT[line[0]][line[1]].append(line[2:])
+                else:
+                    REASON_DICT[line[0]][line[1]] = []
+                    REASON_DICT[line[0]][line[1]].append(line[2:])
+    except Exception as e:
+        print(line)
+        print(e)
     path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
 def _load_user_analysis(mongo_client):

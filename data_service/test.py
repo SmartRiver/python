@@ -14,7 +14,7 @@ import time
 import json
 import logging
 
-student_info = {"major":"finance","grade":3,"target":"1","data":{"gpa":{"score":"3","school":"北京北大方正软件职业技术学院|北京|双非二本"},"gmat":{"total":"0","writing":"0"},"gre":{"total":"340","writing":"2","verbal":"0"},"toefl":{"total":"100","speaking":"0"},"ielts":{"total":"0"},"research":{"duration":"5","level":"6","achievement":"5","recommendation":"3"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"3","level":"3","recommendation":"1"},"activity":{"duration":"4","type":"5"},"competition":{"level":"5"},"scholarship":{"level":"7"},"credential":{"level":"4"}}}
+student_info = {"major":"cs","grade":1,"target":"1","data":{"gpa":{"score":"3.5","school":"北京北大方正软件职业技术学院|北京|双非二本"},"gmat":{"total":"0","writing":"0"},"gre":{"total":"328","writing":"4","verbal":"0"},"toefl":{"total":"106","speaking":"25"},"ielts":{"total":"0"},"research":{"duration":"5","level":"2","achievement":"2","recommendation":"2"},"work":{"duration":"","level":"","recommendation":""},"internship":{"duration":"2","level":"2","recommendation":"1"},"activity":{"duration":"1","type":"2"},"competition":{"level":"2"},"scholarship":{"level":"2"},"credential":{"level":"2"}}}
 assess_student.init()
 path_planning.init()
 path_planning.schedule(student_info, size=1)
