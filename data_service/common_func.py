@@ -85,7 +85,7 @@ def convert_to_float(input_origin):
         raise TypeError('参数格式错误')
 
 def _timestamp_check(timestamp_client):
-    '''校队客户端请求的时间戳是否在允许范围之内'''
+    '''校对客户端请求的时间戳是否在允许范围之内'''
     now_time = int(time.time())
     if -300 < now_time-timestamp_client < 300: # 客户端请求与服务端获取的时间差不超过5分钟，
         return True
@@ -145,3 +145,4 @@ def process_param_string(input_param, option_param=0):
         flag = False
 def return_json_dump(input_param):
     return json.dumps(input_param, ensure_ascii=False, indent=4)
+

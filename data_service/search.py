@@ -5,15 +5,15 @@ __doc__     = '''this py is used to search schools related to the user input.
 				Optional parameter includes area 、 major.'''
 
 import time
-import common_func
-from common_func import exit_error_func, convert_to_str
 import logging
 import sys
 import json
 import pymongo
 from pymongo import MongoClient
 from db_util import *
+from common_func import exit_error_func, convert_to_str
 from global_variable import service_logger
+
 
 class SchoolTree(object):
     '''构建的院校的字典前缀树'''
@@ -84,9 +84,7 @@ class SchoolTree(object):
                     return self.preOrder(each_node)
                 else:
                     result.extend(self.search(each_node, word[1:]))
-
         return result
-
 
 class Node(object):
     def __init__(self, c=None, word=None, university_type=None, area=None, university_weight=None):
@@ -96,8 +94,6 @@ class Node(object):
         self.area       = area # 节点存储的大学所在的地区（国内精确到省份，国外只精确国家）
         self.weight     = university_weight # 节点存储的大学的权重值
         self.childs     = []   # 此节点的子节点
-
-global service_logger # 日志
 
 UNIVERSITY_LIST = [] # 学校库的字典
 
@@ -180,13 +176,13 @@ def search_school(condition, major=None, area=None, country=None):
         'status': 'success',
         'result': result,
     }
-    
+ 
 def init(dict_from='mongodb'):
-    '''初始化'''
-
+    '''初始化院校库字典'''
     start_time = time.time()
     service_logger.info('----------initializing----------')
     service_logger.info('type of reload : %s' % dict_from)
+
     try:
         for each in open('resource/school/special_school.txt', 'r', encoding='utf-8').readlines():
             try:
@@ -245,13 +241,13 @@ def init(dict_from='mongodb'):
         except Exception as e:
             service_logger.error(e)
             service_logger.error('configuration failed.')
+            return
 
         mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
         school_search_collection = mongo_client.get_collection('school', 'dulishuo')
         for each in school_search_collection.find():
             try:
                 UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area'].lower()+'|'+str(each['type']).replace('.0','')+'|'+str(each['weight']))
-
             except TypeError as e:
                 service_logger.error(e)
                 service_logger.error('wrong line when converting：%s' % each)
@@ -262,8 +258,7 @@ def init(dict_from='mongodb'):
             mongo_client.close() # 关闭连接
             service_logger.info('close pymongo connection successed.')
         except Exception as e:
-            service_logger.error('close pymongo connection failed.')
-        
+            service_logger.error('close pymongo connection failed.')    
     else:
         service_logger.error('initializing failed，wrong params： %s' % dict_from)
         return exit_error_func(2, dict_from)
@@ -274,21 +269,3 @@ def init(dict_from='mongodb'):
     dict_tree_time = time.time()
     service_logger.info('completing building trie，use time %f s.' % (dict_tree_time-start_time))
     service_logger.info('----------initializing successed----------')
-
-if __name__ == '__main__':
-    init(dict_from='mongodb')
-    condition = '华'
-    area = 'general'
-    major = '经济学'
-    print(json.dumps(search_school(condition=condition, major=major, area=area), ensure_ascii=False, indent=4))
-
-    #mon = MongoDB('123.57.250.189',27017,'dulishuo','Dulishuo123')
-    #mon = MongoDB('123.57.250.189',27017)
-
-    #dd = mon.get_collection('institute','dulishuo')
-    #for each in dd.find():
-        #print(str(type(each)))
-    #mon =   MongoDB()d.next
-    #print(mon.get_database('jianzhi'))
-    #coll = mon.get_collection('test', 'test')
-    #print(coll.find_one({'name': 'tim'}))

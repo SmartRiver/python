@@ -1,0 +1,2 @@
+'Mon, 22 Feb 2016 18:31:15' test_logging.py [func:<module>] [line:22] DEBUG: root debug message
+'Mon, 22 Feb 2016 18:31:15' test_logging.py [func:<module>] [line:23] INFO: rpoot info message

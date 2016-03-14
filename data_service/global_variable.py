@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 __author__  = 'johnson'
 __doc__     = '''this file is used to manage global variables'''
+
 import logging
 import logging.config
 

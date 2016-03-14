@@ -4,6 +4,7 @@
 __author__  = 'johnson'
 __doc__     = '''this file is used to process all of requests from clients'''
 
+
 import tornado.ioloop
 import tornado.web
 from tornado.web import MissingArgumentError
@@ -11,8 +12,11 @@ import sys
 import json
 import urllib.parse
 import os
+import assess_student
 from assess_student import assess, init
+import path_planning
 from path_planning import schedule, init
+import search
 from search import search_school, init
 from common_func import md5_token, convert_to_str, exit_error_func, process_param_string
 from global_variable import service_logger
@@ -20,7 +24,6 @@ from global_variable import service_logger
 # Print the usage of the class
 def print_usage():
     sys.stdout.write('''Welcome to use python service for dulishuo.''')
-
 
 class MainHandler(tornado.web.RequestHandler):
 
@@ -33,7 +36,6 @@ class MainHandler(tornado.web.RequestHandler):
         error_msg = ''
         # token验证
         if 'token' in self.request.query_arguments:
-
             token_requset = convert_to_str(self.request.query_arguments['token'][0])
             service_logger.info('request token :%s' % token_requset)
             token_server = md5_token(token_requset)
@@ -56,6 +58,8 @@ class MainHandler(tornado.web.RequestHandler):
                 service_logger.info('service reload success.')
                 self.finish('failed.')
         elif request_type == 'school_search':
+            for each in self.request.query_arguments:
+                print('%s\t%s' % (each, str(self.request.query_arguments[each][0])))
             if 'condition' in self.request.query_arguments:
                 condition = process_param_string(self.request.query_arguments['condition'][0])
             else:
@@ -73,7 +77,6 @@ class MainHandler(tornado.web.RequestHandler):
             else:
                 major = None
             self.finish(json.dumps(search.search_school(condition=condition, major=major, area=area, country=country), ensure_ascii=False, indent=4))
-            
         elif request_type == 'assess_student':
             if 'condition' in self.request.query_arguments:
                 try:
@@ -116,10 +119,13 @@ class MainHandler(tornado.web.RequestHandler):
 application = tornado.web.Application([(r"/(.*)", MainHandler)])
 
 def _init():
-    ''' 其他模块统一初始化 '''
+    ''' 需要调用的模块统一初始化 '''
     search.init()
+    service_logger.info('[success] init search')
     assess_student.init()
+    service_logger.info('[success] init assess_student')
     path_planning.init()
+    service_logger.info('[success] init path_planning')
 
 if __name__ == "__main__":
     try:
@@ -128,5 +134,6 @@ if __name__ == "__main__":
         application.listen(8826)
         tornado.ioloop.IOLoop.instance().start()
         service_logger.info('data_service server starts success.')
-    except:
+    except Exception as e:
+        service_logger.error(e);
         service_logger.error('data_service server starts failed.')

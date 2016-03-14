@@ -10,12 +10,11 @@ import time
 import json
 import os
 import copy
-import logging
-import logging.config
 from db_util import *
 from common_func import exit_error_func, convert_to_str, convert_to_int, convert_to_float
 import assess_student
 from assess_student import assess
+from global_variable import service_logger
 
 TARGET_LEVEL_LIST = [1, 2, 3, 4, '1', '2', '3', '4'] # 目标档次学校所以档次， 1为最高档
 GRADE_LEVEL_LSIT = [1, 2, 3] # 年级 1、2、3、4分半代表大一、大二、大三、大四
@@ -41,7 +40,7 @@ FIXED_NODES = [ #固定的结点（写文书、选择申请学校、网申、申
         'products': []
     }
 ]
-path_plan_logger = None # 日志
+
 PATH_PLAN_DICT = {} # 各个专业每个学期的各学习提升任务权重值
 TARGET_DICT = {} # 各个档次学校的每个部分的目标值
 NODE_NAME_DICT = {} # 各个学习提升任务对应数据库里NODE表的ID
@@ -118,6 +117,7 @@ def _get_school_target(target, major):
     else:
         return 2
 
+
 def _get_user_condition(user_input):
     '''# 调用评估算法， 转化用户的信息'''
     return_assess_student = assess_student.assess(user_input)
@@ -125,10 +125,10 @@ def _get_user_condition(user_input):
         return return_assess_student['result']
     else:
         if 'msg' in return_assess_student:
-            path_plan_logger.error('调用assess_student模块的assess出错：'+return_assess_student['msg'])
+            R.error('调用assess_student模块的assess出错：'+return_assess_student['msg'])
             raise Exception(return_assess_student['msg'])
         else:
-            path_plan_logger.error('调用assess_student模块的assess出错：'+return_assess_student)
+            service_logger.error('调用assess_student模块的assess出错：'+return_assess_student)
             raise Exception(return_assess_student)
 
 def _get_language_exam_type(user_condition):
@@ -136,19 +136,19 @@ def _get_language_exam_type(user_condition):
     if 'language_type' in user_condition:
         language_type = convert_to_str(user_condition['language_type'])
         if language_type not in ['ielts', 'toefl', 'neither', 'none']: # 用户的语言类型，neither表示两者都不
-            path_plan_logger.error('无效的属性值language_type')
+            service_logger.error('无效的属性值language_type')
             raise Exception('无效的属性值language_type')
     else:
-        path_plan_logger.error('缺少字段language_type')
+        service_logger.error('缺少字段language_type')
         raise Exception('缺少字段language_type')
 
     if 'exam_type' in user_condition:
         exam_type = convert_to_str(user_condition['exam_type'])
         if exam_type not in ['gre', 'gmat', 'neither', 'none']:
-            path_plan_logger.error('无效的属性值exam_type')
+            service_logger.error('无效的属性值exam_type')
             raise Exception('无效的属性值exam_type')
     else:
-        path_plan_logger.error('缺少字段exam_type')
+        service_logger.error('缺少字段exam_type')
         raise Exception('缺少字段exam_type')
     return language_type, exam_type
 
@@ -163,17 +163,17 @@ def _get_mgt(student_info):
         if major not in PATH_PLAN_DICT:
             major = 'general'
     else:
-        path_plan_logger.error('缺失字段[student_info][major]')
+        service_logger.error('缺失字段[student_info][major]')
         raise Exception('缺失字段[student_info][major]')
     if 'target' in student_info:
         target = student_info['target']
     else:
-        path_plan_logger.error('缺失字段[student_info][target]')
+        service_logger.error('缺失字段[student_info][target]')
         raise Exception('缺失字段[student_info][target]')
     if 'grade' in student_info:
         grade = student_info['grade']
     else:
-        path_plan_logger.error('缺失字段[student_info][grade]')
+        service_logger.error('缺失字段[student_info][grade]')
         raise Exception('缺失字段[student_info][grade]')
 
     grade = _get_start_term(grade) # 将用户的年级（大一到大四[1-4]）按当前月份分为1-8
@@ -190,13 +190,13 @@ def _get_soft_condition(user_condition):
     if 'dimension' in user_condition:
         dimension_dict = user_condition['dimension']
     else:
-        path_plan_logger.error('缺少字段dimension')
+        service_logger.error('缺少字段dimension')
         raise Exception('缺少字段dimension')
 
     if 'dimension_full' in user_condition:
         dimension_full_dict = user_condition['dimension_full']
     else:
-        path_plan_logger.error('缺少字段dimension_full')
+        service_logger.error('缺少字段dimension_full')
         raise Exception('缺少字段dimension_full')
     temp_soft_condition = {}
     try:
@@ -204,7 +204,7 @@ def _get_soft_condition(user_condition):
             if not dimension.split('_')[0] == 'gpa' and not dimension.split('_')[0] == 'exam' and not dimension.split('_')[0] == 'language':
                 temp_soft_condition[dimension.split('_')[0]] = convert_to_float(dimension_dict[dimension])/convert_to_float(dimension_full_dict[dimension])
     except Exception as e:
-        path_plan_logger.error('软性条件比例获取时出错：'+str(e))
+        service_logger.error('软性条件比例获取时出错：'+str(e))
         return exit_error_func(6, '软性条件比例获取时出错：'+str(e))
 
     return temp_soft_condition
@@ -213,7 +213,7 @@ def _get_hard_condition(student_info, language_type, exam_type):
     if 'data' in student_info:
         user_data = student_info['data']
     else:
-        path_plan_logger.error('缺少字段student_info[data]')
+        service_logger.error('缺少字段student_info[data]')
         raise Exception('缺少字段student_info[data]')
     #user_data 为筛选过后的学生输入
     temp_hard_condition = {}
@@ -241,7 +241,7 @@ def _get_hard_condition(student_info, language_type, exam_type):
             pass
 
     except Exception as e:
-        path_plan_logger.error('硬性条件比例获取时出错：'+str(e))
+        service_logger.error('硬性条件比例获取时出错：'+str(e))
         return exit_error_func(6, '硬性条件比例获取时出错：'+str(e))
     return temp_hard_condition
 
@@ -277,14 +277,14 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
 def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
 
     # 获取不同专业不同学期的初始化的各任务（节点）权重
-    if part_score_dict['major'] in assess_student.MAJOR:
-        weight_dict = copy.deepcopy(PATH_PLAN_DICT[assess_student.MAJOR[part_score_dict['major']]][part_score_dict['grade']])
+    if part_score_dict['real_major'] in assess_student.MAJOR:
+        weight_dict = copy.deepcopy(PATH_PLAN_DICT[assess_student.MAJOR[part_score_dict['real_major']]][part_score_dict['grade']])
     else:
         weight_dict = copy.deepcopy(PATH_PLAN_DICT[part_score_dict['major']][part_score_dict['grade']])
 
     #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
     _filter_weight_field(weight_dict, language_type, exam_type)
-
+    grade = convert_to_int(part_score_dict['grade'])
     target_dict = TARGET_DICT[part_score_dict['target']]
     unfinished_nodes = [] # 未完成的任务结点(存储的是结点ID)
     finished_nodes = [] # 已完成的任务结点(存储的是结点的内容such gpa)
@@ -296,32 +296,66 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
             if part_score_dict[each] >= target_dict[each]:
                 _temp_target_score = TARGET_DICT[part_score_dict['target']][each]
                 #则向已完成节点中追加完成节点的信息（无序）
-                if not each == 'activity':
-                    finished_nodes.append({
-                        'node_id': NODE_NAME_DICT[each],
-                        'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]],
-                        'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)),
-                        'node_target': _temp_target_score,
-                        })
+                #if not each == 'activity':
+                finished_nodes.append({
+                    'node_id': NODE_NAME_DICT[each],
+                    'node_task_name': NODE_DISPLAY_DICT[NODE_NAME_DICT[each]],
+                    'node_title': NODE_TITLE_DICT[NODE_NAME_DICT[each]].replace('?', str(_temp_target_score)),
+                    'node_target': _temp_target_score,
+                    })
             #如果part_score_dict中的改键的值小于目标中该键的值（属性的值）
             else:
                 #求出当前值与目标值之间相差的比例，并和weight_dict中对应的权值相乘，替换原有的项
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
+                distance = target_dict[each] - part_score_dict[each]
+                # 当大一时期。ielts、toefl过了2年失效。不建议学生大一准备
+                if grade in [1, 2]:
+                    if each == 'ielts' or each == 'toefl':
+                        continue
                 if each == 'gpa':
-                    if ratio < 0.5:
-                        ratio = ratio + 0.25
-                elif each in ['toefl', 'ielts', 'gre', 'gmat']:
-                    if ratio > 0.9:
-                        ratio = 0.3
-                    elif ratio < 0.5:
-                        ratio = ratio + 0.3
-                else:
-                    if ratio > 0.65:
-                        ratio = 0.5
-                    elif ratio > 0.5:
-                        ratio = 0.45
-                weight_dict[each] = weight_dict[each] * ratio
+                    if grade <= 4:
+                        if distance >= 0.2:
+                            ratio = 100 #如果大一大二的gpa跟目标差0.2分。则无条件首推
+                        else:
+                            ratio = 10
+                    elif 5 <= grade <= 6:
+                        if distance >= 0.5:
+                            ratio = 100
+                        elif distance < 0.5:
+                            ratio = distance * 35
+                    else:
+                        ratio = distance * 30
+                elif each == 'toefl':
+                    if distance >= 5:
+                        ratio = 20 + (distance - 5) * 3
+                    else:
+                        ratio = 5 + distance * 2.8
+                elif each == 'ielts':
+                    if distance >= 1:
+                        ratio = 20 + (distance - 1)* 30
+                    else:
+                        ratio = 5 + distance * 25
+                elif each == 'gre':
+                    if distance >= 6:
+                        ratio = 20 + (distance - 6) * 2
+                    else:
+                        ratio = 5 + distance * 2
+                elif each == 'gmat':
+                    if distance >= 40:
+                        ratio = 20 + (distance - 40) * 0.4
+                    else:
+                        ratio = 5 + distance * 0.4
+                else: #软性条件
+                    if distance > 0.5:
+                        distance = 0.5
+                    if distance > 0.3:
+                        ratio = 13 + (weight_dict[each] - 2) * 2 + distance * 10
+                    else:
+                        ratio = (weight_dict[each] - 2) * 2 + distance * 10
+                    
+                weight_dict[each] =  ratio
                 unfinished_nodes.append(each)
+    # print('after___________')
     # for each in sorted(weight_dict.items(), key=lambda x:x[1], reverse=True):
     #     print(each[0]+'\t'+str(each[1]))
     #对结果进行排序
@@ -382,9 +416,7 @@ def _get_product_by_node_id(node_id, major, semester, size=10):
     #合并列表，去除重复
     for product in temp_product_recommend:
         if not product in product_recommend:
-            product_recommend.append(product)
-            
-            
+            product_recommend.append(product)       
     grade_dict = {1:"大一",2:"大一",3:"大二",4:"大二",5:"大三",6:"大三"}
     grade = grade_dict[semester]
     grade_list = ["大一","大二","大三"]
@@ -411,7 +443,6 @@ def _get_product_by_node_id(node_id, major, semester, size=10):
 
     _temp_prodict_size = len(product_recommend)
     
-    print(product_recommend)
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
     if size > _temp_prodict_size:
@@ -607,10 +638,11 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
 
     # 计算各个结点的权值，按照计算后的权重值对各个学习提升任务排序
     finished_nodes, unfinished_nodes, result_weight = _calculate_nodes_weight(part_score_dict, language_type, exam_type)
-    if not 'activity' in unfinished_nodes:
-        unfinished_nodes.append('activity')
 
-    path_plan_logger.info('calculate_nodes_weight')
+    # if not 'activity' in unfinished_nodes:
+    #     unfinished_nodes.append('activity')
+
+    service_logger.info('calculate_nodes_weight')
     for each in result_weight:
         if each[0] in unfinished_nodes:
             return_unfinished_nodes.append(NODE_NAME_DICT[each[0]])
@@ -720,23 +752,14 @@ def _check_schedule_size(size):
         raise ValueError('size应为大于0的整数')
     else:
         return size
-<<<<<<< HEAD
 
-=======
-# 写的很乱。需要重构
->>>>>>> 304bf8d52e6ee48109076129bcd1b271a02deab4
 def _get_user_analysis(pre_handle_condition, after_handle_condition, target, language_type, exam_type):
     ''' 为用户返回咨询师提供的软性、硬性分析文案'''
     target = str(target)
-    _temp_hard_cnt = ''
-    _temp_soft_cnt = ''
     _temp_hard_cnt_list = []
     _temp_soft_cnt_list = []
     flag_soft = 1
     flag_hard = 1
-    title_flag_soft = ''
-    title_flag_hard = ''
-    is_last = 0
     is_last_flag = 0
     is_last_type = ''
     for index, each in enumerate(ANALYSIS_TABLE):
@@ -764,22 +787,18 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
         is_level_divide = int(each[3])
         default_level = each[4]
         if is_hard_condition == 1:
-            if is_last_flag == 1 and field_user.split('_')[0] == is_last_type:
+            if field_user.split('_')[0] == is_last_type:
+                if is_last_flag == 1:
+                    continue
+            else:
                 is_last_flag = 0
                 is_last_type = ''
-                continue
 
             if len(each) > 5:
-                if flag_hard < 1:
-                    flag_hard = 0
-                    _temp_hard_cnt = _temp_hard_cnt.replace(title_flag_hard, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    _temp_hard_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
-                else:
-                    #_temp_hard_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
-                    _temp_hard_cnt = _temp_hard_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    title_flag_hard = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    flag_hard = 0
+                if flag_hard < 1 and len(_temp_hard_cnt_list) > 0:
+                    _temp_hard_cnt_list.pop()
+                _temp_hard_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
+                flag_hard = 0
 
             if field_user.find('_') > 0:
                 try:
@@ -798,8 +817,7 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 for each_record in USER_ANALYSIS[table_key]:
                     if float(each_record['min_value']) <= float(_temp_field) <= float(each_record['max_value']):
                         if len(each_record['target'][target]) > 0:
-                            _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
-                            #_temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
+                            _temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
                 if convert_to_int(_temp_field) == 0:
                     is_last_flag = 1
@@ -809,24 +827,14 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 0:
-                            _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
-                            #_temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
+                            _temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
         else:
-            if is_last == 1 and field_user.split('_')[0] == 'internship':
-                    continue
             if len(each) > 5:
-                if flag_soft < 1:
-                    flag_soft = 0
-                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')+ '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    #_temp_soft_cnt_list.pop()
-                    #_temp_soft_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
-                else:
-                    _temp_soft_cnt = _temp_soft_cnt  + '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    title_flag_soft = '<p class="p1_Tde" align="center">'+each[5]+'</p>'
-                    #_temp_soft_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
-                    flag_soft = 0
+                if flag_soft < 1 and len(_temp_soft_cnt_list) > 0:
+                    _temp_soft_cnt_list.pop()
+                _temp_soft_cnt_list.append('<p class="p1_Tde" align="center">'+each[5]+'</p>')
+                flag_soft = 0
             if is_level_divide == 1:
                 if field_user.find('_') > 0:
                     try:
@@ -842,20 +850,13 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 1:
-                            _temp_soft_cnt = _temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
-                            #_temp_soft_cnt_list.append(_temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>')
+                            _temp_soft_cnt_list.append(_temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>')
                             flag_soft = flag_soft + 1
-
-                if _temp_field  == '5' and field_user == 'internship_duration':
-                    is_last = 1
-
-            if index == len(ANALYSIS_TABLE)-1:
-                if flag_soft < 1:
-                    _temp_soft_cnt = _temp_soft_cnt.replace(title_flag_soft, '')
-                    #_temp_soft_cnt_list.pop()
+            if index == len(ANALYSIS_TABLE)-1 and flag_soft < 1:
+                _temp_soft_cnt_list.pop()
     return {
-        'hard_condition_analysis': _temp_hard_cnt.strip(),
-        'soft_condition_analysis': _temp_soft_cnt.strip(),
+        'hard_condition_analysis': ''.join(_temp_hard_cnt_list),
+        'soft_condition_analysis': ''.join(_temp_soft_cnt_list),
     }
 
 def schedule(condition, size=None):
@@ -876,35 +877,35 @@ def schedule(condition, size=None):
         if 'student_info' in user_condition:
             student_info = user_condition['student_info']
         else:
-            path_plan_logger.error('缺少字段student_info')
+            service_logger.error('缺少字段student_info')
             raise Exception('缺少字段student_info')
 
 
         #提取出用户的申请属性（major、 grade、 target）
         part_score_dict.update(_get_mgt(student_info))
-        path_plan_logger.info('[successed] _get_mgt()')
+        service_logger.info('[successed] _get_mgt()')
 
         # 提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）
         hard_condition = _get_hard_condition(student_info, language_type, exam_type)
         part_score_dict.update(hard_condition)
-        path_plan_logger.info('[successed] _get_hard_condition()')
+        service_logger.info('[successed] _get_hard_condition()')
 
         #提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）
         part_score_dict.update(_get_soft_condition(user_condition))
-        path_plan_logger.info('[successed] _get_soft_condition()')
+        service_logger.info('[successed] _get_soft_condition()')
 
         # 为学习提升任务结点关联相应的机会产品
         finished_nodes, unfinished_nodes_products = _get_nodes_products(part_score_dict, language_type, exam_type, size)
-        path_plan_logger.info('[successed] _get_nodes_products()')
+        service_logger.info('[successed] _get_nodes_products()')
 
         # 返回目标值
         return_target = _get_return_target(part_score_dict['target'], language_type, exam_type)
-        path_plan_logger.info('[successed] _get_return_target()')
+        service_logger.info('[successed] _get_return_target()')
 
         # 返回软硬性条件分析文案
         try:
             user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
-            #print(user_analysis)
+            print(user_analysis)
         except Exception as e:
             print('except:'+str(e))
     except Exception as e:
@@ -934,18 +935,8 @@ def schedule(condition, size=None):
         },
     }
 
-def _logging_conf():
-    ''' 日志配置 '''
-    try:
-        global path_plan_logger
-        logging.config.fileConfig('./conf/logging.conf')
-        path_plan_logger = logging.getLogger('general')
-        path_plan_logger.info('--------logging configurating successed--------')
-    except Exception as e:
-        print('--------logging configurating failed--------')
-
 def _load_node():
-    path_plan_logger.info('[starting] loading NODE ID into dict . . . ')
+    service_logger.info('[starting] loading NODE ID into dict . . . ')
 
     for each in open('resource/plan/activity.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
@@ -960,10 +951,10 @@ def _load_node():
                 NODE_TYPE_DICT[node_id] = node_name
                 NODE_DISPLAY_DICT[node_id] = node_display_name
                 NODE_TITLE_DICT[node_id] = node_title
-    path_plan_logger.info('[successed] loading NODE ID into dict . . . ')
+    service_logger.info('[successed] loading NODE ID into dict . . . ')
 
 def _load_target():
-    path_plan_logger.info('[starting] loading target scores of different levels institutes into dict . . . ')
+    service_logger.info('[starting] loading target scores of different levels institutes into dict . . . ')
     for each in open('resource/plan/target.csv', 'r', encoding='utf-8').readlines():
         each = each.strip('\r\n').rstrip(' ')
         # print each
@@ -978,10 +969,10 @@ def _load_target():
             TARGET_DICT[target_level].update({target_name: target_score})
         else:
             TARGET_DICT.update({target_level: {target_name: target_score}})
-    path_plan_logger.info('[successed] loading target scores of different levels institutes into dict . . . ')
+    service_logger.info('[successed] loading target scores of different levels institutes into dict . . . ')
 
 def _load_init_weight():
-    path_plan_logger.info('[starting] loading weight of all parts in different semester into dict . . . ')
+    service_logger.info('[starting] loading weight of all parts in different semester into dict . . . ')
     path_plan_dirs = os.walk('resource/plan/weight')
     for root, dirs, files in path_plan_dirs:
         for temp_file in files:
@@ -998,7 +989,7 @@ def _load_init_weight():
                     else:
                         temp_major_dict.update({semester: {each.split(',')[0]: float(each.split(',')[1])}})
             PATH_PLAN_DICT[major] = temp_major_dict
-    path_plan_logger.info('[successed] loading weight of all parts in different semester into dict . . . ')
+    service_logger.info('[successed] loading weight of all parts in different semester into dict . . . ')
 
 def _get_tag_dict(tag_list, collection):
     temp_dict = {}
@@ -1010,10 +1001,12 @@ def _get_tag_dict(tag_list, collection):
         tag_list.append(major_type)
 
     tag_list.append('general')
+
     tag_list.append('大一')
     tag_list.append('大二')
     tag_list.append('大三')
     tag_list.append('置顶')
+
     #从数据库中获取tag对应的id
     tag_dict = {}
     for tag_name in tag_list:
@@ -1023,13 +1016,13 @@ def _get_tag_dict(tag_list, collection):
     return tag_dict
 
 def _load_products_by_tag(mongo_client):
-    path_plan_logger.info('[starting] loading product information from mongodb . . . ')
+    service_logger.info('[starting] loading product information from mongodb . . . ')
 
     product_collection = mongo_client.get_collection('product')
     producttag_collection = mongo_client.get_collection('producttag')
     tag_list = ['提升GPA','提升托福成绩','提升雅思成绩','提升GRE成绩','提升GMAT成绩','竞赛','实习','证书','奖学金','活动','推荐信','科研能力提升']
     tag_dict = _get_tag_dict(tag_list,producttag_collection)
-    path_plan_logger.info('[successed] get tag dict')
+    service_logger.info('[successed] get tag dict')
 
     for tag_name in tag_dict:
         products_list = []
@@ -1046,15 +1039,16 @@ def _load_products_by_tag(mongo_client):
     product_load_time = time.time()
     # try:
     #     mongo_client.close() # 关闭连接
-    #     path_plan_logger.info('close pymongo connection successed.')
+    #     service_logger.info('close pymongo connection successed.')
     # except Exception as e:
-    #     path_plan_logger.error('close pymongo connection failed.')
+    #     service_logger.error('close pymongo connection failed.')
 
 def _load_reason():
-    path_plan_logger.info('[starting] loading reason of different nodes from reason.csv to dict.')
+    service_logger.info('[starting] loading reason of different nodes from reason.csv to dict.')
     global REASON_DICT
     REASON_DICT = {}
     file = open('resource'+os.sep+'reason'+os.sep+'reason.csv', 'r', encoding='utf-8')
+
     while 1:
         line = file.readline()
         if not line:
@@ -1100,10 +1094,10 @@ def _load_reason():
             else:
                 REASON_DICT[line[0]][line[1]] = []
                 REASON_DICT[line[0]][line[1]].append(line[2:])
-    path_plan_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
+    service_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
 def _load_user_analysis(mongo_client):
-    path_plan_logger.info('[starting] loading userAnalysis information from mongodb . . . ')
+    service_logger.info('[starting] loading userAnalysis information from mongodb . . . ')
     userAnalysis_collection = mongo_client.get_collection('userAnalysis')
     for each in userAnalysis_collection.find():
         try:
@@ -1113,15 +1107,15 @@ def _load_user_analysis(mongo_client):
             _temp_analysis.append(each)
             USER_ANALYSIS[each['type']] = _temp_analysis
         except Exception as e:
-            path_plan_logger.error(e)
-            path_plan_logger.error('some record invalid .')
-            path_plan_logger.info('wrong record : %s ', str(each))
+            service_logger.error(e)
+            service_logger.error('some record invalid .')
+            service_logger.info('wrong record : %s ', str(each))
             return
     # try:
     #     mongo_client.close() # 关闭连接
-    #     path_plan_logger.info('close pymongo connection successed.')
+    #     service_logger.info('close pymongo connection successed.')
     # except Exception as e:
-    #     path_plan_logger.error('close pymongo connection failed.')
+    #     service_logger.error('close pymongo connection failed.')
 
 def _load_institute_rank(rank_collection):
     ''' 加载rank排名库 '''
@@ -1147,7 +1141,7 @@ def _load_institute(institute_collection):
 
 def _load_mongodb_dulishuo():
     '''加载mongodb的dulishuo db.'''
-    path_plan_logger.info('[starting] loading db[dulishuo] connecting to  mongodb . . . ')
+    service_logger.info('[starting] loading db[dulishuo] connecting to  mongodb . . . ')
     try:
         for each in open('conf/db.conf', 'r', encoding='utf-8').readlines():
             try:
@@ -1161,27 +1155,27 @@ def _load_mongodb_dulishuo():
                 if(each.split('=')[0] == 'mongodb.dulishuo.password'):
                     password = each.split('=')[1]
             except Exception as e:
-                path_plan_logger.error(e)
-                path_plan_logger.error('some line is wrong when read .')
-                path_plan_logger.info('wrong line : %s ', each)
+                service_logger.error(e)
+                service_logger.error('some line is wrong when read .')
+                service_logger.info('wrong line : %s ', each)
                 return
     except FileNotFoundError:
-        path_plan_logger.error('File resource/db.conf not found . . . ')
+        service_logger.error('File resource/db.conf not found . . . ')
         return exit_error_func(3)
     except Exception as e:
-        path_plan_logger.error(e)
-        path_plan_logger.error(3, 'mongodb configuration failed.')
+        service_logger.error(e)
+        service_logger.error(3, 'mongodb configuration failed.')
         return exit_error_func(3)
-    path_plan_logger.info('[successed] load resource/db.conf')
+    service_logger.info('[successed] load resource/db.conf')
     mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
     mongo_client.get_database('dulishuo')
-    path_plan_logger.info('[success] loaded db[dulishuo] connecting to  mongodb . . . ')
+    service_logger.info('[success] loaded db[dulishuo] connecting to  mongodb . . . ')
 
     return mongo_client
 
 def _load_faculty_type():
     ''' 从配置文件加载专业英文缩写跟ID的对应表 '''
-    path_plan_logger.info('[starting] loading school/institute_to_rankType.csv to dict . . . ')
+    service_logger.info('[starting] loading school/institute_to_rankType.csv to dict . . . ')
     try:
         global ABBR_TO_RANKID
         for each in open('resource/school/institute_to_rankType.csv', 'r', encoding='utf-8').readlines():
@@ -1189,24 +1183,25 @@ def _load_faculty_type():
                 each = each.strip('\r').strip('\n')
                 ABBR_TO_RANKID[each.split(',')[0]] = int(each.split(',')[1])
             except Exception as e:
-                path_plan_logger.error(e)
-                path_plan_logger.error('some line is wrong when read .')
-                path_plan_logger.info('wrong line : %s ', each)
+                service_logger.error(e)
+                service_logger.error('some line is wrong when read .')
+                service_logger.info('wrong line : %s ', each)
                 return
     except FileNotFoundError:
-        path_plan_logger.error('File school/institute_to_rankType.csv not found . . . ')
+        service_logger.error('File school/institute_to_rankType.csv not found . . . ')
         return exit_error_func(3)
     except Exception as e:
-        path_plan_logger.error(3, 'school/institute_to_rankType.csv load failed.')
+        service_logger.error(3, 'school/institute_to_rankType.csv load failed.')
         return exit_error_func(3)
-    path_plan_logger.info('[success] loaded school/institute_to_rankType.csv to dict . . . ')
+    service_logger.info('[success] loaded school/institute_to_rankType.csv to dict . . . ')
 
 def init():
     start_time = time.time()
-
-    _logging_conf() #初始化日志设置
-
-    path_plan_logger.info('[starting] ----------initializing----------')
+    print('starting . . ')
+    try:
+        service_logger.info('[starting] ----------initializing----------')
+    except Exception as e:
+        print(e)
 
     duishuo_client = _load_mongodb_dulishuo() # 加载mongodb的dulishuo db.
 
@@ -1230,4 +1225,4 @@ def init():
 
     _load_faculty_type() # 从配置文件加载专业英文缩写跟ID的对应表
 
-    path_plan_logger.info('[successed] ----------initializing----------')
+    service_logger.info('[successed] ----------initializing----------')
