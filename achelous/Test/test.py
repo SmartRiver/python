@@ -5,7 +5,7 @@ import jieba
 import hashlib
 import time
 import urllib
-import hash
+import hashlib
 
 
 
@@ -160,11 +160,15 @@ def test_token():
         print('sleep end')
         print(md5_token('f6e5ec9928c65d2c1456715513'))
 
+def xx(**args):
+    for each in args:
+        print(each+'\t'+str(args[each]))
+
 if __name__ == '__main__':
-<<<<<<< Updated upstream
-    if 3 >= 3:
-        print(True)
-=======
-    a = 'dfdsafdf<br>活动经历<br>'
-    print(a.replace('<br>活动经历<br>', ''))
->>>>>>> Stashed changes
+    args = {
+        'a':1,
+        'b':None,
+        'c':'v',
+    }
+    xx(**args)
+

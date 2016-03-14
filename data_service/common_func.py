@@ -6,6 +6,7 @@ __doc__ = '''this py file is the collection of those functions or methods used i
 import time
 import hashlib
 import json
+from global_variable import service_logger
 
 def exit_error_func(error_code, error_param=''):
     error_dict = {
@@ -136,13 +137,20 @@ def md5_token(client_token):
 
 def process_param_string(input_param, option_param=0):
     try:
-        condition = self.request.query_arguments['condition'][0]
-        condition = convert_to_str(condition)
-        condition = condition.strip()
+        input_param = convert_to_str(input_param)
+        input_param = input_param.strip()
+        return input_param
     except Exception as e:
         service_logger.error(e)
-        error_msg = exit_error_func(1, 'condition')
-        flag = False
+        if option_param == 1:
+            return None
+        raise Exception(exit_error_func(1, input_param))
+
+def fetch_params():
+    ''' 从self.request.query_arguements里提取出所有的参数（token除外）'''
+    
+
 def return_json_dump(input_param):
+    '''将返回的json格式数据里的中文Unicode转化为中文'''
     return json.dumps(input_param, ensure_ascii=False, indent=4)
 

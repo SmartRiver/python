@@ -18,7 +18,7 @@ import path_planning
 from path_planning import schedule, init
 import search
 from search import search_school, init
-from common_func import md5_token, convert_to_str, exit_error_func, process_param_string
+from common_func import md5_token, convert_to_str, exit_error_func, process_param_string, return_json_dump
 from global_variable import service_logger
 
 # Print the usage of the class
@@ -58,12 +58,19 @@ class MainHandler(tornado.web.RequestHandler):
                 service_logger.info('service reload success.')
                 self.finish('failed.')
         elif request_type == 'school_search':
+            print(str(type(self.request)))
+            print(str(type(self.request.query_arguments)))
             for each in self.request.query_arguments:
-                print('%s\t%s' % (each, str(self.request.query_arguments[each][0])))
+                print('%s\t%s' % (each, convert_to_str(self.request.query_arguments[each][0])))
+            try:
+                param = fetch_params(self.request.query_arguments)
+
+            except Exception as e:
+                self.finish(return_json_dump(e))
             if 'condition' in self.request.query_arguments:
                 condition = process_param_string(self.request.query_arguments['condition'][0])
             else:
-                raise Exception(exit_error_func(5, 'condition是必选参数'))
+                self.finish(return_json_dump(exit_error_func(5, 'condition是必选参数')))
             if 'area' in self.request.query_arguments:
                 area = process_param_string(self.request.query_arguments['area'][0], option_param=1)
             else:
