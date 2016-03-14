@@ -18,7 +18,6 @@ gmat,1,720
 gmat,2,680
 gmat,3,650
 gmat,4,620
-<<<<<<< HEAD
 research,1,0.9
 research,2,0.8
 research,3,0.7
@@ -65,5 +64,4 @@ competition,4,0.5
 credential,1,1
 credential,2,0.86
 credential,3,0.78
->>>>>>> master
 credential,4,0.6
