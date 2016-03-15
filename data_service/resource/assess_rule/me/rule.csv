@@ -53,7 +53,7 @@ level,                 range,   3,       %result,          120,135,       3
 level,                 range,   4,       %result,          110,120,       4
 level,                 range,   5,       %result,          100,110,       5
 level,                 range,   6,       %result,          90,100,        6
-level,                 range,   7,       %result,          0,90,          7
+level,                 range,   7,       %result,          78.5,90,       7
 level,                 range,   8,       %result,          0,78.5,        8
 
 #维度标识 计算规则为sum
