@@ -204,7 +204,7 @@ achelous/
 
 # log dir
 *.log
-
+err_log.txt
 # Packages
 *.egg
 *.egg-info

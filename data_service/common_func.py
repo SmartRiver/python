@@ -40,6 +40,23 @@ def convert_to_str(input_origin):
         except:
             return False
 
+def convert_field_type(input_origin, dest_type='string'):
+    '''将变量转化为指定类型的变量'''
+    if isinstance(input_origin, bytes):
+        return convert_field_type(input_origin.decode('utf-8'), dest_type)
+    if isinstance(input_origin, str): # 去除左右空格，双引号，单引号
+        input_origin = input_origin.strip().strip('\'').strip('"')
+    try:
+        if dest_type == 'int':
+            input_origin = int(input_origin)
+        elif dest_type == 'float':
+            input_origin = float(input_origin)
+        elif dest_type == 'string':
+            input_origin = str(input_origin)
+        return input_origin
+    except:
+        return False
+
 def convert_to_int(input_origin):
     if isinstance(input_origin, (int, float)):
         return int(input_origin)
@@ -52,21 +69,6 @@ def convert_to_int(input_origin):
             return False
     elif isinstance(input_origin, bytes):
         return convert_to_int(input_origin.decode('utf-8'))
-    else:
-        return False
-
-def convert_to_float(input_origin):
-    if isinstance(input_origin, (int, float)):
-        return float(input_origin)
-    elif isinstance(input_origin, str):
-        input_origin = input_origin.replace(' ', '').replace('\'','').replace('"','')
-        try:
-            input_origin = float(input_origin)
-            return input_origin
-        except:
-            return False
-    elif isinstance(input_origin, bytes):
-        return convert_to_float(input_origin.decode('utf-8'))
     else:
         return False
 
@@ -146,11 +148,31 @@ def process_param_string(input_param, option_param=0):
             return None
         raise Exception(exit_error_func(1, input_param))
 
-def fetch_params():
+def fetch_params(input_param, *param):
     ''' 从self.request.query_arguements里提取出所有的参数（token除外）'''
-    
+    return_param = {}
+    for each in param:
+        if each[1] == 1: # 必选参数
+            if each[0] not in input_param:
+                raise Exception(exit_error_func(5, each[0]))
+            return_param[each[0]] = convert_field_type(input_param[each[0]][0], each[2])
+        else: # 可选参数
+            if each[0] not in input_param:
+                return_param[each[0]] = None
+            else:
+                if len(str(input_param[each[0]][0])) < 4:
+                    return_param[each[0]] = None
+                else:
+                    return_param[each[0]] = convert_field_type(input_param[each[0]][0], each[2])
+    return return_param
 
 def return_json_dump(input_param):
     '''将返回的json格式数据里的中文Unicode转化为中文'''
     return json.dumps(input_param, ensure_ascii=False, indent=4)
+
+if __name__ == '__main__':
+    tt = 'i love u'
+    dd = tt.encode('utf-8')
+    print(str(type(dd)))
+    print(convert_field_type(dd, 'string'))
 

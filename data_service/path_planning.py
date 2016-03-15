@@ -274,7 +274,7 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
     else:
         pass#都保留
 
-def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
+ 
 
     # 获取不同专业不同学期的初始化的各任务（节点）权重
     if part_score_dict['real_major'] in assess_student.MAJOR:
