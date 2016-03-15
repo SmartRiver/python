@@ -195,6 +195,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 test.py
+err_log.txt
 
 # pyCharms
 .idea/

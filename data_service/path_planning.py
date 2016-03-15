@@ -313,13 +313,13 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                         continue
                 if each == 'gpa':
                     if grade <= 4:
-                        if distance >= 0.2:
-                            ratio = 100 #如果大一大二的gpa跟目标差0.2分。则无条件首推
+                        if distance > 0.19:
+                            ratio = 10000 #如果大一大二的gpa跟目标差0.2分。则无条件首推
                         else:
                             ratio = 10
                     elif 5 <= grade <= 6:
                         if distance >= 0.5:
-                            ratio = 100
+                            ratio = 10000
                         elif distance < 0.5:
                             ratio = distance * 35
                     else:
