@@ -308,7 +308,7 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
                 distance = target_dict[each] - part_score_dict[each]
                 # 当大一时期。ielts、toefl过了2年失效。不建议学生大一准备
-                if grade in [1, 2]:
+                if grade <= 2:
                     if each == 'ielts' or each == 'toefl':
                         continue
                 if each == 'gpa':
@@ -335,15 +335,21 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                     else:
                         ratio = 5 + distance * 25
                 elif each == 'gre':
-                    if distance >= 6:
-                        ratio = 20 + (distance - 6) * 2
+                    if grade <= 2: # 若是大一学生则将gre、gmat排名垫底
+                        ratio = -100
                     else:
-                        ratio = 5 + distance * 2
+                        if distance >= 6:
+                            ratio = 20 + (distance - 6) * 2
+                        else:
+                            ratio = 5 + distance * 2
                 elif each == 'gmat':
-                    if distance >= 40:
-                        ratio = 20 + (distance - 40) * 0.4
+                    if grade <= 2: # 若是大一学生则将gre、gmat排名垫底
+                        ratio = -100
                     else:
-                        ratio = 5 + distance * 0.4
+                        if distance >= 40:
+                            ratio = 20 + (distance - 40) * 0.4
+                        else:
+                            ratio = 5 + distance * 0.4
                 else: #软性条件
                     if distance > 0.5:
                         distance = 0.5
@@ -354,9 +360,9 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                     
                 weight_dict[each] =  ratio
                 unfinished_nodes.append(each)
-    # print('after___________')
-    # for each in sorted(weight_dict.items(), key=lambda x:x[1], reverse=True):
-    #     print(each[0]+'\t'+str(each[1]))
+    print('after___________')
+    for each in sorted(weight_dict.items(), key=lambda x:x[1], reverse=True):
+        print(each[0]+'\t'+str(each[1]))
     #对结果进行排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
     return finished_nodes, unfinished_nodes, result_weight
