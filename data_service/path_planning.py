@@ -360,9 +360,9 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                     
                 weight_dict[each] =  ratio
                 unfinished_nodes.append(each)
-    print('after___________')
-    for each in sorted(weight_dict.items(), key=lambda x:x[1], reverse=True):
-        print(each[0]+'\t'+str(each[1]))
+    # print('after___________')
+    # for each in sorted(weight_dict.items(), key=lambda x:x[1], reverse=True):
+    #     print(each[0]+'\t'+str(each[1]))
     #对结果进行排序
     result_weight = sorted(weight_dict.items(), key=lambda x:x[1], reverse=True)
     return finished_nodes, unfinished_nodes, result_weight
@@ -733,7 +733,7 @@ def _check_schedule_size(size):
     else:
         return size
 # 写的很乱。需要重构
-def _get_user_analysis(pre_handle_condition, after_handle_condition, target, language_type, exam_type):
+def _get_user_analysis(pre_handle_condition, after_handle_condition, target, grade, language_type, exam_type):
     ''' 为用户返回咨询师提供的软性、硬性分析文案'''
     target = str(target)
     _temp_hard_cnt = ''
@@ -749,6 +749,9 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
     is_last_type = ''
     for index, each in enumerate(ANALYSIS_TABLE):
         table_key = each[0]
+        if int(grade) <= 2:
+            if table_key[:5] in ['toefl', 'ielts']:
+                continue
         if language_type == 'toefl':
             if table_key[:5] == 'ielts':
                 continue
@@ -803,15 +806,15 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 except:
                     _temp_field = float(default_level)
             if is_level_divide == 0:
+                if convert_to_int(_temp_field) == 0:
+                    is_last_flag = 1
+                    is_last_type = field_user.split('_')[0]
                 for each_record in USER_ANALYSIS[table_key]:
-                    if float(each_record['min_value']) <= float(_temp_field) <= float(each_record['max_value']):
+                    if float(each_record['min_value']) < float(_temp_field) <= float(each_record['max_value']):
                         if len(each_record['target'][target]) > 0:
                             _temp_hard_cnt = _temp_hard_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>'
                             #_temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
-                if convert_to_int(_temp_field) == 0:
-                    is_last_flag = 1
-                    is_last_type = field_user.split('_')[0]
             else:
                 _temp_field = convert_to_str(int(_temp_field))
                 for each_record in USER_ANALYSIS[table_key]:
@@ -912,7 +915,7 @@ def schedule(condition, size=None):
 
         # 返回软硬性条件分析文案
         try:
-            user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
+            user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], part_score_dict['grade'], language_type, exam_type)
             #print(user_analysis)
         except Exception as e:
             print('except:'+str(e))
