@@ -160,22 +160,9 @@ def test_token():
         print('sleep end')
         print(md5_token('f6e5ec9928c65d2c1456715513'))
 
-def xx(a, b,c,d):
-    print(c)
-    print(a)
-    print(b)
-    # for each in args:
-    #     print(each+'\t'+str(args[each]))
+def xx():
+    tt = '2'
+    return exec(tt)
 
 if __name__ == '__main__':
-    # args = {
-    #     'a':1,
-    #     'b':None,
-    #     'c':'v',
-    # }
-    # xx(**args)
-    try:
-        a =  2/0
-    except:
-        print('ZeroDivisionError')
-        raise Exception('hehe')
+    print(xx)

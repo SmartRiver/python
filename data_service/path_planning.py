@@ -11,10 +11,10 @@ import json
 import os
 import copy
 from db_util import *
-from common_func import exit_error_func, convert_to_str, convert_to_int, convert_to_float
+from common_func import exit_error_func, convert_var_type
 import assess_student
 from assess_student import assess
-from global_variable import service_logger
+from global_variable import service_logger, error_logger
 
 TARGET_LEVEL_LIST = [1, 2, 3, 4, '1', '2', '3', '4'] # 目标档次学校所以档次， 1为最高档
 GRADE_LEVEL_LSIT = [1, 2, 3] # 年级 1、2、3、4分半代表大一、大二、大三、大四
@@ -50,27 +50,7 @@ NODE_DISPLAY_DICT = {} #各个学习提示功能任务对应前端展示的卡�
 NODE_PRODUCT = {} # product所属的NODE（大结点）
 PRODUCT_RECOMMEND = {} # 每个Tag对应的推荐的机会产品
 USER_ANALYSIS = {} # 咨询师为不同用户设置的软、硬件分析文案
-ANALYSIS_TABLE = [
-                ('gpa', 'gpa_score', 1, 0, 0, 'GPA'),
-                ('school', 'gpa_school', 1, 1, 12, '学校'),
-                ('toefl', 'toefl_total', 1, 0, 0, '托福'),
-                ('toefl_speaking', 'toefl_speaking', 1, 0, 0),
-                ('ielts', 'ielts_total', 1, 0, 0, '雅思'),
-                ('ielts_speaking', 'ielts_speaking', 1, 0, 0),
-                ('gre', 'gre_total', 1, 0, 0, 'GRE'),
-                ('gre_writing', 'gre_writing', 1, 0, 0),
-                ('gmat', 'gmat_total', 1, 0, 0, 'GMAT'),
-                ('gmat_writing', 'gmat_writing', 1, 0, 0),
-                ('research_duration', 'research_duration', 0, 1, 4, '科研能力'),
-                ('research_level', 'research_level', 0, 1, 4),
-                ('research_achievement', 'research_achievement', 0, 1, 4),
-                ('internship_duration', 'internship_duration', 0, 1, 4, '实习'),
-                ('internship_level', 'internship_level', 0, 1, 3),
-                ('internship_recommendation', 'internship_recommendation', 0, 1, 3),
-                ('competition', 'competition_level', 0, 1, 5, '竞赛获奖'),
-                ('activity_duration', 'activity_duration', 0, 1, 3, '活动经历'),
-                ('activity_level', 'activity_type', 0, 1, 4)
-                ]
+ANALYSIS_TABLE = [] # 咨询师软硬分析文案的配置文件
 NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'科研能力提升'}
 INSTITUTE = {} # 院校institute库
 
@@ -80,7 +60,7 @@ ABBR_TO_RANKID = {} # 专业英文缩写对应专排ID
 
 def _get_start_term(grade=1):
     '''获取当前时间段(学期)'''
-    grade = convert_to_int(grade)
+    grade = convert_var_type(grade, 'int')
     if grade == False or grade not in GRADE_LEVEL_LSIT:
         raise Exception('字段grade不在[1-3]之间')
     now_month = time.localtime().tm_mon # 获取当前的月份
@@ -92,9 +72,9 @@ def _get_start_term(grade=1):
     return grade
 
 def _get_school_target(target, major):
-    
+
     if target in TARGET_LEVEL_LIST:
-        target = convert_to_int(target)
+        target = convert_var_type(target, 'int')
         return target
     elif isinstance(target, str):
         target = target.lower().replace('+',' ').replace('&amp', '&')
@@ -134,7 +114,7 @@ def _get_user_condition(user_input):
 def _get_language_exam_type(user_condition):
     '''确定用户的语言类型（toefl or ielts）、（gre or gmat)'''
     if 'language_type' in user_condition:
-        language_type = convert_to_str(user_condition['language_type'])
+        language_type = convert_var_type(user_condition['language_type'])
         if language_type not in ['ielts', 'toefl', 'neither', 'none']: # 用户的语言类型，neither表示两者都不
             service_logger.error('无效的属性值language_type')
             raise Exception('无效的属性值language_type')
@@ -143,7 +123,7 @@ def _get_language_exam_type(user_condition):
         raise Exception('缺少字段language_type')
 
     if 'exam_type' in user_condition:
-        exam_type = convert_to_str(user_condition['exam_type'])
+        exam_type = convert_var_type(user_condition['exam_type'])
         if exam_type not in ['gre', 'gmat', 'neither', 'none']:
             service_logger.error('无效的属性值exam_type')
             raise Exception('无效的属性值exam_type')
@@ -159,7 +139,7 @@ def _get_mgt(student_info):
     if 'major' in student_info:
         real_major = student_info['major']
         major = student_info['major']
-        major = convert_to_str(major)
+        major = convert_var_type(major)
         if major not in PATH_PLAN_DICT:
             major = 'general'
     else:
@@ -202,7 +182,7 @@ def _get_soft_condition(user_condition):
     try:
         for dimension in dimension_dict:
             if not dimension.split('_')[0] == 'gpa' and not dimension.split('_')[0] == 'exam' and not dimension.split('_')[0] == 'language':
-                temp_soft_condition[dimension.split('_')[0]] = convert_to_float(dimension_dict[dimension])/convert_to_float(dimension_full_dict[dimension])
+                temp_soft_condition[dimension.split('_')[0]] = convert_var_type(dimension_dict[dimension], 'float')/convert_var_type(dimension_full_dict[dimension], 'float')
     except Exception as e:
         service_logger.error('软性条件比例获取时出错：'+str(e))
         return exit_error_func(6, '软性条件比例获取时出错：'+str(e))
@@ -218,12 +198,12 @@ def _get_hard_condition(student_info, language_type, exam_type):
     #user_data 为筛选过后的学生输入
     temp_hard_condition = {}
     try:
-        temp_hard_condition['gpa'] = convert_to_float(user_data['gpa']['score'])
+        temp_hard_condition['gpa'] = convert_var_type(user_data['gpa']['score'], 'float')
 
         if language_type == 'ielts':
-            temp_hard_condition['ielts'] = convert_to_float(user_data[language_type]['total'])
+            temp_hard_condition['ielts'] = convert_var_type(user_data[language_type]['total'], 'float')
         elif language_type == 'toefl':
-            temp_hard_condition['toefl'] = convert_to_float(user_data[language_type]['total'])
+            temp_hard_condition['toefl'] = convert_var_type(user_data[language_type]['total'], 'float')
         elif language_type == 'neither':
             temp_hard_condition['ielts'] = 0
             temp_hard_condition['toefl'] = 0
@@ -231,9 +211,9 @@ def _get_hard_condition(student_info, language_type, exam_type):
             pass
 
         if exam_type == 'gre':
-            temp_hard_condition['gre'] = convert_to_float(user_data[exam_type]['total'])
+            temp_hard_condition['gre'] = convert_var_type(user_data[exam_type]['total'], 'float')
         elif exam_type == 'gmat':
-            temp_hard_condition['gmat'] = convert_to_float(user_data[exam_type]['total'])
+            temp_hard_condition['gmat'] = convert_var_type(user_data[exam_type]['total'], 'float')
         elif exam_type == 'neither':
             temp_hard_condition['gre'] = 0
             temp_hard_condition['gmat'] = 0
@@ -258,7 +238,7 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
         if 'toefl' in weight_dict:
             del weight_dict['toefl']
     else:
-        pass#都保留
+        pass # 都保留
 
     if exam_type == 'gre':
         if 'gmat' in weight_dict:
@@ -272,10 +252,9 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
         if 'gre' in weight_dict:
             del weight_dict['gre']
     else:
-        pass#都保留
+        pass # 都保留
 
- 
-
+def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
     # 获取不同专业不同学期的初始化的各任务（节点）权重
     if part_score_dict['real_major'] in assess_student.MAJOR:
         weight_dict = copy.deepcopy(PATH_PLAN_DICT[assess_student.MAJOR[part_score_dict['real_major']]][part_score_dict['grade']])
@@ -284,7 +263,7 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
 
     #如果用户是toefl为主，则过滤ielts, 如果用户是gre,则过滤掉gmat, 反之过滤掉相反的，如果用户都没有，则全部保留
     _filter_weight_field(weight_dict, language_type, exam_type)
-    grade = convert_to_int(part_score_dict['grade'])
+    grade = convert_var_type(part_score_dict['grade'], 'int')
     target_dict = TARGET_DICT[part_score_dict['target']]
     unfinished_nodes = [] # 未完成的任务结点(存储的是结点ID)
     finished_nodes = [] # 已完成的任务结点(存储的是结点的内容such gpa)
@@ -309,18 +288,18 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
                 ratio = (target_dict[each] - part_score_dict[each]) / target_dict[each]
                 distance = target_dict[each] - part_score_dict[each]
                 # 当大一时期。ielts、toefl过了2年失效。不建议学生大一准备
-                if grade in [1, 2]:
+                if grade <= 2:
                     if each == 'ielts' or each == 'toefl':
                         continue
                 if each == 'gpa':
                     if grade <= 4:
-                        if distance >= 0.2:
-                            ratio = 100 #如果大一大二的gpa跟目标差0.2分。则无条件首推
+                        if distance > 0.19:
+                            ratio = 10000 #如果大一大二的gpa跟目标差0.2分。则无条件首推
                         else:
                             ratio = 10
                     elif 5 <= grade <= 6:
                         if distance >= 0.5:
-                            ratio = 100
+                            ratio = 10000
                         elif distance < 0.5:
                             ratio = distance * 35
                     else:
@@ -336,15 +315,21 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
                     else:
                         ratio = 5 + distance * 25
                 elif each == 'gre':
-                    if distance >= 6:
-                        ratio = 20 + (distance - 6) * 2
+                    if grade <= 2: # 若是大一学生则将gre、gmat排名垫底
+                        ratio = -100
                     else:
-                        ratio = 5 + distance * 2
+                        if distance >= 6:
+                            ratio = 20 + (distance - 6) * 2
+                        else:
+                            ratio = 5 + distance * 2
                 elif each == 'gmat':
-                    if distance >= 40:
-                        ratio = 20 + (distance - 40) * 0.4
+                    if grade <= 2: # 若是大一学生则将gre、gmat排名垫底
+                        ratio = -100
                     else:
-                        ratio = 5 + distance * 0.4
+                        if distance >= 40:
+                            ratio = 20 + (distance - 40) * 0.4
+                        else:
+                            ratio = 5 + distance * 0.4
                 else: #软性条件
                     if distance > 0.5:
                         distance = 0.5
@@ -352,7 +337,7 @@ def _filter_weight_field(weight_dict, language_type, exam_type):
                         ratio = 13 + (weight_dict[each] - 2) * 2 + distance * 10
                     else:
                         ratio = (weight_dict[each] - 2) * 2 + distance * 10
-                    
+
                 weight_dict[each] =  ratio
                 unfinished_nodes.append(each)
     # print('after___________')
@@ -416,12 +401,12 @@ def _get_product_by_node_id(node_id, major, semester, size=10):
     #合并列表，去除重复
     for product in temp_product_recommend:
         if not product in product_recommend:
-            product_recommend.append(product)       
+            product_recommend.append(product)
     grade_dict = {1:"大一",2:"大一",3:"大二",4:"大二",5:"大三",6:"大三"}
     grade = grade_dict[semester]
     grade_list = ["大一","大二","大三"]
     grade_list.remove(grade)
-    
+
     if "大一" in PRODUCT_RECOMMEND:
         print("123")
     #找到不符合的年级标签
@@ -429,12 +414,12 @@ def _get_product_by_node_id(node_id, major, semester, size=10):
     for error_grade in grade_list:
         if error_grade in PRODUCT_RECOMMEND:
             error_products_list.extend(PRODUCT_RECOMMEND[error_grade])
-        
+
     #筛选，去掉年级标签不符合的
     for product in product_recommend:
         if product in error_products_list:
             product_recommend.remove(product)
-    
+
     #移动置顶
     for product in product_recommend:
         if product in PRODUCT_RECOMMEND['置顶']:
@@ -442,7 +427,7 @@ def _get_product_by_node_id(node_id, major, semester, size=10):
             product_recommend.insert(0,product)
 
     _temp_prodict_size = len(product_recommend)
-    
+
     if size == None:
         size = 10 if _temp_prodict_size > 10 else _temp_prodict_size
     if size > _temp_prodict_size:
@@ -562,10 +547,10 @@ def _get_reason_by_nodeid(major, semester, node_list, deviation_dict):
 
     #反转节点字典
     node_name_dict = dict((v,k) for k, v in NODE_NAME_DICT.items())
-    
+
     #两项对比
     compare = list(map(lambda x:node_name_dict[x['nodeid']], node_list[:3]))
-    
+
     if len(compare) >=2:
         success = 0
         if 'compare' in REASON_DICT[major_type]:
@@ -664,7 +649,7 @@ def _get_nodes_products(part_score_dict, language_type, exam_type, size):
     for node in deviation_list:
         for key in node:
             deviation_dict[key] = node[key]
-            
+
     for attribute in deviation_dict:
         if deviation_dict[attribute] >= TARGET_DICT[part_score_dict['target']][attribute]:
             deviation_dict[attribute] = 1000
@@ -747,13 +732,12 @@ def _get_return_target(target, language_type, exam_type):
 def _check_schedule_size(size):
     if size == None:
         return size
-    size = convert_to_int(size)
     if size < 1:
         raise ValueError('size应为大于0的整数')
     else:
         return size
 
-def _get_user_analysis(pre_handle_condition, after_handle_condition, target, language_type, exam_type):
+def _get_user_analysis(pre_handle_condition, after_handle_condition, target, grade, language_type, exam_type):
     ''' 为用户返回咨询师提供的软性、硬性分析文案'''
     target = str(target)
     _temp_hard_cnt_list = []
@@ -764,6 +748,9 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
     is_last_type = ''
     for index, each in enumerate(ANALYSIS_TABLE):
         table_key = each[0]
+        if int(grade) <= 2:
+            if table_key[:5] in ['toefl', 'ielts']:
+                continue
         if language_type == 'toefl':
             if table_key[:5] == 'ielts':
                 continue
@@ -814,16 +801,16 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 except:
                     _temp_field = float(default_level)
             if is_level_divide == 0:
+                if convert_var_type(_temp_field, 'int') == 0:
+                    is_last_flag = 1
+                    is_last_type = field_user.split('_')[0]
                 for each_record in USER_ANALYSIS[table_key]:
-                    if float(each_record['min_value']) <= float(_temp_field) <= float(each_record['max_value']):
+                    if float(each_record['min_value']) < float(_temp_field) <= float(each_record['max_value']):
                         if len(each_record['target'][target]) > 0:
                             _temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
-                if convert_to_int(_temp_field) == 0:
-                    is_last_flag = 1
-                    is_last_type = field_user.split('_')[0]
             else:
-                _temp_field = convert_to_str(int(_temp_field))
+                _temp_field = convert_var_type(int(_temp_field))
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 0:
@@ -850,7 +837,7 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, lan
                 for each_record in USER_ANALYSIS[table_key]:
                     if _temp_field == each_record['level']:
                         if len(each_record['target'][target]) > 1:
-                            _temp_soft_cnt_list.append(_temp_soft_cnt + '<p class="p1_Tde">'+each_record['target'][target]+'</p>')
+                            _temp_soft_cnt_list.append('<p class="p1_Tde">'+each_record['target'][target]+'</p>')
                             flag_soft = flag_soft + 1
             if index == len(ANALYSIS_TABLE)-1 and flag_soft < 1:
                 _temp_soft_cnt_list.pop()
@@ -904,14 +891,13 @@ def schedule(condition, size=None):
 
         # 返回软硬性条件分析文案
         try:
-            user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], language_type, exam_type)
-            print(user_analysis)
+            user_analysis = _get_user_analysis(condition_copy['data'], student_info['data'], part_score_dict['target'], part_score_dict['grade'], language_type, exam_type)
+            #print(user_analysis)
         except Exception as e:
             print('except:'+str(e))
     except Exception as e:
-        file = open('err_log.txt', 'a', encoding='utf-8')
-        file.write(str(e))
-        file.write(str(condition)+'\n')
+        error_logger.error(str(e))
+        error_logger.error(str(condition)+'\n')
         return exit_error_func(1, '接口调用失败，错误信息：'+str(e)+', 异常类型：'+str(type(e)))
 
     #for index,item in enumerate(finished_node):
@@ -1097,6 +1083,7 @@ def _load_reason():
     service_logger.info('[successed] loading reason of different nodes from reason.csv to dict.')
 
 def _load_user_analysis(mongo_client):
+    # 从数据库拉取用户软硬实力分析的文案
     service_logger.info('[starting] loading userAnalysis information from mongodb . . . ')
     userAnalysis_collection = mongo_client.get_collection('userAnalysis')
     for each in userAnalysis_collection.find():
@@ -1111,6 +1098,12 @@ def _load_user_analysis(mongo_client):
             service_logger.error('some record invalid .')
             service_logger.info('wrong record : %s ', str(each))
             return
+    # 从配置文件加载用户软硬实力分析的配置
+    global ANALYSIS_TABLE
+    with open('resource/plan/userAnalysis.csv', 'r', encoding='utf-8') as userAnaysis_f:
+        for each in userAnaysis_f.readlines():
+            if each[:1] != '#': # 跳过注释行
+                ANALYSIS_TABLE.append(tuple(x.strip() for x in each.strip().split(',')))
     # try:
     #     mongo_client.close() # 关闭连接
     #     service_logger.info('close pymongo connection successed.')

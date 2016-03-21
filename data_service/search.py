@@ -5,14 +5,13 @@ __doc__     = '''this py is used to search schools related to the user input.
 				Optional parameter includes area 、 major.'''
 
 import time
-import logging
 import sys
 import json
 import pymongo
 from pymongo import MongoClient
 from db_util import *
-from common_func import exit_error_func, convert_to_str
-from global_variable import service_logger
+from common_func import exit_error_func, convert_var_type
+from global_variable import service_logger, error_logger
 
 
 class SchoolTree(object):
@@ -108,7 +107,6 @@ def _school_filter_by_country(search_result, country):
     country = country.lower()
     return list(filter(lambda x : eval(x)['result'].split('|')[1] == country, search_result))
 
-
 def _sorted_school_weight(result):
     ''' 将匹配到的院校集合按照档次权重值排序'''
     return_result = []
@@ -149,7 +147,7 @@ def search_school(condition, major=None, area=None, country=None):
         global SCHOOL_TRIE
         search_result = SCHOOL_TRIE.search(SCHOOL_TRIE.root, condition.lower())
     except:
-        service_logger.error('no normal result returns .')
+        error_logger.error('no normal result returns .')
         return exit_error_func(3, 'condition: %s' % condition)
 
     # 去重
@@ -195,11 +193,11 @@ def init(dict_from='mongodb'):
                     major_list.append(each)
                     SCHOOL_SPECIAL_MAJOR[major_key] = major_list
             except:
-                service_logger.error('some line is wrong when reading special school.')
-                service_logger.info('wrong line : %s ', each)
+                error_logger.error('some line is wrong when reading special school.')
+                error_logger.info('wrong line : %s ', each)
                 return
     except FileNotFoundError:
-        service_logger.error('File resource/school/special_school.txt not found . . . ')
+        error_logger.error('File resource/school/special_school.txt not found . . . ')
     # 学校库来自配置的文本文件
     if dict_from == 'conf':
         service_logger.info('school configuration from conf.txt.')
@@ -209,11 +207,11 @@ def init(dict_from='mongodb'):
                     each = each.strip('\r').strip('\n').lower()
                     UNIVERSITY_LIST.append(each)
                 except:
-                    service_logger.error('some line is wrong when convent to dict .')
-                    service_logger.info('wrong line : %s ', each)
+                    error_logger.error('some line is wrong when convent to dict .')
+                    error_logger.info('wrong line : %s ', each)
                     return
         except FileNotFoundError:
-            service_logger.error('File resource/university_dict.txt not found . . . ')
+            error_logger.error('File resource/university_dict.txt not found . . . ')
 
     # 学校库来自mongodb库
     elif dict_from == 'mongodb':
@@ -231,16 +229,16 @@ def init(dict_from='mongodb'):
                     if(each.split('=')[0] == 'mongodb.dulishuo.password'):
                         password = each.split('=')[1]
                 except Exception as e:
-                    service_logger.error(e)
-                    service_logger.error('some line is wrong when read .')
-                    service_logger.info('wrong line : %s ', each)
+                    error_logger.error(e)
+                    error_logger.error('some line is wrong when read .')
+                    error_logger.error('wrong line : %s ', each)
                     return
         except FileNotFoundError:
-            service_logger.error('File resource/db.conf not found . . . ')
+            error_logger.error('File resource/db.conf not found . . . ')
             return exit_error_func(3)
         except Exception as e:
-            service_logger.error(e)
-            service_logger.error('configuration failed.')
+            error_logger.error(e)
+            error_logger.error('configuration failed.')
             return
 
         mongo_client = MongoDB(host=url, port=port, username=username, password=password, auth=True)
@@ -249,8 +247,8 @@ def init(dict_from='mongodb'):
             try:
                 UNIVERSITY_LIST.append(each['display_name'].lower()+'|'+each['origin_name']+'|'+each['area'].lower()+'|'+str(each['type']).replace('.0','')+'|'+str(each['weight']))
             except TypeError as e:
-                service_logger.error(e)
-                service_logger.error('wrong line when converting：%s' % each)
+                error_logger.error(e)
+                error_logger.error('wrong line when converting：%s' % each)
 
         school_load_time = time.time()
         service_logger.info('ending reading data from mongodb，use time %f s.' % (school_load_time-start_time))
@@ -258,9 +256,9 @@ def init(dict_from='mongodb'):
             mongo_client.close() # 关闭连接
             service_logger.info('close pymongo connection successed.')
         except Exception as e:
-            service_logger.error('close pymongo connection failed.')    
+            error_logger.error('close pymongo connection failed.')    
     else:
-        service_logger.error('initializing failed，wrong params： %s' % dict_from)
+        error_logger.error('initializing failed，wrong params： %s' % dict_from)
         return exit_error_func(2, dict_from)
 
     # 构建学校库的前缀树

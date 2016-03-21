@@ -119,7 +119,8 @@ def load_major():
 
 
 #--------------------------------------------评估一个学生----------------------------------------------------
-def assess(student_info):
+def assess(condition):
+    student_info = condition
     major = ''
     #学生结果字典
     result = {}
