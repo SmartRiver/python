@@ -201,10 +201,11 @@ err_log.txt
 .idea/
 
 #test
-achelous/
+achelous
 
 # log dir
 *.log
+*.pyc
 err_log.txt
 # Packages
 *.egg

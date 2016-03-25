@@ -23,7 +23,7 @@ from global_variable import service_logger, error_logger, INTERFACE_METHOD
 
 # Print the usage of the class
 def print_usage():
-    sys.stdout.write('''Welcome to use python service for dulishuo.''')
+    sys.stdout.write('''Welcome to use data interface service for dulishuo.''')
 
 REQUEST_METHOD = { # 方法请求对应的处理模块函数名
     'school_search': 'search.search_school', # 学校联想搜索算法

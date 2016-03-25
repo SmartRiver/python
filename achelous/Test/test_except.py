@@ -3,7 +3,6 @@ __author__ = 'johnson'
 def test_raise():
 	
 	try:
-		
 		print(1/0)
 	except:
 		raise NameError('hehe')
@@ -14,25 +13,17 @@ def aa():
 	else:
 		return 2,3,4
 def bb():
-	if float('FDS'):
-		raise Exception('can not ')
-	
-
+	a=b=1
+	yield a
+	yield b
+	while True:
+		a, b = b, a+b
+		yield b
+		return 'xx'
 if __name__ == '__main__':
-	try:
-		a,b,c = aa()
-		print('--%d--' % b)
-	except Exception as e:
-		
-		print(str(type(e)))
-		print('except:%s' % str(e))
-	finally:
-		print('returns')
+	nums = [1,2,3,4,5,6]
+	it = [i for i in nums]
+	print(str(type(it)))
 
-	dicta = {'a': 1}
-	dictb = {'b': 2}
-
-	dicta.update(dictb)
-	print(dicta)
-	dictb['a'] = 3
-	print(dicta)
+	for _ in range(10):
+		print(_)

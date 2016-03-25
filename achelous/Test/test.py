@@ -160,9 +160,21 @@ def test_token():
         print('sleep end')
         print(md5_token('f6e5ec9928c65d2c1456715513'))
 
-def xx():
-    tt = '2'
-    return exec(tt)
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print('[starting] loading logger [%s()]' % func.__name__)
+        xiao = func(*args, **kwargs)
+        print('[starting] loading logger [%s()]' % func.__name__)        
+        return xiao
+    return wrapper
+
+@logger
+def xx(callback):
+    print('xx')
+    callback()
+
 
 if __name__ == '__main__':
-    print(xx)
+
+    
+

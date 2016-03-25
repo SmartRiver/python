@@ -31,3 +31,4 @@ def _load_interface_methods():
 
 service_logger, error_logger = _logging_conf()
 INTERFACE_METHOD = _load_interface_methods() # 接口调用的方法 eg:{方法名：方法参数}
+

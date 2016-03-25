@@ -20,7 +20,7 @@ TARGET_LEVEL_LIST = [1, 2, 3, 4, '1', '2', '3', '4'] # 目标档次学校所以�
 GRADE_LEVEL_LSIT = [1, 2, 3] # 年级 1、2、3、4分半代表大一、大二、大三、大四
 FIXED_NODES = [ #固定的结点（写文书、选择申请学校、网申、申请后工作）
     {
-        'node_id': 79,
+        'node_id': 79,4
         'node_name': '写文书任务',
         'products': [],
     },
@@ -53,9 +53,7 @@ USER_ANALYSIS = {} # 咨询师为不同用户设置的软、硬件分析文案
 ANALYSIS_TABLE = [] # 咨询师软硬分析文案的配置文件
 NODEID_TO_TEXT = {1:'提升GPA',3:'提升托福成绩',4:'提升雅思成绩',2:'提升GRE成绩',103:'提升GMAT成绩',11:'竞赛',6:'实习',12:'证书',102:'奖学金',14:'活动',104:'推荐信',5:'科研能力提升'}
 INSTITUTE = {} # 院校institute库
-
 RANK_FACULTY = {} # 学校专排
-
 ABBR_TO_RANKID = {} # 专业英文缩写对应专排ID
 
 def _get_start_term(grade=1):
@@ -72,7 +70,7 @@ def _get_start_term(grade=1):
     return grade
 
 def _get_school_target(target, major):
-
+    '''返回目标值'''
     if target in TARGET_LEVEL_LIST:
         target = convert_var_type(target, 'int')
         return target
@@ -96,7 +94,6 @@ def _get_school_target(target, major):
         return res_target
     else:
         return 2
-
 
 def _get_user_condition(user_input):
     '''# 调用评估算法， 转化用户的信息'''
@@ -133,6 +130,7 @@ def _get_language_exam_type(user_condition):
     return language_type, exam_type
 
 def _get_mgt(student_info):
+    '''提取出用户的申请属性（major、 grade、 target）'''
     major = ''
     real_major = ''
 
@@ -167,6 +165,7 @@ def _get_mgt(student_info):
     }
 
 def _get_soft_condition(user_condition):
+    '''提取用户的软性指标（activity、 scholarship、 internship、 research、 credential、 competition）'''
     if 'dimension' in user_condition:
         dimension_dict = user_condition['dimension']
     else:
@@ -190,6 +189,7 @@ def _get_soft_condition(user_condition):
     return temp_soft_condition
 
 def _get_hard_condition(student_info, language_type, exam_type):
+    '''提取出用户的硬性指标（gpa、 toefl/ielts、 gre/gmat）'''
     if 'data' in student_info:
         user_data = student_info['data']
     else:
@@ -337,7 +337,6 @@ def _calculate_nodes_weight(part_score_dict, language_type, exam_type):
                         ratio = 13 + (weight_dict[each] - 2) * 2 + distance * 10
                     else:
                         ratio = (weight_dict[each] - 2) * 2 + distance * 10
-
                 weight_dict[each] =  ratio
                 unfinished_nodes.append(each)
     # print('after___________')
@@ -816,7 +815,7 @@ def _get_user_analysis(pre_handle_condition, after_handle_condition, target, gra
                         if len(each_record['target'][target]) > 0:
                             _temp_hard_cnt_list.append('<p class="p1_Tde">'+each[5]+'</p>')
                             flag_hard = flag_hard + 1
-        else:
+        else: # 如果是软性实习分析
             if len(each) > 5:
                 if flag_soft < 1 and len(_temp_soft_cnt_list) > 0:
                     _temp_soft_cnt_list.pop()
@@ -868,7 +867,7 @@ def schedule(condition, size=None):
             raise Exception('缺少字段student_info')
 
 
-        #提取出用户的申请属性（major、 grade、 target）
+        # 提取出用户的申请属性（major、 grade、 target）
         part_score_dict.update(_get_mgt(student_info))
         service_logger.info('[successed] _get_mgt()')
 
@@ -966,7 +965,7 @@ def _load_init_weight():
             major = temp_file[0:temp_file.rfind('.')]
             temp_major_dict = {}
             for each in open(plan_path, 'r', encoding='utf-8').readlines():
-                each = each.strip('\r\n').rstrip(' ')
+                each = each.strip().rstrip(' ')
                 if each[:1] == '#':
                     semester = int(each[1])
                 else:

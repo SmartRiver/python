@@ -57,6 +57,7 @@ def _timestamp_check(timestamp_client):
         return False
 
 def pre_token_check(client_token):
+    '''客户端client_token格式、位数校对'''
     if not isinstance(client_token, str):
         raise Exception('参数应为字符串格式')
     if len(client_token) < 26:
@@ -69,8 +70,7 @@ def md5_token(client_token):
     key = '100117108105115104117111'
 
     try:
-        # 客户端client_token格式、位数校对
-        pre_token_check(client_token)
+        pre_token_check(client_token) # 客户端client_token格式、位数校对
         msg_client = client_token[:16] # 客户端加密后的字符串16位
         timestamp_client = client_token[16:26] # 客户端调用的时间戳，精确到秒
         #时间戳校对，客户端调用和服务端响应时间差 +-5分钟之内通过校对
