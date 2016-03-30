@@ -8,6 +8,7 @@
     biology
     cs
     computer_engineering
+    industrial_engineering
     aeronautics_astronautics
     ce
     civil
@@ -18,6 +19,8 @@
     me
     nuclear_engineering 
     petroleum
+    energy_engineering
+
     
 *liberal_arts
     anthropology
@@ -35,6 +38,7 @@
     tesol
     pr
     journalism
+    communication
 
 *commerce
     accounting
@@ -45,3 +49,4 @@
     marketing
     business_administration
     supply_chain_and_logistics_management
+    international_trade
