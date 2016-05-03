@@ -6,7 +6,10 @@ import hashlib
 import time
 import urllib
 import hashlib
-
+import csv
+import os
+from urllib.parse import urlparse, urljoin
+from urllib import request
 
 
 def _timestamp_check(timestamp_client):
@@ -175,6 +178,11 @@ def xx(callback):
 
 
 if __name__ == '__main__':
-
+    m = hashlib.md5()
     
-
+    for each in open('test.html', 'r', encoding='utf-8').readlines():
+        each = each.strip()+'123'
+        m = hashlib.md5()
+        m.update(each.encode('utf-8'))
+        token_m = m.hexdigest()
+        print(token_m)

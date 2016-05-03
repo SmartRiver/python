@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="jquery-1.9.1.min.js"></script>
+<title>小和尚</title>
+</head>
+<body>
+<div id="result" style="border: 14px solid #eeffee; marign:150px 150px;width: 300px;height: 200px;">
+    i am a pig.
+</div>
+
+</body>
+
+<script type="text/javascript">
+        $(document).ready(function(){
+            test_post();
+        });
+
+        function test_post(){
+            
+            var url = "http://localhost:8836/v1/get_analysis/rank";
+            var param = {
+                name: "i am who",
+                id: 1,
+                country:"<p>我是谁，最帅的那个！</p>",
+            };
+            $.post(url,param,function(msg){
+                            alert(msg['code']);
+                        },"json");
+        };
+        function stopDefault(e) {
+        //阻止默认浏览器动作(W3C)
+        if (e && e.preventDefault)
+            e.preventDefault();
+        //IE中阻止函数器默认动作的方式
+        else
+            window.event.returnValue = false;
+        return false;
+    };
+</script>
+</html>
