@@ -1,0 +1,50 @@
+mit|麻省理工学院|USA|海本综排top20|1
+uiuc|伊利诺伊大学香槟分校|USA|海本综排top51-top80|4
+cit|加州理工学院|USA|海本综排top20|1
+JHU|约翰霍普金斯大学|USA|海本综排top20|1
+UPenn|宾夕法尼亚大学|USA|海本综排top20|1
+NWU|西北大学|USA|海本综排top21-top35|2
+WUSTL|华盛顿大学圣路易斯分校|USA|海本综排top81-120|5
+ND|圣母大学|USA|海本综排靠后|6
+CMU|卡内基梅隆大学|USA|海本综排top51-top80|4
+UCLA|加州大学洛杉矶分校|USA|海本综排top21-top35|2
+UMich|密歇根大学安娜堡分校|USA|海本综排top21-top35|2
+UNC|北卡罗来纳大学教堂山分校|USA|海本综排top51-top80|4
+WFU|维克森林大学|USA|海本综排靠后|6
+WM|威廉玛丽学院|USA|海本综排靠后|6
+UCSD|加州大学圣地亚哥分校|USA|海本综排top36-50|3
+CWRU|凯斯西储大学|USA|海本综排靠后|6
+NYU|纽约大学|USA|海本综排top51-top80|4
+UWisc|威斯康星大学麦迪逊分校|USA|海本综排top51-top80|4
+GIT|佐治亚理工学院|USA|海本综排top81-120|5
+PSU|Penn State University Park|USA|海本综排top81-120|5
+UCDavis|加州大学戴维斯分校|USA|海本综排top81-120|5
+USC|南加利福尼亚大学|USA|海本综排靠后|6
+UCSB|加州大学圣塔芭芭拉分校|USA|海本综排靠后|6
+UTexas|德克萨斯大学奥斯汀分校|USA|海本综排top51-top80|4
+UCI|加州大学欧文分校|USA|海本综排靠后|6
+UFL|佛罗里达大学|USA|海本综排靠后|6
+Santa Cruz|加州大学圣克鲁兹分校|USA|海本综排靠后|6
+Los Angeles|加州大学洛杉矶分校|USA|海本综排top21-top35|2
+North Carolina|北卡罗来纳大学教堂山分校|USA|海本综排top51-top80|4
+North Carolina|北卡罗来纳州立农业技术大学|USA|海本综排靠后|6
+North Carolina|北卡罗来纳大学夏洛特分校|USA|海本综排靠后|6
+North Carolina|北卡罗来纳州立大学|USA|海本综排靠后|6
+St. Louis|华盛顿大学圣路易斯分校|USA|海本综排top81-120|5
+South Florida|南佛罗里达大学|USA|海本综排靠后|6
+Pine Bluff|阿肯色大学松崖分校|USA|海本综排靠后|6
+little rock|阿肯色大学小石城分校|USA|海本综排靠后|6
+South Carolina|南卡罗来纳大学|USA|海本综排靠后|6
+​Galveston|德克萨斯大学加尔维斯顿医学分部|USA|海本综排靠后|6
+Medical Center|马萨诸塞大学伍斯特分校|USA|海本综排靠后|6
+Medical Center|德克萨斯大学西南医学中心|USA|海本综排靠后|6
+Medical Center|内布拉斯加大学医学中心|USA|海本综排靠后|6
+New Orleans|新奥尔良大学|USA|海本综排靠后|6
+Newark|罗格斯大学纽华克分校|USA|海本综排靠后|6
+New jersey|罗格斯大学纽华克分校|USA|海本综排靠后|6
+New jersey|罗格斯,新泽西州立大学新布伦瑞克分校|USA|海本综排靠后|6
+New jersey|新泽西理工学院|USA|海本综排靠后|6
+Rhode Island|罗德岛大学|USA|海本综排靠后|6
+Central Florida|中弗罗里达大学|USA|海本综排靠后|6
+Chicago|伊利诺伊大学芝加哥分校|USA|海本综排靠后|6
+Baton Rouge|路易斯安那州立大学|USA|海本综排靠后|6

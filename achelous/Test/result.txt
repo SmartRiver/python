@@ -1,0 +1,1058 @@
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta content="en-us" http-equiv="Content-Language"/>
+<meta content="Office of Web Communications, Cornell University" name="author"/>
+<meta content="Copyright (c) 2016 Cornell University" name="copyright"/>
+<meta content="Cornell University contains seven undergraduate colleges plus the College of Veterinary Medicine, the Law School, the Samuel Curtis Johnson Graduate School of Management, the Weill Cornell Medical College in New York City and Doha, Qatar, and the 93 fields of study in the Graduate School." name="description"/>
+<meta content="university, ivy league, research, undergraduate research, graduate research, transnational, land grant, new york, agriculture and life sciences, architecture, art, planning, engineering, hotel administration, human ecology, industrial and labor relations, law, business management, medicine, pre-med, veterinary medicine, vet school" name="keywords"/>
+<meta content="all" name="robots"/>
+<meta content="false" http-equiv="imagetoolbar"/>
+<meta content="user-scalable = yes" name="viewport"/>
+<meta content="width=device-width, minimum-scale=1" name="viewport">
+<meta content="806006142815437" property="fb:app_id"/>
+<title>Cornell University</title>
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<!-- Typekit fonts -->
+<script src="//use.typekit.net/gog6dck.js" type="text/javascript"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- Core CSS -->
+<link href="/assets/core/css/cornell.css" rel="stylesheet"/>
+<link href="/assets/css/style.css?ver=20160315" rel="stylesheet"/>
+<link href="/assets/css/print.css?ver=20141121" rel="stylesheet"/>
+<!--[if lt IE 9]>
+<link href="/assets/core/css/ie.css" rel="stylesheet" />
+<script src="/assets/core/js/lib/selectivizr.js"></script>
+<link href="/assets/core/css/ie8down.css" rel="stylesheet" />
+<![endif]-->
+<!--[if gte IE 9]>
+<link href="/assets/core/css/ie9up.css" rel="stylesheet" />
+<![endif]-->
+<!-- <link rel="stylesheet" href="/assets/main.css"> -->
+<!-- Emergency banner -->
+<script src="//embanner.univcomm.cornell.edu/OWC-emergency-banner.js" type="text/javascript"> </script>
+<script src="/assets/core/js/lib/modernizr.js"></script>
+</meta></meta></meta></head>
+<body class="home">
+<nav id="skip-link" role="navigation">
+<a data-click-action="skip to content" data-click-category="header" href="#main" tabindex="1">Skip to content</a>
+</nav>
+<!-- Begin Header -->
+<!-- Global Header and Navigation -->
+<header id="cu-hdr" role="banner">
+<div class="cu-hdr-bg"></div>
+<div class="cu-hdr-inner">
+<a data-click-action="home" data-click-category="header" href="/" id="cu-brand" title="Cornell.edu Homepage">
+<h1 class="cu-logotype">Cornell University</h1>
+</a>
+<a class="icon-search" data-click-action="search | reveal search box" data-click-category="header" data-click-label="magnifying glass" href="/search" id="search-trigger" tabindex="-1"><span class="off-screen">Search</span></a>
+<a class="icon-menu" href="/search" id="mobile-trigger" tabindex="-1" title="Expand menu"><span class="off-screen">Go</span></a>
+</div>
+<form action="/search" id="cu-search" method="get" role="search">
+<div class="container">
+<input autocomplete="off" id="search-query" name="q" placeholder="Search pages and people" required="" type="search"><label for="search-query" style="display: none;">Search pages and people</label>
+</input></div>
+</form>
+<nav data-click-category="header" id="cu-nav" role="navigation">
+<a id="nav-close">
+<div class="icon-reset"></div>
+</a>
+<ul data-click-action="nav | main" id="cu-nav-main">
+<li class="cu-nav-about">
+<a class="menu-item" data-click-label="About Cornell" href="/about">About Cornell</a>
+<a class="submenu-trigger" data-click-label="About Cornell" href="/about"><span class="off-screen">About Cornell</span></a>
+<div class="submenu" data-click-action="nav | about | submenu">
+<div class="submenu-overview">
+<a data-click-label="Overview" href="/about/">
+<img alt="" src="/assets/core/images/nav-overview-about.jpg">
+<span>Overview</span>
+</img></a>
+</div>
+<ul class="submenu-links">
+<li><a data-click-label="University Facts" href="/about/facts.cfm">University Facts</a></li>
+<li><a data-click-label="Maps &amp; Directions" href="/about/maps/">Maps &amp; Directions</a></li>
+<li><a data-click-label="Mission" href="/about/mission.cfm">Mission</a></li>
+<li><a data-click-label="Traditions" href="/about/traditions.cfm">Traditions</a></li>
+<li><a data-click-label="Locations" href="/about/locations.cfm">Locations</a></li>
+<li><a data-click-label="Ithaca" href="/about/ithaca.cfm">Ithaca</a></li>
+</ul>
+<ul class="submenu-related last" data-click-action="nav | about | related">
+<li class="submenu-title">Related Links</li>
+<li><a data-click-label="Diversity" href="http://diversity.cornell.edu/">Diversity</a></li>
+<li><a data-click-label="Economic Impact" href="/features/economic-impact/">Economic Impact</a></li>
+<li><a data-click-label="Sustainability" href="http://sustainability.cornell.edu/">Sustainability</a></li>
+<li><a data-click-label="Global" href="http://global.cornell.edu/">Global</a></li>
+<li><a data-click-label="Cornell Leadership" href="http://leadership.cornell.edu/">Cornell Leadership</a></li>
+<li><a data-click-label="Weather" href="/weather/">Weather</a> and <a data-click-label="Live View" href="/live-view/">Live View</a></li>
+</ul>
+</div></li>
+<li class="cu-nav-admissions">
+<a class="menu-item" href="/admissions/">Admissions</a>
+<div class="submenu" data-click-action="nav | admissions | submenu">
+<div class="submenu-overview">
+<a data-click-label="Overview" href="/admissions/">
+<img alt="" src="/assets/images/nav-overview-admissions.jpg">
+<span>Overview</span>
+</img></a>
+</div>
+<ul class="submenu-related" data-click-action="nav | admissions | undergraduate">
+<li class="submenu-title">Undergraduate</li>
+<li><a data-click-label="Apply" href="http://admissions.cornell.edu/apply">Apply</a></li>
+<li><a data-click-label="Admissions" href="http://admissions.cornell.edu/">Admissions</a></li>
+<li><a data-click-label="Dates &amp; Deadlines" href="http://admissions.cornell.edu/apply/application-deadlines">Dates &amp; Deadlines</a></li>
+<li><a data-click-label="Financial Aid" href="http://admissions.cornell.edu/costs-aid">Financial Aid</a></li>
+</ul>
+<ul class="submenu-related" data-click-action="nav | admissions | graduate">
+<li class="submenu-title">Graduate</li>
+<li><a data-click-label="Admissions" href="http://www.gradschool.cornell.edu/admissions">Admissions</a></li>
+<li><a data-click-label="Academics" href="http://www.gradschool.cornell.edu/academics">Academics</a></li>
+<li><a data-click-label="Fields of Study" href="http://www.gradschool.cornell.edu/academics/fields-study/index">Fields of Study</a></li>
+</ul>
+<ul class="submenu-related last" data-click-action="nav | admissions | continuing ed">
+<li class="submenu-title">Continuing Education &amp; Summer Sessions</li>
+<li><a data-click-label="Summer Sessions" href="http://www.sce.cornell.edu/ss/index.php">Summer Sessions</a></li>
+<li><a data-click-label="Winter Sessions" href="http://www.sce.cornell.edu/ws/index.php">Winter Sessions</a></li>
+<li><a data-click-label="Part-time Study" href="http://www.sce.cornell.edu/exmu/index.php">Part-time Study</a></li>
+</ul>
+</div></li>
+<li class="cu-nav-academics">
+<a class="menu-item" href="/academics/">Academics</a>
+<a class="submenu-trigger" href="/academics"><span class="off-screen">Academics</span></a>
+<div class="submenu" data-click-action="nav | academics | submenu">
+<div class="submenu-overview">
+<a data-click-label="Overview" href="/academics/">
+<img alt="" src="/assets/images/nav-overview-academics.jpg">
+<span>Overview</span>
+</img></a>
+</div>
+<ul class="submenu-links">
+<li><a data-click-label="Fields of Study" href="/academics/fields.cfm">Fields of Study</a></li>
+<li><a data-click-label="Colleges &amp; Schools" href="/academics/colleges.cfm">Colleges &amp; Schools</a></li>
+<li><a data-click-label="Departments" href="/academics/departments.cfm">Departments</a></li>
+<li><a data-click-label="Library" href="/academics/library.cfm">Library</a></li>
+<li><a data-click-label="Continuing Education" href="/academics/continuing.cfm">Continuing Education</a></li>
+<li><a data-click-label="Academic Calendar" href="/academics/calendar/">Academic Calendar</a></li>
+</ul>
+<ul class="submenu-related last" data-click-action="nav | academics | related">
+<li class="submenu-title">Related Links</li>
+<li><a data-click-label="Course Catalog" href="http://courses.cornell.edu/">Course Catalog</a></li>
+<li><a data-click-label="Cornell Abroad" href="https://www.cuabroad.cornell.edu/">Cornell Abroad</a></li>
+<li><a data-click-label="Learning Goals" href="http:/academics/goals/">Learning Goals</a></li>
+<li><a data-click-label="Cornell Online" href="http://onlinelearning.cornell.edu/">Cornell Online</a></li>
+<li><a data-click-label="Undergraduate Research" href="http://undergraduateresearch.cornell.edu/">Undergraduate Research</a></li>
+</ul>
+</div></li>
+<li class="cu-nav-research">
+<a class="menu-item" href="/research">Research</a>
+<div class="submenu" data-click-action="nav | research | submenu">
+<div class="submenu-overview">
+<a href="/research">
+<img alt="Research Overview" src="/assets/core/images/nav-overview-research.jpg">
+<span>Overview</span>
+</img></a>
+</div>
+<ul class="submenu-stories" data-click-action="nav | engagement | featured">
+<li class="submenu-title">Explore Cornell Research</li>
+<li>
+<a data-click-label="" href="http://research.cornell.edu" title="">
+<img alt="Cornell Research" src="/assets/images/research/research-homepage.jpg">Extreme Talent, Radical Collaboration, and Results that Matter</img></a>
+</li>
+</ul>
+<ul class="submenu-related last" data-click-action="nav | research | related">
+<li class="submenu-title">Related Links</li>
+<li><a data-click-label="OVPR" href="http://ovpr.research.cornell.edu">Vice Provost for Research</a></li>
+<li><a data-click-label="Centers &amp; Institutes" href="http://research.cornell.edu/find-a-center">Centers &amp; Institutes</a></li>
+<li><a data-click-label="Technology Licensing (CTL)" href="http://www.ctl.cornell.edu/">Technology Licensing (CTL)</a></li>
+<li><a data-click-label="Graduate Research" href="http://www.gradschool.cornell.edu/academics/research-and-scholarship">Graduate Research</a>
+<li><a data-click-label="Undergraduate Research" href="http://undergraduateresearch.cornell.edu/">Undergraduate Research</a></li>
+<li><a data-click-label="Research Publications" href="http://research.cornell.edu/research-division/publications-and-data">OVPR Research Publications</a></li>
+</li></ul>
+</div></li>
+<li class="cu-nav-engagement">
+<a class="menu-item" href="/engagement/">Public Engagement</a>
+<div class="submenu" data-click-action="nav | engagement | submenu">
+<div class="submenu-overview">
+<a href="/engagement/">
+<img alt="" src="/assets/images/nav-overview-engagement.jpg">
+<span>Overview</span>
+</img></a>
+</div>
+<ul class="submenu-stories" data-click-action="nav | engagement | featured">
+<li class="submenu-title">Featured</li>
+<li> <a data-click-label="Chronicle POST story" href="http://news.cornell.edu/stories/2015/08/post-celebrates-20-years-community-service" title=""><img alt="Student volunteers" src="/assets/images/engagement/post-160x90.jpg">Chronicle coverage: POST celebrates 20 years of community service</img></a> </li> </ul>
+<ul class="submenu-related last" data-click-action="nav | engagement | related">
+<li class="submenu-title">Related Links</li>
+<li><a data-click-label="Engaged Cornell" href="http://blogs.cornell.edu/engagedcornell/">Engaged Cornell</a></li>
+<li><a data-click-label="Outreach at Cornell" href="http://outreach.cornell.edu">Outreach at Cornell</a></li>
+<li><a data-click-label="Cooperative Extension" href="http://www.cce.cornell.edu/Pages/Default.aspx">Cooperative Extension</a></li>
+<li><a data-click-label="Land Grant Mission &amp; History" href="http://landgrant.cornell.edu/">Land Grant Mission &amp; History</a></li>
+<li><a data-click-label="Engaged Learning and Research" href="http://www.elr.cornell.edu/">Engaged Learning and Research</a></li>
+<li><a data-click-label="Public Service Center" href="http://www.psc.cornell.edu/">Public Service Center</a></li>
+</ul>
+</div></li>
+<li class="cu-nav-student">
+<a class="menu-item" href="/student-life/">Student Life</a>
+<a class="submenu-trigger" href="/student-life/"><span class="off-screen">Student Life</span></a>
+<div class="submenu" data-click-action="nav | student life | submenu">
+<div class="submenu-overview">
+<a href="/student-life/">
+<img alt="" src="/assets/core/images/nav-overview-student.jpg">
+<span>Overview</span>
+</img></a>
+</div>
+<ul class="submenu-links">
+<li><a data-click-label="Athletics &amp; Recreation" href="/student-life/athletics.cfm">Athletics &amp; Recreation</a></li>
+<li><a data-click-label="Get Involved" href="/student-life/involved.cfm">Get Involved</a></li>
+<li><a data-click-label="Health &amp; Well-being" href="/student-life/health.cfm">Health &amp; Well-being</a></li>
+<li><a data-click-label="Student Blogs" href="/student-life/blogs.cfm">Student Blogs</a></li>
+<li><a data-click-label="Dining &amp; Housing" href="/student-life/dining.cfm">Dining &amp; Housing</a></li>
+</ul>
+<ul class="submenu-related last" data-click-action="nav | student life | related">
+<li class="submenu-title">Related Links</li>
+<li><a data-click-label="Finding My Community" href="http://diversity.cornell.edu/finding-my-community">Finding My Community</a></li>
+<li><a data-click-label="Center for First-Year Students" href="http://newstudentprograms.cornell.edu/Tatkon/">Center for First-Year Students</a></li>
+<li><a data-click-label="Clubs &amp; Student Groups" href="http://orgsync.rso.cornell.edu/">Clubs &amp; Student Groups</a></li>
+</ul>
+</div></li>
+</ul>
+<ul id="cu-nav-utility">
+<li><a class="menu-item js-sub-trigger" data-click-label="More" href="/_includes/header.cfm">More</a>
+<a class="submenu-trigger" href="/_includes/header.cfm"><span class="off-screen">navigation options</span></a>
+<div class="submenu">
+<ul class="submenu-links">
+<li class="cu-nav-actions" data-click-action="nav | transactional">
+<ul>
+<li>
+<a class="applyParent" href="#">Apply</a></li><li class="applyChildLi undergrad-nav">
+<a class="applyChild" href="http://admissions.cornell.edu/apply" style="display:none;">Undergraduate</a></li><li class="applyChildLi">
+<a class="applyChild" href="http://www.gradschool.cornell.edu/admissions" style="display:none;">Graduate</a></li><li>
+<a href="//www.cornell.edu/visit">Visit</a></li><li>
+<a href="http://www.giving.cornell.edu/">Give</a></li>
+</ul></li>
+<li class="cu-nav-people" data-click-action="nav | audience">
+<ul>
+<li><a data-click-label="Students" href="https://www.studentessentials.cornell.edu/">Students</a></li>
+<li><a data-click-label="Parents" href="http://parents.cornell.edu/">Parents</a></li>
+<li><a data-click-label="Faculty &amp; Staff" href="http://cuinfo.cornell.edu/">Faculty &amp; Staff</a></li>
+<li><a data-click-label="Alumni" href="http://alumni.cornell.edu">Alumni</a></li>
+</ul></li>
+</ul>
+</div></li>
+</ul>
+</nav>
+</header>
+<!-- End Header -->
+<div data-click-category="home" id="main" role="main" tabindex="-1">
+<div class="marquee-mask with-slideshow" role="marquee">
+<!--[PANO_SHIM]-->
+<div class="marquee">
+<span class="marquee-item gradientAdjustTop25p gradientAdjustBottom25p" data-click-action="pano | content" data-click-label="1|ABA905B0-D277-1F61-6F47BA14AE3A6612||Thank You" data-counter="1" id="panobg-ABA905B0-D277-1F61-6F47BA14AE3A6612" style="position: absolute; left: 0px; top: 0px; display: block; background-image: url('//media.univcomm.cornell.edu/photos/1280x720/ABAE00D1-BFC4-CEB2-1BEC772AB76443F8.jpg');" title="">
+<!--[PANO_IMAGE_START]-->
+<img alt="Thank You" class="marquee-img" id="pano-ABA905B0-D277-1F61-6F47BA14AE3A6612" src="//media.univcomm.cornell.edu/photos/1280x720/ABAE00D1-BFC4-CEB2-1BEC772AB76443F8.jpg">
+<!--[PANO_IMAGE_END]-->
+<!--[if lt IE 9]>
+      <div class="ie-shadowTop"></div>
+      <![endif]-->
+<div class="container">
+<div class="marquee-copy">
+<a href="https://givingday.cornell.edu/?utm_source=CornellMain&amp;utm_medium=pano&amp;utm_campaign=CornellGivingDay">
+<h2 class="marquee-heading">Thank You</h2>
+<p class="marquee-subheading">Thousands joined together for Giving Day</p>
+</a>
+</div>
+</div>
+<!--[if lt IE 9]>
+      <div class="ie-shadowBottom"></div>
+      <![endif]-->
+</img></span>
+<span class="marquee-item gradientAdjustTop50p gradientAdjustBottom50p" data-click-action="pano | content" data-click-label="2|A2A4C3B3-EF4E-9170-89C0F90F9597EB5C|A62E2087-ACD8-32DA-4FCA89E7FECB1A99|An off-switch for allergies" data-counter="2" id="panobg-A2A4C3B3-EF4E-9170-89C0F90F9597EB5C" style="position: absolute; left: 0px; top: 0px; display: none; background-image: url('//media.univcomm.cornell.edu/photos/1280x720/A2A7315A-C30A-C1E6-1593F4DECB09C646.jpg');" title="">
+<!--[PANO_IMAGE_START]-->
+<img alt="An off-switch for allergies" class="marquee-img" id="pano-A2A4C3B3-EF4E-9170-89C0F90F9597EB5C" src="//media.univcomm.cornell.edu/photos/1280x720/A2A7315A-C30A-C1E6-1593F4DECB09C646.jpg">
+<!--[PANO_IMAGE_END]-->
+<!--[if lt IE 9]>
+      <div class="ie-shadowTop"></div>
+      <![endif]-->
+<div class="container">
+<div class="marquee-copy">
+<a href="http://weill.cornell.edu/news/news/2016/04/an-off-switch-for-allergy-starving-the-immune-system-prevents-allergic-inflammation-in-the-lung.html">
+<h2 class="marquee-heading">An off-switch for allergies</h2>
+<p class="marquee-subheading">Starving the immune system prevents allergic inflammation in the lung</p>
+</a>
+</div>
+</div>
+<!--[if lt IE 9]>
+      <div class="ie-shadowBottom"></div>
+      <![endif]-->
+</img></span>
+<span class="marquee-item gradientAdjustTop50p gradientAdjustBottom25p" data-click-action="pano | content" data-click-label="3|A2637F29-CD7A-238B-1BF3BB3C95033DC1|A62E1E14-FB4B-4E2C-B1650E144CEC7441|Some frogs are adapting to deadly pathogen" data-counter="3" id="panobg-A2637F29-CD7A-238B-1BF3BB3C95033DC1" style="position: absolute; left: 0px; top: 0px; display: none; background-image: url('//media.univcomm.cornell.edu/photos/1280x720/A265A057-A907-08D3-FF0619877E9166E1.jpg');" title="">
+<!--[PANO_IMAGE_START]-->
+<img alt="Some frogs are adapting to deadly pathogen" class="marquee-img" id="pano-A2637F29-CD7A-238B-1BF3BB3C95033DC1" src="//media.univcomm.cornell.edu/photos/1280x720/A265A057-A907-08D3-FF0619877E9166E1.jpg">
+<!--[PANO_IMAGE_END]-->
+<!--[if lt IE 9]>
+      <div class="ie-shadowTop"></div>
+      <![endif]-->
+<div class="container">
+<div class="marquee-copy">
+<a href="http://www.news.cornell.edu/stories/2016/04/study-some-frogs-are-adapting-deadly-pathogen">
+<h2 class="marquee-heading">Some frogs are adapting to deadly pathogen</h2>
+</a>
+</div>
+</div>
+<!--[if lt IE 9]>
+      <div class="ie-shadowBottom"></div>
+      <![endif]-->
+</img></span>
+<!--[PANO]-->
+</div>
+<!--[PANO_CONTROL_START]-->
+<div class="container">
+<div class="marquee-controls">
+<nav class="slide-controls transparent"> <button class="prev icon-arrow-left" data-click-action="pano | nav" data-click-label="prev" title="Previous slide"><span class="off-screen">previous slide</span></button> <button class="next icon-arrow-right" data-click-action="pano | nav" data-click-label="next" title="Next slide"><span class="off-screen">next slide</span></button> </nav>
+<nav class="pager"></nav>
+</div>
+</div>
+<!--[PANO_CONTROL_END]-->
+</div>
+<!-- OpStatus: open -->
+<div class="container">
+<div class="cu-tower chronicle-tower">
+<h3 class="cu-tower-title"><a data-click-action="news | chronicle" data-click-label="Cornell Chronicle" href="http://news.cornell.edu">Cornell Chronicle</a></h3>
+<div class="chronicle-entry">
+<div class="tag">Cornell People</div>
+<a class="chronicle-entry-title" data-click-action="news | content" data-click-label="1|1C84C74C-E537-22AA-A68E2449B16A23EB||Giving Day harnesses the power of coming together" href="http://www.news.cornell.edu/stories/2016/04/giving-day-harnesses-power-coming-together">Giving Day harnesses the power of coming together</a>
+</div>
+<div class="chronicle-entry">
+<div class="tag">Administration</div>
+<a class="chronicle-entry-title" data-click-action="news | content" data-click-label="2|1C88358B-0B88-4AE8-F77A9ED90C461A70||Kenneth Miranda of the IMF named chief investment officer" href="http://news.cornell.edu/stories/2016/04/kenneth-miranda-imf-named-chief-investment-officer">Kenneth Miranda of the IMF named chief investment officer</a>
+</div>
+<div class="chronicle-entry">
+<div class="tag">Arts &amp; Humanities</div>
+<a class="chronicle-entry-title" data-click-action="news | content" data-click-label="3|1C8B8E20-AA31-AFE5-02EE4B39E41C5BDF||Mar¨ªa Cristina Garc¨ªa wins 2016 Andrew Carnegie Fellowship" href="http://news.cornell.edu/stories/2016/04/mar-cristina-garc-wins-2016-andrew-carnegie-fellowship">Mar¨ªa Cristina Garc¨ªa wins 2016 Andrew Carnegie Fellowship</a>
+</div>
+<!--[NEWS]-->
+<div class="chronicle-links inline"> <a data-click-action="news | more" data-click-label="More new" href="http://news.cornell.edu/"> More news </a> <a data-click-action="news | for media" data-click-label="For media" href="http://mediarelations.cornell.edu/"> For media </a> </div>
+<div class="chronicle-entry">
+<div class="tag">Athletics</div>
+<a class="chronicle-entry-title" data-click-action="athletics | content" data-click-label="1|ABF678F3-08BF-FF3B-5EC00B857C4CF1DC|A62E1CD0-AD76-5E8D-D9CB6AEF0ADEA636|Sailing takes second in Ivies with strong weekend" href="http://www.cornellbigred.com/news/2016/4/18/sailing-takes-second-in-ivies-with-strong-weekend.aspx">Sailing takes second in Ivies with strong weekend</a>
+</div>
+<!--[ATHLETICS]-->
+<div class="chronicle-links last"> <a data-click-action="athletics | more" data-click-label="More athletics" href="http://www.cornellbigred.com/"> More athletics </a> </div>
+</div>
+<div class="home-block destinations">
+<header class="block-header">
+<h4 class="cu-title"> Popular Destinations </h4>
+</header>
+<ol class="link-blocks">
+<li><a href="/admissions/">Admissions</a></li>
+<li><a href="/visit/">Plan a Visit</a></li>
+<li><a href="/weather/">Weather</a></li>
+<li><a href="/about/maps/">Maps and Directions</a></li>
+<li><a href="/academics/calendar/"> Academic Calendar </a> </li>
+<li> <a href="/academics/colleges.cfm"> Colleges and Schools</a></li>
+<li><a href="/search/people.cfm">Directory Search</a></li>
+</ol>
+</div>
+<div class="grid-box home-block spotlight">
+<header class="block-header">
+<h4 class="cu-title"> Spotlight </h4>
+</header>
+<div class="slide-mask" data-auto="false" data-interval="3000" data-speed="1000">
+<!--
+        <nav class="slide-controls top-right"> <button class="prev icon-arrow-left" title="Previous slide" data-click-action="spotlight | nav" data-click-label="prev"><span class="off-screen">previous slide</span></button> <button class="next icon-arrow-right" title="Next slide" data-click-action="spotlight | nav" data-click-label="next"><span class="off-screen">next slide</span></button> </nav>
+        -->
+<div class="slideshow">
+<a class="grid-box slide" data-click-action="spotlight | content" data-click-label="1|DD206DE4-9C68-C575-383260E9998BC116|A62E1F76-C349-6B22-8E720BECD0D951F0|Audio of Milton Konvitz' 'American Ideals' lectures now online" data-counter="1" href="http://www.news.cornell.edu/stories/2016/03/audio-konvitz-american-ideals-lectures-now-online">
+<img alt="Milton Konvitz" src="//media.univcomm.cornell.edu/photos/400x225/DD2A99F6-C94C-227D-B7A7217B732D61CF.jpg" title=""/>
+<div class="grid-title">Audio of Milton Konvitz' 'American Ideals' lectures now online</div>
+</a>
+<!--[SPOTLIGHT]-->
+</div>
+</div>
+</div>
+<div class="grid-box home-block cornellcast">
+<header class="block-header">
+<h4 class="cu-title">Cornellcast</h4>
+<a data-click-action="video | more" data-click-label="More video" href="/video/" title="CornellCast videos"> More video </a>
+</header>
+<div id="cornellcast-video-home" style="clear:both">
+<a class="media-video" data-click-action="video | play" data-click-label="1|D12C1A48-D45A-3039-AFC995D4B77FCBC8||Max Zhang helps sustainable communities grow greener" data-embed="&lt;iframe src='//www.cornell.edu/video/max-zhang-helps-sustainable-communities-grow-greener/embed/autoplay' scrolling='no' width='100%' height='100%' frameborder='0' allowfullscreen&gt;&lt;/iframe&gt;" data-slug="max-zhang-helps-sustainable-communities-grow-greener" data-target="#cornellcast-video-home" href="http://cdnapi.kaltura.com/p/537811/sp/53781100/playManifest/entryId/0_bzzl7xvi/flavorId/0_q7zz6b1z/protocol/http/format/url/a.mp4" title="Play video">
+<img alt="" class="media-img" src="//media.univcomm.cornell.edu/photos/400x225/D12F653E-E699-11FB-B410FB86303B8CF5.jpg">
+<div class="media-play-overlay"></div>
+</img></a>
+</div>
+<div class="grid-title">
+<a data-click-action="video | go to video page" data-click-label="[SLOT]|D12C1A48-D45A-3039-AFC995D4B77FCBC8||Max Zhang helps sustainable communities grow greener" href="http://www.cornell.edu/video/max-zhang-helps-sustainable-communities-grow-greener">Max Zhang helps sustainable communities grow greener</a>
+</div>
+<!--[CCAST]-->
+</div>
+<div class="home-block home-events events">
+<div class="cu-tabs two-col" data-target="#home-event-lists">
+<div class="tab-indicator"></div>
+<a class="tab current" data-click-action="events | view upcoming" data-click-label="Upcoming events" href="#"> Upcoming events </a>
+<a class="tab" data-click-action="events | view important" data-click-label="Important dates" href="#"> Important dates </a>
+</div>
+<div class="tab-panels" id="home-event-lists">
+<ol class="event-list tab-panel" id="homepageFeaturedEvents">
+<li class="event-item" itemscope="true" itemtype="http://schema.org/Event">
+<time class="event-date" datetime="2016-4-20" itemprop="startDate" title="April 20">
+<span class="event-month">Apr</span>
+<span class="event-day">20</span>
+</time>
+<a class="event-name" data-click-action="events | content" data-click-label="1|D2184EB8-DB17-4415-AB477628E679C3A4|A62E2022-FDC1-3460-9DDBC44D46E03EB1|Iscol Environmental Lecture by Sheryl WuDunn" href="http://events.cornell.edu/event/2016_iscol_environmental_lecturer_-_sheryl_wudunn" itemprop="name">Iscol Environmental Lecture by Sheryl WuDunn</a>
+<div class="clear"></div>
+</li>
+<li class="event-item" itemscope="true" itemtype="http://schema.org/Event">
+<time class="event-date" datetime="2016-4-21" itemprop="startDate" title="April 21">
+<span class="event-month">Apr</span>
+<span class="event-day">21</span>
+</time>
+<a class="event-name" data-click-action="events | content" data-click-label="2|0BF2A729-077D-AFC8-6AABA5AFDCD661BA||The Lillian Hellman I Knew" href="http://events.cornell.edu/event/the_illian_hellman_i_knew" itemprop="name">The Lillian Hellman I Knew</a>
+<div class="clear"></div>
+</li>
+<li class="event-item" itemscope="true" itemtype="http://schema.org/Event">
+<time class="event-date" datetime="2016-4-21" itemprop="startDate" title="April 21">
+<span class="event-month">Apr</span>
+<span class="event-day">21</span>
+</time>
+<a class="event-name" data-click-action="events | content" data-click-label="3|0BCD3215-910B-AC44-4650CF974109CE3A|A62E1E14-FB4B-4E2C-B1650E144CEC7441|The (Bio?)Geochemistry of Enceladus¡¯ Ocean" href="http://events.cornell.edu/event/the_biogeochemistry_of_enceladus_ocean" itemprop="name">The (Bio?)Geochemistry of Enceladus¡¯ Ocean</a>
+<div class="clear"></div>
+</li>
+<!--[EVENTS]-->
+</ol>
+<ol class="event-list tab-panel" id="homepageImportantDates" style="display: none">
+<li class="event-item" itemscope="true" itemtype="http://schema.org/Event">
+<time class="event-date" datetime="2016-5-11" itemprop="startDate" title="May 11">
+<span class="event-month">May</span>
+<span class="event-day">11</span>
+</time>
+<a class="event-name" data-click-action="events | content" data-click-label="1|CB435505-F37F-F1D4-1321BFB9BD30425E||Last Day of Classes (Spring)" href="http://events.cornell.edu/event/last_day_of_classes_5418" itemprop="name">Last Day of Classes (Spring)</a>
+<div class="clear"></div>
+</li>
+<li class="event-item" itemscope="true" itemtype="http://schema.org/Event">
+<time class="event-date" datetime="2016-5-12" itemprop="startDate" title="May 12">
+<span class="event-month">May</span>
+<span class="event-day">12</span>
+</time>
+<a class="event-name" data-click-action="events | content" data-click-label="2|CB3771D5-D2AC-721E-01EDF36BFB56CA23||Study Period (Spring)" href="http://events.cornell.edu/event/study_period" itemprop="name">Study Period (Spring)</a>
+<div class="clear"></div>
+</li>
+<li class="event-item" itemscope="true" itemtype="http://schema.org/Event">
+<time class="event-date" datetime="2016-5-16" itemprop="startDate" title="May 16">
+<span class="event-month">May</span>
+<span class="event-day">16</span>
+</time>
+<a class="event-name" data-click-action="events | content" data-click-label="3|CB3B4277-F171-DA94-CFB0F261544EAE33||Scheduled Exams (Spring)" href="http://events.cornell.edu/event/exams_7598" itemprop="name">Scheduled Exams (Spring)</a>
+<div class="clear"></div>
+</li>
+<!--[DATES]-->
+</ol>
+</div>
+<a data-click-action="events | more" data-click-label="More events" href="http://events.cornell.edu/"> More events </a>
+</div>
+</div>
+<div class="home-honeycomb">
+<header class="block-header">
+<div class="container">
+<h3 class="cu-title alt"> Around the University </h3>
+<a class="hc-filter-trigger" data-click-action="around the u | show filters" data-click-label="Filter By" href="#" id="atuFilterActivator" title="Filter stories"> Filter By </a>
+<div class="hc-filters" id="atuFilterMenus">
+<ul class="hc-filter-topics">
+<li>
+</li>
+<li class="hc-filter"><a class="current" data-click-action="around the u | apply filter" data-filter-value="all" href="#" title="Summary of this link">Latest</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="9FD588EB-B461-E2A2-C822D6F69247E06B" href="#" tabindex="-1">Research &amp; Innovation</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC0875D-FE63-AF24-B557EDAC9DC127F1" href="#" tabindex="-1">Public Engagement</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08747-FEBC-0985-A4A76EF9DCB00A10" href="#" tabindex="-1">Academics</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC087E9-FA1A-F175-B07775907DC659A4" href="#" tabindex="-1">Student Experience</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08600-9A08-BCD0-1156A39EB339919B" href="#" tabindex="-1">Diverse Community</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08795-0DB5-2094-C422EBE3C78F1354" href="#" tabindex="-1">Sustainability</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC087DA-0F48-2190-1184F44265393972" href="#" tabindex="-1">Global Cornell</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC0883F-F647-FC76-A1C795600125C2B6" href="#" tabindex="-1">Cornell Now</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="58148A72-C52A-C57F-4FC01D1150F5711A" href="#" tabindex="-1">Economic Impact</a></li>
+</ul>
+<ul class="hc-filter-colleges">
+<li>
+</li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08674-E883-F333-C260A8D318FDB53C" href="#" tabindex="-1">College of Agriculture &amp; Life Sciences</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC0861D-BAD3-BA96-3772547EFA8630C2" href="#" tabindex="-1">College of Architecture, Art &amp; Planning</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08631-D8B6-959C-DCB318ED70855C4A" href="#" tabindex="-1">College of Arts and Sciences</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08655-F15A-674C-C0CF1A580299A610" href="#" tabindex="-1">College of Engineering</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC086A6-C8A5-BEDC-044CC0EB7D8ED83F" href="#" tabindex="-1">College of Human Ecology</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC086D5-B44D-1B2A-01051FEEA501C960" href="#" tabindex="-1">College of Veterinary Medicine</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08645-B8BD-C1A8-F0097382F1110BF3" href="#" tabindex="-1">Computing and Information Science</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="cf56cde0-e1f0-11e3-8b68-0800200c9a6" href="#" tabindex="-1">Cornell Tech</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC086FD-BE0E-9957-878B6E71BDEA074B" href="#" tabindex="-1">Graduate School</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC086F0-E33F-16BF-E4D4248AAEEBBE69" href="#" tabindex="-1">Herbert F. Johnson Museum of Art</a>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC086B5-DBF4-BB4B-A624503E3267367B" href="#" tabindex="-1">ILR School</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08665-F0E6-FE22-9FFD1664DD3187EB" href="#" tabindex="-1">Cornell Law School</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08682-D5D1-CEA0-1843EC7632F91619" href="#" tabindex="-1">Cornell Library</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC086C7-E461-5075-B80626E3FAE8C70B" href="#" tabindex="-1">Johnson</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC08693-CBDE-2377-B39A3295527D1BC6" href="#" tabindex="-1">School of Hotel Administration</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="CBC0870B-C9FF-0B5A-5AB310CA2760B2F0" href="#" tabindex="-1">Weill Cornell Medical College</a></li>
+<li class="hc-filter"><a data-click-action="around the u | apply filter" data-filter-value="3425CE48-0FEE-C352-212E466F6C78D841" href="#" tabindex="-1">School of Continuing Education and Summer Sessions</a></li>
+</li></ul>
+</div>
+</div>
+</header>
+<div id="honeycomb">
+<div class="hc-slide-mask scale-down" data-caption=".hc-slideshow-caption" data-context=".hc-slideshow" data-source=".hc-overlay-wrapper">
+<nav class="slide-controls red"> <a class="prev icon-arrow-left" data-click-action="around the u | carousel nav" data-click-label="prev" title="Previous slide"></a> <a class="next icon-arrow-right" data-click-action="around the u | carousel nav" data-click-label="next" title="Next slide"></a> </nav>
+<nav class="pager"></nav>
+<div class="hc-slideshow">
+<a class="hc-slide" data-click-action="around the u | content | Fairmaker" data-click-label="carousel-1|9B80C1F2-BB2E-8A7D-814595FF9AB462D5|CBC0883F-F647-FC76-A1C795600125C2B6|Cornell Names Robert Frederick Smith School of Chemical and Biomolecular Engineering" href="http://tech.cornell.edu/news/cornell-names-robert-frederick-smith-school-of-chemical-and-biomolecular-en" target="_blank" title="Cornell Names Robert Frederick Smith School of Chemical and Biomolecular Engineering"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/9BA5E66B-0BEB-EFE4-40EFB8AFD9C30334.jpg">
+<div class="hc-overlay-wrapper">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Cornell Names Robert Frederick Smith School of Chemical and Biomolecular Engineering</h4>
+<div class="hc-atu-title">Cornell Now</div>
+</div>
+</div>
+</div>
+</img></a>
+<a class="hc-slide" data-click-action="around the u | content | Fairmaker" data-click-label="carousel-2|528655E5-D941-99EE-B7FD3429766159B3|CBC0883F-F647-FC76-A1C795600125C2B6|$13.4 Million Helps India Combat Malnutrition" href="http://news.cornell.edu/stories/2015/12/134-million-grant-will-help-combat-malnutrition-india" target="_blank" title="$13.4 Million Helps India Combat Malnutrition"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/528CDE91-E7B4-80D9-CAAC7E05F07F2746.jpg">
+<div class="hc-overlay-wrapper">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">$13.4 Million Helps India Combat Malnutrition</h4>
+<div class="hc-atu-title">Cornell Now</div>
+</div>
+</div>
+</div>
+</img></a>
+<a class="hc-slide" data-click-action="around the u | content | Fairmaker" data-click-label="carousel-3|92FBEDE7-DCA2-243E-BD3404C9C401DEAD|CBC0883F-F647-FC76-A1C795600125C2B6|Southern Tier $500M economic award to be boon for agriculture, region" href="http://news.cornell.edu/stories/2015/12/southern-tier-500m-economic-award-be-boon-cornell" target="_blank" title="Southern Tier $500M economic award to be boon for agriculture, region"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/B605E3B5-FDDA-1034-9308C25A40D80C16.jpg">
+<div class="hc-overlay-wrapper">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Southern Tier $500M economic award to be boon for agriculture, region</h4>
+<div class="hc-atu-title">Cornell Now</div>
+</div>
+</div>
+</div>
+</img></a>
+</div>
+<div class="hc-slideshow-caption-wrapper">
+<div class="hc-slideshow-caption"> Loading ... </div>
+</div>
+</div>
+<a class="hc-item scale-down with-image" data-click-action="around the u | content | Fairmaker" data-click-label="4|E154BB15-FD1E-31CF-6F88BF42FEE2C25A|CBC0861D-BAD3-BA96-3772547EFA8630C2|Culinary Plants Inspire Student Art Exhibit at Plantations Welcome Center" href="http://aap.cornell.edu/news-events/culinary-plants-inspire-student-art-exhibit-plantations-welcome-center" target="_blank" title="Culinary Plants Inspire Student Art Exhibit at Plantations Welcome Center"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/E15FA149-DEE8-244F-BDB11BAB42B27377.jpg">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Culinary Plants Inspire Student Art Exhibit at Plantations Welcome Center</h4>
+</div>
+</div>
+<div class="hc-rollover vjack">
+<div class="vcenter">
+<p>Culinary Plants Inspire Student Art Exhibit at Plantations Welcome Center</p>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">College of Architecture, Art &amp; Planning</div>
+</div>
+</div>
+</img></a>
+<a class="hc-item scale-down with-image" data-click-action="around the u | content | Fairmaker" data-click-label="5|1211078C-DEED-0EC9-64856B1D5EF66A68|CBC08665-F0E6-FE22-9FFD1664DD3187EB|Cornell Law Hosts Admitted Students from the Class of '19" href="http://www.lawschool.cornell.edu/spotlights/Cornell-Law-Hosts-Admitted-Students-from-the-Class-of-2019.cfm" target="_blank" title="Cornell Law Hosts Admitted Students from the Class of '19"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/1219B815-B255-A832-B2A9CE243965E010.png">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Cornell Law Hosts Admitted Students from the Class of '19</h4>
+</div>
+</div>
+<div class="hc-rollover vjack">
+<div class="vcenter">
+<p>Cornell Law Hosts Admitted Students from the Class of '19</p>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">Cornell Law School</div>
+</div>
+</div>
+</img></a>
+<a class="hc-item scale-down with-image" data-click-action="around the u | content | Fairmaker" data-click-label="6|B575CCE6-DE76-2DA3-9ADB95662C9286A1|cf56cde0-e1f0-11e3-8b68-0800200c9a6|AOL-Cornell Tech Connected Experiences Lab Pioneers Immersive Recommendation Technology" href="http://tech.cornell.edu/news/aol-cornell-tech-connected-experiences-lab-pioneers-immersive-recommendatio" target="_blank" title="AOL-Cornell Tech Connected Experiences Lab Pioneers Immersive Recommendation Technology"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/B59AB4EF-A30D-5D6D-967B9E56EA5825B9.png">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">AOL-Cornell Tech Connected Experiences Lab Pioneers Immersive Recommendation Technology</h4>
+</div>
+</div>
+<div class="hc-rollover vjack">
+<div class="vcenter">
+<p>AOL-Cornell Tech Connected Experiences Lab Pioneers Immersive Recommendation Technology</p>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">Cornell Tech</div>
+</div>
+</div>
+</img></a>
+<a class="hc-item scale-down with-image" data-click-action="around the u | content | Fairmaker" data-click-label="7|3F0CC646-943C-7F4B-4C7A310511F43A06|58148A72-C52A-C57F-4FC01D1150F5711A|CCE helps breweries and cideries hone their craft" href="http://news.cornell.edu/stories/2016/04/cce-helps-breweries-and-cideries-hone-their-craft" target="_blank" title="CCE helps breweries and cideries hone their craft"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/3F719A9C-9E23-ABD1-A708348E62F1F8B1.jpg">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">CCE helps breweries and cideries hone their craft</h4>
+</div>
+</div>
+<div class="hc-rollover vjack">
+<div class="vcenter">
+<p>CCE helps breweries and cideries hone their craft</p>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">Economic Impact</div>
+</div>
+</div>
+</img></a>
+<a class="hc-item scale-down with-image" data-click-action="around the u | content | Fairmaker" data-click-label="8|D7E765A5-C57A-EABE-619A60D07B91E7F0|CBC08631-D8B6-959C-DCB318ED70855C4A|Three faculty win Simons Awards" href="http://as.cornell.edu/news/three-faculty-win-simons-awards" target="_blank" title="Three faculty win Simons Awards"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/D80C63CE-A32C-29BB-8510EBA7FA16B088.jpg">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Three faculty win Simons Awards</h4>
+</div>
+</div>
+<div class="hc-rollover vjack">
+<div class="vcenter">
+<p>Three faculty win Simons Awards</p>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">College of Arts and Sciences</div>
+</div>
+</div>
+</img></a>
+<a class="hc-item scale-down" data-click-action="around the u | content | Fairmaker" data-click-label="9|7E3DDECF-DEAE-60EB-FD7FE0D6F7AEB52C|F7A77F43-91D1-C925-93F1B2EEB1C4A74F|Cornell Rewind: The fluid landscapes of yesteryear" href="http://news.cornell.edu/stories/2015/12/cornell-rewind-fluid-landscapes-yesteryear" target="_blank" title="Cornell Rewind: The fluid landscapes of yesteryear"> <img alt="" src="/assets/core/images/spacer.gif" width="360">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Cornell Rewind: The fluid landscapes of yesteryear</h4>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">Sesquicentennial</div>
+</div>
+</div>
+</img></a>
+<a class="hc-item scale-down with-image" data-click-action="around the u | content | Fairmaker" data-click-label="10|0C3BA467-F14E-2F92-8FAC9F1DB2552410|CBC08682-D5D1-CEA0-1843EC7632F91619|Velvets archive underground at Cornell Library" href="http://www.news.cornell.edu/stories/2015/11/velvets-archive-now-underground-cornell-library" target="_blank" title="Velvets archive underground at Cornell Library"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/0C6F9600-0F8B-E2F2-21F8D360F84D3D19.jpg">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Velvets archive underground at Cornell Library</h4>
+</div>
+</div>
+<div class="hc-rollover vjack">
+<div class="vcenter">
+<p>Velvets archive underground at Cornell Library</p>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">Cornell Library</div>
+</div>
+</div>
+</img></a>
+<a class="hc-item scale-down with-image" data-click-action="around the u | content | Fairmaker" data-click-label="11|2E6FD6A4-C763-EE14-1B21C6A48C94902B|CBC08645-B8BD-C1A8-F0097382F1110BF3|Cornell PhD Student Leading Maker Movement at White House" href="http://www.techrepublic.com/article/stephanie-santoso-white-house-maker-advocate-information-science-phd-student-gluten-free-baking/" target="_blank" title="Cornell PhD Student Leading Maker Movement at White House"> <img alt="" src="//media.univcomm.cornell.edu/photos/360x360/2E7DDB31-06C7-0EF6-ADAD715FFC43106E.png">
+<div class="hc-overlay vjack">
+<div class="vcenter">
+<h4 class="hc-title">Cornell PhD Student Leading Maker Movement at White House</h4>
+</div>
+</div>
+<div class="hc-rollover vjack">
+<div class="vcenter">
+<p>Cornell PhD Student Leading Maker Movement at White House</p>
+<div class="hc-cta link-caret">Keep reading</div>
+<div class="hc-cta hc-atu-title">Computing &amp; Information Science</div>
+</div>
+</div>
+</img></a>
+<div class="hc-dimmer"></div>
+</div>
+</div>
+<div class="section" id="sesqui-wrap">
+<div class="container stripe">
+<div class="page-block">
+<div class="grid-boxes two-col">
+<div class="grid-box">
+<div class="stripe-video" id="sesqui-video" style="clear: both;">
+<a data-click-action="stripe" data-click-label="Play Video | Institute for Pale Blue Dots" href="http://www.cornell.edu/video/lisa-kaltenegger-search-for-extraterrestrial-life" title="Institute for Pale Blue Dots | Homepage Video">
+<video aria-label="Institute for Pale Blue Dots" class="sesqui-marquee-video" id="video1" loop="" poster="/assets/images/video/features/universe.jpg" preload="auto">
+<source src="//cdnsecakmi.kaltura.com/p/537811/sp/53781100/download/entry_id/1_t8znp2m2/flavor/1_6h7zokjg" type="video/mp4">
+</source></video>
+<img alt="Institute for Pale Blue Dots" class="marquee-img" src="/assets/images/video/features/universe.jpg">
+<div class="media-overlay vjack">
+<div class="vcenter">
+                  Watch Video <span class="media-play-overlay smaller inline"></span>
+</div>
+</div>
+</img></a>
+</div>
+</div>
+<div class="grid-box video-label">
+<div class="vjack">
+<div class="vcenter">
+<p>Is there life on other planets?</p>
+<div class="link-list">
+<a data-click-action="stripe" data-click-label="Link | Institute for Pale Blue Dots" href="http://www.cornell.edu/video/lisa-kaltenegger-search-for-extraterrestrial-life">Cornell scientists search for alien life in a new ¨C and colorful ¨C way.</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="social-wrap">
+<div class="container">
+<div class="home-instagram">
+<h4 class="cu-title rule"><a href="//instagram.com/CornellUniversity" title="Summary of link"> <span class="icon-instagram"></span> CornellUniversity </a> </h4>
+<a alt="It's a Beautiful Day!" class="instagram-link" href="https://www.instagram.com/p/BEbT_i8uPDK/" target="_blank"><img alt="It's a Beautiful Day!" src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12446318_765836266849811_570571227_n.jpg?ig_cache_key=MTIzMjY2Njg1Mjc1MjY4MzIxMA%3D%3D.2"><span class="off-screen">Instagram image</span></img></a>
+</div><!-- END home-instagram -->
+<div class="home-twitter">
+<h4 class="cu-title rule"> <a href="//twitter.com/Cornell" title="Official Cornell Twitter account"> <span class="icon-twitter"></span> @Cornell </a> </h4>
+<div class="tweet">
+<p><a href="http://www.twitter.com/search?q=%23Entrepreneur&amp;src=hash">#Entrepreneur</a> Lee Pillsbury ¡¯69: Success for entrepreneurs stems from courage, balance <a href="https://t.co/BrfDUzxyvs">https://t.co/BrfDUzxyvs</a> <a href="https://t.co/L6xARJ61dU">https://t.co/L6xARJ61dU</a> </p>
+<time class="timeago" datetime="2016-Apr-19T17:33Z" title="2016-Apr-19T17:33Z"></time>
+</div>
+</div><!-- END home-twitter-->
+<div class="general-twitter">
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/AtkinsonCenter" title="Tweet from AtkinsonCenter"> <span class="icon-twitter"></span>@AtkinsonCenter</a> </h4>
+<div class="tweet">
+<p>Wanna be more carbon thrifty? Eat less meat more veggies says "opportunistavore" Toby Ault <a href="http://www.twitter.com/Cornell">@Cornell</a> panel on climate change and individual. </p>
+<time class="timeago" datetime="2016-Apr-20T22:11Z" title="2016-Apr-20T22:11Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellAlumni" title="Tweet from CornellAlumni"> <span class="icon-twitter"></span>@CornellAlumni</a> </h4>
+<div class="tweet">
+<p>Never before have so many people come forward in one day to lend their support to @Cornell. <a href="https://t.co/XOL2csFLHr">https://t.co/XOL2csFLHr</a> <a href="http://www.twitter.com/search?q=%23CornellGivingDay&amp;src=hash">#CornellGivingDay</a> </p>
+<time class="timeago" datetime="2016-Apr-20T21:29Z" title="2016-Apr-20T21:29Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellBirds" title="Tweet from CornellBirds"> <span class="icon-twitter"></span>@CornellBirds</a> </h4>
+<div class="tweet">
+<p>RT <a href="http://www.twitter.com/birdchick">@birdchick</a>: I¡¯ll be answering your bird or park ranger questions at <a href="http://www.twitter.com/NatlParkService">@NatlParkService</a> at 2pm Central time <a href="http://www.twitter.com/search?q=%23FindYourPark&amp;src=hash">#FindYourPark</a> <a href="http://www.twitter.com/search?q=%23FindYourAnswers¡­&amp;src=hash">#FindYourAnswers¡­</a> </p>
+<time class="timeago" datetime="2016-Apr-20T18:56Z" title="2016-Apr-20T18:56Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellCHE" title="Tweet from CornellCHE"> <span class="icon-twitter"></span>@CornellCHE</a> </h4>
+<div class="tweet">
+<p>Chilling with the HumEc Dean!  Having so much fun on <a href="http://www.twitter.com/search?q=%23CornellGivingDay&amp;src=hash">#CornellGivingDay</a> Made your gift yet? <a href="https://t.co/z26tLcSfjd">https://t.co/z26tLcSfjd</a> <a href="https://t.co/t5pwItLh13">https://t.co/t5pwItLh13</a> </p>
+<time class="timeago" datetime="2016-Apr-19T20:30Z" title="2016-Apr-19T20:30Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellEng" title="Tweet from CornellEng"> <span class="icon-twitter"></span>@CornellEng</a> </h4>
+<div class="tweet">
+<p>Our own personal <a href="http://www.twitter.com/search?q=%23WeatherWarlock?!&amp;src=hash">#WeatherWarlock?!</a>
+<a href="https://t.co/IUTYU3LX7U">https://t.co/IUTYU3LX7U</a> </p>
+<time class="timeago" datetime="2016-Apr-21T00:00Z" title="2016-Apr-21T00:00Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellGrad" title="Tweet from CornellGrad"> <span class="icon-twitter"></span>@CornellGrad</a> </h4>
+<div class="tweet">
+<p>Akhil Reed Amar, Friday's Olin Lecture speaker, featured here in <a href="http://www.twitter.com/NewRepublic">@NewRepublic</a> <a href="https://t.co/PpoQ5kTrxY">https://t.co/PpoQ5kTrxY</a> <a href="https://t.co/y0rnE3FmnD">https://t.co/y0rnE3FmnD</a> </p>
+<time class="timeago" datetime="2016-Apr-20T22:40Z" title="2016-Apr-20T22:40Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellLaw" title="Tweet from CornellLaw"> <span class="icon-twitter"></span>@CornellLaw</a> </h4>
+<div class="tweet">
+<p>RT <a href="http://www.twitter.com/LieberCode">@LieberCode</a>: I have just posted a draft of my latest article: The Common Law of War <a href="https://t.co/enkrQsMRyH">https://t.co/enkrQsMRyH</a> </p>
+<time class="timeago" datetime="2016-Apr-20T14:26Z" title="2016-Apr-20T14:26Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellMBA" title="Tweet from CornellMBA"> <span class="icon-twitter"></span>@CornellMBA</a> </h4>
+<div class="tweet">
+<p>RT <a href="http://www.twitter.com/CornellMBA_CKC">@CornellMBA_CKC</a>: That awesome moment when your classmate connects you to the CEO of your dream company. Love my <a href="http://www.twitter.com/CornellMBA">@CornellMBA</a> family. <a href="http://www.twitter.com/search?q=%23Cor¡­&amp;src=hash">#Cor¡­</a> </p>
+<time class="timeago" datetime="2016-Apr-21T00:20Z" title="2016-Apr-21T00:20Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/CornellUAO" title="Tweet from CornellUAO"> <span class="icon-twitter"></span>@CornellUAO</a> </h4>
+<div class="tweet">
+<p>Dave Coulier comes to Cornell! <a href="http://www.twitter.com/search?q=%23FullHouse&amp;src=hash">#FullHouse</a> <a href="http://www.twitter.com/search?q=%23MyCornellDay&amp;src=hash">#MyCornellDay</a> <a href="http://www.twitter.com/">@</a> Statler Auditorium <a href="https://t.co/KPfDqqwMzd">https://t.co/KPfDqqwMzd</a> </p>
+<time class="timeago" datetime="2016-Apr-21T01:25Z" title="2016-Apr-21T01:25Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/Cornell_Library" title="Tweet from Cornell_Library"> <span class="icon-twitter"></span>@Cornell_Library</a> </h4>
+<div class="tweet">
+<p>TODAY: Book Talk with Marilyn Migiel on her new book, The Ethical Dimension of the Decameron. 107 Olin, 4:30 pm <a href="https://t.co/KHsMIp4vly">https://t.co/KHsMIp4vly</a> </p>
+<time class="timeago" datetime="2016-Apr-20T15:15Z" title="2016-Apr-20T15:15Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/Cornell_SHA" title="Tweet from Cornell_SHA"> <span class="icon-twitter"></span>@Cornell_SHA</a> </h4>
+<div class="tweet">
+<p><a href="http://www.twitter.com/search?q=%23CornellGivingDay&amp;src=hash">#CornellGivingDay</a> <a href="http://www.twitter.com/search?q=%23hoteliepride&amp;src=hash">#hoteliepride</a> <a href="https://t.co/glbR899OKh">https://t.co/glbR899OKh</a> </p>
+<time class="timeago" datetime="2016-Apr-20T19:34Z" title="2016-Apr-20T19:34Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/HFJMuseum" title="Tweet from HFJMuseum"> <span class="icon-twitter"></span>@HFJMuseum</a> </h4>
+<div class="tweet">
+<p>"I want to live my life, not record it." -Jacqueline Kennedy Onassis
+
+This screenprint by¡­ <a href="https://t.co/RGn2JURc40">https://t.co/RGn2JURc40</a> </p>
+<time class="timeago" datetime="2016-Apr-20T23:34Z" title="2016-Apr-20T23:34Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/WeillCornell" title="Tweet from WeillCornell"> <span class="icon-twitter"></span>@WeillCornell</a> </h4>
+<div class="tweet">
+<p>RT <a href="http://www.twitter.com/chazferrari">@chazferrari</a>: Tomorrow <a href="http://www.twitter.com/WeillCornell">@WeillCornell</a> celebrates <a href="http://www.twitter.com/search?q=%23duvigneaud" s&src="hash'">#duvigneaud's</a> teaching legacy. Here he receives the 1955 Chemistry Nobel <a href="https://t.co/pq¡­">https://t.co/pq¡­</a> </p>
+<time class="timeago" datetime="2016-Apr-20T20:55Z" title="2016-Apr-20T20:55Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/cornell_tech" title="Tweet from cornell_tech"> <span class="icon-twitter"></span>@cornell_tech</a> </h4>
+<div class="tweet">
+<p>Last semester students worked with <a href="http://www.twitter.com/RobinHoodNYC">@RobinHoodNYC</a> to bring worker co-ops into the sharing economy: <a href="https://t.co/tums5AACYx">https://t.co/tums5AACYx</a> </p>
+<time class="timeago" datetime="2016-Apr-20T20:40Z" title="2016-Apr-20T20:40Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/cornellaap" title="Tweet from cornellaap"> <span class="icon-twitter"></span>@cornellaap</a> </h4>
+<div class="tweet">
+<p>RT <a href="http://www.twitter.com/AliaFierro">@AliaFierro</a>: Angela Brooks (<a href="http://www.twitter.com/search?q=%23APA&amp;src=hash">#APA</a> &amp; <a href="http://www.twitter.com/search?q=%23CHA)&amp;src=hash">#CHA)</a> joined <a href="http://www.twitter.com/Cornell_CRP">@Cornell_CRP</a> yesterday to talk <a href="http://www.twitter.com/search?q=%23Diversity&amp;src=hash">#Diversity</a> in <a href="http://www.twitter.com/search?q=%23Planning&amp;src=hash">#Planning</a> <a href="http://www.twitter.com/cornellaap">@cornellaap</a> <a href="http://www.twitter.com/APA_Planning">@APA_Planning</a> https:/¡­ </p>
+<time class="timeago" datetime="2016-Apr-20T20:33Z" title="2016-Apr-20T20:33Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/cornellilr" title="Tweet from cornellilr"> <span class="icon-twitter"></span>@cornellilr</a> </h4>
+<div class="tweet">
+<p>Report on Climate Jobs in NYS <a href="https://t.co/fz8qA9NUcZ">https://t.co/fz8qA9NUcZ</a> <a href="http://www.twitter.com/workerinstitute">@workerinstitute</a> <a href="http://www.twitter.com/search?q=%23NYS&amp;src=hash">#NYS</a> <a href="http://www.twitter.com/timesunion">@timesunion</a> <a href="http://www.twitter.com/search?q=%23sustainability&amp;src=hash">#sustainability</a> <a href="http://www.twitter.com/search?q=%23jobs&amp;src=hash">#jobs</a> <a href="http://www.twitter.com/search?q=%23Climate&amp;src=hash">#Climate</a> </p>
+<time class="timeago" datetime="2016-Apr-20T17:54Z" title="2016-Apr-20T17:54Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+<div class="fadeinfadeout">
+<h4 class="cu-title rule"> <a href="//twitter.com/cornellvet 
+" title="Tweet from cornellvet 
+"> <span class="icon-twitter"></span>@cornellvet 
+</a> </h4>
+<div class="tweet">
+<p>RT <a href="http://www.twitter.com/LB_Delles">@LB_Delles</a>: <a href="http://www.twitter.com/search?q=%23CornellVet&amp;src=hash"><a href="http://www.twitter.com/search?q=%23cornell&amp;src=hash">#cornell</a>Vet</a> students have many hidden talents <a href="http://www.twitter.com/search?q=%23art&amp;src=hash">#art</a> <a href="http://www.twitter.com/search?q=%23canvas&amp;src=hash">#canvas</a> <a href="http://www.twitter.com/search?q=%23vetschool&amp;src=hash">#vetschool</a> <a href="http://www.twitter.com/search?q=%23vetschoollife&amp;src=hash">#vetschoollife</a> #cornell <a href="https://t.co/cq40NUfGWw">https://t.co/cq40NUfGWw</a> </p>
+<time class="timeago" datetime="2016-Apr-20T16:25Z" title="2016-Apr-20T16:25Z"></time>
+</div>
+<div class="countdown">
+<div class="bar"><div class="fill"></div></div>
+</div>
+</div>
+</div>
+</div><!-- END container -->
+</div><!-- END social-wrap -->
+</div>
+</body></html>
+<!-- Begin Footer -->
+<!-- Global Footer -->
+<footer data-click-action="links" data-click-category="footer" id="cu-ftr" role="contentinfo">
+<div class="anypersonVideo" id="cu-anypersonanystudy">
+<video aria-label="Glorious to View" autoplay="" class="bgVideo" id="gloriousToView" loop="" preload="auto">
+<source src="//cdnsecakmi.kaltura.com/p/537811/sp/53781100/download/entry_id/0_xlka3d02/flavor/0_r2rc9vax" type="video/mp4">
+<source src="//cdnsecakmi.kaltura.com/p/537811/sp/53781100/download/entry_id/0_xlka3d02/flavor/0_kygbku4i" type="video/webm">
+</source></source></video>
+<div class="cu-ftr-inner">
+<div class="grid-boxes two-col">
+<div class="grid-box">
+<p><a data-click-label="Footer - Mission - Any Person...Any Study" href="/about/mission.cfm">¡°I would found an institution where any person can find instruction in any study.¡±</a></p>
+<p class="attribution"><a data-click-label="Footer - Mission - Attribution" href="/about/mission.cfm">Ezra Cornell, 1868</a></p>
+</div>
+<div class="grid-box watch-stories">
+<a class="play-btn" data-click-label="Glorious to View | Play Button" href="http://150.cornell.edu/glorioustoview" target="_blank" title="Play button for Glorious to View video"><div class="media-play-overlay"><span class="off-screen">Glorious to View Video</span></div></a>
+<h3 class="cu-title"><a data-click-label="Glorious to View | Label" href="http://150.cornell.edu/glorioustoview" target="_blank">Experience Cornell</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="cu-ftr-inner">
+<ul id="cu-ftr-nav">
+<li class="ftr-item">
+<h4 class="ftr-title">
+          Explore
+        </h4>
+<a class="submenu-trigger" href="#" title="Expand menu"><span class="off-screen">expand menu</span></a>
+<div class="submenu">
+<ul class="ftr-links">
+<li><a data-click-label="Careers" href="http://careers.hr.cornell.edu/" title="">Careers</a></li>
+<li><a data-click-label="Cornell Chronicle" href="http://news.cornell.edu" title="Cornell's primary source of news since 1969">Cornell Chronicle</a></li>
+<li><a data-click-label="Global" href="http://global.cornell.edu/" title="Global Cornell">Global</a></li>
+<li><a data-click-label="Ithaca" href="http://www.cornell.edu/about/ithaca.cfm" title="The Ithaca campus and community">Ithaca</a></li>
+<li><a data-click-label="Library" href="http://www.cornell.edu/academics/library.cfm" title="Cornell University library and its units">Library</a></li>
+<li><a data-click-label="Locations" href="http://www.cornell.edu/about/locations.cfm" title="campus locations">Locations</a></li>
+<li><a data-click-label="Museum" href="http://museum.cornell.edu/" title="Johnson Museum of Art">Museum</a></li>
+<li><a data-click-label="Plantations" href="http://www.cornellplantations.org/" title="Cornell Plantations' botanical garden, arboretum and on-campus natural areas">Plantations</a></li>
+<!--<li><a href="http:/video/" title="Cornell's video hub">CornellCast</a></li>-->
+</ul>
+</div>
+</li>
+<li class="ftr-item">
+<h4 class="ftr-title">
+          Campus
+        </h4>
+<a class="submenu-trigger" href="#" title="Expand menu"><span class="off-screen">expand menu</span></a>
+<div class="submenu">
+<ul class="ftr-links">
+<li><a data-click-label="Academic Calendar" href="http://www.cornell.edu/academics/calendar/" title="Important academic dates through 2018">Academic Calendar</a></li>
+<li><a data-click-label="CUInfo" href="http://cuinfo.cornell.edu/" title="Information for the Cornell Community">CUInfo</a></li>
+<li><a data-click-label="Emergency" href="http://emergency.cornell.edu" title="Your Guide to Emergency Planning at Cornell">Emergency</a></li>
+<li><a data-click-label="Events" href="http://events.cornell.edu" title="Events happening on the Cornell campus">Events</a></li>
+<li><a data-click-label="Live View" href="http://www.cornell.edu/live-view/">Live View</a></li>
+<li><a data-click-label="Maps" href="http://www.cornell.edu/about/maps/" title="Maps and directions for Ithaca campus">Maps</a></li>
+<li><a data-click-label="Operating Status" href="http://www.cornell.edu/status/" title="Updates on the status of the Ithaca Campus">Operating Status</a></li>
+<li><a data-click-label="People Search" href="http://www.cornell.edu/search/people.cfm" title="Search student, faculty, and staff information">People Search</a></li>
+<li><a data-click-label="Weather" href="http://www.cornell.edu/weather/" title="National Weather Service forecasts for Ithaca">Weather</a></li>
+</ul>
+</div>
+</li>
+<li class="ftr-item">
+<h4 class="ftr-title">
+          Resources
+        </h4>
+<a class="submenu-trigger" href="#" title="Expand menu"><span class="off-screen">expand menu</span></a>
+<div class="submenu">
+<ul class="ftr-links">
+<li><a data-click-label="Caring Community" href="http://caringcommunity.cornell.edu" title="How to find help for yourself or others in need">Caring Community</a></li>
+<li><a data-click-label="Disability" href="http://disability.cornell.edu/" title="A resource and central clearinghouse on disability-related information for the Cornell community">Disability</a></li>
+<li><a data-click-label="Diversity" href="http://diversity.cornell.edu/" title="Cornell Diversity &amp; Inclusion">Diversity</a></li>
+<li><a data-click-label="For Media" href="http://mediarelations.cornell.edu/coming-to-campus/" title="The Cornell Media Relations office">For Media</a></li>
+<li><a data-click-label="Leadership" href="http://leadership.cornell.edu/" title="President, Provost and Trustees">Leadership</a></li>
+<li><a data-click-label="SHARE" href="http://share.cornell.edu/" title="Sexual Harrassment and Assault-Response and Education">SHARE</a></li>
+<li><a data-click-label="Support Cornell" href="http://giving.cornell.edu" title="Give to Cornell">Support Cornell</a></li>
+<li><a data-click-label="Sustainability" href="http://sustainability.cornell.edu/" title="Sustainability news, events and research at Cornell">Sustainability</a></li>
+</ul>
+</div>
+</li>
+<li class="ftr-item last">
+<h4 class="ftr-title">Global Impact</h4>
+<div data-click-action="global impact map | content" data-click-label="Global Impact" id="footerMap"></div>
+</li>
+</ul>
+<div class="ftr-info">
+<a class="ftr-weather" data-click-action="weather" data-click-label="Ithaca conditions" href="http://www.cornell.edu/weather/" id="currentWeather" title="Current Ithaca weather">
+<!-- This file is dynamically updated by our weather page. --><div class="ftr-weather-icon"><div class="icon-clear-day"></div></div><div class="ftr-weather-location">Ithaca, New York</div><div class="ftr-weather-temp"><span id="currentTempIthacaF">47</span>¡ãF / <span id="currentTempIthacaC">8</span>¡ãC</div>
+</a>
+<ul class="ftr-utility">
+<li>
+</li>
+<li>
+<a data-click-label="Copyright" href="http://www.cornell.edu/copyright.cfm" title="">Copyright</a>
+</li>
+<li><a data-click-label="Site Information" href="http://www.cornell.edu/site-info.cfm">Site Information</a></li>
+<li><a data-click-label="Contact" href="http://www.cornell.edu/contact">Contact</a></li>
+<li>
+<a data-click-label="Feedback" href="mailto:webmaster@cornell.edu" title="Email the Webmaster with feedback or questions">Feedback</a>
+</li>
+</ul>
+<ul class="ftr-social" data-click-action="social icons">
+<li>
+<a data-click-label="Facebook" href="https://www.facebook.com/Cornell" title="Find us on Facebook">
+<div class="social-icon icon-facebook"></div>
+<span class="social-label">Facebook</span>
+</a>
+</li>
+<li>
+<a data-click-label="Twitter" href="https://twitter.com/Cornell" title="Follow us on Twitter">
+<div class="social-icon icon-twitter"></div>
+<span class="social-label">Twitter</span>
+</a>
+</li>
+<li>
+<a data-click-label="Instagram" href="http://instagram.com/cornelluniversity" title="Find us on Instagram">
+<div class="social-icon icon-instagram"></div>
+<span class="social-label">Instagram</span>
+</a>
+</li>
+<li>
+<a data-click-label="YouTube" href="http://www.youtube.com/cornelluniversity/" title="Watch us on YouTube">
+<div class="social-icon icon-youtube"></div>
+<span class="social-label">YouTube</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</footer>
+<!-- End Footer -->
+<link href="https://www.cornell.edu/_includes/footer-map/footer-map.css" rel="stylesheet" type="text/css"/>
+<script src="//media.univcomm.cornell.edu/map/footer-mapdata.js"></script>
+<script src="https://www.cornell.edu/_includes/footer-map/worldmap.js"></script>
+<!-- Overlay for modals and to provide better focus -->
+<div id="cu-overlay"></div>
+<script>
+         var _gaq = _gaq || [];
+         
+         
+            _gaq.push(['_setAccount', 'UA-1628162-1']);
+          
+         _gaq.push(['_setDomainName', 'cornell.edu']);
+         _gaq.push(['_setAllowLinker', true]);
+         _gaq.push(['_trackPageview']);
+         
+         
+        
+         (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+        </script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.cornell.edu/assets/core/js/lib/jquery.js"><\/script>')</script>
+<script src="https://www.cornell.edu/assets/js/cornelledu.js"></script>
+<script src="https://www.cornell.edu/assets/core/js/lib/plugins.js"></script>
+<script src="https://www.cornell.edu/assets/core/js/lib/equalize.min.js"></script>
+<script src="https://www.cornell.edu/assets/core/js/cornell.js"></script>
+<script src="https://www.cornell.edu/assets/js/date.js"></script>
+<script src="https://www.cornell.edu/assets/js/jquery.timeago.js" type="text/javascript"></script>
+<script src="/assets/js/jquery.inview2.min.js"></script>
+<script>
+  
+  $('.sesqui-marquee-video').bind('inview', function(event, isInView) {
+     if (isInView) {
+      // element is now visible in the viewport
+      this.play();  
+      //console.log('visible');
+     } else {
+      // element has gone out of viewport
+      this.pause();
+      //console.log('not visible');
+     }
+    });
+    </script>
+

@@ -196,12 +196,12 @@ __pycache__/
 *$py.class
 test.py
 err_log.txt
-
+achelous/crawler/institute
 # pyCharms
 .idea/
 
 #test
-achelous
+
 
 # log dir
 *.log
