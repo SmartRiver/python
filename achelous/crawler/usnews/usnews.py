@@ -122,7 +122,7 @@ class Crawler:
         logging.info('total pages : %d' % pages)
         self.__parse_detail(data, subject)
         for each in range(2, pages+1):
-            self.__parse_detail(self.__fetch(url+'/page+'+str(each)), subject)
+            self.__parse_detail(self.__fetch(url+'/page+'+str(each)), subject去22    )
 
     def parse_batch(self, url_batch):
         '''batch process url request'''
