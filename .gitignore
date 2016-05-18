@@ -195,6 +195,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 test.py
+db.conf
 err_log.txt
 achelous/crawler/institute
 # pyCharms
