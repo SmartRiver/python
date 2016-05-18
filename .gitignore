@@ -202,6 +202,7 @@ err_log.txt
 
 #test
 achelous/
+db.conf
 
 # log dir
 *.log

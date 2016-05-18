@@ -19,6 +19,7 @@ def init():
     #遍历resource\assess_rule下所有文件
     dirs = os.walk('resource'+os.sep+'assess_rule')
     for root, path, files in dirs:
+        print(path)
         for file in files:
             if not major == root.split(os.sep)[-1]:
                 major = root.split(os.sep)[-1]
