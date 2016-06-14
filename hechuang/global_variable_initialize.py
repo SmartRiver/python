@@ -47,9 +47,14 @@ def get_default_target_school_score():
     sql = 'select * from requirement_score'
     my_cursor.execute(sql)
     result = my_cursor.fetchall()
+    for each in result:
+        _temp_major = each['major_id']
+        _temp_level = each['school_level']
+        if _temp_major in gblvar.SELECT_SCHOOL_TARGET_SCORE:
+            gblvar.SELECT_SCHOOL_TARGET_SCORE[_temp_major].update({_temp_level: each})
+        else:
+            gblvar.SELECT_SCHOOL_TARGET_SCORE.update({_temp_major: {_temp_level: each}})
     
-    gblvar.SELECT_SCHOOL_TARGET_SCORE = {each['school_level']: each for each in result}
-
 def get_avg_score_by_offer():
     '''根据major_id返回关联申请成功的案例offer的平均成绩'''
 
@@ -67,7 +72,7 @@ def get_avg_score_by_offer():
     _cache_hard_condition = {each['offer_id']: each for each in result}
 
     sql = 'select offer_id, major_id, institute_id from offer_result where result = %s'
-    my_cursor.execute(sql, ('成功'))
+    my_cursor.execute(sql, (1))
     result = my_cursor.fetchall()
     
     _temp_school_avg_score = {}
@@ -125,12 +130,30 @@ def _load_base_info():
     for each in result:
         gblvar.INSTITUTE_ID_TO_NAME_EN[each['id']] = each['name_en']
         gblvar.INSTITUTE_ID_TO_NAME_ZH[each['id']] = each['name_zh']
+        gblvar.INSTITUTE_ID_TO_LOCATION[each['id']] = each['location_type'] if len(each['location_type']) > 0 else 'N/A'
 
     sql_major = 'select * from major_info'
     my_cursor.execute(sql_major)
     result = my_cursor.fetchall()
     for each in result:
         gblvar.MAJOR[each['id']] = each
+
+    sql_institute_major_level = 'select * from institute_major_level'
+    my_cursor.execute(sql_institute_major_level)
+    result = my_cursor.fetchall()
+    for each in result:
+        _temp_major = each['major_id']
+        _temp_institute = each['institute_id']
+        _temp_level = each['rank_level']    
+        _temp_list = []
+        if _temp_major in gblvar.INSTITUTE_MAJOR_LEVEL:
+            if _temp_level in gblvar.INSTITUTE_MAJOR_LEVEL[_temp_major]:
+                _temp_list = gblvar.INSTITUTE_MAJOR_LEVEL[_temp_major][_temp_level]
+            _temp_list.append(_temp_institute)
+            gblvar.INSTITUTE_MAJOR_LEVEL[_temp_major].update({_temp_level: _temp_list})
+        else:
+            _temp_list.append(_temp_institute)
+            gblvar.INSTITUTE_MAJOR_LEVEL.update({_temp_major: {_temp_level: _temp_list}})
         
 def init_db_conf():
     '''初始化数据库连接的一些参数'''
@@ -163,6 +186,3 @@ _load_interface_methods() # 接口调用的方法 eg:{方法名：方法参数}
 get_default_target_school_score() # 目标档次学校的gpa、toefl\ielts、gre\gmat的分数要求'
 
 get_avg_score_by_offer() # 根据major_id返回关联申请成功的案例offer的平均成绩
-
-
-

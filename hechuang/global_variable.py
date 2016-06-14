@@ -12,20 +12,28 @@ service_logger = None
 error_logger = None
 INTERFACE_METHOD = {} # 接口调用的方法 eg:{方法名：方法参数}
 
-SELECT_SCHOOL_TARGET_SCORE = {} # 目标档次学校的gpa、toefl\ielts、gre\gmat的分数要求'
-
 SELECT_SCHOOL_OFFER_SCORE = {} # 根据major_id返回关联申请成功的案例offer的平均成绩
 
 # /------------------------institute_info库相关-----------------------------/
 
 INSTITUTE_ID_TO_NAME_EN = {} # 根据id查询学校英文名
 INSTITUTE_ID_TO_NAME_ZH = {} # 根据id查询学校中文名
+INSTITUTE_ID_TO_LOCATION = {} # 根据id查询学校地理位置类型（suburban，urban，city，rural）
 
 # /------------------------major_info库相关---------------------------------/
 
 MAJOR = {} # 根据id查询专业
 
+# /------------------------institute_major_level库相关---------------------------------/
+
+INSTITUTE_MAJOR_LEVEL = {} # 不同专业的学校档次划分
+
+# /------------------------requirement_score库相关---------------------------------/
+
+SELECT_SCHOOL_TARGET_SCORE = {} # 目标档次学校的gpa、toefl\ielts、gre\gmat的分数要求'
+
 # /-------------------------------------------------------------------------/
+
 
 GPA_SCORE_LEVEL = { # gpa分数对应的系数
     '1.3'   : '3.9-4.1',
