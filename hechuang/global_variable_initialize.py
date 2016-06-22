@@ -10,6 +10,7 @@ import logging.config
 import configparser
 import json
 import copy
+from pyexcel_xls import get_data
 from db_util import MySqlDB
 import global_variable as gblvar
 
@@ -118,6 +119,32 @@ def get_avg_score_by_offer():
                 
     gblvar.SELECT_SCHOOL_OFFER_SCORE =_temp_school_avg_score
 
+def _load_convert_rule():
+    '''加载一些常用的分数换算规则'''
+    try:
+        data_gre = get_data('resource/GRE-GMAT换算.xlsx', streaming=True)
+        data_gmat = get_data('resource/GMAT-GRE换算.xlsx', streaming=True)
+    except Exception as e:
+        gblvar.error_logger.error('what is wrong')
+        gblvar.error_logger.error('{}\n{}'.format(str(e), '/resource/GRE-GMAT换算.xlsx加载失败'))
+        exit(-1)
+    gre_q_key = []
+    for each in data_gre:
+        if len(each) > 10: # 过滤注释、标题
+            if not isinstance(each[1], float):
+                gre_q_key = [int(x) for x in each[2:]]
+            else:
+                for index, item in enumerate(each[2:]):
+                    _temp_key = int(each[1])
+                    item = int(item)
+                    if _temp_key not in gblvar.GRE_TO_GMAT:
+                        gblvar.GRE_TO_GMAT.update({_temp_key: {gre_q_key[index]: item}})
+                    else:
+                        gblvar.GRE_TO_GMAT[_temp_key].update({gre_q_key[index]: item})
+    for each in data_gmat:
+        if isinstance(each[0], float):
+            gblvar.GMAT_TO_GRE[int(each[0])] = int(each[1])
+
 def _load_base_info():
     global MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASSWORD
     
@@ -178,6 +205,8 @@ def reload():
 init_db_conf()
 
 _logging_conf()
+
+_load_convert_rule() # 加载一些常用的分数换算规则
 
 _load_base_info() # 加载一些表的信息（institute_info, major_info）
 

@@ -1,4 +1,5 @@
-# -*- coding: utf:-8 -*-
+#!/usr/bin/python3
+# -*-coding:utf-8 -*-
 
 __author__ = 'johnson'
 __doc__ = '''this py file is the collection of those functions or methods used in many other modules'''
@@ -7,8 +8,12 @@ import time
 import hashlib
 import json
 import configparser
-from global_variable import service_logger
+from global_variable import service_logger, GRE_TO_GMAT
 from db_util import MySqlDB
+import io
+import sys
+#改变标准输出的默认编码
+sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 
 def exit_error_func(error_code, error_param='', return_json_dump=True):
     ''' 格式化错误信息返回 '''
@@ -123,5 +128,37 @@ def return_json_dump(input_param):
     '''将返回的json格式数据里的中文Unicode转化为中文'''
     return json.dumps(input_param, ensure_ascii=False, indent=4)
 
+def convert_ielts_to_toefl(ielts_score):
+    '''将ielts分数折算成toefl分数'''
+    if not isinstance(ielts_score, (float,int)):
+        raise TypeError('输入的ielts分数类型错误')
+    if ielts_score > 9.0 or ielts_score < 0:
+        raise ValueError('输入的ielts分数不在0-9之间')
+    if ielts_score <= 4.0:
+        return int(ielts_score*8)
+    else:
+        return {
+            4.5: 33,
+            5.0: 40,
+            5.5: 53,
+            6.0: 69,
+            6.5: 79,
+            7.0: 97,
+            7.5: 105,
+            8.0: 112,
+            8.5: 116,
+            9.0: 119,
+        }.get(ielts_score, ValueError('输入的ielts分数格式错误'))
+    
+def convert_gre_to_gmat(gre_verbal, gre_quantitative):
+    '''将gre的verbal和quantitative分数折算成gmat分数'''
+    if int(gre_verbal) not in GRE_TO_GMAT:
+        raise ValueError('输入的gre的verbal分数不是有效的 {}'.format(gre_verbal))
+    elif int(gre_quantitative) not in GRE_TO_GMAT[gre_verbal]:
+        raise ValueError('输入的gre的quantitative分数不是有效的 {}'.format(gre_quantitative))
+    else:
+        print('xxx')
+        return GRE_TO_GMAT[gre_verbal][gre_quantitative]
+
 if __name__ == '__main__':
-    get_avg_score_by_program(8)
+    print(convert_gre_to_gmat(160.0,170))
