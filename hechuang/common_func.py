@@ -11,9 +11,6 @@ import configparser
 from global_variable import service_logger, GRE_TO_GMAT
 from db_util import MySqlDB
 import io
-import sys
-#改变标准输出的默认编码
-sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 
 def exit_error_func(error_code, error_param='', return_json_dump=True):
     ''' 格式化错误信息返回 '''

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from global_variable import (GPA_SCHOOL_LEVEL, GMAT_TO_GRE, SCHOOL_LEVEL, MAJOR, SELECT_SCHOOL_TARGET_SCORE, SELECT_SCHOOL_OFFER_SCORE, INSTITUTE_ID_TO_NAME_EN, INSTITUTE_ID_TO_NAME_ZH, INSTITUTE_ID_TO_LOCATION, INSTITUTE_MAJOR_LEVEL, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_PORT, MYSQL_USER)
+from global_variable import (GPA_SCHOOL_LEVEL, GPA_SCORE_LEVEL, SUBJECT_SCORE, IBT_LEVEL, GRE_LEVEL, GMAT_LEVEL, GMAT_TO_GRE, SCHOOL_LEVEL, MAJOR, SELECT_SCHOOL_TARGET_SCORE, SELECT_SCHOOL_OFFER_SCORE, INSTITUTE_ID_TO_NAME_EN, INSTITUTE_ID_TO_NAME_ZH, INSTITUTE_ID_TO_LOCATION, INSTITUTE_MAJOR_LEVEL, MYSQL_HOST, MYSQL_PASSWORD, MYSQL_PORT, MYSQL_USER)
 from common_func import (convert_var_type, convert_gre_to_gmat, convert_ielts_to_toefl, exit_error_func)
 from db_util import MySqlDB
 __author__  = 'johnson'
@@ -54,49 +54,61 @@ def _get_student_level(student_data, _temp_list, _major):
 
     return max(_res_level.values())
 
-def _get_return_institute(qualified_institute, _target_level, _major):
+def _get_return_institute(_total_score, _major):
     '''按需求格式返回选校结果'''
-    _guarantee_institute    = []
-    _sprint_institute       = []
-    _suit_institute       = []
-    for each in qualified_institute:
-        _temp_res = {
-            'id': each,
-            'name_en': INSTITUTE_ID_TO_NAME_EN[each],
-            'name_zh': INSTITUTE_ID_TO_NAME_ZH[each],
-            'location_type': INSTITUTE_ID_TO_LOCATION[each]
-        }
-        if _target_level == 1:
-            if each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
-                _suit_institute.append(_temp_res)
-            elif each in INSTITUTE_MAJOR_LEVEL[_major][_target_level+1]:
-                _guarantee_institute.append(_temp_res)
-        elif _target_level == 4:
-            if each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
-                _suit_institute.append(_temp_res)
-        else:
-            if each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
-                _suit_institute.append(_temp_res)
-            elif each in INSTITUTE_MAJOR_LEVEL[_major][_target_level+1]:
-                _guarantee_institute.append(_temp_res)
-    
-    for each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
-        if each not in qualified_institute:
-            _sprint_institute.append({
-                    'id': each,
-                    'name_en': INSTITUTE_ID_TO_NAME_EN[each],
-                    'name_zh': INSTITUTE_ID_TO_NAME_ZH[each],
-                    'location_type': INSTITUTE_ID_TO_LOCATION[each]
-                })
+    _suit_institute = {}
+    for institute_key in SELECT_SCHOOL_OFFER_SCORE[_major]:
+        if _total_score >= SELECT_SCHOOL_OFFER_SCORE[_major][institute_key]:
+            _suit_institute.update({institute_key: SELECT_SCHOOL_OFFER_SCORE[_major][institute_key]})
+    _sort_list = sorted(_suit_institute.items(), key=lambda x: x[1], reverse=True)
+    _return_institute = []
+    for index,item in enumerate(_sort_list):
+        _return_institute.append({index: item[0]})
     return {
-        'status':'success',
-        'result':{
-            'level': _target_level,
-            'guarantee': _guarantee_institute,
-            'sprint': _sprint_institute,
-            'suit': _suit_institute
-        }
+        'status': 'success',
+        'result': _return_institute,
     }
+    # _guarantee_institute    = []
+    # _sprint_institute       = []
+    # _suit_institute       = []
+    # for each in qualified_institute:
+    #     _temp_res = {
+    #         'id': each,
+    #         'name_en': INSTITUTE_ID_TO_NAME_EN[each],
+    #         'name_zh': INSTITUTE_ID_TO_NAME_ZH[each],
+    #         'location_type': INSTITUTE_ID_TO_LOCATION[each]
+    #     }
+    #     if _target_level == 1:
+    #         if each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
+    #             _suit_institute.append(_temp_res)
+    #         elif each in INSTITUTE_MAJOR_LEVEL[_major][_target_level+1]:
+    #             _guarantee_institute.append(_temp_res)
+    #     elif _target_level == 4:
+    #         if each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
+    #             _suit_institute.append(_temp_res)
+    #     else:
+    #         if each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
+    #             _suit_institute.append(_temp_res)
+    #         elif each in INSTITUTE_MAJOR_LEVEL[_major][_target_level+1]:
+    #             _guarantee_institute.append(_temp_res)
+    
+    # for each in INSTITUTE_MAJOR_LEVEL[_major][_target_level]:
+    #     if each not in qualified_institute:
+    #         _sprint_institute.append({
+    #                 'id': each,
+    #                 'name_en': INSTITUTE_ID_TO_NAME_EN[each],
+    #                 'name_zh': INSTITUTE_ID_TO_NAME_ZH[each],
+    #                 'location_type': INSTITUTE_ID_TO_LOCATION[each]
+    #             })
+    # return {
+    #     'status':'success',
+    #     'result':{
+    #         'level': _target_level,
+    #         'guarantee': _guarantee_institute,
+    #         'sprint': _sprint_institute,
+    #         'suit': _suit_institute
+    #     }
+    # }
 
 def _get_gmat_gre(_temp_gre, _temp_gmat):
     '''将gmat转换为gre'''
@@ -230,53 +242,92 @@ def get_similar(**condition):
         'status': 'success',
         'result': _return,
     }
+    
+def _get_toefl_ielts_score(_score, _full_score):
+    for each in IBT_LEVEL:
+        if int(each.split('-')[0]) <= _score <= int(each.split('-')[1]):
+            return float('{:.2f}'.format(_full_score * IBT_LEVEL[each]))
+    return None
+
+def _get_gre_gmat_score(_score, _full_score, _major):
+    _temp_rule = {}
+    if MAJOR[_major]['belong_to'] == 4:
+        _temp_rule = GMAT_LEVEL.copy()
+    else:
+        _temp_rule = GRE_LEVEL.copy()
+    for each in _temp_rule:
+        if int(each.split('-')[0]) <= _score <= int(each.split('-')[1]):
+            return float('{:.2f}'.format(_full_score * _temp_rule[each]))
+    return None
+
+def _get_gpa_score(_score, _institute, _full_score):
+    for each in GPA_SCORE_LEVEL:
+        _temp_value = GPA_SCORE_LEVEL[each]
+        if float(_temp_value.split('-')[0]) <= _score < float(_temp_value.split('-')[1]):
+            _gpa_score = round(float(each) * _full_score * GPA_SCHOOL_LEVEL[_institute], 2)
+    return _gpa_score
 
 def assess_single(**condition):
     '''按照学生成绩匹配确切的院校'''
     student_data = condition['condition']
     _student_data_check(student_data)
     _major = convert_var_type(student_data['major'], 'int')
-    gpa = evaluate_gpa(student_data['gpa']['score'], student_data['gpa']['school'])
+    if _major not in SELECT_SCHOOL_OFFER_SCORE:
+        return exit_error_func(2, '数据库里没有与你匹配专业的案例')
 
     if convert_var_type(student_data['ielts']['total'], 'int') == 0 and convert_var_type(student_data['toefl']['total'], 'int') == 0:
         raise ValueError('雅思/托福 总分都没有')
-    if convert_var_type(student_data['gre']['total'], 'int') == 0 and convert_var_type(student_data['gmat']['total'], 'int') == 0:
+    if convert_var_type(student_data['gre']['total'], 'int') < 260 and convert_var_type(student_data['gmat']['total'], 'int') < 200:
         raise ValueError('GRE/GMAT 总分都没有')
+    
+    _toefl = _get_toefl_ielts(int(student_data['toefl']['total']), float(student_data['ielts']['total']))
+    if MAJOR[_major]['belong_to'] == 4: # 商科的将gre转换为gmat成绩
+        _gre_gmat = _get_gre_gmat(int(student_data['gre']['total']), int(student_data['gre']['verbal']), int(student_data['gre']['quantitative']), int(student_data['gmat']['total']))
+    else:
+        _gre_gmat = _get_gmat_gre(int(student_data['gre']['total']), int(student_data['gmat']['total']))
+    _full_score = SUBJECT_SCORE.get(MAJOR[_major]['name_en'], '35-30-25')
+    _gpa_score = _get_gpa_score(float(student_data['gpa']['score']), convert_var_type(student_data['gpa']['school'], 'int'), int(_full_score.split('-')[0]))
+    _toefl_ielts_score = _get_toefl_ielts_score(_toefl, int(_full_score.split('-')[1]))
+    _gre_gmat_score = _get_gre_gmat_score(_gre_gmat, int(_full_score.split('-')[2]), _major)
 
-    _temp_list = {
-        'gpa'           : gpa, 
-        'ielts_total'   : student_data['ielts']['total'],
-        'toefl_total'   : student_data['toefl']['total'], 
-        'gre_total'     : student_data['gre']['total'],
-        'gmat_total'    : student_data['gmat']['total'],
-    }
+    _total_student_score = sum([_gpa_score, _toefl_ielts_score, _gre_gmat_score])
+    print('total score of the student: {}'.format(_total_student_score))
 
-    if _major not in SELECT_SCHOOL_TARGET_SCORE:
-        _major = -1
-    _target_level = _get_student_level(student_data, _temp_list, _major)
+    
+    # _temp_list = {
+    #     'gpa'           : gpa, 
+    #     'ielts_total'   : student_data['ielts']['total'],
+    #     'toefl_total'   : student_data['toefl']['total'], 
+    #     'gre_total'     : student_data['gre']['total'],
+    #     'gmat_total'    : student_data['gmat']['total'],
+    # }
 
-    qualified_institute = []
-    for each_institute in SELECT_SCHOOL_OFFER_SCORE[_major]:
-        _temp_level = {
-        'gpa'   : 0,
-        'toefl_total' : 0,
-        'ielts_total' : 0,
-        'gre_total'   : 0,
-        'gmat_total'  : 0,
-        }
-        for each_element in _temp_level:
-            _temp = SELECT_SCHOOL_OFFER_SCORE[_major][each_institute][each_element]
-            if _temp < 0.1:
-                continue
-            if float(_temp_list[each_element]) > _temp:
-                _temp_level[each_element] = 1
-        # 判断是否达到该院校分数要求
-        if _temp_level['gpa'] == 1:
-            if (_temp_level['toefl_total'] + _temp_level['ielts_total']) >= 1:
-                if (_temp_level['gre_total'] + _temp_level['gmat_total']) >= 1:
-                    qualified_institute.append(each_institute)
+    # if _major not in SELECT_SCHOOL_TARGET_SCORE:
+    #     _major = -1
+    # _target_level = _get_student_level(student_data, _temp_list, _major)
+
+    # qualified_institute = []
+    # for each_institute in SELECT_SCHOOL_OFFER_SCORE[_major]:
+    #     _temp_level = {
+    #     'gpa'   : 0,
+    #     'toefl_total' : 0,
+    #     'ielts_total' : 0,
+    #     'gre_total'   : 0,
+    #     'gmat_total'  : 0,
+    #     }
+    #     for each_element in _temp_level:
+    #         _temp = SELECT_SCHOOL_OFFER_SCORE[_major][each_institute][each_element]
+    #         if _temp < 0.1:
+    #             continue
+    #         if float(_temp_list[each_element]) > _temp:
+    #             _temp_level[each_element] = 1
+    #     # 判断是否达到该院校分数要求
+    #     if _temp_level['gpa'] == 1:
+    #         if (_temp_level['toefl_total'] + _temp_level['ielts_total']) >= 1:
+    #             if (_temp_level['gre_total'] + _temp_level['gmat_total']) >= 1:
+    #                 qualified_institute.append(each_institute)
     try:
-        return _get_return_institute(qualified_institute, _target_level, _major)
+        return _get_return_institute(_total_student_score, _major)
     except Exception as e:
         return exit_error_func(3, str(e))
     
