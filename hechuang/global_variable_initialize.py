@@ -271,22 +271,25 @@ def _load_convert_rule():
         gblvar.error_logger.error('{}\n{}'.format(str(e), '/resource/GRE-GMAT换算.xlsx加载失败'))
         exit(-1)
     gre_q_key = []
+    first_line = True
     for each in data_gre:
-        if len(each) > 10: # 过滤注释、标题
-            if not isinstance(each[1], float):
-                gre_q_key = [int(x) for x in each[2:]]
-            else:
-                for index, item in enumerate(each[2:]):
-                    _temp_key = int(each[1])
-                    item = int(item)
-                    if _temp_key not in gblvar.GRE_TO_GMAT:
-                        gblvar.GRE_TO_GMAT.update({_temp_key: {gre_q_key[index]: item}})
-                    else:
-                        gblvar.GRE_TO_GMAT[_temp_key].update({gre_q_key[index]: item})
+        if first_line:
+            first_line = False
+            continue
+        if not isinstance(each[1], float):
+            gre_q_key = [int(x) for x in each[2:]]
+        else:
+            for index, item in enumerate(each[2:]):
+                _temp_key = int(each[1])
+                item = int(item)
+                if _temp_key not in gblvar.GRE_TO_GMAT:
+                    gblvar.GRE_TO_GMAT.update({_temp_key: {gre_q_key[index]: item}})
+                else:
+                    gblvar.GRE_TO_GMAT[_temp_key].update({gre_q_key[index]: item})
     for each in data_gmat:
         if isinstance(each[0], float):
             gblvar.GMAT_TO_GRE[int(each[0])] = int(each[1])
-
+    
 def _load_base_info():
     global MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASSWORD
     
