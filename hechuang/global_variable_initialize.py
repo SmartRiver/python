@@ -110,10 +110,7 @@ def _calculate_most_percent_offer(offer_list, _major, percent=0.8):
         return None
     elif _len < 10: # 案例过少不做处理
         _temp_avg = round(sum(_score_list)/_len, 2)
-        print(_score_list)
         _filter_score_list = list(filter(lambda x : abs(x - _temp_avg) < 10, _score_list)) # 去除极大极小值
-        print(_filter_score_list)
-        print(_temp_avg)
         if len(_filter_score_list) == 0:
             return None
         return round(sum(_filter_score_list)/len(_filter_score_list), 2)
@@ -235,13 +232,16 @@ def get_avg_score_by_offer():
                 _temp_offer_list = _temp_major_school_offer[_temp_major_id][_temp_institute_id]
             _temp_offer_list.append(each)
             _temp_major_school_offer[_temp_major_id].update({_temp_institute_id: _temp_offer_list})
-
+    
     for major_key in _temp_major_school_offer: # offer计算
         for school_key in _temp_major_school_offer[major_key]:
             _avg_score =  _calculate_most_percent_offer(_temp_major_school_offer[major_key][school_key], major_key)
             if _avg_score != None:
                 _temp_major_school_offer[major_key][school_key] = _avg_score
-                print(_avg_score)
+                if major_key in gblvar.SELECT_SCHOOL_OFFER_SCORE:
+                    gblvar.SELECT_SCHOOL_OFFER_SCORE[major_key].update({school_key: _avg_score})
+                else:
+                    gblvar.SELECT_SCHOOL_OFFER_SCORE.update({major_key: {school_key: _avg_score}})
         # for each in _ress:
         #     if isinstance(each['max(gpa)'], str):
         #         gpa = float(each['max(gpa)'])
@@ -259,11 +259,7 @@ def get_avg_score_by_offer():
         #         _temp_score = _temp_school_avg_score[_temp_major_id][_temp_institute_id][each]
         #         _temp_school_avg_score[_temp_major_id][_temp_institute_id][each] = (_temp_score * _temp_count + _temp_hard_condition[each]) / (_temp_count + 1)
         #         _temp_school_avg_count[_temp_major_id][_temp_institute_id][each] = _temp_count + 1
-    for major_key in _temp_major_school_offer: # offer计算
-        for school_key in _temp_major_school_offer[major_key]:
-            #print('{}    {}    {}'.format(major_key,school_key,_temp_major_school_offer[major_key][school_key]))          
-            pass
-    gblvar.SELECT_SCHOOL_OFFER_SCORE =_temp_major_school_offer
+    
 
 def _load_convert_rule():
     '''加载一些常用的分数换算规则'''

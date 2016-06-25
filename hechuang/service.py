@@ -25,6 +25,7 @@ def print_usage():
 REQUEST_METHOD = { # 方法请求对应的处理模块函数名
     'school_search': 'search.search_school', # 学校联想搜索算法
     'assess_student': 'assess_student.assess_single', # 学生条件评估算法
+    'get_similar_student': 'assess_student.get_similar', # 寻找相似成绩的学生
     'path_planning': 'path_planning.schedule', # 路径规划算法
 }
 

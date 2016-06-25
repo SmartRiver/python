@@ -7,8 +7,15 @@ from db_util import MySqlDB
 __author__  = 'johnson'
 __doc__     = '''this script is used to match schools for student by assess the score of them'''
 
-DATA_TEMPLATE = {"major":8,"gpa":{"score":"3.5","school":"双非二本"},"gmat":{"total":"0","writing":"0"},"gre":{"total":"328","verbal":"160","quantitative":"168","writing":"4"},"toefl":{"total":"106","speaking":"25"},"ielts":{"total":"0","speaking":"0"}}
-
+DATA_TEMPLATE = {   
+    "major":8,
+    "gpa":{"score":"3.5","school":"双非二本"},
+    "gmat":{"total":"0","writing":"0"},
+    "gre":{"total":"328","verbal":"160",
+    "quantitative":"168","writing":"4"},
+    "toefl":{"total":"106","speaking":"25"},
+    "ielts":{"total":"0","speaking":"0"},
+}
 
 def evaluate_gpa(gpa_score, gpa_school=12):
     '''根据学校的本科学校档次不同，乘上一个系数'''
@@ -38,20 +45,16 @@ def _get_student_level(student_data, _temp_list, _major):
         'gre_total'   : 5,
         'gmat_total'  : 5,
     }
-    
     for each in SELECT_SCHOOL_TARGET_SCORE[_major]:
         for score_key, score_value in _temp_list.items():
             if convert_var_type(score_value, 'float') > SELECT_SCHOOL_TARGET_SCORE[_major][each][score_key]:
                 if _temp_level[score_key] > each:
                     _temp_level.update({score_key: each})
-
-
     _res_level = {
         'gpa' : _temp_level['gpa'],
         'it'  : min(_temp_level['toefl_total'], _temp_level['ielts_total']),
         'gg'  : min(_temp_level['gmat_total'], _temp_level['gre_total']),
     }
-
     return max(_res_level.values())
 
 def _get_return_institute(_total_score, _major):
@@ -61,9 +64,10 @@ def _get_return_institute(_total_score, _major):
         if _total_score >= SELECT_SCHOOL_OFFER_SCORE[_major][institute_key]:
             _suit_institute.update({institute_key: SELECT_SCHOOL_OFFER_SCORE[_major][institute_key]})
     _sort_list = sorted(_suit_institute.items(), key=lambda x: x[1], reverse=True)
+    
     _return_institute = []
-    for index,item in enumerate(_sort_list):
-        _return_institute.append({index: item[0]})
+    for item in _sort_list:
+        _return_institute.append(item[0])
     return {
         'status': 'success',
         'result': _return_institute,
@@ -231,8 +235,6 @@ def get_similar(**condition):
     else:
         _gre_gmat = _get_gmat_gre(int(student_data['gre']['total']), int(student_data['gmat']['total']))
     _offer = get_offer_by_major(_major)
-    print('{:>8}{:>8}{:>8}'.format(_gpa, _toefl, _gre_gmat))
-    print('-------------------------')
     _return = []
     for each in _offer:
         if _match(each, _gpa, _toefl, _gre_gmat):
@@ -291,9 +293,7 @@ def assess_single(**condition):
     _gre_gmat_score = _get_gre_gmat_score(_gre_gmat, int(_full_score.split('-')[2]), _major)
 
     _total_student_score = sum([_gpa_score, _toefl_ielts_score, _gre_gmat_score])
-    print('total score of the student: {}'.format(_total_student_score))
 
-    
     # _temp_list = {
     #     'gpa'           : gpa, 
     #     'ielts_total'   : student_data['ielts']['total'],

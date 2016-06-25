@@ -1,0 +1,38 @@
+[Tue, 14 Jun 2016 11:27:47] service.py [func:get] [line:60] ERROR: Exception:不能将 {'major': 8, 'ielts': {'total': '0', 'speaking': '0'}, 'gmat': {'total': '0', 'writing': '0'}, 'toefl': {'total': '105', 'speaking': '25'}, 'gre': {'total': '316', 'writing': '4'}, 'gpa': {'school': '8', 'score': '3.4'}} 转换为int类型数据
+[Tue, 14 Jun 2016 11:28:49] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 17:59:39] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:00:09] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:00:13] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:00:15] service.py [func:<module>] [line:78] ERROR: [WinError 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+[Tue, 14 Jun 2016 18:00:15] service.py [func:<module>] [line:79] ERROR: data_service server starts failed.
+
+[Tue, 14 Jun 2016 18:01:30] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:01:33] service.py [func:<module>] [line:78] ERROR: [WinError 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+[Tue, 14 Jun 2016 18:01:33] service.py [func:<module>] [line:79] ERROR: data_service server starts failed.
+
+[Tue, 14 Jun 2016 18:01:48] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:05:52] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:05:55] service.py [func:<module>] [line:78] ERROR: [WinError 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+[Tue, 14 Jun 2016 18:05:55] service.py [func:<module>] [line:79] ERROR: data_service server starts failed.
+
+[Tue, 14 Jun 2016 18:05:55] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:05:57] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:06:52] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:06:55] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:06:58] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Tue, 14 Jun 2016 18:07:00] service.py [func:<module>] [line:78] ERROR: [WinError 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+[Tue, 14 Jun 2016 18:07:00] service.py [func:<module>] [line:79] ERROR: data_service server starts failed.
+
+[Tue, 14 Jun 2016 18:07:03] service.py [func:get] [line:60] ERROR: Exception:'builtin_function_or_method' object is not iterable
+[Wed, 15 Jun 2016 14:37:10] test.py [func:<module>] [line:24] ERROR: what is wrong?
+[Wed, 15 Jun 2016 14:54:25] test.py [func:<module>] [line:24] ERROR: what is wrong?
+[Wed, 15 Jun 2016 14:55:04] test.py [func:<module>] [line:24] ERROR: what is wrong?
+[Wed, 15 Jun 2016 14:55:42] test.py [func:<module>] [line:24] ERROR: what is wrong?
+[Wed, 15 Jun 2016 14:56:32] test.py [func:<module>] [line:24] ERROR: what is wrong?
+[Thu, 16 Jun 2016 10:29:31] test.py [func:<module>] [line:24] ERROR: what is wrong?
+[Sat, 18 Jun 2016 15:43:50] global_variable_initialize.py [func:_load_convert_rule] [line:126] ERROR: what is wrong
+[Sat, 18 Jun 2016 15:43:50] global_variable_initialize.py [func:_load_convert_rule] [line:127] ERROR: name 'get_data' is not defined
+/resource/GRE-GMAT换算.xlsx加载失败
+[Sat, 18 Jun 2016 15:44:24] global_variable_initialize.py [func:_load_convert_rule] [line:127] ERROR: what is wrong
+[Sat, 18 Jun 2016 15:44:24] global_variable_initialize.py [func:_load_convert_rule] [line:128] ERROR: [Errno 2] No such file or directory: '/resource/GRE-GMAT换算.xlsx'
+/resource/GRE-GMAT换算.xlsx加载失败
